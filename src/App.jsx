@@ -83,7 +83,7 @@ function App() {
     // Show loading screen on every page load/refresh
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000); // 2 seconds for initial branding load
+    }, 3500); // 3.5 seconds for initial narrative animation load
     return () => clearTimeout(timer);
   }, []);
 
