@@ -117,3 +117,5 @@
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-purple);
 }
+
+@custom-variant dark (&:where(.dark, .dark *));
