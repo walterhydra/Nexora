@@ -81,11 +81,11 @@ export default function ServiceDetails() {
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          onClick={() => navigate('/')}
+          onClick={() => navigate('/#services')}
           className="flex items-center gap-2 hover:opacity-70 transition-all font-mono text-sm uppercase tracking-widest group"
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
-          <span>Main Deck</span>
+          <span>Back</span>
         </motion.button>
       </div>
 
