@@ -33,12 +33,12 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
               
               <div className="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-4 mt-auto">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-accent-primary to-accent-violet text-white font-bold border border-white/10 shrink-0">
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center bg-gradient-to-tr from-accent-primary to-accent-violet text-gray-900 dark:text-white font-bold border border-black/10 dark:border-white/10 shrink-0">
                     {testimonial.initials}
                   </div>
                   <div className="min-w-0">
                     <h4 className="font-bold text-sm text-gray-900 dark:text-white truncate">{testimonial.author}</h4>
-                    <p className="text-xs text-gray-500 dark:text-gray-400 truncate">{testimonial.role}</p>
+                    <p className="text-xs text-gray-500 dark:text-gray-400 dark:text-gray-400 truncate">{testimonial.role}</p>
                   </div>
                 </div>
                 <div className="flex gap-0.5 shrink-0">
@@ -80,7 +80,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg text-gray-400 max-w-2xl mx-auto"
+          className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
           We let our work and our clients do the talking.
         </motion.p>
@@ -116,7 +116,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="mt-12 text-center"
         >
-          <a href="#" className="inline-flex items-center gap-2 px-8 py-4 bg-white/5 border border-white/10 rounded-full text-white font-semibold hover:bg-white/10 hover:border-accent-primary transition-all duration-300 group">
+          <a href="#" className="inline-flex items-center gap-2 px-8 py-4 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full text-gray-900 dark:text-white font-semibold hover:bg-white/10 hover:border-accent-primary transition-all duration-300 group">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-accent-primary to-accent-violet">
               View More Client Stories
             </span>

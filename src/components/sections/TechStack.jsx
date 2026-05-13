@@ -37,7 +37,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 40 }) => {
                 tech.category === 'backend' || tech.category === 'database' ? 'bg-accent-secondary' : 
                 'bg-accent-violet'}`} 
             />
-            <span className="font-display font-semibold text-gray-300 group-hover:text-white transition-colors tracking-wide text-lg">
+            <span className="font-display font-semibold text-gray-700 dark:text-gray-300 group-hover:text-white transition-colors tracking-wide text-lg">
               {tech.name}
             </span>
           </div>
@@ -67,7 +67,7 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-lg text-gray-400 max-w-2xl mx-auto"
+          className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
           We use the most powerful, modern technologies to build fast, scalable, and stunning digital products.
         </motion.p>

@@ -65,7 +65,7 @@ export default function Newsletter() {
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 relative z-10">
             Stay in the <span className="text-gradient">Loop</span>
           </h2>
-          <p className="text-gray-400 mb-8 max-w-md mx-auto relative z-10">
+          <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-md mx-auto relative z-10">
             Get the latest insights, updates, and futuristic tech trends delivered straight to your inbox.
           </p>
           
@@ -77,7 +77,7 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="relative w-full bg-bg-secondary border border-white/10 rounded-lg px-6 py-4 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-primary/50 transition-all"
+                className="relative w-full bg-bg-secondary border border-black/10 dark:border-white/10 rounded-lg px-6 py-4 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-primary/50 transition-all"
                 required
               />
             </div>

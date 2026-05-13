@@ -34,7 +34,7 @@ export default function CookieBanner() {
             <div className="flex gap-2 shrink-0">
               <button 
                 onClick={accept}
-                className="px-4 py-2 bg-black text-white dark:bg-white dark:text-black rounded-full text-sm font-medium hover:scale-105 transition-transform"
+                className="px-4 py-2 bg-white dark:bg-black text-gray-900 dark:text-white dark:bg-white dark:text-black rounded-full text-sm font-medium hover:scale-105 transition-transform"
               >
                 Accept
               </button>

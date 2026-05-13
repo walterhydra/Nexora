@@ -16,6 +16,8 @@ import Newsletter from '../components/sections/Newsletter';
 import Contact from '../components/sections/Contact';
 import BlogTeaser from '../components/sections/BlogTeaser';
 
+import { motion } from 'framer-motion';
+
 export default function Home() {
   const location = useLocation();
 
@@ -32,12 +34,18 @@ export default function Home() {
   }, [location]);
 
   return (
-    <main>
+    <motion.main
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+    >
       <Hero />
       <TrustBadges />
       <Services />
       <TechStack />
       <Work />
+      <Stats />
       <About />
       <Team />
       <HowWeWork />
@@ -47,6 +55,6 @@ export default function Home() {
       <Newsletter />
       <Contact />
       <BlogTeaser />
-    </main>
+    </motion.main>
   );
 }

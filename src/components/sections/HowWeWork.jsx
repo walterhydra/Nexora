@@ -42,11 +42,11 @@ export default function HowWeWork() {
       <div className="max-w-6xl mx-auto relative z-10">
         
         <div className="text-center md:text-left mb-16">
-          <h2 className="text-4xl md:text-6xl font-display font-bold mb-4 text-white">
+          <h2 className="text-4xl md:text-6xl font-display font-bold mb-4 text-gray-900 dark:text-white">
             From Idea to Live — <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-secondary">In 7 Days</span>
           </h2>
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl">
+          <p className="text-gray-600 dark:text-gray-400 text-lg md:text-xl max-w-2xl">
             A transparent, asymmetric bento grid process that keeps you in control.
           </p>
         </div>
@@ -76,10 +76,10 @@ export default function HowWeWork() {
                           Day {step.day}
                         </div>
                       </div>
-                      <h3 className={`text-2xl font-bold mb-4 ${step.featured ? 'text-white text-3xl' : 'text-gray-100'}`}>
+                      <h3 className={`text-2xl font-bold mb-4 ${step.featured ? 'text-gray-900 dark:text-white text-3xl' : 'text-gray-800 dark:text-gray-100'}`}>
                         {step.title}
                       </h3>
-                      <p className="text-gray-400 text-base md:text-lg">
+                      <p className="text-gray-600 dark:text-gray-400 text-base md:text-lg">
                         {step.desc}
                       </p>
                     </div>

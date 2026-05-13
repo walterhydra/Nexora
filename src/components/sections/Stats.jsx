@@ -66,7 +66,7 @@ export default function Stats() {
               <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               <div className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 border border-white/10 group-hover:scale-110 transition-transform duration-500 shadow-inner">
+                <div className="w-16 h-16 rounded-2xl bg-black/5 dark:bg-white/5 flex items-center justify-center mb-6 border border-black/10 dark:border-white/10 group-hover:scale-110 transition-transform duration-500 shadow-inner">
                   {stat.icon}
                 </div>
                 
@@ -76,9 +76,9 @@ export default function Stats() {
                   className={`text-5xl md:text-6xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r ${stat.color} mb-3`} 
                 />
                 
-                <h3 className="text-gray-300 font-medium tracking-wide text-sm uppercase font-mono">
+                <h3 className="text-gray-700 dark:text-gray-300 font-medium tracking-wide text-sm uppercase font-mono">
                   {stat.label}
-                  {stat.sub && <span className="block text-xs text-gray-500 mt-1">{stat.sub}</span>}
+                  {stat.sub && <span className="block text-xs text-gray-500 dark:text-gray-400 mt-1">{stat.sub}</span>}
                 </h3>
               </div>
 

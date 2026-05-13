@@ -10,7 +10,7 @@ import MagneticButton from '../ui/MagneticButton';
 
 const MobilePreview = ({ step }) => {
   return (
-    <div className="relative w-[140px] h-[280px] sm:w-[160px] sm:h-[320px] md:w-[180px] md:h-[360px] bg-black rounded-[1.5rem] md:rounded-[2rem] border-[4px] md:border-[6px] border-gray-800 overflow-hidden shadow-2xl flex flex-col transform transition-transform duration-500 hover:scale-105">
+    <div className="relative w-[140px] h-[280px] sm:w-[160px] sm:h-[320px] md:w-[180px] md:h-[360px] bg-white dark:bg-black rounded-[1.5rem] md:rounded-[2rem] border-[4px] md:border-[6px] border-gray-800 overflow-hidden shadow-2xl flex flex-col transform transition-transform duration-500 hover:scale-105">
       {/* Notch */}
       <div className="absolute top-0 inset-x-0 h-3 md:h-4 bg-gray-800 rounded-b-lg md:rounded-b-xl w-1/2 mx-auto z-20"></div>
       
@@ -51,22 +51,22 @@ const MobilePreview = ({ step }) => {
         >
            <div className="w-full flex justify-between items-center">
              <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gradient-to-tr from-accent-primary to-accent-secondary" />
-             <div className="w-12 h-2 md:w-16 md:h-3 rounded-full bg-white/20" />
+             <div className="w-12 h-2 md:w-16 md:h-3 rounded-full bg-black/20 dark:bg-white/20" />
            </div>
            
-           <div className="w-full h-24 md:h-32 rounded-lg md:rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-white/10 relative overflow-hidden mt-1 md:mt-2">
+           <div className="w-full h-24 md:h-32 rounded-lg md:rounded-xl bg-gradient-to-br from-gray-800 to-gray-900 border border-black/10 dark:border-white/10 relative overflow-hidden mt-1 md:mt-2">
              <div className="absolute inset-0 bg-accent-primary/10 mix-blend-overlay"></div>
              <div className="absolute bottom-2 left-2 w-12 md:w-16 h-2 md:h-3 bg-white/80 rounded-full" />
              <div className="absolute bottom-2 right-2 w-6 md:w-8 h-2 md:h-3 bg-accent-primary rounded-full" />
            </div>
 
            <div className="flex gap-2">
-             <div className="w-1/2 h-16 md:h-20 rounded-lg md:rounded-xl bg-gray-800/80 border border-white/10 p-2 flex flex-col justify-end backdrop-blur-sm">
-                <div className="w-full h-1.5 md:h-2 bg-white/20 rounded-full mb-1" />
-                <div className="w-2/3 h-1.5 md:h-2 bg-white/10 rounded-full" />
+             <div className="w-1/2 h-16 md:h-20 rounded-lg md:rounded-xl bg-gray-800/80 border border-black/10 dark:border-white/10 p-2 flex flex-col justify-end backdrop-blur-sm">
+                <div className="w-full h-1.5 md:h-2 bg-black/20 dark:bg-white/20 rounded-full mb-1" />
+                <div className="w-2/3 h-1.5 md:h-2 bg-black/10 dark:bg-white/10 rounded-full" />
              </div>
-             <div className="w-1/2 h-16 md:h-20 rounded-lg md:rounded-xl bg-gray-800/80 border border-white/10 p-2 flex flex-col justify-end backdrop-blur-sm">
-                <div className="w-full h-1.5 md:h-2 bg-white/20 rounded-full mb-1" />
+             <div className="w-1/2 h-16 md:h-20 rounded-lg md:rounded-xl bg-gray-800/80 border border-black/10 dark:border-white/10 p-2 flex flex-col justify-end backdrop-blur-sm">
+                <div className="w-full h-1.5 md:h-2 bg-black/20 dark:bg-white/20 rounded-full mb-1" />
                 <div className="w-1/2 h-1.5 md:h-2 bg-accent-secondary rounded-full" />
              </div>
            </div>
@@ -151,13 +151,13 @@ export default function Hero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
-          className="mb-8 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+          className="mb-8 inline-flex items-center gap-3 px-5 py-2.5 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.05)]"
         >
           <div className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </div>
-          <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-300">Accepting New Projects</span>
+          <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-700 dark:text-gray-300">Accepting New Projects</span>
         </motion.div>
 
         <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase">
@@ -165,7 +165,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-white"
+            className="text-gray-900 dark:text-white"
           >
             We Architect
           </motion.div>
@@ -195,7 +195,7 @@ export default function Hero() {
           className="flex flex-col md:flex-row items-start md:items-center gap-8 mb-12"
         >
           <div className="w-12 h-[2px] bg-accent-primary/50 hidden md:block" />
-          <p className="text-lg md:text-xl text-gray-400 max-w-xl font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl font-light leading-relaxed">
             Elevating brands with high-performance web development, mobile apps, and relentless innovation. Delivered at lightspeed.
           </p>
         </motion.div>
@@ -221,7 +221,7 @@ export default function Hero() {
           
           <button 
             onClick={() => window.open(whatsappUrl, '_blank')}
-            className="group px-8 py-4 bg-transparent text-white font-bold uppercase tracking-wider text-sm border border-white/20 hover:border-white/60 transition-colors duration-300"
+            className="group px-8 py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 hover:border-white/60 transition-colors duration-300"
           >
             <span className="flex items-center gap-2">
               Start Project
@@ -237,7 +237,7 @@ export default function Hero() {
             <div className="w-full h-full flex bg-bg-tertiary">
               
               {/* Left Side: Code Editor */}
-              <div className="w-3/5 h-full p-4 md:p-6 font-mono text-[10px] sm:text-xs md:text-sm text-gray-300 flex flex-col overflow-hidden text-left whitespace-pre-wrap leading-relaxed border-r border-white/5">
+              <div className="w-3/5 h-full p-4 md:p-6 font-mono text-[10px] sm:text-xs md:text-sm text-gray-700 dark:text-gray-300 flex flex-col overflow-hidden text-left whitespace-pre-wrap leading-relaxed border-r border-white/5">
                 {isLaptopOpen && (
                   <Typewriter
                     onInit={(typewriter) => {

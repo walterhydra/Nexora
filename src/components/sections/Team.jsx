@@ -35,7 +35,7 @@ const MemberCard = ({ member, index }) => {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-accent-primary/5 opacity-40 transition-opacity duration-500" />
       
-      <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-accent-primary/30 transition-colors duration-500 relative z-10 flex items-center justify-center bg-white/5">
+      <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-accent-primary/30 transition-colors duration-500 relative z-10 flex items-center justify-center bg-black/5 dark:bg-white/5">
         {!imageError ? (
           <img 
             src={member.image} 
@@ -50,14 +50,14 @@ const MemberCard = ({ member, index }) => {
         )}
       </div>
       
-      <h3 className="text-xl font-bold text-white mb-2 relative z-10">{member.name}</h3>
-      <p className="text-accent-primary mb-6 relative z-10 font-medium">{member.role}</p>
+      <h3 className="w-full text-center text-xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">{member.name}</h3>
+      <p className="w-full text-center text-accent-primary mb-6 relative z-10 font-medium">{member.role}</p>
       
       <div className="flex gap-4 relative z-10">
-        <a href={member.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+        <a href={member.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
           <LinkedinIcon className="w-5 h-5" />
         </a>
-        <a href={member.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors">
+        <a href={member.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
           <GithubIcon className="w-5 h-5" />
         </a>
       </div>
@@ -86,7 +86,7 @@ export default function Team() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-gray-400 max-w-2xl mx-auto"
+            className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
             The minds behind the magic. We are a collective of creators, engineers, and visionaries.
           </motion.p>

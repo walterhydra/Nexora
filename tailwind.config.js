@@ -25,11 +25,15 @@ export default {
       animation: {
         'spin-slow': 'spin 8s linear infinite',
         'mesh': 'mesh 15s ease-in-out infinite',
+        'shimmer': 'shimmer 1.5s infinite',
       },
       keyframes: {
         mesh: {
           '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
           '50%': { transform: 'scale(1.2) rotate(180deg)' },
+        },
+        shimmer: {
+          '100%': { transform: 'translateX(100%)' },
         }
       }
     },

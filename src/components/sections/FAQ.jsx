@@ -42,7 +42,7 @@ export default function FAQ() {
                   className="w-full px-6 py-6 flex items-center justify-between text-left focus:outline-none"
                 >
                   <span className="text-lg font-bold pr-8">{faq.question}</span>
-                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-accent-blue text-white' : 'bg-gray-100 dark:bg-white/5 text-gray-500'}`}>
+                  <div className={`shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-colors ${isOpen ? 'bg-accent-blue text-gray-900 dark:text-white' : 'bg-gray-100 dark:bg-white/5 text-gray-500 dark:text-gray-400'}`}>
                     {isOpen ? <Minus size={16} /> : <Plus size={16} />}
                   </div>
                 </button>

@@ -32,7 +32,7 @@ function ParticleField() {
 
 export default function NotFound() {
   return (
-    <div className="h-screen w-full bg-black flex items-center justify-center relative overflow-hidden">
+    <div className="h-screen w-full bg-white dark:bg-black flex items-center justify-center relative overflow-hidden">
       
       {/* 3D Background */}
       <div className="absolute inset-0 z-0 opacity-50">
@@ -49,7 +49,7 @@ export default function NotFound() {
           className="relative"
         >
           {/* Glitch Effect on Text */}
-          <h1 className="text-[150px] md:text-[250px] font-display font-bold leading-none text-white mix-blend-difference relative select-none">
+          <h1 className="text-[150px] md:text-[250px] font-display font-bold leading-none text-gray-900 dark:text-white mix-blend-difference relative select-none">
             <span className="absolute top-0 left-0 -ml-1 text-red-500 opacity-70 animate-pulse mix-blend-screen">404</span>
             <span className="absolute top-0 left-0 ml-1 text-blue-500 opacity-70 animate-pulse mix-blend-screen" style={{ animationDelay: '0.1s'}}>404</span>
             404
@@ -60,7 +60,7 @@ export default function NotFound() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-xl md:text-2xl text-gray-400 mb-8 font-mono"
+          className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 font-mono"
         >
           This page got lost in the void.
         </motion.p>

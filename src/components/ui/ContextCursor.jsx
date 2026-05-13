@@ -93,7 +93,7 @@ export default function ContextCursor() {
       case 'button': return <span className="text-[10px] font-bold text-accent-primary uppercase tracking-widest">Click</span>;
       case 'image': return <span className="text-[12px] font-bold text-black uppercase tracking-widest">View</span>;
       case 'drag': return <div className="flex justify-between w-full px-2"><span className="text-accent-violet font-bold text-xl">←</span><span className="text-accent-violet font-bold text-xl">→</span></div>;
-      case 'video': return <span className="text-white text-xl">▶</span>;
+      case 'video': return <span className="text-gray-900 dark:text-white text-xl">▶</span>;
       default: return null;
     }
   };

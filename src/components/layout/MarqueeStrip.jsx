@@ -5,7 +5,7 @@ export default function MarqueeStrip({ items, speed = 20, direction = 1 }) {
   // direction: 1 for left to right, -1 for right to left
   
   return (
-    <div className="relative w-full overflow-hidden bg-primary-dark border-y border-white/10 py-4">
+    <div className="relative w-full overflow-hidden bg-primary-dark border-y border-black/10 dark:border-white/10 py-4">
       <motion.div
         className="flex whitespace-nowrap"
         animate={{

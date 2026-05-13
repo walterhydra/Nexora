@@ -81,7 +81,7 @@ export default function LoadingScreen() {
   return (
     <motion.div 
       animate={wrapperControls}
-      className="fixed inset-0 z-[100] bg-[#02050A] text-white overflow-hidden pointer-events-none flex items-center justify-center"
+      className="fixed inset-0 z-[100] bg-[#02050A] text-gray-900 dark:text-white overflow-hidden pointer-events-none flex items-center justify-center"
     >
       {/* Brutalist Infinite Marquee Background */}
       <div className="absolute inset-0 flex flex-col justify-around py-4 opacity-[0.04] select-none">
@@ -104,7 +104,7 @@ export default function LoadingScreen() {
       >
         <div className="relative flex items-center justify-center w-full">
           <motion.div 
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-[130px] font-sans font-black tracking-[0.2em] md:tracking-[0.3em] text-white drop-shadow-[0_0_30px_rgba(79,142,247,0.3)] text-center w-full uppercase"
+            className="text-5xl sm:text-7xl md:text-8xl lg:text-[130px] font-sans font-black tracking-[0.2em] md:tracking-[0.3em] text-gray-900 dark:text-white drop-shadow-[0_0_30px_rgba(79,142,247,0.3)] text-center w-full uppercase"
           >
             {text}
           </motion.div>

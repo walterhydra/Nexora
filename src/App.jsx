@@ -30,6 +30,23 @@ const PageLoader = () => (
   </div>
 );
 
+// Animated Routes Component to handle location
+import { useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+
+function AnimatedRoutes() {
+  const location = useLocation();
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={<Home />} />
+        <Route path="/service/:slug" element={<ServiceDetails />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </AnimatePresence>
+  );
+}
+
 function AppContent() {
   // Initialize Lenis Smooth Scroll
   useLenis();
@@ -50,11 +67,7 @@ function AppContent() {
       <Navbar />
       
       <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/service/:slug" element={<ServiceDetails />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <AnimatedRoutes />
       </Suspense>
 
       <Footer />

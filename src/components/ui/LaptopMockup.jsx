@@ -30,7 +30,7 @@ export default function LaptopMockup({ children, delay = 0, scrollProgress, onOp
     <div ref={containerRef} className="relative w-full max-w-[800px] mx-auto perspective-[1500px]">
       {/* Laptop Lid */}
       <motion.div
-        className="relative z-20 w-full rounded-t-xl overflow-hidden bg-black border-4 border-gray-800 shadow-2xl origin-bottom"
+        className="relative z-20 w-full rounded-t-xl overflow-hidden bg-white dark:bg-black border-4 border-gray-800 shadow-2xl origin-bottom"
         style={{ rotateX, transformStyle: 'preserve-3d' }}
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 to-gray-800 opacity-50 z-0 pointer-events-none" />
@@ -45,7 +45,7 @@ export default function LaptopMockup({ children, delay = 0, scrollProgress, onOp
         </div>
 
         {/* Screen Content - turns on when open */}
-        <div className="relative z-10 aspect-[16/10] bg-black overflow-hidden">
+        <div className="relative z-10 aspect-[16/10] bg-white dark:bg-black overflow-hidden">
           <motion.div 
             className="w-full h-full"
             initial={{ opacity: 0 }}

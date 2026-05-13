@@ -7,9 +7,9 @@ export default function PhoneMockup({ children, className = "" }) {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "15%"]);
 
   return (
-    <div className={`relative w-[280px] h-[580px] mx-auto rounded-[40px] border-[12px] border-gray-900 bg-black shadow-2xl overflow-hidden ${className}`}>
+    <div className={`relative w-[280px] h-[580px] mx-auto rounded-[40px] border-[12px] border-gray-900 bg-white dark:bg-black shadow-2xl overflow-hidden ${className}`}>
       {/* Dynamic Island / Notch */}
-      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-black rounded-full z-30" />
+      <div className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-6 bg-white dark:bg-black rounded-full z-30" />
       
       {/* Content wrapper with parallax */}
       <motion.div 

@@ -4,7 +4,7 @@ import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import MagneticButton from '../ui/MagneticButton';
-import { Mail, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Mail, MessageSquare, ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 
 export default function Contact() {
   const formRef = useRef();
@@ -50,7 +50,7 @@ export default function Contact() {
       });
   };
 
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "919999999999";
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexora Studio, I'd like to discuss a project")}`;
 
   return (
@@ -77,13 +77,20 @@ export default function Contact() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="space-y-6">
-              <a href="mailto:hello@nexorastudio.com" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
+              <a href="mailto:milanpandavadra84@gmail.com" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
                 <div className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail size={20} />
                 </div>
-                hello@nexorastudio.com
+                milanpandavadra84@gmail.com
               </a>
               
+              <a href="tel:+917383303388" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
+                <div className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Phone size={20} />
+                </div>
+                +91 7383303388
+              </a>
+
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-lg hover:text-green-500 transition-colors group">
                 <div className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform">
                   <MessageSquare size={20} />
@@ -114,7 +121,7 @@ export default function Contact() {
               <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label htmlFor="user_name" className="text-sm font-medium text-gray-500 dark:text-gray-400">Name</label>
+                    <label htmlFor="user_name" className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-400">Name</label>
                     <input 
                       type="text" 
                       name="user_name" 
@@ -125,7 +132,7 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="user_email" className="text-sm font-medium text-gray-500 dark:text-gray-400">Email</label>
+                    <label htmlFor="user_email" className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-400">Email</label>
                     <input 
                       type="email" 
                       name="user_email" 
@@ -138,7 +145,7 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="budget" className="text-sm font-medium text-gray-500 dark:text-gray-400">Project Budget</label>
+                  <label htmlFor="budget" className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-400">Project Budget</label>
                   <select 
                     name="budget" 
                     id="budget"
@@ -153,7 +160,7 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-gray-500 dark:text-gray-400">Tell us about your project</label>
+                  <label htmlFor="message" className="text-sm font-medium text-gray-500 dark:text-gray-400 dark:text-gray-400">Tell us about your project</label>
                   <textarea 
                     name="message" 
                     id="message" 

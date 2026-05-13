@@ -28,7 +28,7 @@ export default function Pricing() {
 
           {/* Toggle */}
           <motion.div variants={fadeUp} className="flex items-center justify-center gap-3">
-            <span className={`text-sm font-medium ${!isAnnual ? 'text-black dark:text-white' : 'text-gray-500'}`}>Pay per project</span>
+            <span className={`text-sm font-medium ${!isAnnual ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>Pay per project</span>
             <button 
               onClick={() => setIsAnnual(!isAnnual)}
               className="w-14 h-7 rounded-full bg-gray-200 dark:bg-white/10 p-1 transition-colors hover:bg-gray-300 dark:hover:bg-white/20 relative"
@@ -37,7 +37,7 @@ export default function Pricing() {
                 className={`w-5 h-5 rounded-full bg-accent-blue transition-transform duration-300 shadow-md ${isAnnual ? 'translate-x-7' : 'translate-x-0'}`}
               />
             </button>
-            <span className={`text-sm font-medium ${isAnnual ? 'text-black dark:text-white' : 'text-gray-500'}`}>Retainer <span className="text-xs bg-green-500/10 text-green-500 px-2 py-0.5 rounded-full ml-1">-20%</span></span>
+            <span className={`text-sm font-medium ${isAnnual ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>Retainer <span className="text-xs bg-green-500/10 text-green-500 px-2 py-0.5 rounded-full ml-1">-20%</span></span>
           </motion.div>
         </motion.div>
 
@@ -53,7 +53,7 @@ export default function Pricing() {
             >
               {plan.popular && (
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                  <span className="bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+                  <span className="bg-gradient-to-r from-accent-blue to-accent-purple text-gray-900 dark:text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
                     Most Popular
                   </span>
                 </div>
@@ -61,7 +61,7 @@ export default function Pricing() {
               
               <GlowCard className={`h-full p-8 flex flex-col ${plan.popular ? 'border-accent-blue/50 ring-1 ring-accent-blue/50' : ''}`}>
                 <h3 className="text-xl font-bold mb-2">{plan.name}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mb-6">{plan.description}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400 mb-6">{plan.description}</p>
                 
                 <div className="mb-6 flex items-baseline">
                   <span className="text-4xl font-display font-bold">
@@ -69,7 +69,7 @@ export default function Pricing() {
                       ? "Custom" 
                       : `₹${isAnnual ? Math.floor(Number(plan.price) * 0.8).toLocaleString('en-IN') : Number(plan.price).toLocaleString('en-IN')}`}
                   </span>
-                  {plan.price !== "Custom" && <span className="text-gray-500 ml-2"> {isAnnual ? '/mo' : 'starting'}</span>}
+                  {plan.price !== "Custom" && <span className="text-gray-500 dark:text-gray-400 ml-2"> {isAnnual ? '/mo' : 'starting'}</span>}
                 </div>
 
                 <ul className="space-y-4 mb-8 flex-1">
@@ -87,7 +87,7 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <MagneticButton className={`w-full justify-center ${plan.popular ? 'bg-white text-black hover:bg-gray-100' : 'bg-black text-white dark:bg-white/10 dark:hover:bg-white/20'}`}>
+                <MagneticButton className={`w-full justify-center ${plan.popular ? 'bg-white text-black hover:bg-gray-100' : 'bg-white dark:bg-black text-gray-900 dark:text-white dark:bg-white/10 dark:hover:bg-white/20'}`}>
                   {plan.price === "Custom" ? "Let's Talk" : "Get Started"}
                 </MagneticButton>
               </GlowCard>

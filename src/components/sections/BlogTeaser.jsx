@@ -69,7 +69,7 @@ export default function BlogTeaser() {
               transition={{ duration: 0.5, delay: idx * 0.1 }}
               className="group block p-6 rounded-2xl glass border border-gray-200 dark:border-white/10 hover:border-accent-blue/50 transition-colors"
             >
-              <div className="flex items-center gap-3 text-sm text-gray-500 mb-4">
+              <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-4">
                 <span className="font-mono text-accent-blue">{post.category}</span>
                 <span>&bull;</span>
                 <span>{post.date}</span>

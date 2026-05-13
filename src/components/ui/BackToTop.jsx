@@ -51,7 +51,7 @@ export default function BackToTop() {
               stroke="currentColor"
               strokeWidth="2"
               fill="transparent"
-              className="text-gray-200 dark:text-white/10"
+              className="text-gray-800 dark:text-gray-200 dark:text-white/10"
             />
             <circle
               cx="24"

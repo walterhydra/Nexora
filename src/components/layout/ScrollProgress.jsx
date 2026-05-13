@@ -31,7 +31,7 @@ export default function ScrollProgress() {
         className="h-1 bg-accent-blue origin-left w-full"
         style={{ scaleX }}
       />
-      <div className="absolute right-4 top-2 text-xs font-mono text-gray-500 dark:text-gray-400 opacity-50">
+      <div className="absolute right-4 top-2 text-xs font-mono text-gray-500 dark:text-gray-400 dark:text-gray-400 opacity-50">
         {section}
       </div>
     </div>
