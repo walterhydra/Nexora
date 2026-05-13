@@ -1,187 +1,180 @@
-import React, { useState } from 'react';
-import { motion, useMotionValue, useSpring, useVelocity, useTransform } from 'framer-motion';
+import React, { useRef, useState, useLayoutEffect } from 'react';
+import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { projects } from '../../constants/projects';
-import { fadeUp, staggerContainer } from '../../animations/variants';
 import MagneticButton from '../ui/MagneticButton';
-import { ExternalLink, ArrowRight } from 'lucide-react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 
-function ProjectListItem({ project }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  // Smooth springs for tracking the mouse
-  const mouseXSpring = useSpring(x, { stiffness: 150, damping: 15, mass: 0.1 });
-  const mouseYSpring = useSpring(y, { stiffness: 150, damping: 15, mass: 0.1 });
-
-  // Calculate rotation based on mouse movement velocity
-  const xVelocity = useVelocity(x);
-  const yVelocity = useVelocity(y);
-  const rotateTarget = useTransform(xVelocity, [-1000, 1000], [-15, 15]);
-  const rotateSpring = useSpring(rotateTarget, { stiffness: 100, damping: 20 });
-
-  const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    // Center the image on the cursor (assuming image is 400x300)
-    x.set(e.clientX - rect.left - 200);
-    y.set(e.clientY - rect.top - 150);
-  };
-
-  const filterId = `liquid-${project.id}`;
-  
-  // Calculate displacement scale based on mouse velocity for "Liquid" effect
-  const velocityTotal = useTransform(() => Math.abs(xVelocity.get()) + Math.abs(yVelocity.get()));
-  const liquidScale = useSpring(useTransform(velocityTotal, [0, 2000], [0, 40]), { stiffness: 100, damping: 20 });
-
+const ProjectCard = ({ project }) => {
   return (
-    <motion.div 
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-50px" }}
-      variants={fadeUp}
-      className="relative py-10 md:py-16 border-b border-black/10 dark:border-white/10 group cursor-pointer overflow-hidden flex flex-col md:flex-row md:items-center justify-between gap-6 px-4 hover:bg-white/[0.02] transition-colors duration-500"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      onMouseMove={handleMouseMove}
-      onClick={() => window.open(project.link, '_blank')}
+    <div className="w-[85vw] md:w-[60vw] h-[60vh] md:h-[70vh] flex-shrink-0 relative rounded-[2rem] overflow-hidden group cursor-pointer"
+         onClick={() => window.open(project.link, '_blank')}
     >
-      {/* SVG Filter Definition for Liquid Distortion */}
-      <svg className="absolute w-0 h-0 pointer-events-none">
-        <filter id={filterId}>
-          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.015" numOctaves="3" result="warp" />
-          <motion.feDisplacementMap xChannelSelector="R" yChannelSelector="G" scale={liquidScale} in="SourceGraphic" in2="warp" />
-        </filter>
-      </svg>
-
-      {/* Left Side: Title & Category */}
-      <div className="flex flex-col z-10 relative pointer-events-none max-w-2xl">
-        <span className="text-accent-secondary text-sm font-mono tracking-widest mb-3 flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-accent-secondary animate-pulse" />
-          {project.category}
-        </span>
-        <h3 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-gray-900 dark:text-white group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent-primary group-hover:to-accent-violet transition-all duration-500 transform group-hover:translate-x-6">
-          {project.title}
-        </h3>
-      </div>
-
-      {/* Right Side: Description & Result */}
-      <div className="z-10 relative pointer-events-none text-left md:text-right flex flex-col items-start md:items-end w-full md:w-auto">
-        <p className="text-gray-600 dark:text-gray-400 max-w-sm mb-6 md:opacity-0 group-hover:opacity-100 transition-all duration-500 transform md:translate-y-4 group-hover:translate-y-0 text-sm md:text-base leading-relaxed">
-          {project.description}
-        </p>
-        <div className="flex items-center gap-4">
-          <span className="text-accent-primary border border-accent-primary/30 px-5 py-2 rounded-full text-xs font-bold uppercase tracking-widest group-hover:bg-accent-primary/10 transition-colors shadow-[0_0_15px_rgba(0,245,255,0)] group-hover:shadow-[0_0_15px_rgba(0,245,255,0.2)]">
-            {project.result}
-          </span>
-          <div className="w-10 h-10 rounded-full border border-black/20 dark:border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-500">
-            <ArrowRight size={16} className="transform -rotate-45" />
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Image (Visible only on small screens) */}
-      <div className="block md:hidden mt-6 w-full aspect-[4/3] rounded-2xl overflow-hidden relative border border-black/10 dark:border-white/10 z-10 pointer-events-none">
-        <div 
-          className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-700"
-          style={{ backgroundImage: `url(${project.image})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-      </div>
-
-      {/* Desktop Floating Image (Tracks Mouse with Liquid Effect) */}
-      <motion.div 
-        className="absolute hidden md:block w-[450px] aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl z-0 pointer-events-none border border-black/10 dark:border-white/10"
-        style={{
-          x: mouseXSpring,
-          y: mouseYSpring,
-          rotate: rotateSpring,
-          opacity: isHovered ? 1 : 0,
-          scale: isHovered ? 1 : 0.4,
-          filter: `url(#${filterId})`
-        }}
-        transition={{ opacity: { duration: 0.4 }, scale: { duration: 0.4, type: "spring", stiffness: 100 } }}
-      >
-        <div 
-          className="w-full h-full bg-cover bg-center"
-          style={{ backgroundImage: `url(${project.image})` }}
-        />
-        {/* Subtle glass overlay on image */}
-        <div className="absolute inset-0 bg-accent-primary/10 mix-blend-overlay" />
-        <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-2xl" />
-      </motion.div>
-    </motion.div>
-  );
-}
-
-export default function Work() {
-  const [filter, setFilter] = useState('All');
-  const [showAll, setShowAll] = useState(false);
-  
-  const categories = ['All', ...new Set(projects.map(p => p.category))];
-
-  const filteredProjects = filter === 'All' ? projects : projects.filter(p => p.category === filter);
-  const displayedProjects = showAll ? filteredProjects : filteredProjects.slice(0, 5);
-
-  return (
-    <section id="work" className="py-24 relative z-10 bg-bg-primary overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="flex flex-col mb-16 gap-8"
-        >
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
-            <div>
-              <motion.h2 variants={fadeUp} className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6">
-                Selected <span className="text-gradient font-light italic">Works</span>
-              </motion.h2>
-              <motion.p variants={fadeUp} className="text-xl text-gray-600 dark:text-gray-400 font-light max-w-xl leading-relaxed">
-                We partner with ambitious brands to build immersive digital experiences that convert.
-              </motion.p>
+      {/* Background Image with Parallax / Zoom effect on hover */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)]"
+        style={{ backgroundImage: `url(${project.image})` }}
+      />
+      
+      {/* Dynamic Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none transition-opacity duration-700 group-hover:opacity-80" />
+      
+      {/* Content Container */}
+      <div className="absolute bottom-0 left-0 p-6 md:p-12 w-full flex flex-col justify-end h-full">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 transform translate-y-4 md:translate-y-8 group-hover:translate-y-0 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+          
+          {/* Left: Text Content */}
+          <div className="flex-1 max-w-2xl">
+            <div className="flex items-center gap-3 mb-3 md:mb-5 opacity-80 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+              <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse shadow-[0_0_10px_rgba(0,245,255,0.8)]" />
+              <span className="text-accent-primary text-[10px] md:text-xs font-mono tracking-[0.2em] uppercase font-bold">
+                {project.category}
+              </span>
             </div>
             
-            <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-              {categories.map(cat => (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => {
-                    setFilter(cat);
-                    setShowAll(false);
-                  }}
-                  className={`px-6 py-3 rounded-full text-xs uppercase tracking-widest font-bold transition-all duration-300 ${
-                    filter === cat 
-                    ? 'bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.2)]' 
-                    : 'bg-black/5 dark:bg-white/5 text-gray-600 dark:text-gray-400 border border-black/10 dark:border-white/10 hover:bg-white/10 hover:text-gray-900 dark:hover:text-white'
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </motion.div>
+            <h3 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-3 md:mb-5 leading-[1.1] tracking-tight">
+              {project.title}
+            </h3>
+            
+            <p className="text-gray-300 text-sm md:text-base lg:text-lg leading-relaxed line-clamp-2 md:line-clamp-none opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+              {project.description}
+            </p>
           </div>
-        </motion.div>
+          
+          {/* Right: Actions */}
+          <div className="hidden md:flex flex-col items-end gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-300">
+            <span className="text-white border border-white/20 px-5 py-2 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] bg-white/5 backdrop-blur-md">
+              {project.result}
+            </span>
+            <div className="w-16 h-16 rounded-full bg-white text-black flex items-center justify-center hover:bg-accent-primary transition-colors shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(0,245,255,0.4)]">
+              <ArrowUpRight size={28} className="transform transition-transform group-hover:rotate-45" />
+            </div>
+          </div>
+        </div>
+        
+        {/* Mobile Action Elements (Always visible to ensure usability) */}
+        <div className="mt-4 md:hidden flex justify-between items-center opacity-100 transition-opacity duration-500">
+          <span className="text-white border border-white/20 px-4 py-1.5 rounded-full text-[9px] font-bold uppercase tracking-[0.2em] bg-black/40 backdrop-blur-md">
+            {project.result}
+          </span>
+          <div className="w-10 h-10 rounded-full bg-white text-black flex items-center justify-center">
+            <ArrowUpRight size={20} />
+          </div>
+        </div>
+      </div>
+      
+      {/* Subtle glass border overlay */}
+      <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-[2rem] pointer-events-none" />
+    </div>
+  );
+};
 
-        {/* Massive Interactive List */}
-        <div className="flex flex-col border-t border-black/10 dark:border-white/10">
-          {displayedProjects.map((project) => (
-            <ProjectListItem key={project.id} project={project} />
-          ))}
+export default function Work() {
+  const targetRef = useRef(null);
+  const carouselRef = useRef(null);
+  const [scrollRange, setScrollRange] = useState(0);
+  
+  // Calculate dynamic scroll range based on track width vs viewport width
+  useLayoutEffect(() => {
+    const updateScrollRange = () => {
+      if (carouselRef.current) {
+        setScrollRange(carouselRef.current.scrollWidth - window.innerWidth);
+      }
+    };
+    
+    updateScrollRange();
+    // Add small delay for fonts/images loading
+    setTimeout(updateScrollRange, 500);
+    window.addEventListener('resize', updateScrollRange);
+    return () => window.removeEventListener('resize', updateScrollRange);
+  }, []);
+
+  // Track scroll progress of the container
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+    offset: ["start start", "end end"]
+  });
+
+  // Apply smooth spring physics to the scroll progress
+  const smoothProgress = useSpring(scrollYProgress, { 
+    damping: 20, 
+    stiffness: 100, 
+    mass: 0.2 
+  });
+  
+  // Map progress to X translation
+  const x = useTransform(smoothProgress, [0, 1], [0, -scrollRange]);
+
+  // Show all projects in the gallery
+  const displayedProjects = projects;
+
+  return (
+    // Increase height to 400vh to give ample scrolling time for the gallery
+    <section ref={targetRef} id="work" className="relative h-[400vh] bg-[#0a0a0a]">
+      
+      {/* Sticky container pins to top while scrolling */}
+      <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden">
+        
+        {/* Background Ambient Glows */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-accent-primary/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-accent-violet/5 rounded-full blur-[150px]" />
         </div>
 
-        {!showAll && filteredProjects.length > 5 && (
-          <div className="mt-24 flex justify-center">
-            <MagneticButton 
-              type="button"
-              onClick={() => setShowAll(true)}
-              className="bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 hover:border-white hover:bg-white hover:text-black transition-all duration-500 px-12 py-5"
-            >
-              View Archive
+        {/* Section Header (Fixed left side) */}
+        <div className="absolute top-24 md:top-32 left-6 md:left-12 z-20 pointer-events-none">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[1.1] tracking-tight drop-shadow-2xl">
+              Selected <br />
+              <span className="text-gradient italic font-light tracking-normal">Works</span>
+            </h2>
+            <div className="mt-6 flex items-center gap-4">
+              <div className="w-12 h-[1px] bg-white/20" />
+              <p className="text-gray-400 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em]">
+                Scroll to explore
+              </p>
+            </div>
+          </motion.div>
+        </div>
+
+        {/* Horizontal Scroll Track */}
+        <motion.div 
+          ref={carouselRef}
+          style={{ x }} 
+          className="flex gap-6 md:gap-16 px-6 md:px-[15vw] items-center mt-32 md:mt-0 w-max"
+        >
+          {/* Spacer block to ensure the first card isn't completely hidden under the title on desktop */}
+          <div className="w-[5vw] md:w-[25vw] flex-shrink-0" />
+          
+          {displayedProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+          
+          {/* View Archive / Call to Action End Card */}
+          <div 
+            className="w-[85vw] md:w-[40vw] h-[60vh] md:h-[70vh] flex-shrink-0 flex flex-col items-center justify-center bg-[#111] rounded-[2rem] border border-white/5 group cursor-pointer hover:bg-white/[0.03] transition-all duration-700"
+            onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
+          >
+            <MagneticButton className="mb-10 w-24 h-24 rounded-full border border-white/10 flex items-center justify-center group-hover:border-accent-primary group-hover:scale-110 group-hover:bg-accent-primary/10 transition-all duration-500">
+              <ArrowRight size={32} className="text-white group-hover:text-accent-primary transition-colors" />
             </MagneticButton>
+            <h3 className="text-4xl md:text-6xl font-display font-black text-white mb-6 text-center leading-[1.1] tracking-tight">
+              Start Your <br/> 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-violet italic font-light">Project</span>
+            </h3>
+            <div className="px-6 py-2 rounded-full border border-white/10 text-gray-400 font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] group-hover:border-white/30 group-hover:text-white transition-colors">
+              Get in touch
+            </div>
           </div>
-        )}
+
+          {/* Final Right Margin Spacer */}
+          <div className="w-[10vw] flex-shrink-0" />
+        </motion.div>
+        
       </div>
     </section>
   );

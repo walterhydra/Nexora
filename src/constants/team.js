@@ -14,7 +14,7 @@ export const team = [
     id: 2,
     name: "Gaurav Thakur",
     role: "Technical Lead",
-    image: "/team/gaurav.png",
+    image: "/team/WhatsApp Image 2026-05-13 at 3.46.28 PM.jpeg",
     specialty: "Mobile + Backend Systems",
     links: { 
       github: "https://github.com/gauravthakur1999", 
@@ -26,6 +26,7 @@ export const team = [
     name: "Alis Patel",
     role: "Full-Stack Architect",
     image: "/team/Passport Size Photo .jpg.jpeg",
+    imageClass: "object-[50%_35%]",
     specialty: "Node.js + DevOps",
     links: { 
       github: "https://github.com/alispatel111", 

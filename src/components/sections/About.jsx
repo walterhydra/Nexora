@@ -43,11 +43,11 @@ export default function About() {
             <div className="grid grid-cols-2 gap-x-8 gap-y-6 pt-8 border-t border-black/10 dark:border-white/10">
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Phone</div>
-                <div className="text-gray-900 dark:text-white font-medium">+91-9999999999</div>
+                <div className="text-gray-900 dark:text-white font-medium">+91 7383303388</div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Email</div>
-                <div className="text-gray-900 dark:text-white font-medium"><a href="mailto:hello@nexorastudio.com" className="hover:text-accent-blue transition-colors">hello@nexorastudio.com</a></div>
+                <div className="text-gray-900 dark:text-white font-medium"><a href="mailto:nexoraa.works@gmail.com" className="hover:text-accent-blue transition-colors">nexoraa.works@gmail.com</a></div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Based in</div>
@@ -56,8 +56,8 @@ export default function About() {
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Social</div>
                 <div className="flex gap-4">
-                  <a href="#" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
-                  <a href="#" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">Twitter</a>
+                  <a href="https://www.linkedin.com/in/milan-pandavdara/" target="_blank" rel="noopener noreferrer" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
+                  <a href="https://github.com/walterhydra" target="_blank" rel="noopener noreferrer" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
                 </div>
               </div>
             </div>
@@ -127,15 +127,18 @@ export default function About() {
                 <div className="flex flex-1 p-6 items-center">
                   {/* Left QR */}
                   <div className="w-1/3 flex flex-col items-center justify-center border-r border-black/10 dark:border-white/10 pr-6">
-                    <div className="bg-white p-2 rounded-xl">
-                      {/* Simple WhatsApp QR Code */}
+                    <div className="bg-white p-2 rounded-xl relative group">
                       <img 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://wa.me/917567097891?text=Hello Milan! I am interested in collaborating with Nexora Studio.")}`} 
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://wa.me/917383303388?text=Hello Nexora Studio! I am interested in collaborating on a professional project.")}`} 
                         alt="Scan for WhatsApp" 
-                        className="w-24 h-24 rounded-lg mix-blend-multiply"
+                        className="w-24 h-24 rounded-lg mix-blend-multiply transition-opacity duration-300 group-hover:opacity-10"
                       />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <a href="https://wa.me/917383303388?text=Hello%20Nexora%20Studio!%20I%20am%20interested%20in%20collaborating%20on%20a%20professional%20project." target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white text-[10px] font-bold py-1.5 px-3 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>WhatsApp</a>
+                        <a href="mailto:nexoraa.works@gmail.com?subject=Professional Project Inquiry - Nexora Studio" className="bg-accent-blue text-white text-[10px] font-bold py-1.5 px-4 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>Email</a>
+                      </div>
                     </div>
-                    <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-3 text-center">Scan to<br/>Connect</span>
+                    <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-3 text-center">Scan or<br/>Hover</span>
                   </div>
 
                   {/* Right Details */}

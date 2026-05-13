@@ -77,11 +77,11 @@ export default function Contact() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="space-y-6">
-              <a href="mailto:milanpandavadra84@gmail.com" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
+              <a href="mailto:nexoraa.works@gmail.com" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
                 <div className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Mail size={20} />
+                  <Mail className="w-5 h-5 text-gray-400 group-hover:text-accent-blue" />
                 </div>
-                milanpandavadra84@gmail.com
+                nexoraa.works@gmail.com
               </a>
               
               <a href="tel:+917383303388" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
