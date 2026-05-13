@@ -34,12 +34,12 @@ const MemberCard = ({ member, index }) => {
       className="glass rounded-2xl p-6 flex flex-col items-center group relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-accent-primary/5 opacity-40 transition-opacity duration-500" />
-      
+
       <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-accent-primary/30 transition-colors duration-500 relative z-10 flex items-center justify-center bg-black/5 dark:bg-white/5">
         {!imageError ? (
-          <img 
-            src={member.image} 
-            alt={member.name} 
+          <img
+            src={member.image}
+            alt={member.name}
             className={`w-full h-full object-cover transition-all duration-500 ${member.imageClass || 'object-center'}`}
             onError={() => setImageError(true)}
           />
@@ -49,10 +49,10 @@ const MemberCard = ({ member, index }) => {
           </div>
         )}
       </div>
-      
+
       <h3 className="w-full text-center text-xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">{member.name}</h3>
       <p className="w-full text-center text-accent-primary mb-6 relative z-10 font-medium">{member.role}</p>
-      
+
       <div className="flex gap-4 relative z-10">
         <a href={member.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
           <LinkedinIcon className="w-5 h-5" />
@@ -65,30 +65,71 @@ const MemberCard = ({ member, index }) => {
   );
 };
 
+const JoinCard = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ delay: 0.8 }}
+    className="glass rounded-2xl p-6 flex flex-col items-center justify-center group relative overflow-hidden border-2 border-dashed border-accent-primary/20 hover:border-accent-primary/50 transition-all duration-500 h-full min-h-[320px]"
+  >
+    <div className="absolute inset-0 bg-accent-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+    <div className="absolute top-4 right-4 z-20">
+      <span className="px-3 py-1 rounded-full bg-accent-primary/10 text-accent-primary text-[10px] font-bold uppercase tracking-wider border border-accent-primary/20 animate-pulse">
+        Hiring
+      </span>
+    </div>
+
+    <div className="w-20 h-20 rounded-full border-2 border-dashed border-accent-primary/30 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500 relative z-10">
+      <svg className="w-8 h-8 text-accent-primary/50 group-hover:text-accent-primary transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+      </svg>
+    </div>
+
+    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2 relative z-10 text-center">Join The Squad</h3>
+    <p className="text-sm text-gray-600 dark:text-gray-400 text-center mb-6 relative z-10 px-4">
+      We're always looking for brilliant minds to join our journey.
+    </p>
+
+    <button className="relative z-10 px-6 py-2 rounded-full border border-accent-primary/30 text-accent-primary text-sm font-medium hover:bg-accent-primary hover:text-white transition-all duration-300">
+      View Openings
+    </button>
+  </motion.div>
+);
+
+const teamStats = [
+  { label: 'Visionaries', value: '08+' },
+  { label: 'Projects', value: '50+' },
+  { label: 'Innovation', value: '24/7' },
+  { label: 'Countries', value: '03' }
+];
+
+
 export default function Team() {
   return (
     <section className="py-32 bg-bg-primary relative z-10 overflow-hidden" id="team">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-5xl h-96 bg-accent-violet/5 rounded-[100%] blur-[120px] pointer-events-none opacity-50" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-20">
         <div className="text-center mb-20">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-display font-bold mb-4"
           >
-            Meet The <span className="text-gradient">Team</span>
+            Meet The <span className="text-gradient">Collective</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
           >
-            The minds behind the magic. We are a collective of creators, engineers, and visionaries.
+            A high-performance unit of engineers, designers, and strategists building the future of digital experiences.
           </motion.p>
         </div>
 
@@ -97,6 +138,26 @@ export default function Team() {
             <div key={member.name} className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)] max-w-sm">
               <MemberCard member={member} index={index} />
             </div>
+          ))}
+          <div className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] xl:w-[calc(25%-1.5rem)] max-w-sm">
+            <JoinCard />
+          </div>
+        </div>
+
+        {/* Team Stats */}
+        <div className="mt-32 pt-16 border-t border-border-color flex flex-wrap justify-around gap-12 text-center">
+          {teamStats.map((stat, index) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="min-w-[120px]"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">{stat.value}</div>
+              <div className="text-xs md:text-sm text-gray-500 dark:text-gray-400 font-medium uppercase tracking-[0.2em]">{stat.label}</div>
+            </motion.div>
           ))}
         </div>
       </div>

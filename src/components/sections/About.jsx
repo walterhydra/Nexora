@@ -64,47 +64,55 @@ export default function About() {
           </div>
 
           {/* Right Card (Business Card Style) */}
-          <div className="relative perspective-1000 w-full max-w-lg mx-auto aspect-[1.6/1]">
+          <div className="relative perspective-1000 w-full max-w-lg mx-auto aspect-[1.75/1]">
+
             <div 
               className={`w-full h-full transition-all duration-700 preserve-3d cursor-pointer ${isFlipped ? 'rotate-y-180' : ''}`}
               onClick={() => setIsFlipped(!isFlipped)}
             >
               
               {/* Front of Card */}
-              <div className="absolute inset-0 backface-hidden rounded-3xl bg-[#0a0a0a] border border-black/10 dark:border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-8 flex flex-col justify-between group hover:border-accent-primary/40 transition-colors">
+              <div className="absolute inset-0 backface-hidden rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] p-6 md:p-8 flex flex-col justify-between group hover:border-accent-primary/40 transition-colors">
+
                 
                 {/* Background Decor */}
                 <div className="absolute top-0 right-0 w-64 h-64 bg-accent-primary/10 rounded-full blur-[80px] -z-10" />
                 
-                <div className="flex justify-between items-start z-10">
-                  <div className="flex-1 pr-6">
-                    <div className="text-accent-primary font-mono text-[10px] tracking-[0.2em] uppercase mb-4 font-bold">
-                      Agency Identity Card
+                <div className="flex justify-between items-start z-10 w-full">
+                  <div className="flex-1">
+                    {/* Smart Chip (Golden) */}
+                    <div className="w-12 h-9 rounded-md border border-white/30 overflow-hidden opacity-90 shadow-lg mb-6" style={{ background: 'linear-gradient(135deg, #FFD700 0%, #D4AF37 100%)' }}>
+                       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, #000 4px, #000 8px)' }} />
+                       <div className="absolute top-1/2 left-0 w-full h-[1px] bg-black/30" />
+                       <div className="absolute top-0 left-1/2 w-[1px] h-full bg-black/30" />
                     </div>
-                    <h3 className="text-4xl font-display font-bold leading-none mb-2 text-gray-900 dark:text-white">Nexora<br/>Studio</h3>
-                    <p className="text-gray-600 dark:text-gray-400 font-mono text-sm mt-2">&lt;Digital Craftsmen /&gt;</p>
-                    
-                    {/* Abstract Barcode */}
-                    <div className="mt-5 w-24 h-4 opacity-40" style={{ background: 'repeating-linear-gradient(90deg, #fff 0, #fff 2px, transparent 2px, transparent 4px, #fff 4px, #fff 5px, transparent 5px, transparent 8px, #fff 8px, #fff 12px, transparent 12px, transparent 15px)' }} />
+
+                    <h3 className="text-3xl md:text-4xl font-display font-bold leading-none mb-2 text-gray-900 dark:text-white">Nexora<br/>Studio</h3>
+                    <p className="text-gray-600 dark:text-gray-400 font-mono text-xs md:text-sm mt-1">&lt;Digital Craftsmen /&gt;</p>
                   </div>
 
-                  {/* Logo Avatar */}
-                  <div className="w-24 h-24 shrink-0 rounded-2xl border border-black/20 dark:border-white/20 p-2 relative z-10 bg-black/50 backdrop-blur-md shadow-xl">
-                    <Logo />
+                  <div className="flex flex-col items-end gap-4">
+                    <div className="text-accent-primary font-mono text-[9px] md:text-[10px] tracking-[0.2em] uppercase font-bold text-right">
+                      Agency Identity Card
+                    </div>
+                    {/* Logo Avatar */}
+                    <div className="w-20 h-20 md:w-24 md:h-24 shrink-0 rounded-2xl border border-white/10 p-2 bg-black/50 backdrop-blur-md shadow-xl">
+                      <Logo />
+                    </div>
                   </div>
                 </div>
+
 
                 {/* Decorative Text */}
                 <div className="absolute right-[-5%] bottom-[-15%] text-[8rem] font-black text-white/[0.02] leading-none pointer-events-none font-display select-none">
                   AGENCY
                 </div>
 
-                {/* Smart Chip (Golden) */}
-                <div className="absolute top-10 right-36 w-12 h-9 rounded-md border border-white/30 overflow-hidden opacity-90 z-10 shadow-lg" style={{ background: 'linear-gradient(135deg, #FFD700 0%, #D4AF37 100%)' }}>
-                   <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 4px, #000 4px, #000 8px)' }} />
-                   <div className="absolute top-1/2 left-0 w-full h-[1px] bg-black/30" />
-                   <div className="absolute top-0 left-1/2 w-[1px] h-full bg-black/30" />
-                </div>
+                {/* Abstract Barcode */}
+                <div className="mt-4 w-32 h-6 opacity-30 z-10" style={{ background: 'repeating-linear-gradient(90deg, #fff 0, #fff 2px, transparent 2px, transparent 4px, #fff 4px, #fff 5px, transparent 5px, transparent 8px, #fff 8px, #fff 12px, transparent 12px, transparent 15px)' }} />
+
+
+
 
                 <div className="flex justify-between items-end z-10">
                   <div className="flex items-center gap-2 text-[10px] text-white/50 uppercase tracking-widest font-mono">
@@ -119,10 +127,12 @@ export default function About() {
               </div>
 
               {/* Back of Card */}
-              <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-3xl bg-[#0a0a0a] border border-black/10 dark:border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col">
+              <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-3xl bg-[#0a0a0a] border border-white/10 overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex flex-col">
+
                 
                 {/* Magnetic Stripe */}
-                <div className="w-full h-14 bg-gradient-to-r from-[#000] via-[#111] to-[#000] mt-8 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.05),_0_3px_5px_rgba(0,0,0,0.5)] z-10" />
+                <div className="w-full h-10 md:h-14 bg-gradient-to-r from-[#000] via-[#111] to-[#000] mt-6 md:mt-8 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.05),_0_3px_5px_rgba(0,0,0,0.5)] z-10" />
+
 
                 <div className="flex flex-1 p-6 items-center">
                   {/* Left QR */}
@@ -138,8 +148,9 @@ export default function About() {
                         <a href="mailto:nexoraa.works@gmail.com?subject=Professional Project Inquiry - Nexora Studio" className="bg-accent-blue text-white text-[10px] font-bold py-1.5 px-4 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>Email</a>
                       </div>
                     </div>
-                    <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-3 text-center">Scan or<br/>Hover</span>
+                    <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-2 text-center leading-tight">Scan or<br/>Hover</span>
                   </div>
+
 
                   {/* Right Details */}
                   <div className="w-2/3 pl-6 flex flex-col justify-center">
