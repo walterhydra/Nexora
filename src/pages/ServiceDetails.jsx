@@ -14,6 +14,8 @@ export default function ServiceDetails() {
   const navigate = useNavigate();
   const service = services.find(s => s.slug === slug);
   const containerRef = useRef(null);
+  const [showOptions, setShowOptions] = useState(false);
+  const [copied, setCopied] = useState(false);
   
   // Removed mouse tracking state to prevent full-component re-renders on every mouse move, which causes severe lag.
 
@@ -77,7 +79,7 @@ export default function ServiceDetails() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:64px_64px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_10%,transparent_100%)] pointer-events-none z-0" />
 
       {/* Navigation Bar */}
-      <div className="fixed top-0 left-0 w-full z-50 p-6 mix-blend-difference text-white">
+      <div className="fixed top-0 left-0 w-full z-50 p-6 text-white">
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -205,19 +207,46 @@ export default function ServiceDetails() {
                   </div>
 
                   <div className="flex flex-col gap-3 mb-8">
-                    <a 
-                      href={`https://wa.me/917567097891?text=Hello! I am interested in your ${service.title} service.`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="relative w-full py-4 bg-[#00F5FF] text-black font-bold rounded-xl flex items-center justify-center gap-2 overflow-hidden shadow-[0_0_20px_rgba(0,245,255,0.2)] hover:shadow-[0_0_40px_rgba(0,245,255,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
-                    >
-                      <span className="relative z-10 flex items-center gap-2">
-                        Secure Booking
-                        <Rocket size={16} />
-                      </span>
-                      {/* Shine effect */}
-                      <div className="absolute inset-0 bg-white/20 translate-x-[-100%] hover:animate-[shimmer_1.5s_infinite]" />
-                    </a>
+                    {!showOptions ? (
+                      <button 
+                        onClick={() => setShowOptions(true)}
+                        className="relative w-full py-4 bg-[#00F5FF] text-black font-bold rounded-xl flex items-center justify-center gap-2 overflow-hidden shadow-[0_0_20px_rgba(0,245,255,0.2)] hover:shadow-[0_0_40px_rgba(0,245,255,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                      >
+                        <span className="relative z-10 flex items-center gap-2">
+                          Secure Booking
+                          <Rocket size={16} />
+                        </span>
+                        {/* Shine effect */}
+                        <div className="absolute inset-0 bg-white/20 translate-x-[-100%] hover:animate-[shimmer_1.5s_infinite]" />
+                      </button>
+                    ) : (
+                      <div className="flex flex-col gap-3 w-full">
+                        <a 
+                          href={`https://wa.me/917383303388?text=Hello! I am interested in your ${service.title} service.`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="relative w-full py-4 bg-[#00F5FF] text-black font-bold rounded-xl flex items-center justify-center gap-2 overflow-hidden shadow-[0_0_20px_rgba(0,245,255,0.2)] hover:shadow-[0_0_40px_rgba(0,245,255,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
+                        >
+                          <span className="relative z-10 flex items-center gap-2">
+                            Book via WhatsApp
+                          </span>
+                        </a>
+                        <button 
+                          onClick={() => {
+                            window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=Inquiry%20about%20${encodeURIComponent(service.title)}`, '_blank');
+                          }}
+                          className="relative w-full py-4 bg-transparent overflow-hidden rounded-xl border border-white/10 text-white font-semibold flex items-center justify-center hover:border-white/30 transition-all"
+                        >
+                          <span className="relative z-10">Book via Email</span>
+                        </button>
+                        <button 
+                          onClick={() => setShowOptions(false)}
+                          className="text-xs text-gray-500 hover:text-white transition-colors text-center mt-1"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    )}
                     
                     <button className="relative w-full py-4 bg-transparent overflow-hidden rounded-xl border border-white/10 group/btn transition-all hover:border-white/30">
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover/btn:translate-x-[100%] transition-transform duration-700" />
