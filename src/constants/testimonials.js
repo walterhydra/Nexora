@@ -6,7 +6,8 @@ export const testimonials = [
     role: "E-commerce Founder",
     rating: 5,
     initials: "RK",
-    company: "ShopSprint"
+    company: "ShopSprint",
+    impact: "6-Day Launch"
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ export const testimonials = [
     role: "Startup CEO",
     rating: 5,
     initials: "NP",
-    company: "NovaBrand"
+    company: "NovaBrand",
+    impact: "Live Dev Sync"
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ export const testimonials = [
     role: "D2C Brand Owner",
     rating: 5,
     initials: "AT",
-    company: "LocalEats"
+    company: "LocalEats",
+    impact: "Full Brand MVP"
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ export const testimonials = [
     role: "Operations Manager",
     rating: 5,
     initials: "SL",
-    company: "AutoFlow"
+    company: "AutoFlow",
+    impact: "15h/wk Saved"
   },
   {
     id: 5,
@@ -42,7 +46,8 @@ export const testimonials = [
     role: "Fitness Instructor",
     rating: 5,
     initials: "VS",
-    company: "GymPro"
+    company: "GymPro",
+    impact: "Cross-Platform"
   },
   {
     id: 6,
@@ -51,6 +56,7 @@ export const testimonials = [
     role: "Marketing Director",
     rating: 5,
     initials: "ER",
-    company: "FinTrack"
+    company: "FinTrack",
+    impact: "+240% Conversion"
   }
 ];
