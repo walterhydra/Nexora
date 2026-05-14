@@ -92,9 +92,14 @@ const JoinCard = () => (
       We're always looking for brilliant minds to join our journey.
     </p>
 
-    <button className="relative z-10 px-6 py-2 rounded-full border border-accent-primary/30 text-accent-primary text-sm font-medium hover:bg-accent-primary hover:text-white transition-all duration-300">
-      View Openings
-    </button>
+    <a 
+      href="https://docs.google.com/forms/d/e/1FAIpQLSdidHkbq3NCY6IJnU1GBXKP4OewGjOeiWiImG2BF21gZtEnlw/viewform?usp=header" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="relative z-10 px-6 py-2 rounded-full border border-accent-primary/30 text-accent-primary text-sm font-medium hover:bg-accent-primary hover:text-white transition-all duration-300"
+    >
+      Apply Now
+    </a>
   </motion.div>
 );
 
