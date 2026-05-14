@@ -33,14 +33,21 @@ const MemberCard = ({ member, index }) => {
       transition={{ delay: index * 0.1 + 0.2 }}
       className="glass rounded-2xl p-6 flex flex-col items-center group relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-accent-primary/5 opacity-40 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-accent-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Specialty Badge on Hover */}
+      <div className="absolute top-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-2 group-hover:translate-y-0">
+        <span className="px-2 py-1 rounded-md bg-accent-primary/10 text-accent-primary text-[10px] font-bold uppercase tracking-wider border border-accent-primary/20 backdrop-blur-md">
+          {member.specialty}
+        </span>
+      </div>
 
-      <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-accent-primary/30 transition-colors duration-500 relative z-10 flex items-center justify-center bg-black/5 dark:bg-white/5">
+      <div className="w-32 h-32 rounded-full overflow-hidden mb-6 border-2 border-accent-primary/30 group-hover:border-accent-primary transition-colors duration-500 relative z-10 flex items-center justify-center bg-black/5 dark:bg-white/5 shadow-xl group-hover:shadow-accent-primary/20">
         {!imageError ? (
           <img
             src={member.image}
             alt={member.name}
-            className={`w-full h-full object-cover transition-all duration-500 ${member.imageClass || 'object-center'}`}
+            className={`w-full h-full object-cover transition-all duration-700 group-hover:scale-110 ${member.imageClass || 'object-center'}`}
             onError={() => setImageError(true)}
           />
         ) : (
@@ -50,18 +57,47 @@ const MemberCard = ({ member, index }) => {
         )}
       </div>
 
-      <h3 className="w-full text-center text-xl font-bold text-gray-900 dark:text-white mb-2 relative z-10">{member.name}</h3>
-      <p className="w-full text-center text-accent-primary mb-6 relative z-10 font-medium">{member.role}</p>
+      <h3 className="w-full text-center text-xl font-bold text-gray-900 dark:text-white mb-1 relative z-10 transition-colors group-hover:text-accent-primary">{member.name}</h3>
+      <p className="w-full text-center text-gray-500 dark:text-gray-400 mb-6 relative z-10 text-sm font-medium uppercase tracking-widest">{member.role}</p>
 
-      <div className="flex gap-4 relative z-10">
-        <a href={member.links.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-          <LinkedinIcon className="w-5 h-5" />
+      <div className="flex gap-4 relative z-10 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+        <a href={member.links.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full glass hover:bg-accent-primary hover:text-white transition-all text-gray-600 dark:text-gray-400">
+          <LinkedinIcon className="w-4 h-4" />
         </a>
-        <a href={member.links.github} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-          <GithubIcon className="w-5 h-5" />
+        <a href={member.links.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full glass hover:bg-accent-primary hover:text-white transition-all text-gray-600 dark:text-gray-400">
+          <GithubIcon className="w-4 h-4" />
         </a>
       </div>
     </motion.div>
+  );
+};
+
+const TeamMarquee = () => {
+  const items = [
+    "DRIVEN BY CODE", "DESIGN OBSESSED", "COFFEE POWERED", "REMOTE FIRST", 
+    "CLIENT FOCUSED", "INNOVATION DRIVEN", "PIXEL PERFECT", "FUTURE READY"
+  ];
+  
+  return (
+    <div className="w-full overflow-hidden py-12 border-y border-border-color/30 mt-24 relative bg-bg-secondary/30 backdrop-blur-sm">
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-bg-primary to-transparent z-10" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-bg-primary to-transparent z-10" />
+      
+      <motion.div 
+        animate={{ x: [0, -1000] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        className="flex whitespace-nowrap gap-16 items-center"
+      >
+        {[...items, ...items].map((item, index) => (
+          <div key={index} className="flex items-center gap-16">
+            <span className="text-3xl md:text-5xl font-display font-black text-gray-300/20 dark:text-white/5 uppercase tracking-tighter">
+              {item}
+            </span>
+            <div className="w-3 h-3 rounded-full bg-accent-primary/20" />
+          </div>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 
@@ -149,8 +185,11 @@ export default function Team() {
           </div>
         </div>
 
+        {/* New Team DNA Marquee */}
+        <TeamMarquee />
+
         {/* Team Stats */}
-        <div className="mt-32 pt-16 border-t border-border-color flex flex-wrap justify-around gap-12 text-center">
+        <div className="mt-24 pt-16 border-t border-border-color flex flex-wrap justify-around gap-12 text-center">
           {teamStats.map((stat, index) => (
             <motion.div
               key={stat.label}
