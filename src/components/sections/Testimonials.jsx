@@ -4,7 +4,27 @@ import { testimonials } from '../../constants/testimonials';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import GlowCard from '../ui/GlowCard';
 import MarqueeStrip from '../layout/MarqueeStrip';
-import { Quote, Star, ArrowRight } from 'lucide-react';
+import { Quote, Star, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+const ClientVoiceVisualizer = () => (
+  <div className="flex gap-[2px] items-center h-4">
+    {[...Array(5)].map((_, i) => (
+      <motion.div
+        key={i}
+        animate={{
+          height: [4, 12, 4, 8, 4],
+        }}
+        transition={{
+          duration: 1.5,
+          repeat: Infinity,
+          delay: i * 0.1,
+          ease: "easeInOut",
+        }}
+        className="w-[2px] bg-accent-primary/40 rounded-full"
+      />
+    ))}
+  </div>
+);
 
 const TrustSummary = () => {
   const stats = [
@@ -21,63 +41,16 @@ const TrustSummary = () => {
       className="flex flex-wrap justify-center gap-8 md:gap-20 mb-20 px-6"
     >
       {stats.map((stat, idx) => (
-        <div key={idx} className="flex flex-col items-center group relative">
-          {/* Pulse Effect for the first stat */}
-          {idx === 0 && (
-            <div className="absolute -top-1 -right-4 flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-accent-primary"></span>
-            </div>
-          )}
-          <div className="text-3xl md:text-5xl font-display font-black text-gray-900 dark:text-white mb-1 group-hover:text-accent-primary transition-all duration-500 group-hover:scale-110">
+        <div key={idx} className="flex flex-col items-center group">
+          <div className="text-3xl md:text-4xl font-display font-black text-gray-900 dark:text-white mb-1 group-hover:text-accent-primary transition-colors">
             {stat.value}
           </div>
-          <div className="text-[10px] md:text-xs uppercase tracking-[0.4em] text-gray-500 dark:text-gray-400 font-bold">
+          <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-gray-500 dark:text-gray-400 font-bold">
             {stat.label}
           </div>
-          <div className="w-8 h-1.5 bg-accent-primary/20 rounded-full mt-4 group-hover:w-16 group-hover:bg-accent-primary transition-all duration-500" />
+          <div className="w-8 h-1 bg-accent-primary/20 rounded-full mt-3 group-hover:w-12 group-hover:bg-accent-primary transition-all" />
         </div>
       ))}
-    </motion.div>
-  );
-};
-
-const SpotlightTestimonial = () => {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, scale: 0.95 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      className="max-w-4xl mx-auto mt-24 mb-12 p-8 md:p-16 glass rounded-[2.5rem] border border-accent-primary/20 relative overflow-hidden text-center group"
-    >
-      <div className="absolute inset-0 bg-gradient-to-br from-accent-primary/5 to-accent-violet/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-      <Quote className="absolute -top-10 -left-10 w-48 h-48 text-accent-primary/5 rotate-12 group-hover:rotate-0 transition-transform duration-1000" />
-      
-      <div className="relative z-10">
-        <div className="flex justify-center gap-1.5 mb-10">
-          {[1,2,3,4,5].map(i => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: i * 0.1 }}
-            >
-              <Star size={24} className="fill-yellow-400 text-yellow-400 drop-shadow-[0_0_8px_rgba(250,204,21,0.4)]" />
-            </motion.div>
-          ))}
-        </div>
-        <h3 className="text-2xl md:text-4xl font-display font-medium leading-tight mb-10 text-gray-900 dark:text-white">
-          "Nexora didn't just build a website; they architected a <span className="text-gradient font-black">Growth Engine</span> that fundamentally changed our business trajectory."
-        </h3>
-        <div className="flex flex-col items-center">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-accent-primary to-accent-violet p-1 mb-4 shadow-2xl relative">
-             <div className="w-full h-full rounded-full bg-bg-primary flex items-center justify-center font-black text-2xl text-gradient">JD</div>
-             <div className="absolute -bottom-1 -right-1 bg-green-500 w-5 h-5 rounded-full border-4 border-bg-primary" />
-          </div>
-          <div className="font-black text-xl text-gray-900 dark:text-white tracking-tight">James Dalton</div>
-          <div className="text-accent-primary text-xs uppercase tracking-[0.3em] font-black mt-1">Chief Tech Officer @ FutureScale</div>
-        </div>
-      </div>
     </motion.div>
   );
 };
@@ -99,14 +72,15 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
         {[...items, ...items, ...items, ...items].map((testimonial, idx) => (
           <div key={`${testimonial.id}-${idx}`} className="w-[350px] md:w-[450px] h-full whitespace-normal">
             <GlowCard className="p-8 h-full flex flex-col justify-between group relative overflow-hidden">
-              {/* Impact Badge */}
-              {testimonial.impact && (
-                <div className="absolute top-6 right-6 z-20">
+              {/* Top Bar: Impact & Voice */}
+              <div className="flex justify-between items-start mb-6">
+                <ClientVoiceVisualizer />
+                {testimonial.impact && (
                   <span className="px-3 py-1 rounded-full bg-accent-primary/10 text-accent-primary text-[10px] font-bold uppercase tracking-wider border border-accent-primary/20 backdrop-blur-md group-hover:bg-accent-primary group-hover:text-white transition-all duration-300">
                     {testimonial.impact}
                   </span>
-                </div>
-              )}
+                )}
+              </div>
 
               <div>
                 <Quote className="text-accent-blue/20 w-10 h-10 mb-6 group-hover:text-accent-primary/40 transition-colors" />
@@ -122,7 +96,10 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
                     <span className="relative z-10">{testimonial.initials}</span>
                   </div>
                   <div className="min-w-0">
-                    <h4 className="font-bold text-base text-gray-900 dark:text-white truncate group-hover:text-accent-primary transition-colors">{testimonial.author}</h4>
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <h4 className="font-bold text-base text-gray-900 dark:text-white truncate group-hover:text-accent-primary transition-colors">{testimonial.author}</h4>
+                      <CheckCircle2 size={14} className="text-accent-blue fill-accent-blue/10" />
+                    </div>
                     <p className="text-xs text-gray-500 dark:text-gray-400 font-bold uppercase tracking-wider opacity-60 truncate">{testimonial.role}</p>
                   </div>
                 </div>
@@ -203,9 +180,6 @@ export default function Testimonials() {
           </div>
           <MarqueeRow items={row2} direction="right" speed={60} />
         </div>
-
-        {/* New Spotlight Testimonial Hero */}
-        <SpotlightTestimonial />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-20">
@@ -213,7 +187,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-12 text-center"
+          className="mt-20 text-center"
         >
           <a href="#" className="group relative inline-flex items-center gap-3 px-10 py-5 bg-white dark:bg-black text-black dark:text-white font-bold uppercase tracking-widest text-xs border border-black/10 dark:border-white/10 overflow-hidden transition-all duration-500 hover:border-accent-primary">
             <div className="absolute inset-0 w-1 bg-accent-primary transition-all duration-500 group-hover:w-full -z-0 opacity-10" />
