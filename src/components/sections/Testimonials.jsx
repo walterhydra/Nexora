@@ -4,7 +4,7 @@ import { testimonials } from '../../constants/testimonials';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import GlowCard from '../ui/GlowCard';
 import MarqueeStrip from '../layout/MarqueeStrip';
-import { Quote, Star } from 'lucide-react';
+import { Quote, Star, ArrowRight } from 'lucide-react';
 
 const TrustSummary = () => {
   const stats = [
