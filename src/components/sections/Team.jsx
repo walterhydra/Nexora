@@ -42,13 +42,21 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
 
   return (
     <motion.div
+      layout
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      className="relative h-full flex-1 min-w-[60px] md:min-w-[80px] transition-all duration-700 ease-[0.16,1,0.3,1] border-r border-white/10 group cursor-pointer overflow-hidden"
-      style={{
+      className="relative h-full min-w-[60px] md:min-w-[80px] border-r border-white/10 group cursor-pointer overflow-hidden"
+      animate={{
         flex: isActive ? (window.innerWidth > 768 ? 6 : 10) : 1,
         backgroundColor: isActive ? darkColor : '#0a0a0a'
       }}
+      transition={{ 
+        type: "spring", 
+        stiffness: 150, 
+        damping: 25,
+        mass: 0.5
+      }}
+      style={{ willChange: "flex, background-color" }}
     >
       {/* Background Image Overlay (only visible when expanded) */}
       <AnimatePresence>
@@ -106,7 +114,7 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-6xl md:text-8xl font-display font-black text-white mb-6 tracking-tighter"
+                  className="text-5xl md:text-7xl font-display font-black text-white mb-6 tracking-tighter"
                 >
                   {member.name}
                 </motion.h3>

@@ -1,7 +1,7 @@
 export const team = [
   {
     id: 1,
-    name: "Milan Pandavadra",
+    name: "Milan",
     role: "Founder & CEO",
     image: "/team/milan.png",
     specialty: "Full Stack Architect + Visionary",
@@ -82,7 +82,7 @@ export const team = [
     id: 8,
     name: "Join The Squad",
     role: "Open Positions",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
     specialty: "We're always looking for exceptional talent to join our remote-first team.",
     isCTA: true,
     links: {
