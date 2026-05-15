@@ -50,9 +50,9 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
         flex: isActive ? (window.innerWidth > 768 ? 6 : 10) : 1,
         backgroundColor: isActive ? darkColor : '#0a0a0a'
       }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 150, 
+      transition={{
+        type: "spring",
+        stiffness: 150,
         damping: 25,
         mass: 0.5
       }}
@@ -68,10 +68,10 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
             transition={{ duration: 1 }}
             className="absolute inset-0 z-0"
           >
-            <img 
-              src={member.image} 
-              alt="" 
-              className="w-full h-full object-cover" 
+            <img
+              src={member.image}
+              alt=""
+              className="w-full h-full object-cover"
             />
           </motion.div>
         )}
@@ -100,7 +100,7 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
             >
               {/* Info Side */}
               <div className="flex flex-col justify-center max-w-lg">
-                <motion.span 
+                <motion.span
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
@@ -109,8 +109,8 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
                 >
                   {(index + 1).toString().padStart(2, '0')} — Core Member
                 </motion.span>
-                
-                <motion.h3 
+
+                <motion.h3
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
@@ -119,7 +119,7 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
                   {member.name}
                 </motion.h3>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
@@ -129,17 +129,17 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
                   <p className="text-lg text-gray-400 font-medium max-w-sm leading-relaxed">{member.specialty}</p>
                 </motion.div>
 
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.6 }}
                   className="flex gap-8 mt-12"
                 >
                   {member.isCTA ? (
-                    <a 
-                      href={member.links.apply} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={member.links.apply}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="group/btn relative px-8 py-4 bg-white text-black font-display font-bold text-lg rounded-full overflow-hidden hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)]"
                     >
                       <span className="relative z-10 flex items-center gap-2">
@@ -170,15 +170,15 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
                 </motion.div>
               </div>
 
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.8, rotate: -5 }}
                 animate={{ opacity: 1, scale: 1, rotate: 0 }}
                 transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.4 }}
                 className="hidden lg:block w-[400px] h-[500px] relative rounded-2xl overflow-hidden shadow-2xl"
               >
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
+                <img
+                  src={member.image}
+                  alt={member.name}
                   className="w-full h-full object-cover"
                 />
               </motion.div>
@@ -196,25 +196,20 @@ export default function Team() {
   return (
     <section className="h-screen bg-bg-primary overflow-hidden flex flex-col" id="team">
       <div className="max-w-7xl mx-auto px-6 py-12 flex-shrink-0">
-        <div className="flex flex-col md:flex-row items-end justify-between gap-8">
-          <div>
-            <motion.div
-              initial={{ opacity: 0, width: 0 }}
-              whileInView={{ opacity: 1, width: "4rem" }}
-              viewport={{ once: true }}
-              className="h-1 bg-gradient-to-r from-accent-primary to-accent-violet mb-6"
-            />
-            <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tight">
-              Our <span className="text-gradient">Team</span>
-            </h2>
-          </div>
-          <p className="text-gray-400 max-w-sm text-lg font-medium leading-relaxed">
-            A collective of digital craftsmen building the next generation of web experiences.
-          </p>
+        <div className="flex flex-col items-center text-center">
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: "4rem" }}
+            viewport={{ once: true }}
+            className="h-1 bg-gradient-to-r from-accent-primary to-accent-violet mb-6"
+          />
+          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tight">
+            Meet <span className="text-gradient">Nexora's Team</span>
+          </h2>
         </div>
       </div>
 
-      <div 
+      <div
         className="flex-1 flex w-full border-t border-white/10 overflow-hidden"
         onMouseLeave={() => setActiveMember(null)}
       >
