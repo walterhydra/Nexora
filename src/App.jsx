@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
@@ -18,10 +18,10 @@ import BackToTop from './components/ui/BackToTop';
 import CookieBanner from './components/ui/CookieBanner';
 import LoadingScreen from './components/ui/LoadingScreen';
 
-// Lazy Loaded Pages
-const Home = lazy(() => import('./pages/Home'));
-const ServiceDetails = lazy(() => import('./pages/ServiceDetails'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+// Pages
+import Home from './pages/Home';
+import ServiceDetails from './pages/ServiceDetails';
+import NotFound from './pages/NotFound';
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -35,15 +35,12 @@ import { useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
 function AnimatedRoutes() {
-  const location = useLocation();
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<Home />} />
-        <Route path="/service/:slug" element={<ServiceDetails />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </AnimatePresence>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/service/:slug" element={<ServiceDetails />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
@@ -66,9 +63,7 @@ function AppContent() {
       <ContextCursor />
       <Navbar />
       
-      <Suspense fallback={<PageLoader />}>
-        <AnimatedRoutes />
-      </Suspense>
+      <AnimatedRoutes />
 
       <Footer />
       <WhatsAppButton />

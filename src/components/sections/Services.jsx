@@ -5,10 +5,7 @@ import { ArrowRight } from 'lucide-react';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import { services } from '../../constants/services';
 
-// Preload function for the lazy-loaded ServiceDetails component
-const preloadServiceDetails = () => {
-  import('../../pages/ServiceDetails');
-};
+
 
 const ServiceRow = ({ service, index, hoveredIndex, setHoveredIndex }) => {
   const isHovered = hoveredIndex === index;
@@ -29,7 +26,6 @@ const ServiceRow = ({ service, index, hoveredIndex, setHoveredIndex }) => {
       className="relative border-b border-gray-200 dark:border-white/10 py-6 lg:py-8 cursor-pointer transition-colors duration-500 group"
       onMouseEnter={() => {
         setHoveredIndex(index);
-        preloadServiceDetails();
       }}
       onMouseLeave={() => setHoveredIndex(null)}
       onMouseMove={handleMouseMove}

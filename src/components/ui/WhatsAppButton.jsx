@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function WhatsAppButton() {
   const whatsappNumber = "917567097891";
-  const message = "Hello Milan! I am interested in collaborating with Nexora Studio.";
+  const message = "Hey Milan! 🚀 I'm looking to build and scale a premium project, and would love to collaborate with Nexora Studio. Let's connect!";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
   return (

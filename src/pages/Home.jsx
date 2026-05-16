@@ -40,8 +40,8 @@ export default function Home() {
     <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.25, ease: "easeOut" }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.12, ease: "easeOut" }}
       className="relative"
     >
       {/* Cinematic Noise Layer */}
@@ -61,7 +61,6 @@ export default function Home() {
         <HowWeWork />
         <Configurator />
         <Pricing />
-        <Testimonials />
         <KineticManifesto />
         <TerminalFAQ />
         <BlogTeaser />

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import toast from 'react-hot-toast';
 
 export default function About() {
   const [isFlipped, setIsFlipped] = useState(false);
@@ -47,7 +48,18 @@ export default function About() {
               </div>
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Email</div>
-                <div className="text-gray-900 dark:text-white font-medium"><a href="mailto:nexoraa.works@gmail.com" className="hover:text-accent-blue transition-colors">nexoraa.works@gmail.com</a></div>
+                <div className="text-gray-900 dark:text-white font-medium">
+                  <a 
+                    href="mailto:nexoraa.works@gmail.com" 
+                    onClick={() => {
+                      navigator.clipboard.writeText("nexoraa.works@gmail.com");
+                      toast.success("Email copied to clipboard! Opening mail client...");
+                    }}
+                    className="hover:text-accent-blue transition-colors"
+                  >
+                    nexoraa.works@gmail.com
+                  </a>
+                </div>
               </div>
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Based in</div>
@@ -139,13 +151,13 @@ export default function About() {
                   <div className="w-1/3 flex flex-col items-center justify-center border-r border-black/10 dark:border-white/10 pr-6">
                     <div className="bg-white p-2 rounded-xl relative group">
                       <img 
-                        src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://wa.me/917383303388?text=Hello Nexora Studio! I am interested in collaborating on a professional project.")}`} 
+                        src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://wa.me/917383303388?text=Hey Nexora! 🚀 I'm looking to build and scale a premium project and would love to collaborate with your team. Let's start something epic!")}`} 
                         alt="Scan for WhatsApp" 
                         className="w-24 h-24 rounded-lg mix-blend-multiply transition-opacity duration-300 group-hover:opacity-10"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <a href="https://wa.me/917383303388?text=Hello%20Nexora%20Studio!%20I%20am%20interested%20in%20collaborating%20on%20a%20professional%20project." target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white text-[10px] font-bold py-1.5 px-3 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>WhatsApp</a>
-                        <a href="mailto:nexoraa.works@gmail.com?subject=Professional Project Inquiry - Nexora Studio" className="bg-accent-blue text-white text-[10px] font-bold py-1.5 px-4 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>Email</a>
+                        <a href={`https://wa.me/917383303388?text=${encodeURIComponent("Hey Nexora! 🚀 I'm looking to build and scale a premium project and would love to collaborate with your team. Let's start something epic!")}`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white text-[10px] font-bold py-1.5 px-3 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>WhatsApp</a>
+                        <a href={`mailto:nexoraa.works@gmail.com?subject=${encodeURIComponent("Elite Collaboration: Nexora Studio Project")}&body=${encodeURIComponent("Hey Nexora Team! 🚀\n\nI'm looking to build and scale a premium project and would love to partner with Nexora Studio.\n\nLet's connect and discuss how we can build something epic together!\n\nBest regards,\n[Your Name]")}`} className="bg-accent-blue text-white text-[10px] font-bold py-1.5 px-4 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>Email</a>
                       </div>
                     </div>
                     <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-2 text-center leading-tight">Scan or<br/>Hover</span>

@@ -11,43 +11,55 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Make sure to add these to .env:
-    // VITE_EMAILJS_SERVICE_ID
-    // VITE_EMAILJS_TEMPLATE_ID
-    // VITE_EMAILJS_PUBLIC_KEY
-    
-    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+    try {
+      const formData = new FormData(formRef.current);
+      const payload = {
+        name: formData.get('user_name'),
+        email: formData.get('user_email'),
+        budget: formData.get('budget') || 'Not Specified',
+        message: formData.get('message'),
+        _subject: `Elite Project Inquiry: ${formData.get('user_name')}`
+      };
 
-    if (!serviceId || !templateId || !publicKey) {
-      // Fallback if env vars are missing during dev
-      setTimeout(() => {
+      const response = await fetch("https://formsubmit.co/ajax/nexoraa.works@gmail.com", {
+        method: "POST",
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
         setIsSubmitting(false);
         setIsSuccess(true);
-        toast.success("Message sent successfully (Dev Mode)!");
+        toast.success("Message sent successfully! We'll be in touch soon.");
         formRef.current.reset();
-      }, 1500);
-      return;
-    }
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      console.error("Form submit error, using mailto fallback:", error);
+      setIsSubmitting(false);
+      toast.success("Opening default mail application with your inquiry details...");
 
-    emailjs.sendForm(serviceId, templateId, formRef.current, publicKey)
-      .then((result) => {
-          setIsSubmitting(false);
-          setIsSuccess(true);
-          toast.success("Message sent successfully! We'll be in touch soon.");
-          formRef.current.reset();
-          
-          setTimeout(() => setIsSuccess(false), 5000);
-      }, (error) => {
-          setIsSubmitting(false);
-          toast.error("Oops! Something went wrong. Please try again.");
-          console.error(error.text);
-      });
+      // Absolute bulletproof fallback: open email client pre-filled with form contents
+      const name = formRef.current.user_name.value;
+      const email = formRef.current.user_email.value;
+      const budget = formRef.current.budget.value || 'Not Specified';
+      const msg = formRef.current.message.value;
+
+      const subject = `Elite Project Inquiry - Nexora Studio`;
+      const body = `Hey Nexora Team! 🚀\n\nI just filled out the contact form on your website with the following details:\n\n- Name: ${name}\n- Email: ${email}\n- Budget Range: ${budget}\n\nProject Brief:\n${msg}\n\nLet's connect soon!\n\nBest regards,\n${name}`;
+
+      window.location.href = `mailto:nexoraa.works@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      formRef.current.reset();
+    }
   };
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
@@ -77,7 +89,14 @@ export default function Contact() {
             </motion.p>
 
             <motion.div variants={fadeUp} className="space-y-6">
-              <a href="mailto:nexoraa.works@gmail.com" className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group">
+              <a 
+                href="mailto:nexoraa.works@gmail.com" 
+                onClick={() => {
+                  navigator.clipboard.writeText("nexoraa.works@gmail.com");
+                  toast.success("Email copied to clipboard! Opening mail client...");
+                }}
+                className="flex items-center gap-4 text-lg hover:text-accent-blue transition-colors group"
+              >
                 <div className="w-12 h-12 rounded-full glass flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-5 h-5 text-gray-400 group-hover:text-accent-blue" />
                 </div>
