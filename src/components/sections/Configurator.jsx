@@ -77,7 +77,7 @@ export default function Configurator() {
   };
 
   return (
-    <section className="py-24 px-6 relative bg-black border-y border-white/5">
+    <section id="configurator" className="py-24 px-6 relative bg-black border-y border-white/5">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,_rgba(255,255,255,0.03),_transparent_50%)]" />
       
       <div className="max-w-6xl mx-auto relative z-10">
