@@ -36,7 +36,7 @@ const darkBgColors = [
   '#164e63'  // dark cyan
 ];
 
-const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => {
+const TeamMember = ({ member, index, isActive, isHiddenOnMobile, onInteraction, onMouseEnter }) => {
   const colorHex = hexColors[index % hexColors.length];
   const darkColor = darkBgColors[index % darkBgColors.length];
 
@@ -44,8 +44,8 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
     <motion.div
       layout
       onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      className="relative h-full min-w-[60px] md:min-w-[80px] border-r border-white/10 group cursor-pointer overflow-hidden"
+      onClick={onInteraction}
+      className={`relative w-full md:w-auto md:h-full min-h-[60px] md:min-h-0 min-w-[60px] md:min-w-[80px] border-b md:border-b-0 md:border-r border-white/10 group cursor-pointer overflow-hidden ${isHiddenOnMobile ? 'hidden md:block' : 'block'}`}
       animate={{
         flex: isActive ? (window.innerWidth > 768 ? 6 : 10) : 1,
         backgroundColor: isActive ? darkColor : '#0a0a0a'
@@ -80,9 +80,9 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
       <div className="relative z-10 h-full w-full flex flex-col md:flex-row items-center p-6 md:p-12">
         {/* Collapsed State: Vertical Text */}
         <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-500 ${isActive ? 'opacity-0' : 'opacity-100'}`}>
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-row md:flex-col items-center gap-4 md:gap-8">
             <span className="font-mono text-sm text-white/40">{(index + 1).toString().padStart(2, '0')}</span>
-            <span className="font-display font-black text-2xl uppercase tracking-widest whitespace-nowrap -rotate-90 origin-center text-white/20 group-hover:text-white/60 transition-colors">
+            <span className="font-display font-black text-xl md:text-2xl uppercase tracking-widest whitespace-nowrap md:-rotate-90 origin-center text-white/20 group-hover:text-white/60 transition-colors">
               {member.name.split(' ')[0]}
             </span>
           </div>
@@ -114,7 +114,7 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-5xl md:text-7xl font-display font-black text-white mb-6 tracking-tighter"
+                  className="text-4xl sm:text-5xl md:text-7xl font-display font-black text-white mb-6 tracking-tighter"
                 >
                   {member.name}
                 </motion.h3>
@@ -184,6 +184,19 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
               </motion.div>
             </motion.div>
           )}
+          
+          {/* Mobile close button when active */}
+          {isActive && (
+            <button 
+              onClick={(e) => { e.stopPropagation(); onInteraction(); }}
+              className="absolute top-4 right-4 md:hidden z-50 w-10 h-10 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white border border-white/20"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </button>
+          )}
         </AnimatePresence>
       </div>
     </motion.div>
@@ -203,25 +216,35 @@ export default function Team() {
             viewport={{ once: true }}
             className="h-1 bg-gradient-to-r from-accent-primary to-accent-violet mb-6"
           />
-          <h2 className="text-5xl md:text-7xl font-display font-bold tracking-tight">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold tracking-tight">
             Meet <span className="text-gradient">Nexora's Team</span>
           </h2>
         </div>
       </div>
 
       <div
-        className="flex-1 flex w-full border-t border-white/10 overflow-hidden"
-        onMouseLeave={() => setActiveMember(null)}
+        className="flex-1 flex flex-col md:flex-row w-full border-t border-white/10 overflow-hidden"
+        onMouseLeave={() => window.innerWidth > 768 && setActiveMember(null)}
       >
-        {team.map((member, index) => (
-          <TeamMember
-            key={member.name}
-            member={member}
-            index={index}
-            isActive={activeMember === index}
-            onMouseEnter={() => setActiveMember(index)}
-          />
-        ))}
+        {team.map((member, index) => {
+          const isActive = activeMember === index;
+          const isHiddenOnMobile = activeMember !== null && !isActive;
+
+          return (
+            <TeamMember
+              key={member.name}
+              member={member}
+              index={index}
+              isActive={isActive}
+              isHiddenOnMobile={isHiddenOnMobile}
+              onInteraction={() => {
+                if (activeMember === index) setActiveMember(null);
+                else setActiveMember(index);
+              }}
+              onMouseEnter={() => window.innerWidth > 768 && setActiveMember(index)}
+            />
+          );
+        })}
       </div>
     </section>
   );

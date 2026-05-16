@@ -70,7 +70,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
         }}
       >
         {[...items, ...items, ...items, ...items].map((testimonial, idx) => (
-          <div key={`${testimonial.id}-${idx}`} className="w-[350px] md:w-[450px] h-full whitespace-normal">
+          <div key={`${testimonial.id}-${idx}`} className="w-[85vw] sm:w-[350px] md:w-[450px] h-full whitespace-normal">
             <GlowCard className="p-8 h-full flex flex-col justify-between group relative overflow-hidden">
               {/* Top Bar: Impact & Voice */}
               <div className="flex justify-between items-start mb-6">
@@ -143,7 +143,7 @@ export default function Testimonials() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-5xl md:text-7xl font-display font-black mb-6 uppercase tracking-tighter"
+          className="text-4xl sm:text-5xl md:text-7xl font-display font-black mb-6 uppercase tracking-tighter"
         >
           Client <span className="text-gradient">Impact</span>
         </motion.h2>

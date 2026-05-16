@@ -160,7 +160,7 @@ export default function Hero() {
           <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-700 dark:text-gray-300">Accepting New Projects</span>
         </motion.div>
 
-        <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[8rem] font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -231,7 +231,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Sticky container that contains ONLY the laptop centerpiece */}
-      <div className="sticky top-[20vh] h-[80vh] w-full flex flex-col items-center justify-center overflow-hidden z-20 pointer-events-none mt-[460px]">
+      <div className="sticky top-[20vh] h-[80vh] w-full flex flex-col items-center justify-center overflow-hidden z-20 pointer-events-none mt-[45vh] sm:mt-[50vh] md:mt-[460px]">
         <div className="pointer-events-auto max-w-4xl w-full px-4 flex justify-center">
           <LaptopMockup scrollProgress={laptopProgress} onOpenComplete={setIsLaptopOpen}>
             <div className="w-full h-full flex bg-bg-tertiary">

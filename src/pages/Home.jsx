@@ -3,18 +3,10 @@ import { useLocation } from 'react-router-dom';
 import Hero from '../components/sections/Hero';
 import TrustBadges from '../components/sections/TrustBadges';
 import Services from '../components/sections/Services';
-import TechStack from '../components/sections/TechStack';
-import Work from '../components/sections/Work';
-import Stats from '../components/sections/Stats';
 import About from '../components/sections/About';
+
 import Team from '../components/sections/Team';
-import HowWeWork from '../components/sections/HowWeWork';
-import Testimonials from '../components/sections/Testimonials';
-import Pricing from '../components/sections/Pricing';
-import FAQ from '../components/sections/FAQ';
-import Newsletter from '../components/sections/Newsletter';
 import Contact from '../components/sections/Contact';
-import BlogTeaser from '../components/sections/BlogTeaser';
 
 import { motion } from 'framer-motion';
 
@@ -39,22 +31,27 @@ export default function Home() {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ duration: 0.25, ease: "easeOut" }}
+      className="relative"
     >
+      {/* Cinematic Noise Layer */}
+      <div className="noise-overlay" />
+
+      {/* Main Flow */}
       <Hero />
-      <TrustBadges />
-      <Services />
-      <TechStack />
-      <Work />
-      <Stats />
-      <About />
-      <Team />
-      <HowWeWork />
-      <Testimonials />
-      <Pricing />
-      <FAQ />
-      <Newsletter />
-      <Contact />
-      <BlogTeaser />
+      <div className="bg-[var(--bg-primary)]">
+         <TrustBadges />
+         <Services />
+         <About />
+
+         <Team />
+         <Contact />
+      </div>
+
+      {/* Background Ambience */}
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+         <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-white/[0.03] rounded-full blur-[120px]" />
+         <div className="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-white/[0.02] rounded-full blur-[120px]" />
+      </div>
     </motion.main>
   );
 }

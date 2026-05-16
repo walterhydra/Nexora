@@ -27,7 +27,7 @@ export default function About() {
         </div>
         
         {/* Title */}
-        <h2 className="text-5xl md:text-7xl font-display font-bold mb-16">
+        <h2 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-16">
           <span className="text-gray-900 dark:text-white">About </span>
           <span className="text-gradient">Nexora.</span>
         </h2>
@@ -40,7 +40,7 @@ export default function About() {
               <strong className="text-gray-900 dark:text-white">Premium Digital Agency and Technology Innovators</strong> with a passion for building impactful digital solutions. We specialize in <strong className="text-accent-blue">end-to-end development</strong>, <strong className="text-accent-secondary">stunning design</strong>, and <strong className="text-accent-primary">high-performance web apps</strong>. We thrive in fast-paced environments and are always eager to collaborate on meaningful projects that <strong className="text-gray-900 dark:text-white">solve real-world problems</strong>.
             </p>
             
-            <div className="grid grid-cols-2 gap-x-8 gap-y-6 pt-8 border-t border-black/10 dark:border-white/10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-6 pt-8 border-t border-black/10 dark:border-white/10">
               <div>
                 <div className="text-sm text-gray-500 dark:text-gray-400 mb-1 font-mono uppercase tracking-wider">Phone</div>
                 <div className="text-gray-900 dark:text-white font-medium">+91 7383303388</div>
@@ -64,7 +64,7 @@ export default function About() {
           </div>
 
           {/* Right Card (Business Card Style) */}
-          <div className="relative perspective-1000 w-full max-w-lg mx-auto aspect-[1.75/1]">
+          <div className="relative perspective-1000 w-full max-w-lg mx-auto aspect-[3/4] md:aspect-[1.75/1]">
 
             <div 
               className={`w-full h-full transition-all duration-700 preserve-3d cursor-pointer ${isFlipped ? 'rotate-y-180' : ''}`}
@@ -134,27 +134,26 @@ export default function About() {
                 <div className="w-full h-10 md:h-14 bg-gradient-to-r from-[#000] via-[#111] to-[#000] mt-6 md:mt-8 shadow-[inset_0_-1px_2px_rgba(255,255,255,0.05),_0_3px_5px_rgba(0,0,0,0.5)] z-10" />
 
 
-                <div className="flex flex-1 p-6 items-center">
+                <div className="flex flex-col md:flex-row flex-1 p-6 items-center justify-center gap-4 md:gap-0">
                   {/* Left QR */}
-                  <div className="w-1/3 flex flex-col items-center justify-center border-r border-black/10 dark:border-white/10 pr-6">
+                  <div className="w-full md:w-1/3 flex flex-row md:flex-col items-center justify-center border-b md:border-b-0 md:border-r border-black/10 dark:border-white/10 pb-4 md:pb-0 md:pr-6 gap-4 md:gap-0">
                     <div className="bg-white p-2 rounded-xl relative group">
                       <img 
                         src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent("https://wa.me/917383303388?text=Hello Nexora Studio! I am interested in collaborating on a professional project.")}`} 
                         alt="Scan for WhatsApp" 
-                        className="w-24 h-24 rounded-lg mix-blend-multiply transition-opacity duration-300 group-hover:opacity-10"
+                        className="w-16 h-16 md:w-24 md:h-24 rounded-lg mix-blend-multiply transition-opacity duration-300 group-hover:opacity-10"
                       />
                       <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <a href="https://wa.me/917383303388?text=Hello%20Nexora%20Studio!%20I%20am%20interested%20in%20collaborating%20on%20a%20professional%20project." target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white text-[10px] font-bold py-1.5 px-3 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>WhatsApp</a>
                         <a href="mailto:nexoraa.works@gmail.com?subject=Professional Project Inquiry - Nexora Studio" className="bg-accent-blue text-white text-[10px] font-bold py-1.5 px-4 rounded-full shadow-lg hover:scale-105 transition-transform" onClick={(e) => e.stopPropagation()}>Email</a>
                       </div>
                     </div>
-                    <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest mt-2 text-center leading-tight">Scan or<br/>Hover</span>
+                    <span className="text-[9px] text-gray-500 dark:text-gray-400 font-bold uppercase tracking-widest md:mt-2 text-center md:leading-tight">Scan or<br className="hidden md:block" /> Hover</span>
                   </div>
 
-
                   {/* Right Details */}
-                  <div className="w-2/3 pl-6 flex flex-col justify-center">
-                    <div className="flex gap-4 mb-6">
+                  <div className="w-full md:w-2/3 md:pl-6 flex flex-col justify-center">
+                    <div className="flex gap-4 mb-4 md:mb-6">
                       <div className="flex-1">
                         <div className="text-accent-primary text-[10px] mb-1 font-mono uppercase tracking-widest">Experience</div>
                         <div className="text-gray-900 dark:text-white font-bold text-sm">Pro Agency</div>

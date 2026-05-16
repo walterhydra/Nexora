@@ -112,7 +112,7 @@ const StatCard = ({ stat, idx }) => {
             <AnimatedCounter 
               end={stat.value} 
               suffix={stat.suffix} 
-              className="text-6xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500" 
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500"
             />
             <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover/num:opacity-100 group-hover/num:translate-x-2 group-hover/num:-translate-y-2 transition-all duration-300">
               <ArrowUpRight className="text-white w-5 h-5" />

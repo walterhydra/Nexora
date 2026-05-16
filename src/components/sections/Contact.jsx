@@ -68,7 +68,7 @@ export default function Contact() {
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeUp} className="text-5xl md:text-7xl font-display font-bold mb-6">
+            <motion.h2 variants={fadeUp} className="text-4xl sm:text-5xl md:text-7xl font-display font-bold mb-6">
               Let's build <br />
               <span className="text-gradient">something great.</span>
             </motion.h2>
@@ -128,7 +128,7 @@ export default function Contact() {
                       id="user_name" 
                       required
                       placeholder="John Doe"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all"
+                      className="w-full text-base px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all"
                     />
                   </div>
                   <div className="space-y-2">
@@ -139,7 +139,7 @@ export default function Contact() {
                       id="user_email" 
                       required
                       placeholder="john@company.com"
-                      className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all"
+                      className="w-full text-base px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all"
                     />
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export default function Contact() {
                   <select 
                     name="budget" 
                     id="budget"
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all appearance-none"
+                    className="w-full text-base px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all appearance-none"
                   >
                     <option value="" disabled selected>Select a budget range</option>
                     <option value="< $2k">Under $2,000</option>
@@ -167,7 +167,7 @@ export default function Contact() {
                     required
                     rows="4"
                     placeholder="We need a new website that does..."
-                    className="w-full px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all resize-none"
+                    className="w-full text-base px-4 py-3 rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:ring-2 focus:ring-accent-blue/50 transition-all resize-none"
                   ></textarea>
                 </div>
 

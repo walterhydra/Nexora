@@ -80,6 +80,17 @@ export const team = [
   },
   {
     id: 8,
+    name: "Riya Sharma",
+    role: "Social Media Handler",
+    image: "/team/WhatsApp Image 2026-05-15 at 5.11.06 PM.jpeg",
+    specialty: "Digital Branding + Content Strategy",
+    links: { 
+      github: "#", 
+      linkedin: "#" 
+    }
+  },
+  {
+    id: 9,
     name: "Join The Squad",
     role: "Open Positions",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",

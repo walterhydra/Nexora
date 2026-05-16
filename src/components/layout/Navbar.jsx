@@ -23,13 +23,12 @@ export default function Navbar() {
     if (latest > 50) setIsScrolled(true);
     else setIsScrolled(false);
 
-    // Hide/show logic (Linear.app style) - REMOVED per user request
-    // if (latest > 150 && latest > previous) {
-    //   setHidden(true);
-    // } else {
-    //   setHidden(false);
-    // }
-    setHidden(false);
+    // Hide/show logic (Linear.app style)
+    if (latest > 150 && latest > previous) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
   });
 
   const handleNavClick = (e, targetId) => {
@@ -126,14 +125,14 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-4">
+          <div className="md:hidden flex items-center gap-2 sm:gap-4">
             <button
               onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+              className="w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button onClick={() => setMobileMenuOpen(true)}>
+            <button onClick={() => setMobileMenuOpen(true)} className="w-11 h-11 flex items-center justify-center">
               <Menu size={28} />
             </button>
           </div>

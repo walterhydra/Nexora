@@ -77,14 +77,14 @@ export default function Newsletter() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
-                className="relative w-full bg-bg-secondary border border-black/10 dark:border-white/10 rounded-lg px-6 py-4 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-primary/50 transition-all"
+                className="relative w-full text-base bg-bg-secondary border border-black/10 dark:border-white/10 rounded-lg px-6 py-4 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-primary/50 transition-all"
                 required
               />
             </div>
             <button
               type="submit"
               disabled={status === 'loading' || status === 'success'}
-              className="relative px-8 py-4 bg-white text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors disabled:opacity-70 cursor-pointer"
+              className="relative min-h-[44px] px-8 py-4 bg-white text-black font-bold rounded-lg flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors disabled:opacity-70 cursor-pointer"
             >
               {status === 'loading' ? (
                 <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
