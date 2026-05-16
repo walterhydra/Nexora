@@ -11,7 +11,7 @@ export default function MagneticButton({ children, className, onClick, ...props 
       ref={ref}
       onClick={onClick}
       className={cn(
-        "relative min-h-[44px] px-6 py-3 rounded-full font-bold overflow-hidden transition-all duration-300 flex items-center justify-center",
+        "relative px-6 py-3 rounded-full font-bold overflow-hidden transition-all duration-300 flex items-center justify-center",
         className
       )}
       {...props}

@@ -59,7 +59,7 @@ const BentoCard = ({ children, className, title, description, icon: Icon, color 
             <Icon />
           </div>
           <h3 className="text-2xl font-bold tracking-tight mb-2 group-hover:text-gradient transition-all">{title}</h3>
-          <p className="text-[var(--text-primary)]/60 text-sm leading-relaxed max-w-full sm:max-w-[280px] font-medium">
+          <p className="text-[var(--text-primary)]/60 text-sm leading-relaxed max-w-[280px] font-medium">
             {description}
           </p>
         </div>
@@ -143,7 +143,7 @@ const WhyNexora = () => {
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-8xl font-black tracking-tighter leading-[0.9]"
+            className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9]"
           >
             Why Choose <br/>
             <span className="text-gradient">Nexora Studio?</span>
@@ -266,7 +266,7 @@ const WhyNexora = () => {
             icon={Layers}
             color="#00F5FF"
           >
-             <div className="mt-8 flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4">
+             <div className="mt-8 flex-1 grid grid-cols-2 gap-4">
                {[1,2,3,4].map(i => (
                  <div key={i} className="rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] overflow-hidden aspect-video relative group/item shadow-inner">
                     <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/10 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity" />

@@ -128,7 +128,7 @@ export default function Work() {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[1.1] tracking-tight drop-shadow-2xl">
+            <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black text-white leading-[1.1] tracking-tight drop-shadow-2xl">
               Selected <br />
               <span className="text-gradient italic font-light tracking-normal">Works</span>
             </h2>

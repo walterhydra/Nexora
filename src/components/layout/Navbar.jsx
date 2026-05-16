@@ -125,14 +125,14 @@ export default function Navbar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-2 sm:gap-4">
+          <div className="md:hidden flex items-center gap-4">
             <button
               onClick={toggleTheme}
-              className="w-11 h-11 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
             >
               {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
             </button>
-            <button onClick={() => setMobileMenuOpen(true)} className="w-11 h-11 flex items-center justify-center">
+            <button onClick={() => setMobileMenuOpen(true)}>
               <Menu size={28} />
             </button>
           </div>
