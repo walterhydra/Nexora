@@ -7,6 +7,7 @@ import ParticleField from '../ui/ParticleField';
 import ScrambleText from '../ui/ScrambleText';
 import LaptopMockup from '../ui/LaptopMockup';
 import MagneticButton from '../ui/MagneticButton';
+import { getScroll } from '../../utils/scroll';
 
 const MobilePreview = ({ step }) => {
   return (
@@ -131,6 +132,18 @@ export default function Hero() {
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "919876543210";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexora Studio, I'd like to discuss a project")}`;
 
+  const scrollToSection = (id) => {
+    const el = document.getElementById(id);
+    if (el) {
+      const lenis = getScroll();
+      if (lenis) {
+        lenis.scrollTo(el, { offset: -80, duration: 1.2 });
+      } else {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
+
   return (
     <section ref={containerRef} id="home" className="relative h-[165vh] bg-bg-primary overflow-hidden">
       
@@ -207,7 +220,7 @@ export default function Hero() {
           className="flex flex-wrap items-center gap-6 relative z-20"
         >
           <button 
-            onClick={() => document.getElementById('work').scrollIntoView({ behavior: 'smooth' })}
+            onClick={() => scrollToSection('work')}
             className="group relative px-8 py-4 bg-white text-black font-bold uppercase tracking-wider text-sm rounded-none overflow-hidden"
           >
             <div className="absolute inset-0 w-full h-full bg-accent-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
@@ -220,7 +233,7 @@ export default function Hero() {
           </button>
           
           <button 
-            onClick={() => window.open(whatsappUrl, '_blank')}
+            onClick={() => scrollToSection('configurator')}
             className="group px-8 py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 hover:border-white/60 transition-colors duration-300"
           >
             <span className="flex items-center gap-2">

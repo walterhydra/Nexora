@@ -117,7 +117,7 @@ export default function Navbar() {
 
               <MagneticButton 
                 className="bg-accent-primary hover:bg-cyan-300 text-black font-semibold shadow-[0_0_20px_rgba(0,245,255,0.4)] hover:shadow-[0_0_30px_rgba(0,245,255,0.7)] transition-all duration-300 flex-shrink-0 whitespace-nowrap px-8 py-4 text-lg"
-                onClick={(e) => handleNavClick(e, 'contact')}
+                onClick={(e) => handleNavClick(e, 'configurator')}
               >
                 Start a Project &rarr;
               </MagneticButton>
@@ -168,7 +168,7 @@ export default function Navbar() {
               <div className="mt-8">
                 <MagneticButton 
                   className="bg-accent-primary hover:bg-cyan-400 text-black font-semibold shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:shadow-[0_0_25px_rgba(0,245,255,0.5)] transition-all duration-300"
-                  onClick={(e) => handleNavClick(e, 'contact')}
+                  onClick={(e) => handleNavClick(e, 'configurator')}
                 >
                   Start a Project &rarr;
                 </MagneticButton>
