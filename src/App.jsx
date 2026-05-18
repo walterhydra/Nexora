@@ -22,6 +22,7 @@ import LoadingScreen from './components/ui/LoadingScreen';
 import Home from './pages/Home';
 import ServiceDetails from './pages/ServiceDetails';
 import NotFound from './pages/NotFound';
+import ClientPortal from './pages/ClientPortal';
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -39,6 +40,7 @@ function AnimatedRoutes() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/service/:slug" element={<ServiceDetails />} />
+      <Route path="/portal" element={<ClientPortal />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
@@ -47,6 +49,8 @@ function AnimatedRoutes() {
 function AppContent() {
   // Initialize Lenis Smooth Scroll
   useLenis();
+  const location = useLocation();
+  const isPortal = location.pathname.startsWith('/portal');
 
   return (
     <>
@@ -59,16 +63,16 @@ function AppContent() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
 
-      <ScrollProgress />
-      <ContextCursor />
-      <Navbar />
+      {!isPortal && <ScrollProgress />}
+      {!isPortal && <ContextCursor />}
+      {!isPortal && <Navbar />}
       
       <AnimatedRoutes />
 
-      <Footer />
-      <WhatsAppButton />
-      <BackToTop />
-      <CookieBanner />
+      {!isPortal && <Footer />}
+      {!isPortal && <WhatsAppButton />}
+      {!isPortal && <BackToTop />}
+      {!isPortal && <CookieBanner />}
       
       <Toaster 
         position="bottom-center"

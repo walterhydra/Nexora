@@ -1,71 +1,72 @@
 export const pricing = [
   {
     id: 1,
-    name: "Starter",
+    name: "Starter MVP",
     price: 15000,
     features: [
-      "5-page responsive website",
-      "3-day delivery",
-      "1 revision round",
-      "Basic SEO",
-      "1 month support"
+      "Custom responsive design & prototyping",
+      "Full frontend engineering (up to 5 pages)",
+      "High-speed performance (95+ Lighthouse)",
+      "Essential SEO & metadata engineering",
+      "2 months post-launch monitoring & support",
+      "100% complete source code ownership"
     ],
-    description: "Perfect for freelancers & small businesses",
-    cta: "Get Started →",
+    description: "Bespoke high-performance web products for seed-stage startups.",
+    cta: "Launch MVP →",
     popular: false
   },
   {
     id: 2,
-    name: "Growth",
-    price: 35000,
+    name: "Growth Suite",
+    price: 30000,
     features: [
-      "Full custom website (up to 10 pages)",
-      "Mobile app (basic)",
-      "7-day delivery guarantee",
-      "Brand design kit",
-      "Automation setup (1 workflow)",
-      "3 revision rounds",
-      "3 months support",
-      "Code ownership certificate"
+      "Full custom web application (up to 12 pages)",
+      "Deep micro-interactions & GSAP animations",
+      "Headless CMS integration for content management",
+      "Custom automated pipelines (up to 2 workflows)",
+      "Advanced SEO & analytics dashboard setup",
+      "3 revision rounds & high-fidelity assets",
+      "4 months post-launch priority support",
+      "Direct engineer-slack integration channel"
     ],
-    description: "Everything you need to launch and grow.",
-    cta: "Start Project →",
+    description: "Accelerate your market presence with customized solutions.",
+    cta: "Deploy Growth Suite →",
     popular: true
   },
   {
     id: 3,
-    name: "Scale",
-    price: 80000,
+    name: "Immersive Scale",
+    price: 55000,
     features: [
-      "Complete product build",
-      "Web + App + Backend",
-      "Custom automations",
-      "Full brand identity",
-      "14-day delivery",
-      "Unlimited revisions",
-      "6 months support",
-      "Dedicated dev + designer",
-      "WhatsApp priority line"
+      "Bespoke 3D/WebGL custom design (Three.js)",
+      "Robust custom backend API & database architecture",
+      "Dynamic AI workflows or chatbot agents",
+      "Scalable cloud infrastructure (AWS/GCP/Vercel)",
+      "Unlimited revision iterations",
+      "6 months SLA-backed priority systems support",
+      "Dedicated senior dev + designer project pod",
+      "WhatsApp & Slack priority emergency hotlines"
     ],
-    description: "For startups ready to dominate.",
-    cta: "Book a Call →",
+    description: "For scaling platforms ready to dominate their industries.",
+    cta: "Scale Your Product →",
     popular: false
   },
   {
     id: 4,
-    name: "Enterprise",
+    name: "Enterprise Architecture",
     price: "Custom",
     features: [
-      "Everything in Scale",
-      "Dedicated Engineering Team",
-      "Custom Infrastructure Setup",
-      "SLA Guarantees",
-      "24/7 Priority Support",
-      "On-site consultation",
-      "Dedicated Project Manager"
+      "Everything in Immersive Scale + full systems audit",
+      "Dedicated multi-disciplinary developer pod",
+      "24/7/365 real-time systems monitoring & response",
+      "High availability auto-scaling setups (Kubernetes)",
+      "Advanced pen-testing & compliance mapping",
+      "Quarterly on-site discovery & engineering reviews",
+      "Dedicated technical account manager & director"
     ],
-    description: "For large organizations with complex needs.",
-    cta: "Contact Us →",
+    description: "For organizations requiring mission-critical engineering at scale.",
+    cta: "Request Consultation →",
     popular: false
   }
 ];
+

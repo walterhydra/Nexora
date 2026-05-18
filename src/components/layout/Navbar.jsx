@@ -107,6 +107,13 @@ export default function Navbar() {
                 ? "pl-4 lg:pl-6 border-l border-gray-200 dark:border-white/10" 
                 : "pl-4 lg:pl-6 border-l border-gray-200 dark:border-white/10"
             )}>
+              <Link
+                to="/portal"
+                className="text-sm font-bold uppercase tracking-wider text-gray-500 hover:text-accent-primary transition-colors hidden lg:block"
+              >
+                Client Login
+              </Link>
+
               <button
                 onClick={toggleTheme}
                 className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors flex-shrink-0 text-gray-600 dark:text-gray-300"
