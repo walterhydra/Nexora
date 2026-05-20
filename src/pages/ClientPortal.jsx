@@ -487,7 +487,237 @@ const GoogleLoginButton = ({ onLoginSuccess }) => {
   );
 };
 
-// 7. Premium Glassmorphic Modal Component
+// 7. Interactive 3D Client Access Passcard
+const ClientPasscard = ({ email }) => {
+  const cardRef = useRef(null);
+  const [rotate, setRotate] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const width = rect.width;
+    const height = rect.height;
+    const mouseX = e.clientX - rect.left - width / 2;
+    const mouseY = e.clientY - rect.top - height / 2;
+    const rX = -(mouseY / (height / 2)) * 12;
+    const rY = (mouseX / (width / 2)) * 12;
+    setRotate({ x: rX, y: rY });
+  };
+
+  const handleMouseLeave = () => {
+    setRotate({ x: 0, y: 0 });
+    setIsHovered(false);
+  };
+
+  const cleanedEmail = email ? email.toUpperCase() : "AWAITING CREDENTIALS...";
+  const companyName = email ? (email.split('@')[1] ? email.split('@')[1].split('.')[0].toUpperCase() : "NOVA CORP") : "NEXORA PARTNER";
+
+  return (
+    <div 
+      className="w-full max-w-sm aspect-[1.58/1] [perspective:1000px] cursor-pointer"
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={handleMouseLeave}
+    >
+      <motion.div
+        ref={cardRef}
+        animate={{ rotateX: rotate.x, rotateY: rotate.y }}
+        transition={{ type: "spring", stiffness: 200, damping: 20 }}
+        className="w-full h-full rounded-2xl p-6 relative overflow-hidden bg-gradient-to-br from-[#0c0c14]/95 via-[#0d0d1e]/90 to-[#050508]/95 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-2xl flex flex-col justify-between"
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        {/* Cybernetic Grid & Decorative lines inside card */}
+        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
+          style={{ backgroundImage: 'radial-gradient(rgba(0, 245, 255, 0.4) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
+        
+        {/* Glow sweep following mouse inside card */}
+        {isHovered && (
+          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_var(--x,50%)_var(--y,50%),rgba(0,245,255,0.08),transparent_50%)] pointer-events-none"
+            style={{
+              '--x': `${(rotate.y + 12) * 4.16}%`,
+              '--y': `${(-rotate.x + 12) * 4.16}%`
+            }}
+          />
+        )}
+
+        {/* Holographic sweep overlay */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+
+        {/* Top: Branding & Clearance Chip */}
+        <div className="flex justify-between items-start relative z-10" style={{ transform: "translateZ(30px)" }}>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
+              <img src="/logo/favicon.png" alt="Nexora" className="w-4 h-4 object-contain" />
+            </div>
+            <span className="font-display font-black text-[10px] tracking-[0.25em] text-white">NEXORA ACCESS</span>
+          </div>
+          {/* Glowing Smart Chip */}
+          <div className="w-10 h-7 rounded-md bg-gradient-to-r from-accent-primary/20 via-accent-violet/20 to-accent-primary/10 border border-accent-primary/30 p-1 flex flex-col justify-between overflow-hidden shadow-[0_0_10px_rgba(0,245,255,0.2)]">
+            <div className="flex gap-0.5">
+              <div className="w-1.5 h-1.5 bg-accent-primary/40 rounded-sm" />
+              <div className="w-1.5 h-1.5 bg-accent-primary/40 rounded-sm" />
+            </div>
+            <div className="h-0.5 bg-accent-primary/30 rounded" />
+          </div>
+        </div>
+
+        {/* Middle: ID details & Holographic seal */}
+        <div className="my-2 relative z-10 space-y-1.5" style={{ transform: "translateZ(45px)" }}>
+          <div className="text-[9px] text-gray-500 font-mono tracking-widest uppercase">Authorized Client</div>
+          <div className="text-xs font-mono text-white font-bold tracking-wider truncate">
+            {cleanedEmail}
+          </div>
+          <div className="text-[10px] text-accent-primary font-mono font-bold tracking-widest">
+            ORGANIZATION: <span className="text-white">{companyName}</span>
+          </div>
+        </div>
+
+        {/* Bottom: Signature Code & VIP indicator */}
+        <div className="flex justify-between items-end relative z-10 mt-auto" style={{ transform: "translateZ(35px)" }}>
+          <div className="font-mono text-[8px] text-gray-600 space-y-0.5">
+            <div>CLEARANCE: <span className="text-green-400 font-bold">LEVEL 4 VIP</span></div>
+            <div>GATEWAY HASH: <span className="text-accent-violet">NX-8379A62</span></div>
+          </div>
+          {/* Security QR/Matrix Block */}
+          <div className="grid grid-cols-4 gap-0.5 bg-black/40 p-1 rounded border border-white/5">
+            {Array.from({ length: 16 }).map((_, i) => (
+              <div 
+                key={i} 
+                className="w-1 h-1 rounded-sm bg-accent-primary/40" 
+              />
+            ))}
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
+// 8. Interactive Retinal/Fingerprint Scanner Touchpad
+const BiometricScanner = ({ onScanSuccess }) => {
+  const [scanState, setScanState] = useState('idle'); // idle | scanning | success
+  const [scanMessage, setScanMessage] = useState('TAP TO INITIALIZE BIOMETRIC SWEEP');
+
+  const handleScan = () => {
+    if (scanState !== 'idle') return;
+    setScanState('scanning');
+    setScanMessage('ESTABLISHING SECURE SOCKET...');
+
+    const logs = [
+      'BOOTING SCANNER DIODES...',
+      'CAPTURING RETINAL BIOMETRICS...',
+      'VERIFYING KEYCHAIN ENCRYPTION...',
+      'SANDBOX SECURE. STATUS: VIP APPROVED'
+    ];
+
+    let i = 0;
+    const interval = setInterval(() => {
+      if (i < logs.length) {
+        setScanMessage(logs[i]);
+        i++;
+      } else {
+        clearInterval(interval);
+        setScanState('success');
+        setScanMessage('ACCESS GRANTED');
+        setTimeout(() => {
+          onScanSuccess();
+        }, 800);
+      }
+    }, 450);
+  };
+
+  return (
+    <div className="w-full bg-[#0d0d12] border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 relative overflow-hidden group">
+      {/* Scanning Laser Beam */}
+      {scanState === 'scanning' && (
+        <motion.div
+          initial={{ top: '0%' }}
+          animate={{ top: '100%' }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-accent-primary to-transparent shadow-[0_0_12px_#00F5FF] z-10"
+        />
+      )}
+
+      {/* Touchpad Circle */}
+      <button
+        type="button"
+        onClick={handleScan}
+        disabled={scanState !== 'idle'}
+        className={`w-16 h-16 rounded-full border flex items-center justify-center relative transition-all duration-300 ${
+          scanState === 'success' ? 'border-green-500/40 bg-green-500/10 text-green-400' :
+          scanState === 'scanning' ? 'border-accent-primary/40 bg-accent-primary/5 text-accent-primary animate-pulse' :
+          'border-white/10 bg-white/5 text-gray-400 group-hover:border-accent-primary/30 group-hover:text-accent-primary group-hover:bg-accent-primary/5 hover:scale-105'
+        }`}
+      >
+        {scanState === 'success' ? (
+          <ShieldCheck className="w-7 h-7" />
+        ) : (
+          <Sparkles className="w-7 h-7" />
+        )}
+      </button>
+
+      {/* Diagnostic message */}
+      <div className="text-center">
+        <div className={`font-mono text-[9px] uppercase tracking-widest ${
+          scanState === 'success' ? 'text-green-400 font-bold' :
+          scanState === 'scanning' ? 'text-accent-primary animate-pulse' : 'text-gray-500 group-hover:text-gray-400'
+        }`}>
+          {scanMessage}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 9. Live System Diagnostics Terminal Feed
+const DiagnosticsLogs = () => {
+  const [logs, setLogs] = useState([
+    "[SYSTEM] SECURE GATEWAY V2.1.0 ONLINE",
+    "[OK] INITIALIZING CYBER-SEC LINK...",
+    "[OK] SSL TUNNEL ESTABLISHED AT LOCAL_GATE"
+  ]);
+
+  useEffect(() => {
+    const diagnosticPool = [
+      "[OK] DETECTING USER PING RETENTION...",
+      "[INFO] LOADING CLIENT GRAPHIC CONSTRUCTS...",
+      "[OK] PORTAL SANDBOX CONTAINER CACHE INITIATED",
+      "[INFO] SYMMETRIC JWT VERIFICATION BOOTED",
+      "[OK] CREDENTIAL CLEARANCE PIPELINE SECURE",
+      "[OK] ACTIVE DIAGNOSTIC PORTS LOADED: 5173",
+      "[INFO] SHIELD PROTOCOL ENFORCED (RSA-4096)",
+      "[OK] LEDGER DATABASES RUNNING DIAGNOSTIC RUNS",
+      "[INFO] DEPLOYMENT INTEGRATION STABLE AT 99.8%"
+    ];
+
+    const interval = setInterval(() => {
+      setLogs(prev => {
+        const nextLog = diagnosticPool[Math.floor(Math.random() * diagnosticPool.length)];
+        const updated = [...prev, nextLog];
+        if (updated.length > 5) updated.shift();
+        return updated;
+      });
+    }, 3500);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="w-full max-w-sm bg-black/60 rounded-xl border border-white/5 p-4 font-mono text-[9px] text-gray-500 space-y-1 text-left">
+      {logs.map((log, index) => (
+        <div key={index} className="flex gap-2">
+          <span className="text-accent-primary shrink-0">&gt;</span>
+          <span className={log.includes("[OK]") ? "text-green-400/80" : log.includes("[SYSTEM]") ? "text-accent-violet/80" : "text-gray-400"}>
+            {log}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// 10. Premium Glassmorphic Modal Component
 const Modal = ({ isOpen, onClose, title, children }) => (
   <AnimatePresence>
     {isOpen && (
@@ -1273,36 +1503,26 @@ export default function ClientPortal() {
             </Link>
           </div>
 
-          <div className="relative z-10 flex flex-col justify-center items-center py-10 w-full flex-grow">
-            {/* Visual core radar */}
-            <div className="relative w-80 h-80 flex items-center justify-center bg-[#07070a]/40 rounded-full border border-white/5">
-              <div className="absolute inset-0 rounded-full border border-dashed border-accent-primary/20 animate-[spin_40s_linear_infinite]" />
-              <div className="absolute w-64 h-64 rounded-full border border-white/5 flex items-center justify-center">
-                <div className="absolute inset-0 rounded-full border border-dashed border-accent-violet/20 animate-[spin_25s_linear_infinite_reverse]" />
-              </div>
-              <div className="absolute w-44 h-44 rounded-full border border-white/5 flex items-center justify-center">
-                <motion.div
-                  animate={{ scale: [1, 1.08, 1] }}
-                  transition={{ duration: 4, repeat: Infinity }}
-                  className="w-24 h-24 rounded-full bg-accent-primary/10 border border-accent-primary/30 flex items-center justify-center shadow-[0_0_30px_rgba(0,245,255,0.08)]"
-                >
-                  <Laptop className="w-6 h-6 text-accent-primary" />
-                </motion.div>
-              </div>
-            </div>
+          <div className="relative z-10 flex flex-col justify-center items-center gap-8 py-10 w-full flex-grow">
+            <ClientPasscard email={email} />
 
-            <div className="max-w-lg mt-10 text-center">
-              <h1 className="text-4xl font-display font-black text-white leading-tight mb-4 tracking-tight">
+            <div className="max-w-lg text-center space-y-3">
+              <h1 className="text-3xl font-display font-black text-white leading-tight tracking-tight">
                 Enter Your <span className="text-accent-primary">Pulse Center.</span>
               </h1>
-              <p className="text-gray-400 text-sm font-light leading-relaxed">
+              <p className="text-gray-400 text-xs font-light leading-relaxed max-w-sm mx-auto">
                 Unlock real-time transparency. Verify engineering performance speed, view SOW deliverables, authorize pending pipelines, and directly coordinate updates with lead developers.
               </p>
             </div>
+
+            <DiagnosticsLogs />
           </div>
 
-          <div className="relative z-10 text-xs text-gray-600 font-mono">
+          <div className="relative z-10 text-xs text-gray-600 font-mono flex items-center justify-between w-full">
             <span>SECURE GATEWAY V2.1.0 • ENCRYPTED PIPELINE</span>
+            <span className="text-accent-primary animate-pulse font-bold flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5" /> SECURE SHIELD ACTIVE
+            </span>
           </div>
         </div>
 
@@ -1320,7 +1540,11 @@ export default function ClientPortal() {
           >
             <div className="absolute top-[-1px] left-10 w-28 h-[2px] bg-gradient-to-r from-accent-primary via-accent-violet to-transparent" />
 
-            <div className="mb-8 text-center">
+            <div className="mb-6 text-center relative">
+              <div className="absolute top-0 right-0 flex items-center gap-1 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-full">
+                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+                <span className="text-[8px] font-mono text-green-400 font-bold uppercase tracking-wider">SYSTEM SECURE</span>
+              </div>
               <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">Access Client Portal</h2>
               <p className="text-gray-400 text-xs">Authorize to open development tracking board</p>
             </div>
@@ -1333,7 +1557,26 @@ export default function ClientPortal() {
               }} />
             </GoogleOAuthProvider>
 
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="h-px bg-white/10 flex-1" />
+              <span className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">OR BIOMETRIC KEY</span>
+              <div className="h-px bg-white/10 flex-1" />
+            </div>
+
+            {/* Interactive Biometric Retinal/Fingerprint Scanner */}
+            <div className="mb-4">
+              <BiometricScanner onScanSuccess={() => {
+                setIsAuthenticated(true);
+                setUserProfile({
+                  name: "VIP Client",
+                  email: "vip.client@company.com",
+                  picture: null
+                });
+                toast.success("Retinal clearance verified! Welcome to Nexora.");
+              }} />
+            </div>
+
+            <div className="flex items-center gap-4 mb-4">
               <div className="h-px bg-white/10 flex-1" />
               <span className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">OR SECURITY KEY</span>
               <div className="h-px bg-white/10 flex-1" />
@@ -1350,7 +1593,7 @@ export default function ClientPortal() {
                     placeholder="client@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#0d0d12] border border-white/10 rounded-xl pl-12 pr-4 py-3.5 text-white focus:outline-none focus:border-accent-primary transition-all text-sm font-mono"
+                    className="w-full bg-[#0d0d12] border border-white/10 rounded-xl pl-12 pr-4 py-3.5 text-white focus:outline-none focus:border-accent-primary transition-all text-sm font-mono focus:ring-1 focus:ring-accent-primary/30"
                   />
                 </div>
               </div>
@@ -1368,7 +1611,7 @@ export default function ClientPortal() {
                     placeholder="••••••••"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full bg-[#0d0d12] border border-white/10 rounded-xl pl-12 pr-12 py-3.5 text-white focus:outline-none focus:border-accent-primary transition-all text-sm font-mono"
+                    className="w-full bg-[#0d0d12] border border-white/10 rounded-xl pl-12 pr-12 py-3.5 text-white focus:outline-none focus:border-accent-primary transition-all text-sm font-mono focus:ring-1 focus:ring-accent-primary/30"
                   />
                   <button
                     type="button"
@@ -1383,7 +1626,7 @@ export default function ClientPortal() {
               <button
                 type="submit"
                 disabled={isLoginLoading || !email || !password}
-                className="w-full mt-4 bg-white hover:bg-gray-200 text-black font-bold rounded-xl px-4 py-3.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg text-sm"
+                className="w-full mt-2 bg-white hover:bg-gray-200 text-black font-bold rounded-xl px-4 py-3.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg text-sm"
               >
                 {isLoginLoading ? (
                   <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
@@ -1396,7 +1639,7 @@ export default function ClientPortal() {
               </button>
             </form>
 
-            <p className="mt-8 text-center text-xs text-gray-500">
+            <p className="mt-6 text-center text-xs text-gray-500">
               New client? <Link to="/#contact" className="text-accent-primary font-bold hover:underline">Launch a project SOW</Link>
             </p>
           </motion.div>
