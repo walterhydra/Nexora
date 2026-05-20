@@ -55,7 +55,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Services', id: 'services' },
     { name: 'Work', id: 'work' },
-    { name: 'How We Work', id: 'howwework' },
+    { name: 'Process', isRoute: true, path: '/onboarding' },
     { name: 'Pricing', id: 'pricing' },
     { name: 'FAQ', id: 'faq' }
   ];
@@ -90,14 +90,25 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4 lg:gap-8">
             <div className="flex items-center gap-4 lg:gap-6">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={`#${link.id}`}
-                  onClick={(e) => handleNavClick(e, link.id)}
-                  className="text-lg font-bold hover:text-accent-blue transition-colors whitespace-nowrap"
-                >
-                  {link.name}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-lg font-bold hover:text-accent-blue transition-colors whitespace-nowrap"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={`#${link.id}`}
+                    onClick={(e) => handleNavClick(e, link.id)}
+                    className="text-lg font-bold hover:text-accent-blue transition-colors whitespace-nowrap"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
             </div>
 
@@ -163,14 +174,25 @@ export default function Navbar() {
             </div>
             <div className="flex-1 flex flex-col items-center justify-center gap-8">
               {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={`#${link.id}`}
-                  onClick={(e) => handleNavClick(e, link.id)}
-                  className="text-4xl font-display font-bold hover:text-accent-blue"
-                >
-                  {link.name}
-                </a>
+                link.isRoute ? (
+                  <Link
+                    key={link.name}
+                    to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-4xl font-display font-bold hover:text-accent-blue"
+                  >
+                    {link.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={link.name}
+                    href={`#${link.id}`}
+                    onClick={(e) => handleNavClick(e, link.id)}
+                    className="text-4xl font-display font-bold hover:text-accent-blue"
+                  >
+                    {link.name}
+                  </a>
+                )
               ))}
               <div className="mt-8">
                 <MagneticButton 

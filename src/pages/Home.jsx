@@ -15,7 +15,6 @@ import Work from '../components/sections/Work';
 import Stats from '../components/sections/Stats';
 import Pulse from '../components/sections/Pulse';
 import Testimonials from '../components/sections/Testimonials';
-import Configurator from '../components/sections/Configurator';
 import TerminalFAQ from '../components/sections/TerminalFAQ';
 import KineticManifesto from '../components/sections/KineticManifesto';
 
@@ -59,7 +58,6 @@ export default function Home() {
         <About />
         <Team />
         <HowWeWork />
-        <Configurator />
         <Pricing />
         <KineticManifesto />
         <TerminalFAQ />

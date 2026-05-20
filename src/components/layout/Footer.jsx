@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,19 +28,22 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6 uppercase tracking-wider text-sm">Company</h4>
             <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-              <li><a href="#work" className="hover:text-black dark:hover:text-white transition-colors">Work</a></li>
-              <li><a href="#services" className="hover:text-black dark:hover:text-white transition-colors">Services</a></li>
-              <li><a href="#pricing" className="hover:text-black dark:hover:text-white transition-colors">Pricing</a></li>
-              <li><a href="#about" className="hover:text-black dark:hover:text-white transition-colors">About Us</a></li>
+              <li><Link to="/#work" className="hover:text-black dark:hover:text-white transition-colors">Work</Link></li>
+              <li><Link to="/services" className="hover:text-black dark:hover:text-white transition-colors">Services</Link></li>
+              <li><Link to="/#pricing" className="hover:text-black dark:hover:text-white transition-colors">Pricing</Link></li>
+              <li><Link to="/onboarding" className="hover:text-black dark:hover:text-white transition-colors">Onboarding Process</Link></li>
+              <li><Link to="/about" className="hover:text-black dark:hover:text-white transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-black dark:hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           <div>
             <h4 className="font-bold mb-6 uppercase tracking-wider text-sm">Legal</h4>
             <ul className="space-y-3 text-gray-600 dark:text-gray-400">
-              <li><a href="#" className="hover:text-black dark:hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-black dark:hover:text-white transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-black dark:hover:text-white transition-colors">Cookie Policy</a></li>
+              <li><Link to="/privacy-policy" className="hover:text-black dark:hover:text-white transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-black dark:hover:text-white transition-colors">Terms of Service</Link></li>
+              <li><Link to="/refund-policy" className="hover:text-black dark:hover:text-white transition-colors">Refund Policy</Link></li>
+              <li><Link to="/payment-policy" className="hover:text-black dark:hover:text-white transition-colors">Payment Policy</Link></li>
             </ul>
           </div>
         </div>

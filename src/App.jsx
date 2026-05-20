@@ -23,6 +23,14 @@ import Home from './pages/Home';
 import ServiceDetails from './pages/ServiceDetails';
 import NotFound from './pages/NotFound';
 import ClientPortal from './pages/ClientPortal';
+import About from './pages/About';
+import Services from './pages/Services';
+import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Terms from './pages/Terms';
+import RefundPolicy from './pages/RefundPolicy';
+import Onboarding from './pages/Onboarding';
+import PaymentPolicy from './pages/PaymentPolicy';
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -41,6 +49,14 @@ function AnimatedRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/service/:slug" element={<ServiceDetails />} />
       <Route path="/portal" element={<ClientPortal />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/services" element={<Services />} />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/refund-policy" element={<RefundPolicy />} />
+      <Route path="/onboarding" element={<Onboarding />} />
+      <Route path="/payment-policy" element={<PaymentPolicy />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
