@@ -9,9 +9,28 @@ export default function Contact() {
   const formRef = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [messageValue, setMessageValue] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    // Parse URL search parameters for prefilled scope details
+    const params = new URLSearchParams(window.location.search);
+    const projectType = params.get('type');
+    const addons = params.get('addons');
+    const price = params.get('price');
+
+    if (projectType) {
+      let prefilledMsg = `Hi Nexora, I'm interested in building a ${projectType}.\n`;
+      if (addons) {
+        prefilledMsg += `Selected Add-ons: ${addons}\n`;
+      }
+      if (price) {
+        prefilledMsg += `Estimated Budget: ${price}\n`;
+      }
+      prefilledMsg += `Let's discuss my project details!`;
+      setMessageValue(prefilledMsg);
+    }
   }, []);
 
   const handleSubmit = async (e) => {
@@ -249,6 +268,8 @@ export default function Contact() {
                   id="message"
                   required
                   rows="4" 
+                  value={messageValue}
+                  onChange={(e) => setMessageValue(e.target.value)}
                   className="w-full bg-white/50 dark:bg-black/50 border border-gray-300 dark:border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-accent-blue transition-colors resize-none text-gray-900 dark:text-white" 
                   placeholder="Tell us about your project..."
                 />

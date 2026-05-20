@@ -4,7 +4,8 @@ import {
   MessageSquare, FileText, CreditCard, PenTool, 
   Code, CheckCircle, Rocket, FileImage, Globe, 
   UploadCloud, ArrowRight, ShieldCheck, HelpCircle,
-  ChevronRight, ChevronDown, Check, Sparkles
+  ChevronRight, ChevronDown, Check, Sparkles,
+  Calculator, Settings
 } from 'lucide-react';
 import MagneticButton from '../components/ui/MagneticButton';
 import { Link } from 'react-router-dom';
@@ -156,10 +157,76 @@ const faqs = [
   }
 ];
 
+const projectTypes = [
+  {
+    id: 'landing',
+    name: 'Landing Page',
+    desc: 'High-converting single-page landing site with clean visuals and interactive elements.',
+    basePrice: { INR: 24999, USD: 299 },
+    baseDays: 4
+  },
+  {
+    id: 'corporate',
+    name: 'Corporate Website',
+    desc: 'Multi-page business website presenting your services, values, team, and contact channels.',
+    basePrice: { INR: 49999, USD: 599 },
+    baseDays: 7
+  },
+  {
+    id: 'saas',
+    name: 'SaaS MVP / Portal',
+    desc: 'Full-stack application with interactive dashboard, mock database, and secure user states.',
+    basePrice: { INR: 79999, USD: 999 },
+    baseDays: 10
+  },
+  {
+    id: 'custom',
+    name: 'E-Commerce & Custom App',
+    desc: 'Custom digital platforms with payment gate, product listings, or bespoke business logic.',
+    basePrice: { INR: 99999, USD: 1199 },
+    baseDays: 14
+  }
+];
+
+const addonsList = [
+  {
+    id: 'animations',
+    name: 'Premium Custom Animations',
+    desc: 'Framer Motion & GSAP animations for Awwwards-level polish.',
+    price: { INR: 9999, USD: 120 },
+    days: 1
+  },
+  {
+    id: 'seo',
+    name: 'Advanced SEO & Meta-tag Setup',
+    desc: 'Complete Schema.org schema validation and search engine optimization indexing.',
+    price: { INR: 4999, USD: 60 },
+    days: 0
+  },
+  {
+    id: 'integrations',
+    name: 'Third-Party APIs & CRM Connect',
+    desc: 'Link contact queries, database sheets, or marketing pipelines (Zapier, HubSpot).',
+    price: { INR: 14999, USD: 180 },
+    days: 1
+  },
+  {
+    id: 'auth',
+    name: 'Client Portal & Authentication',
+    desc: 'Create secure private client panels with password gates and login controls.',
+    price: { INR: 24999, USD: 299 },
+    days: 2
+  }
+];
+
 export default function Onboarding() {
   const [activeStepId, setActiveStepId] = useState(1);
   const [activeDocId, setActiveDocId] = useState(docsData[0].id);
   const [expandedFaqIdx, setExpandedFaqIdx] = useState(null);
+  
+  const [selectedType, setSelectedType] = useState('landing');
+  const [selectedAddons, setSelectedAddons] = useState([]);
+  const [currency, setCurrency] = useState('USD');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -171,6 +238,29 @@ export default function Onboarding() {
 
   const toggleFaq = (idx) => {
     setExpandedFaqIdx(expandedFaqIdx === idx ? null : idx);
+  };
+
+  const selectedProjType = projectTypes.find(t => t.id === selectedType);
+  
+  let totalPriceINR = selectedProjType.basePrice.INR;
+  let totalPriceUSD = selectedProjType.basePrice.USD;
+  let totalDays = selectedProjType.baseDays;
+
+  selectedAddons.forEach(addonId => {
+    const addon = addonsList.find(a => a.id === addonId);
+    if (addon) {
+      totalPriceINR += addon.price.INR;
+      totalPriceUSD += addon.price.USD;
+      totalDays += addon.days;
+    }
+  });
+
+  const toggleAddon = (addonId) => {
+    setSelectedAddons(prev => 
+      prev.includes(addonId) 
+        ? prev.filter(id => id !== addonId) 
+        : [...prev, addonId]
+    );
   };
 
   const renderContent = (text) => {
@@ -343,6 +433,167 @@ export default function Onboarding() {
             </div>
           </div>
         </div>
+
+        {/* Scope & Estimator Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mb-32 bg-[#030303]/40 border border-white/10 rounded-[40px] p-8 md:p-12 relative overflow-hidden backdrop-blur-xl"
+        >
+          {/* Radial light glow */}
+          <div className="absolute -left-20 -top-20 w-80 h-80 bg-accent-blue/10 blur-[100px] rounded-full pointer-events-none" />
+          
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-12 border-b border-white/5 pb-8">
+            <div>
+              <span className="text-xs font-mono uppercase tracking-widest text-accent-blue flex items-center gap-2">
+                <Calculator size={14} /> Interactive Cost Calculator
+              </span>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-white mt-2">Scope & Estimate Planner</h2>
+              <p className="text-gray-400 mt-2 text-base">Select your core deliverables and add-ons to build your custom 7-day sprint plan.</p>
+            </div>
+            
+            {/* Currency selector toggle */}
+            <div className="flex bg-white/5 border border-white/10 rounded-full p-1.5 self-start md:self-auto shadow-inner">
+              <button 
+                onClick={() => setCurrency('USD')}
+                className={`px-4 py-2 text-xs font-mono font-bold rounded-full transition-all ${
+                  currency === 'USD' ? 'bg-accent-blue text-black shadow-md' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                USD ($)
+              </button>
+              <button 
+                onClick={() => setCurrency('INR')}
+                className={`px-4 py-2 text-xs font-mono font-bold rounded-full transition-all ${
+                  currency === 'INR' ? 'bg-accent-blue text-black shadow-md' : 'text-gray-400 hover:text-white'
+                }`}
+              >
+                INR (₹)
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-stretch">
+            {/* Project Types & Addons (Left) */}
+            <div className="lg:col-span-7 space-y-8">
+              <div>
+                <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4">1. Select Project Type</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {projectTypes.map((type) => (
+                    <button
+                      key={type.id}
+                      onClick={() => setSelectedType(type.id)}
+                      className={`p-6 rounded-2xl border text-left transition-all duration-300 relative overflow-hidden group ${
+                        selectedType === type.id
+                          ? 'bg-accent-blue/[0.03] border-accent-blue/40 shadow-[0_0_20px_rgba(0,245,255,0.05)]'
+                          : 'bg-white/[0.01] border-white/5 hover:border-white/10 hover:bg-white/[0.02]'
+                      }`}
+                    >
+                      <h5 className={`font-bold text-base mb-1.5 ${selectedType === type.id ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                        {type.name}
+                      </h5>
+                      <p className="text-gray-500 text-xs leading-relaxed mb-4">{type.desc}</p>
+                      <div className="text-sm font-mono font-bold text-accent-blue">
+                        Base: {currency === 'USD' ? `$${type.basePrice.USD}` : `₹${type.basePrice.INR.toLocaleString()}`}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-4">2. Choose Optional Add-ons</h4>
+                <div className="space-y-3">
+                  {addonsList.map((addon) => {
+                    const isSelected = selectedAddons.includes(addon.id);
+                    return (
+                      <button
+                        key={addon.id}
+                        onClick={() => toggleAddon(addon.id)}
+                        className={`w-full flex items-center justify-between p-5 rounded-2xl border text-left transition-all duration-300 relative group ${
+                          isSelected
+                            ? 'bg-white/[0.03] border-accent-blue/30 shadow-[0_0_15px_rgba(0,245,255,0.03)]'
+                            : 'bg-white/[0.01] border-white/5 hover:border-white/10 hover:bg-white/[0.02]'
+                        }`}
+                      >
+                        <div className="flex items-start gap-4">
+                          <div className={`w-5 h-5 rounded-md border flex items-center justify-center flex-shrink-0 mt-0.5 transition-colors ${
+                            isSelected ? 'bg-accent-blue border-accent-blue text-black' : 'border-white/20 text-transparent'
+                          }`}>
+                            <Check size={12} className="stroke-[3]" />
+                          </div>
+                          <div>
+                            <h5 className={`font-bold text-sm ${isSelected ? 'text-white' : 'text-gray-400 group-hover:text-white'}`}>
+                              {addon.name}
+                            </h5>
+                            <p className="text-gray-500 text-xs leading-relaxed mt-0.5">{addon.desc}</p>
+                          </div>
+                        </div>
+                        <div className="text-right flex-shrink-0 ml-4">
+                          <div className="text-sm font-mono font-bold text-accent-blue">
+                            +{currency === 'USD' ? `$${addon.price.USD}` : `₹${addon.price.INR.toLocaleString()}`}
+                          </div>
+                          {addon.days > 0 && (
+                            <span className="text-[10px] text-gray-500 font-mono">+{addon.days} Day</span>
+                          )}
+                        </div>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+
+            {/* Live Estimate Summary Card (Right) */}
+            <div className="lg:col-span-5">
+              <div className="bg-[#050505] p-8 md:p-10 rounded-3xl border border-white/10 h-full flex flex-col justify-between relative overflow-hidden">
+                {/* Glow backdrop effect */}
+                <div className="absolute right-[-20%] bottom-[-20%] w-60 h-60 bg-purple-500/5 blur-[80px] rounded-full pointer-events-none" />
+                
+                <div>
+                  <h4 className="text-sm font-mono uppercase tracking-widest text-gray-500 mb-6 flex items-center gap-2">
+                    <Settings size={14} className="text-accent-blue animate-spin-slow" /> Estimate Summary
+                  </h4>
+                  
+                  <div className="space-y-4 border-b border-white/5 pb-6 mb-6">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400 text-sm">Project Platform</span>
+                      <span className="font-bold text-white">{selectedProjType.name}</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400 text-sm">Add-ons Selected</span>
+                      <span className="font-bold text-white">{selectedAddons.length} selected</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-400 text-sm">Total Sprint Timeline</span>
+                      <span className="font-bold text-accent-blue font-mono">{totalDays} Days</span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <span className="text-gray-500 text-xs font-mono uppercase tracking-widest">Total Estimated Budget</span>
+                    <div className="text-4xl md:text-5xl font-display font-black text-white tracking-tight flex items-baseline gap-1.5">
+                      {currency === 'USD' ? `$${totalPriceUSD}` : `₹${totalPriceINR.toLocaleString()}`}
+                      <span className="text-xs font-mono text-gray-500 font-normal">est.</span>
+                    </div>
+                    <p className="text-gray-500 text-xs leading-relaxed mt-2">
+                      *Includes standard staging link, responsive styling, and 30-day bug support. A formal custom quotation will be sent.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-10">
+                  <Link to={`/contact?type=${encodeURIComponent(selectedProjType.name)}&addons=${encodeURIComponent(selectedAddons.map(id => addonsList.find(a => a.id === id)?.name).filter(Boolean).join(', '))}&price=${encodeURIComponent(currency === 'USD' ? `$${totalPriceUSD}` : `₹${totalPriceINR.toLocaleString()}`)}`}>
+                    <MagneticButton className="w-full bg-accent-primary hover:bg-cyan-400 text-black py-4 font-bold text-base rounded-full flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,245,255,0.15)] transition-all duration-300">
+                      Proceed with this Scope <ArrowRight size={18} />
+                    </MagneticButton>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
 
         {/* Interactive Documentation Viewer */}
         <motion.div 
