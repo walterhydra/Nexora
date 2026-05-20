@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
+import loginBg from '../assets/IMG_20260520_144201.jpg.jpeg';
 
 // --- PREMIUM HIGH-GRAPHIC SUB-COMPONENTS ---
 
@@ -415,61 +416,118 @@ const RadarPerformanceChart = () => {
   );
 };
 
-// 6. Styled Google Login Handler
+// 6. Styled Google Login Handler — Real-looking Google popup
 const GoogleLoginButton = ({ onLoginSuccess }) => {
   const [isGoogleLoading, setIsGoogleLoading] = useState(false);
 
   const handleFakeGoogleLogin = () => {
     setIsGoogleLoading(true);
-    const popup = window.open('', 'Google Sign In', 'width=500,height=600,left=200,top=200');
-    if (popup) {
-      popup.document.write(`
-        <html><head><title>Sign in - Google Accounts</title>
-        <style>
-          body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;margin:0;background:#0d0d12;color:#fff;}
-          .card{background:#13131a;border:1px solid rgba(255,255,255,0.08);padding:40px;border-radius:20px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.5);width:320px;}
-          .loader{border:3px solid #1f1f2e;border-top:3px solid #00F5FF;border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:0 auto 24px;}
-          @keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
-          .text{font-size:18px;font-weight:600;margin-bottom:8px;}
-          .subtext{color:#8f90a6;font-size:14px;}
-          .logo{width:60px;margin-bottom:24px;}
-        </style></head>
-        <body>
-          <div class="card">
-            <svg class="logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-            <div class="loader"></div>
-            <div class="text">Connecting to Google...</div>
-            <div class="subtext">Signing in as Alex Client</div>
-          </div>
-        </body></html>
-      `);
+    const w = 480, h = 580;
+    const left = Math.round(window.screenX + (window.outerWidth - w) / 2);
+    const top  = Math.round(window.screenY + (window.outerHeight - h) / 2);
+    const popup = window.open('', 'GoogleSignIn', `width=${w},height=${h},left=${left},top=${top},resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no`);
 
-      setTimeout(() => {
-        popup.close();
-        setIsGoogleLoading(false);
-        onLoginSuccess({
-          name: "Alex Client",
-          email: "alex@company.com",
-          picture: "https://ui-avatars.com/api/?name=Alex+Client&background=00F5FF&color=050505&size=128"
-        });
-      }, 2000);
-    } else {
-      setTimeout(() => {
-        setIsGoogleLoading(false);
-        onLoginSuccess({
-          name: "Alex Client",
-          email: "alex@company.com",
-          picture: "https://ui-avatars.com/api/?name=Alex+Client&background=00F5FF&color=050505&size=128"
-        });
-      }, 1000);
+    if (!popup) {
+      setTimeout(() => { setIsGoogleLoading(false); onLoginSuccess({ name: "Alex Client", email: "alex@company.com", picture: "https://ui-avatars.com/api/?name=Alex+Client&background=4285F4&color=fff&size=128" }); }, 1500);
+      return;
     }
+
+    const html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sign in – Google Accounts</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:Roboto,'Helvetica Neue',Arial,sans-serif;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;color:#202124}
+  .card{width:360px;padding:48px 40px 32px;border:1px solid #dadce0;border-radius:8px;text-align:center}
+  .g-logo{margin-bottom:24px}
+  .g-logo svg{width:46px;height:46px}
+  h1{font-size:24px;font-weight:400;margin-bottom:10px;letter-spacing:-.5px}
+  .sub{font-size:15px;color:#202124;margin-bottom:32px}
+  .connecting{font-size:13px;color:#5f6368;margin-bottom:28px;letter-spacing:.1px}
+  .step{display:none;flex-direction:column;align-items:center;gap:16px}
+  .step.active{display:flex}
+  .spinner-wrap{margin:8px 0}
+  .spinner{width:38px;height:38px;border:3px solid #dadce0;border-top-color:#1a73e8;border-radius:50%;animation:spin .75s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .verify-text{font-size:15px;color:#5f6368;font-weight:400}
+  .verify-sub{font-size:13px;color:#80868b}
+  footer{margin-top:32px;display:flex;justify-content:space-between;font-size:12px;color:#5f6368}
+  footer a{color:#1a73e8;text-decoration:none}
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- Step 1: Clean sign in screen -->
+  <div id="s1">
+    <div class="g-logo">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+        <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+        <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.991 21.991 0 002 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+        <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        <path fill="none" d="M2 2h44v44H2z"/>
+      </svg>
+    </div>
+    <h1>Sign in</h1>
+    <p class="sub">to continue to <strong>Nexora Portal</strong></p>
+    <div class="connecting">Connecting to Google…</div>
+    <footer><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></footer>
+  </div>
+
+  <!-- Step 2: Verifying -->
+  <div id="s2" class="step">
+    <div class="g-logo">
+      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
+        <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
+        <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.991 21.991 0 002 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
+        <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
+        <path fill="none" d="M2 2h44v44H2z"/>
+      </svg>
+    </div>
+    <div class="spinner-wrap"><div class="spinner"></div></div>
+    <p class="verify-text" id="vtext">Signing in…</p>
+    <p class="verify-sub">Verifying your account with Google</p>
+    <footer style="margin-top:60px"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></footer>
+  </div>
+
+</div>
+<script>
+// Auto-progress: show sign-in screen briefly, then auto-switch to verifying
+setTimeout(function(){
+  document.getElementById('s1').style.display='none';
+  document.getElementById('s2').className='step active';
+}, 1200);
+setTimeout(function(){
+  document.getElementById('vtext').textContent='Verified! Opening portal…';
+}, 2800);
+setTimeout(function(){ window.close(); }, 3800);
+</script>
+</body></html>`;
+
+    popup.document.open();
+    popup.document.write(html);
+    popup.document.close();
+
+    const timer = setInterval(() => {
+      if (popup.closed) {
+        clearInterval(timer);
+        setIsGoogleLoading(false);
+        onLoginSuccess({ name: "Alex Client", email: "alex@company.com", picture: "https://ui-avatars.com/api/?name=Alex+Client&background=4285F4&color=fff&size=128" });
+      }
+    }, 300);
   };
+
 
   return (
     <button
       onClick={handleFakeGoogleLogin}
       disabled={isGoogleLoading}
-      className="w-full mb-6 flex items-center justify-center gap-3 px-4 py-3.5 border border-white/10 rounded-xl bg-[#0d0d12] hover:bg-[#13131a] transition-all text-white font-bold disabled:opacity-50 shadow-md group relative overflow-hidden"
+      className="w-full mb-6 flex items-center justify-center gap-3 px-4 py-3.5 border border-white/10 rounded-full bg-[#0d0d12] hover:bg-[#13131a] transition-all text-white font-bold disabled:opacity-50 shadow-md group relative overflow-hidden cursor-pointer"
     >
       <div className="absolute inset-0 bg-gradient-to-r from-accent-primary/0 via-accent-primary/5 to-accent-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
       {isGoogleLoading ? (
@@ -817,6 +875,10 @@ export default function ClientPortal() {
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoginLoading, setIsLoginLoading] = useState(false);
+  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+  const [showWelcomeBanner, setShowWelcomeBanner] = useState(false);
+  const [showSignoutBanner, setShowSignoutBanner] = useState(false);
+
 
   const [activeTab, setActiveTab] = useState(() => localStorage.getItem('nexora_tab') || 'overview');
 
@@ -982,7 +1044,8 @@ export default function ClientPortal() {
           email: email,
           picture: null
         });
-        toast.success("Welcome back to Nexora!");
+        setShowWelcomeBanner(true);
+        setTimeout(() => setShowWelcomeBanner(false), 5000);
       }, 1200);
     }
   };
@@ -1486,163 +1549,211 @@ export default function ClientPortal() {
   // --- OUT-OF-AUTH SIGN-IN PORTAL ---
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#040406] flex relative overflow-hidden text-white font-sans selection:bg-accent-primary selection:text-black">
+      <div className="min-h-screen bg-[#07070a] flex items-center justify-center p-4 relative overflow-hidden text-white font-sans selection:bg-accent-violet selection:text-white">
         <Helmet><title>Client Portal Sign In | Nexora</title></Helmet>
 
         <ParticleBackground />
 
-        {/* Brand Left Visual Sidebar */}
-        <div className="hidden lg:flex w-1/2 relative bg-[#07070a]/60 border-r border-white/10 flex-col justify-between p-16 z-10 backdrop-blur-3xl">
-          <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none"
-            style={{ backgroundImage: 'radial-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px)', backgroundSize: '24px 24px' }} />
-
-          <div className="relative z-10">
-            <Link to="/" className="inline-flex items-center gap-3">
-              <img src="/logo/favicon.png" alt="Nexora" className="w-9 h-9" />
-              <span className="font-display font-black text-2xl tracking-[0.15em] text-white">NEXORA</span>
-            </Link>
-          </div>
-
-          <div className="relative z-10 flex flex-col justify-center items-center gap-8 py-10 w-full flex-grow">
-            <ClientPasscard email={email} />
-
-            <div className="max-w-lg text-center space-y-3">
-              <h1 className="text-3xl font-display font-black text-white leading-tight tracking-tight">
-                Enter Your <span className="text-accent-primary">Pulse Center.</span>
-              </h1>
-              <p className="text-gray-400 text-xs font-light leading-relaxed max-w-sm mx-auto">
-                Unlock real-time transparency. Verify engineering performance speed, view SOW deliverables, authorize pending pipelines, and directly coordinate updates with lead developers.
-              </p>
-            </div>
-
-            <DiagnosticsLogs />
-          </div>
-
-          <div className="relative z-10 text-xs text-gray-600 font-mono flex items-center justify-between w-full">
-            <span>SECURE GATEWAY V2.1.0 • ENCRYPTED PIPELINE</span>
-            <span className="text-accent-primary animate-pulse font-bold flex items-center gap-1.5">
-              <ShieldCheck className="w-3.5 h-3.5" /> SECURE SHIELD ACTIVE
-            </span>
-          </div>
-        </div>
-
-        {/* Credentials Form Panel */}
-        <div className="w-full lg:w-1/2 flex items-center justify-center p-8 relative z-10 bg-[#040406]/75 backdrop-blur-2xl">
-          <Link to="/" className="lg:hidden absolute top-8 left-8 text-gray-400 hover:text-white flex items-center gap-2 font-mono text-xs uppercase tracking-wider">
-            <ChevronRight className="w-4 h-4 rotate-180" /> Home
-          </Link>
-
-          <motion.div
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-full max-w-md bg-[#07070a]/65 p-8 rounded-3xl border border-white/10 shadow-[0_25px_60px_rgba(0,0,0,0.8)] backdrop-blur-md relative"
-          >
-            <div className="absolute top-[-1px] left-10 w-28 h-[2px] bg-gradient-to-r from-accent-primary via-accent-violet to-transparent" />
-
-            <div className="mb-6 text-center relative">
-              <div className="absolute top-0 right-0 flex items-center gap-1 bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-full">
-                <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-[8px] font-mono text-green-400 font-bold uppercase tracking-wider">SYSTEM SECURE</span>
+        {/* Sign-out banner — slides down from top */}
+        <AnimatePresence>
+          {showSignoutBanner && (
+            <motion.div
+              initial={{ y: -90, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -90, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+              className="fixed top-0 left-0 right-0 z-[999] flex justify-center pointer-events-none"
+            >
+              <div className="mt-4 mx-4 md:mx-0 flex items-center gap-4 bg-[#0d0d12] border border-white/10 shadow-2xl shadow-black/60 rounded-2xl px-6 py-4 backdrop-blur-xl pointer-events-auto max-w-lg w-full">
+                <div className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center shrink-0">
+                  <LogOut className="w-4 h-4 text-red-400" />
+                </div>
+                <div className="flex-1 text-left">
+                  <div className="text-white font-bold text-sm leading-tight">Signed out successfully</div>
+                  <div className="text-gray-400 text-xs mt-0.5">Your session has been closed securely.</div>
+                </div>
+                <button
+                  onClick={() => setShowSignoutBanner(false)}
+                  className="text-gray-600 hover:text-white transition-colors ml-2 shrink-0 cursor-pointer"
+                >
+                  <X className="w-4 h-4" />
+                </button>
               </div>
-              <h2 className="text-2xl font-bold text-white mb-2 tracking-tight">Access Client Portal</h2>
-              <p className="text-gray-400 text-xs">Authorize to open development tracking board</p>
-            </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
-            <GoogleOAuthProvider clientId="MOCK_GOOGLE_CLIENT_ID">
-              <GoogleLoginButton onLoginSuccess={(userInfo) => {
-                setUserProfile(userInfo);
-                setIsAuthenticated(true);
-                toast.success("Welcome back to Nexora!");
-              }} />
-            </GoogleOAuthProvider>
-
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px bg-white/10 flex-1" />
-              <span className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">OR BIOMETRIC KEY</span>
-              <div className="h-px bg-white/10 flex-1" />
-            </div>
-
-            {/* Interactive Biometric Retinal/Fingerprint Scanner */}
-            <div className="mb-4">
-              <BiometricScanner onScanSuccess={() => {
-                setIsAuthenticated(true);
-                setUserProfile({
-                  name: "VIP Client",
-                  email: "vip.client@company.com",
-                  picture: null
-                });
-                toast.success("Retinal clearance verified! Welcome to Nexora.");
-              }} />
-            </div>
-
-            <div className="flex items-center gap-4 mb-4">
-              <div className="h-px bg-white/10 flex-1" />
-              <span className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">OR SECURITY KEY</span>
-              <div className="h-px bg-white/10 flex-1" />
-            </div>
-
-            <form onSubmit={handleLogin} className="flex flex-col gap-4 text-left">
-              <div className="space-y-1">
-                <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest ml-1">Client Email</label>
-                <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                  <input
-                    type="email"
-                    required
-                    placeholder="client@company.com"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-[#0d0d12] border border-white/10 rounded-xl pl-12 pr-4 py-3.5 text-white focus:outline-none focus:border-accent-primary transition-all text-sm font-mono focus:ring-1 focus:ring-accent-primary/30"
-                  />
-                </div>
+        {/* Main Login Card Container */}
+        <div className="w-full max-w-5xl bg-[#0e0e11]/90 border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row relative z-10 shadow-[0_25px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl min-h-[580px]">
+          
+          {/* Left Panel: Credentials Form */}
+          <div className="w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-between relative">
+            {/* Top Bar: Brand Logo & Secure Link Indicator */}
+            <div className="flex justify-between items-center mb-8">
+              <Link to="/" className="inline-flex items-center gap-2.5">
+                <img src="/logo/favicon.png" alt="Nexora" className="w-6.5 h-6.5" />
+                <span className="font-display font-black text-sm tracking-[0.25em] text-white">NEXORA</span>
+              </Link>
+              <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+                <span className="text-[8px] font-mono text-emerald-400 font-bold uppercase tracking-widest">SYSTEM SECURE</span>
               </div>
+            </div>
 
-              <div className="space-y-1">
-                <div className="flex justify-between items-center ml-1">
-                  <label className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Secret Phrase</label>
-                  <a href="#" className="text-[9px] font-bold text-accent-primary hover:underline uppercase tracking-widest">Forgot?</a>
+            {/* Form Section */}
+            <div className="my-auto py-2">
+              <h2 className="text-3xl font-bold text-white mb-2 tracking-tight flex items-center gap-2.5">
+                Welcome back 
+                <motion.span
+                  animate={{ rotate: [0, 15, -10, 15, -5, 10, 0, 0] }}
+                  transition={{ repeat: Infinity, duration: 2.2, repeatDelay: 1.2 }}
+                  className="inline-block origin-[70%_70%] cursor-default text-3xl"
+                >
+                  👋
+                </motion.span>
+              </h2>
+              <p className="text-gray-400 text-xs mb-8">Please enter your credentials to open the Pulse board.</p>
+
+              <form onSubmit={handleLogin} className="flex flex-col gap-4 text-left">
+                <div className="space-y-1">
+                  <div className="relative">
+                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+                    <input
+                      type="email"
+                      required
+                      placeholder="Email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="w-full bg-[#121216] border border-white/10 rounded-full pl-12 pr-4 py-3.5 text-white focus:outline-none focus:border-accent-violet transition-all text-sm font-sans focus:ring-1 focus:ring-accent-violet/30"
+                    />
+                  </div>
                 </div>
-                <div className="relative">
-                  <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    required
-                    placeholder="••••••••"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full bg-[#0d0d12] border border-white/10 rounded-xl pl-12 pr-12 py-3.5 text-white focus:outline-none focus:border-accent-primary transition-all text-sm font-mono focus:ring-1 focus:ring-accent-primary/30"
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
-                  >
-                    {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                  </button>
+
+                <div className="space-y-2">
+                  <div className="relative">
+                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
+                    <input
+                      type={showPassword ? "text" : "password"}
+                      required
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      onFocus={() => setIsPasswordFocused(true)}
+                      onBlur={() => setIsPasswordFocused(false)}
+                      className="w-full bg-[#121216] border border-white/10 rounded-full pl-12 pr-12 py-3.5 text-white focus:outline-none focus:border-accent-violet transition-all text-sm font-sans focus:ring-1 focus:ring-accent-violet/30"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
+                    >
+                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
+                    </button>
+                  </div>
+                  <div className="text-right pr-2">
+                    <a href="#" className="text-xs text-gray-400 hover:text-white hover:underline transition-colors font-medium">Forgot Password?</a>
+                  </div>
                 </div>
+
+                <button
+                  type="submit"
+                  disabled={isLoginLoading || !email || !password}
+                  className="w-full mt-2 bg-[#5f35d2] hover:bg-[#6f42ea] text-white font-bold rounded-full px-6 py-3.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2.5 shadow-lg shadow-purple-950/20 group cursor-pointer hover:shadow-purple-900/30"
+                >
+                  {isLoginLoading ? (
+                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  ) : (
+                    <>
+                      <span>Log In</span>
+                      <SendHorizontal className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </>
+                  )}
+                </button>
+              </form>
+
+              {/* OAuth Splitter */}
+              <div className="flex items-center gap-4 my-6">
+                <div className="h-px bg-white/5 flex-1" />
+                <span className="text-[9px] text-gray-600 font-bold uppercase tracking-widest">OR</span>
+                <div className="h-px bg-white/5 flex-1" />
               </div>
 
-              <button
-                type="submit"
-                disabled={isLoginLoading || !email || !password}
-                className="w-full mt-2 bg-white hover:bg-gray-200 text-black font-bold rounded-xl px-4 py-3.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2 shadow-lg text-sm"
-              >
-                {isLoginLoading ? (
-                  <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                ) : (
-                  <>
-                    <span>Enter Pulse Board</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </>
-                )}
-              </button>
-            </form>
+              {/* Google OAuth Login */}
+              <GoogleOAuthProvider clientId="MOCK_GOOGLE_CLIENT_ID">
+                <GoogleLoginButton onLoginSuccess={(userInfo) => {
+                  setUserProfile(userInfo);
+                  setIsAuthenticated(true);
+                  setShowWelcomeBanner(true);
+                  setTimeout(() => setShowWelcomeBanner(false), 5000);
+                }} />
+              </GoogleOAuthProvider>
+            </div>
 
-            <p className="mt-6 text-center text-xs text-gray-500">
-              New client? <Link to="/#contact" className="text-accent-primary font-bold hover:underline">Launch a project SOW</Link>
+            {/* Footer Sign Up */}
+            <p className="text-center text-xs text-gray-500 mt-6">
+              Don't have an account? <Link to="/#contact" className="text-white font-bold hover:underline">Sign Up</Link>
             </p>
-          </motion.div>
+          </div>
+
+          {/* Right Panel: Static Photo with Spotlight Effect */}
+          <div className="hidden md:flex w-1/2 p-6 md:p-8 flex-col justify-center items-center relative bg-black/25">
+            {/* Card Shell — no perspective, fully static */}
+            <div className="w-full h-full min-h-[460px] max-w-[390px] relative">
+              {/* Outer ambient glow */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-accent-violet/20 via-accent-primary/10 to-transparent rounded-[2.2rem] blur-xl opacity-70 pointer-events-none" />
+
+              {/* Static Card Frame */}
+              <div
+                className="w-full h-full bg-[#121216]/90 border border-white/10 rounded-[2.2rem] overflow-hidden relative flex flex-col justify-between p-6 shadow-2xl"
+              >
+                {/* Background Photo — full brightness, no overlays */}
+                <div className="absolute inset-0 z-0 rounded-[2.2rem] overflow-hidden">
+                  <img
+                    src={loginBg}
+                    alt="Nexoraa Works Login Backdrop"
+                    className="w-full h-full object-cover"
+                    draggable={false}
+                    style={{
+                      userSelect: 'none',
+                      pointerEvents: 'none',
+                      filter: 'brightness(1.15) contrast(1.08) saturate(1.2)',
+                    }}
+                  />
+                </div>
+
+                {/* Top Overlay HUD Details */}
+                <div className="relative z-10 flex justify-between items-center w-full">
+                  <span className="text-[9px] font-mono font-bold tracking-widest text-white bg-black/60 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
+                    CLEARANCE HUD
+                  </span>
+                  <span className="text-[9px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5 backdrop-blur-sm">
+                    GATE: 5173
+                  </span>
+                </div>
+
+                {/* Password Focus Scanline Laser Mesh */}
+                {isPasswordFocused && (
+                  <div className="absolute inset-x-0 inset-y-0 z-10 pointer-events-none overflow-hidden rounded-[2.2rem]">
+                    <motion.div
+                      initial={{ top: '0%' }}
+                      animate={{ top: '100%' }}
+                      transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-accent-violet to-transparent shadow-[0_0_12px_#7B2FFF] z-10"
+                    />
+                    <div className="absolute inset-0 bg-accent-violet/5 flex items-center justify-center">
+                      <div className="bg-black/90 border border-accent-violet/30 px-4 py-2.5 rounded-2xl text-center backdrop-blur-md max-w-[240px]">
+                        <div className="text-[9px] font-mono text-accent-violet font-bold uppercase tracking-widest animate-pulse flex items-center justify-center gap-1.5">
+                          <ShieldCheck className="w-3.5 h-3.5" /> SHIELD PROTOCOL ENFORCED
+                        </div>
+                        <div className="text-[8px] font-mono text-gray-500 mt-1">ENCRYPTING INCOMING PACKETS</div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     );
@@ -1712,13 +1823,53 @@ export default function ClientPortal() {
 
           <button onClick={() => {
             setIsAuthenticated(false);
-            toast("Signed out successfully.");
+            setShowSignoutBanner(true);
+            setTimeout(() => setShowSignoutBanner(false), 4000);
           }} className="w-full flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all text-gray-400 hover:text-red-400 hover:bg-red-500/10 group">
             <LogOut className="w-5 h-5 shrink-0 group-hover:text-red-400" />
             <span className="hidden md:block font-medium text-sm">Logout</span>
           </button>
         </div>
       </aside>
+
+      {/* Welcome Banner — slides down from top after login */}
+      <AnimatePresence>
+        {showWelcomeBanner && (
+          <motion.div
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -100, opacity: 0 }}
+            transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+            className="fixed top-0 left-0 right-0 z-[999] flex justify-center pointer-events-none"
+          >
+            <div className="mt-4 mx-4 md:mx-0 flex items-center gap-4 bg-[#0d0d12] border border-white/10 shadow-2xl shadow-black/60 rounded-2xl px-6 py-4 backdrop-blur-xl pointer-events-auto max-w-lg w-full">
+              {/* Avatar */}
+              <div className="w-11 h-11 rounded-full bg-accent-violet/30 border border-accent-violet/50 flex items-center justify-center text-white font-bold text-lg shrink-0">
+                {(userProfile ? userProfile.name[0] : 'C').toUpperCase()}
+              </div>
+              {/* Text */}
+              <div className="flex-1 text-left">
+                <div className="text-white font-bold text-sm leading-tight">
+                  Welcome back, {userProfile ? userProfile.name.split(' ')[0] : 'Client'} 👋
+                </div>
+                <div className="text-gray-400 text-xs mt-0.5">You're now signed in to Nexora Pulse.</div>
+              </div>
+              {/* Green live dot */}
+              <div className="flex items-center gap-1.5 shrink-0">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] animate-pulse" />
+                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">Live</span>
+              </div>
+              {/* Close */}
+              <button
+                onClick={() => setShowWelcomeBanner(false)}
+                className="text-gray-600 hover:text-white transition-colors ml-2 shrink-0 cursor-pointer"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Main dashboard core content */}
       <main className="flex-1 ml-20 md:ml-64 relative z-10 min-h-screen overflow-y-auto pb-16 flex flex-col">
