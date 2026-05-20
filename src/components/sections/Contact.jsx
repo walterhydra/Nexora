@@ -15,14 +15,88 @@ export default function Contact() {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    const formData = new FormData(formRef.current);
+    const name = formData.get('user_name');
+    const email = formData.get('user_email');
+    const budget = formData.get('budget') || 'Not Specified';
+    const message = formData.get('message');
+
+    // 1. Try sending via Web3Forms if configured
+    if (web3Key) {
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json"
+          },
+          body: JSON.stringify({
+            access_key: web3Key,
+            name: name,
+            email: email,
+            budget: budget,
+            message: message,
+            subject: `Elite Project Inquiry from ${name}`,
+            from_name: "Nexora Studio Portal"
+          })
+        });
+
+        const data = await response.json();
+        if (response.ok && data.success) {
+          setIsSubmitting(false);
+          setIsSuccess(true);
+          toast.success("Inquiry sent successfully! We'll contact you soon.");
+          formRef.current.reset();
+          setTimeout(() => setIsSuccess(false), 5000);
+          return;
+        } else {
+          throw new Error(data.message || "Web3Forms submission failed");
+        }
+      } catch (err) {
+        console.warn("Web3Forms failed, trying next option:", err);
+      }
+    }
+
+    // 2. Try sending via EmailJS SMTP relay if configured
+    if (serviceId && templateId && publicKey) {
+      try {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: name,
+            from_email: email,
+            budget: budget,
+            message: message,
+            reply_to: email,
+            to_email: 'nexoraa.works@gmail.com'
+          },
+          publicKey
+        );
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        toast.success("Inquiry sent successfully! We'll contact you soon.");
+        formRef.current.reset();
+        setTimeout(() => setIsSuccess(false), 5000);
+        return;
+      } catch (err) {
+        console.warn("EmailJS failed, trying next option:", err);
+      }
+    }
+
+    // 3. Fallback to FormSubmit API
     try {
-      const formData = new FormData(formRef.current);
       const payload = {
-        name: formData.get('user_name'),
-        email: formData.get('user_email'),
-        budget: formData.get('budget') || 'Not Specified',
-        message: formData.get('message'),
-        _subject: `Elite Project Inquiry: ${formData.get('user_name')}`
+        name,
+        email,
+        budget,
+        message,
+        _subject: `Elite Project Inquiry: ${name}`
       };
 
       const response = await fetch("https://formsubmit.co/ajax/nexoraa.works@gmail.com", {
@@ -37,28 +111,26 @@ export default function Contact() {
       if (response.ok) {
         setIsSubmitting(false);
         setIsSuccess(true);
-        toast.success("Message sent successfully! We'll be in touch soon.");
+        toast.success("Inquiry sent successfully! We'll contact you soon.");
         formRef.current.reset();
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        throw new Error("Form submission failed");
+        throw new Error("FormSubmit response not OK");
       }
     } catch (error) {
-      console.error("Form submit error, using mailto fallback:", error);
+      console.error("Form submit error:", error);
       setIsSubmitting(false);
-      toast.success("Opening default mail application with your inquiry details...");
-
-      // Absolute bulletproof fallback: open email client pre-filled with form contents
-      const name = formRef.current.user_name.value;
-      const email = formRef.current.user_email.value;
-      const budget = formRef.current.budget.value || 'Not Specified';
-      const msg = formRef.current.message.value;
-
-      const subject = `Elite Project Inquiry - Nexora Studio`;
-      const body = `Hey Nexora Team! 🚀\n\nI just filled out the contact form on your website with the following details:\n\n- Name: ${name}\n- Email: ${email}\n- Budget Range: ${budget}\n\nProject Brief:\n${msg}\n\nLet's connect soon!\n\nBest regards,\n${name}`;
-
-      window.location.href = `mailto:nexoraa.works@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-      formRef.current.reset();
+      
+      // Copy email to clipboard as clean fallback
+      navigator.clipboard.writeText("nexoraa.works@gmail.com");
+      toast.error("Submit service is currently offline. We have copied nexoraa.works@gmail.com to your clipboard!", {
+        duration: 6000,
+        style: {
+          background: '#ff4b4b',
+          color: '#fff',
+          fontWeight: 'bold'
+        }
+      });
     }
   };
 

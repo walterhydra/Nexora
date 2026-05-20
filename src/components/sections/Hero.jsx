@@ -252,7 +252,7 @@ export default function Hero() {
           </button>
 
           <button
-            onClick={() => scrollToSection('configurator')}
+            onClick={() => scrollToSection('contact')}
             className="group px-8 py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 hover:border-white/60 transition-colors duration-300"
           >
             <span className="flex items-center gap-2">
