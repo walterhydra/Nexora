@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast';
 // Layout Components
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
+import ScrollToTop from './components/layout/ScrollToTop';
 
 // UI Components
 import ContextCursor from './components/ui/ContextCursor';
@@ -70,6 +71,7 @@ function AppContent() {
 
   return (
     <>
+      <ScrollToTop />
       <Helmet>
         <title>Nexora Studio | 7-Day Web & App Development</title>
         <meta name="description" content="We build world-class websites, apps, automations, and digital products in 7 days. High-converting design meets top-tier engineering." />
