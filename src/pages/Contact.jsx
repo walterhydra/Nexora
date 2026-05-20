@@ -19,11 +19,15 @@ export default function Contact() {
     const projectType = params.get('type');
     const addons = params.get('addons');
     const price = params.get('price');
+    const priority = params.get('priority');
 
     if (projectType) {
       let prefilledMsg = `Hi Nexora, I'm interested in building a ${projectType}.\n`;
       if (addons) {
         prefilledMsg += `Selected Add-ons: ${addons}\n`;
+      }
+      if (priority === 'true') {
+        prefilledMsg += `Delivery Mode: Priority Rush (2x Speed)\n`;
       }
       if (price) {
         prefilledMsg += `Estimated Budget: ${price}\n`;

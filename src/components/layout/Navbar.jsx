@@ -1,33 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useScroll, useMotionValueEvent, motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
-import { Moon, Sun, Menu, X } from 'lucide-react';
-import { useTheme } from '../../context/ThemeContext';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
 import MagneticButton from '../ui/MagneticButton';
 import { getScroll } from '../../utils/scroll';
 
 export default function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const { scrollY } = useScroll();
   const location = useLocation();
   const navigate = useNavigate();
-  const [hidden, setHidden] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hoveredLink, setHoveredLink] = useState(null);
 
   useMotionValueEvent(scrollY, "change", (latest) => {
+    // Detect scroll direction to show/hide navbar
     const previous = scrollY.getPrevious();
-    
-    // Glassmorphism background state
-    if (latest > 50) setIsScrolled(true);
-    else setIsScrolled(false);
-
-    // Hide/show logic (Linear.app style)
-    if (latest > 150 && latest > previous) {
-      setHidden(true);
+    if (latest > previous && latest > 150) {
+      setIsHidden(true); // Scroll down - Hide
     } else {
-      setHidden(false);
+      setIsHidden(false); // Scroll up - Show
+    }
+
+    // Shrink padding if scrolled
+    if (latest > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
     }
   });
 
@@ -37,7 +38,6 @@ export default function Navbar() {
     
     if (location.pathname !== '/') {
       navigate(`/#${targetId}`);
-      // The home page can handle scrolling to hash on load
       return;
     }
 
@@ -62,146 +62,214 @@ export default function Navbar() {
 
   return (
     <>
-      <motion.nav
-        variants={{
-          visible: { y: 0 },
-          hidden: { y: "-100%" }
-        }}
-        animate={hidden ? "hidden" : "visible"}
-        transition={{ duration: 0.35, ease: "easeInOut" }}
-        className={cn(
-          "fixed top-0 inset-x-0 z-50 transition-all duration-500 ease-out flex justify-center",
-          isScrolled ? "pt-4 px-4 sm:px-6" : "pt-0 px-0"
-        )}
-      >
-        <div className={cn(
-          "w-full flex items-center justify-between transition-all duration-500 ease-out",
-          isScrolled
-            ? "max-w-5xl h-16 px-4 sm:px-6 rounded-full bg-white/70 dark:bg-black/70 backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.12)] border border-gray-200/50 dark:border-white/10"
-            : "max-w-7xl h-24 px-6 md:px-12 bg-transparent"
-        )}>
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 cursor-pointer" onClick={(e) => location.pathname === '/' && handleNavClick(e, 'home')}>
-            <img src="/logo/logo.png" alt="Nexora Logo" className="w-8 h-8 object-contain" />
-            <span className="font-display font-bold text-2xl tracking-tight">Nexora</span>
-          </Link>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-4 lg:gap-8">
-            <div className="flex items-center gap-4 lg:gap-6">
-              {navLinks.map((link) => (
-                link.isRoute ? (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-lg font-bold hover:text-accent-blue transition-colors whitespace-nowrap"
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.name}
-                    href={`#${link.id}`}
-                    onClick={(e) => handleNavClick(e, link.id)}
-                    className="text-lg font-bold hover:text-accent-blue transition-colors whitespace-nowrap"
-                  >
-                    {link.name}
-                  </a>
-                )
-              ))}
-            </div>
-
-            <div className={cn(
-              "flex items-center gap-2 lg:gap-4 flex-shrink-0 transition-all duration-500",
-              isScrolled 
-                ? "pl-4 lg:pl-6 border-l border-gray-200 dark:border-white/10" 
-                : "pl-4 lg:pl-6 border-l border-gray-200 dark:border-white/10"
-            )}>
-              <Link
-                to="/portal"
-                className="text-sm font-bold uppercase tracking-wider text-gray-500 hover:text-accent-primary transition-colors hidden lg:block"
-              >
-                Client Login
-              </Link>
-
-              <button
-                onClick={toggleTheme}
-                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors flex-shrink-0 text-gray-600 dark:text-gray-300"
-                aria-label="Toggle Theme"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-              </button>
-
-              <MagneticButton 
-                className="bg-accent-primary hover:bg-cyan-300 text-black font-semibold shadow-[0_0_20px_rgba(0,245,255,0.4)] hover:shadow-[0_0_30px_rgba(0,245,255,0.7)] transition-all duration-300 flex-shrink-0 whitespace-nowrap px-8 py-4 text-lg"
-                onClick={(e) => handleNavClick(e, 'contact')}
-              >
-                Start a Project &rarr;
-              </MagneticButton>
-            </div>
+      <div className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none px-4">
+        {/* Outer Long Strip: Wide floating container */}
+        <motion.nav
+          variants={{
+            visible: { y: 0 },
+            hidden: { y: "-180%" }
+          }}
+          animate={isHidden ? "hidden" : "visible"}
+          transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          layout
+          className={cn(
+            "pointer-events-auto flex items-center justify-between w-[95%] max-w-7xl rounded-full relative overflow-hidden transition-all duration-500",
+            "bg-[#050505]/95 border border-white/10 shadow-[0_25px_50px_rgba(0,0,0,0.8)] backdrop-blur-md",
+            isScrolled ? "p-1.5 px-6" : "p-3 px-8"
+          )}
+        >
+          {/* Refractive Border Gloss Beam Sweep */}
+          <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
+            <motion.div 
+              animate={{ x: ['-200%', '200%'] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
+              className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
+            />
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-4">
-            <button
-              onClick={toggleTheme}
-              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
+          {/* Logo Section (Left) - Zoomed brand text to text-xl */}
+          <div className="flex items-center gap-3 shrink-0">
+            <Link 
+              to="/" 
+              className="flex items-center gap-3 cursor-pointer group" 
+              onClick={(e) => location.pathname === '/' && handleNavClick(e, 'home')}
             >
-              {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
-            </button>
-            <button onClick={() => setMobileMenuOpen(true)}>
-              <Menu size={28} />
+              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+                <img 
+                  src="/logo/favicon.png" 
+                  alt="Nexora Logo Icon" 
+                  className="w-full h-full object-contain"
+                />
+              </div>
+              <span className="font-display font-black text-lg md:text-xl tracking-[0.2em] text-white">
+                NEXORA
+              </span>
+            </Link>
+          </div>
+
+          {/* Stretched Inner Capsule (Desktop Center - Flex Grow / Stretch) */}
+          <div className="hidden md:flex flex-1 max-w-3xl mx-8">
+            <div 
+              className="bg-white/5 border border-white/5 rounded-full p-2 flex items-center justify-between w-full relative"
+              onMouseLeave={() => setHoveredLink(null)}
+            >
+              {/* Spaced Links - Zoomed nav link text to text-lg */}
+              <div className="flex items-center justify-around flex-1 px-4">
+                {navLinks.map((link) => (
+                  <div key={link.name} className="relative">
+                    {link.isRoute ? (
+                      <Link
+                        to={link.path}
+                        onMouseEnter={() => setHoveredLink(link.name)}
+                        className="px-6 py-2.5 block text-base md:text-lg font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
+                      >
+                        {link.name}
+                      </Link>
+                    ) : (
+                      <a
+                        href={`#${link.id}`}
+                        onClick={(e) => handleNavClick(e, link.id)}
+                        onMouseEnter={() => setHoveredLink(link.name)}
+                        className="px-6 py-2.5 block text-base md:text-lg font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
+                      >
+                        {link.name}
+                      </a>
+                    )}
+
+                    {/* Sliding Active Pill */}
+                    {hoveredLink === link.name && (
+                      <motion.div
+                        layoutId="capsule-active"
+                        className="absolute inset-0 bg-white/10 rounded-full z-0"
+                        transition={{ type: "spring", stiffness: 350, damping: 22 }}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+
+              {/* Dark Pill Contact CTA inside capsule - Zoomed size and padding */}
+              <Link to="/contact" className="shrink-0 ml-2">
+                <MagneticButton 
+                  className="bg-black hover:bg-neutral-900 border border-white/10 text-white px-7 py-3 text-sm md:text-base font-black rounded-full transition-colors flex items-center justify-center whitespace-nowrap group"
+                >
+                  <span className="flex items-center gap-2 whitespace-nowrap">
+                    Initiate
+                    <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
+                  </span>
+                </MagneticButton>
+              </Link>
+            </div>
+          </div>
+
+          {/* Actions Section (Right) - CLIENT PORTAL -> */}
+          <div className="hidden md:flex items-center gap-4 shrink-0">
+            <Link
+              to="/portal"
+              className="group relative flex items-center gap-2.5 bg-white/5 hover:bg-white border border-white/10 hover:border-white px-5 py-2.5 rounded-full transition-all duration-300 text-sm font-semibold text-gray-300 hover:text-black whitespace-nowrap"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+                Client Portal
+                <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
+              </span>
+            </Link>
+          </div>
+
+          {/* Mobile Actions */}
+          <div className="md:hidden flex items-center gap-2 pr-2 shrink-0">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors text-white"
+            >
+              <Menu size={18} />
             </button>
           </div>
-        </div>
-      </motion.nav>
 
-      {/* Mobile Fullscreen Menu */}
+        </motion.nav>
+      </div>
+
+      {/* Fullscreen Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, x: '100%' }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: '100%' }}
-            transition={{ duration: 0.4, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 z-[100] bg-primary-light dark:bg-primary-dark flex flex-col"
+            initial={{ opacity: 0, y: '-10%' }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: '-10%' }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="fixed inset-0 z-[100] bg-black/98 backdrop-blur-md flex flex-col"
           >
-            <div className="p-6 flex justify-end">
-              <button onClick={() => setMobileMenuOpen(false)} className="w-12 h-12 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10">
-                <X size={28} />
+            <div className="p-8 flex justify-between items-center border-b border-white/5">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
+                  <img 
+                    src="/logo/favicon.png" 
+                    alt="Nexora Logo Icon" 
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <span className="font-display font-black text-xl tracking-tight text-white">NEXORA</span>
+              </div>
+              <button 
+                onClick={() => setMobileMenuOpen(false)} 
+                className="w-10 h-10 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors"
+              >
+                <X size={20} />
               </button>
             </div>
-            <div className="flex-1 flex flex-col items-center justify-center gap-8">
-              {navLinks.map((link) => (
-                link.isRoute ? (
-                  <Link
-                    key={link.name}
-                    to={link.path}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="text-4xl font-display font-bold hover:text-accent-blue"
-                  >
-                    {link.name}
-                  </Link>
-                ) : (
-                  <a
-                    key={link.name}
-                    href={`#${link.id}`}
-                    onClick={(e) => handleNavClick(e, link.id)}
-                    className="text-4xl font-display font-bold hover:text-accent-blue"
-                  >
-                    {link.name}
-                  </a>
-                )
-              ))}
-              <div className="mt-8">
-                <MagneticButton 
-                  className="bg-accent-primary hover:bg-cyan-400 text-black font-semibold shadow-[0_0_15px_rgba(0,245,255,0.2)] hover:shadow-[0_0_25px_rgba(0,245,255,0.5)] transition-all duration-300"
-                  onClick={(e) => handleNavClick(e, 'contact')}
+            
+            <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
+              {navLinks.map((link, i) => (
+                <motion.div
+                  key={link.name}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
                 >
-                  Start a Project &rarr;
-                </MagneticButton>
-              </div>
+                  {link.isRoute ? (
+                    <Link
+                      to={link.path}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-4xl font-display font-bold text-white hover:text-gray-400 transition-colors tracking-tight"
+                    >
+                      {link.name}
+                    </Link>
+                  ) : (
+                    <a
+                      href={`#${link.id}`}
+                      onClick={(e) => handleNavClick(e, link.id)}
+                      className="text-4xl font-display font-bold text-white hover:text-gray-400 transition-colors tracking-tight"
+                    >
+                      {link.name}
+                    </a>
+                  )}
+                </motion.div>
+              ))}
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mt-8 flex flex-col items-center gap-6 w-full max-w-xs"
+              >
+                <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="w-full">
+                  <MagneticButton 
+                    className="bg-white text-black w-full py-4 font-bold text-sm rounded-full transition-colors hover:bg-gray-200 flex items-center justify-center gap-2"
+                  >
+                    Initiate Project <ArrowRight size={16} />
+                  </MagneticButton>
+                </Link>
+                <Link 
+                  to="/portal" 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="text-sm font-mono text-gray-500 hover:text-white uppercase tracking-widest"
+                >
+                  Client Portal
+                </Link>
+              </motion.div>
             </div>
           </motion.div>
         )}

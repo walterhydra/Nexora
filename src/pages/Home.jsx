@@ -10,7 +10,6 @@ import Contact from '../components/sections/Contact';
 import TechStack from '../components/sections/TechStack';
 import Pricing from '../components/sections/Pricing';
 import HowWeWork from '../components/sections/HowWeWork';
-import BlogTeaser from '../components/sections/BlogTeaser';
 import Work from '../components/sections/Work';
 import Stats from '../components/sections/Stats';
 import Pulse from '../components/sections/Pulse';
@@ -60,7 +59,6 @@ export default function Home() {
         <HowWeWork />
         <Pricing />
         <KineticManifesto />
-        <BlogTeaser />
         <Contact />
       </div>
 
