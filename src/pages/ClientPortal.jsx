@@ -6,7 +6,7 @@ import confetti from 'canvas-confetti';
 import {
   Activity, Clock, FileText, CheckCircle2, ChevronRight, Lock,
   Code2, Zap, Download, LayoutDashboard, CreditCard, Settings,
-  LogOut, Mail, Key, Globe, Search, Bell, Terminal, Users, CheckSquare, File, MessageCircle, MoreHorizontal, HelpCircle, Receipt, History, X, Send, Eye, EyeOff, Sparkles, SendHorizontal, CreditCard as CardIcon, FileCheck, Check, Laptop, ShieldCheck, ChevronDown, Video, Mic, Volume2
+  LogOut, Mail, Key, Globe, Search, Bell, Terminal, Users, CheckSquare, File, MessageCircle, MoreHorizontal, HelpCircle, Receipt, History, X, Send, Eye, EyeOff, Sparkles, SendHorizontal, CreditCard as CardIcon, FileCheck, Check, Laptop, ShieldCheck, ChevronDown, Video, Mic, Volume2, Server, Database, Wifi
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { GoogleOAuthProvider } from '@react-oauth/google';
@@ -2475,6 +2475,88 @@ export default function ClientPortal() {
                     </div>
                   ))}
                 </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        {/* Live Infrastructure & Integrations */}
+        <div className="px-8 lg:px-12 max-w-[1500px] w-full mx-auto mt-8 mb-12 shrink-0 text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            {/* Live Environment Status */}
+            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00FF87]/5 rounded-full blur-2xl group-hover:bg-[#00FF87]/10 transition-colors pointer-events-none" />
+              <div className="flex justify-between items-center mb-6 relative z-10">
+                <h3 className="text-sm font-bold flex items-center gap-2 text-white uppercase tracking-widest font-mono">
+                  <Server className="w-4 h-4 text-[#00FF87]" /> Server Diagnostics
+                </h3>
+                <div className="flex items-center gap-2 px-3 py-1 bg-[#00FF87]/10 border border-[#00FF87]/20 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-[#00FF87] animate-pulse shadow-[0_0_8px_#00FF87]" />
+                  <span className="text-[10px] text-[#00FF87] font-bold uppercase tracking-widest">Optimal</span>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-4 relative z-10">
+                <div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Uptime</div>
+                  <div className="text-xl font-mono font-bold text-white">99.99%</div>
+                </div>
+                <div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Latency</div>
+                  <div className="text-xl font-mono font-bold text-white">24ms</div>
+                </div>
+                <div>
+                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Region</div>
+                  <div className="text-xl font-mono font-bold text-white">US-East</div>
+                </div>
+              </div>
+              <div className="mt-6 pt-6 border-t border-white/5 relative z-10">
+                <div className="flex justify-between items-center mb-3">
+                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Live Traffic Flow</span>
+                  <span className="text-[10px] text-accent-primary font-mono">~45req/s</span>
+                </div>
+                <div className="h-12 w-full flex items-end gap-1">
+                  {[...Array(24)].map((_, i) => (
+                    <div key={i} className="flex-1 bg-accent-primary/20 rounded-t-sm" style={{ height: `${Math.max(20, Math.random() * 100)}%` }}>
+                      <div className="w-full bg-accent-primary rounded-t-sm" style={{ height: '4px' }} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Connected Integrations */}
+            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md relative overflow-hidden group">
+              <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent-violet/5 rounded-full blur-2xl group-hover:bg-accent-violet/10 transition-colors pointer-events-none" />
+              <div className="flex justify-between items-center mb-6 relative z-10">
+                <h3 className="text-sm font-bold flex items-center gap-2 text-white uppercase tracking-widest font-mono">
+                  <Wifi className="w-4 h-4 text-accent-violet" /> Pipeline Integrations
+                </h3>
+              </div>
+              <div className="space-y-3 relative z-10">
+                {[
+                  { name: 'GitHub Architecture', status: 'Synced', time: '2m ago', color: 'text-white', dot: 'bg-white' },
+                  { name: 'Vercel Edge Network', status: 'Live', time: '1h ago', color: 'text-white', dot: 'bg-[#00FF87]' },
+                  { name: 'Stripe Billing API', status: 'Active', time: 'Updated', color: 'text-accent-secondary', dot: 'bg-accent-secondary' },
+                  { name: 'Figma Design System', status: 'Connected', time: 'Live', color: 'text-accent-primary', dot: 'bg-accent-primary' }
+                ].map((int, i) => (
+                  <div key={i} className="flex items-center justify-between p-3 rounded-2xl bg-[#0d0d12]/60 border border-white/5 hover:border-white/20 transition-all cursor-pointer">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+                        <Database className="w-4 h-4 text-gray-400" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-bold text-white">{int.name}</div>
+                        <div className="text-[10px] text-gray-500 font-mono mt-0.5">Last ping: {int.time}</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span className={`text-xs font-bold ${int.color}`}>{int.status}</span>
+                      <span className={`w-1.5 h-1.5 rounded-full ${int.dot}`} />
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
