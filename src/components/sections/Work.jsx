@@ -8,7 +8,7 @@ import {
 } from "framer-motion";
 import { ArrowUpRight, ArrowRight, Sparkles } from "lucide-react";
 import { projects } from "../../constants/projects";
-import anime from "animejs";
+import anime from "animejs/lib/anime.es.js";
 
 export default function Work() {
   const containerRef = useRef(null);
@@ -130,37 +130,43 @@ export default function Work() {
           style={{ x: physicsX }}
         >
           {projects.map((project, index) => {
-            // Parallax effect for each image
-            const imageX = useTransform(
-              scrollYProgress,
-              [
-                (index - 1) / (projects.length - 1),
-                index / (projects.length - 1),
-                (index + 1) / (projects.length - 1),
-              ],
-              ["20%", "0%", "-20%"],
-            );
+            const inputRange = [];
+            const imageXRange = [];
+            const scaleRange = [];
+            const opacityRange = [];
 
-            // Scale effect for the current active project
-            const scale = useTransform(
-              scrollYProgress,
-              [
-                (index - 1) / (projects.length - 1),
-                index / (projects.length - 1),
-                (index + 1) / (projects.length - 1),
-              ],
-              [0.8, 1, 0.8],
-            );
+            const total = Math.max(1, projects.length - 1);
+            
+            if (index > 0) {
+              inputRange.push((index - 1) / total);
+              imageXRange.push("20%");
+              scaleRange.push(0.8);
+              opacityRange.push(0.3);
+            }
+            
+            inputRange.push(index / total);
+            imageXRange.push("0%");
+            scaleRange.push(1);
+            opacityRange.push(1);
+            
+            if (index < projects.length - 1) {
+              inputRange.push((index + 1) / total);
+              imageXRange.push("-20%");
+              scaleRange.push(0.8);
+              opacityRange.push(0.3);
+            }
 
-            const opacity = useTransform(
-              scrollYProgress,
-              [
-                (index - 1) / (projects.length - 1),
-                index / (projects.length - 1),
-                (index + 1) / (projects.length - 1),
-              ],
-              [0.3, 1, 0.3],
-            );
+            // Handle edge case where there's only 1 project
+            if (inputRange.length === 1) {
+              inputRange.push(1);
+              imageXRange.push("0%");
+              scaleRange.push(1);
+              opacityRange.push(1);
+            }
+
+            const imageX = useTransform(scrollYProgress, inputRange, imageXRange);
+            const scale = useTransform(scrollYProgress, inputRange, scaleRange);
+            const opacity = useTransform(scrollYProgress, inputRange, opacityRange);
 
             return (
               <div
