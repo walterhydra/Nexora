@@ -1,276 +1,124 @@
-import React, { useState, useRef, useEffect } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  AnimatePresence,
-} from "framer-motion";
-import { ArrowUpRight, ArrowRight, Sparkles } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
 import { projects } from "../../constants/projects";
-import anime from "animejs/lib/anime.es.js";
 
 export default function Work() {
-  const containerRef = useRef(null);
-  const scrollRef = useRef(null);
-  const textRef = useRef(null);
-  const [activeProject, setActiveProject] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  });
-
-  // Calculate total width based on number of projects (100vw per project)
-  // We subtract 1 so the last project aligns perfectly with the end of the scroll
-  const x = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["0%", `-${(projects.length - 1) * 100}vw`],
-  );
-
-  // Spring physics for smoother horizontal scrolling
-  const physicsX = useSpring(x, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001,
-  });
-
-  // Update active project based on scroll position
   useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      const index = Math.round(latest * (projects.length - 1));
-      if (index !== activeProject) {
-        setActiveProject(index);
+    const options = {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px", // Trigger when item is in the middle 20% of the viewport
+      threshold: 0
+    };
 
-        // Trigger anime.js text effect when active project changes
-        if (textRef.current) {
-          anime.timeline({ loop: false }).add({
-            targets: ".project-title .letter",
-            translateY: [100, 0],
-            translateZ: 0,
-            opacity: [0, 1],
-            easing: "easeOutExpo",
-            duration: 1400,
-            delay: (el, i) => 300 + 30 * i,
-          });
+    const handleIntersect = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = parseInt(entry.target.getAttribute("data-index"), 10);
+          setActiveIndex(index);
         }
-      }
-    });
-  }, [scrollYProgress, activeProject]);
+      });
+    };
 
-  // Split text for anime.js
-  const splitText = (text) => {
-    return text.split("").map((char, index) => (
-      <span key={index} className="letter inline-block">
-        {char === " " ? "\u00A0" : char}
-      </span>
-    ));
-  };
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    document.querySelectorAll(".work-item").forEach((item) => {
+      observer.observe(item);
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section
-      ref={containerRef}
-      id="work"
-      className="relative bg-[#020202] text-white"
-      // Height = 100vh * number of projects to allow scrolling through all of them
-      style={{ height: `${projects.length * 100}vh` }}
+    <section 
+      id="work" 
+      className="relative bg-black text-white"
     >
-      {/* Sticky Container */}
-      <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col">
-        {/* Background Ambient Effects */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <motion.div
-            className="absolute top-0 left-1/4 w-[50vw] h-[50vh] bg-accent-primary/10 rounded-full blur-[120px]"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-              x: [0, 100, 0],
-            }}
-            transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-          />
-          <motion.div
-            className="absolute bottom-0 right-1/4 w-[60vw] h-[60vh] bg-accent-violet/10 rounded-full blur-[150px]"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.2, 0.4, 0.2],
-              x: [0, -100, 0],
-            }}
-            transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          />
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] opacity-50 mix-blend-screen" />
+      {/* Sticky Background Image that changes on scroll */}
+      <div className="absolute inset-0 z-0">
+        <div className="sticky top-0 w-full h-screen overflow-hidden pointer-events-none">
+          {projects.map((project, index) => (
+            <img 
+              key={`bg-${project.id}`}
+              src={project.image} 
+              alt={project.title} 
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-out ${
+                index === activeIndex ? "opacity-30 scale-105" : "opacity-0 scale-100"
+              }`} 
+            />
+          ))}
+          {/* Gradient overlays to blend into the section */}
+          <div className="absolute inset-0 bg-black/50 z-10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-10" />
         </div>
+      </div>
 
-        {/* Header Overlay (Fixed) */}
-        <div className="absolute top-0 left-0 w-full p-6 lg:p-12 z-40 flex justify-between items-start pointer-events-none">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-display font-black tracking-tighter mix-blend-difference text-white">
-              Selected{" "}
-              <span className="italic font-light text-white/70">Works</span>
-            </h2>
-          </div>
-          <div className="hidden md:flex flex-col items-end gap-2 mix-blend-difference text-white">
-            <span className="font-mono text-sm uppercase tracking-widest text-white/50">
-              Scroll to explore
+      <div className="relative z-10 container mx-auto px-6 md:px-12 py-32 min-h-screen">
+        <div className="mb-32">
+          <div className="flex items-center gap-4 mb-6">
+            <span className="w-12 h-[1px] bg-white/30"></span>
+            <span className="font-mono text-sm tracking-widest uppercase text-white/50">
+              Interactive Index
             </span>
-            <div className="flex gap-2 items-center">
-              <span className="w-12 h-[1px] bg-white/30" />
-              <span className="font-mono font-bold">
-                {String(activeProject + 1).padStart(2, "0")} / {projects.length}
-              </span>
-            </div>
           </div>
+          <h2 className="text-5xl md:text-7xl lg:text-9xl font-display font-black tracking-tighter uppercase">
+            Selected <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/80 italic font-light">Works</span>
+          </h2>
         </div>
 
-        {/* Horizontal Scroll Track */}
-        <motion.div
-          ref={scrollRef}
-          className="flex flex-1 h-full w-[max-content]"
-          style={{ x: physicsX }}
-        >
-          {projects.map((project, index) => {
-            const inputRange = [];
-            const imageXRange = [];
-            const scaleRange = [];
-            const opacityRange = [];
-
-            const total = Math.max(1, projects.length - 1);
-            
-            if (index > 0) {
-              inputRange.push((index - 1) / total);
-              imageXRange.push("20%");
-              scaleRange.push(0.8);
-              opacityRange.push(0.3);
-            }
-            
-            inputRange.push(index / total);
-            imageXRange.push("0%");
-            scaleRange.push(1);
-            opacityRange.push(1);
-            
-            if (index < projects.length - 1) {
-              inputRange.push((index + 1) / total);
-              imageXRange.push("-20%");
-              scaleRange.push(0.8);
-              opacityRange.push(0.3);
-            }
-
-            // Handle edge case where there's only 1 project
-            if (inputRange.length === 1) {
-              inputRange.push(1);
-              imageXRange.push("0%");
-              scaleRange.push(1);
-              opacityRange.push(1);
-            }
-
-            const imageX = useTransform(scrollYProgress, inputRange, imageXRange);
-            const scale = useTransform(scrollYProgress, inputRange, scaleRange);
-            const opacity = useTransform(scrollYProgress, inputRange, opacityRange);
-
-            return (
-              <div
-                key={project.id}
-                className="w-screen h-screen flex items-center justify-center p-6 lg:p-24 relative"
-              >
-                <motion.div
-                  className="relative w-full max-w-[1400px] h-[70vh] lg:h-[80vh] flex flex-col lg:flex-row items-center gap-12 lg:gap-24 z-10"
-                  style={{ scale, opacity }}
-                >
-                  {/* Image Section */}
-                  <div
-                    className="w-full lg:w-3/5 h-1/2 lg:h-full relative overflow-hidden rounded-2xl group cursor-pointer"
-                    onMouseEnter={() => setIsHovering(true)}
-                    onMouseLeave={() => setIsHovering(false)}
-                    onClick={() => window.open(project.link, "_blank")}
-                  >
-                    <motion.div
-                      className="absolute inset-0 w-[120%] h-full"
-                      style={{ x: imageX }}
-                    >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover grayscale-[0.2] group-hover:grayscale-0 transition-all duration-700"
-                      />
-                    </motion.div>
-
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-500" />
-
-                    {/* Hover Reveal Button */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 scale-90 group-hover:scale-100">
-                      <div className="w-24 h-24 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white">
-                        <span className="font-mono text-sm uppercase tracking-widest font-bold">
-                          Visit
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Content Section */}
-                  <div className="w-full lg:w-2/5 flex flex-col justify-center gap-6 lg:gap-10">
-                    <div className="flex items-center gap-4">
-                      <span className="px-3 py-1 rounded-full border border-white/20 text-xs font-mono uppercase tracking-widest text-white/70">
-                        {project.category}
-                      </span>
-                      <span className="text-accent-primary font-mono text-sm">
-                        0{index + 1}
-                      </span>
-                    </div>
-
-                    <div
-                      ref={activeProject === index ? textRef : null}
-                      className="project-title overflow-hidden"
-                    >
-                      <h3 className="text-5xl lg:text-7xl xl:text-8xl font-display font-black leading-[0.9] tracking-tighter text-white">
-                        {activeProject === index
-                          ? splitText(project.title)
-                          : project.title}
-                      </h3>
-                    </div>
-
-                    <p className="text-lg lg:text-xl text-gray-400 font-light max-w-md">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-3">
-                      {project.tags.map((tag, i) => (
-                        <span
-                          key={i}
-                          className="px-4 py-2 rounded-lg bg-white/5 text-sm font-medium text-white/80 backdrop-blur-sm"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="pt-8 border-t border-white/10 mt-4 flex items-center justify-between">
-                      <span className="text-white/50 text-sm">
-                        {project.result}
-                      </span>
-                      <motion.button
-                        className="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-colors"
-                        onClick={() => window.open(project.link, "_blank")}
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                      >
-                        <ArrowUpRight className="w-5 h-5" />
-                      </motion.button>
-                    </div>
-                  </div>
-                </motion.div>
+        {/* The List Layout */}
+        <div className="w-full border-t border-white/10 flex flex-col">
+          {projects.map((project, index) => (
+            <div 
+              key={project.id}
+              data-index={index}
+              onClick={() => window.open(project.link, "_blank")}
+              className={`work-item group relative flex flex-col md:flex-row md:items-center justify-between py-12 md:py-20 border-b border-white/10 cursor-pointer overflow-hidden px-4 md:px-6 transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] ${
+                index === activeIndex ? "opacity-100" : "opacity-40 hover:opacity-70"
+              }`}
+            >
+              {/* Left Side: Number, Title */}
+              <div className="relative z-10 flex items-center gap-6 md:gap-12 flex-1 pointer-events-none">
+                <span className={`font-mono text-sm md:text-xl min-w-[2rem] transition-colors duration-500 ${index === activeIndex ? "text-white/80" : "text-white/20"}`}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                
+                <h3 className={`text-4xl md:text-5xl lg:text-7xl font-display font-medium tracking-tight transition-all duration-500 ${index === activeIndex ? "text-white translate-x-4" : "text-white/70 group-hover:text-white/90"}`}>
+                  {project.title}
+                </h3>
               </div>
-            );
-          })}
-        </motion.div>
+              
+              {/* Right Side: Category, Tags, Arrow */}
+              <div className="relative z-10 flex items-center gap-6 justify-between md:justify-end w-full md:w-auto mt-6 md:mt-0 pointer-events-none">
+                
+                {/* Tags */}
+                <div className={`hidden lg:flex items-center gap-2 mr-4 transition-all duration-700 ${index === activeIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
+                  {project.tags.slice(0, 2).map((tag, i) => (
+                    <span key={i} className="px-3 py-1 text-xs border border-white/20 rounded-full text-white/70 bg-black/30 backdrop-blur-md">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
 
-        {/* Progress Bar */}
-        <div className="absolute bottom-0 left-0 w-full h-2 bg-white/5 z-50">
-          <motion.div
-            className="h-full bg-gradient-to-r from-accent-primary to-accent-violet"
-            style={{ scaleX: scrollYProgress, transformOrigin: "0% 50%" }}
-          />
+                <div className={`flex flex-col gap-1 text-left md:text-right transition-transform duration-500 ${index === activeIndex ? "translate-x-[-10px]" : ""}`}>
+                  <span className={`font-mono uppercase tracking-widest text-xs md:text-sm transition-colors duration-500 ${index === activeIndex ? "text-white/90" : "text-white/50"}`}>
+                    {project.category}
+                  </span>
+                  <span className={`font-light text-sm max-w-[200px] truncate hidden md:block transition-colors duration-500 ${index === activeIndex ? "text-white/70" : "text-white/30"}`}>
+                    {project.result}
+                  </span>
+                </div>
+                
+                <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full border flex items-center justify-center transition-all duration-500 flex-shrink-0 ${
+                  index === activeIndex ? "bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)]" : "border-white/10 shadow-[0_0_0_0_rgba(255,255,255,0)]"
+                }`}>
+                  <ArrowUpRight className={`w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 ${index === activeIndex ? "rotate-45" : ""}`} />
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

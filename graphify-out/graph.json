@@ -1,0 +1,6288 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "eslint.config.js",
+      "source_location": "L1",
+      "id": "eslint_config_js",
+      "community": 27,
+      "norm_label": "eslint.config.js"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L1",
+      "id": "package_json",
+      "community": 5,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "id": "nexora_package_name",
+      "community": 5,
+      "norm_label": "name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "id": "nexora_package_private",
+      "community": 5,
+      "norm_label": "private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "id": "nexora_package_version",
+      "community": 5,
+      "norm_label": "version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "id": "nexora_package_type",
+      "community": 5,
+      "norm_label": "type"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "id": "nexora_package_scripts",
+      "community": 5,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "id": "nexora_package_scripts_dev",
+      "community": 5,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "id": "nexora_package_scripts_build",
+      "community": 5,
+      "norm_label": "build"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "id": "nexora_package_scripts_lint",
+      "community": 5,
+      "norm_label": "lint"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "id": "nexora_package_scripts_preview",
+      "community": 5,
+      "norm_label": "preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "id": "nexora_package_dependencies",
+      "community": 1,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@emailjs/browser",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "id": "nexora_package_dependencies_emailjs_browser",
+      "community": 1,
+      "norm_label": "@emailjs/browser"
+    },
+    {
+      "label": "@gsap/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "id": "nexora_package_dependencies_gsap_react",
+      "community": 1,
+      "norm_label": "@gsap/react"
+    },
+    {
+      "label": "@react-oauth/google",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "id": "nexora_package_dependencies_react_oauth_google",
+      "community": 1,
+      "norm_label": "@react-oauth/google"
+    },
+    {
+      "label": "@react-three/drei",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "id": "nexora_package_dependencies_react_three_drei",
+      "community": 1,
+      "norm_label": "@react-three/drei"
+    },
+    {
+      "label": "@react-three/fiber",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "id": "nexora_package_dependencies_react_three_fiber",
+      "community": 1,
+      "norm_label": "@react-three/fiber"
+    },
+    {
+      "label": "@tailwindcss/vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "id": "nexora_package_dependencies_tailwindcss_vite",
+      "community": 1,
+      "norm_label": "@tailwindcss/vite"
+    },
+    {
+      "label": "@tsparticles/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "id": "nexora_package_dependencies_tsparticles_react",
+      "community": 1,
+      "norm_label": "@tsparticles/react"
+    },
+    {
+      "label": "@tsparticles/slim",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "id": "nexora_package_dependencies_tsparticles_slim",
+      "community": 1,
+      "norm_label": "@tsparticles/slim"
+    },
+    {
+      "label": "animejs",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "id": "nexora_package_dependencies_animejs",
+      "community": 1,
+      "norm_label": "animejs"
+    },
+    {
+      "label": "canvas-confetti",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "id": "nexora_package_dependencies_canvas_confetti",
+      "community": 1,
+      "norm_label": "canvas-confetti"
+    },
+    {
+      "label": "clsx",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "id": "nexora_package_dependencies_clsx",
+      "community": 1,
+      "norm_label": "clsx"
+    },
+    {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "id": "nexora_package_dependencies_framer_motion",
+      "community": 1,
+      "norm_label": "framer-motion"
+    },
+    {
+      "label": "gsap",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "id": "nexora_package_dependencies_gsap",
+      "community": 1,
+      "norm_label": "gsap"
+    },
+    {
+      "label": "jwt-decode",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "id": "nexora_package_dependencies_jwt_decode",
+      "community": 1,
+      "norm_label": "jwt-decode"
+    },
+    {
+      "label": "lenis",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "id": "nexora_package_dependencies_lenis",
+      "community": 1,
+      "norm_label": "lenis"
+    },
+    {
+      "label": "lottie-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "id": "nexora_package_dependencies_lottie_react",
+      "community": 1,
+      "norm_label": "lottie-react"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "id": "nexora_package_dependencies_lucide_react",
+      "community": 1,
+      "norm_label": "lucide-react"
+    },
+    {
+      "label": "maath",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "id": "nexora_package_dependencies_maath",
+      "community": 1,
+      "norm_label": "maath"
+    },
+    {
+      "label": "pdf-parse",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "id": "nexora_package_dependencies_pdf_parse",
+      "community": 1,
+      "norm_label": "pdf-parse"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "id": "nexora_package_dependencies_react",
+      "community": 1,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-countup",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "id": "nexora_package_dependencies_react_countup",
+      "community": 1,
+      "norm_label": "react-countup"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "id": "nexora_package_dependencies_react_dom",
+      "community": 1,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "react-helmet-async",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "id": "nexora_package_dependencies_react_helmet_async",
+      "community": 1,
+      "norm_label": "react-helmet-async"
+    },
+    {
+      "label": "react-hot-toast",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "id": "nexora_package_dependencies_react_hot_toast",
+      "community": 1,
+      "norm_label": "react-hot-toast"
+    },
+    {
+      "label": "react-intersection-observer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "id": "nexora_package_dependencies_react_intersection_observer",
+      "community": 1,
+      "norm_label": "react-intersection-observer"
+    },
+    {
+      "label": "react-parallax-tilt",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "id": "nexora_package_dependencies_react_parallax_tilt",
+      "community": 1,
+      "norm_label": "react-parallax-tilt"
+    },
+    {
+      "label": "react-router-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "id": "nexora_package_dependencies_react_router_dom",
+      "community": 1,
+      "norm_label": "react-router-dom"
+    },
+    {
+      "label": "react-tilt",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "id": "nexora_package_dependencies_react_tilt",
+      "community": 1,
+      "norm_label": "react-tilt"
+    },
+    {
+      "label": "swiper",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "id": "nexora_package_dependencies_swiper",
+      "community": 1,
+      "norm_label": "swiper"
+    },
+    {
+      "label": "tailwind-merge",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L42",
+      "id": "nexora_package_dependencies_tailwind_merge",
+      "community": 1,
+      "norm_label": "tailwind-merge"
+    },
+    {
+      "label": "three",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L43",
+      "id": "nexora_package_dependencies_three",
+      "community": 1,
+      "norm_label": "three"
+    },
+    {
+      "label": "typed.js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L44",
+      "id": "nexora_package_dependencies_typed_js",
+      "community": 1,
+      "norm_label": "typed.js"
+    },
+    {
+      "label": "typewriter-effect",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L45",
+      "id": "nexora_package_dependencies_typewriter_effect",
+      "community": 1,
+      "norm_label": "typewriter-effect"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L47",
+      "id": "nexora_package_devdependencies",
+      "community": 5,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@eslint/js",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L48",
+      "id": "nexora_package_devdependencies_eslint_js",
+      "community": 5,
+      "norm_label": "@eslint/js"
+    },
+    {
+      "label": "@tailwindcss/forms",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L49",
+      "id": "nexora_package_devdependencies_tailwindcss_forms",
+      "community": 5,
+      "norm_label": "@tailwindcss/forms"
+    },
+    {
+      "label": "@tailwindcss/typography",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L50",
+      "id": "nexora_package_devdependencies_tailwindcss_typography",
+      "community": 5,
+      "norm_label": "@tailwindcss/typography"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L51",
+      "id": "nexora_package_devdependencies_types_react",
+      "community": 5,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L52",
+      "id": "nexora_package_devdependencies_types_react_dom",
+      "community": 5,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L53",
+      "id": "nexora_package_devdependencies_vitejs_plugin_react",
+      "community": 5,
+      "norm_label": "@vitejs/plugin-react"
+    },
+    {
+      "label": "autoprefixer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L54",
+      "id": "nexora_package_devdependencies_autoprefixer",
+      "community": 5,
+      "norm_label": "autoprefixer"
+    },
+    {
+      "label": "eslint",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L55",
+      "id": "nexora_package_devdependencies_eslint",
+      "community": 5,
+      "norm_label": "eslint"
+    },
+    {
+      "label": "eslint-plugin-react-hooks",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L56",
+      "id": "nexora_package_devdependencies_eslint_plugin_react_hooks",
+      "community": 5,
+      "norm_label": "eslint-plugin-react-hooks"
+    },
+    {
+      "label": "eslint-plugin-react-refresh",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L57",
+      "id": "nexora_package_devdependencies_eslint_plugin_react_refresh",
+      "community": 5,
+      "norm_label": "eslint-plugin-react-refresh"
+    },
+    {
+      "label": "globals",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L58",
+      "id": "nexora_package_devdependencies_globals",
+      "community": 5,
+      "norm_label": "globals"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L59",
+      "id": "nexora_package_devdependencies_postcss",
+      "community": 5,
+      "norm_label": "postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L60",
+      "id": "nexora_package_devdependencies_tailwindcss",
+      "community": 5,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L61",
+      "id": "nexora_package_devdependencies_vite",
+      "community": 5,
+      "norm_label": "vite"
+    },
+    {
+      "label": "tailwind.config.js",
+      "file_type": "code",
+      "source_file": "tailwind.config.js",
+      "source_location": "L1",
+      "id": "tailwind_config_js",
+      "community": 28,
+      "norm_label": "tailwind.config.js"
+    },
+    {
+      "label": "vercel.json",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L1",
+      "id": "vercel_json",
+      "community": 18,
+      "norm_label": "vercel.json"
+    },
+    {
+      "label": "rewrites",
+      "file_type": "code",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "id": "nexora_vercel_rewrites",
+      "community": 18,
+      "norm_label": "rewrites"
+    },
+    {
+      "label": "vite.config.js",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L1",
+      "id": "vite_config_js",
+      "community": 29,
+      "norm_label": "vite.config.js"
+    },
+    {
+      "label": "App.jsx",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L1",
+      "id": "src_app_jsx",
+      "community": 0,
+      "norm_label": "app.jsx"
+    },
+    {
+      "label": "PageLoader()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L37",
+      "id": "src_app_pageloader",
+      "community": 0,
+      "norm_label": "pageloader()"
+    },
+    {
+      "label": "AnimatedRoutes()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L47",
+      "id": "src_app_animatedroutes",
+      "community": 0,
+      "norm_label": "animatedroutes()"
+    },
+    {
+      "label": "AppContent()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L66",
+      "id": "src_app_appcontent",
+      "community": 0,
+      "norm_label": "appcontent()"
+    },
+    {
+      "label": "App()",
+      "file_type": "code",
+      "source_file": "src/App.jsx",
+      "source_location": "L109",
+      "id": "src_app_app",
+      "community": 0,
+      "norm_label": "app()"
+    },
+    {
+      "label": "fix_css.py",
+      "file_type": "code",
+      "source_file": "src/fix_css.py",
+      "source_location": "L1",
+      "id": "src_fix_css_py",
+      "community": 30,
+      "norm_label": "fix_css.py"
+    },
+    {
+      "label": "main.jsx",
+      "file_type": "code",
+      "source_file": "src/main.jsx",
+      "source_location": "L1",
+      "id": "src_main_jsx",
+      "community": 10,
+      "norm_label": "main.jsx"
+    },
+    {
+      "label": "gsapAnimations.js",
+      "file_type": "code",
+      "source_file": "src/animations/gsapAnimations.js",
+      "source_location": "L1",
+      "id": "src_animations_gsapanimations_js",
+      "community": 20,
+      "norm_label": "gsapanimations.js"
+    },
+    {
+      "label": "setupHowWeWorkAnimation()",
+      "file_type": "code",
+      "source_file": "src/animations/gsapAnimations.js",
+      "source_location": "L6",
+      "id": "animations_gsapanimations_setuphowweworkanimation",
+      "community": 20,
+      "norm_label": "setuphowweworkanimation()"
+    },
+    {
+      "label": "variants.js",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L1",
+      "id": "src_animations_variants_js",
+      "community": 2,
+      "norm_label": "variants.js"
+    },
+    {
+      "label": "fadeUp",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L1",
+      "id": "animations_variants_fadeup",
+      "community": 2,
+      "norm_label": "fadeup"
+    },
+    {
+      "label": "fadeDown",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L10",
+      "id": "animations_variants_fadedown",
+      "community": 2,
+      "norm_label": "fadedown"
+    },
+    {
+      "label": "fadeLeft",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L19",
+      "id": "animations_variants_fadeleft",
+      "community": 2,
+      "norm_label": "fadeleft"
+    },
+    {
+      "label": "fadeRight",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L28",
+      "id": "animations_variants_faderight",
+      "community": 2,
+      "norm_label": "faderight"
+    },
+    {
+      "label": "scaleIn",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L37",
+      "id": "animations_variants_scalein",
+      "community": 2,
+      "norm_label": "scalein"
+    },
+    {
+      "label": "staggerContainer",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L46",
+      "id": "animations_variants_staggercontainer",
+      "community": 2,
+      "norm_label": "staggercontainer"
+    },
+    {
+      "label": "pageTransition",
+      "file_type": "code",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L56",
+      "id": "animations_variants_pagetransition",
+      "community": 2,
+      "norm_label": "pagetransition"
+    },
+    {
+      "label": "ErrorBoundary.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L1",
+      "id": "src_components_errorboundary_jsx",
+      "community": 10,
+      "norm_label": "errorboundary.jsx"
+    },
+    {
+      "label": "ErrorBoundary",
+      "file_type": "code",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L3",
+      "id": "components_errorboundary_errorboundary",
+      "community": 10,
+      "norm_label": "errorboundary"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L4",
+      "id": "components_errorboundary_errorboundary_constructor",
+      "community": 10,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".getDerivedStateFromError()",
+      "file_type": "code",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L9",
+      "id": "components_errorboundary_errorboundary_getderivedstatefromerror",
+      "community": 10,
+      "norm_label": ".getderivedstatefromerror()"
+    },
+    {
+      "label": ".componentDidCatch()",
+      "file_type": "code",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L14",
+      "id": "components_errorboundary_errorboundary_componentdidcatch",
+      "community": 10,
+      "norm_label": ".componentdidcatch()"
+    },
+    {
+      "label": ".render()",
+      "file_type": "code",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L20",
+      "id": "components_errorboundary_errorboundary_render",
+      "community": 10,
+      "norm_label": ".render()"
+    },
+    {
+      "label": "BackToTop.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/BackToTop.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_backtotop_jsx",
+      "community": 3,
+      "norm_label": "backtotop.jsx"
+    },
+    {
+      "label": "BackToTop()",
+      "file_type": "code",
+      "source_file": "src/components/layout/BackToTop.jsx",
+      "source_location": "L6",
+      "id": "layout_backtotop_backtotop",
+      "community": 3,
+      "norm_label": "backtotop()"
+    },
+    {
+      "label": "CookieBanner.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/CookieBanner.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_cookiebanner_jsx",
+      "community": 6,
+      "norm_label": "cookiebanner.jsx"
+    },
+    {
+      "label": "CookieBanner()",
+      "file_type": "code",
+      "source_file": "src/components/layout/CookieBanner.jsx",
+      "source_location": "L5",
+      "id": "layout_cookiebanner_cookiebanner",
+      "community": 6,
+      "norm_label": "cookiebanner()"
+    },
+    {
+      "label": "Footer.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_footer_jsx",
+      "community": 0,
+      "norm_label": "footer.jsx"
+    },
+    {
+      "label": "Footer()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L4",
+      "id": "layout_footer_footer",
+      "community": 0,
+      "norm_label": "footer()"
+    },
+    {
+      "label": "LoadingScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/LoadingScreen.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_loadingscreen_jsx",
+      "community": 16,
+      "norm_label": "loadingscreen.jsx"
+    },
+    {
+      "label": "LoadingScreen()",
+      "file_type": "code",
+      "source_file": "src/components/layout/LoadingScreen.jsx",
+      "source_location": "L4",
+      "id": "layout_loadingscreen_loadingscreen",
+      "community": 16,
+      "norm_label": "loadingscreen()"
+    },
+    {
+      "label": "MarqueeStrip.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/MarqueeStrip.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_marqueestrip_jsx",
+      "community": 2,
+      "norm_label": "marqueestrip.jsx"
+    },
+    {
+      "label": "MarqueeStrip()",
+      "file_type": "code",
+      "source_file": "src/components/layout/MarqueeStrip.jsx",
+      "source_location": "L4",
+      "id": "layout_marqueestrip_marqueestrip",
+      "community": 2,
+      "norm_label": "marqueestrip()"
+    },
+    {
+      "label": "Navbar.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_navbar_jsx",
+      "community": 6,
+      "norm_label": "navbar.jsx"
+    },
+    {
+      "label": "Navbar()",
+      "file_type": "code",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L9",
+      "id": "layout_navbar_navbar",
+      "community": 6,
+      "norm_label": "navbar()"
+    },
+    {
+      "label": "ScrollProgress.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/ScrollProgress.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_scrollprogress_jsx",
+      "community": 21,
+      "norm_label": "scrollprogress.jsx"
+    },
+    {
+      "label": "ScrollProgress()",
+      "file_type": "code",
+      "source_file": "src/components/layout/ScrollProgress.jsx",
+      "source_location": "L4",
+      "id": "layout_scrollprogress_scrollprogress",
+      "community": 21,
+      "norm_label": "scrollprogress()"
+    },
+    {
+      "label": "ScrollToTop.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/ScrollToTop.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_scrolltotop_jsx",
+      "community": 3,
+      "norm_label": "scrolltotop.jsx"
+    },
+    {
+      "label": "ScrollToTop()",
+      "file_type": "code",
+      "source_file": "src/components/layout/ScrollToTop.jsx",
+      "source_location": "L5",
+      "id": "layout_scrolltotop_scrolltotop",
+      "community": 3,
+      "norm_label": "scrolltotop()"
+    },
+    {
+      "label": "SectionDivider.jsx",
+      "file_type": "code",
+      "source_file": "src/components/layout/SectionDivider.jsx",
+      "source_location": "L1",
+      "id": "src_components_layout_sectiondivider_jsx",
+      "community": 17,
+      "norm_label": "sectiondivider.jsx"
+    },
+    {
+      "label": "SectionDivider()",
+      "file_type": "code",
+      "source_file": "src/components/layout/SectionDivider.jsx",
+      "source_location": "L3",
+      "id": "layout_sectiondivider_sectiondivider",
+      "community": 17,
+      "norm_label": "sectiondivider()"
+    },
+    {
+      "label": "About.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/About.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_about_jsx",
+      "community": 4,
+      "norm_label": "about.jsx"
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "src/components/sections/About.jsx",
+      "source_location": "L5",
+      "id": "sections_about_about",
+      "community": 4,
+      "norm_label": "about()"
+    },
+    {
+      "label": "BlogTeaser.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_blogteaser_jsx",
+      "community": 2,
+      "norm_label": "blogteaser.jsx"
+    },
+    {
+      "label": "posts",
+      "file_type": "code",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L7",
+      "id": "sections_blogteaser_posts",
+      "community": 2,
+      "norm_label": "posts"
+    },
+    {
+      "label": "BlogTeaser()",
+      "file_type": "code",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L31",
+      "id": "sections_blogteaser_blogteaser",
+      "community": 2,
+      "norm_label": "blogteaser()"
+    },
+    {
+      "label": "Contact.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_contact_jsx",
+      "community": 2,
+      "norm_label": "contact.jsx"
+    },
+    {
+      "label": "Contact()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L9",
+      "id": "sections_contact_contact",
+      "community": 2,
+      "norm_label": "contact()"
+    },
+    {
+      "label": "FAQ.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_faq_jsx",
+      "community": 2,
+      "norm_label": "faq.jsx"
+    },
+    {
+      "label": "FAQ()",
+      "file_type": "code",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L7",
+      "id": "sections_faq_faq",
+      "community": 2,
+      "norm_label": "faq()"
+    },
+    {
+      "label": "Hero.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_hero_jsx",
+      "community": 3,
+      "norm_label": "hero.jsx"
+    },
+    {
+      "label": "MobilePreview()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L12",
+      "id": "sections_hero_mobilepreview",
+      "community": 3,
+      "norm_label": "mobilepreview()"
+    },
+    {
+      "label": "Hero()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L113",
+      "id": "sections_hero_hero",
+      "community": 3,
+      "norm_label": "hero()"
+    },
+    {
+      "label": "HowWeWork.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/HowWeWork.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_howwework_jsx",
+      "community": 4,
+      "norm_label": "howwework.jsx"
+    },
+    {
+      "label": "steps",
+      "file_type": "code",
+      "source_file": "src/components/sections/HowWeWork.jsx",
+      "source_location": "L5",
+      "id": "sections_howwework_steps",
+      "community": 4,
+      "norm_label": "steps"
+    },
+    {
+      "label": "HowWeWork()",
+      "file_type": "code",
+      "source_file": "src/components/sections/HowWeWork.jsx",
+      "source_location": "L50",
+      "id": "sections_howwework_howwework",
+      "community": 4,
+      "norm_label": "howwework()"
+    },
+    {
+      "label": "KineticManifesto.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/KineticManifesto.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_kineticmanifesto_jsx",
+      "community": 4,
+      "norm_label": "kineticmanifesto.jsx"
+    },
+    {
+      "label": "KineticManifesto()",
+      "file_type": "code",
+      "source_file": "src/components/sections/KineticManifesto.jsx",
+      "source_location": "L4",
+      "id": "sections_kineticmanifesto_kineticmanifesto",
+      "community": 4,
+      "norm_label": "kineticmanifesto()"
+    },
+    {
+      "label": "Newsletter.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Newsletter.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_newsletter_jsx",
+      "community": 22,
+      "norm_label": "newsletter.jsx"
+    },
+    {
+      "label": "Newsletter()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Newsletter.jsx",
+      "source_location": "L7",
+      "id": "sections_newsletter_newsletter",
+      "community": 22,
+      "norm_label": "newsletter()"
+    },
+    {
+      "label": "OnboardingTeaser.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/OnboardingTeaser.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_onboardingteaser_jsx",
+      "community": 6,
+      "norm_label": "onboardingteaser.jsx"
+    },
+    {
+      "label": "MarqueeRow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/OnboardingTeaser.jsx",
+      "source_location": "L7",
+      "id": "sections_onboardingteaser_marqueerow",
+      "community": 6,
+      "norm_label": "marqueerow()"
+    },
+    {
+      "label": "OnboardingTeaser()",
+      "file_type": "code",
+      "source_file": "src/components/sections/OnboardingTeaser.jsx",
+      "source_location": "L24",
+      "id": "sections_onboardingteaser_onboardingteaser",
+      "community": 6,
+      "norm_label": "onboardingteaser()"
+    },
+    {
+      "label": "Pricing.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_pricing_jsx",
+      "community": 2,
+      "norm_label": "pricing.jsx"
+    },
+    {
+      "label": "Pricing()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L9",
+      "id": "sections_pricing_pricing",
+      "community": 2,
+      "norm_label": "pricing()"
+    },
+    {
+      "label": "Pulse.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pulse.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_pulse_jsx",
+      "community": 4,
+      "norm_label": "pulse.jsx"
+    },
+    {
+      "label": "PulseCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pulse.jsx",
+      "source_location": "L5",
+      "id": "sections_pulse_pulsecard",
+      "community": 4,
+      "norm_label": "pulsecard()"
+    },
+    {
+      "label": "Pulse()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pulse.jsx",
+      "source_location": "L76",
+      "id": "sections_pulse_pulse",
+      "community": 4,
+      "norm_label": "pulse()"
+    },
+    {
+      "label": "RealtimeWork.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_realtimework_jsx",
+      "community": 4,
+      "norm_label": "realtimework.jsx"
+    },
+    {
+      "label": "showcaseProjects",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L5",
+      "id": "sections_realtimework_showcaseprojects",
+      "community": 4,
+      "norm_label": "showcaseprojects"
+    },
+    {
+      "label": "RealtimeWork()",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L66",
+      "id": "sections_realtimework_realtimework",
+      "community": 4,
+      "norm_label": "realtimework()"
+    },
+    {
+      "label": "Services.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_services_jsx",
+      "community": 3,
+      "norm_label": "services.jsx"
+    },
+    {
+      "label": "ServiceRow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L10",
+      "id": "sections_services_servicerow",
+      "community": 3,
+      "norm_label": "servicerow()"
+    },
+    {
+      "label": "Services()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L103",
+      "id": "sections_services_services",
+      "community": 3,
+      "norm_label": "services()"
+    },
+    {
+      "label": "Stats.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Stats.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_stats_jsx",
+      "community": 4,
+      "norm_label": "stats.jsx"
+    },
+    {
+      "label": "Stats",
+      "file_type": "code",
+      "source_file": "src/components/sections/Stats.jsx",
+      "source_location": "L128",
+      "id": "sections_stats_stats",
+      "community": 4,
+      "norm_label": "stats"
+    },
+    {
+      "label": "StatCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Stats.jsx",
+      "source_location": "L53",
+      "id": "sections_stats_statcard",
+      "community": 4,
+      "norm_label": "statcard()"
+    },
+    {
+      "label": "Team.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_team_jsx",
+      "community": 8,
+      "norm_label": "team.jsx"
+    },
+    {
+      "label": "LinkedinIcon()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L5",
+      "id": "sections_team_linkedinicon",
+      "community": 8,
+      "norm_label": "linkedinicon()"
+    },
+    {
+      "label": "GithubIcon()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L13",
+      "id": "sections_team_githubicon",
+      "community": 8,
+      "norm_label": "githubicon()"
+    },
+    {
+      "label": "hexColors",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L19",
+      "id": "sections_team_hexcolors",
+      "community": 8,
+      "norm_label": "hexcolors"
+    },
+    {
+      "label": "darkBgColors",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L29",
+      "id": "sections_team_darkbgcolors",
+      "community": 8,
+      "norm_label": "darkbgcolors"
+    },
+    {
+      "label": "TeamMember()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L39",
+      "id": "sections_team_teammember",
+      "community": 8,
+      "norm_label": "teammember()"
+    },
+    {
+      "label": "Team()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L193",
+      "id": "sections_team_team",
+      "community": 8,
+      "norm_label": "team()"
+    },
+    {
+      "label": "TechStack.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_techstack_jsx",
+      "community": 9,
+      "norm_label": "techstack.jsx"
+    },
+    {
+      "label": "allTech",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L6",
+      "id": "sections_techstack_alltech",
+      "community": 9,
+      "norm_label": "alltech"
+    },
+    {
+      "label": "row1",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L11",
+      "id": "sections_techstack_row1",
+      "community": 9,
+      "norm_label": "row1"
+    },
+    {
+      "label": "row2",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L12",
+      "id": "sections_techstack_row2",
+      "community": 9,
+      "norm_label": "row2"
+    },
+    {
+      "label": "row3",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L13",
+      "id": "sections_techstack_row3",
+      "community": 9,
+      "norm_label": "row3"
+    },
+    {
+      "label": "MarqueeRow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L15",
+      "id": "sections_techstack_marqueerow",
+      "community": 9,
+      "norm_label": "marqueerow()"
+    },
+    {
+      "label": "TechStack()",
+      "file_type": "code",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L50",
+      "id": "sections_techstack_techstack",
+      "community": 9,
+      "norm_label": "techstack()"
+    },
+    {
+      "label": "Testimonials.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_testimonials_jsx",
+      "community": 2,
+      "norm_label": "testimonials.jsx"
+    },
+    {
+      "label": "ClientVoiceVisualizer()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L9",
+      "id": "sections_testimonials_clientvoicevisualizer",
+      "community": 2,
+      "norm_label": "clientvoicevisualizer()"
+    },
+    {
+      "label": "TrustSummary()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L29",
+      "id": "sections_testimonials_trustsummary",
+      "community": 2,
+      "norm_label": "trustsummary()"
+    },
+    {
+      "label": "MarqueeRow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L58",
+      "id": "sections_testimonials_marqueerow",
+      "community": 2,
+      "norm_label": "marqueerow()"
+    },
+    {
+      "label": "Testimonials()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L120",
+      "id": "sections_testimonials_testimonials",
+      "community": 2,
+      "norm_label": "testimonials()"
+    },
+    {
+      "label": "TrustBadges.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_trustbadges_jsx",
+      "community": 2,
+      "norm_label": "trustbadges.jsx"
+    },
+    {
+      "label": "guarantees",
+      "file_type": "code",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L6",
+      "id": "sections_trustbadges_guarantees",
+      "community": 2,
+      "norm_label": "guarantees"
+    },
+    {
+      "label": "TrustBadges()",
+      "file_type": "code",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L14",
+      "id": "sections_trustbadges_trustbadges",
+      "community": 2,
+      "norm_label": "trustbadges()"
+    },
+    {
+      "label": "WhyNexora.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_whynexora_jsx",
+      "community": 4,
+      "norm_label": "whynexora.jsx"
+    },
+    {
+      "label": "BentoCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_location": "L13",
+      "id": "sections_whynexora_bentocard",
+      "community": 4,
+      "norm_label": "bentocard()"
+    },
+    {
+      "label": "WhyNexora()",
+      "file_type": "code",
+      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_location": "L77",
+      "id": "sections_whynexora_whynexora",
+      "community": 4,
+      "norm_label": "whynexora()"
+    },
+    {
+      "label": "Work.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_work_jsx",
+      "community": 4,
+      "norm_label": "work.jsx"
+    },
+    {
+      "label": "Work()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L5",
+      "id": "sections_work_work",
+      "community": 4,
+      "norm_label": "work()"
+    },
+    {
+      "label": "AnimatedCounter.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/AnimatedCounter.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_animatedcounter_jsx",
+      "community": 4,
+      "norm_label": "animatedcounter.jsx"
+    },
+    {
+      "label": "AnimatedCounter()",
+      "file_type": "code",
+      "source_file": "src/components/ui/AnimatedCounter.jsx",
+      "source_location": "L4",
+      "id": "ui_animatedcounter_animatedcounter",
+      "community": 4,
+      "norm_label": "animatedcounter()"
+    },
+    {
+      "label": "AnimatedGradientBorder.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/AnimatedGradientBorder.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_animatedgradientborder_jsx",
+      "community": 25,
+      "norm_label": "animatedgradientborder.jsx"
+    },
+    {
+      "label": "AnimatedGradientBorder()",
+      "file_type": "code",
+      "source_file": "src/components/ui/AnimatedGradientBorder.jsx",
+      "source_location": "L3",
+      "id": "ui_animatedgradientborder_animatedgradientborder",
+      "community": 25,
+      "norm_label": "animatedgradientborder()"
+    },
+    {
+      "label": "BackToTop.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/BackToTop.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_backtotop_jsx",
+      "community": 0,
+      "norm_label": "backtotop.jsx"
+    },
+    {
+      "label": "BackToTop()",
+      "file_type": "code",
+      "source_file": "src/components/ui/BackToTop.jsx",
+      "source_location": "L5",
+      "id": "ui_backtotop_backtotop",
+      "community": 0,
+      "norm_label": "backtotop()"
+    },
+    {
+      "label": "ContextCursor.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/ContextCursor.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_contextcursor_jsx",
+      "community": 0,
+      "norm_label": "contextcursor.jsx"
+    },
+    {
+      "label": "ContextCursor()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ContextCursor.jsx",
+      "source_location": "L5",
+      "id": "ui_contextcursor_contextcursor",
+      "community": 0,
+      "norm_label": "contextcursor()"
+    },
+    {
+      "label": "CookieBanner.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/CookieBanner.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_cookiebanner_jsx",
+      "community": 0,
+      "norm_label": "cookiebanner.jsx"
+    },
+    {
+      "label": "CookieBanner()",
+      "file_type": "code",
+      "source_file": "src/components/ui/CookieBanner.jsx",
+      "source_location": "L5",
+      "id": "ui_cookiebanner_cookiebanner",
+      "community": 0,
+      "norm_label": "cookiebanner()"
+    },
+    {
+      "label": "CustomCursor.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_customcursor_jsx",
+      "community": 6,
+      "norm_label": "customcursor.jsx"
+    },
+    {
+      "label": "CustomCursor()",
+      "file_type": "code",
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L5",
+      "id": "ui_customcursor_customcursor",
+      "community": 6,
+      "norm_label": "customcursor()"
+    },
+    {
+      "label": "GlitchText.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/GlitchText.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_glitchtext_jsx",
+      "community": 23,
+      "norm_label": "glitchtext.jsx"
+    },
+    {
+      "label": "GlitchText()",
+      "file_type": "code",
+      "source_file": "src/components/ui/GlitchText.jsx",
+      "source_location": "L3",
+      "id": "ui_glitchtext_glitchtext",
+      "community": 23,
+      "norm_label": "glitchtext()"
+    },
+    {
+      "label": "GlowCard.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/GlowCard.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_glowcard_jsx",
+      "community": 6,
+      "norm_label": "glowcard.jsx"
+    },
+    {
+      "label": "GlowCard()",
+      "file_type": "code",
+      "source_file": "src/components/ui/GlowCard.jsx",
+      "source_location": "L4",
+      "id": "ui_glowcard_glowcard",
+      "community": 6,
+      "norm_label": "glowcard()"
+    },
+    {
+      "label": "LaptopMockup.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/LaptopMockup.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_laptopmockup_jsx",
+      "community": 3,
+      "norm_label": "laptopmockup.jsx"
+    },
+    {
+      "label": "LaptopMockup()",
+      "file_type": "code",
+      "source_file": "src/components/ui/LaptopMockup.jsx",
+      "source_location": "L4",
+      "id": "ui_laptopmockup_laptopmockup",
+      "community": 3,
+      "norm_label": "laptopmockup()"
+    },
+    {
+      "label": "LoadingScreen.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/LoadingScreen.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_loadingscreen_jsx",
+      "community": 0,
+      "norm_label": "loadingscreen.jsx"
+    },
+    {
+      "label": "LoadingScreen()",
+      "file_type": "code",
+      "source_file": "src/components/ui/LoadingScreen.jsx",
+      "source_location": "L7",
+      "id": "ui_loadingscreen_loadingscreen",
+      "community": 0,
+      "norm_label": "loadingscreen()"
+    },
+    {
+      "label": "MagneticButton.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_magneticbutton_jsx",
+      "community": 6,
+      "norm_label": "magneticbutton.jsx"
+    },
+    {
+      "label": "MagneticButton()",
+      "file_type": "code",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L5",
+      "id": "ui_magneticbutton_magneticbutton",
+      "community": 6,
+      "norm_label": "magneticbutton()"
+    },
+    {
+      "label": "MorphingBlob.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/MorphingBlob.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_morphingblob_jsx",
+      "community": 3,
+      "norm_label": "morphingblob.jsx"
+    },
+    {
+      "label": "MorphingBlob()",
+      "file_type": "code",
+      "source_file": "src/components/ui/MorphingBlob.jsx",
+      "source_location": "L4",
+      "id": "ui_morphingblob_morphingblob",
+      "community": 3,
+      "norm_label": "morphingblob()"
+    },
+    {
+      "label": "ParticleField.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/ParticleField.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_particlefield_jsx",
+      "community": 12,
+      "norm_label": "particlefield.jsx"
+    },
+    {
+      "label": "ParticleField()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ParticleField.jsx",
+      "source_location": "L6",
+      "id": "ui_particlefield_particlefield",
+      "community": 12,
+      "norm_label": "particlefield()"
+    },
+    {
+      "label": "PhoneMockup.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/PhoneMockup.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_phonemockup_jsx",
+      "community": 24,
+      "norm_label": "phonemockup.jsx"
+    },
+    {
+      "label": "PhoneMockup()",
+      "file_type": "code",
+      "source_file": "src/components/ui/PhoneMockup.jsx",
+      "source_location": "L4",
+      "id": "ui_phonemockup_phonemockup",
+      "community": 24,
+      "norm_label": "phonemockup()"
+    },
+    {
+      "label": "ScrambleText.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrambleText.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_scrambletext_jsx",
+      "community": 3,
+      "norm_label": "scrambletext.jsx"
+    },
+    {
+      "label": "ScrambleText()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrambleText.jsx",
+      "source_location": "L5",
+      "id": "ui_scrambletext_scrambletext",
+      "community": 3,
+      "norm_label": "scrambletext()"
+    },
+    {
+      "label": "ScrollProgress.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrollProgress.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_scrollprogress_jsx",
+      "community": 0,
+      "norm_label": "scrollprogress.jsx"
+    },
+    {
+      "label": "ScrollProgress()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrollProgress.jsx",
+      "source_location": "L4",
+      "id": "ui_scrollprogress_scrollprogress",
+      "community": 0,
+      "norm_label": "scrollprogress()"
+    },
+    {
+      "label": "ScrollVelocityText.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrollVelocityText.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_scrollvelocitytext_jsx",
+      "community": 14,
+      "norm_label": "scrollvelocitytext.jsx"
+    },
+    {
+      "label": "wrap()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrollVelocityText.jsx",
+      "source_location": "L3",
+      "id": "ui_scrollvelocitytext_wrap",
+      "community": 14,
+      "norm_label": "wrap()"
+    },
+    {
+      "label": "ScrollVelocityText()",
+      "file_type": "code",
+      "source_file": "src/components/ui/ScrollVelocityText.jsx",
+      "source_location": "L8",
+      "id": "ui_scrollvelocitytext_scrollvelocitytext",
+      "community": 14,
+      "norm_label": "scrollvelocitytext()"
+    },
+    {
+      "label": "WhatsAppButton.jsx",
+      "file_type": "code",
+      "source_file": "src/components/ui/WhatsAppButton.jsx",
+      "source_location": "L1",
+      "id": "src_components_ui_whatsappbutton_jsx",
+      "community": 0,
+      "norm_label": "whatsappbutton.jsx"
+    },
+    {
+      "label": "WhatsAppButton()",
+      "file_type": "code",
+      "source_file": "src/components/ui/WhatsAppButton.jsx",
+      "source_location": "L3",
+      "id": "ui_whatsappbutton_whatsappbutton",
+      "community": 0,
+      "norm_label": "whatsappbutton()"
+    },
+    {
+      "label": "docs.js",
+      "file_type": "code",
+      "source_file": "src/constants/docs.js",
+      "source_location": "L1",
+      "id": "src_constants_docs_js",
+      "community": 11,
+      "norm_label": "docs.js"
+    },
+    {
+      "label": "docsData",
+      "file_type": "code",
+      "source_file": "src/constants/docs.js",
+      "source_location": "L1",
+      "id": "constants_docs_docsdata",
+      "community": 11,
+      "norm_label": "docsdata"
+    },
+    {
+      "label": "faq.js",
+      "file_type": "code",
+      "source_file": "src/constants/faq.js",
+      "source_location": "L1",
+      "id": "src_constants_faq_js",
+      "community": 2,
+      "norm_label": "faq.js"
+    },
+    {
+      "label": "faqs",
+      "file_type": "code",
+      "source_file": "src/constants/faq.js",
+      "source_location": "L1",
+      "id": "constants_faq_faqs",
+      "community": 2,
+      "norm_label": "faqs"
+    },
+    {
+      "label": "pricing.js",
+      "file_type": "code",
+      "source_file": "src/constants/pricing.js",
+      "source_location": "L1",
+      "id": "src_constants_pricing_js",
+      "community": 2,
+      "norm_label": "pricing.js"
+    },
+    {
+      "label": "pricing",
+      "file_type": "code",
+      "source_file": "src/constants/pricing.js",
+      "source_location": "L1",
+      "id": "constants_pricing_pricing",
+      "community": 2,
+      "norm_label": "pricing"
+    },
+    {
+      "label": "projects.js",
+      "file_type": "code",
+      "source_file": "src/constants/projects.js",
+      "source_location": "L1",
+      "id": "src_constants_projects_js",
+      "community": 4,
+      "norm_label": "projects.js"
+    },
+    {
+      "label": "projects",
+      "file_type": "code",
+      "source_file": "src/constants/projects.js",
+      "source_location": "L1",
+      "id": "constants_projects_projects",
+      "community": 4,
+      "norm_label": "projects"
+    },
+    {
+      "label": "services.js",
+      "file_type": "code",
+      "source_file": "src/constants/services.js",
+      "source_location": "L1",
+      "id": "src_constants_services_js",
+      "community": 3,
+      "norm_label": "services.js"
+    },
+    {
+      "label": "services",
+      "file_type": "code",
+      "source_file": "src/constants/services.js",
+      "source_location": "L1",
+      "id": "constants_services_services",
+      "community": 3,
+      "norm_label": "services"
+    },
+    {
+      "label": "team.js",
+      "file_type": "code",
+      "source_file": "src/constants/team.js",
+      "source_location": "L1",
+      "id": "src_constants_team_js",
+      "community": 8,
+      "norm_label": "team.js"
+    },
+    {
+      "label": "team",
+      "file_type": "code",
+      "source_file": "src/constants/team.js",
+      "source_location": "L1",
+      "id": "constants_team_team",
+      "community": 8,
+      "norm_label": "team"
+    },
+    {
+      "label": "techStack.js",
+      "file_type": "code",
+      "source_file": "src/constants/techStack.js",
+      "source_location": "L1",
+      "id": "src_constants_techstack_js",
+      "community": 9,
+      "norm_label": "techstack.js"
+    },
+    {
+      "label": "techStack",
+      "file_type": "code",
+      "source_file": "src/constants/techStack.js",
+      "source_location": "L1",
+      "id": "constants_techstack_techstack",
+      "community": 9,
+      "norm_label": "techstack"
+    },
+    {
+      "label": "testimonials.js",
+      "file_type": "code",
+      "source_file": "src/constants/testimonials.js",
+      "source_location": "L1",
+      "id": "src_constants_testimonials_js",
+      "community": 2,
+      "norm_label": "testimonials.js"
+    },
+    {
+      "label": "testimonials",
+      "file_type": "code",
+      "source_file": "src/constants/testimonials.js",
+      "source_location": "L1",
+      "id": "constants_testimonials_testimonials",
+      "community": 2,
+      "norm_label": "testimonials"
+    },
+    {
+      "label": "CursorContext.jsx",
+      "file_type": "code",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L1",
+      "id": "src_context_cursorcontext_jsx",
+      "community": 0,
+      "norm_label": "cursorcontext.jsx"
+    },
+    {
+      "label": "CursorContext",
+      "file_type": "code",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L3",
+      "id": "context_cursorcontext_cursorcontext",
+      "community": 0,
+      "norm_label": "cursorcontext"
+    },
+    {
+      "label": "CursorProvider()",
+      "file_type": "code",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L5",
+      "id": "context_cursorcontext_cursorprovider",
+      "community": 0,
+      "norm_label": "cursorprovider()"
+    },
+    {
+      "label": "useCursor()",
+      "file_type": "code",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L15",
+      "id": "context_cursorcontext_usecursor",
+      "community": 0,
+      "norm_label": "usecursor()"
+    },
+    {
+      "label": "ThemeContext.jsx",
+      "file_type": "code",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L1",
+      "id": "src_context_themecontext_jsx",
+      "community": 12,
+      "norm_label": "themecontext.jsx"
+    },
+    {
+      "label": "ThemeContext",
+      "file_type": "code",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L3",
+      "id": "context_themecontext_themecontext",
+      "community": 12,
+      "norm_label": "themecontext"
+    },
+    {
+      "label": "ThemeProvider()",
+      "file_type": "code",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L5",
+      "id": "context_themecontext_themeprovider",
+      "community": 12,
+      "norm_label": "themeprovider()"
+    },
+    {
+      "label": "useTheme()",
+      "file_type": "code",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L35",
+      "id": "context_themecontext_usetheme",
+      "community": 12,
+      "norm_label": "usetheme()"
+    },
+    {
+      "label": "useLenis.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L1",
+      "id": "src_hooks_uselenis_js",
+      "community": 3,
+      "norm_label": "uselenis.js"
+    },
+    {
+      "label": "useLenis()",
+      "file_type": "code",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L4",
+      "id": "hooks_uselenis_uselenis",
+      "community": 0,
+      "norm_label": "uselenis()"
+    },
+    {
+      "label": "useMagneticEffect.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useMagneticEffect.js",
+      "source_location": "L1",
+      "id": "src_hooks_usemagneticeffect_js",
+      "community": 6,
+      "norm_label": "usemagneticeffect.js"
+    },
+    {
+      "label": "useMagneticEffect()",
+      "file_type": "code",
+      "source_file": "src/hooks/useMagneticEffect.js",
+      "source_location": "L4",
+      "id": "hooks_usemagneticeffect_usemagneticeffect",
+      "community": 6,
+      "norm_label": "usemagneticeffect()"
+    },
+    {
+      "label": "useMousePosition.js",
+      "file_type": "code",
+      "source_file": "src/hooks/useMousePosition.js",
+      "source_location": "L1",
+      "id": "src_hooks_usemouseposition_js",
+      "community": 6,
+      "norm_label": "usemouseposition.js"
+    },
+    {
+      "label": "useMousePosition()",
+      "file_type": "code",
+      "source_file": "src/hooks/useMousePosition.js",
+      "source_location": "L3",
+      "id": "hooks_usemouseposition_usemouseposition",
+      "community": 6,
+      "norm_label": "usemouseposition()"
+    },
+    {
+      "label": "About.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/About.jsx",
+      "source_location": "L1",
+      "id": "src_pages_about_jsx",
+      "community": 0,
+      "norm_label": "about.jsx"
+    },
+    {
+      "label": "About()",
+      "file_type": "code",
+      "source_file": "src/pages/About.jsx",
+      "source_location": "L4",
+      "id": "pages_about_about",
+      "community": 0,
+      "norm_label": "about()"
+    },
+    {
+      "label": "ClientPortal.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1",
+      "id": "src_pages_clientportal_jsx",
+      "community": 7,
+      "norm_label": "clientportal.jsx"
+    },
+    {
+      "label": "ParticleBackground()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L18",
+      "id": "pages_clientportal_particlebackground",
+      "community": 7,
+      "norm_label": "particlebackground()"
+    },
+    {
+      "label": "SpotlightCard()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L128",
+      "id": "pages_clientportal_spotlightcard",
+      "community": 7,
+      "norm_label": "spotlightcard()"
+    },
+    {
+      "label": "DevWebcam()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L171",
+      "id": "pages_clientportal_devwebcam",
+      "community": 7,
+      "norm_label": "devwebcam()"
+    },
+    {
+      "label": "AudioBriefing()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L219",
+      "id": "pages_clientportal_audiobriefing",
+      "community": 7,
+      "norm_label": "audiobriefing()"
+    },
+    {
+      "label": "RadarPerformanceChart()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L287",
+      "id": "pages_clientportal_radarperformancechart",
+      "community": 7,
+      "norm_label": "radarperformancechart()"
+    },
+    {
+      "label": "GoogleLoginButton()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L420",
+      "id": "pages_clientportal_googleloginbutton",
+      "community": 7,
+      "norm_label": "googleloginbutton()"
+    },
+    {
+      "label": "ClientPasscard()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L549",
+      "id": "pages_clientportal_clientpasscard",
+      "community": 7,
+      "norm_label": "clientpasscard()"
+    },
+    {
+      "label": "BiometricScanner()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L656",
+      "id": "pages_clientportal_biometricscanner",
+      "community": 7,
+      "norm_label": "biometricscanner()"
+    },
+    {
+      "label": "DiagnosticsLogs()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L732",
+      "id": "pages_clientportal_diagnosticslogs",
+      "community": 7,
+      "norm_label": "diagnosticslogs()"
+    },
+    {
+      "label": "Modal()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L779",
+      "id": "pages_clientportal_modal",
+      "community": 7,
+      "norm_label": "modal()"
+    },
+    {
+      "label": "DEFAULT_PROJECT_DATA",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L817",
+      "id": "pages_clientportal_default_project_data",
+      "community": 7,
+      "norm_label": "default_project_data"
+    },
+    {
+      "label": "LOG_POOL",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L849",
+      "id": "pages_clientportal_log_pool",
+      "community": 7,
+      "norm_label": "log_pool"
+    },
+    {
+      "label": "ClientPortal()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L868",
+      "id": "pages_clientportal_clientportal",
+      "community": 7,
+      "norm_label": "clientportal()"
+    },
+    {
+      "label": "Contact.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Contact.jsx",
+      "source_location": "L1",
+      "id": "src_pages_contact_jsx",
+      "community": 6,
+      "norm_label": "contact.jsx"
+    },
+    {
+      "label": "Contact()",
+      "file_type": "code",
+      "source_file": "src/pages/Contact.jsx",
+      "source_location": "L8",
+      "id": "pages_contact_contact",
+      "community": 6,
+      "norm_label": "contact()"
+    },
+    {
+      "label": "Home.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L1",
+      "id": "src_pages_home_jsx",
+      "community": 4,
+      "norm_label": "home.jsx"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L23",
+      "id": "pages_home_home",
+      "community": 4,
+      "norm_label": "home()"
+    },
+    {
+      "label": "NotFound.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/NotFound.jsx",
+      "source_location": "L1",
+      "id": "src_pages_notfound_jsx",
+      "community": 0,
+      "norm_label": "notfound.jsx"
+    },
+    {
+      "label": "ParticleField()",
+      "file_type": "code",
+      "source_file": "src/pages/NotFound.jsx",
+      "source_location": "L9",
+      "id": "pages_notfound_particlefield",
+      "community": 0,
+      "norm_label": "particlefield()"
+    },
+    {
+      "label": "NotFound()",
+      "file_type": "code",
+      "source_file": "src/pages/NotFound.jsx",
+      "source_location": "L33",
+      "id": "pages_notfound_notfound",
+      "community": 0,
+      "norm_label": "notfound()"
+    },
+    {
+      "label": "Onboarding.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L1",
+      "id": "src_pages_onboarding_jsx",
+      "community": 11,
+      "norm_label": "onboarding.jsx"
+    },
+    {
+      "label": "steps",
+      "file_type": "code",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L13",
+      "id": "pages_onboarding_steps",
+      "community": 11,
+      "norm_label": "steps"
+    },
+    {
+      "label": "faqs",
+      "file_type": "code",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L72",
+      "id": "pages_onboarding_faqs",
+      "community": 11,
+      "norm_label": "faqs"
+    },
+    {
+      "label": "Onboarding()",
+      "file_type": "code",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L91",
+      "id": "pages_onboarding_onboarding",
+      "community": 11,
+      "norm_label": "onboarding()"
+    },
+    {
+      "label": "PaymentPolicy.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L1",
+      "id": "src_pages_paymentpolicy_jsx",
+      "community": 6,
+      "norm_label": "paymentpolicy.jsx"
+    },
+    {
+      "label": "PaymentPolicy()",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L9",
+      "id": "pages_paymentpolicy_paymentpolicy",
+      "community": 6,
+      "norm_label": "paymentpolicy()"
+    },
+    {
+      "label": "PrivacyPolicy.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L1",
+      "id": "src_pages_privacypolicy_jsx",
+      "community": 0,
+      "norm_label": "privacypolicy.jsx"
+    },
+    {
+      "label": "PrivacyPolicy()",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L4",
+      "id": "pages_privacypolicy_privacypolicy",
+      "community": 0,
+      "norm_label": "privacypolicy()"
+    },
+    {
+      "label": "RefundPolicy.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L1",
+      "id": "src_pages_refundpolicy_jsx",
+      "community": 0,
+      "norm_label": "refundpolicy.jsx"
+    },
+    {
+      "label": "RefundPolicy()",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L4",
+      "id": "pages_refundpolicy_refundpolicy",
+      "community": 0,
+      "norm_label": "refundpolicy()"
+    },
+    {
+      "label": "ServiceDetails.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L1",
+      "id": "src_pages_servicedetails_jsx",
+      "community": 3,
+      "norm_label": "servicedetails.jsx"
+    },
+    {
+      "label": "iconMap",
+      "file_type": "code",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L9",
+      "id": "pages_servicedetails_iconmap",
+      "community": 3,
+      "norm_label": "iconmap"
+    },
+    {
+      "label": "getServiceComparison()",
+      "file_type": "code",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L13",
+      "id": "pages_servicedetails_getservicecomparison",
+      "community": 3,
+      "norm_label": "getservicecomparison()"
+    },
+    {
+      "label": "ArchitectureBlueprint()",
+      "file_type": "code",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L85",
+      "id": "pages_servicedetails_architectureblueprint",
+      "community": 3,
+      "norm_label": "architectureblueprint()"
+    },
+    {
+      "label": "ServiceDetails()",
+      "file_type": "code",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L331",
+      "id": "pages_servicedetails_servicedetails",
+      "community": 3,
+      "norm_label": "servicedetails()"
+    },
+    {
+      "label": "Services.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Services.jsx",
+      "source_location": "L1",
+      "id": "src_pages_services_jsx",
+      "community": 0,
+      "norm_label": "services.jsx"
+    },
+    {
+      "label": "Services()",
+      "file_type": "code",
+      "source_file": "src/pages/Services.jsx",
+      "source_location": "L4",
+      "id": "pages_services_services",
+      "community": 0,
+      "norm_label": "services()"
+    },
+    {
+      "label": "Terms.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L1",
+      "id": "src_pages_terms_jsx",
+      "community": 0,
+      "norm_label": "terms.jsx"
+    },
+    {
+      "label": "Terms()",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L4",
+      "id": "pages_terms_terms",
+      "community": 0,
+      "norm_label": "terms()"
+    },
+    {
+      "label": "animations.js",
+      "file_type": "code",
+      "source_file": "src/utils/animations.js",
+      "source_location": "L1",
+      "id": "src_utils_animations_js",
+      "community": 15,
+      "norm_label": "animations.js"
+    },
+    {
+      "label": "easing",
+      "file_type": "code",
+      "source_file": "src/utils/animations.js",
+      "source_location": "L1",
+      "id": "utils_animations_easing",
+      "community": 15,
+      "norm_label": "easing"
+    },
+    {
+      "label": "duration",
+      "file_type": "code",
+      "source_file": "src/utils/animations.js",
+      "source_location": "L7",
+      "id": "utils_animations_duration",
+      "community": 15,
+      "norm_label": "duration"
+    },
+    {
+      "label": "cn.js",
+      "file_type": "code",
+      "source_file": "src/utils/cn.js",
+      "source_location": "L1",
+      "id": "src_utils_cn_js",
+      "community": 6,
+      "norm_label": "cn.js"
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "src/utils/cn.js",
+      "source_location": "L4",
+      "id": "utils_cn_cn",
+      "community": 6,
+      "norm_label": "cn()"
+    },
+    {
+      "label": "scroll.js",
+      "file_type": "code",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L1",
+      "id": "src_utils_scroll_js",
+      "community": 3,
+      "norm_label": "scroll.js"
+    },
+    {
+      "label": "initScroll()",
+      "file_type": "code",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L9",
+      "id": "utils_scroll_initscroll",
+      "community": 3,
+      "norm_label": "initscroll()"
+    },
+    {
+      "label": "getScroll()",
+      "file_type": "code",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L33",
+      "id": "utils_scroll_getscroll",
+      "community": 3,
+      "norm_label": "getscroll()"
+    },
+    {
+      "label": "destroyScroll()",
+      "file_type": "code",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L35",
+      "id": "utils_scroll_destroyscroll",
+      "community": 3,
+      "norm_label": "destroyscroll()"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "readme_md",
+      "community": 13,
+      "norm_label": "readme.md"
+    },
+    {
+      "label": "React + Vite",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "id": "nexora_readme_react_vite",
+      "community": 13,
+      "norm_label": "react + vite"
+    },
+    {
+      "label": "React Compiler",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "id": "nexora_readme_react_compiler",
+      "community": 13,
+      "norm_label": "react compiler"
+    },
+    {
+      "label": "Expanding the ESLint configuration",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "id": "nexora_readme_expanding_the_eslint_configuration",
+      "community": 13,
+      "norm_label": "expanding the eslint configuration"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L1",
+      "id": "agents_rules_graphify_md",
+      "community": 19,
+      "norm_label": "graphify.md"
+    },
+    {
+      "label": "graphify",
+      "file_type": "document",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "id": "rules_graphify_graphify",
+      "community": 19,
+      "norm_label": "graphify"
+    },
+    {
+      "label": "graphify.md",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L1",
+      "id": "agents_workflows_graphify_md",
+      "community": 26,
+      "norm_label": "graphify.md"
+    },
+    {
+      "label": "Workflow: graphify",
+      "file_type": "document",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "id": "workflows_graphify_workflow_graphify",
+      "community": 26,
+      "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "TiltCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L7",
+      "community": 4,
+      "norm_label": "tiltcard()",
+      "id": "sections_work_tiltcard"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_dependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_devdependencies"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_private"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_scripts"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_type"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "package_json",
+      "target": "nexora_package_version"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_scripts",
+      "target": "nexora_package_scripts_build"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_scripts",
+      "target": "nexora_package_scripts_dev"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_scripts",
+      "target": "nexora_package_scripts_lint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_scripts",
+      "target": "nexora_package_scripts_preview"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_animejs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_canvas_confetti"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_clsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_emailjs_browser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_framer_motion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_gsap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_gsap_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_jwt_decode"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_lenis"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_lottie_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_lucide_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_maath"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_pdf_parse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_countup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_helmet_async"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_hot_toast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_intersection_observer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_oauth_google"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_parallax_tilt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_router_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_three_drei"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_three_fiber"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_tilt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_swiper"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L42",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_tailwind_merge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_tailwindcss_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_three"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_tsparticles_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_tsparticles_slim"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_typed_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_typewriter_effect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L54",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_autoprefixer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_eslint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_eslint_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_eslint_plugin_react_hooks"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_eslint_plugin_react_refresh"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_globals"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_postcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_tailwindcss"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_tailwindcss_forms"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_tailwindcss_typography"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L51",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_types_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L52",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_types_react_dom"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L61",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_devdependencies",
+      "target": "nexora_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vercel.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "vercel_json",
+      "target": "nexora_vercel_rewrites"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "context_cursorcontext_cursorprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "context_themecontext_themeprovider"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "hooks_uselenis_uselenis"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_animatedroutes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L109",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_appcontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_app_pageloader"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_footer_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_navbar_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_scrolltotop_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_ui_backtotop_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_ui_contextcursor_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_ui_cookiebanner_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_ui_loadingscreen_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_ui_scrollprogress_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_ui_whatsappbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_context_cursorcontext_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_context_themecontext_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_hooks_uselenis_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_about_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_clientportal_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_contact_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_home_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_notfound_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_onboarding_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_paymentpolicy_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_privacypolicy_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_refundpolicy_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_servicedetails_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_services_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_terms_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main_jsx",
+      "target": "src_app_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L68",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app_appcontent",
+      "target": "hooks_uselenis_uselenis"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/main.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main_jsx",
+      "target": "src_components_errorboundary_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/gsapAnimations.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_gsapanimations_js",
+      "target": "animations_gsapanimations_setuphowweworkanimation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_fadedown"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_fadeleft"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L28",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_faderight"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L56",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_pagetransition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_scalein"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/animations/variants.js",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_animations_variants_js",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_blogteaser_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contact_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_faq_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_trustbadges_jsx",
+      "target": "src_animations_variants_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_blogteaser_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contact_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_faq_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_trustbadges_jsx",
+      "target": "animations_variants_fadeup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_blogteaser_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contact_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_faq_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_trustbadges_jsx",
+      "target": "animations_variants_staggercontainer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_errorboundary_jsx",
+      "target": "components_errorboundary_errorboundary"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_errorboundary_errorboundary",
+      "target": "components_errorboundary_errorboundary_componentdidcatch"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_errorboundary_errorboundary",
+      "target": "components_errorboundary_errorboundary_constructor"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_errorboundary_errorboundary",
+      "target": "components_errorboundary_errorboundary_getderivedstatefromerror"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ErrorBoundary.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_errorboundary_errorboundary",
+      "target": "components_errorboundary_errorboundary_render"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/BackToTop.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_backtotop_jsx",
+      "target": "layout_backtotop_backtotop"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/BackToTop.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_backtotop_jsx",
+      "target": "src_utils_scroll_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/BackToTop.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_backtotop_jsx",
+      "target": "utils_scroll_getscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/CookieBanner.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_cookiebanner_jsx",
+      "target": "layout_cookiebanner_cookiebanner"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/CookieBanner.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_cookiebanner_jsx",
+      "target": "src_utils_cn_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/CookieBanner.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_cookiebanner_jsx",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Footer.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_footer_jsx",
+      "target": "layout_footer_footer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/LoadingScreen.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_loadingscreen_jsx",
+      "target": "layout_loadingscreen_loadingscreen"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/MarqueeStrip.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_marqueestrip_jsx",
+      "target": "layout_marqueestrip_marqueestrip"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "src_components_layout_marqueestrip_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_navbar_jsx",
+      "target": "layout_navbar_navbar"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_navbar_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_navbar_jsx",
+      "target": "src_utils_cn_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_navbar_jsx",
+      "target": "src_utils_scroll_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_navbar_jsx",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_navbar_jsx",
+      "target": "utils_scroll_getscroll"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/layout/Navbar.jsx",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "layout_navbar_navbar",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/ScrollProgress.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_scrollprogress_jsx",
+      "target": "layout_scrollprogress_scrollprogress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/ScrollToTop.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_scrolltotop_jsx",
+      "target": "layout_scrolltotop_scrolltotop"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/ScrollToTop.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_scrolltotop_jsx",
+      "target": "src_utils_scroll_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/ScrollToTop.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_scrolltotop_jsx",
+      "target": "utils_scroll_getscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/layout/SectionDivider.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_layout_sectiondivider_jsx",
+      "target": "layout_sectiondivider_sectiondivider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/About.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_about_jsx",
+      "target": "sections_about_about"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_about_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_blogteaser_jsx",
+      "target": "sections_blogteaser_blogteaser"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_blogteaser_jsx",
+      "target": "sections_blogteaser_posts"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/BlogTeaser.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_blogteaser_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contact_jsx",
+      "target": "sections_contact_contact"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Contact.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_contact_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_contact_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_faq_jsx",
+      "target": "constants_faq_faqs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_faq_jsx",
+      "target": "sections_faq_faq"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/FAQ.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_faq_jsx",
+      "target": "src_constants_faq_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "sections_hero_hero"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "sections_hero_mobilepreview"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "src_components_ui_laptopmockup_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "src_components_ui_morphingblob_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "src_components_ui_particlefield_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "src_components_ui_scrambletext_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "src_utils_scroll_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Hero.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_hero_jsx",
+      "target": "utils_scroll_getscroll"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_hero_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/HowWeWork.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_howwework_jsx",
+      "target": "sections_howwework_howwework"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/HowWeWork.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_howwework_jsx",
+      "target": "sections_howwework_steps"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_howwework_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/KineticManifesto.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_kineticmanifesto_jsx",
+      "target": "sections_kineticmanifesto_kineticmanifesto"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_kineticmanifesto_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Newsletter.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_newsletter_jsx",
+      "target": "sections_newsletter_newsletter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/OnboardingTeaser.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_onboardingteaser_jsx",
+      "target": "sections_onboardingteaser_marqueerow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/OnboardingTeaser.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_onboardingteaser_jsx",
+      "target": "sections_onboardingteaser_onboardingteaser"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/OnboardingTeaser.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_onboardingteaser_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "constants_pricing_pricing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "sections_pricing_pricing"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "src_components_ui_glowcard_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "src_constants_pricing_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_pricing_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pulse.jsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pulse_jsx",
+      "target": "sections_pulse_pulse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pulse.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pulse_jsx",
+      "target": "sections_pulse_pulsecard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_pulse_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "sections_realtimework_realtimework"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "sections_realtimework_showcaseprojects"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_realtimework_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "constants_services_services"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "sections_services_servicerow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L103",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "sections_services_services"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "src_constants_services_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_services_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Stats.jsx",
+      "source_location": "L53",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_stats_jsx",
+      "target": "sections_stats_statcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Stats.jsx",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_stats_jsx",
+      "target": "sections_stats_stats"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Stats.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_stats_jsx",
+      "target": "src_components_ui_animatedcounter_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_stats_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "constants_team_team"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_darkbgcolors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_githubicon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_hexcolors"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_linkedinicon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_team"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L39",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_teammember"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "src_constants_team_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_team_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "constants_techstack_techstack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "sections_techstack_alltech"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "sections_techstack_marqueerow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "sections_techstack_row1"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "sections_techstack_row2"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "sections_techstack_row3"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "sections_techstack_techstack"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TechStack.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_techstack_jsx",
+      "target": "src_constants_techstack_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_techstack_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "constants_testimonials_testimonials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "sections_testimonials_clientvoicevisualizer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "sections_testimonials_marqueerow"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L120",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "sections_testimonials_testimonials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "sections_testimonials_trustsummary"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "src_components_ui_glowcard_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Testimonials.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_testimonials_jsx",
+      "target": "src_constants_testimonials_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_testimonials_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_trustbadges_jsx",
+      "target": "sections_trustbadges_guarantees"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/TrustBadges.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_trustbadges_jsx",
+      "target": "sections_trustbadges_trustbadges"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_trustbadges_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_whynexora_jsx",
+      "target": "sections_whynexora_bentocard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_whynexora_jsx",
+      "target": "sections_whynexora_whynexora"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_whynexora_jsx"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_work_jsx",
+      "target": "constants_projects_projects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_work_jsx",
+      "target": "sections_work_tiltcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_work_jsx",
+      "target": "sections_work_work"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_work_jsx",
+      "target": "src_constants_projects_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_work_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/AnimatedCounter.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_animatedcounter_jsx",
+      "target": "ui_animatedcounter_animatedcounter"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/AnimatedGradientBorder.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_animatedgradientborder_jsx",
+      "target": "ui_animatedgradientborder_animatedgradientborder"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/BackToTop.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_backtotop_jsx",
+      "target": "ui_backtotop_backtotop"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ContextCursor.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_contextcursor_jsx",
+      "target": "context_cursorcontext_usecursor"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ContextCursor.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_contextcursor_jsx",
+      "target": "src_context_cursorcontext_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ContextCursor.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_contextcursor_jsx",
+      "target": "ui_contextcursor_contextcursor"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/ContextCursor.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_contextcursor_contextcursor",
+      "target": "context_cursorcontext_usecursor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/CookieBanner.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_cookiebanner_jsx",
+      "target": "ui_cookiebanner_cookiebanner"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_customcursor_jsx",
+      "target": "hooks_usemouseposition_usemouseposition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_customcursor_jsx",
+      "target": "ui_customcursor_customcursor"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_customcursor_jsx",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_customcursor_customcursor",
+      "target": "hooks_usemouseposition_usemouseposition"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/CustomCursor.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "ui_customcursor_customcursor",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/GlitchText.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_glitchtext_jsx",
+      "target": "ui_glitchtext_glitchtext"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/GlowCard.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_glowcard_jsx",
+      "target": "src_utils_cn_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/GlowCard.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_glowcard_jsx",
+      "target": "ui_glowcard_glowcard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/GlowCard.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_glowcard_jsx",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/GlowCard.jsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "ui_glowcard_glowcard",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/LaptopMockup.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_laptopmockup_jsx",
+      "target": "ui_laptopmockup_laptopmockup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/LoadingScreen.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_loadingscreen_jsx",
+      "target": "ui_loadingscreen_loadingscreen"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_magneticbutton_jsx",
+      "target": "hooks_usemagneticeffect_usemagneticeffect"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_magneticbutton_jsx",
+      "target": "src_hooks_usemagneticeffect_js"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_magneticbutton_jsx",
+      "target": "src_utils_cn_js"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_magneticbutton_jsx",
+      "target": "ui_magneticbutton_magneticbutton"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_magneticbutton_jsx",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Contact.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_contact_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/NotFound.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_notfound_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_onboarding_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "src_components_ui_magneticbutton_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_magneticbutton_magneticbutton",
+      "target": "hooks_usemagneticeffect_usemagneticeffect"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/MagneticButton.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "ui_magneticbutton_magneticbutton",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/MorphingBlob.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_morphingblob_jsx",
+      "target": "ui_morphingblob_morphingblob"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ParticleField.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_particlefield_jsx",
+      "target": "context_themecontext_usetheme"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ParticleField.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_particlefield_jsx",
+      "target": "src_context_themecontext_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ParticleField.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_particlefield_jsx",
+      "target": "ui_particlefield_particlefield"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/ui/ParticleField.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "ui_particlefield_particlefield",
+      "target": "context_themecontext_usetheme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/PhoneMockup.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_phonemockup_jsx",
+      "target": "ui_phonemockup_phonemockup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ScrambleText.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_scrambletext_jsx",
+      "target": "ui_scrambletext_scrambletext"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "src_components_ui_scrambletext_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ScrollProgress.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_scrollprogress_jsx",
+      "target": "ui_scrollprogress_scrollprogress"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ScrollVelocityText.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_scrollvelocitytext_jsx",
+      "target": "ui_scrollvelocitytext_scrollvelocitytext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/ScrollVelocityText.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_scrollvelocitytext_jsx",
+      "target": "ui_scrollvelocitytext_wrap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/ui/WhatsAppButton.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_ui_whatsappbutton_jsx",
+      "target": "ui_whatsappbutton_whatsappbutton"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/docs.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_docs_js",
+      "target": "constants_docs_docsdata"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_onboarding_jsx",
+      "target": "src_constants_docs_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_onboarding_jsx",
+      "target": "constants_docs_docsdata"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/faq.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_faq_js",
+      "target": "constants_faq_faqs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/pricing.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_pricing_js",
+      "target": "constants_pricing_pricing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/projects.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_projects_js",
+      "target": "constants_projects_projects"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/services.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_services_js",
+      "target": "constants_services_services"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "src_constants_services_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "constants_services_services"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/team.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_team_js",
+      "target": "constants_team_team"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/techStack.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_techstack_js",
+      "target": "constants_techstack_techstack"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/testimonials.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_testimonials_js",
+      "target": "constants_testimonials_testimonials"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_context_cursorcontext_jsx",
+      "target": "context_cursorcontext_cursorcontext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_context_cursorcontext_jsx",
+      "target": "context_cursorcontext_cursorprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/CursorContext.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_context_cursorcontext_jsx",
+      "target": "context_cursorcontext_usecursor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_context_themecontext_jsx",
+      "target": "context_themecontext_themecontext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_context_themecontext_jsx",
+      "target": "context_themecontext_themeprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/context/ThemeContext.jsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_context_themecontext_jsx",
+      "target": "context_themecontext_usetheme"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_uselenis_js",
+      "target": "hooks_uselenis_uselenis"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_uselenis_js",
+      "target": "src_utils_scroll_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_uselenis_js",
+      "target": "utils_scroll_destroyscroll"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_uselenis_js",
+      "target": "utils_scroll_initscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useMagneticEffect.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_usemagneticeffect_js",
+      "target": "hooks_usemagneticeffect_usemagneticeffect"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useMousePosition.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_hooks_usemouseposition_js",
+      "target": "hooks_usemouseposition_usemouseposition"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/About.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_about_jsx",
+      "target": "pages_about_about"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L219",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_audiobriefing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L656",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_biometricscanner"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L549",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_clientpasscard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L868",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_clientportal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L817",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_default_project_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L171",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_devwebcam"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L732",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_diagnosticslogs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L420",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_googleloginbutton"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L849",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_log_pool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L779",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_modal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_particlebackground"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L287",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_radarperformancechart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L128",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_spotlightcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Contact.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_contact_jsx",
+      "target": "pages_contact_contact"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "pages_home_home"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/NotFound.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_notfound_jsx",
+      "target": "pages_notfound_notfound"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/NotFound.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_notfound_jsx",
+      "target": "pages_notfound_particlefield"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L72",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_onboarding_jsx",
+      "target": "pages_onboarding_faqs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L91",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_onboarding_jsx",
+      "target": "pages_onboarding_onboarding"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Onboarding.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_onboarding_jsx",
+      "target": "pages_onboarding_steps"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_paymentpolicy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_privacypolicy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_refundpolicy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L85",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "pages_servicedetails_architectureblueprint"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "pages_servicedetails_getservicecomparison"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "pages_servicedetails_iconmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L331",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "pages_servicedetails_servicedetails"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "src_utils_scroll_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_servicedetails_jsx",
+      "target": "utils_scroll_getscroll"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ServiceDetails.jsx",
+      "source_location": "L375",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_servicedetails_servicedetails",
+      "target": "pages_servicedetails_getservicecomparison"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Services.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_services_jsx",
+      "target": "pages_services_services"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_terms"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/animations.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_animations_js",
+      "target": "utils_animations_duration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/animations.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_animations_js",
+      "target": "utils_animations_easing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/cn.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_cn_js",
+      "target": "utils_cn_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_scroll_js",
+      "target": "utils_scroll_destroyscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L33",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_scroll_js",
+      "target": "utils_scroll_getscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/utils/scroll.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_utils_scroll_js",
+      "target": "utils_scroll_initscroll"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_md",
+      "target": "nexora_readme_react_vite"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_readme_react_vite",
+      "target": "nexora_readme_expanding_the_eslint_configuration"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_readme_react_vite",
+      "target": "nexora_readme_react_compiler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/rules/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_rules_graphify_md",
+      "target": "rules_graphify_graphify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": ".agents/workflows/graphify.md",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_workflows_graphify_md",
+      "target": "workflows_graphify_workflow_graphify"
+    }
+  ],
+  "hyperedges": [],
+  "built_at_commit": "26165ee928590bcd7267af170ff4c5295765668c"
+}

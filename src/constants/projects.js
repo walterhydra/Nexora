@@ -7,7 +7,7 @@ export const projects = [
     description: "Corporate Website",
     tags: ["React", "Tailwind", "Vercel"],
     result: "High-performance steel manufacturing site",
-    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1604079628040-94301bb21b91?q=80&w=2574&auto=format&fit=crop", // Dark minimal architecture
     link: "https://naitik-steel.vercel.app/"
   },
   {
@@ -17,7 +17,7 @@ export const projects = [
     description: "Restaurant Website",
     tags: ["Next.js", "Framer Motion"],
     result: "Increased online reservations",
-    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop", // Dark workspace
     link: "https://sangrill.vercel.app/"
   },
   {
@@ -27,7 +27,7 @@ export const projects = [
     description: "Portfolio & Brand",
     tags: ["React", "GSAP"],
     result: "Unique identity & fast load times",
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop", // Dark abstract liquid
     link: "https://kingslayer-hi.vercel.app/"
   },
   {
@@ -37,7 +37,7 @@ export const projects = [
     description: "Business Landing Page",
     tags: ["React", "Tailwind"],
     result: "Optimized for high conversion",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?q=80&w=2070&auto=format&fit=crop", // Dark 3D shapes
     link: "https://jp-gamma-eosin.vercel.app/"
   },
   {
@@ -47,7 +47,7 @@ export const projects = [
     description: "Corporate Identity",
     tags: ["Next.js", "CMS"],
     result: "Modernized web presence",
-    image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop", // Cyberpunk neon dark
     link: "https://naavasip.vercel.app/"
   },
   {
@@ -57,7 +57,7 @@ export const projects = [
     description: "Cafe & Menu Experience",
     tags: ["React", "UI/UX"],
     result: "Beautiful menu showcase",
-    image: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=2064&auto=format&fit=crop", // Moody studio aesthetic
     link: "https://pausecafe.vercel.app/"
   },
   {
@@ -67,7 +67,7 @@ export const projects = [
     description: "European Cafe Brand",
     tags: ["Web", "Design System"],
     result: "Premium digital experience",
-    image: "https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop", // Dark earth abstract
     link: "https://cafe-europa.vercel.app/"
   },
   {
@@ -77,7 +77,7 @@ export const projects = [
     description: "Restaurant Ordering",
     tags: ["React", "Backend"],
     result: "Streamlined online orders",
-    image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=2070&auto=format&fit=crop", // Dark geometric patterns
     link: "https://hoppers-restro.vercel.app/"
   },
   
@@ -89,7 +89,7 @@ export const projects = [
     description: "Coaching WebApp Platform",
     tags: ["React", "EdTech", "Vercel"],
     result: "Complete student management",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop", // Moody code screen
     link: "https://adroit-demo.vercel.app/"
   },
   {
@@ -99,7 +99,7 @@ export const projects = [
     description: "Civil Services Academy",
     tags: ["EdTech", "Portal"],
     result: "Seamless video delivery",
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop", // Dark retro tech setup
     link: "https://takshashila-ias-md.vercel.app/"
   },
   {
@@ -109,7 +109,7 @@ export const projects = [
     description: "Online Learning Platform",
     tags: ["WebApp", "LMS"],
     result: "Engaging student dashboard",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1627398225081-249e469399ce?q=80&w=2070&auto=format&fit=crop", // Dark futuristic abstract
     link: "https://sandesh-six.vercel.app/"
   },
   {
@@ -119,7 +119,7 @@ export const projects = [
     description: "Interactive Coaching",
     tags: ["Next.js", "EdTech"],
     result: "High retention rates",
-    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1634152962476-4b8a00e1915c?q=80&w=2070&auto=format&fit=crop", // Moody dark gradients
     link: "https://evoke-rho.vercel.app/"
   },
   {
@@ -129,7 +129,7 @@ export const projects = [
     description: "Skills Development Hub",
     tags: ["React", "Assessment"],
     result: "Automated testing flows",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?q=80&w=2070&auto=format&fit=crop", // Coding syntax macro
     link: "https://pitman.vercel.app/"
   },
   {
@@ -139,7 +139,7 @@ export const projects = [
     description: "Educational Portal",
     tags: ["Web", "EdTech"],
     result: "Scalable architecture",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2564&auto=format&fit=crop", // Reusing abstract liquid
     link: "https://maa-lyart.vercel.app/"
   },
   {
@@ -149,7 +149,7 @@ export const projects = [
     description: "Digital Classroom",
     tags: ["LMS", "Video"],
     result: "Smooth learning experience",
-    image: "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1604076913837-52ab5629fba9?q=80&w=2574&auto=format&fit=crop", // Abstract shapes dark
     link: "https://icon-ten-tawny.vercel.app/"
   },
   {
@@ -159,7 +159,7 @@ export const projects = [
     description: "Tiwari Delta Platform",
     tags: ["React", "Students"],
     result: "Organized course structure",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop", // Dark circuit board
     link: "https://tiwari-delta.vercel.app/"
   }
 ];
