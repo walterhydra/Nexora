@@ -1,11 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { ArrowUpRight } from "lucide-react";
 import { projects } from "../../constants/projects";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Work() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
+    // Preload images for smooth transitions without flashing
+    projects.forEach(proj => {
+      if (proj.image) {
+        const img = new Image();
+        img.src = proj.image;
+      }
+    });
+
     const options = {
       root: null,
       rootMargin: "-40% 0px -40% 0px", // Trigger when item is in the middle 20% of the viewport
@@ -37,20 +46,22 @@ export default function Work() {
     >
       {/* Sticky Background Image that changes on scroll */}
       <div className="absolute inset-0 z-0">
-        <div className="sticky top-0 w-full h-screen overflow-hidden pointer-events-none">
-          {projects.map((project, index) => (
-            <img 
-              key={`bg-${project.id}`}
-              src={project.image} 
-              alt={project.title} 
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-1000 ease-out ${
-                index === activeIndex ? "opacity-30 scale-105" : "opacity-0 scale-100"
-              }`} 
+        <div className="sticky top-0 w-full h-screen overflow-hidden pointer-events-none bg-black">
+          <AnimatePresence>
+            <motion.img 
+              key={`bg-${activeIndex}`}
+              src={projects[activeIndex]?.image} 
+              alt={projects[activeIndex]?.title} 
+              initial={{ opacity: 0, scale: 1 }}
+              animate={{ opacity: 0.3, scale: 1.05 }}
+              exit={{ opacity: 0, scale: 1 }}
+              transition={{ duration: 1, ease: "easeOut" }}
+              className="absolute inset-0 w-full h-full object-cover will-change-[opacity,transform]"
             />
-          ))}
+          </AnimatePresence>
           {/* Gradient overlays to blend into the section */}
-          <div className="absolute inset-0 bg-black/50 z-10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-10" />
+          <div className="absolute inset-0 bg-black/50 z-10 pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black z-10 pointer-events-none" />
         </div>
       </div>
 
@@ -74,9 +85,10 @@ export default function Work() {
             <div 
               key={project.id}
               data-index={index}
+              onMouseEnter={() => setActiveIndex(index)}
               onClick={() => window.open(project.link, "_blank")}
               className={`work-item group relative flex flex-col md:flex-row md:items-center justify-between py-12 md:py-20 border-b border-white/10 cursor-pointer overflow-hidden px-4 md:px-6 transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] ${
-                index === activeIndex ? "opacity-100" : "opacity-40 hover:opacity-70"
+                index === activeIndex ? "opacity-100 bg-white/5" : "opacity-40 hover:opacity-70"
               }`}
             >
               {/* Left Side: Number, Title */}
@@ -96,7 +108,7 @@ export default function Work() {
                 {/* Tags */}
                 <div className={`hidden lg:flex items-center gap-2 mr-4 transition-all duration-700 ${index === activeIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
                   {project.tags.slice(0, 2).map((tag, i) => (
-                    <span key={i} className="px-3 py-1 text-xs border border-white/20 rounded-full text-white/70 bg-black/30 backdrop-blur-md">
+                    <span key={i} className="px-3 py-1 text-xs border border-white/20 rounded-full text-white/70 bg-black/60">
                       {tag}
                     </span>
                   ))}
