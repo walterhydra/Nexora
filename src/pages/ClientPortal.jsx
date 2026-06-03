@@ -1,2568 +1,911 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
-import toast from 'react-hot-toast';
-import confetti from 'canvas-confetti';
-import {
-  Activity, Clock, FileText, CheckCircle2, ChevronRight, Lock,
-  Code2, Zap, Download, LayoutDashboard, CreditCard, Settings,
-  LogOut, Mail, Key, Globe, Search, Bell, Terminal, Users, CheckSquare, File, MessageCircle, MoreHorizontal, HelpCircle, Receipt, History, X, Send, Eye, EyeOff, Sparkles, SendHorizontal, CreditCard as CardIcon, FileCheck, Check, Laptop, ShieldCheck, ChevronDown, Video, Mic, Volume2, Server, Database, Wifi
-} from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { GoogleOAuthProvider } from '@react-oauth/google';
-import loginBg from '../assets/IMG_20260520_144201.jpg.jpeg';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Mail, Eye, Lock, Zap, MessageCircle, ShieldCheck, 
+  LayoutDashboard, FolderKanban, Receipt, Settings, 
+  Bell, ChevronDown, ArrowLeft, ArrowRight,
+  Clock, CheckCircle2, Terminal, Bot, X, Send, MessageSquare
+} from 'lucide-react';
+import nexoraLogo from '../assets/nexora-logo.png';
 
-// --- PREMIUM HIGH-GRAPHIC SUB-COMPONENTS ---
-
-// 1. Dynamic Connected HTML5 Canvas Particle Field
-const ParticleBackground = () => {
-  const canvasRef = useRef(null);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    let animationFrameId;
-
-    let particles = [];
-    const particleCount = 50;
-    let mouse = { x: null, y: null, radius: 160 };
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    };
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
-
-    // Initialize particles with starting orbits & velocities
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.35,
-        vy: (Math.random() - 0.5) * 0.35,
-        radius: Math.random() * 2 + 1,
-      });
-    }
-
-    const handleMouseMove = (e) => {
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
-    };
-
-    const handleMouseLeave = () => {
-      mouse.x = null;
-      mouse.y = null;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseleave', handleMouseLeave);
-
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Render nodes
-      particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // Bounce on borders
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
-
-        // Push/pull particles based on mouse proximity
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < mouse.radius) {
-            const force = (mouse.radius - dist) / mouse.radius;
-            const angle = Math.atan2(dy, dx);
-            p.x += Math.cos(angle) * force * 1.2;
-            p.y += Math.sin(angle) * force * 1.2;
-          }
-        }
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(0, 245, 255, 0.2)';
-        ctx.fill();
-      });
-
-      // Draw connection vectors
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < 130) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(123, 47, 255, ${0.12 * (1 - dist / 130)})`;
-            ctx.lineWidth = 0.5;
-            ctx.stroke();
-          }
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseleave', handleMouseLeave);
-      cancelAnimationFrame(animationFrameId);
-    };
-  }, []);
-
-  return <canvas ref={canvasRef} className="fixed inset-0 pointer-events-none z-0 opacity-50" />;
-};
-
-// 2. Interactive Spotlight Card with Mouse-Tracking Background
-const SpotlightCard = ({ children, className = "" }) => {
-  const [coords, setCoords] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-  const cardRef = useRef(null);
-
-  const handleMouseMove = (e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    setCoords({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top
-    });
-  };
-
-  return (
-    <div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      className={`relative overflow-hidden rounded-3xl border border-white/10 bg-[#07070a]/60 backdrop-blur-md transition-all duration-300 ${className}`}
-    >
-      {isHovered && (
-        <div
-          className="absolute pointer-events-none transition-opacity duration-300"
-          style={{
-            width: '320px',
-            height: '320px',
-            background: 'radial-gradient(circle, rgba(0, 245, 255, 0.06) 0%, transparent 70%)',
-            left: `${coords.x - 160}px`,
-            top: `${coords.y - 160}px`,
-            zIndex: 0,
-          }}
-        />
-      )}
-      <div className="relative z-10 w-full h-full">
-        {children}
-      </div>
-    </div>
-  );
-};
-
-// 3. Live Stream Developer Webcam Simulator
-const DevWebcam = () => {
-  const [fps, setFps] = useState(30);
-  const [bitrate, setBitrate] = useState(6.2);
-  const [latency, setLatency] = useState(18);
+const LivePulseFeed = () => {
+  const [logs, setLogs] = useState([
+    { id: 1, text: "System initialized. Secure gateway active.", type: "system" }
+  ]);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setFps(Math.floor(29 + Math.random() * 2));
-      setBitrate(parseFloat((5.8 + Math.random() * 0.8).toFixed(1)));
-      setLatency(Math.floor(14 + Math.random() * 6));
-    }, 2500);
-    return () => clearInterval(timer);
+    const events = [
+      { text: "Committing UI updates to staging environment...", type: "dev" },
+      { text: "Optimizing database queries for faster load times.", type: "dev" },
+      { text: "Reviewing pull request #42 for phase 2 milestone.", type: "system" },
+      { text: "Running end-to-end test suite... 142/142 passed.", type: "success" },
+      { text: "Deploying latest assets to CDN edge network.", type: "system" },
+      { text: "Client feedback received. Logging into ticketing system.", type: "dev" }
+    ];
+    
+    const interval = setInterval(() => {
+      setLogs(prev => {
+        const nextEvent = events[Math.floor(Math.random() * events.length)];
+        const newLog = { 
+          id: Date.now(), 
+          text: nextEvent.text, 
+          type: nextEvent.type 
+        };
+        // keep only last 5 logs
+        return [newLog, ...prev].slice(0, 5);
+      });
+    }, 3500);
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-1 flex flex-col shrink-0">
-      {/* Live Blinker Tag */}
-      <div className="absolute top-2.5 left-2.5 z-20 flex items-center gap-1.5 bg-black/60 px-2 py-0.5 rounded-full border border-red-500/30">
-        <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-ping" />
-        <span className="text-[8px] font-black uppercase text-red-400 tracking-wider">DEV LIVE</span>
-      </div>
-
-      {/* Stats overlay */}
-      <div className="absolute bottom-2.5 left-2.5 z-20 text-[9px] font-mono text-gray-400 bg-black/70 px-2 py-1 rounded border border-white/5 space-y-0.5">
-        <div>FEED: <span className="text-white">MILAN_CORE</span></div>
-        <div>FPS: <span className="text-white">{fps}</span></div>
-        <div>BITRATE: <span className="text-white">{bitrate} Mbps</span></div>
-        <div>PING: <span className="text-white">{latency}ms</span></div>
-      </div>
-
-      {/* webcam Viewport */}
-      <div className="relative aspect-video w-full rounded-xl bg-[#09090e] overflow-hidden flex items-center justify-center border border-white/5">
-        {/* CRT Scanline Overlay */}
-        <div className="absolute inset-0 pointer-events-none z-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,_rgba(0,0,0,0.25)_50%),_linear-gradient(90deg,_rgba(0,245,255,0.03),_rgba(123,47,255,0.02),_rgba(0,245,255,0.03))] bg-[size:100%_4px,_6px_100%] opacity-20" />
-
-        {/* Video feed illustration */}
-        <div className="flex flex-col items-center gap-1.5 text-center">
-          <div className="w-9 h-9 rounded-full border border-accent-primary/20 flex items-center justify-center bg-accent-primary/5 animate-pulse">
-            <Video className="w-4 h-4 text-accent-primary" />
-          </div>
-          <span className="text-[9px] font-bold text-gray-500 tracking-widest uppercase">Milan_Dev_Desk</span>
+    <div className="bg-[#0f1115] rounded-xl border border-gray-800 shadow-[0_8px_30px_rgb(0,0,0,0.12)] overflow-hidden flex flex-col h-full min-h-[300px]">
+      <div className="px-6 py-4 border-b border-gray-800 flex items-center justify-between bg-[#0a0a0c]">
+        <div className="flex items-center gap-2">
+          <Terminal className="w-4 h-4 text-emerald-500" />
+          <h3 className="text-sm font-semibold text-white tracking-wide">Live Project Pulse</h3>
         </div>
-      </div>
-    </div>
-  );
-};
-
-// 4. Voice-Briefing Component with Animated SVG Frequency Bars
-const AudioBriefing = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [waveAmplitudes, setWaveAmplitudes] = useState(new Array(18).fill(4));
-  const intervalRef = useRef(null);
-
-  const handlePlayToggle = () => {
-    if (isPlaying) {
-      clearInterval(intervalRef.current);
-      setIsPlaying(false);
-    } else {
-      setIsPlaying(true);
-      intervalRef.current = setInterval(() => {
-        setProgress(p => {
-          if (p >= 100) {
-            clearInterval(intervalRef.current);
-            setIsPlaying(false);
-            return 0;
-          }
-          return p + 1.2;
-        });
-        setWaveAmplitudes(Array.from({ length: 18 }, () => Math.floor(Math.random() * 18) + 3));
-      }, 150);
-    }
-  };
-
-  useEffect(() => {
-    return () => clearInterval(intervalRef.current);
-  }, []);
-
-  return (
-    <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 flex items-center gap-5 backdrop-blur-md">
-      <button
-        onClick={handlePlayToggle}
-        className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-all ${isPlaying ? 'bg-accent-violet text-white shadow-lg shadow-accent-violet/20' : 'bg-accent-primary text-black hover:bg-cyan-400 shadow-md shadow-accent-primary/10'}`}
-      >
-        {isPlaying ? (
-          <X className="w-5 h-5" />
-        ) : (
-          <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current translate-x-0.5"><path d="M8 5v14l11-7z" /></svg>
-        )}
-      </button>
-      <div className="flex-1 overflow-hidden">
-        <div className="flex justify-between items-center mb-1">
-          <span className="text-xs font-bold text-white tracking-tight flex items-center gap-1.5">
-            <Mic className="w-3.5 h-3.5 text-accent-primary" /> Gaurav's Voice Briefing
+        <div className="flex items-center gap-2">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span className="text-[9px] text-gray-500 font-mono">2:14 min</span>
+          <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-500 font-bold">Live</span>
         </div>
-        {/* Animated Audio visualizer waveform */}
-        <div className="flex items-end gap-1 h-8 mt-2">
-          {waveAmplitudes.map((amp, i) => (
-            <div
-              key={i}
-              className="w-1.5 bg-gradient-to-t from-accent-primary to-accent-violet rounded-full transition-all duration-150"
-              style={{
-                height: isPlaying ? `${amp * 5}%` : '15%',
-                opacity: isPlaying ? 1 : 0.3
-              }}
-            />
+      </div>
+      <div className="p-6 flex-1 flex flex-col gap-4 font-mono text-xs overflow-hidden relative bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a1c23] to-[#0f1115]">
+        <AnimatePresence initial={false}>
+          {logs.map((log) => (
+            <motion.div 
+              key={log.id}
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="flex items-start gap-3"
+            >
+              <span className="text-gray-600 shrink-0 mt-0.5">&gt;</span>
+              <p className={`leading-relaxed ${
+                log.type === 'success' ? 'text-emerald-400' :
+                log.type === 'dev' ? 'text-blue-400' : 'text-gray-300'
+              }`}>
+                {log.text}
+              </p>
+            </motion.div>
           ))}
-        </div>
+        </AnimatePresence>
+        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0f1115] to-transparent pointer-events-none" />
       </div>
     </div>
   );
 };
 
-// 5. SVG Radar performance spider coordinates chart
-const RadarPerformanceChart = () => {
-  const [hoveredMetric, setHoveredMetric] = useState(null);
-
-  const metrics = [
-    { name: "Design", value: 92, label: "Figma Assets" },
-    { name: "Speed", value: 95, label: "Render Lag" },
-    { name: "Security", value: 98, label: "Auth Keys" },
-    { name: "Integrity", value: 90, label: "API Sync" },
-    { name: "Quality", value: 94, label: "QA Checks" }
-  ];
-
-  const cx = 100;
-  const cy = 100;
-  const r = 70;
-
-  const getPoints = (scale = 1) => {
-    return metrics.map((m, i) => {
-      const angle = (i * 2 * Math.PI / 5) - Math.PI / 2;
-      const val = (m.value / 100) * r * scale;
-      const x = cx + Math.cos(angle) * val;
-      const y = cy + Math.sin(angle) * val;
-      return { x, y, name: m.name, value: m.value, angle };
-    });
-  };
-
-  const activePoints = getPoints(1);
-  const pointsStr = activePoints.map(p => `${p.x},${p.y}`).join(' ');
-
-  const bgGrids = [0.4, 0.7, 1.0].map((scale) => {
-    return getPoints(scale).map(p => `${p.x},${p.y}`).join(' ');
-  });
-
-  return (
-    <div className="flex flex-col items-center shrink-0">
-      <div className="relative w-44 h-44">
-        <svg className="w-full h-full" viewBox="0 0 200 200">
-          {/* Background polygons grids */}
-          {bgGrids.map((grid, idx) => (
-            <polygon
-              key={idx}
-              points={grid}
-              fill="none"
-              stroke="rgba(255,255,255,0.06)"
-              strokeWidth="1"
-            />
-          ))}
-
-          {/* Background Axes lines */}
-          {metrics.map((_, i) => {
-            const angle = (i * 2 * Math.PI / 5) - Math.PI / 2;
-            const ax = cx + Math.cos(angle) * r;
-            const ay = cy + Math.sin(angle) * r;
-            return (
-              <line
-                key={i}
-                x1={cx}
-                y1={cy}
-                x2={ax}
-                y2={ay}
-                stroke="rgba(255,255,255,0.06)"
-                strokeWidth="1"
-              />
-            );
-          })}
-
-          {/* Performance Radar polygon area */}
-          <polygon
-            points={pointsStr}
-            fill="rgba(0, 245, 255, 0.12)"
-            stroke="#00F5FF"
-            strokeWidth="2"
-            className="drop-shadow-[0_0_6px_rgba(0,245,255,0.5)]"
-          />
-
-          {/* Coordinate Nodes */}
-          {activePoints.map((p, i) => (
-            <circle
-              key={i}
-              cx={p.x}
-              cy={p.y}
-              r="4.5"
-              fill="#7B2FFF"
-              stroke="#00F5FF"
-              strokeWidth="1.5"
-              className="cursor-pointer transition-all hover:scale-125"
-              onMouseEnter={() => setHoveredMetric(metrics[i])}
-              onMouseLeave={() => setHoveredMetric(null)}
-            />
-          ))}
-
-          {/* Axis Labels */}
-          {metrics.map((m, i) => {
-            const angle = (i * 2 * Math.PI / 5) - Math.PI / 2;
-            const lx = cx + Math.cos(angle) * (r + 18);
-            const ly = cy + Math.sin(angle) * (r + 10);
-            return (
-              <text
-                key={i}
-                x={lx}
-                y={ly}
-                textAnchor="middle"
-                alignmentBaseline="middle"
-                fill="rgba(255,255,255,0.4)"
-                fontSize="9"
-                fontWeight="bold"
-                className="font-mono uppercase tracking-wider"
-              >
-                {m.name}
-              </text>
-            );
-          })}
-        </svg>
-
-        {/* Radar Value Center label */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-          {hoveredMetric ? (
-            <div className="text-center bg-[#07070a] border border-white/10 px-2 py-1 rounded-lg">
-              <div className="text-[9px] uppercase tracking-wider text-accent-primary font-bold">{hoveredMetric.name}</div>
-              <div className="text-xs font-bold text-white">{hoveredMetric.value}%</div>
-            </div>
-          ) : (
-            <div className="text-center">
-              <div className="text-[9px] uppercase tracking-wider text-gray-500 font-bold">Pulse</div>
-              <div className="text-sm font-black text-white">94.8</div>
-            </div>
-          )}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// 6. Styled Google Login Handler — Real-looking Google popup
-const GoogleLoginButton = ({ onLoginSuccess }) => {
-  const [isGoogleLoading, setIsGoogleLoading] = useState(false);
-
-  const handleFakeGoogleLogin = () => {
-    setIsGoogleLoading(true);
-    const w = 480, h = 580;
-    const left = Math.round(window.screenX + (window.outerWidth - w) / 2);
-    const top  = Math.round(window.screenY + (window.outerHeight - h) / 2);
-    const popup = window.open('', 'GoogleSignIn', `width=${w},height=${h},left=${left},top=${top},resizable=no,scrollbars=no,toolbar=no,menubar=no,status=no`);
-
-    if (!popup) {
-      setTimeout(() => { setIsGoogleLoading(false); onLoginSuccess({ name: "Alex Client", email: "alex@company.com", picture: "https://ui-avatars.com/api/?name=Alex+Client&background=4285F4&color=fff&size=128" }); }, 1500);
-      return;
-    }
-
-    const html = `<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sign in – Google Accounts</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Roboto,'Helvetica Neue',Arial,sans-serif;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100vh;color:#202124}
-  .card{width:360px;padding:48px 40px 32px;border:1px solid #dadce0;border-radius:8px;text-align:center}
-  .g-logo{margin-bottom:24px}
-  .g-logo svg{width:46px;height:46px}
-  h1{font-size:24px;font-weight:400;margin-bottom:10px;letter-spacing:-.5px}
-  .sub{font-size:15px;color:#202124;margin-bottom:32px}
-  .connecting{font-size:13px;color:#5f6368;margin-bottom:28px;letter-spacing:.1px}
-  .step{display:none;flex-direction:column;align-items:center;gap:16px}
-  .step.active{display:flex}
-  .spinner-wrap{margin:8px 0}
-  .spinner{width:38px;height:38px;border:3px solid #dadce0;border-top-color:#1a73e8;border-radius:50%;animation:spin .75s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
-  .verify-text{font-size:15px;color:#5f6368;font-weight:400}
-  .verify-sub{font-size:13px;color:#80868b}
-  footer{margin-top:32px;display:flex;justify-content:space-between;font-size:12px;color:#5f6368}
-  footer a{color:#1a73e8;text-decoration:none}
-</style>
-</head>
-<body>
-<div class="card">
-
-  <!-- Step 1: Clean sign in screen -->
-  <div id="s1">
-    <div class="g-logo">
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-        <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-        <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.991 21.991 0 002 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-        <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-        <path fill="none" d="M2 2h44v44H2z"/>
-      </svg>
-    </div>
-    <h1>Sign in</h1>
-    <p class="sub">to continue to <strong>Nexora Portal</strong></p>
-    <div class="connecting">Connecting to Google…</div>
-    <footer><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></footer>
-  </div>
-
-  <!-- Step 2: Verifying -->
-  <div id="s2" class="step">
-    <div class="g-logo">
-      <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <path fill="#4285F4" d="M45.12 24.5c0-1.56-.14-3.06-.4-4.5H24v8.51h11.84c-.51 2.75-2.06 5.08-4.39 6.64v5.52h7.11c4.16-3.83 6.56-9.47 6.56-16.17z"/>
-        <path fill="#34A853" d="M24 46c5.94 0 10.92-1.97 14.56-5.33l-7.11-5.52c-1.97 1.32-4.49 2.1-7.45 2.1-5.73 0-10.58-3.87-12.31-9.07H4.34v5.7C7.96 41.07 15.4 46 24 46z"/>
-        <path fill="#FBBC05" d="M11.69 28.18C11.25 26.86 11 25.45 11 24s.25-2.86.69-4.18v-5.7H4.34A21.991 21.991 0 002 24c0 3.55.85 6.91 2.34 9.88l7.35-5.7z"/>
-        <path fill="#EA4335" d="M24 10.75c3.23 0 6.13 1.11 8.41 3.29l6.31-6.31C34.91 4.18 29.93 2 24 2 15.4 2 7.96 6.93 4.34 14.12l7.35 5.7c1.73-5.2 6.58-9.07 12.31-9.07z"/>
-        <path fill="none" d="M2 2h44v44H2z"/>
-      </svg>
-    </div>
-    <div class="spinner-wrap"><div class="spinner"></div></div>
-    <p class="verify-text" id="vtext">Signing in…</p>
-    <p class="verify-sub">Verifying your account with Google</p>
-    <footer style="margin-top:60px"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></footer>
-  </div>
-
-</div>
-<script>
-// Auto-progress: show sign-in screen briefly, then auto-switch to verifying
-setTimeout(function(){
-  document.getElementById('s1').style.display='none';
-  document.getElementById('s2').className='step active';
-}, 1200);
-setTimeout(function(){
-  document.getElementById('vtext').textContent='Verified! Opening portal…';
-}, 2800);
-setTimeout(function(){ window.close(); }, 3800);
-</script>
-</body></html>`;
-
-    popup.document.open();
-    popup.document.write(html);
-    popup.document.close();
-
-    const timer = setInterval(() => {
-      if (popup.closed) {
-        clearInterval(timer);
-        setIsGoogleLoading(false);
-        onLoginSuccess({ name: "Alex Client", email: "alex@company.com", picture: "https://ui-avatars.com/api/?name=Alex+Client&background=4285F4&color=fff&size=128" });
-      }
-    }, 300);
-  };
-
-
-  return (
-    <button
-      onClick={handleFakeGoogleLogin}
-      disabled={isGoogleLoading}
-      className="w-full mb-6 flex items-center justify-center gap-3 px-4 py-3.5 border border-white/10 rounded-full bg-[#0d0d12] hover:bg-[#13131a] transition-all text-white font-bold disabled:opacity-50 shadow-md group relative overflow-hidden cursor-pointer"
-    >
-      <div className="absolute inset-0 bg-gradient-to-r from-accent-primary/0 via-accent-primary/5 to-accent-primary/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-      {isGoogleLoading ? (
-        <div className="w-5 h-5 border-2 border-gray-400 border-t-accent-primary rounded-full animate-spin" />
-      ) : (
-        <svg viewBox="0 0 24 24" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
-          <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
-          <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853" />
-          <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05" />
-          <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335" />
-        </svg>
-      )}
-      <span>Sign in with Google</span>
-    </button>
-  );
-};
-
-// 7. Interactive 3D Client Access Passcard
-const ClientPasscard = ({ email }) => {
+const InteractiveInvoice = () => {
   const cardRef = useRef(null);
   const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
+  const [glare, setGlare] = useState({ x: 50, y: 50, opacity: 0 });
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
     const width = rect.width;
     const height = rect.height;
-    const mouseX = e.clientX - rect.left - width / 2;
-    const mouseY = e.clientY - rect.top - height / 2;
-    const rX = -(mouseY / (height / 2)) * 12;
-    const rY = (mouseX / (width / 2)) * 12;
+    
+    // Calculate cursor position relative to card
+    const mouseX = e.clientX - rect.left;
+    const mouseY = e.clientY - rect.top;
+    
+    // Calculate rotation (-10 to 10 degrees)
+    const rX = -((mouseY / height) - 0.5) * 20;
+    const rY = ((mouseX / width) - 0.5) * 20;
+    
     setRotate({ x: rX, y: rY });
+    setGlare({ 
+      x: (mouseX / width) * 100, 
+      y: (mouseY / height) * 100,
+      opacity: 1 
+    });
   };
 
   const handleMouseLeave = () => {
     setRotate({ x: 0, y: 0 });
-    setIsHovered(false);
+    setGlare(prev => ({ ...prev, opacity: 0 }));
   };
 
-  const cleanedEmail = email ? email.toUpperCase() : "AWAITING CREDENTIALS...";
-  const companyName = email ? (email.split('@')[1] ? email.split('@')[1].split('.')[0].toUpperCase() : "NOVA CORP") : "NEXORA PARTNER";
-
   return (
-    <div 
-      className="w-full max-w-sm aspect-[1.58/1] [perspective:1000px] cursor-pointer"
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-    >
-      <motion.div
-        ref={cardRef}
-        animate={{ rotateX: rotate.x, rotateY: rotate.y }}
-        transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        className="w-full h-full rounded-2xl p-6 relative overflow-hidden bg-gradient-to-br from-[#0c0c14]/95 via-[#0d0d1e]/90 to-[#050508]/95 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.8)] backdrop-blur-2xl flex flex-col justify-between"
-        style={{ transformStyle: "preserve-3d" }}
+    <div className="mt-8 flex flex-col xl:flex-row gap-12 items-center bg-white border border-gray-200 rounded-2xl p-8 lg:p-12 shadow-sm">
+      <div className="flex-1 space-y-4">
+        <div className="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 text-emerald-700 rounded-full text-xs font-bold border border-emerald-100">
+          <CheckCircle2 className="w-3.5 h-3.5" />
+          PAID IN FULL
+        </div>
+        <h3 className="text-3xl font-bold text-gray-900">Phase 2: Platform Architecture</h3>
+        <p className="text-gray-500 max-w-md text-sm leading-relaxed">
+          Invoice #INV-2026-042 for the completion of the backend infrastructure, database schemas, and the initial API integrations.
+        </p>
+        <button className="flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-700 transition-colors pt-2">
+          Download PDF Receipt <ArrowRight className="w-4 h-4" />
+        </button>
+      </div>
+
+      {/* 3D Card Container */}
+      <div 
+        className="relative w-full max-w-md aspect-[1.6/1] [perspective:1000px] cursor-pointer shrink-0"
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
       >
-        {/* Cybernetic Grid & Decorative lines inside card */}
-        <div className="absolute inset-0 z-0 opacity-[0.05] pointer-events-none"
-          style={{ backgroundImage: 'radial-gradient(rgba(0, 245, 255, 0.4) 1px, transparent 1px)', backgroundSize: '16px 16px' }} />
-        
-        {/* Glow sweep following mouse inside card */}
-        {isHovered && (
-          <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_var(--x,50%)_var(--y,50%),rgba(0,245,255,0.08),transparent_50%)] pointer-events-none"
+        <motion.div
+          ref={cardRef}
+          animate={{ rotateX: rotate.x, rotateY: rotate.y }}
+          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          className="w-full h-full rounded-2xl p-6 relative overflow-hidden bg-gradient-to-br from-gray-900 to-black text-white shadow-[0_20px_40px_rgba(0,0,0,0.15)] flex flex-col justify-between border border-gray-700"
+          style={{ transformStyle: "preserve-3d" }}
+        >
+          {/* Holographic Glare Effect */}
+          <div 
+            className="absolute inset-0 z-10 pointer-events-none transition-opacity duration-300"
             style={{
-              '--x': `${(rotate.y + 12) * 4.16}%`,
-              '--y': `${(-rotate.x + 12) * 4.16}%`
+              opacity: glare.opacity,
+              background: `radial-gradient(circle at ${glare.x}% ${glare.y}%, rgba(255,255,255,0.2) 0%, transparent 50%)`,
+              mixBlendMode: 'overlay'
             }}
           />
-        )}
-
-        {/* Holographic sweep overlay */}
-        <div className="absolute inset-0 z-0 bg-gradient-to-tr from-transparent via-white/[0.03] to-transparent -skew-x-12 translate-x-[-100%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-
-        {/* Top: Branding & Clearance Chip */}
-        <div className="flex justify-between items-start relative z-10" style={{ transform: "translateZ(30px)" }}>
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-full overflow-hidden bg-white/5 border border-white/10 flex items-center justify-center">
-              <img src="/logo/favicon.png" alt="Nexora" className="w-4 h-4 object-contain" />
+          
+          {/* Top Row */}
+          <div className="flex justify-between items-start relative z-20" style={{ transform: "translateZ(20px)" }}>
+            <div>
+              <span className="text-[10px] text-gray-400 font-mono tracking-widest uppercase block mb-1">Invoice Amount</span>
+              <span className="text-2xl font-bold tracking-tight">$8,250.00</span>
             </div>
-            <span className="font-display font-black text-[10px] tracking-[0.25em] text-white">NEXORA ACCESS</span>
-          </div>
-          {/* Glowing Smart Chip */}
-          <div className="w-10 h-7 rounded-md bg-gradient-to-r from-accent-primary/20 via-accent-violet/20 to-accent-primary/10 border border-accent-primary/30 p-1 flex flex-col justify-between overflow-hidden shadow-[0_0_10px_rgba(0,245,255,0.2)]">
-            <div className="flex gap-0.5">
-              <div className="w-1.5 h-1.5 bg-accent-primary/40 rounded-sm" />
-              <div className="w-1.5 h-1.5 bg-accent-primary/40 rounded-sm" />
+            {/* Smart Chip Graphic */}
+            <div className="w-10 h-7 rounded bg-gradient-to-tr from-gray-300 to-white flex flex-col justify-between p-1 shadow-sm opacity-90">
+               <div className="flex gap-0.5">
+                  <div className="w-1.5 h-1.5 bg-gray-400/50 rounded-sm" />
+                  <div className="w-1.5 h-1.5 bg-gray-400/50 rounded-sm" />
+               </div>
+               <div className="h-0.5 bg-gray-400/50 rounded" />
             </div>
-            <div className="h-0.5 bg-accent-primary/30 rounded" />
           </div>
-        </div>
 
-        {/* Middle: ID details & Holographic seal */}
-        <div className="my-2 relative z-10 space-y-1.5" style={{ transform: "translateZ(45px)" }}>
-          <div className="text-[9px] text-gray-500 font-mono tracking-widest uppercase">Authorized Client</div>
-          <div className="text-xs font-mono text-white font-bold tracking-wider truncate">
-            {cleanedEmail}
+          {/* Middle Pattern */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-5 pointer-events-none" style={{ transform: "translateZ(10px)" }}>
+            <Zap className="w-32 h-32" />
           </div>
-          <div className="text-[10px] text-accent-primary font-mono font-bold tracking-widest">
-            ORGANIZATION: <span className="text-white">{companyName}</span>
-          </div>
-        </div>
 
-        {/* Bottom: Signature Code & VIP indicator */}
-        <div className="flex justify-between items-end relative z-10 mt-auto" style={{ transform: "translateZ(35px)" }}>
-          <div className="font-mono text-[8px] text-gray-600 space-y-0.5">
-            <div>CLEARANCE: <span className="text-green-400 font-bold">LEVEL 4 VIP</span></div>
-            <div>GATEWAY HASH: <span className="text-accent-violet">NX-8379A62</span></div>
-          </div>
-          {/* Security QR/Matrix Block */}
-          <div className="grid grid-cols-4 gap-0.5 bg-black/40 p-1 rounded border border-white/5">
-            {Array.from({ length: 16 }).map((_, i) => (
-              <div 
-                key={i} 
-                className="w-1 h-1 rounded-sm bg-accent-primary/40" 
-              />
-            ))}
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
-};
-
-// 8. Interactive Retinal/Fingerprint Scanner Touchpad
-const BiometricScanner = ({ onScanSuccess }) => {
-  const [scanState, setScanState] = useState('idle'); // idle | scanning | success
-  const [scanMessage, setScanMessage] = useState('TAP TO INITIALIZE BIOMETRIC SWEEP');
-
-  const handleScan = () => {
-    if (scanState !== 'idle') return;
-    setScanState('scanning');
-    setScanMessage('ESTABLISHING SECURE SOCKET...');
-
-    const logs = [
-      'BOOTING SCANNER DIODES...',
-      'CAPTURING RETINAL BIOMETRICS...',
-      'VERIFYING KEYCHAIN ENCRYPTION...',
-      'SANDBOX SECURE. STATUS: VIP APPROVED'
-    ];
-
-    let i = 0;
-    const interval = setInterval(() => {
-      if (i < logs.length) {
-        setScanMessage(logs[i]);
-        i++;
-      } else {
-        clearInterval(interval);
-        setScanState('success');
-        setScanMessage('ACCESS GRANTED');
-        setTimeout(() => {
-          onScanSuccess();
-        }, 800);
-      }
-    }, 450);
-  };
-
-  return (
-    <div className="w-full bg-[#0d0d12] border border-white/10 rounded-2xl p-5 flex flex-col items-center gap-3 relative overflow-hidden group">
-      {/* Scanning Laser Beam */}
-      {scanState === 'scanning' && (
-        <motion.div
-          initial={{ top: '0%' }}
-          animate={{ top: '100%' }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-          className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-accent-primary to-transparent shadow-[0_0_12px_#00F5FF] z-10"
-        />
-      )}
-
-      {/* Touchpad Circle */}
-      <button
-        type="button"
-        onClick={handleScan}
-        disabled={scanState !== 'idle'}
-        className={`w-16 h-16 rounded-full border flex items-center justify-center relative transition-all duration-300 ${
-          scanState === 'success' ? 'border-green-500/40 bg-green-500/10 text-green-400' :
-          scanState === 'scanning' ? 'border-accent-primary/40 bg-accent-primary/5 text-accent-primary animate-pulse' :
-          'border-white/10 bg-white/5 text-gray-400 group-hover:border-accent-primary/30 group-hover:text-accent-primary group-hover:bg-accent-primary/5 hover:scale-105'
-        }`}
-      >
-        {scanState === 'success' ? (
-          <ShieldCheck className="w-7 h-7" />
-        ) : (
-          <Sparkles className="w-7 h-7" />
-        )}
-      </button>
-
-      {/* Diagnostic message */}
-      <div className="text-center">
-        <div className={`font-mono text-[9px] uppercase tracking-widest ${
-          scanState === 'success' ? 'text-green-400 font-bold' :
-          scanState === 'scanning' ? 'text-accent-primary animate-pulse' : 'text-gray-500 group-hover:text-gray-400'
-        }`}>
-          {scanMessage}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// 9. Live System Diagnostics Terminal Feed
-const DiagnosticsLogs = () => {
-  const [logs, setLogs] = useState([
-    "[SYSTEM] SECURE GATEWAY V2.1.0 ONLINE",
-    "[OK] INITIALIZING CYBER-SEC LINK...",
-    "[OK] SSL TUNNEL ESTABLISHED AT LOCAL_GATE"
-  ]);
-
-  useEffect(() => {
-    const diagnosticPool = [
-      "[OK] DETECTING USER PING RETENTION...",
-      "[INFO] LOADING CLIENT GRAPHIC CONSTRUCTS...",
-      "[OK] PORTAL SANDBOX CONTAINER CACHE INITIATED",
-      "[INFO] SYMMETRIC JWT VERIFICATION BOOTED",
-      "[OK] CREDENTIAL CLEARANCE PIPELINE SECURE",
-      "[OK] ACTIVE DIAGNOSTIC PORTS LOADED: 5173",
-      "[INFO] SHIELD PROTOCOL ENFORCED (RSA-4096)",
-      "[OK] LEDGER DATABASES RUNNING DIAGNOSTIC RUNS",
-      "[INFO] DEPLOYMENT INTEGRATION STABLE AT 99.8%"
-    ];
-
-    const interval = setInterval(() => {
-      setLogs(prev => {
-        const nextLog = diagnosticPool[Math.floor(Math.random() * diagnosticPool.length)];
-        const updated = [...prev, nextLog];
-        if (updated.length > 5) updated.shift();
-        return updated;
-      });
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="w-full max-w-sm bg-black/60 rounded-xl border border-white/5 p-4 font-mono text-[9px] text-gray-500 space-y-1 text-left">
-      {logs.map((log, index) => (
-        <div key={index} className="flex gap-2">
-          <span className="text-accent-primary shrink-0">&gt;</span>
-          <span className={log.includes("[OK]") ? "text-green-400/80" : log.includes("[SYSTEM]") ? "text-accent-violet/80" : "text-gray-400"}>
-            {log}
-          </span>
-        </div>
-      ))}
-    </div>
-  );
-};
-
-// 10. Premium Glassmorphic Modal Component
-const Modal = ({ isOpen, onClose, title, children }) => (
-  <AnimatePresence>
-    {isOpen && (
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6">
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={onClose}
-          className="absolute inset-0 bg-black/90 backdrop-blur-sm"
-        />
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: 20 }}
-          transition={{ type: "spring", duration: 0.4 }}
-          className="relative w-full max-w-lg bg-[#0d0d12] border border-white/10 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,245,255,0.15)] z-10"
-        >
-          <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-accent-primary via-accent-violet to-accent-secondary" />
-          <div className="flex justify-between items-center p-6 border-b border-white/5">
-            <h3 className="text-xl font-bold text-white tracking-tight flex items-center gap-2">
-              <Sparkles className="w-5 h-5 text-accent-primary" />
-              {title}
-            </h3>
-            <button onClick={onClose} className="p-2 bg-white/5 hover:bg-white/10 rounded-full transition-all hover:rotate-90">
-              <X className="w-5 h-5 text-gray-400 hover:text-white" />
-            </button>
-          </div>
-          <div className="p-6">
-            {children}
+          {/* Bottom Row */}
+          <div className="flex justify-between items-end relative z-20" style={{ transform: "translateZ(30px)" }}>
+            <div className="space-y-1">
+              <div className="text-[10px] text-gray-400 font-mono tracking-widest uppercase">Issued To</div>
+              <div className="text-sm font-semibold tracking-wide">NOVA CORP</div>
+            </div>
+            <div className="text-right space-y-1">
+              <div className="text-[10px] text-gray-400 font-mono tracking-widest uppercase">Date Paid</div>
+              <div className="text-sm font-semibold tracking-wide">OCT 12, 2026</div>
+            </div>
           </div>
         </motion.div>
       </div>
-    )}
-  </AnimatePresence>
-);
-
-// --- STATIC DATABASE DATA POOL ---
-const DEFAULT_PROJECT_DATA = {
-  client: "Nova Corp",
-  project: "E-Commerce Replatforming",
-  status: "In Progress",
-  timeline: [
-    { id: 1, title: "Discovery & Architecture", status: "completed", date: "Oct 1", desc: "Technical spec definition and infrastructure scoping.", lead: "Milan", deliverables: ["Architecture_Specs_v1.pdf", "API_Endpoints_Schema.json"] },
-    { id: 2, title: "UI/UX Design System", status: "completed", date: "Oct 3", desc: "High-fidelity wireframes, UI kits, and design prototypes.", lead: "Abhishek", deliverables: ["Design_System_v2.fig", "Sprint_1_Wireframes.fig"] },
-    { id: 3, title: "Frontend Development", status: "in-progress", date: "Oct 5", desc: "Building core views, animations, and portal dashboard.", lead: "Abhishek", deliverables: ["Sprint_2_Report.docx"] },
-    { id: 4, title: "Backend Integration", status: "pending", date: "Oct 7", desc: "Connecting database schemas, APIs, and payment modules.", lead: "Milan", deliverables: [] },
-    { id: 5, title: "QA & Launch", status: "pending", date: "Oct 8", desc: "End-to-end testing, regression checks, and DNS switch.", lead: "Gaurav", deliverables: [] }
-  ],
-  team: [
-    { name: "Milan", role: "Lead Engineer", avatar: "/team/milan.png", email: "milan@nexora.com", status: "Online" },
-    { name: "Abhishek", role: "UI/UX Designer", avatar: "/team/abhishek.png", email: "abhishek@nexora.com", status: "In a meeting" },
-    { name: "Gaurav", role: "Project Manager", avatar: "/team/gaurav.png", email: "gaurav@nexora.com", status: "Online" }
-  ],
-  actionItems: [
-    { id: 1, task: "Review new homepage animations", assignee: "Client", due: "Today", details: "Please review the new Framer Motion animations on the homepage hero section. Let us know if the timing feels right.", completed: false },
-    { id: 2, task: "Provide Stripe API keys", assignee: "Client", due: "Tomorrow", details: "We need the production Stripe keys to finalize the checkout flow testing.", completed: false },
-    { id: 3, task: "Finalize product taxonomy", assignee: "Client", due: "Oct 6", details: "Confirm the nested category structure for the new store catalog.", completed: false }
-  ],
-  recentFiles: [
-    { name: "Design_System_v2.fig", type: "Figma", size: "12 MB" },
-    { name: "Architecture_Diagram.pdf", type: "PDF", size: "2.4 MB" },
-    { name: "Sprint_2_Report.docx", type: "Doc", size: "1.1 MB" }
-  ],
-  supportTickets: [
-    { id: "TIC-102", subject: "API Integration Request", status: "Open", priority: "High", messages: [{ sender: "Client", text: "We need to connect the new CRM to the lead form." }, { sender: "Agent", text: "Got it! Looking into the endpoints now." }] },
-    { id: "TIC-101", subject: "Update Logo Assets", status: "Resolved", priority: "Low", messages: [{ sender: "Agent", text: "Logo has been updated in the header." }] }
-  ]
+    </div>
+  );
 };
 
-const LOG_POOL = [
-  "nexora@nova-corp:~$ npm run lint",
-  "Checking source files for code standards...",
-  "All 24 source files passed style checks cleanly.",
-  "nexora@nova-corp:~$ git push origin master",
-  "Sending updates to GitHub repository...",
-  "Branch 'master' updated with commit 9b9470f2.",
-  "nexora@nova-corp:~$ npm run test",
-  "Executing 18 integration test suites...",
-  "All test cases executed. [100% PASS]",
-  "nexora@nova-corp:~$ ./sync-assets.sh",
-  "Pushing media catalog to production CDN...",
-  "Assets synced successfully. (Latency: 14ms)",
-  "nexora@nova-corp:~$ run diagnostics",
-  "Checking memory leaks & rendering profiles...",
-  "System health: 99.8%. Framerate locked at 60 FPS.",
-];
-
-// --- MAIN PORTAL COMPONENT ---
-export default function ClientPortal() {
-  const [isAuthenticated, setIsAuthenticated] = useState(() => localStorage.getItem('nexora_auth') === 'true');
-  const [userProfile, setUserProfile] = useState(() => {
-    try { return JSON.parse(localStorage.getItem('nexora_user')); } catch { return null; }
-  });
-
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
-  const [isLoginLoading, setIsLoginLoading] = useState(false);
-  const [isPasswordFocused, setIsPasswordFocused] = useState(false);
-  const [showWelcomeBanner, setShowWelcomeBanner] = useState(false);
-  const [showSignoutBanner, setShowSignoutBanner] = useState(false);
-
-
-  const [activeTab, setActiveTab] = useState(() => localStorage.getItem('nexora_tab') || 'overview');
-
-  const [actionItems, setActionItems] = useState(() => {
-    const cached = localStorage.getItem('nexora_action_items');
-    return cached ? JSON.parse(cached) : DEFAULT_PROJECT_DATA.actionItems;
-  });
-
-  const [billing, setBilling] = useState(() => {
-    const cached = localStorage.getItem('nexora_billing');
-    return cached ? JSON.parse(cached) : { totalBudget: "$25,000", paid: "$15,000", outstanding: "$10,000", outstandingNum: 10000, paidNum: 15000, nextInvoiceDue: "Oct 15" };
-  });
-
-  const [invoices, setInvoices] = useState(() => {
-    const cached = localStorage.getItem('nexora_invoices');
-    return cached ? JSON.parse(cached) : [
-      { id: "INV-001", amount: "$15,000", status: "Paid", date: "Sep 28" },
-      { id: "INV-002", amount: "$10,000", status: "Pending", date: "Oct 8" }
-    ];
-  });
-
-  const [activityLog, setActivityLog] = useState(() => {
-    const cached = localStorage.getItem('nexora_activity_log');
-    return cached ? JSON.parse(cached) : [
-      { action: "Pushed frontend code to staging", time: "2 hours ago", author: "Alex R." },
-      { action: "Client approved wireframes", time: "Yesterday", author: "Nova Corp" },
-      { action: "Paid Invoice INV-001", time: "2 days ago", author: "Nova Corp" }
-    ];
-  });
-
-  const [supportTickets, setSupportTickets] = useState(() => {
-    const cached = localStorage.getItem('nexora_support_tickets');
-    return cached ? JSON.parse(cached) : DEFAULT_PROJECT_DATA.supportTickets;
-  });
-
-  const [activeChat, setActiveChat] = useState('#general-project');
-  const [chatInput, setChatInput] = useState('');
-  const [chatMessages, setChatMessages] = useState(() => {
-    const cached = localStorage.getItem('nexora_chat');
-    if (cached) return JSON.parse(cached);
-    return {
-      '#general-project': [
-        { sender: "Milan", text: "Welcome to the project portal! Let's use this thread for main project updates.", time: "Oct 1, 10:00 AM" },
-        { sender: "Gaurav", text: "Sprint 2 report is published under deliverables. Velocity looks good.", time: "Oct 3, 2:15 PM" }
-      ],
-      '#design-feed': [
-        { sender: "Abhishek", text: "Uploaded Design System v2. Ready for layout reviews.", time: "Oct 2, 4:00 PM" }
-      ],
-      '#dev-updates': [
-        { sender: "Milan", text: "Stripe checkout integrated in staging dev. Awaiting API keys.", time: "Oct 4, 11:30 AM" }
-      ],
-      'Milan': [
-        { sender: "Milan", text: "Hey Alex! How is the checkout flow layout looking to you?", time: "Oct 4, 9:00 AM" }
-      ],
-      'Abhishek': [
-        { sender: "Abhishek", text: "Hi Alex, please let me know when you review the Figma file.", time: "Oct 3, 5:00 PM" }
-      ],
-      'Gaurav': [
-        { sender: "Gaurav", text: "Hi, let me know if you need to schedule a progress sync call this week.", time: "Oct 3, 11:00 AM" }
-      ]
-    };
-  });
-  const [isTyping, setIsTyping] = useState(false);
-  const chatEndRef = useRef(null);
-
-  const [terminalLogs, setTerminalLogs] = useState([
-    "nexora@nova-corp:~$ ./deploy.sh",
-    "Compiling Quantum UI components...",
-    "Optimizing performance... [100%]",
-    "✓ Zero-lag architecture deployed.",
+const AIConcierge = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    { id: 1, role: 'ai', text: 'Hi Alex! I am your Nexora AI Concierge. How can I help you with your project today?' }
   ]);
-  const logIndexRef = useRef(0);
+  const [input, setInput] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const [showSuggestions, setShowSuggestions] = useState(true);
+  const messagesEndRef = useRef(null);
 
-  const [modalConfig, setModalConfig] = useState({ isOpen: false, type: null, data: null });
-  const [selectedMilestone, setSelectedMilestone] = useState(3);
-  const [signature, setSignature] = useState('');
-
-  const [cardNumber, setCardNumber] = useState('');
-  const [cardName, setCardName] = useState('');
-  const [cardExpiry, setCardExpiry] = useState('');
-  const [cardCvv, setCardCvv] = useState('');
-  const [isCardFlipped, setIsCardFlipped] = useState(false);
-  const [isPaying, setIsPaying] = useState(false);
-  const [payProgress, setPayProgress] = useState('');
-
-  // LocalStorage state syncing
-  useEffect(() => {
-    localStorage.setItem('nexora_auth', isAuthenticated ? 'true' : 'false');
-    localStorage.setItem('nexora_user', userProfile ? JSON.stringify(userProfile) : '');
-    localStorage.setItem('nexora_tab', activeTab);
-  }, [isAuthenticated, userProfile, activeTab]);
-
-  useEffect(() => {
-    localStorage.setItem('nexora_action_items', JSON.stringify(actionItems));
-  }, [actionItems]);
-
-  useEffect(() => {
-    localStorage.setItem('nexora_billing', JSON.stringify(billing));
-  }, [billing]);
-
-  useEffect(() => {
-    localStorage.setItem('nexora_invoices', JSON.stringify(invoices));
-  }, [invoices]);
-
-  useEffect(() => {
-    localStorage.setItem('nexora_activity_log', JSON.stringify(activityLog));
-  }, [activityLog]);
-
-  useEffect(() => {
-    localStorage.setItem('nexora_support_tickets', JSON.stringify(supportTickets));
-  }, [supportTickets]);
-
-  useEffect(() => {
-    localStorage.setItem('nexora_chat', JSON.stringify(chatMessages));
-  }, [chatMessages]);
-
-  // Terminal Line Append Interval
-  useEffect(() => {
-    if (!isAuthenticated || activeTab !== 'overview') return;
-    const interval = setInterval(() => {
-      setTerminalLogs(prev => {
-        const nextLine = LOG_POOL[logIndexRef.current % LOG_POOL.length];
-        logIndexRef.current += 1;
-        const newLogs = [...prev, nextLine];
-        if (newLogs.length > 13) {
-          newLogs.shift();
-        }
-        return newLogs;
-      });
-    }, 4500);
-    return () => clearInterval(interval);
-  }, [isAuthenticated, activeTab]);
-
-  useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [chatMessages, activeChat, isTyping]);
-
-  const completedActionsCount = actionItems.filter(item => item.completed).length;
-  const currentVelocity = 94 + (completedActionsCount * 2);
-
-  const openModal = (type, data) => setModalConfig({ isOpen: true, type, data });
-  const closeModal = () => {
-    setModalConfig({ ...modalConfig, isOpen: false });
-    setCardNumber('');
-    setCardName('');
-    setCardExpiry('');
-    setCardCvv('');
-    setIsCardFlipped(false);
-    setIsPaying(false);
-    setPayProgress('');
-    setSignature('');
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (email && password) {
-      setIsLoginLoading(true);
-      setTimeout(() => {
-        setIsLoginLoading(false);
-        setIsAuthenticated(true);
-        setUserProfile({
-          name: email.split('@')[0].charAt(0).toUpperCase() + email.split('@')[0].slice(1),
-          email: email,
-          picture: null
-        });
-        setShowWelcomeBanner(true);
-        setTimeout(() => setShowWelcomeBanner(false), 5000);
-      }, 1200);
+  useEffect(() => {
+    if (isOpen) {
+      setTimeout(scrollToBottom, 100);
     }
-  };
+  }, [messages, isOpen, isTyping]);
 
-  const toggleActionItem = (id) => {
-    setActionItems(prev => {
-      return prev.map(item => {
-        if (item.id === id) {
-          const newCompleted = !item.completed;
-          if (newCompleted) {
-            toast.success(`Approved: "${item.task}"`);
-            confetti({
-              particleCount: 100,
-              spread: 60,
-              origin: { y: 0.8 },
-              colors: ['#00F5FF', '#7B2FFF', '#00FF87']
-            });
-            const newLog = {
-              action: `Completed Action "${item.task}"`,
-              time: "Just now",
-              author: userProfile ? userProfile.name : "Client"
-            };
-            setActivityLog(prevLogs => [newLog, ...prevLogs]);
-          }
-          return { ...item, completed: newCompleted };
-        }
-        return item;
-      });
-    });
-  };
-
-  const handleCardPayment = (e) => {
-    e.preventDefault();
-    if (!cardNumber || !cardName || !cardExpiry || !cardCvv) {
-      toast.error("Please fill out checkout credentials.");
-      return;
-    }
-
-    setIsPaying(true);
-    const steps = [
-      "Contacting billing portal...",
-      "Encrypting transaction details...",
-      "Authorizing invoice settlement...",
-      "Updating client ledger..."
-    ];
-
-    let step = 0;
-    setPayProgress(steps[step]);
-
-    const stepInterval = setInterval(() => {
-      step += 1;
-      if (step < steps.length) {
-        setPayProgress(steps[step]);
-      } else {
-        clearInterval(stepInterval);
-        setIsPaying(false);
-        setBilling(prev => ({
-          ...prev,
-          paid: "$25,000",
-          outstanding: "$0",
-          paidNum: 25000,
-          outstandingNum: 0
-        }));
-
-        setInvoices(prev => prev.map(inv => inv.id === "INV-002" ? { ...inv, status: "Paid", date: "Just now" } : inv));
-
-        const newLog = {
-          action: "Settled Invoice INV-002 ($10,000)",
-          time: "Just now",
-          author: userProfile ? userProfile.name : "Client"
-        };
-        setActivityLog(prevLogs => [newLog, ...prevLogs]);
-
-        confetti({
-          particleCount: 160,
-          spread: 80,
-          origin: { y: 0.65 },
-          colors: ['#00F5FF', '#7B2FFF', '#00FF87', '#FF6B35']
-        });
-
-        toast.success("Invoice settled successfully!");
-        closeModal();
-      }
-    }, 1000);
-  };
-
-  const handleTicketReply = (ticketId, replyText) => {
-    if (!replyText.trim()) return;
-
-    setSupportTickets(prev => prev.map(t => {
-      if (t.id === ticketId) {
-        const updated = [...t.messages, { sender: "Client", text: replyText }];
-        setTimeout(() => {
-          setSupportTickets(prevTickets => prevTickets.map(ticket => {
-            if (ticket.id === ticketId) {
-              return {
-                ...ticket,
-                messages: [...ticket.messages, { sender: "Agent", text: "Got it! Our team has flagged this update and is currently reviewing the specifications." }]
-              };
-            }
-            return ticket;
-          }));
-          toast.success("Support desk reply received.");
-        }, 2200);
-        return { ...t, messages: updated };
-      }
-      return t;
-    }));
-  };
-
-  const handleSendMessage = (e) => {
-    e.preventDefault();
-    if (!chatInput.trim()) return;
-
-    const userMsg = {
-      sender: "You",
-      text: chatInput,
-      time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-    };
-
-    setChatMessages(prev => ({
-      ...prev,
-      [activeChat]: [...(prev[activeChat] || []), userMsg]
-    }));
-
-    setChatInput('');
+  const handleSend = (text) => {
+    if (!text.trim()) return;
+    
+    setShowSuggestions(false);
+    const userMessage = { id: Date.now(), role: 'user', text };
+    setMessages(prev => [...prev, userMessage]);
+    setInput('');
     setIsTyping(true);
 
+    // Dummy AI Response logic
     setTimeout(() => {
-      setIsTyping(false);
-      const isChannel = activeChat.startsWith('#');
-      const responder = isChannel
-        ? (activeChat === '#general-project' ? 'Milan' : activeChat === '#design-feed' ? 'Abhishek' : 'Milan')
-        : activeChat;
-
-      let replyText = "";
-      if (responder === 'Milan') {
-        replyText = "Thanks for verifying! I'll wrap up deployment configuration setup. Once Stripe production keys are loaded, we are good to launch.";
-      } else if (responder === 'Abhishek') {
-        replyText = "Appreciate the update. I am polishing grid alignments and interactive elements. Let me know if you would like me to push new frames.";
-      } else if (responder === 'Gaurav') {
-        replyText = "Got your note. I'll log these details directly into our sprint review trackers. We are right on schedule for tomorrow's demo.";
+      let responseText = "I'm checking on that for you. Our team will get back to you shortly.";
+      const lowerInput = text.toLowerCase();
+      
+      if (lowerInput.includes('invoice') || lowerInput.includes('pay')) {
+        responseText = "Your latest invoice for Phase 2 ($8,250.00) was paid in full on Oct 12, 2026. You can view the details in the interactive card below or in the Invoices tab.";
+      } else if (lowerInput.includes('phase 2') || lowerInput.includes('architecture') || lowerInput.includes('status')) {
+        responseText = "Phase 2 (Platform Architecture) is currently active and is at 63% completion. The Backend API Integration is due on Oct 15.";
+      } else if (lowerInput.includes('support') || lowerInput.includes('help')) {
+        responseText = "I can help you open a new support ticket, or you can email our 24/7 team at support@nexora.com. You currently have 0 active tickets.";
+      } else if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
+        responseText = "Hello! Let me know if you need any updates on your active milestones or billing.";
       }
 
-      const teamMsg = {
-        sender: responder,
-        text: replyText,
-        time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      };
-
-      setChatMessages(prev => ({
-        ...prev,
-        [activeChat]: [...(prev[activeChat] || []), teamMsg]
-      }));
-
-      toast(`Message from ${responder}`, { icon: '💬' });
-    }, 2200);
+      setMessages(prev => [...prev, { id: Date.now() + 1, role: 'ai', text: responseText }]);
+      setIsTyping(false);
+    }, 1500);
   };
 
-  const handleSignDocument = () => {
-    if (!signature.trim()) {
-      toast.error("Please insert your e-signature details.");
-      return;
-    }
-    toast.success("Agreement signed successfully!");
-    confetti({
-      particleCount: 70,
-      spread: 60,
-      colors: ['#00F5FF', '#7B2FFF']
-    });
-
-    const newLog = {
-      action: "Signed Deliverable Contract Agreement",
-      time: "Just now",
-      author: userProfile ? userProfile.name : "Client"
-    };
-    setActivityLog(prevLogs => [newLog, ...prevLogs]);
-    closeModal();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    handleSend(input);
   };
 
-  const renderModalContent = () => {
-    const { type, data } = modalConfig;
-    if (type === 'actionItem' && data) {
-      const isChecked = actionItems.find(item => item.id === data.id)?.completed;
-      return (
-        <div className="space-y-4 text-white">
-          <div className="flex justify-between items-center bg-[#13131a] p-4 rounded-xl border border-white/5">
-            <span className="text-sm text-gray-400">Due: <span className="text-accent-secondary font-bold font-mono">{data.due}</span></span>
-            <span className="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">Assignee: {data.assignee}</span>
-          </div>
-          <h4 className="font-bold text-lg text-white mt-4">{data.task}</h4>
-          <p className="text-gray-400 leading-relaxed text-sm">{data.details}</p>
-          <button
-            onClick={() => {
-              toggleActionItem(data.id);
-              closeModal();
-            }}
-            className={`w-full py-3.5 font-bold rounded-xl transition-all flex items-center justify-center gap-2 mt-6 ${isChecked ? 'bg-white/5 border border-white/10 text-white hover:bg-white/10' : 'bg-accent-primary hover:bg-cyan-400 text-black shadow-lg shadow-accent-primary/20'}`}
+  const suggestions = [
+    "Check my latest invoice",
+    "What's the status of Phase 2?",
+    "I need support"
+  ];
+
+  return (
+    <>
+      {/* Floating Button with Pulse Animation */}
+      <motion.div
+        className={`fixed bottom-8 right-8 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+      >
+        <div className="relative">
+           {/* Pulsing ring behind the button */}
+           <motion.div 
+             animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }} 
+             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+             className="absolute inset-0 bg-blue-500 rounded-full blur-md"
+           />
+           <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={() => setIsOpen(true)}
+            className="relative w-14 h-14 rounded-full bg-gradient-to-tr from-blue-700 to-blue-500 text-white shadow-xl flex items-center justify-center border border-blue-400/30"
           >
-            {isChecked ? <X className="w-5 h-5" /> : <Check className="w-5 h-5" />}
-            {isChecked ? 'Mark as Incomplete' : 'Approve & Mark as Complete'}
-          </button>
+            <MessageSquare className="w-6 h-6" />
+            <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white"></span>
+          </motion.button>
         </div>
-      );
-    }
+      </motion.div>
 
-    if (type === 'teamMember' && data) {
-      return (
-        <div className="flex flex-col items-center text-center space-y-4 text-white">
-          <div className="relative">
-            <img src={data.avatar} alt={data.name} className="w-24 h-24 rounded-full border-4 border-[#13131a] object-cover shadow-lg" onError={(e) => e.target.src = `https://ui-avatars.com/api/?name=${data.name}&background=7B2FFF&color=fff`} />
-            <span className="absolute bottom-0 right-0 w-5 h-5 rounded-full border-4 border-[#0d0d12] bg-green-500 shadow-md" />
-          </div>
-          <div>
-            <h4 className="text-2xl font-bold tracking-tight">{data.name}</h4>
-            <p className="text-accent-violet font-semibold text-sm">{data.role}</p>
-          </div>
-          <div className="w-full bg-[#13131a] border border-white/5 rounded-2xl p-5 text-left space-y-3 mt-4">
-            <div className="flex items-center gap-3 text-sm text-gray-300">
-              <Mail className="w-4 h-4 text-accent-primary" />
-              <span>{data.email}</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm text-gray-300">
-              <Activity className="w-4 h-4 text-accent-violet" />
-              <span>Status: <span className="text-green-400 font-bold">{data.status}</span></span>
-            </div>
-          </div>
-          <div className="w-full flex gap-3 mt-4">
-            <button
-              onClick={() => {
-                setActiveTab('messages');
-                setActiveChat(data.name);
-                closeModal();
-              }}
-              className="w-full py-3.5 bg-white hover:bg-gray-200 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2"
-            >
-              <MessageCircle className="w-4 h-4" /> Message Directly
-            </button>
-          </div>
-        </div>
-      );
-    }
-
-    if (type === 'file' && data) {
-      const isContract = data.name.includes("Agreement") || data.name.includes("SOW");
-      return (
-        <div className="space-y-6 text-center text-white">
-          <div className="w-20 h-20 bg-accent-primary/10 rounded-2xl border border-accent-primary/20 flex items-center justify-center mx-auto">
-            <FileText className="w-10 h-10 text-accent-primary" />
-          </div>
-          <div>
-            <h4 className="text-xl font-bold mb-1 tracking-tight">{data.name}</h4>
-            <p className="text-gray-400 text-sm">{data.type} Document • {data.size}</p>
-          </div>
-          <div className="flex gap-3">
-            {isContract ? (
-              <button
-                onClick={() => {
-                  closeModal();
-                  openModal('signDoc', data);
-                }}
-                className="flex-1 py-3.5 bg-accent-violet hover:bg-purple-600 border border-white/10 text-white font-bold rounded-xl transition-all"
+      {/* Chat Panel */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 25 }}
+            className="fixed bottom-8 right-8 w-[90vw] sm:w-[400px] bg-white rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.15)] border border-gray-200 z-50 overflow-hidden flex flex-col"
+            style={{ height: '600px', maxHeight: 'calc(100vh - 4rem)' }}
+          >
+            {/* High-End Glassmorphism Header */}
+            <div className="relative p-5 flex items-center justify-between text-white overflow-hidden bg-gray-900">
+              {/* Animated abstract background for AI feel */}
+              <div className="absolute inset-0 opacity-40">
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                  className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-b from-blue-500/30 to-purple-500/30 blur-2xl rounded-full"
+                />
+              </div>
+              
+              <div className="relative z-10 flex items-center gap-4">
+                {/* AI Orb Logo */}
+                <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center relative shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                  <motion.div 
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    className="absolute inset-0 bg-blue-500/20 rounded-full"
+                  />
+                  <div className="w-2 h-2 bg-blue-400 rounded-full shadow-[0_0_8px_#60a5fa]" />
+                  <div className="absolute inset-0 rounded-full border border-blue-400/30 animate-[spin_4s_linear_infinite]" style={{ borderTopColor: 'transparent', borderLeftColor: 'transparent' }} />
+                </div>
+                <div>
+                  <h3 className="text-base font-bold tracking-wide">Nexora Intelligence</h3>
+                  <div className="flex items-center gap-1.5 mt-0.5">
+                    <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse" />
+                    <p className="text-[10px] text-gray-300 font-mono uppercase tracking-widest">System Online</p>
+                  </div>
+                </div>
+              </div>
+              <button 
+                onClick={() => setIsOpen(false)}
+                className="relative z-10 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 text-gray-300 hover:text-white transition-colors"
               >
-                Sign SOW Siganoff
+                <X className="w-4 h-4" />
               </button>
-            ) : (
-              <button onClick={closeModal} className="flex-1 py-3.5 bg-[#13131a] hover:bg-[#1f1f2e] border border-white/10 text-white font-bold rounded-xl transition-all">
-                Preview File
-              </button>
-            )}
-            <button
-              onClick={() => {
-                toast.success(`Downloaded: ${data.name}`);
-                closeModal();
-              }}
-              className="flex-1 py-3.5 bg-accent-primary hover:bg-cyan-400 text-black font-bold rounded-xl transition-all flex items-center justify-center gap-2"
-            >
-              <Download className="w-4 h-4" /> Download
-            </button>
+            </div>
+
+            {/* Messages Area */}
+            <div className="flex-1 p-5 overflow-y-auto bg-[#fafafa] flex flex-col gap-5">
+              <AnimatePresence>
+                {messages.map((msg) => (
+                  <motion.div 
+                    key={msg.id} 
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
+                  >
+                    <div className={`max-w-[85%] p-3.5 rounded-2xl text-sm leading-relaxed ${
+                      msg.role === 'user' 
+                        ? 'bg-blue-600 text-white rounded-tr-sm shadow-md shadow-blue-600/20' 
+                        : 'bg-white border border-gray-200 text-gray-800 rounded-tl-sm shadow-sm'
+                    }`}>
+                      {msg.text}
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+
+              {isTyping && (
+                <motion.div 
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex justify-start"
+                >
+                  <div className="bg-white border border-gray-200 px-4 py-3.5 rounded-2xl rounded-tl-sm shadow-sm flex items-center gap-2">
+                    <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                    <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                    <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                  </div>
+                </motion.div>
+              )}
+              
+              {/* Suggested Prompts */}
+              {showSuggestions && !isTyping && (
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex flex-col gap-2 mt-2"
+                >
+                  <p className="text-[10px] text-gray-400 font-mono uppercase tracking-wider mb-1 px-1">Suggested Questions</p>
+                  {suggestions.map((suggestion, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleSend(suggestion)}
+                      className="text-left text-xs text-gray-600 bg-white border border-gray-200 hover:border-blue-400 hover:text-blue-600 py-2.5 px-4 rounded-xl transition-colors shadow-sm hover:shadow flex items-center justify-between group"
+                    >
+                      {suggestion}
+                      <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                    </button>
+                  ))}
+                </motion.div>
+              )}
+              
+              <div ref={messagesEndRef} />
+            </div>
+
+            {/* Input Area */}
+            <div className="p-4 bg-white border-t border-gray-100 shadow-[0_-5px_15px_rgba(0,0,0,0.02)]">
+              <form onSubmit={handleSubmit} className="relative flex items-center">
+                <input
+                  type="text"
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  placeholder="Ask about your project..."
+                  className="w-full bg-gray-50 border border-gray-200 text-sm rounded-full pl-5 pr-14 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 transition-all shadow-inner"
+                />
+                <button
+                  type="submit"
+                  disabled={!input.trim()}
+                  className="absolute right-1.5 w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed hover:bg-blue-700 transition-colors shadow-sm"
+                >
+                  <Send className="w-4 h-4 ml-0.5" />
+                </button>
+              </form>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  );
+};
+
+const OverviewTab = () => (
+  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+    <div className="mb-8">
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Welcome back, Alex</h1>
+      <p className="text-gray-500 text-sm">Here is what's happening with your projects today.</p>
+    </div>
+
+    {/* Metrics Grid */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      {[
+        { label: "Active Projects", value: "3", change: "+1 this month", icon: FolderKanban, color: "text-blue-600", bg: "bg-blue-50", border: "border-blue-100" },
+        { label: "Total Billed", value: "$12,450", change: "Paid in full", icon: Receipt, color: "text-emerald-600", bg: "bg-emerald-50", border: "border-emerald-100" },
+        { label: "Support Tickets", value: "0", change: "All resolved", icon: CheckCircle2, color: "text-gray-600", bg: "bg-gray-100", border: "border-gray-200" }
+      ].map((stat, i) => (
+        <div key={i} className={`bg-white rounded-xl border ${stat.border} p-6 shadow-sm`}>
+          <div className="flex items-center justify-between mb-4">
+            <span className="text-sm font-semibold text-gray-600">{stat.label}</span>
+            <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${stat.bg}`}>
+              <stat.icon className={`w-4 h-4 ${stat.color}`} />
+            </div>
+          </div>
+          <div className="flex items-baseline gap-2">
+            <h3 className="text-3xl font-bold text-gray-900">{stat.value}</h3>
+            <span className="text-xs font-medium text-gray-500">{stat.change}</span>
           </div>
         </div>
-      );
-    }
+      ))}
+    </div>
 
-    if (type === 'signDoc' && data) {
-      return (
-        <div className="space-y-4 text-white text-left">
-          <p className="text-xs text-gray-400 uppercase tracking-widest font-bold font-mono">Contract Sign-off</p>
-          <h4 className="text-lg font-bold text-white mb-2">{data.name}</h4>
-          <div className="bg-[#13131a] border border-white/5 rounded-xl p-4 text-xs text-gray-400 leading-relaxed max-h-48 overflow-y-auto [&::-webkit-scrollbar]:hidden">
-            <p className="mb-2 font-bold text-white">NEXORA STUDIO CLIENT SERVICE SOW</p>
-            <p className="mb-2">This Statement of Work specifies the deployment parameters for the Nova Corp E-Commerce Replatforming system. By signing below, the client agrees to the terms and authorizes development completion of Phase 3.</p>
-            <p className="mb-2">All assets will be pushed to server configurations. Outstanding payments are processed upon milestone sign-offs. Payment schedules follow the payment policies outlined in Nexora terms.</p>
-          </div>
-          <div className="space-y-2 mt-4">
-            <label className="text-xs text-gray-400 font-bold uppercase tracking-wider">Type Signature to Authorize</label>
-            <input
-              type="text"
-              placeholder="e.g. Alex Client"
-              value={signature}
-              onChange={(e) => setSignature(e.target.value)}
-              className="w-full bg-[#13131a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-primary transition-all font-mono"
-            />
-          </div>
-          <div className="flex gap-3 mt-6">
-            <button onClick={closeModal} className="flex-1 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-xl text-gray-400 hover:text-white font-bold transition-all">Cancel</button>
-            <button
-              onClick={handleSignDocument}
-              disabled={!signature.trim()}
-              className="flex-1 py-3 bg-accent-primary hover:bg-cyan-400 disabled:opacity-50 text-black font-bold rounded-xl transition-all shadow-lg"
-            >
-              Sign Electronically
-            </button>
-          </div>
+    {/* Project Timeline & Recent Activity */}
+    <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
+      {/* Main Active Project */}
+      <div className="xl:col-span-2 bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+        <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h3 className="text-base font-bold text-gray-900">E-Commerce Replatforming</h3>
+          <span className="px-2.5 py-1 rounded-md bg-blue-50 text-blue-700 text-xs font-semibold border border-blue-100">Phase 3 Active</span>
         </div>
-      );
-    }
-
-    if (type === 'ticket' && data) {
-      const activeTicket = supportTickets.find(t => t.id === data.id);
-      return (
-        <div className="space-y-4 text-white">
-          <div className="flex justify-between items-center mb-2">
-            <span className="text-xs font-bold text-gray-500">Ticket ID: {activeTicket.id}</span>
-            <span className={`text-[10px] uppercase tracking-wider font-bold px-3 py-1 rounded-full ${activeTicket.status === 'Open' ? 'bg-accent-secondary/20 text-accent-secondary border border-accent-secondary/30' : 'bg-green-500/20 text-green-400 border border-green-500/30'}`}>
-              {activeTicket.status}
-            </span>
+        <div className="p-6 flex-1 flex flex-col">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-semibold text-gray-700">Overall Completion</span>
+            <span className="text-sm font-bold text-blue-600">63%</span>
           </div>
-          <h4 className="font-bold text-lg text-white mb-2">{activeTicket.subject}</h4>
+          <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden mb-8">
+            <div className="h-full bg-blue-600 rounded-full w-[63%] transition-all duration-1000"></div>
+          </div>
 
-          <div className="space-y-3 bg-[#13131a] border border-white/5 p-4 rounded-2xl max-h-56 overflow-y-auto [&::-webkit-scrollbar]:hidden flex flex-col">
-            {activeTicket.messages.map((msg, i) => (
-              <div key={i} className={`flex flex-col max-w-[80%] ${msg.sender === 'Client' ? 'self-end items-end' : 'self-start items-start'}`}>
-                <span className="text-[9px] text-gray-500 mb-1">{msg.sender === 'Client' ? 'You' : 'Agent'}</span>
-                <div className={`px-4 py-2.5 rounded-2xl text-sm ${msg.sender === 'Client' ? 'bg-accent-primary text-black rounded-br-sm' : 'bg-[#1f1f2e] text-white border border-white/5 rounded-bl-sm'}`}>
-                  {msg.text}
+          <h4 className="text-sm font-bold text-gray-900 mb-4">Upcoming Milestones</h4>
+          <div className="space-y-5">
+            {[
+              { title: "Design System Approval", date: "Completed Oct 1", status: "done" },
+              { title: "Backend API Integration", date: "Due Oct 15", status: "active" },
+              { title: "Frontend Implementation", date: "Due Oct 28", status: "pending" }
+            ].map((milestone, i) => (
+              <div key={i} className="flex items-start gap-4">
+                <div className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center border-2 shrink-0 ${
+                  milestone.status === 'done' ? 'bg-blue-600 border-blue-600' : 
+                  milestone.status === 'active' ? 'bg-white border-blue-600 shadow-[0_0_0_3px_rgba(37,99,235,0.1)]' : 'bg-gray-100 border-gray-200'
+                }`}>
+                  {milestone.status === 'done' && <CheckCircle2 className="w-3 h-3 text-white" />}
+                  {milestone.status === 'active' && <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />}
+                </div>
+                <div>
+                  <p className={`text-sm font-semibold ${milestone.status === 'pending' ? 'text-gray-500' : 'text-gray-900'}`}>{milestone.title}</p>
+                  <p className="text-xs text-gray-500 mt-0.5">{milestone.date}</p>
                 </div>
               </div>
             ))}
           </div>
-
-          {activeTicket.status === 'Open' && (
-            <form onSubmit={(e) => {
-              e.preventDefault();
-              const inputField = e.target.elements.reply;
-              handleTicketReply(activeTicket.id, inputField.value);
-              inputField.value = '';
-            }} className="relative mt-4">
-              <input
-                name="reply"
-                type="text"
-                required
-                placeholder="Type a reply to our agents..."
-                className="w-full bg-[#13131a] border border-white/10 rounded-xl pl-4 pr-12 py-3 text-sm focus:outline-none focus:border-accent-primary transition-all text-white"
-              />
-              <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 p-2 hover:bg-white/10 rounded-lg text-accent-primary transition-colors">
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
-          )}
         </div>
-      );
-    }
+      </div>
 
-    if (type === 'payment') {
-      return (
-        <form onSubmit={handleCardPayment} className="space-y-4 text-white text-left">
-          {/* Card Mockup Showcase (Zero Lag Flipper) */}
-          <div className="w-full h-48 [perspective:1000px] mb-6">
-            <motion.div
-              animate={{ rotateY: isCardFlipped ? 180 : 0 }}
-              transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="w-full h-full relative [transform-style:preserve-3d]"
-            >
-              {/* Front Side */}
-              <div className="absolute inset-0 w-full h-full rounded-2xl p-6 bg-gradient-to-br from-[#1a1a2e] to-[#0f0c1b] border border-white/15 flex flex-col justify-between [backface-visibility:hidden] shadow-xl">
-                <div className="flex justify-between items-start">
-                  <div className="w-12 h-8 bg-amber-500/20 border border-amber-500/30 rounded-md flex items-center justify-center">
-                    <div className="w-8 h-6 bg-yellow-500/40 rounded-sm" />
-                  </div>
-                  <span className="text-white/40 font-bold text-lg italic">VISA</span>
-                </div>
-                <div className="text-xl font-mono tracking-widest text-white mt-4">
-                  {cardNumber || "•••• •••• •••• ••••"}
-                </div>
-                <div className="flex justify-between items-end mt-4">
-                  <div>
-                    <div className="text-[10px] text-white/40 uppercase">Card Holder</div>
-                    <div className="text-sm font-mono text-white truncate max-w-[150px]">{cardName || "ALEX CLIENT"}</div>
-                  </div>
-                  <div>
-                    <div className="text-[10px] text-white/40 uppercase">Expires</div>
-                    <div className="text-sm font-mono text-white">{cardExpiry || "MM/YY"}</div>
-                  </div>
-                </div>
-              </div>
-              {/* Back Side */}
-              <div className="absolute inset-0 w-full h-full rounded-2xl p-6 bg-gradient-to-br from-[#0f0c1b] to-[#1a1a2e] border border-white/15 flex flex-col justify-between [backface-visibility:hidden] [transform:rotateY(180deg)] shadow-xl">
-                <div className="w-full h-10 bg-black -mx-6 mt-2" />
-                <div className="flex justify-end items-center mt-4">
-                  <div className="w-16 h-8 bg-white/10 rounded flex items-center justify-end px-3">
-                    <span className="text-sm font-mono text-white font-bold">{cardCvv || "•••"}</span>
-                  </div>
-                </div>
-                <div className="text-[10px] text-white/30 text-right mt-4 leading-none">
-                  Secure Checkout. Transacted via Nexora Systems.
-                </div>
-              </div>
-            </motion.div>
-          </div>
+      {/* Live Project Pulse Widget */}
+      <LivePulseFeed />
+    </div>
 
-          <div className="space-y-3">
-            <div className="space-y-1">
-              <label className="text-xs text-gray-400 font-bold uppercase tracking-wider">Card Number</label>
-              <input
-                type="text"
-                maxLength="19"
-                placeholder="4111 2222 3333 4444"
-                value={cardNumber}
-                onChange={(e) => {
-                  const val = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
-                  const formatted = val.match(/.{1,4}/g)?.join(' ') || val;
-                  setCardNumber(formatted);
-                }}
-                className="w-full bg-[#13131a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-primary transition-all font-mono"
-                required
-              />
+    {/* Interactive 3D Invoice Feature */}
+    <InteractiveInvoice />
+  </motion.div>
+);
+
+const ProjectsTab = () => (
+  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+    <div className="mb-8">
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Your Projects</h1>
+      <p className="text-gray-500 text-sm">Manage and track your ongoing and completed projects.</p>
+    </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+        <div className="flex justify-between items-start mb-4">
+           <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center">
+             <FolderKanban className="w-6 h-6" />
+           </div>
+           <span className="px-2.5 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-md border border-blue-100">In Progress</span>
+        </div>
+        <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">E-Commerce Replatforming</h3>
+        <p className="text-gray-500 text-sm mt-2 mb-6">Complete overhaul of the backend infrastructure and frontend UI.</p>
+        <div className="w-full bg-gray-100 rounded-full h-1.5 mb-2"><div className="bg-blue-600 h-1.5 rounded-full w-[63%]"></div></div>
+        <div className="flex justify-between text-xs font-semibold text-gray-500">
+          <span>63% Complete</span>
+          <span>Due Oct 28</span>
+        </div>
+      </div>
+      
+      <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow group cursor-pointer">
+        <div className="flex justify-between items-start mb-4">
+           <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-lg flex items-center justify-center">
+             <CheckCircle2 className="w-6 h-6" />
+           </div>
+           <span className="px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-semibold rounded-md border border-emerald-100">Completed</span>
+        </div>
+        <h3 className="text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors">Brand Identity Design</h3>
+        <p className="text-gray-500 text-sm mt-2 mb-6">Logo, color palette, typography, and brand guidelines.</p>
+        <div className="w-full bg-gray-100 rounded-full h-1.5 mb-2"><div className="bg-emerald-500 h-1.5 rounded-full w-[100%]"></div></div>
+        <div className="flex justify-between text-xs font-semibold text-gray-500">
+          <span>100% Complete</span>
+          <span>Delivered Sep 15</span>
+        </div>
+      </div>
+    </div>
+  </motion.div>
+);
+
+const InvoicesTab = () => (
+  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+    <div className="mb-8 flex justify-between items-end">
+      <div>
+        <h1 className="text-2xl font-bold text-gray-900 mb-1">Billing & Invoices</h1>
+        <p className="text-gray-500 text-sm">View and manage your project invoices.</p>
+      </div>
+      <button className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-sm hover:bg-blue-700 transition-colors">
+        Download Statement
+      </button>
+    </div>
+    
+    <div className="mb-12">
+      <h3 className="text-sm font-bold text-gray-900 uppercase tracking-wider mb-4">Latest Invoice</h3>
+      <InteractiveInvoice />
+    </div>
+
+    <div className="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+      <table className="w-full text-left border-collapse">
+        <thead>
+          <tr className="bg-gray-50 border-b border-gray-200">
+            <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Invoice</th>
+            <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Project</th>
+            <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Date</th>
+            <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Amount</th>
+            <th className="px-6 py-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Status</th>
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-gray-200 text-sm">
+          <tr className="hover:bg-gray-50 transition-colors cursor-pointer">
+            <td className="px-6 py-4 font-medium text-gray-900">INV-2026-042</td>
+            <td className="px-6 py-4 text-gray-600">E-Commerce Phase 2</td>
+            <td className="px-6 py-4 text-gray-500">Oct 12, 2026</td>
+            <td className="px-6 py-4 font-semibold text-gray-900">$8,250.00</td>
+            <td className="px-6 py-4"><span className="inline-flex px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-100">Paid</span></td>
+          </tr>
+          <tr className="hover:bg-gray-50 transition-colors cursor-pointer">
+            <td className="px-6 py-4 font-medium text-gray-900">INV-2026-031</td>
+            <td className="px-6 py-4 text-gray-600">Brand Identity</td>
+            <td className="px-6 py-4 text-gray-500">Sep 01, 2026</td>
+            <td className="px-6 py-4 font-semibold text-gray-900">$4,500.00</td>
+            <td className="px-6 py-4"><span className="inline-flex px-2.5 py-1 bg-emerald-50 text-emerald-700 text-xs font-bold rounded-full border border-emerald-100">Paid</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </motion.div>
+);
+
+const MessagesTab = () => (
+  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full h-[calc(100vh-4rem)] flex flex-col">
+    <div className="mb-6">
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Messages</h1>
+      <p className="text-gray-500 text-sm">Communicate directly with the Nexora team.</p>
+    </div>
+    
+    <div className="flex-1 bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm flex min-h-[500px]">
+      {/* Left Sidebar */}
+      <div className="w-1/3 border-r border-gray-200 flex flex-col">
+        <div className="p-4 border-b border-gray-100">
+           <input type="text" placeholder="Search messages..." className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500" />
+        </div>
+        <div className="flex-1 overflow-y-auto p-2">
+           <div className="p-3 bg-blue-50 rounded-lg cursor-pointer border border-blue-100 flex gap-3">
+              <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-sm shadow-blue-600/20">NX</div>
+              <div>
+                <h4 className="text-sm font-bold text-gray-900">Nexora Concierge</h4>
+                <p className="text-xs text-gray-500 truncate mt-0.5">Your latest invoice is ready...</p>
+              </div>
+           </div>
+        </div>
+      </div>
+      
+      {/* Chat Area */}
+      <div className="flex-1 flex flex-col relative bg-[#fafafa]">
+         <div className="p-4 border-b border-gray-100 bg-white flex items-center gap-3 relative z-10">
+            <div className="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-sm shadow-blue-600/20">NX</div>
+            <div>
+               <h3 className="text-sm font-bold text-gray-900">Nexora Concierge</h3>
+               <span className="text-[10px] text-emerald-500 uppercase font-mono tracking-wider font-bold">Online</span>
             </div>
-            <div className="space-y-1">
-              <label className="text-xs text-gray-400 font-bold uppercase tracking-wider">Cardholder Name</label>
-              <input
-                type="text"
-                placeholder="Alex Client"
-                value={cardName}
-                onChange={(e) => setCardName(e.target.value.toUpperCase())}
-                className="w-full bg-[#13131a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-primary transition-all font-mono"
-                required
-              />
+         </div>
+         
+         <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-6">
+            <div className="flex justify-start">
+               <div className="max-w-[70%] p-4 bg-white border border-gray-200 rounded-2xl rounded-tl-sm text-sm text-gray-800 shadow-sm">
+                 Hello Alex! I am your dedicated Nexora AI concierge. You can ask me anything about your project statuses, invoices, or request support tickets directly through here.
+               </div>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-1">
-                <label className="text-xs text-gray-400 font-bold uppercase tracking-wider">Expiration Date</label>
-                <input
-                  type="text"
-                  maxLength="5"
-                  placeholder="MM/YY"
-                  value={cardExpiry}
-                  onChange={(e) => {
-                    let val = e.target.value.replace(/[^0-9]/g, '');
-                    if (val.length > 2) {
-                      val = val.substring(0, 2) + '/' + val.substring(2);
-                    }
-                    setCardExpiry(val);
-                  }}
-                  className="w-full bg-[#13131a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-primary transition-all font-mono"
-                  required
-                />
-              </div>
-              <div className="space-y-1">
-                <label className="text-xs text-gray-400 font-bold uppercase tracking-wider">CVV Code</label>
-                <input
-                  type="text"
-                  maxLength="3"
-                  placeholder="123"
-                  value={cardCvv}
-                  onFocus={() => setIsCardFlipped(true)}
-                  onBlur={() => setIsCardFlipped(false)}
-                  onChange={(e) => setCardCvv(e.target.value.replace(/[^0-9]/g, ''))}
-                  className="w-full bg-[#13131a] border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-accent-primary transition-all font-mono"
-                  required
-                />
-              </div>
+            <div className="flex justify-end">
+               <div className="max-w-[70%] p-4 bg-blue-600 text-white rounded-2xl rounded-tr-sm text-sm shadow-md shadow-blue-600/20">
+                 Can you confirm the deadline for Phase 3?
+               </div>
             </div>
-          </div>
+            <div className="flex justify-start">
+               <div className="max-w-[70%] p-4 bg-white border border-gray-200 rounded-2xl rounded-tl-sm text-sm text-gray-800 shadow-sm">
+                 Phase 3 is scheduled to be completed by October 28th.
+               </div>
+            </div>
+         </div>
+         
+         <div className="p-4 bg-white border-t border-gray-200">
+            <div className="relative flex items-center">
+               <input type="text" placeholder="Type your message..." className="w-full bg-gray-50 border border-gray-200 rounded-full pl-5 pr-14 py-3 text-sm focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 shadow-inner" />
+               <button className="absolute right-1.5 w-9 h-9 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors shadow-sm">
+                 <Send className="w-4 h-4 ml-0.5" />
+               </button>
+            </div>
+         </div>
+      </div>
+    </div>
+  </motion.div>
+);
 
-          <div className="pt-4">
-            <button
-              type="submit"
-              disabled={isPaying}
-              className="w-full py-4 bg-accent-primary hover:bg-cyan-400 disabled:opacity-50 text-black font-bold rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 text-sm uppercase tracking-wider"
-            >
-              {isPaying ? (
-                <div className="flex items-center gap-2">
-                  <div className="w-5 h-5 border-2 border-black border-t-transparent rounded-full animate-spin" />
-                  <span>{payProgress}</span>
-                </div>
-              ) : (
-                <>
-                  <CardIcon className="w-5 h-5" />
-                  <span>Pay Invoice INV-002 ($10,000)</span>
-                </>
-              )}
-            </button>
+const SettingsTab = () => (
+  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-3xl mx-auto w-full">
+    <div className="mb-8">
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">Account Settings</h1>
+      <p className="text-gray-500 text-sm">Manage your profile, company details, and notifications.</p>
+    </div>
+    
+    <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-8 mb-6">
+       <h3 className="text-base font-bold text-gray-900 mb-6">Profile Information</h3>
+       <div className="flex items-center gap-6 mb-8">
+          <img src="https://ui-avatars.com/api/?name=Alex+Client&background=2563eb&color=fff" alt="User" className="w-20 h-20 rounded-full border border-gray-200 shadow-sm" />
+          <div>
+            <button className="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-gray-200">Change Avatar</button>
           </div>
-        </form>
-      );
-    }
-    return null;
-  };
+       </div>
+       <div className="grid grid-cols-2 gap-6">
+          <div>
+             <label className="block text-xs font-semibold text-gray-700 mb-2">First Name</label>
+             <input type="text" defaultValue="Alex" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" />
+          </div>
+          <div>
+             <label className="block text-xs font-semibold text-gray-700 mb-2">Last Name</label>
+             <input type="text" defaultValue="Client" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" />
+          </div>
+          <div className="col-span-2">
+             <label className="block text-xs font-semibold text-gray-700 mb-2">Email Address</label>
+             <input type="email" defaultValue="client@company.com" className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500" />
+          </div>
+       </div>
+    </div>
+    
+    <div className="flex justify-end">
+       <button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-sm shadow-blue-600/20">Save Changes</button>
+    </div>
+  </motion.div>
+);
 
-  // --- OUT-OF-AUTH SIGN-IN PORTAL ---
+export default function ClientPortal() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [activeTab, setActiveTab] = useState('overview');
+
+  // --- LOGIN SCREEN (Matches screenshot layout, adapted to Nexora Blue) ---
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen bg-[#07070a] flex items-center justify-center p-4 relative overflow-hidden text-white font-sans selection:bg-accent-violet selection:text-white">
-        <Helmet><title>Client Portal Sign In | Nexora</title></Helmet>
-
-        <ParticleBackground />
-
-        {/* Sign-out banner — slides down from top */}
-        <AnimatePresence>
-          {showSignoutBanner && (
-            <motion.div
-              initial={{ y: -90, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -90, opacity: 0 }}
-              transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-              className="fixed top-0 left-0 right-0 z-[999] flex justify-center pointer-events-none"
-            >
-              <div className="mt-4 mx-4 md:mx-0 flex items-center gap-4 bg-[#0d0d12] border border-white/10 shadow-2xl shadow-black/60 rounded-2xl px-6 py-4 backdrop-blur-xl pointer-events-auto max-w-lg w-full">
-                <div className="w-10 h-10 rounded-full bg-red-500/20 border border-red-500/30 flex items-center justify-center shrink-0">
-                  <LogOut className="w-4 h-4 text-red-400" />
-                </div>
-                <div className="flex-1 text-left">
-                  <div className="text-white font-bold text-sm leading-tight">Signed out successfully</div>
-                  <div className="text-gray-400 text-xs mt-0.5">Your session has been closed securely.</div>
-                </div>
-                <button
-                  onClick={() => setShowSignoutBanner(false)}
-                  className="text-gray-600 hover:text-white transition-colors ml-2 shrink-0 cursor-pointer"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        {/* Main Login Card Container */}
-        <div className="w-full max-w-5xl bg-[#0e0e11]/90 border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col md:flex-row relative z-10 shadow-[0_25px_80px_rgba(0,0,0,0.85)] backdrop-blur-xl min-h-[580px]">
+      <div className="flex flex-col md:flex-row min-h-screen bg-[#f8f9fc] font-sans">
+        {/* Left Side (Map/Features) */}
+        <div className="hidden md:flex md:w-3/5 flex-col p-12 relative overflow-hidden bg-[#f4f5f7]">
+          {/* Subtle dotted background pattern */}
+          <div className="absolute inset-0 z-0 opacity-20" 
+               style={{ backgroundImage: 'radial-gradient(#94a3b8 1px, transparent 1px)', backgroundSize: '24px 24px' }} 
+          />
           
-          {/* Left Panel: Credentials Form */}
-          <div className="w-full md:w-1/2 p-8 md:p-14 flex flex-col justify-between relative">
-            {/* Top Bar: Brand Logo & Secure Link Indicator */}
-            <div className="flex justify-between items-center mb-8">
-              <Link to="/" className="inline-flex items-center gap-2.5">
-                <img src="/logo/favicon.png" alt="Nexora" className="w-6.5 h-6.5" />
-                <span className="font-display font-black text-sm tracking-[0.25em] text-white">NEXORA</span>
-              </Link>
-              <div className="flex items-center gap-1.5 bg-emerald-500/10 border border-emerald-500/20 px-3 py-1 rounded-full">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-                <span className="text-[8px] font-mono text-emerald-400 font-bold uppercase tracking-widest">SYSTEM SECURE</span>
-              </div>
+          <div className="relative z-10 flex flex-col h-full">
+            {/* Logo placeholder */}
+            <div className="flex items-center gap-2 mb-16">
+               <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/20">
+                 <span className="text-white font-bold text-xs">NX</span>
+               </div>
+               <span className="font-bold text-xl text-gray-800 tracking-tight">Nexora</span>
             </div>
 
-            {/* Form Section */}
-            <div className="my-auto py-2">
-              <h2 className="text-3xl font-bold text-white mb-2 tracking-tight flex items-center gap-2.5">
-                Welcome back 
-                <motion.span
-                  animate={{ rotate: [0, 15, -10, 15, -5, 10, 0, 0] }}
-                  transition={{ repeat: Infinity, duration: 2.2, repeatDelay: 1.2 }}
-                  className="inline-block origin-[70%_70%] cursor-default text-3xl"
-                >
-                  👋
-                </motion.span>
-              </h2>
-              <p className="text-gray-400 text-xs mb-8">Please enter your credentials to open the Pulse board.</p>
-
-              <form onSubmit={handleLogin} className="flex flex-col gap-4 text-left">
-                <div className="space-y-1">
-                  <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                    <input
-                      type="email"
-                      required
-                      placeholder="Email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="w-full bg-[#121216] border border-white/10 rounded-full pl-12 pr-4 py-3.5 text-white focus:outline-none focus:border-accent-violet transition-all text-sm font-sans focus:ring-1 focus:ring-accent-violet/30"
-                    />
-                  </div>
-                </div>
-
-                <div className="space-y-2">
-                  <div className="relative">
-                    <Lock className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-                    <input
-                      type={showPassword ? "text" : "password"}
-                      required
-                      placeholder="Password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      onFocus={() => setIsPasswordFocused(true)}
-                      onBlur={() => setIsPasswordFocused(false)}
-                      className="w-full bg-[#121216] border border-white/10 rounded-full pl-12 pr-12 py-3.5 text-white focus:outline-none focus:border-accent-violet transition-all text-sm font-sans focus:ring-1 focus:ring-accent-violet/30"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white transition-colors"
-                    >
-                      {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-                    </button>
-                  </div>
-                  <div className="text-right pr-2">
-                    <a href="#" className="text-xs text-gray-400 hover:text-white hover:underline transition-colors font-medium">Forgot Password?</a>
-                  </div>
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isLoginLoading || !email || !password}
-                  className="w-full mt-2 bg-[#5f35d2] hover:bg-[#6f42ea] text-white font-bold rounded-full px-6 py-3.5 transition-all disabled:opacity-50 flex items-center justify-center gap-2.5 shadow-lg shadow-purple-950/20 group cursor-pointer hover:shadow-purple-900/30"
-                >
-                  {isLoginLoading ? (
-                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                  ) : (
-                    <>
-                      <span>Log In</span>
-                      <SendHorizontal className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </>
-                  )}
-                </button>
-              </form>
-
-              {/* OAuth Splitter */}
-              <div className="flex items-center gap-4 my-6">
-                <div className="h-px bg-white/5 flex-1" />
-                <span className="text-[9px] text-gray-600 font-bold uppercase tracking-widest">OR</span>
-                <div className="h-px bg-white/5 flex-1" />
-              </div>
-
-              {/* Google OAuth Login */}
-              <GoogleOAuthProvider clientId="MOCK_GOOGLE_CLIENT_ID">
-                <GoogleLoginButton onLoginSuccess={(userInfo) => {
-                  setUserProfile(userInfo);
-                  setIsAuthenticated(true);
-                  setShowWelcomeBanner(true);
-                  setTimeout(() => setShowWelcomeBanner(false), 5000);
-                }} />
-              </GoogleOAuthProvider>
+            {/* Headline */}
+            <div className="max-w-xl z-20 mt-12">
+              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 leading-tight tracking-tight">
+                Your trusted <br/>
+                digital transformation <br/>
+                <span className="text-blue-600">partner</span>
+              </h1>
             </div>
 
-            {/* Footer Sign Up */}
-            <p className="text-center text-xs text-gray-500 mt-6">
-              Don't have an account? <Link to="/#contact" className="text-white font-bold hover:underline">Sign Up</Link>
-            </p>
+            {/* Abstract World Map Graphic (SVG) */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/3 -translate-y-1/2 w-[800px] h-[500px] opacity-10 pointer-events-none">
+              <svg viewBox="0 0 1000 500" className="w-full h-full fill-gray-800">
+                <path d="M150,150 Q200,100 250,150 T350,150 T450,200 T550,150 T650,100 T750,200 T850,150 L850,350 L150,350 Z" />
+                <circle cx="250" cy="150" r="15" fill="#2563EB" opacity="0.5" />
+                <circle cx="550" cy="200" r="10" fill="#2563EB" opacity="0.5" />
+                <circle cx="750" cy="100" r="20" fill="#2563EB" opacity="0.5" />
+                <circle cx="350" cy="250" r="12" fill="#2563EB" opacity="0.5" />
+              </svg>
+            </div>
+
+            {/* Bottom Cards */}
+            <div className="mt-auto flex gap-4 z-20">
+              {[
+                { icon: Zap, label: "Fast Processing", color: "text-blue-500", bg: "bg-blue-50" },
+                { icon: MessageCircle, label: "24/7 Support", color: "text-blue-500", bg: "bg-blue-50" },
+                { icon: ShieldCheck, label: "Secure Platform", color: "text-blue-500", bg: "bg-blue-50" }
+              ].map((card, i) => (
+                <div key={i} className="bg-white rounded-xl p-4 shadow-sm border border-gray-100 flex flex-col items-center justify-center min-w-[140px]">
+                  <div className={`w-10 h-10 rounded-full ${card.bg} flex items-center justify-center mb-3`}>
+                    <card.icon className={`w-5 h-5 ${card.color}`} />
+                  </div>
+                  <span className="text-xs font-semibold text-gray-600">{card.label}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right Side (Login Form) */}
+        <div className="w-full md:w-2/5 bg-white flex flex-col relative">
+          {/* Badge */}
+          <div className="absolute top-6 right-6 z-20 hidden md:block">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-green-50 border border-green-100 rounded-full">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+              <span className="text-[10px] font-semibold text-green-700 uppercase tracking-wider">Secure B2B Portal</span>
+            </div>
           </div>
 
-          {/* Right Panel: Static Photo with Spotlight Effect */}
-          <div className="hidden md:flex w-1/2 p-6 md:p-8 flex-col justify-center items-center relative bg-black/25">
-            {/* Card Shell — no perspective, fully static */}
-            <div className="w-full h-full min-h-[460px] max-w-[390px] relative">
-              {/* Outer ambient glow */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-accent-violet/20 via-accent-primary/10 to-transparent rounded-[2.2rem] blur-xl opacity-70 pointer-events-none" />
+          <div className="flex-1 flex flex-col justify-center px-8 sm:px-16 lg:px-20">
+            {/* The Login Card exactly matching the screenshot structure */}
+            <div className="bg-white rounded-2xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-gray-100 overflow-hidden relative">
+              {/* Top colored border */}
+              <div className="h-1.5 w-full bg-blue-600"></div>
+              
+              <div className="p-8 sm:p-10">
+                <h2 className="text-3xl font-bold text-[#1a1f36] mb-1">Client Login</h2>
+                <p className="text-sm text-gray-500 mb-8">Access the Nexora B2B partner dashboard</p>
 
-              {/* Static Card Frame */}
-              <div
-                className="w-full h-full bg-[#121216]/90 border border-white/10 rounded-[2.2rem] overflow-hidden relative flex flex-col justify-between p-6 shadow-2xl"
-              >
-                {/* Background Photo — full brightness, no overlays */}
-                <div className="absolute inset-0 z-0 rounded-[2.2rem] overflow-hidden">
-                  <img
-                    src={loginBg}
-                    alt="Nexoraa Works Login Backdrop"
-                    className="w-full h-full object-cover"
-                    draggable={false}
-                    style={{
-                      userSelect: 'none',
-                      pointerEvents: 'none',
-                      filter: 'brightness(1.15) contrast(1.08) saturate(1.2)',
-                    }}
-                  />
-                </div>
-
-                {/* Top Overlay HUD Details */}
-                <div className="relative z-10 flex justify-between items-center w-full">
-                  <span className="text-[9px] font-mono font-bold tracking-widest text-white bg-black/60 border border-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">
-                    CLEARANCE HUD
-                  </span>
-                  <span className="text-[9px] font-mono text-gray-400 bg-black/40 px-2 py-0.5 rounded border border-white/5 backdrop-blur-sm">
-                    GATE: 5173
-                  </span>
-                </div>
-
-                {/* Password Focus Scanline Laser Mesh */}
-                {isPasswordFocused && (
-                  <div className="absolute inset-x-0 inset-y-0 z-10 pointer-events-none overflow-hidden rounded-[2.2rem]">
-                    <motion.div
-                      initial={{ top: '0%' }}
-                      animate={{ top: '100%' }}
-                      transition={{ duration: 1.8, repeat: Infinity, ease: "linear" }}
-                      className="absolute inset-x-0 h-0.5 bg-gradient-to-r from-transparent via-accent-violet to-transparent shadow-[0_0_12px_#7B2FFF] z-10"
-                    />
-                    <div className="absolute inset-0 bg-accent-violet/5 flex items-center justify-center">
-                      <div className="bg-black/90 border border-accent-violet/30 px-4 py-2.5 rounded-2xl text-center backdrop-blur-md max-w-[240px]">
-                        <div className="text-[9px] font-mono text-accent-violet font-bold uppercase tracking-widest animate-pulse flex items-center justify-center gap-1.5">
-                          <ShieldCheck className="w-3.5 h-3.5" /> SHIELD PROTOCOL ENFORCED
-                        </div>
-                        <div className="text-[8px] font-mono text-gray-500 mt-1">ENCRYPTING INCOMING PACKETS</div>
-                      </div>
+                <form onSubmit={(e) => { e.preventDefault(); setIsAuthenticated(true); }} className="space-y-5">
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Email</label>
+                    <div className="relative">
+                      <input 
+                        type="email" 
+                        required
+                        defaultValue="client@company.com"
+                        placeholder="you@agency.com" 
+                        className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-gray-900"
+                      />
+                      <Mail className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />
                     </div>
                   </div>
-                )}
+
+                  <div>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Password</label>
+                    <div className="relative">
+                      <input 
+                        type="password" 
+                        required
+                        defaultValue="password123"
+                        placeholder="Your password" 
+                        className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-gray-900"
+                      />
+                      <Eye className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 cursor-pointer hover:text-gray-600" />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center justify-between pt-2">
+                    <label className="flex items-center gap-2 cursor-pointer group">
+                      <input type="checkbox" defaultChecked className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+                      <span className="text-xs text-gray-500 group-hover:text-gray-700">Remember me</span>
+                    </label>
+                    <a href="#" className="text-xs font-semibold text-blue-600 hover:text-blue-700">Forgot password?</a>
+                  </div>
+
+                  <button 
+                    type="submit"
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold text-sm py-3.5 rounded-lg shadow-sm shadow-blue-600/20 transition-colors mt-4"
+                  >
+                    Sign In
+                  </button>
+                </form>
+
+                <div className="mt-8 flex flex-col items-center gap-4">
+                  <Link to="/" className="text-xs font-semibold text-gray-500 hover:text-gray-800 flex items-center gap-1 transition-colors">
+                    <ArrowLeft className="w-3 h-3" /> Back to Home
+                  </Link>
+                  <p className="text-[11px] text-gray-400">
+                    Need access? Contact <a href="mailto:partnerships@nexora.com" className="text-blue-600 hover:underline">partnerships@nexora.com</a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     );
   }
 
-  // --- LOGGED-IN PORTAL DASHBOARD (VIBRANT GLOWING GLASSMORPHIC) ---
-  const SidebarItem = ({ icon: Icon, label, active, onClick }) => (
-    <button
-      onClick={onClick}
-      className={`w-full flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all relative group overflow-hidden ${active ? 'bg-accent-primary/10 text-white font-bold' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
-      title={label}
-    >
-      {active && (
-        <div className="absolute left-0 top-0 bottom-0 w-1 bg-accent-primary shadow-[0_0_8px_#00F5FF]" />
-      )}
-      <Icon className={`w-5 h-5 shrink-0 ${active ? 'text-accent-primary' : 'group-hover:text-white transition-colors'}`} />
-      <span className="hidden md:block text-sm tracking-tight">{label}</span>
-    </button>
-  );
-
+  // --- POST-LOGIN DASHBOARD (Clean Professional SaaS Design) ---
   return (
-    <div className="min-h-screen bg-[#040407] text-white font-sans flex relative selection:bg-accent-primary selection:text-black overflow-hidden">
-      <Helmet><title>Nexora Pulse Dashboard</title></Helmet>
-
-      <ParticleBackground />
-
-      {/* Glow layers */}
-      <div className="fixed top-[-20%] left-[-20%] w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[160px] pointer-events-none" />
-      <div className="fixed bottom-[-25%] right-[-15%] w-[600px] h-[600px] bg-accent-violet/5 rounded-full blur-[160px] pointer-events-none" />
-
-      <Modal
-        isOpen={modalConfig.isOpen}
-        onClose={closeModal}
-        title={
-          modalConfig.type === 'actionItem' ? 'Action Approval' :
-            modalConfig.type === 'teamMember' ? 'Team Member Profile' :
-              modalConfig.type === 'file' ? 'File Storage Deliverable' :
-                modalConfig.type === 'ticket' ? 'Live Support Desk' :
-                  modalConfig.type === 'signDoc' ? 'E-Signature Gateway' :
-                    'Secure Payment Terminal'
-        }
-      >
-        {renderModalContent()}
-      </Modal>
-
-      {/* Sidebar navigation */}
-      <aside className="w-20 md:w-64 fixed left-0 top-0 bottom-0 bg-[#07070a]/80 border-r border-white/10 z-40 flex flex-col justify-between py-8 px-4 backdrop-blur-xl">
-        <div className="w-full flex flex-col items-center md:items-stretch">
-          <Link to="/" className="flex items-center gap-3 md:px-4 mb-10 shrink-0">
-            <img src="/logo/favicon.png" alt="Nexora" className="w-8 h-8 shrink-0 hover:rotate-45 transition-transform duration-500" />
-            <span className="hidden md:block font-display font-black text-xl tracking-[0.15em] text-white">NEXORA</span>
-          </Link>
-
-          <nav className="flex flex-col gap-2 w-full">
-            <SidebarItem icon={LayoutDashboard} label="Canvas View" active={activeTab === 'overview'} onClick={() => setActiveTab('overview')} />
-            <SidebarItem icon={FileText} label="Invoices & Contracts" active={activeTab === 'invoices'} onClick={() => setActiveTab('invoices')} />
-            <SidebarItem icon={CheckCircle2} label="Milestones" active={activeTab === 'milestones'} onClick={() => setActiveTab('milestones')} />
-            <SidebarItem icon={MessageCircle} label="Communication" active={activeTab === 'messages'} onClick={() => setActiveTab('messages')} />
-          </nav>
-        </div>
-
-        {/* Live Stream and Logout controls block */}
-        <div className="w-full flex flex-col gap-5 pt-6 border-t border-white/10 shrink-0">
-          <div className="hidden md:block">
-            <DevWebcam />
+    <div className="min-h-screen bg-gray-50 flex font-sans">
+      {/* Sidebar Navigation */}
+      <aside className="w-64 bg-white border-r border-gray-200 flex flex-col">
+        <div className="p-6 flex items-center gap-3 border-b border-gray-100">
+          <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden shadow-md shadow-blue-600/20">
+             <img src={nexoraLogo} alt="Nexora" className="w-full h-full object-cover" />
           </div>
+          <span className="font-bold text-gray-900 tracking-tight text-lg">Nexora</span>
+        </div>
+        
+        <nav className="flex-1 p-4 space-y-1">
+          {[
+            { id: 'overview', icon: LayoutDashboard, label: "Dashboard" },
+            { id: 'projects', icon: FolderKanban, label: "Projects" },
+            { id: 'invoices', icon: Receipt, label: "Invoices" },
+            { id: 'messages', icon: MessageCircle, label: "Messages" },
+            { id: 'settings', icon: Settings, label: "Settings" },
+          ].map((item, i) => {
+            const isActive = activeTab === item.id;
+            return (
+              <button 
+                key={i} 
+                onClick={() => setActiveTab(item.id)}
+                className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${isActive ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}`}
+              >
+                <item.icon className={`w-4 h-4 ${isActive ? 'text-blue-600' : 'text-gray-400'}`} />
+                {item.label}
+              </button>
+            );
+          })}
+        </nav>
 
-          <button onClick={() => {
-            setIsAuthenticated(false);
-            setShowSignoutBanner(true);
-            setTimeout(() => setShowSignoutBanner(false), 4000);
-          }} className="w-full flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all text-gray-400 hover:text-red-400 hover:bg-red-500/10 group">
-            <LogOut className="w-5 h-5 shrink-0 group-hover:text-red-400" />
-            <span className="hidden md:block font-medium text-sm">Logout</span>
+        <div className="p-4 border-t border-gray-200">
+          <button 
+            onClick={() => setIsAuthenticated(false)}
+            className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-red-50 hover:text-red-600 transition-colors"
+          >
+            <Lock className="w-4 h-4 text-gray-400" />
+            Sign Out
           </button>
         </div>
       </aside>
 
-      {/* Welcome Banner — slides down from top after login */}
-      <AnimatePresence>
-        {showWelcomeBanner && (
-          <motion.div
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -100, opacity: 0 }}
-            transition={{ type: 'spring', stiffness: 220, damping: 22 }}
-            className="fixed top-0 left-0 right-0 z-[999] flex justify-center pointer-events-none"
-          >
-            <div className="mt-4 mx-4 md:mx-0 flex items-center gap-4 bg-[#0d0d12] border border-white/10 shadow-2xl shadow-black/60 rounded-2xl px-6 py-4 backdrop-blur-xl pointer-events-auto max-w-lg w-full">
-              {/* Avatar */}
-              <div className="w-11 h-11 rounded-full bg-accent-violet/30 border border-accent-violet/50 flex items-center justify-center text-white font-bold text-lg shrink-0">
-                {(userProfile ? userProfile.name[0] : 'C').toUpperCase()}
-              </div>
-              {/* Text */}
-              <div className="flex-1 text-left">
-                <div className="text-white font-bold text-sm leading-tight">
-                  Welcome back, {userProfile ? userProfile.name.split(' ')[0] : 'Client'} 👋
-                </div>
-                <div className="text-gray-400 text-xs mt-0.5">You're now signed in to Nexora Pulse.</div>
-              </div>
-              {/* Green live dot */}
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 shadow-[0_0_6px_#34d399] animate-pulse" />
-                <span className="text-[10px] text-emerald-400 font-bold uppercase tracking-widest">Live</span>
-              </div>
-              {/* Close */}
-              <button
-                onClick={() => setShowWelcomeBanner(false)}
-                className="text-gray-600 hover:text-white transition-colors ml-2 shrink-0 cursor-pointer"
-              >
-                <X className="w-4 h-4" />
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Main dashboard core content */}
-      <main className="flex-1 ml-20 md:ml-64 relative z-10 min-h-screen overflow-y-auto pb-16 flex flex-col">
-
-        {/* Dashboard Header section */}
-        <header className="pt-10 pb-6 px-8 lg:px-12 flex justify-between items-start max-w-[1500px] w-full mx-auto shrink-0">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0d0d12]/80 border border-white/10 text-[10px] font-bold uppercase tracking-widest mb-4 text-gray-300 shadow-sm backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-[#00FF87] shadow-[0_0_8px_#00FF87] animate-pulse" />
-              Pulse Engine Active
-            </div>
-            <h1 className="text-3xl md:text-4xl font-display font-black tracking-tight mb-1 text-white">
-              Welcome, {userProfile ? userProfile.name.split(' ')[0] : 'Client'}
-            </h1>
-            <p className="text-sm text-gray-400 font-light">
-              Connected live pipeline canvas for <span className="text-white font-medium">{DEFAULT_PROJECT_DATA.client}</span>.
-            </p>
+      {/* Main Content Area */}
+      <main className="flex-1 flex flex-col overflow-y-auto">
+        {/* Header */}
+        <header className="h-16 bg-white border-b border-gray-200 px-8 flex items-center justify-between sticky top-0 z-10">
+          <div className="flex items-center gap-2 text-sm text-gray-500">
+            <span>Client Portal</span>
+            <ChevronDown className="w-3 h-3" />
+            <span className="text-gray-900 font-medium">Dashboard</span>
           </div>
-
-          <div className="hidden md:flex items-center gap-4 bg-[#07070a]/60 border border-white/10 rounded-full p-2 pr-6 shadow-md backdrop-blur-md">
-            {userProfile && userProfile.picture ? (
-              <img src={userProfile.picture} alt="Profile" className="w-10 h-10 rounded-full border border-white/10 object-cover" />
-            ) : (
-              <div className="w-10 h-10 rounded-full bg-accent-violet/30 flex items-center justify-center font-bold text-lg border border-accent-violet/50 text-white">
-                {(userProfile ? userProfile.name[0] : 'C').toUpperCase()}
+          <div className="flex items-center gap-4">
+            <button className="relative p-2 text-gray-400 hover:text-gray-600 transition-colors">
+              <Bell className="w-5 h-5" />
+              <span className="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500 border border-white"></span>
+            </button>
+            <div className="flex items-center gap-3 pl-4 border-l border-gray-200">
+              <div className="text-right hidden sm:block">
+                <p className="text-sm font-semibold text-gray-900">Alex Client</p>
+                <p className="text-xs text-gray-500">Nova Corp</p>
               </div>
-            )}
-            <div className="text-left text-sm">
-              <div className="font-bold text-white leading-tight">{userProfile ? userProfile.name : 'Client'}</div>
-              <div className="text-xs text-gray-500 leading-tight">{userProfile ? userProfile.email : 'client@company.com'}</div>
+              <img src="https://ui-avatars.com/api/?name=Alex+Client&background=2563eb&color=fff" alt="User" className="w-9 h-9 rounded-full border border-gray-200" />
             </div>
           </div>
         </header>
 
-        {/* Tab Router pages */}
-        <div className="px-8 lg:px-12 max-w-[1500px] w-full mx-auto flex-grow">
-          <AnimatePresence mode="wait">
+        {/* Dashboard Content dynamically rendered based on activeTab */}
+        <AnimatePresence mode="wait">
+           {activeTab === 'overview' && <OverviewTab key="overview" />}
+           {activeTab === 'projects' && <ProjectsTab key="projects" />}
+           {activeTab === 'invoices' && <InvoicesTab key="invoices" />}
+           {activeTab === 'messages' && <MessagesTab key="messages" />}
+           {activeTab === 'settings' && <SettingsTab key="settings" />}
+        </AnimatePresence>
 
-            {/* TAB: CANVAS VIEW */}
-            {activeTab === 'overview' && (
-              <motion.div
-                key="overview"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6"
-              >
-                {/* Upper Project header card (Bento Grid layout) */}
-                <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-8 lg:p-10 relative overflow-hidden backdrop-blur-md">
-                  <div className="absolute top-0 right-0 w-80 h-80 bg-accent-primary/5 rounded-full blur-[80px] -translate-y-1/2 translate-x-1/2 pointer-events-none animate-pulse" />
-
-                  <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 relative z-10">
-                    <div className="flex-1 text-left">
-                      <h2 className="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-1.5">Project Thread</h2>
-                      <h3 className="text-2xl lg:text-3xl font-display font-black leading-tight mb-8 text-white">{DEFAULT_PROJECT_DATA.project}</h3>
-
-                      <div className="flex flex-wrap gap-4">
-                        <div className="bg-[#0d0d12]/60 rounded-2xl px-5 py-4 border border-white/5 flex-grow min-w-[140px]">
-                          <div className="text-gray-500 text-xs mb-1.5 uppercase font-bold tracking-wider">Status</div>
-                          <div className="text-base font-bold flex items-center gap-2 text-white">
-                            <span className="w-2.5 h-2.5 rounded-full bg-accent-primary shadow-[0_0_8px_rgba(0,245,255,0.6)] animate-pulse" />
-                            Phase 3 Active
-                          </div>
-                        </div>
-                        <div className="bg-[#0d0d12]/60 rounded-2xl px-5 py-4 border border-white/5 flex-grow min-w-[140px]">
-                          <div className="text-gray-500 text-xs mb-1.5 uppercase font-bold tracking-wider">Estimated Launch</div>
-                          <div className="text-base font-bold text-white flex items-center gap-2">
-                            <Clock className="w-4 h-4 text-accent-violet" />
-                            <span>Oct 8</span>
-                          </div>
-                        </div>
-                        <div className="bg-[#0d0d12]/60 rounded-2xl px-5 py-4 border border-white/5 flex-grow min-w-[140px]">
-                          <div className="text-gray-500 text-xs mb-1.5 uppercase font-bold tracking-wider">Engine Velocity</div>
-                          <div className="text-base font-bold text-green-400 flex items-center gap-2">
-                            <Zap className="w-4 h-4 text-green-400" />
-                            <span>{currentVelocity}/100</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Progress Circle & Radar Performance components side-by-side */}
-                    <div className="flex items-center gap-8 shrink-0 flex-wrap md:flex-nowrap">
-                      {/* Interactive Radar Chart */}
-                      <RadarPerformanceChart />
-
-                      {/* Progress Circle Arc */}
-                      <div className="relative w-36 h-36 shrink-0 flex items-center justify-center bg-black/20 rounded-full p-2 border border-white/5">
-                        <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                          <circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,0.05)" strokeWidth="6" fill="none" />
-                          <motion.circle
-                            cx="50"
-                            cy="50"
-                            r="42"
-                            stroke="#00F5FF"
-                            strokeWidth="6"
-                            fill="none"
-                            strokeDasharray="263.9"
-                            initial={{ strokeDashoffset: 263.9 }}
-                            animate={{ strokeDashoffset: 263.9 * (1 - (currentVelocity / 150)) }}
-                            transition={{ duration: 1.5, ease: "easeOut" }}
-                            strokeLinecap="round"
-                            className="drop-shadow-[0_0_8px_#00F5FF]"
-                          />
-                        </svg>
-                        <div className="absolute inset-0 flex flex-col items-center justify-center">
-                          <span className="text-2xl font-display font-black text-white">{Math.round((currentVelocity / 150) * 100)}%</span>
-                          <span className="text-[9px] uppercase tracking-wider text-gray-500 font-mono">Pipeline</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Checklist and console logs */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-
-                  {/* Spotlight Card: Action Items */}
-                  <SpotlightCard className="p-6 lg:p-8 text-left">
-                    <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-lg font-bold flex items-center gap-2 text-white">
-                        <CheckSquare className="w-5 h-5 text-accent-primary" /> Action Items
-                      </h3>
-                      {actionItems.filter(i => !i.completed).length > 0 ? (
-                        <span className="bg-accent-secondary/15 text-accent-secondary text-[10px] font-black px-3 py-1 rounded-full border border-accent-secondary/30 uppercase tracking-widest font-mono">
-                          {actionItems.filter(i => !i.completed).length} Pending
-                        </span>
-                      ) : (
-                        <span className="bg-[#00FF87]/15 text-[#00FF87] text-[10px] font-black px-3 py-1 rounded-full border border-[#00FF87]/30 uppercase tracking-widest font-mono">
-                          Cleared
-                        </span>
-                      )}
-                    </div>
-                    <div className="space-y-3">
-                      {actionItems.map((item) => (
-                        <div
-                          key={item.id}
-                          className={`flex items-center justify-between p-4 rounded-2xl border transition-all cursor-pointer group ${item.completed ? 'bg-white/[0.02] border-white/5 opacity-60' : 'bg-[#0d0d12]/60 border-white/5 hover:border-white/20 hover:bg-[#13131a]/80'}`}
-                        >
-                          <div className="flex items-center gap-4 flex-grow mr-2" onClick={() => toggleActionItem(item.id)}>
-                            <div className={`w-5 h-5 rounded-md border flex items-center justify-center transition-all ${item.completed ? 'border-accent-primary bg-accent-primary text-black' : 'border-gray-600 group-hover:border-accent-primary'}`}>
-                              {item.completed && <Check className="w-3.5 h-3.5 stroke-[3]" />}
-                            </div>
-                            <span className={`text-sm font-medium transition-all ${item.completed ? 'line-through text-gray-500' : 'text-gray-300 group-hover:text-white'}`}>
-                              {item.task}
-                            </span>
-                          </div>
-                          <button
-                            onClick={() => openModal('actionItem', item)}
-                            className="p-2 hover:bg-white/5 rounded-lg text-gray-500 hover:text-white transition-all text-xs flex items-center gap-1 font-mono uppercase tracking-wider"
-                          >
-                            Details
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </SpotlightCard>
-
-                  {/* Spotlight Card: Pipeline console */}
-                  <SpotlightCard className="p-6 lg:p-8 text-left">
-                    <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-lg font-bold flex items-center gap-2 text-white">
-                        <Terminal className="w-5 h-5 text-gray-400" /> Pipeline Console
-                      </h3>
-                      <div className="flex gap-2">
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#ff5f56]" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#ffbd2e]" />
-                        <div className="w-2.5 h-2.5 rounded-full bg-[#27c93f]" />
-                      </div>
-                    </div>
-                    <div className="font-mono text-xs text-gray-400 space-y-2 h-48 overflow-y-auto [&::-webkit-scrollbar]:hidden bg-[#040407] p-5 rounded-2xl border border-white/5 flex-grow">
-                      {terminalLogs.map((log, i) => {
-                        let colorClass = "text-gray-400";
-                        if (log.includes("~$")) colorClass = "text-accent-violet font-bold";
-                        else if (log.includes("✓")) colorClass = "text-green-400 font-bold";
-                        else if (log.includes("PASS")) colorClass = "text-green-400";
-                        else if (log.includes("System health")) colorClass = "text-accent-primary";
-                        return <div key={i} className={colorClass}>{log}</div>;
-                      })}
-                    </div>
-                  </SpotlightCard>
-                </div>
-
-                {/* Daily Audio Briefing & Activity log split */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 text-left">
-                  {/* Daily Voice brief player */}
-                  <AudioBriefing />
-
-                  {/* Spotlight Card: Pipeline feeds */}
-                  <SpotlightCard className="p-6 lg:p-8 text-left">
-                    <div className="flex justify-between items-center mb-6">
-                      <h3 className="text-lg font-bold flex items-center gap-2 text-white">
-                        <History className="w-5 h-5 text-accent-violet" /> Pipeline Feed
-                      </h3>
-                    </div>
-                    <div className="space-y-4">
-                      {activityLog.slice(0, 3).map((log, i) => (
-                        <div key={i} className="flex items-center justify-between pb-4 border-b border-white/5 last:border-0 last:pb-0">
-                          <div className="flex items-center gap-4">
-                            <div className="w-9 h-9 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
-                              <Activity className="w-4 h-4 text-accent-primary" />
-                            </div>
-                            <div>
-                              <div className="text-sm font-semibold text-white tracking-tight">{log.action}</div>
-                              <div className="text-[11px] text-gray-500">by {log.author}</div>
-                            </div>
-                          </div>
-                          <span className="text-xs text-gray-500 font-mono">{log.time}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </SpotlightCard>
-                </div>
-              </motion.div>
-            )}
-
-            {/* TAB: INVOICES & CONTRACTS */}
-            {activeTab === 'invoices' && (
-              <motion.div
-                key="invoices"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="space-y-6"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-                  <div className="bg-[#07070a]/60 border border-white/10 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-accent-violet/5 rounded-full blur-2xl pointer-events-none" />
-                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Contract Budget</p>
-                    <p className="text-3xl font-display font-black text-white">{billing.totalBudget}</p>
-                  </div>
-                  <div className="bg-[#07070a]/60 border border-white/10 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-[#00FF87]/5 rounded-full blur-2xl pointer-events-none" />
-                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Total Settled</p>
-                    <p className="text-3xl font-display font-black text-green-400">{billing.paid}</p>
-                  </div>
-                  <div className="bg-[#07070a]/60 border border-white/10 rounded-2xl p-6 backdrop-blur-md relative overflow-hidden">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-accent-secondary/5 rounded-full blur-2xl pointer-events-none" />
-                    <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Outstanding</p>
-                    <p className="text-3xl font-display font-black text-accent-secondary">{billing.outstanding}</p>
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left">
-                  <div className="lg:col-span-2 bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md">
-                    <h3 className="text-lg font-bold flex items-center gap-2 text-white mb-6">
-                      <Receipt className="w-5 h-5 text-accent-primary" /> Invoice Ledger
-                    </h3>
-                    <div className="space-y-4">
-                      {invoices.map((inv) => (
-                        <div key={inv.id} className="p-5 rounded-2xl bg-[#0d0d12]/60 border border-white/5 flex items-center justify-between">
-                          <div className="flex items-center gap-4">
-                            <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                              <FileText className="w-5 h-5 text-gray-400" />
-                            </div>
-                            <div>
-                              <div className="font-bold text-white">{inv.id}</div>
-                              <div className="text-xs text-gray-500">Issued: {inv.date}</div>
-                            </div>
-                          </div>
-                          <div className="flex items-center gap-6">
-                            <div className="text-right">
-                              <div className="font-mono text-base font-bold text-white">{inv.amount}</div>
-                              <div className="mt-1">
-                                <span className={`text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded border ${inv.status === 'Paid' ? 'bg-[#00FF87]/10 text-[#00FF87] border-[#00FF87]/20' : 'bg-accent-secondary/10 text-accent-secondary border-accent-secondary/20'}`}>
-                                  {inv.status}
-                                </span>
-                              </div>
-                            </div>
-                            {inv.status === 'Pending' ? (
-                              <button
-                                onClick={() => openModal('payment')}
-                                className="px-5 py-2.5 bg-accent-primary hover:bg-cyan-400 text-black font-bold rounded-xl transition-all shadow-md text-xs uppercase tracking-wider"
-                              >
-                                Pay Now
-                              </button>
-                            ) : (
-                              <button
-                                onClick={() => toast.success(`Receipt downloaded for ${inv.id}`)}
-                                className="p-2.5 bg-white/5 hover:bg-white/10 rounded-xl text-gray-400 hover:text-white transition-all text-xs flex items-center gap-1 font-mono uppercase tracking-wider"
-                              >
-                                Receipt
-                              </button>
-                            )}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md">
-                    <h3 className="text-lg font-bold flex items-center gap-2 text-white mb-6">
-                      <FileCheck className="w-5 h-5 text-accent-violet" /> Agreements
-                    </h3>
-                    <div className="space-y-4">
-                      {DEFAULT_PROJECT_DATA.recentFiles.slice(0, 2).map((file, i) => (
-                        <div
-                          key={i}
-                          onClick={() => openModal('file', file)}
-                          className="p-4 rounded-xl bg-[#0d0d12]/60 border border-white/5 hover:border-white/20 transition-all cursor-pointer group flex items-center justify-between"
-                        >
-                          <div className="flex items-center gap-3 overflow-hidden">
-                            <div className="w-8 h-8 rounded-lg bg-accent-violet/10 border border-accent-violet/20 text-accent-violet flex items-center justify-center font-bold text-xs shrink-0 font-mono">
-                              PDF
-                            </div>
-                            <div className="overflow-hidden">
-                              <div className="font-semibold text-xs text-white truncate group-hover:text-accent-primary transition-colors">{file.name}</div>
-                              <div className="text-[10px] text-gray-500 mt-0.5">{file.size}</div>
-                            </div>
-                          </div>
-                          <Download className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors" />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            )}
-
-            {/* TAB: TIMELINE MILESTONES */}
-            {activeTab === 'milestones' && (
-              <motion.div
-                key="milestones"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="grid grid-cols-1 lg:grid-cols-3 gap-8 text-left"
-              >
-                <div className="lg:col-span-2 bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md">
-                  <h3 className="text-lg font-bold flex items-center gap-2 text-white mb-8">
-                    <Clock className="w-5 h-5 text-accent-primary" /> Project Milestones
-                  </h3>
-
-                  <div className="relative pl-8 border-l border-white/10 space-y-8 ml-2">
-                    {DEFAULT_PROJECT_DATA.timeline.map((phase) => {
-                      const isActive = phase.id === selectedMilestone;
-                      const isComplete = phase.status === 'completed';
-                      const isInProgress = phase.status === 'in-progress';
-
-                      return (
-                        <div
-                          key={phase.id}
-                          onClick={() => setSelectedMilestone(phase.id)}
-                          className={`relative cursor-pointer transition-all ${isActive ? 'scale-[1.01]' : 'opacity-70 hover:opacity-100'}`}
-                        >
-                          <div className={`absolute top-1.5 -left-[41px] w-6 h-6 rounded-full border-4 border-[#040407] flex items-center justify-center transition-all ${isComplete ? 'bg-[#00FF87]' : isInProgress ? 'bg-accent-primary animate-pulse' : 'bg-gray-800'}`}>
-                            {isComplete && <Check className="w-3 h-3 text-black stroke-[3]" />}
-                          </div>
-
-                          <div className={`p-5 rounded-2xl border transition-all ${isActive ? 'bg-[#0d0d12]/85 border-accent-primary/50 shadow-md shadow-accent-primary/5' : 'bg-[#0d0d12]/40 border-white/5'}`}>
-                            <div className="flex justify-between items-start gap-4 mb-2">
-                              <div>
-                                <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest font-mono">Phase {phase.id}</span>
-                                <h4 className="font-bold text-white text-base mt-0.5 tracking-tight">{phase.title}</h4>
-                              </div>
-                              <span className={`text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${isComplete ? 'bg-[#00FF87]/15 text-[#00FF87]' : isInProgress ? 'bg-accent-primary/15 text-accent-primary' : 'bg-white/5 text-gray-500'}`}>
-                                {phase.status}
-                              </span>
-                            </div>
-                            <p className="text-gray-400 text-xs leading-relaxed max-w-lg">{phase.desc}</p>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                <div className="space-y-6">
-                  {(() => {
-                    const phase = DEFAULT_PROJECT_DATA.timeline.find(t => t.id === selectedMilestone);
-                    const leadInfo = DEFAULT_PROJECT_DATA.team.find(t => t.name === phase.lead);
-                    return (
-                      <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md">
-                        <p className="text-xs text-gray-500 font-bold uppercase tracking-widest mb-1">Milestone Details</p>
-                        <h3 className="text-xl font-bold text-white tracking-tight mb-4">{phase.title}</h3>
-
-                        <div className="space-y-6 mt-6">
-                          <div className="pb-4 border-b border-white/5">
-                            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Date Window</span>
-                            <div className="text-sm font-semibold text-white mt-1">October 1 - {phase.date}</div>
-                          </div>
-
-                          <div className="pb-4 border-b border-white/5">
-                            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Owner Lead</span>
-                            <div className="flex items-center gap-3 mt-2">
-                              <img src={leadInfo?.avatar} alt={phase.lead} className="w-8 h-8 rounded-full border border-white/10" onError={(e) => e.target.src = `https://ui-avatars.com/api/?name=${phase.lead}&background=7B2FFF&color=fff`} />
-                              <div>
-                                <div className="text-xs font-bold text-white">{phase.lead}</div>
-                                <div className="text-[10px] text-gray-500">{leadInfo?.role}</div>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div>
-                            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Deliverables</span>
-                            {phase.deliverables && phase.deliverables.length > 0 ? (
-                              <div className="space-y-2 mt-2">
-                                {phase.deliverables.map((doc, idx) => (
-                                  <div key={idx} className="flex items-center justify-between p-2.5 rounded bg-white/5 border border-white/5 text-xs text-gray-300">
-                                    <span className="truncate">{doc}</span>
-                                    <button
-                                      onClick={() => toast.success(`Downloaded: ${doc}`)}
-                                      className="p-1 hover:bg-white/10 rounded text-accent-primary"
-                                    >
-                                      <Download className="w-3.5 h-3.5" />
-                                    </button>
-                                  </div>
-                                ))}
-                              </div>
-                            ) : (
-                              <div className="text-xs text-gray-500 mt-2 italic">Awaiting phase deliverables</div>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    );
-                  })()}
-                </div>
-              </motion.div>
-            )}
-
-            {/* TAB: COMMUNICATION THREAD */}
-            {activeTab === 'messages' && (
-              <motion.div
-                key="messages"
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="bg-[#07070a]/60 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-md flex h-[620px] max-w-[1200px] mx-auto text-left"
-              >
-                {/* Channels Sidebar list */}
-                <div className="w-64 border-r border-white/10 bg-[#0d0d12]/40 flex flex-col p-4 shrink-0">
-                  <div className="mb-6">
-                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-3 px-2">Project Channels</span>
-                    <div className="space-y-1">
-                      {['#general-project', '#design-feed', '#dev-updates'].map((chan) => (
-                        <button
-                          key={chan}
-                          onClick={() => setActiveChat(chan)}
-                          className={`w-full text-left px-3 py-2 rounded-xl text-xs font-semibold transition-all ${activeChat === chan ? 'bg-accent-primary/10 text-accent-primary border border-accent-primary/20' : 'text-gray-400 hover:text-white hover:bg-white/5 border border-transparent'}`}
-                        >
-                          {chan}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <span className="text-[9px] font-bold text-gray-500 uppercase tracking-widest block mb-3 px-2">Direct Messages</span>
-                    <div className="space-y-1.5">
-                      {DEFAULT_PROJECT_DATA.team.map((member) => (
-                        <button
-                          key={member.name}
-                          onClick={() => setActiveChat(member.name)}
-                          className={`w-full text-left px-3 py-2.5 rounded-xl text-xs transition-all flex items-center gap-3 border ${activeChat === member.name ? 'bg-accent-violet/10 text-white border-accent-violet/30' : 'text-gray-400 hover:text-white hover:bg-white/5 border-transparent'}`}
-                        >
-                          <div className="relative">
-                            <img src={member.avatar} alt={member.name} className="w-6 h-6 rounded-full object-cover border border-white/10" onError={(e) => e.target.src = `https://ui-avatars.com/api/?name=${member.name}&background=7B2FFF&color=fff`} />
-                            <span className="absolute bottom-0 right-0 w-2 h-2 bg-green-500 rounded-full border border-[#0d0d12]" />
-                          </div>
-                          <div>
-                            <div className="font-bold">{member.name}</div>
-                            <div className="text-[9px] text-gray-500 font-light truncate max-w-[120px]">{member.role}</div>
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Messages feeds view */}
-                <div className="flex-1 flex flex-col bg-[#050508]/40 overflow-hidden relative">
-                  <div className="px-6 py-4 border-b border-white/5 flex justify-between items-center bg-[#07070a]/60">
-                    <div>
-                      <h4 className="font-bold text-white text-sm">{activeChat}</h4>
-                      <span className="text-[10px] text-gray-500">Pipeline Communication thread</span>
-                    </div>
-                  </div>
-
-                  <div className="flex-1 overflow-y-auto p-6 space-y-4 [&::-webkit-scrollbar]:hidden flex flex-col">
-                    {(chatMessages[activeChat] || []).map((msg, i) => (
-                      <div key={i} className={`flex flex-col max-w-[70%] ${msg.sender === 'You' ? 'self-end items-end' : 'self-start items-start'}`}>
-                        <div className="flex items-center gap-2 mb-1">
-                          <span className="text-[9px] text-gray-500 font-bold">{msg.sender === 'You' ? 'You' : msg.sender}</span>
-                          <span className="text-[8px] text-gray-500">{msg.time}</span>
-                        </div>
-                        <div className={`px-4 py-2.5 rounded-2xl text-xs leading-relaxed shadow-sm ${msg.sender === 'You' ? 'bg-accent-primary text-black rounded-br-sm font-semibold' : 'bg-[#13131a] text-white border border-white/5 rounded-bl-sm'}`}>
-                          {msg.text}
-                        </div>
-                      </div>
-                    ))}
-
-                    {isTyping && (
-                      <div className="self-start flex flex-col items-start max-w-[70%]">
-                        <span className="text-[9px] text-gray-500 font-bold mb-1">{activeChat.startsWith('#') ? 'Team' : activeChat} is typing</span>
-                        <div className="px-4 py-3 bg-[#13131a] rounded-2xl rounded-bl-sm border border-white/5 flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0s' }} />
-                          <span className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.15s' }} />
-                          <span className="w-1.5 h-1.5 bg-gray-500 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }} />
-                        </div>
-                      </div>
-                    )}
-                    <div ref={chatEndRef} />
-                  </div>
-
-                  <form onSubmit={handleSendMessage} className="p-4 border-t border-white/5 bg-[#07070a]/60 flex gap-3 relative">
-                    <input
-                      type="text"
-                      value={chatInput}
-                      onChange={(e) => setChatInput(e.target.value)}
-                      placeholder={`Send a message to ${activeChat}...`}
-                      className="flex-1 bg-[#0d0d12] border border-white/10 rounded-xl px-4 py-3 text-xs text-white focus:outline-none focus:border-accent-primary transition-all pr-12"
-                    />
-                    <button
-                      type="submit"
-                      disabled={!chatInput.trim()}
-                      className="p-3 bg-accent-primary hover:bg-cyan-400 disabled:opacity-50 text-black font-bold rounded-xl transition-all shadow-md"
-                    >
-                      <SendHorizontal className="w-4 h-4" />
-                    </button>
-                  </form>
-                </div>
-              </motion.div>
-            )}
-
-          </AnimatePresence>
-        </div>
-
-        {/* Dashboard Crew, Deliverables & Helpdesk section */}
-        <div className="px-8 lg:px-12 max-w-[1500px] w-full mx-auto mt-8 shrink-0 text-left">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            {/* Project Crew */}
-            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 backdrop-blur-md flex flex-col justify-between">
-              <div>
-                <h3 className="text-sm font-bold flex items-center gap-2 text-white mb-4">
-                  <Users className="w-4 h-4 text-accent-violet" /> Project Crew
-                </h3>
-                <div className="space-y-3">
-                  {DEFAULT_PROJECT_DATA.team.map((member, i) => (
-                    <div
-                      key={i}
-                      onClick={() => openModal('teamMember', member)}
-                      className="flex items-center gap-3 cursor-pointer p-1.5 -mx-1.5 rounded-xl hover:bg-white/5 transition-all group"
-                    >
-                      <img src={member.avatar} alt={member.name} className="w-8 h-8 rounded-full object-cover border border-white/10" onError={(e) => e.target.src = `https://ui-avatars.com/api/?name=${member.name}&background=7B2FFF&color=fff`} />
-                      <div className="flex-1 overflow-hidden">
-                        <div className="text-xs font-bold text-white group-hover:text-accent-primary transition-colors">{member.name}</div>
-                        <div className="text-[10px] text-gray-500 truncate">{member.role}</div>
-                      </div>
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Deliverables */}
-            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 backdrop-blur-md flex flex-col justify-between">
-              <div>
-                <h3 className="text-sm font-bold flex items-center gap-2 text-white mb-4">
-                  <File className="w-4 h-4 text-accent-secondary" /> Deliverables
-                </h3>
-                <div className="space-y-3">
-                  {DEFAULT_PROJECT_DATA.recentFiles.map((file, i) => (
-                    <div
-                      key={i}
-                      onClick={() => openModal('file', file)}
-                      className="flex items-center justify-between p-2 bg-[#0d0d12]/40 rounded-xl border border-white/5 cursor-pointer hover:border-white/15 transition-all group"
-                    >
-                      <span className="text-xs text-gray-300 group-hover:text-accent-primary transition-colors truncate max-w-[180px]">{file.name}</span>
-                      <Download className="w-3.5 h-3.5 text-gray-500 group-hover:text-white transition-colors shrink-0 ml-2" />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Project Helpdesk */}
-            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 backdrop-blur-md flex flex-col justify-between">
-              <div>
-                <h3 className="text-sm font-bold flex items-center gap-2 text-white mb-4">
-                  <HelpCircle className="w-4 h-4 text-accent-primary" /> Project Helpdesk
-                </h3>
-                <div className="space-y-3">
-                  {supportTickets.map((ticket, i) => (
-                    <div
-                      key={i}
-                      onClick={() => openModal('ticket', ticket)}
-                      className="p-3 bg-[#0d0d12]/40 border border-white/5 rounded-xl cursor-pointer hover:border-white/15 transition-all flex justify-between items-center"
-                    >
-                      <div className="overflow-hidden mr-2">
-                        <div className="text-xs font-bold text-gray-300 truncate">{ticket.subject}</div>
-                        <div className="text-[10px] text-gray-500 font-mono mt-0.5">{ticket.id}</div>
-                      </div>
-                      <span className={`text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded border ${ticket.status === 'Open' ? 'bg-accent-secondary/15 text-accent-secondary border-accent-secondary/25' : 'bg-green-500/15 text-green-400 border-green-500/25'}`}>
-                        {ticket.status}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* Live Infrastructure & Integrations */}
-        <div className="px-8 lg:px-12 max-w-[1500px] w-full mx-auto mt-8 mb-12 shrink-0 text-left">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            {/* Live Environment Status */}
-            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md relative overflow-hidden group">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[#00FF87]/5 rounded-full blur-2xl group-hover:bg-[#00FF87]/10 transition-colors pointer-events-none" />
-              <div className="flex justify-between items-center mb-6 relative z-10">
-                <h3 className="text-sm font-bold flex items-center gap-2 text-white uppercase tracking-widest font-mono">
-                  <Server className="w-4 h-4 text-[#00FF87]" /> Server Diagnostics
-                </h3>
-                <div className="flex items-center gap-2 px-3 py-1 bg-[#00FF87]/10 border border-[#00FF87]/20 rounded-full">
-                  <span className="w-2 h-2 rounded-full bg-[#00FF87] animate-pulse shadow-[0_0_8px_#00FF87]" />
-                  <span className="text-[10px] text-[#00FF87] font-bold uppercase tracking-widest">Optimal</span>
-                </div>
-              </div>
-              <div className="grid grid-cols-3 gap-4 relative z-10">
-                <div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Uptime</div>
-                  <div className="text-xl font-mono font-bold text-white">99.99%</div>
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Latency</div>
-                  <div className="text-xl font-mono font-bold text-white">24ms</div>
-                </div>
-                <div>
-                  <div className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mb-1">Region</div>
-                  <div className="text-xl font-mono font-bold text-white">US-East</div>
-                </div>
-              </div>
-              <div className="mt-6 pt-6 border-t border-white/5 relative z-10">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Live Traffic Flow</span>
-                  <span className="text-[10px] text-accent-primary font-mono">~45req/s</span>
-                </div>
-                <div className="h-12 w-full flex items-end gap-1">
-                  {[...Array(24)].map((_, i) => (
-                    <div key={i} className="flex-1 bg-accent-primary/20 rounded-t-sm" style={{ height: `${Math.max(20, Math.random() * 100)}%` }}>
-                      <div className="w-full bg-accent-primary rounded-t-sm" style={{ height: '4px' }} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Connected Integrations */}
-            <div className="bg-[#07070a]/60 border border-white/10 rounded-3xl p-6 lg:p-8 backdrop-blur-md relative overflow-hidden group">
-              <div className="absolute bottom-0 right-0 w-32 h-32 bg-accent-violet/5 rounded-full blur-2xl group-hover:bg-accent-violet/10 transition-colors pointer-events-none" />
-              <div className="flex justify-between items-center mb-6 relative z-10">
-                <h3 className="text-sm font-bold flex items-center gap-2 text-white uppercase tracking-widest font-mono">
-                  <Wifi className="w-4 h-4 text-accent-violet" /> Pipeline Integrations
-                </h3>
-              </div>
-              <div className="space-y-3 relative z-10">
-                {[
-                  { name: 'GitHub Architecture', status: 'Synced', time: '2m ago', color: 'text-white', dot: 'bg-white' },
-                  { name: 'Vercel Edge Network', status: 'Live', time: '1h ago', color: 'text-white', dot: 'bg-[#00FF87]' },
-                  { name: 'Stripe Billing API', status: 'Active', time: 'Updated', color: 'text-accent-secondary', dot: 'bg-accent-secondary' },
-                  { name: 'Figma Design System', status: 'Connected', time: 'Live', color: 'text-accent-primary', dot: 'bg-accent-primary' }
-                ].map((int, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-2xl bg-[#0d0d12]/60 border border-white/5 hover:border-white/20 transition-all cursor-pointer">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
-                        <Database className="w-4 h-4 text-gray-400" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-bold text-white">{int.name}</div>
-                        <div className="text-[10px] text-gray-500 font-mono mt-0.5">Last ping: {int.time}</div>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className={`text-xs font-bold ${int.color}`}>{int.status}</span>
-                      <span className={`w-1.5 h-1.5 rounded-full ${int.dot}`} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-          </div>
-        </div>
-
+        {/* Floating AI Concierge */}
+        <AIConcierge />
       </main>
     </div>
   );

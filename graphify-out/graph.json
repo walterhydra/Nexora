@@ -1228,19 +1228,19 @@
       "norm_label": "services.jsx"
     },
     {
-      "label": "ServiceRow()",
+      "label": "iconMap",
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
-      "source_location": "L10",
-      "id": "sections_services_servicerow",
+      "source_location": "L8",
+      "id": "sections_services_iconmap",
       "community": 3,
-      "norm_label": "servicerow()"
+      "norm_label": "iconmap"
     },
     {
       "label": "Services()",
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
-      "source_location": "L103",
+      "source_location": "L12",
       "id": "sections_services_services",
       "community": 3,
       "norm_label": "services()"
@@ -1510,7 +1510,7 @@
       "label": "Work()",
       "file_type": "code",
       "source_file": "src/components/sections/Work.jsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "sections_work_work",
       "community": 4,
       "norm_label": "work()"
@@ -1915,7 +1915,7 @@
       "label": "projects",
       "file_type": "code",
       "source_file": "src/constants/projects.js",
-      "source_location": "L1",
+      "source_location": "L8",
       "id": "constants_projects_projects",
       "community": 4,
       "norm_label": "projects"
@@ -2146,118 +2146,82 @@
       "norm_label": "clientportal.jsx"
     },
     {
-      "label": "ParticleBackground()",
+      "label": "LivePulseFeed()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L18",
-      "id": "pages_clientportal_particlebackground",
+      "source_location": "L12",
+      "id": "pages_clientportal_livepulsefeed",
       "community": 7,
-      "norm_label": "particlebackground()"
+      "norm_label": "livepulsefeed()"
     },
     {
-      "label": "SpotlightCard()",
+      "label": "InteractiveInvoice()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L128",
-      "id": "pages_clientportal_spotlightcard",
+      "source_location": "L84",
+      "id": "pages_clientportal_interactiveinvoice",
       "community": 7,
-      "norm_label": "spotlightcard()"
+      "norm_label": "interactiveinvoice()"
     },
     {
-      "label": "DevWebcam()",
+      "label": "AIConcierge()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L171",
-      "id": "pages_clientportal_devwebcam",
+      "source_location": "L193",
+      "id": "pages_clientportal_aiconcierge",
       "community": 7,
-      "norm_label": "devwebcam()"
+      "norm_label": "aiconcierge()"
     },
     {
-      "label": "AudioBriefing()",
+      "label": "OverviewTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L219",
-      "id": "pages_clientportal_audiobriefing",
+      "source_location": "L413",
+      "id": "pages_clientportal_overviewtab",
       "community": 7,
-      "norm_label": "audiobriefing()"
+      "norm_label": "overviewtab()"
     },
     {
-      "label": "RadarPerformanceChart()",
+      "label": "ProjectsTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L287",
-      "id": "pages_clientportal_radarperformancechart",
+      "source_location": "L493",
+      "id": "pages_clientportal_projectstab",
       "community": 7,
-      "norm_label": "radarperformancechart()"
+      "norm_label": "projectstab()"
     },
     {
-      "label": "GoogleLoginButton()",
+      "label": "InvoicesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L420",
-      "id": "pages_clientportal_googleloginbutton",
+      "source_location": "L535",
+      "id": "pages_clientportal_invoicestab",
       "community": 7,
-      "norm_label": "googleloginbutton()"
+      "norm_label": "invoicestab()"
     },
     {
-      "label": "ClientPasscard()",
+      "label": "MessagesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L549",
-      "id": "pages_clientportal_clientpasscard",
+      "source_location": "L584",
+      "id": "pages_clientportal_messagestab",
       "community": 7,
-      "norm_label": "clientpasscard()"
+      "norm_label": "messagestab()"
     },
     {
-      "label": "BiometricScanner()",
+      "label": "SettingsTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L656",
-      "id": "pages_clientportal_biometricscanner",
+      "source_location": "L649",
+      "id": "pages_clientportal_settingstab",
       "community": 7,
-      "norm_label": "biometricscanner()"
-    },
-    {
-      "label": "DiagnosticsLogs()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L732",
-      "id": "pages_clientportal_diagnosticslogs",
-      "community": 7,
-      "norm_label": "diagnosticslogs()"
-    },
-    {
-      "label": "Modal()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L779",
-      "id": "pages_clientportal_modal",
-      "community": 7,
-      "norm_label": "modal()"
-    },
-    {
-      "label": "DEFAULT_PROJECT_DATA",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L817",
-      "id": "pages_clientportal_default_project_data",
-      "community": 7,
-      "norm_label": "default_project_data"
-    },
-    {
-      "label": "LOG_POOL",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L849",
-      "id": "pages_clientportal_log_pool",
-      "community": 7,
-      "norm_label": "log_pool"
+      "norm_label": "settingstab()"
     },
     {
       "label": "ClientPortal()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L868",
+      "source_location": "L686",
       "id": "pages_clientportal_clientportal",
       "community": 7,
       "norm_label": "clientportal()"
@@ -2648,6 +2612,141 @@
       "id": "workflows_graphify_workflow_graphify",
       "community": 26,
       "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "ServiceCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L19",
+      "community": 3,
+      "norm_label": "servicecard()",
+      "id": "sections_services_servicecard"
+    },
+    {
+      "label": "bentoClasses",
+      "file_type": "code",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L19",
+      "community": 3,
+      "norm_label": "bentoclasses",
+      "id": "sections_services_bentoclasses"
+    },
+    {
+      "label": "ServiceRow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L10",
+      "community": 3,
+      "norm_label": "servicerow()",
+      "id": "sections_services_servicerow"
+    },
+    {
+      "label": "ParticleBackground()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L18",
+      "community": 7,
+      "norm_label": "particlebackground()",
+      "id": "pages_clientportal_particlebackground"
+    },
+    {
+      "label": "SpotlightCard()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L128",
+      "community": 7,
+      "norm_label": "spotlightcard()",
+      "id": "pages_clientportal_spotlightcard"
+    },
+    {
+      "label": "DevWebcam()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L171",
+      "community": 7,
+      "norm_label": "devwebcam()",
+      "id": "pages_clientportal_devwebcam"
+    },
+    {
+      "label": "AudioBriefing()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L219",
+      "community": 7,
+      "norm_label": "audiobriefing()",
+      "id": "pages_clientportal_audiobriefing"
+    },
+    {
+      "label": "RadarPerformanceChart()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L287",
+      "community": 7,
+      "norm_label": "radarperformancechart()",
+      "id": "pages_clientportal_radarperformancechart"
+    },
+    {
+      "label": "GoogleLoginButton()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L420",
+      "community": 7,
+      "norm_label": "googleloginbutton()",
+      "id": "pages_clientportal_googleloginbutton"
+    },
+    {
+      "label": "ClientPasscard()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L549",
+      "community": 7,
+      "norm_label": "clientpasscard()",
+      "id": "pages_clientportal_clientpasscard"
+    },
+    {
+      "label": "BiometricScanner()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L656",
+      "community": 7,
+      "norm_label": "biometricscanner()",
+      "id": "pages_clientportal_biometricscanner"
+    },
+    {
+      "label": "DiagnosticsLogs()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L732",
+      "community": 7,
+      "norm_label": "diagnosticslogs()",
+      "id": "pages_clientportal_diagnosticslogs"
+    },
+    {
+      "label": "Modal()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L779",
+      "community": 7,
+      "norm_label": "modal()",
+      "id": "pages_clientportal_modal"
+    },
+    {
+      "label": "DEFAULT_PROJECT_DATA",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L817",
+      "community": 7,
+      "norm_label": "default_project_data",
+      "id": "pages_clientportal_default_project_data"
+    },
+    {
+      "label": "LOG_POOL",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L849",
+      "community": 7,
+      "norm_label": "log_pool",
+      "id": "pages_clientportal_log_pool"
     },
     {
       "label": "TiltCard()",
@@ -4673,6 +4772,36 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "sections_services_bentoclasses"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "sections_services_iconmap"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_services_jsx",
+      "target": "sections_services_servicecard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Services.jsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5853,6 +5982,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L193",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_aiconcierge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L219",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5933,11 +6072,51 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L84",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_interactiveinvoice"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L535",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_invoicestab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_livepulsefeed"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L849",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
       "target": "pages_clientportal_log_pool"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L584",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_messagestab"
     },
     {
       "relation": "contains",
@@ -5953,6 +6132,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L413",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_overviewtab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5963,11 +6152,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L493",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_projectstab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L287",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
       "target": "pages_clientportal_radarperformancechart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L649",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_settingstab"
     },
     {
       "relation": "contains",
@@ -6284,5 +6493,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "26165ee928590bcd7267af170ff4c5295765668c"
+  "built_at_commit": "7e03683887eaf9697c8cb23bf14e2cbb82345ccf"
 }

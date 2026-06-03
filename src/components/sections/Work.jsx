@@ -40,18 +40,18 @@ export default function Work() {
   }, []);
 
   return (
-    <section 
-      id="work" 
+    <section
+      id="work"
       className="relative bg-black text-white"
     >
       {/* Sticky Background Image that changes on scroll */}
       <div className="absolute inset-0 z-0">
         <div className="sticky top-0 w-full h-screen overflow-hidden pointer-events-none bg-black">
           <AnimatePresence>
-            <motion.img 
+            <motion.img
               key={`bg-${activeIndex}`}
-              src={projects[activeIndex]?.image} 
-              alt={projects[activeIndex]?.title} 
+              src={projects[activeIndex]?.image}
+              alt={projects[activeIndex]?.title}
               initial={{ opacity: 0, scale: 1 }}
               animate={{ opacity: 0.3, scale: 1.05 }}
               exit={{ opacity: 0, scale: 1 }}
@@ -74,7 +74,7 @@ export default function Work() {
             </span>
           </div>
           <h2 className="text-5xl md:text-7xl lg:text-9xl font-display font-black tracking-tighter uppercase">
-            Selected <br/>
+            Selected <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/80 italic font-light">Works</span>
           </h2>
         </div>
@@ -82,29 +82,28 @@ export default function Work() {
         {/* The List Layout */}
         <div className="w-full border-t border-white/10 flex flex-col">
           {projects.map((project, index) => (
-            <div 
+            <div
               key={project.id}
               data-index={index}
               onMouseEnter={() => setActiveIndex(index)}
               onClick={() => window.open(project.link, "_blank")}
-              className={`work-item group relative flex flex-col md:flex-row md:items-center justify-between py-12 md:py-20 border-b border-white/10 cursor-pointer overflow-hidden px-4 md:px-6 transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] ${
-                index === activeIndex ? "opacity-100 bg-white/5" : "opacity-40 hover:opacity-70"
-              }`}
+              className={`work-item group relative flex flex-col md:flex-row md:items-center justify-between py-12 md:py-20 border-b border-white/10 cursor-pointer overflow-hidden px-4 md:px-6 transition-all duration-700 ease-[cubic-bezier(0.33,1,0.68,1)] ${index === activeIndex ? "opacity-100 bg-white/5" : "opacity-40 hover:opacity-70"
+                }`}
             >
               {/* Left Side: Number, Title */}
               <div className="relative z-10 flex items-center gap-6 md:gap-12 flex-1 pointer-events-none">
                 <span className={`font-mono text-sm md:text-xl min-w-[2rem] transition-colors duration-500 ${index === activeIndex ? "text-white/80" : "text-white/20"}`}>
                   {String(index + 1).padStart(2, '0')}
                 </span>
-                
+
                 <h3 className={`text-4xl md:text-5xl lg:text-7xl font-display font-medium tracking-tight transition-all duration-500 ${index === activeIndex ? "text-white translate-x-4" : "text-white/70 group-hover:text-white/90"}`}>
                   {project.title}
                 </h3>
               </div>
-              
+
               {/* Right Side: Category, Tags, Arrow */}
               <div className="relative z-10 flex items-center gap-6 justify-between md:justify-end w-full md:w-auto mt-6 md:mt-0 pointer-events-none">
-                
+
                 {/* Tags */}
                 <div className={`hidden lg:flex items-center gap-2 mr-4 transition-all duration-700 ${index === activeIndex ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}>
                   {project.tags.slice(0, 2).map((tag, i) => (
@@ -122,10 +121,9 @@ export default function Work() {
                     {project.result}
                   </span>
                 </div>
-                
-                <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full border flex items-center justify-center transition-all duration-500 flex-shrink-0 ${
-                  index === activeIndex ? "bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)]" : "border-white/10 shadow-[0_0_0_0_rgba(255,255,255,0)]"
-                }`}>
+
+                <div className={`w-12 h-12 md:w-16 md:h-16 rounded-full border flex items-center justify-center transition-all duration-500 flex-shrink-0 ${index === activeIndex ? "bg-white text-black border-white shadow-[0_0_20px_rgba(255,255,255,0.3)]" : "border-white/10 shadow-[0_0_0_0_rgba(255,255,255,0)]"
+                  }`}>
                   <ArrowUpRight className={`w-5 h-5 md:w-6 md:h-6 transition-transform duration-500 ${index === activeIndex ? "rotate-45" : ""}`} />
                 </div>
               </div>
