@@ -1,0 +1,221 @@
+/* ==========================================================================
+   GLOBAL SAFEGUARDS
+   ========================================================================== */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   TABLET & MOBILE (Max-Width: 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  
+  /* --- Typography Scaling --- */
+  h1 { font-size: clamp(2.5rem, 8vw, 4rem) !important; }
+  h2 { font-size: clamp(2rem, 6vw, 3.5rem) !important; }
+  h3 { font-size: clamp(1.5rem, 5vw, 2.5rem) !important; }
+
+  /* --- Navbar Tap Targets --- */
+  nav button.w-10.h-10,
+  .fixed.inset-0.z-\[100\] button.w-10.h-10 {
+    width: 44px !important;
+    height: 44px !important;
+  }
+
+  /* --- Team Section Fix (Vertical Stacking) --- */
+  #team .flex-1.flex.w-full {
+    flex-direction: column !important;
+  }
+  
+  #team .flex-1.flex.w-full > div {
+    min-width: 100% !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  #team .flex-1.flex.w-full > div > .absolute.top-1\/2.left-1\/2 {
+    top: 0 !important;
+    left: 20px !important;
+    transform: translateY(0) !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  
+  #team .flex-1.flex.w-full > div > .absolute.top-1\/2.left-1\/2 > .flex-col {
+    flex-direction: row !important;
+    gap: 16px !important;
+  }
+  
+  #team .flex-1.flex.w-full > div .-rotate-90 {
+    transform: none !important;
+  }
+
+  /* --- Services Section Fix --- */
+  #services .min-w-\[250px\] {
+    min-width: 100% !important;
+  }
+
+  /* --- 1. Mobile Menu Tweaks (Photo 1) --- */
+  .fixed.inset-0.z-\[100\] .text-4xl {
+    font-size: 2.25rem !important; /* Smaller menu links */
+  }
+  .fixed.inset-0.z-\[100\] .py-4 {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  /* --- 2. Laptop Mockup Legibility (Photo 1) --- */
+  .aspect-\[16\/10\] .w-3\/5,
+  .aspect-\[16\/10\] .w-2\/5 {
+    padding: 0.25rem !important;
+  }
+  .aspect-\[16\/10\] .text-\[10px\] {
+    font-size: 7px !important; /* Larger code text */
+    line-height: 1.5 !important;
+  }
+  .aspect-\[16\/10\] .w-2\/5 > div {
+    /* Scale phone down heavily to prevent vertical cutoff in laptop frame */
+    transform: scale(0.6) !important;
+    transform-origin: center center !important;
+  }
+
+  /* --- 3. TrustBadges Alignment (Photo 3) --- */
+  /* Make the 5th item (Free Audit) span both columns and center */
+  .grid.grid-cols-2 > div:last-child:nth-child(5) {
+    grid-column: span 2 / span 2 !important;
+    justify-self: center !important;
+    width: 65% !important;
+  }
+
+  /* --- 4. Stats True Horizontal Rectangle (Photo 2) --- */
+  .sticky.min-h-\[40vh\] {
+    aspect-ratio: auto !important;
+    min-height: 130px !important;
+    height: auto !important; 
+    padding: 1.25rem 1.5rem !important; /* Balanced padding */
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Force side-by-side layout on mobile */
+  /* FIX: .relative.z-10 and .flex-col are on the same element */
+  .sticky.min-h-\[40vh\] > .relative.z-10.flex-col {
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important; 
+    height: auto !important; 
+  }
+  
+  /* Left side (Title & Icon) gets slightly more room */
+  .sticky.min-h-\[40vh\] > .relative.z-10.flex-col > .flex-1.w-full:first-child {
+    width: auto !important;
+    flex: 1 1 60% !important;
+  }
+
+  /* Right side (Number) gets remaining space and forces right alignment */
+  .sticky.min-h-\[40vh\] > .relative.z-10.flex-col > .flex-1.w-full:last-child {
+    width: auto !important;
+    flex: 1 1 40% !important;
+    justify-content: flex-end !important;
+  }
+
+  /* Hide the description paragraph on mobile to allow a horizontal shape */
+  .sticky.min-h-\[40vh\] p {
+    display: none !important;
+  }
+
+  /* Make the icon block smaller */
+  .sticky.min-h-\[40vh\] .w-14.h-14 {
+    width: 2.25rem !important;
+    height: 2.25rem !important;
+  }
+  .sticky.min-h-\[40vh\] .w-14.h-14 svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .sticky.min-h-\[40vh\] .mb-6 {
+    margin-bottom: 0.5rem !important; /* Tidy gap */
+  }
+  
+  .sticky.min-h-\[40vh\] .text-2xl {
+    font-size: 1.15rem !important; 
+    line-height: 1.25 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Giant number text */
+  .sticky.min-h-\[40vh\] .text-6xl {
+    font-size: 2.75rem !important; 
+    line-height: 1 !important;
+    text-align: right !important;
+    width: 100% !important;
+  }
+
+  /* --- 5. Footer Navigation Side-by-Side (Photo 3) --- */
+  footer .grid-cols-1 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+  footer .grid-cols-1 > div:first-child {
+    grid-column: span 2 / span 2 !important; /* Keep brand info full width */
+    margin-bottom: 1rem !important;
+  }
+
+  /* --- 6. Email Overflow Fix (Photo 5) --- */
+  .text-lg.font-medium, a[href^="mailto:"] {
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* --- Floating Buttons & Footer Space --- */
+  .fixed.bottom-6.left-6 {
+    bottom: 16px !important;
+    left: 16px !important;
+    transform: scale(0.8) !important;
+    transform-origin: bottom left !important;
+    z-index: 9999 !important;
+  }
+  
+  .fixed.bottom-6.right-6 {
+    bottom: 16px !important;
+    right: 16px !important;
+    transform: scale(0.8) !important;
+    transform-origin: bottom right !important;
+    z-index: 9999 !important;
+  }
+  
+  footer {
+    padding-bottom: 80px !important;
+  }
+}
+
+/* ==========================================================================
+   SMALL PHONES (Max-Width: 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  
+  /* --- Tighten Typography & Spacing --- */
+  h1 { font-size: clamp(2rem, 10vw, 2.5rem) !important; line-height: 1.1 !important; }
+  h2 { font-size: clamp(1.75rem, 8vw, 2rem) !important; line-height: 1.2 !important; }
+  h3 { font-size: clamp(1.25rem, 6vw, 1.5rem) !important; line-height: 1.3 !important; }
+  
+  p { font-size: 0.95rem !important; }
+
+  /* Reduce massive paddings on small screens */
+  .py-24, .py-32, section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+  .px-6, .px-8 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

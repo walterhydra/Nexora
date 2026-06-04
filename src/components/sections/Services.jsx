@@ -32,7 +32,7 @@ export default function Services() {
             What We <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-purple-500">Build</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            A comprehensive suite of digital services designed to scale your business. Hover over a panel to explore.
+            A comprehensive suite of digital services designed to scale your business. Tap a panel to explore.
           </motion.p>
         </motion.div>
 
