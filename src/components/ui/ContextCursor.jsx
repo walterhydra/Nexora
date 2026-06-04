@@ -108,6 +108,7 @@ export default function ContextCursor() {
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
+          willChange: 'transform'
         }}
         variants={variants}
         animate={cursorType}
@@ -124,7 +125,8 @@ export default function ContextCursor() {
           y: cursorY,
           translateX: '-50%',
           translateY: '-50%',
-          opacity: ['default', 'link'].includes(cursorType) ? 1 : 0
+          opacity: ['default', 'link'].includes(cursorType) ? 1 : 0,
+          willChange: 'transform, opacity'
         }}
         transition={{ duration: 0.15 }}
       />

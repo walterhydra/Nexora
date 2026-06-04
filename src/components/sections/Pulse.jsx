@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import { Activity, Globe, Cpu, Zap, Shield, BarChart3 } from 'lucide-react';
 
-const PulseCard = ({ icon: Icon, title, value, unit, color, delay }) => {
+const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) => {
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
@@ -71,7 +71,7 @@ const PulseCard = ({ icon: Icon, title, value, unit, color, delay }) => {
       </div>
     </motion.div>
   );
-};
+});
 
 export default function Pulse() {
   const [pulseTime, setPulseTime] = useState(new Date());
@@ -143,6 +143,7 @@ export default function Pulse() {
                     repeat: Infinity,
                     delay: i * 1.3,
                   }}
+                  style={{ willChange: "transform, opacity" }}
                   className="absolute w-full h-full rounded-full border border-accent-primary/20"
                 />
               ))}
@@ -197,6 +198,7 @@ export default function Pulse() {
         <motion.div
           animate={{ x: [0, -1000] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+          style={{ willChange: "transform" }}
           className="flex gap-12 whitespace-nowrap"
         >
           {[...Array(10)].map((_, i) => (

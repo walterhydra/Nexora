@@ -63,10 +63,30 @@ export default function Services() {
                 <motion.img 
                   src={service.image}
                   className="absolute inset-0 w-full h-full object-cover origin-center"
+                  style={{ willChange: "transform" }}
                   initial={false}
                   animate={{ 
                     scale: isActive ? 1.05 : 1.2,
-                    filter: isActive ? 'grayscale(0%) brightness(0.9)' : isHoveringAny ? 'grayscale(80%) brightness(0.3)' : 'grayscale(50%) brightness(0.6)'
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                />
+
+                {/* Opacity Overlay replacing CSS Filter */}
+                <motion.div
+                  className="absolute inset-0 bg-black pointer-events-none mix-blend-color"
+                  style={{ willChange: "opacity" }}
+                  initial={false}
+                  animate={{
+                    opacity: isActive ? 0 : (isHoveringAny ? 0.8 : 0.5)
+                  }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                />
+                <motion.div
+                  className="absolute inset-0 bg-black pointer-events-none"
+                  style={{ willChange: "opacity" }}
+                  initial={false}
+                  animate={{
+                    opacity: isActive ? 0.1 : (isHoveringAny ? 0.6 : 0.3)
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />

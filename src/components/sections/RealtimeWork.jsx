@@ -1,5 +1,33 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef, useEffect } from 'react';
+import { motion, useInView } from 'framer-motion';
+
+const VideoPlayer = ({ src, className }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, margin: "200px" });
+
+  useEffect(() => {
+    if (ref.current) {
+      if (isInView) {
+        ref.current.play().catch(e => console.log('Autoplay blocked:', e));
+      } else {
+        ref.current.pause();
+      }
+    }
+  }, [isInView]);
+
+  return (
+    <video 
+      ref={ref}
+      src={src}
+      autoPlay
+      loop 
+      muted 
+      playsInline
+      className={className}
+      style={{ willChange: "transform" }}
+    />
+  );
+};
 import { ArrowUpRight, Database, Code, Server, Zap, Compass, Factory, Sun } from 'lucide-react';
 
 const showcaseProjects = [
@@ -122,12 +150,8 @@ export default function RealtimeWork() {
                       
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none z-10" />
                       
-                      <video 
+                      <VideoPlayer 
                         src={project.videoPath}
-                        autoPlay 
-                        loop 
-                        muted 
-                        playsInline
                         className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
                       />
                       

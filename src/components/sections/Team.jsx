@@ -47,8 +47,11 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
       onMouseLeave={onMouseLeave}
       className="relative h-full min-w-[60px] md:min-w-[80px] border-r border-white/10 group cursor-pointer overflow-hidden"
       animate={{
-        flex: isActive ? (window.innerWidth > 768 ? 6 : 10) : 1,
         backgroundColor: isActive ? darkColor : '#0a0a0a'
+      }}
+      style={{ 
+        flex: isActive ? (window.innerWidth > 768 ? 6 : 10) : 1,
+        willChange: "transform, background-color" 
       }}
       transition={{
         type: "spring",
@@ -56,7 +59,6 @@ const TeamMember = ({ member, index, isActive, onMouseEnter, onMouseLeave }) => 
         damping: 25,
         mass: 0.5
       }}
-      style={{ willChange: "flex, background-color" }}
     >
       {/* Background Image Overlay (only visible when expanded) */}
       <AnimatePresence>

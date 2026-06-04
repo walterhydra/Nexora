@@ -42,7 +42,7 @@ const PageLoader = () => (
 
 // Animated Routes Component to handle location
 import { useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
 
 function AnimatedRoutes() {
   return (
@@ -70,7 +70,7 @@ function AppContent() {
   const isPortal = location.pathname.startsWith('/portal');
 
   return (
-    <>
+    <LazyMotion features={domAnimation}>
       <ScrollToTop />
       <Helmet>
         <title>Nexora Studio | 7-Day Web & App Development</title>
@@ -102,7 +102,7 @@ function AppContent() {
           },
         }}
       />
-    </>
+    </LazyMotion>
   );
 }
 

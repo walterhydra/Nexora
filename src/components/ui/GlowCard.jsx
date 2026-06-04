@@ -1,23 +1,37 @@
 import React, { useRef } from 'react';
 import { cn } from '../../utils/cn';
 
-export default function GlowCard({ children, className }) {
+const GlowCard = React.memo(({ children, className }) => {
   const cardRef = useRef(null);
+  const rectRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    if (cardRef.current) {
+      rectRef.current = cardRef.current.getBoundingClientRect();
+    }
+  };
 
   const handleMouseMove = (e) => {
     if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    if (!rectRef.current) rectRef.current = cardRef.current.getBoundingClientRect();
+    const x = e.clientX - rectRef.current.left;
+    const y = e.clientY - rectRef.current.top;
     
     cardRef.current.style.setProperty('--mouse-x', `${x}px`);
     cardRef.current.style.setProperty('--mouse-y', `${y}px`);
   };
 
+  const handleMouseLeave = () => {
+    rectRef.current = null;
+  };
+
   return (
     <div
       ref={cardRef}
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ willChange: "transform" }}
       className={cn(
         "relative overflow-hidden rounded-2xl p-[1px] group",
         className
@@ -33,4 +47,6 @@ export default function GlowCard({ children, className }) {
       </div>
     </div>
   );
-}
+});
+
+export default GlowCard;

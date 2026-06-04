@@ -36,7 +36,7 @@ export default function ScrollVelocityText({ text, baseVelocity = 5, className =
 
   return (
     <div className={`overflow-hidden whitespace-nowrap flex flex-nowrap m-0 ${className}`}>
-      <motion.div className="flex whitespace-nowrap flex-nowrap" style={{ x }}>
+      <motion.div className="flex whitespace-nowrap flex-nowrap" style={{ x, willChange: "transform" }}>
         <span className="block mr-8">{text} </span>
         <span className="block mr-8">{text} </span>
         <span className="block mr-8">{text} </span>

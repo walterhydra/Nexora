@@ -1,30 +1,36 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { testimonials } from '../../constants/testimonials';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import GlowCard from '../ui/GlowCard';
 import MarqueeStrip from '../layout/MarqueeStrip';
 import { Quote, Star, ArrowRight, CheckCircle2 } from 'lucide-react';
 
-const ClientVoiceVisualizer = () => (
-  <div className="flex gap-[2px] items-center h-4">
-    {[...Array(5)].map((_, i) => (
-      <motion.div
-        key={i}
-        animate={{
-          height: [4, 12, 4, 8, 4],
-        }}
-        transition={{
-          duration: 1.5,
-          repeat: Infinity,
-          delay: i * 0.1,
-          ease: "easeInOut",
-        }}
-        className="w-[2px] bg-accent-primary/40 rounded-full"
-      />
-    ))}
-  </div>
-);
+const ClientVoiceVisualizer = () => {
+  const ref = React.useRef(null);
+  const isInView = useInView(ref, { once: false });
+
+  return (
+    <div ref={ref} className="flex gap-[2px] items-center h-4">
+      {[...Array(5)].map((_, i) => (
+        <motion.div
+          key={i}
+          animate={isInView ? {
+            scaleY: [0.3, 1, 0.3, 0.6, 0.3],
+          } : { scaleY: 0.3 }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            delay: i * 0.1,
+            ease: "easeInOut",
+          }}
+          style={{ transformOrigin: "bottom", willChange: "transform" }}
+          className="w-[2px] h-3 bg-accent-primary/40 rounded-full"
+        />
+      ))}
+    </div>
+  );
+};
 
 const TrustSummary = () => {
   const stats = [
@@ -60,6 +66,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
     <div className="relative flex w-full overflow-hidden py-6">
       <motion.div
         className="flex gap-6 whitespace-nowrap min-w-max px-3"
+        style={{ willChange: "transform" }}
         animate={{
           x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"]
         }}

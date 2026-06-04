@@ -28,7 +28,7 @@
     @apply bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-400 ease-in-out antialiased relative;
   }
 
-  /* Noise Overlay */
+  /* Noise Overlay - Optimized */
   body::before {
     content: '';
     position: fixed;
@@ -38,8 +38,9 @@
     height: 100vh;
     pointer-events: none;
     z-index: 50;
-    opacity: 0.03;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.04;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAP8AAAAAAAABAAAAAQAAAAAAAABZtZ11AAAACHRSTlMABA8PEB8fIXUvVAAAAI9JREFUOMu1zjEKwzAMRFE/aHQK+wKBO1eI8yT3v0ZJSKEkkHbx+Oig10sZY2RkZGRkZGRkZGT8R+O59/jOcfX1/d7jW8ex/x5/c1y+1/f3+Jjj9L2+v8fHHKfP9f09vnKcPt/r+/yV4/i5/h5fOU6f7/V9/srx/Vx/j68cp8/3+j5/5fh+rr/HV47T53t9X7wBDfA4P4LdMhgAAAAASUVORK5CYII=");
+    background-repeat: repeat;
   }
 
   h1,

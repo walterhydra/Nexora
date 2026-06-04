@@ -10,7 +10,7 @@ import {
   MousePointer
 } from 'lucide-react';
 
-const BentoCard = ({ children, className, title, description, icon: Icon, color }) => {
+const BentoCard = React.memo(({ children, className, title, description, icon: Icon, color }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   
@@ -18,13 +18,21 @@ const BentoCard = ({ children, className, title, description, icon: Icon, color 
   const rotateX = useSpring(useTransform(mouseY, [0, 300], [10, -10]), { stiffness: 100, damping: 30 });
   const rotateY = useSpring(useTransform(mouseX, [0, 600], [-10, 10]), { stiffness: 100, damping: 30 });
 
+  const rectRef = useRef(null);
+
+  function onMouseEnter({ currentTarget }) {
+    rectRef.current = currentTarget.getBoundingClientRect();
+  }
+
   function onMouseMove({ currentTarget, clientX, clientY }) {
-    const { left, top } = currentTarget.getBoundingClientRect();
+    if (!rectRef.current) rectRef.current = currentTarget.getBoundingClientRect();
+    const { left, top } = rectRef.current;
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
   }
 
   function onMouseLeave() {
+    rectRef.current = null;
     mouseX.set(300); // Reset to center-ish
     mouseY.set(150);
   }
@@ -34,12 +42,14 @@ const BentoCard = ({ children, className, title, description, icon: Icon, color 
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      onMouseEnter={onMouseEnter}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
       style={{
         rotateX,
         rotateY,
         transformStyle: "preserve-3d",
+        willChange: "transform"
       }}
       className={`group relative overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--bg-secondary)] p-8 transition-colors hover:bg-[var(--bg-tertiary)] ${className}`}
     >
@@ -72,7 +82,7 @@ const BentoCard = ({ children, className, title, description, icon: Icon, color 
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-primary to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-y-[290px] transition-all duration-[2s] pointer-events-none" />
     </motion.div>
   );
-};
+});
 
 const WhyNexora = () => {
   console.log("WhyNexora Component Loaded - v2");
@@ -110,7 +120,8 @@ const WhyNexora = () => {
             opacity: [0.1, 0.15, 0.1]
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-accent-primary/20 rounded-full blur-[120px]" 
+          className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-accent-primary/20 rounded-full blur-[120px]"
+          style={{ willChange: "transform, opacity" }}
         />
         <motion.div 
           animate={{ 
@@ -119,12 +130,13 @@ const WhyNexora = () => {
             opacity: [0.1, 0.15, 0.1]
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent-violet/20 rounded-full blur-[120px]" 
+          className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent-violet/20 rounded-full blur-[120px]"
+          style={{ willChange: "transform, opacity" }}
         />
       </div>
 
       <motion.div 
-        style={{ scale, opacity }}
+        style={{ scale, opacity, willChange: "transform, opacity" }}
         className="max-w-7xl mx-auto relative z-10"
       >
         <div className="mb-24 text-center">

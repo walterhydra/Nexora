@@ -62,7 +62,7 @@ export default function HowWeWork() {
         {/* Sticky Left Column */}
         <div className="md:w-5/12 relative">
           <div className="sticky top-32">
-             <motion.div style={{ opacity }} className="absolute -inset-20 bg-accent-primary/5 blur-[120px] rounded-full pointer-events-none" />
+             <motion.div style={{ opacity, willChange: 'opacity' }} className="absolute -inset-20 bg-accent-primary/5 blur-[120px] rounded-full pointer-events-none" />
              
              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6">
                 <Clock className="text-accent-primary animate-pulse" size={12} />
@@ -90,7 +90,7 @@ export default function HowWeWork() {
            {/* Timeline Line */}
            <div className="absolute left-8 md:left-12 top-0 bottom-0 w-[2px] bg-white/5 rounded-full overflow-hidden">
               <motion.div 
-                style={{ scaleY: pathLength, transformOrigin: "top" }}
+                style={{ scaleY: pathLength, transformOrigin: "top", willChange: "transform" }}
                 className="w-full h-full bg-gradient-to-b from-accent-primary via-accent-secondary to-accent-violet rounded-full shadow-[0_0_15px_rgba(123,47,255,0.5)]" 
               />
            </div>
@@ -104,7 +104,7 @@ export default function HowWeWork() {
                    key={i}
                    initial={{ opacity: 0, y: 50 }}
                    whileInView={{ opacity: 1, y: 0 }}
-                   viewport={{ once: false, margin: "-100px" }}
+                   viewport={{ once: true, margin: "-100px" }}
                    transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                    className="relative pl-24 md:pl-32 group"
                  >
@@ -139,13 +139,14 @@ export default function HowWeWork() {
                          <div className="mt-8 p-6 bg-black/40 rounded-2xl border border-white/5 relative overflow-hidden group-hover:border-white/10 transition-colors">
                             <div className="absolute inset-0 bg-gradient-to-br from-accent-secondary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                             <div className="flex justify-between items-end">
-                               <div className="flex gap-2">
+                               <div className="flex gap-2 items-end h-[60px]">
                                   {[1,2,3,4,5].map(bar => (
                                      <motion.div 
                                         key={bar}
-                                        animate={{ height: [20, 50, 30, 60, 20] }}
+                                        className="w-2 h-[60px] bg-accent-secondary rounded-t-sm origin-bottom"
+                                        style={{ willChange: "transform" }}
+                                        animate={{ scaleY: [0.33, 0.83, 0.5, 1, 0.33] }}
                                         transition={{ duration: 2, repeat: Infinity, delay: bar * 0.15 }}
-                                        className="w-2 bg-accent-secondary rounded-t-sm"
                                      />
                                   ))}
                                </div>

@@ -18,7 +18,7 @@ export default function KineticManifesto() {
         
         {/* Row 1: Moves Left */}
         <motion.div 
-          style={{ x: x1 }}
+          style={{ x: x1, willChange: "transform" }}
           className="flex gap-8"
         >
           {[...Array(4)].map((_, i) => (
@@ -33,7 +33,7 @@ export default function KineticManifesto() {
 
         {/* Row 2: Moves Right */}
         <motion.div 
-          style={{ x: x2 }}
+          style={{ x: x2, willChange: "transform" }}
           className="flex gap-8"
         >
           {[...Array(4)].map((_, i) => (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import { Code2, Clock, Star, Users, ArrowUpRight } from 'lucide-react';
@@ -50,14 +50,24 @@ const stats = [
   }
 ];
 
-const StatCard = ({ stat, idx }) => {
+const StatCard = React.memo(({ stat, idx }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const rectRef = useRef(null);
+
+  function handleMouseEnter({ currentTarget }) {
+    rectRef.current = currentTarget.getBoundingClientRect();
+  }
 
   function handleMouseMove({ currentTarget, clientX, clientY }) {
-    const { left, top } = currentTarget.getBoundingClientRect();
+    if (!rectRef.current) rectRef.current = currentTarget.getBoundingClientRect();
+    const { left, top } = rectRef.current;
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
+  }
+
+  function handleMouseLeave() {
+    rectRef.current = null;
   }
 
   return (
@@ -66,7 +76,10 @@ const StatCard = ({ stat, idx }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} // smooth apple-like spring
+      onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ willChange: "transform" }}
       className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0a0a0a]/90 backdrop-blur-2xl border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-center group`}
     >
       {/* High-Performance Cursor Spotlight Glow */}
@@ -123,7 +136,7 @@ const StatCard = ({ stat, idx }) => {
       </div>
     </motion.div>
   );
-};
+});
 
 export default function Stats() {
   return (

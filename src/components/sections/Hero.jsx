@@ -172,7 +172,7 @@ export default function Hero() {
 
       {/* Absolute scrolling text at the top of the section - with fade transform */}
       <motion.div
-        style={{ opacity: textOpacity, y: textY }}
+        style={{ opacity: textOpacity, y: textY, willChange: "transform, opacity" }}
         className="absolute top-0 inset-x-0 z-10 w-full max-w-7xl mx-auto px-6 pt-32 md:pt-44 flex flex-col items-start text-left pointer-events-auto"
       >
         <motion.div

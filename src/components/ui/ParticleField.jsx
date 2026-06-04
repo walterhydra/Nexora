@@ -11,7 +11,7 @@ export default function ParticleField() {
   // Performance Rule: max 150 desktop, 60 mobile
   useEffect(() => {
     const checkSize = () => {
-      setParticleCount(window.innerWidth < 768 ? 60 : 150);
+      setParticleCount(window.innerWidth < 768 ? 30 : 80);
     };
     checkSize();
     window.addEventListener('resize', checkSize);
@@ -30,33 +30,29 @@ export default function ParticleField() {
     background: {
       color: { value: "transparent" },
     },
-    fpsLimit: 60,
+    fpsLimit: 30,
     interactivity: {
       events: {
         onClick: { enable: true, mode: "push" },
-        onHover: { enable: true, mode: "repulse" },
-        resize: true,
+        onHover: { enable: false },
+        resize: { enable: true },
       },
       modes: {
-        push: { quantity: 20 }, // burst of 20 particles on click
-        repulse: { distance: 150, duration: 0.4 }, // repel on hover
+        push: { quantity: 4 },
+        repulse: { distance: 100, duration: 0.4 }, // repel on hover
       },
     },
     particles: {
       color: { value: isDark ? "#ffffff" : "#000000" },
       links: {
-        color: isDark ? "#ffffff" : "#000000",
-        distance: 150,
-        enable: true,
-        opacity: isDark ? 0.2 : 0.1,
-        width: 1,
+        enable: false, // Disabling links completely solves O(N^2) distance calculations
       },
       move: {
         direction: "none",
         enable: true,
         outModes: { default: "bounce" },
         random: false,
-        speed: 1,
+        speed: 0.5,
         straight: false,
       },
       number: {
