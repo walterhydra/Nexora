@@ -14,9 +14,9 @@ export default function Services() {
 
   return (
     <section id="services" className="py-24 md:py-32 relative bg-white dark:bg-[#050505] overflow-hidden">
-      {/* Background abstract elements */}
-      <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-accent-blue/5 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[40vw] h-[40vw] bg-purple-500/5 blur-[120px] rounded-full pointer-events-none" />
+      {/* Background abstract elements (Optimized for performance) */}
+      <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, rgba(59,130,246,0) 70%)' }} />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.08) 0%, rgba(168,85,247,0) 70%)' }} />
 
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
         
@@ -63,24 +63,16 @@ export default function Services() {
                 <motion.img 
                   src={service.image}
                   className="absolute inset-0 w-full h-full object-cover origin-center"
-                  style={{ willChange: "transform" }}
+                  style={{ willChange: "transform, filter" }}
                   initial={false}
                   animate={{ 
                     scale: isActive ? 1.05 : 1.2,
+                    filter: isActive ? "grayscale(0%)" : "grayscale(100%)"
                   }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
 
-                {/* Opacity Overlay replacing CSS Filter */}
-                <motion.div
-                  className="absolute inset-0 bg-black pointer-events-none mix-blend-color"
-                  style={{ willChange: "opacity" }}
-                  initial={false}
-                  animate={{
-                    opacity: isActive ? 0 : (isHoveringAny ? 0.8 : 0.5)
-                  }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                />
+                {/* Black Overlay for darkening */}
                 <motion.div
                   className="absolute inset-0 bg-black pointer-events-none"
                   style={{ willChange: "opacity" }}
@@ -110,7 +102,7 @@ export default function Services() {
                         className="flex flex-col gap-4 lg:gap-6 min-w-[250px] lg:min-w-[400px]"
                       >
                         <div className="flex items-center gap-3 lg:gap-4">
-                          <div className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl bg-accent-blue/90 backdrop-blur-md flex items-center justify-center text-white shadow-lg border border-white/20">
+                          <div className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl bg-accent-blue/95 flex items-center justify-center text-white shadow-lg border border-white/20">
                             <Icon size={24} className="w-5 h-5 lg:w-6 lg:h-6" />
                           </div>
                           <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white drop-shadow-lg">

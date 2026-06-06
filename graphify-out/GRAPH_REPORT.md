@@ -1,16 +1,16 @@
-# Graph Report - Nexora  (2026-06-03)
+# Graph Report - Nexora  (2026-06-06)
 
 ## Corpus Check
-- 89 files · ~1,405,994 words
+- 88 files · ~1,879,975 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 306 nodes · 359 edges · 31 communities (25 shown, 6 thin omitted)
+- 316 nodes · 370 edges · 30 communities (24 shown, 6 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7e036838`
+- Built from commit: `96d484ec`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -49,7 +49,7 @@
 ## Surprising Connections (you probably didn't know these)
 - `Navbar()` --calls--> `cn()`  [EXTRACTED]
   src/components/layout/Navbar.jsx → src/utils/cn.js
-- `GlowCard()` --calls--> `cn()`  [EXTRACTED]
+- `GlowCard` --calls--> `cn()`  [EXTRACTED]
   src/components/ui/GlowCard.jsx → src/utils/cn.js
 - `AppContent()` --calls--> `useLenis()`  [EXTRACTED]
   src/App.jsx → src/hooks/useLenis.js
@@ -58,15 +58,15 @@
 - `CustomCursor()` --calls--> `useMousePosition()`  [EXTRACTED]
   src/components/ui/CustomCursor.jsx → src/hooks/useMousePosition.js
 
-## Communities (31 total, 6 thin omitted)
+## Communities (30 total, 6 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (6): CursorContext, CursorProvider(), useCursor(), useLenis(), AppContent(), ContextCursor()
+Cohesion: 0.05
+Nodes (11): CursorContext, CursorProvider(), useCursor(), useLenis(), navigation, nonRefundable, reveal, stages (+3 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
-Nodes (34): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+26 more)
+Nodes (35): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+27 more)
 
 ### Community 2 - "Community 2"
 Cohesion: 0.09
@@ -78,7 +78,7 @@ Nodes (9): services, getServiceComparison(), iconMap, ServiceDetails(), bentoCla
 
 ### Community 4 - "Community 4"
 Cohesion: 0.07
-Nodes (4): projects, steps, showcaseProjects, Stats
+Nodes (7): projects, steps, PulseCard, showcaseProjects, StatCard, Stats, BentoCard
 
 ### Community 5 - "Community 5"
 Cohesion: 0.08
@@ -86,11 +86,11 @@ Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-rea
 
 ### Community 6 - "Community 6"
 Cohesion: 0.13
-Nodes (7): useMagneticEffect(), useMousePosition(), Navbar(), CustomCursor(), GlowCard(), MagneticButton(), cn()
+Nodes (7): useMagneticEffect(), useMousePosition(), Navbar(), CustomCursor(), GlowCard, MagneticButton(), cn()
 
 ### Community 8 - "Community 8"
-Cohesion: 0.25
-Nodes (3): team, darkBgColors, hexColors
+Cohesion: 0.15
+Nodes (7): team, darkBgColors, hexColors, memberIntroductions, memberNotes, panelColors, posterMap
 
 ### Community 9 - "Community 9"
 Cohesion: 0.25
@@ -109,7 +109,7 @@ Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + Vite
 
 ## Knowledge Gaps
-- **87 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+82 more)
+- **100 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+95 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **6 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -119,14 +119,14 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `dependencies` connect `Community 1` to `Community 5`?**
   _High betweenness centrality (0.029) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _87 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _100 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06156156156156156 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.054878048780487805 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.058823529411764705 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.08901515151515152 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.08602150537634409 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.07407407407407407 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._

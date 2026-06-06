@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { 
-  Check, X, ShieldAlert, CreditCard, Building2, Globe, 
-  AlertCircle, ArrowRight, ShieldCheck 
+  ShieldAlert, CreditCard, Building2, Globe, 
+  ArrowRight, ShieldCheck, Zap, Lock, Terminal, Activity
 } from 'lucide-react';
 import MagneticButton from '../components/ui/MagneticButton';
 
@@ -11,212 +11,275 @@ export default function PaymentPolicy() {
     window.scrollTo(0, 0);
   }, []);
 
+  const { scrollYProgress } = useScroll();
+  const yBg = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
+  // Stagger variants
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.16, 1, 0.3, 1] } }
+  };
+
   return (
-    <div className="pt-32 pb-20 min-h-screen bg-black text-gray-100 relative overflow-hidden">
-      {/* Background gradients */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-accent-blue/10 via-black to-black -z-10" />
+    <div className="pt-32 pb-20 min-h-screen bg-[#02000a] text-gray-100 relative overflow-hidden font-sans">
+      {/* Deep Space Background Effects */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-[#02000a] to-[#02000a] -z-20" />
+      <motion.div 
+        style={{ y: yBg }}
+        className="absolute top-0 left-0 w-full h-[200vh] opacity-30 -z-10 pointer-events-none"
+      >
+        <div className="absolute top-[10%] left-[20%] w-96 h-96 bg-accent-blue/10 rounded-full blur-[120px]" />
+        <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-accent-violet/10 rounded-full blur-[150px]" />
+      </motion.div>
+
+      {/* Grid Pattern Overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
       
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-20"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="text-center mb-32 mt-10 relative"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-6">
-            <CreditCard className="text-accent-blue" size={14} />
-            <span className="text-xs font-bold uppercase tracking-widest text-white/70">Billing Protocol</span>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-display font-black mb-6 tracking-tight">
-            Payment <span className="text-accent-blue">Policy</span> & Rules
+          <motion.div 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-blue/30 bg-accent-blue/10 mb-8 backdrop-blur-md"
+          >
+            <Activity className="text-accent-blue" size={14} />
+            <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-accent-blue">Investment Architecture</span>
+          </motion.div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-black mb-8 tracking-tighter leading-none">
+            The Nexora <br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-indigo-400 to-accent-violet">
+              Protocol
+            </span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium">
-            Clear, transparent, and firm billing structures. We believe that good business is built on clear expectations.
+          <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed">
+            World-class engineering requires elite operational standards. Our financial architecture is built for speed, transparency, and mutual protection.
           </p>
         </motion.div>
 
-        {/* Split Cards: Payment Structures */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          
-          {/* Standard Projects Card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="glass p-10 rounded-[40px] border border-white/10 relative overflow-hidden group"
-          >
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-cyan-400 to-blue-500" />
-            <div className="absolute -right-10 -top-10 w-40 h-40 bg-cyan-500/10 blur-3xl rounded-full" />
-            
-            <h3 className="text-3xl font-bold mb-2 text-white">Standard Projects</h3>
-            <p className="text-gray-400 mb-8 font-medium">For most 7-day websites and web apps.</p>
-            
-            <div className="space-y-6">
-              <div className="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10">
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-1">50% Advance</h4>
-                  <p className="text-sm text-gray-400">Required before any work begins.</p>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-lg">
-                  1
-                </div>
-              </div>
-
-              <div className="flex items-center justify-between p-5 rounded-2xl bg-white/5 border border-white/10">
-                <div>
-                  <h4 className="text-xl font-bold text-white mb-1">50% Final</h4>
-                  <p className="text-sm text-gray-400">Paid before final handover & domain push.</p>
-                </div>
-                <div className="w-12 h-12 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold text-lg">
-                  2
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Large/Complex Projects Card */}
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="glass p-10 rounded-[40px] border border-white/10 relative overflow-hidden group"
-          >
-            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-purple-400 to-pink-500" />
-            <div className="absolute -right-10 -top-10 w-40 h-40 bg-purple-500/10 blur-3xl rounded-full" />
-            
-            <h3 className="text-3xl font-bold mb-2 text-white">Complex Projects</h3>
-            <p className="text-gray-400 mb-8 font-medium">For large-scale enterprise portals and multi-phase apps.</p>
-            
-            <div className="space-y-4">
-              <div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div>
-                  <h4 className="text-lg font-bold text-white">30% Kickoff</h4>
-                  <p className="text-xs text-gray-400">After agreement signing</p>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">1</div>
-              </div>
-
-              <div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div>
-                  <h4 className="text-lg font-bold text-white">40% Milestone</h4>
-                  <p className="text-xs text-gray-400">Mid-project development review</p>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">2</div>
-              </div>
-
-              <div className="flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/10">
-                <div>
-                  <h4 className="text-lg font-bold text-white">30% Final</h4>
-                  <p className="text-xs text-gray-400">Before delivery & deployment</p>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold">3</div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Strict Rules Section */}
+        {/* Engagement Models */}
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-20 max-w-4xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="mb-32"
         >
-          <div className="glass p-8 md:p-12 rounded-[40px] border border-white/10">
-            <h3 className="text-3xl font-bold mb-8 text-white flex items-center gap-3">
-              <ShieldAlert className="text-red-400" size={32} /> Strict Boundaries
-            </h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="mt-1 bg-red-500/20 text-red-500 p-1 rounded-full"><X size={16} strokeWidth={3} /></div>
-                <div>
-                  <p className="text-xl font-bold text-white mb-1">No work starts without advance payment</p>
-                  <p className="text-gray-400">We do not provide free mockups, drafts, or "test" codes before the initial payment is cleared.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <div className="mt-1 bg-red-500/20 text-red-500 p-1 rounded-full"><X size={16} strokeWidth={3} /></div>
-                <div>
-                  <p className="text-xl font-bold text-white mb-1">No final files shared before last payment</p>
-                  <p className="text-gray-400">The project is hosted on our staging servers for your review. Source code and domain handover only occurs after 100% payment clearance.</p>
-                </div>
-              </div>
+          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-12">
+            <Zap className="text-accent-blue" size={28} />
+            <h2 className="text-3xl md:text-4xl font-display font-bold">Engagement Models</h2>
+          </motion.div>
 
-              <div className="flex items-start gap-4">
-                <div className="mt-1 bg-green-500/20 text-green-500 p-1 rounded-full"><Check size={16} strokeWidth={3} /></div>
-                <div>
-                  <p className="text-xl font-bold text-white mb-1">Revisions are tied to payment phases</p>
-                  <p className="text-gray-400">Revisions and progression to the next development phase only begin after the payment for the current phase has been cleared.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Standard Protocol */}
+            <motion.div variants={itemVariants} className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] blur-xl" />
+              <div className="relative h-full bg-[#0a0a14]/80 backdrop-blur-xl p-10 rounded-[2rem] border border-white/5 hover:border-accent-blue/30 transition-colors duration-500 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-blue to-transparent opacity-50" />
+                
+                <h3 className="text-3xl font-display font-bold mb-3 text-white">Standard Execution</h3>
+                <p className="text-gray-400 mb-10 font-medium">Engineered for 7-day rapid deployments and high-impact websites.</p>
+                
+                <div className="relative">
+                  {/* Timeline connecting line */}
+                  <div className="absolute left-[27px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent-blue via-white/10 to-white/10" />
+                  
+                  <div className="space-y-10 relative z-10">
+                    <div className="flex gap-6">
+                      <div className="w-14 h-14 shrink-0 rounded-2xl bg-accent-blue/20 border border-accent-blue/30 text-accent-blue flex items-center justify-center font-bold text-xl shadow-[0_0_20px_rgba(56,189,248,0.2)]">
+                        50%
+                      </div>
+                      <div className="pt-2">
+                        <h4 className="text-xl font-bold text-white mb-2">System Initiation</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">Secures your project slot and triggers the immediate start of design and engineering sprints.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-6">
+                      <div className="w-14 h-14 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-white/50 flex items-center justify-center font-bold text-xl group-hover:bg-accent-blue/10 group-hover:text-accent-blue group-hover:border-accent-blue/30 transition-all duration-500">
+                        50%
+                      </div>
+                      <div className="pt-2">
+                        <h4 className="text-xl font-bold text-white mb-2">Final Handover</h4>
+                        <p className="text-gray-400 text-sm leading-relaxed">Required upon staging server approval, prior to source code delivery and live domain push.</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </motion.div>
+
+            {/* Enterprise Protocol */}
+            <motion.div variants={itemVariants} className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-b from-accent-violet/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] blur-xl" />
+              <div className="relative h-full bg-[#0a0a14]/80 backdrop-blur-xl p-10 rounded-[2rem] border border-white/5 hover:border-accent-violet/30 transition-colors duration-500 overflow-hidden">
+                <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-violet to-transparent opacity-50" />
+                
+                <h3 className="text-3xl font-display font-bold mb-3 text-white">Enterprise Protocol</h3>
+                <p className="text-gray-400 mb-10 font-medium">Architected for large-scale SaaS platforms and multi-phase applications.</p>
+                
+                <div className="relative">
+                  {/* Timeline connecting line */}
+                  <div className="absolute left-[23px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-accent-violet via-white/10 to-white/10" />
+                  
+                  <div className="space-y-8 relative z-10">
+                    <div className="flex gap-6 items-start">
+                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-accent-violet/20 border border-accent-violet/30 text-accent-violet flex items-center justify-center font-bold shadow-[0_0_20px_rgba(139,92,246,0.2)]">
+                        30%
+                      </div>
+                      <div className="pt-2">
+                        <h4 className="text-lg font-bold text-white mb-1">Architecture Kickoff</h4>
+                        <p className="text-gray-400 text-sm">Post-agreement signing & discovery.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-6 items-start">
+                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-white/50 flex items-center justify-center font-bold group-hover:bg-accent-violet/10 group-hover:text-accent-violet group-hover:border-accent-violet/30 transition-all duration-500">
+                        40%
+                      </div>
+                      <div className="pt-2">
+                        <h4 className="text-lg font-bold text-white mb-1">Alpha Milestone</h4>
+                        <p className="text-gray-400 text-sm">Upon delivery of core functional backend & UI.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-6 items-start">
+                      <div className="w-12 h-12 shrink-0 rounded-2xl bg-white/5 border border-white/10 text-white/50 flex items-center justify-center font-bold group-hover:bg-accent-violet/10 group-hover:text-accent-violet group-hover:border-accent-violet/30 transition-all duration-500">
+                        30%
+                      </div>
+                      <div className="pt-2">
+                        <h4 className="text-lg font-bold text-white mb-1">Production Release</h4>
+                        <p className="text-gray-400 text-sm">Before final deployment to production servers.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
+
+        {/* Non-Negotiable Standards */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="mb-32 max-w-5xl mx-auto"
+        >
+          <div className="bg-[#05050a] border border-white/10 rounded-[2rem] p-8 md:p-12 relative overflow-hidden shadow-2xl">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+              <Terminal size={120} />
+            </div>
+            
+            <div className="flex items-center gap-4 mb-10 relative z-10">
+              <Lock className="text-red-400" size={28} />
+              <h2 className="text-3xl md:text-4xl font-display font-bold">Non-Negotiable Directives</h2>
+            </div>
+            
+            <div className="space-y-4 relative z-10">
+              {[
+                {
+                  title: "Zero-Start Protocol",
+                  desc: "Absolutely no engineering, design drafts, or 'test codes' commence until the initial system payment is verified in our ledgers."
+                },
+                {
+                  title: "Codebase Quarantine",
+                  desc: "All development happens on Nexora secure staging servers. Source code, IP transfers, and live domain deployments are quarantined until 100% ledger clearance."
+                },
+                {
+                  title: "Phase-Locked Revisions",
+                  desc: "Project progression and active revision cycles are strictly bound to their respective payment phases. We do not advance to Phase B if Phase A is unresolved."
+                }
+              ].map((rule, idx) => (
+                <div key={idx} className="flex flex-col md:flex-row gap-6 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] transition-colors">
+                  <div className="md:w-1/3 shrink-0">
+                    <h4 className="text-lg font-bold text-white flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-500 shadow-[0_0_10px_rgba(239,68,68,0.8)]" />
+                      {rule.title}
+                    </h4>
+                  </div>
+                  <div className="md:w-2/3">
+                    <p className="text-gray-400 text-sm md:text-base leading-relaxed">{rule.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
 
-        {/* Payment Methods & Why This Policy */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-32">
+        {/* Global Commerce & Security */}
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-32">
           
-          {/* Payment Methods */}
+          {/* Payment Gateways */}
           <motion.div 
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass p-10 rounded-3xl border border-white/10"
+            className="lg:col-span-3 bg-[#0a0a14]/50 backdrop-blur-lg p-10 rounded-[2rem] border border-white/5"
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Accepted Methods</h3>
-            <div className="space-y-4">
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                  <CreditCard size={24} />
+            <h3 className="text-2xl font-display font-bold mb-8 text-white flex items-center gap-3">
+              <Globe className="text-emerald-400" size={24} /> Global Commerce Channels
+            </h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-emerald-500/30 transition-all group">
+                <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-4 group-hover:scale-110 transition-transform">
+                  <Globe size={20} />
                 </div>
-                <div>
-                  <h4 className="font-bold text-white">UPI</h4>
-                  <p className="text-sm text-gray-400">GPay, PhonePe, Paytm (India Only)</p>
-                </div>
+                <h4 className="font-bold text-white mb-1">International</h4>
+                <p className="text-xs text-gray-400">Stripe / PayPal / Wise / Crypto</p>
               </div>
               
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                <div className="w-12 h-12 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400">
-                  <Building2 size={24} />
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all group">
+                <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 mb-4 group-hover:scale-110 transition-transform">
+                  <CreditCard size={20} />
                 </div>
-                <div>
-                  <h4 className="font-bold text-white">Bank Transfer</h4>
-                  <p className="text-sm text-gray-400">NEFT / IMPS / RTGS</p>
-                </div>
+                <h4 className="font-bold text-white mb-1">India Protocol</h4>
+                <p className="text-xs text-gray-400">UPI / GPay / PhonePe / Paytm</p>
               </div>
 
-              <div className="flex items-center gap-4 p-4 rounded-2xl bg-white/5 border border-white/5">
-                <div className="w-12 h-12 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400">
-                  <Globe size={24} />
+              <div className="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-indigo-500/30 transition-all group sm:col-span-2">
+                <div className="w-10 h-10 rounded-full bg-indigo-500/10 flex items-center justify-center text-indigo-400 mb-4 group-hover:scale-110 transition-transform">
+                  <Building2 size={20} />
                 </div>
-                <div>
-                  <h4 className="font-bold text-white">International</h4>
-                  <p className="text-sm text-gray-400">PayPal / Wise / Stripe</p>
-                </div>
+                <h4 className="font-bold text-white mb-1">Corporate Wire</h4>
+                <p className="text-xs text-gray-400">Direct Bank Transfer (NEFT / IMPS / RTGS / SWIFT)</p>
               </div>
             </div>
           </motion.div>
 
-          {/* Why This Policy */}
+          {/* Philosophy */}
           <motion.div 
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="glass p-10 rounded-3xl border border-white/10 bg-accent-blue/5 flex flex-col justify-center relative overflow-hidden"
+            className="lg:col-span-2 bg-gradient-to-br from-accent-blue/10 to-transparent p-10 rounded-[2rem] border border-accent-blue/20 relative overflow-hidden flex flex-col justify-center"
           >
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent-blue/10 blur-[100px] rounded-full pointer-events-none" />
-            
             <div className="mb-6">
-              <ShieldCheck className="w-16 h-16 text-accent-blue opacity-80" />
+              <ShieldCheck className="w-12 h-12 text-accent-blue" />
             </div>
-            <h3 className="text-3xl font-bold mb-4 text-white">Why This Policy?</h3>
-            <p className="text-lg text-gray-400 leading-relaxed font-medium">
-              We deliver world-class digital products in incredibly tight deadlines. This payment structure ensures our engineering team is fully committed to your project without financial distractions, while protecting both you (the client) and us (the agency) throughout the development cycle.
+            <h3 className="text-2xl font-display font-bold mb-4 text-white">The Guarantee</h3>
+            <p className="text-gray-400 text-sm leading-relaxed">
+              We deliver world-class digital products under impossible deadlines. 
+              <br/><br/>
+              This strict financial protocol ensures our engineering fleet remains 100% focused on architectural excellence, eliminating administrative friction and protecting both entities throughout the development lifecycle.
             </p>
           </motion.div>
         </div>
@@ -226,25 +289,23 @@ export default function PaymentPolicy() {
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          className="glass p-12 md:p-20 rounded-[40px] border border-white/10 text-center relative overflow-hidden"
+          className="bg-gradient-to-r from-[#0a0a14] to-[#0f0f1a] p-12 md:p-20 rounded-[3rem] border border-white/10 text-center relative overflow-hidden shadow-2xl"
         >
-          <div className="absolute inset-0 bg-gradient-to-tr from-accent-blue/10 via-transparent to-transparent" />
+          {/* Decorative glow */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-accent-blue/20 blur-[120px] rounded-full pointer-events-none" />
           
           <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6">
-              Ready to <span className="text-accent-blue">Start?</span> Let's Talk.
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black text-white mb-6 tracking-tight">
+              Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-violet">Initiate?</span>
             </h2>
             <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
-              If our terms align with your expectations, we are ready to build your next digital empire.
+              If our operational protocols align with your standards, we are ready to engineer your digital empire.
             </p>
             
             <div className="flex justify-center">
               <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer">
-                <MagneticButton className="bg-[#25D366] text-white hover:bg-[#20bd5a] px-8 py-4 font-bold text-lg rounded-full flex items-center gap-3 shadow-[0_0_20px_rgba(37,211,102,0.3)]">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-                  </svg>
-                  Chat on WhatsApp
+                <MagneticButton className="bg-white text-black hover:bg-gray-100 px-8 py-4 font-bold text-lg rounded-full flex items-center gap-3 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                  Execute Protocol <ArrowRight size={20} />
                 </MagneticButton>
               </a>
             </div>

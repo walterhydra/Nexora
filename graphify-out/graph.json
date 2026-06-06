@@ -328,10 +328,19 @@
       "norm_label": "react-hot-toast"
     },
     {
-      "label": "react-intersection-observer",
+      "label": "react-icons",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L37",
+      "id": "nexora_package_dependencies_react_icons",
+      "community": 1,
+      "norm_label": "react-icons"
+    },
+    {
+      "label": "react-intersection-observer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L38",
       "id": "nexora_package_dependencies_react_intersection_observer",
       "community": 1,
       "norm_label": "react-intersection-observer"
@@ -340,7 +349,7 @@
       "label": "react-parallax-tilt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "id": "nexora_package_dependencies_react_parallax_tilt",
       "community": 1,
       "norm_label": "react-parallax-tilt"
@@ -349,7 +358,7 @@
       "label": "react-router-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "id": "nexora_package_dependencies_react_router_dom",
       "community": 1,
       "norm_label": "react-router-dom"
@@ -358,7 +367,7 @@
       "label": "react-tilt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "nexora_package_dependencies_react_tilt",
       "community": 1,
       "norm_label": "react-tilt"
@@ -367,7 +376,7 @@
       "label": "swiper",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L42",
       "id": "nexora_package_dependencies_swiper",
       "community": 1,
       "norm_label": "swiper"
@@ -376,7 +385,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L43",
       "id": "nexora_package_dependencies_tailwind_merge",
       "community": 1,
       "norm_label": "tailwind-merge"
@@ -385,7 +394,7 @@
       "label": "three",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L44",
       "id": "nexora_package_dependencies_three",
       "community": 1,
       "norm_label": "three"
@@ -394,7 +403,7 @@
       "label": "typed.js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "nexora_package_dependencies_typed_js",
       "community": 1,
       "norm_label": "typed.js"
@@ -403,7 +412,7 @@
       "label": "typewriter-effect",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "id": "nexora_package_dependencies_typewriter_effect",
       "community": 1,
       "norm_label": "typewriter-effect"
@@ -412,7 +421,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "nexora_package_devdependencies",
       "community": 5,
       "norm_label": "devdependencies"
@@ -421,7 +430,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L49",
       "id": "nexora_package_devdependencies_eslint_js",
       "community": 5,
       "norm_label": "@eslint/js"
@@ -430,7 +439,7 @@
       "label": "@tailwindcss/forms",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L50",
       "id": "nexora_package_devdependencies_tailwindcss_forms",
       "community": 5,
       "norm_label": "@tailwindcss/forms"
@@ -439,7 +448,7 @@
       "label": "@tailwindcss/typography",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L51",
       "id": "nexora_package_devdependencies_tailwindcss_typography",
       "community": 5,
       "norm_label": "@tailwindcss/typography"
@@ -448,7 +457,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L52",
       "id": "nexora_package_devdependencies_types_react",
       "community": 5,
       "norm_label": "@types/react"
@@ -457,7 +466,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L52",
+      "source_location": "L53",
       "id": "nexora_package_devdependencies_types_react_dom",
       "community": 5,
       "norm_label": "@types/react-dom"
@@ -466,7 +475,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L53",
+      "source_location": "L54",
       "id": "nexora_package_devdependencies_vitejs_plugin_react",
       "community": 5,
       "norm_label": "@vitejs/plugin-react"
@@ -475,7 +484,7 @@
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L54",
+      "source_location": "L55",
       "id": "nexora_package_devdependencies_autoprefixer",
       "community": 5,
       "norm_label": "autoprefixer"
@@ -484,7 +493,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L55",
+      "source_location": "L56",
       "id": "nexora_package_devdependencies_eslint",
       "community": 5,
       "norm_label": "eslint"
@@ -493,7 +502,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L56",
+      "source_location": "L57",
       "id": "nexora_package_devdependencies_eslint_plugin_react_hooks",
       "community": 5,
       "norm_label": "eslint-plugin-react-hooks"
@@ -502,7 +511,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L57",
+      "source_location": "L58",
       "id": "nexora_package_devdependencies_eslint_plugin_react_refresh",
       "community": 5,
       "norm_label": "eslint-plugin-react-refresh"
@@ -511,7 +520,7 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L58",
+      "source_location": "L59",
       "id": "nexora_package_devdependencies_globals",
       "community": 5,
       "norm_label": "globals"
@@ -520,7 +529,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L59",
+      "source_location": "L60",
       "id": "nexora_package_devdependencies_postcss",
       "community": 5,
       "norm_label": "postcss"
@@ -529,7 +538,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L60",
+      "source_location": "L61",
       "id": "nexora_package_devdependencies_tailwindcss",
       "community": 5,
       "norm_label": "tailwindcss"
@@ -538,7 +547,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L61",
+      "source_location": "L62",
       "id": "nexora_package_devdependencies_vite",
       "community": 5,
       "norm_label": "vite"
@@ -846,7 +855,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 16,
+      "community": 0,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -855,7 +864,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L4",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 16,
+      "community": 0,
       "norm_label": "loadingscreen()"
     },
     {
@@ -1078,7 +1087,7 @@
       "label": "HowWeWork()",
       "file_type": "code",
       "source_file": "src/components/sections/HowWeWork.jsx",
-      "source_location": "L50",
+      "source_location": "L45",
       "id": "sections_howwework_howwework",
       "community": 4,
       "norm_label": "howwework()"
@@ -1174,13 +1183,13 @@
       "norm_label": "pulse.jsx"
     },
     {
-      "label": "PulseCard()",
+      "label": "PulseCard",
       "file_type": "code",
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L5",
       "id": "sections_pulse_pulsecard",
       "community": 4,
-      "norm_label": "pulsecard()"
+      "norm_label": "pulsecard"
     },
     {
       "label": "Pulse()",
@@ -1201,10 +1210,19 @@
       "norm_label": "realtimework.jsx"
     },
     {
+      "label": "VideoPlayer()",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L4",
+      "id": "sections_realtimework_videoplayer",
+      "community": 4,
+      "norm_label": "videoplayer()"
+    },
+    {
       "label": "showcaseProjects",
       "file_type": "code",
       "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L5",
+      "source_location": "L33",
       "id": "sections_realtimework_showcaseprojects",
       "community": 4,
       "norm_label": "showcaseprojects"
@@ -1213,7 +1231,7 @@
       "label": "RealtimeWork()",
       "file_type": "code",
       "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L66",
+      "source_location": "L94",
       "id": "sections_realtimework_realtimework",
       "community": 4,
       "norm_label": "realtimework()"
@@ -1258,19 +1276,19 @@
       "label": "Stats",
       "file_type": "code",
       "source_file": "src/components/sections/Stats.jsx",
-      "source_location": "L128",
+      "source_location": "L141",
       "id": "sections_stats_stats",
       "community": 4,
       "norm_label": "stats"
     },
     {
-      "label": "StatCard()",
+      "label": "StatCard",
       "file_type": "code",
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L53",
       "id": "sections_stats_statcard",
       "community": 4,
-      "norm_label": "statcard()"
+      "norm_label": "statcard"
     },
     {
       "label": "Team.jsx",
@@ -1282,55 +1300,55 @@
       "norm_label": "team.jsx"
     },
     {
-      "label": "LinkedinIcon()",
+      "label": "posterMap",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
-      "source_location": "L5",
-      "id": "sections_team_linkedinicon",
+      "source_location": "L7",
+      "id": "sections_team_postermap",
       "community": 8,
-      "norm_label": "linkedinicon()"
+      "norm_label": "postermap"
     },
     {
-      "label": "GithubIcon()",
+      "label": "memberNotes",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
-      "source_location": "L13",
-      "id": "sections_team_githubicon",
+      "source_location": "L18",
+      "id": "sections_team_membernotes",
       "community": 8,
-      "norm_label": "githubicon()"
+      "norm_label": "membernotes"
     },
     {
-      "label": "hexColors",
-      "file_type": "code",
-      "source_file": "src/components/sections/Team.jsx",
-      "source_location": "L19",
-      "id": "sections_team_hexcolors",
-      "community": 8,
-      "norm_label": "hexcolors"
-    },
-    {
-      "label": "darkBgColors",
+      "label": "memberIntroductions",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
       "source_location": "L29",
-      "id": "sections_team_darkbgcolors",
+      "id": "sections_team_memberintroductions",
       "community": 8,
-      "norm_label": "darkbgcolors"
+      "norm_label": "memberintroductions"
     },
     {
-      "label": "TeamMember()",
+      "label": "panelColors",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
-      "source_location": "L39",
-      "id": "sections_team_teammember",
+      "source_location": "L40",
+      "id": "sections_team_panelcolors",
       "community": 8,
-      "norm_label": "teammember()"
+      "norm_label": "panelcolors"
+    },
+    {
+      "label": "SocialLink()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L51",
+      "id": "sections_team_sociallink",
+      "community": 8,
+      "norm_label": "sociallink()"
     },
     {
       "label": "Team()",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
-      "source_location": "L193",
+      "source_location": "L69",
       "id": "sections_team_team",
       "community": 8,
       "norm_label": "team()"
@@ -1420,7 +1438,7 @@
       "label": "TrustSummary()",
       "file_type": "code",
       "source_file": "src/components/sections/Testimonials.jsx",
-      "source_location": "L29",
+      "source_location": "L35",
       "id": "sections_testimonials_trustsummary",
       "community": 2,
       "norm_label": "trustsummary()"
@@ -1429,7 +1447,7 @@
       "label": "MarqueeRow()",
       "file_type": "code",
       "source_file": "src/components/sections/Testimonials.jsx",
-      "source_location": "L58",
+      "source_location": "L64",
       "id": "sections_testimonials_marqueerow",
       "community": 2,
       "norm_label": "marqueerow()"
@@ -1438,7 +1456,7 @@
       "label": "Testimonials()",
       "file_type": "code",
       "source_file": "src/components/sections/Testimonials.jsx",
-      "source_location": "L120",
+      "source_location": "L127",
       "id": "sections_testimonials_testimonials",
       "community": 2,
       "norm_label": "testimonials()"
@@ -1480,19 +1498,19 @@
       "norm_label": "whynexora.jsx"
     },
     {
-      "label": "BentoCard()",
+      "label": "BentoCard",
       "file_type": "code",
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L13",
       "id": "sections_whynexora_bentocard",
       "community": 4,
-      "norm_label": "bentocard()"
+      "norm_label": "bentocard"
     },
     {
       "label": "WhyNexora()",
       "file_type": "code",
       "source_file": "src/components/sections/WhyNexora.jsx",
-      "source_location": "L77",
+      "source_location": "L87",
       "id": "sections_whynexora_whynexora",
       "community": 4,
       "norm_label": "whynexora()"
@@ -1651,13 +1669,13 @@
       "norm_label": "glowcard.jsx"
     },
     {
-      "label": "GlowCard()",
+      "label": "GlowCard",
       "file_type": "code",
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L4",
       "id": "ui_glowcard_glowcard",
       "community": 6,
-      "norm_label": "glowcard()"
+      "norm_label": "glowcard"
     },
     {
       "label": "LaptopMockup.jsx",
@@ -1676,24 +1694,6 @@
       "id": "ui_laptopmockup_laptopmockup",
       "community": 3,
       "norm_label": "laptopmockup()"
-    },
-    {
-      "label": "LoadingScreen.jsx",
-      "file_type": "code",
-      "source_file": "src/components/ui/LoadingScreen.jsx",
-      "source_location": "L1",
-      "id": "src_components_ui_loadingscreen_jsx",
-      "community": 0,
-      "norm_label": "loadingscreen.jsx"
-    },
-    {
-      "label": "LoadingScreen()",
-      "file_type": "code",
-      "source_file": "src/components/ui/LoadingScreen.jsx",
-      "source_location": "L7",
-      "id": "ui_loadingscreen_loadingscreen",
-      "community": 0,
-      "norm_label": "loadingscreen()"
     },
     {
       "label": "MagneticButton.jsx",
@@ -2268,7 +2268,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 0,
+      "community": 6,
       "norm_label": "notfound.jsx"
     },
     {
@@ -2277,7 +2277,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 0,
+      "community": 6,
       "norm_label": "particlefield()"
     },
     {
@@ -2286,7 +2286,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 0,
+      "community": 6,
       "norm_label": "notfound()"
     },
     {
@@ -2331,7 +2331,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_paymentpolicy_jsx",
-      "community": 6,
+      "community": 0,
       "norm_label": "paymentpolicy.jsx"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L9",
       "id": "pages_paymentpolicy_paymentpolicy",
-      "community": 6,
+      "community": 0,
       "norm_label": "paymentpolicy()"
     },
     {
@@ -2371,10 +2371,55 @@
       "norm_label": "refundpolicy.jsx"
     },
     {
+      "label": "stages",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L19",
+      "id": "pages_refundpolicy_stages",
+      "community": 0,
+      "norm_label": "stages"
+    },
+    {
+      "label": "nonRefundable",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L43",
+      "id": "pages_refundpolicy_nonrefundable",
+      "community": 0,
+      "norm_label": "nonrefundable"
+    },
+    {
+      "label": "navigation",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L50",
+      "id": "pages_refundpolicy_navigation",
+      "community": 0,
+      "norm_label": "navigation"
+    },
+    {
+      "label": "reveal",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L59",
+      "id": "pages_refundpolicy_reveal",
+      "community": 0,
+      "norm_label": "reveal"
+    },
+    {
+      "label": "toneStyles",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L66",
+      "id": "pages_refundpolicy_tonestyles",
+      "community": 0,
+      "norm_label": "tonestyles"
+    },
+    {
       "label": "RefundPolicy()",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L4",
+      "source_location": "L87",
       "id": "pages_refundpolicy_refundpolicy",
       "community": 0,
       "norm_label": "refundpolicy()"
@@ -2612,6 +2657,51 @@
       "id": "workflows_graphify_workflow_graphify",
       "community": 26,
       "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "LinkedinIcon()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L5",
+      "community": 8,
+      "norm_label": "linkedinicon()",
+      "id": "sections_team_linkedinicon"
+    },
+    {
+      "label": "GithubIcon()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L13",
+      "community": 8,
+      "norm_label": "githubicon()",
+      "id": "sections_team_githubicon"
+    },
+    {
+      "label": "hexColors",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L19",
+      "community": 8,
+      "norm_label": "hexcolors",
+      "id": "sections_team_hexcolors"
+    },
+    {
+      "label": "darkBgColors",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L29",
+      "community": 8,
+      "norm_label": "darkbgcolors",
+      "id": "sections_team_darkbgcolors"
+    },
+    {
+      "label": "TeamMember()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L39",
+      "community": 8,
+      "norm_label": "teammember()",
+      "id": "sections_team_teammember"
     },
     {
       "label": "ServiceCard()",
@@ -3055,6 +3145,16 @@
       "source_file": "package.json",
       "source_location": "L37",
       "weight": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_react_icons",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L37",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
       "target": "nexora_package_dependencies_react_intersection_observer"
@@ -3438,6 +3538,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_components_layout_loadingscreen_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3487,17 +3598,6 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_components_ui_cookiebanner_jsx"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/App.jsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app_jsx",
-      "target": "src_components_ui_loadingscreen_jsx"
     },
     {
       "relation": "imports_from",
@@ -4747,6 +4847,16 @@
       "target": "sections_realtimework_showcaseprojects"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "sections_realtimework_videoplayer"
+    },
+    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -4932,6 +5042,56 @@
       "confidence_score": 1.0,
       "source": "src_components_sections_team_jsx",
       "target": "sections_team_linkedinicon"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_memberintroductions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_membernotes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_panelcolors",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_postermap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Team.jsx",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "src_components_sections_team_jsx",
+      "target": "sections_team_sociallink",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -5466,16 +5626,6 @@
       "confidence_score": 1.0,
       "source": "src_components_ui_laptopmockup_jsx",
       "target": "ui_laptopmockup_laptopmockup"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ui/LoadingScreen.jsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_ui_loadingscreen_jsx",
-      "target": "ui_loadingscreen_loadingscreen"
     },
     {
       "relation": "imports",
@@ -6282,11 +6432,61 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_nonrefundable",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
       "target": "pages_refundpolicy_refundpolicy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_reveal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_stages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_tonestyles",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6493,5 +6693,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7e03683887eaf9697c8cb23bf14e2cbb82345ccf"
+  "built_at_commit": "96d484ec93197461bc7aa8af7951239326c8e78f"
 }

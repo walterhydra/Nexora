@@ -17,7 +17,7 @@ import WhatsAppButton from './components/ui/WhatsAppButton';
 import ScrollProgress from './components/ui/ScrollProgress';
 import BackToTop from './components/ui/BackToTop';
 import CookieBanner from './components/ui/CookieBanner';
-import LoadingScreen from './components/ui/LoadingScreen';
+import LoadingScreen from './components/layout/LoadingScreen';
 
 // Pages
 import Home from './pages/Home';
@@ -42,7 +42,7 @@ const PageLoader = () => (
 
 // Animated Routes Component to handle location
 import { useLocation } from 'react-router-dom';
-import { AnimatePresence, LazyMotion, domAnimation } from 'framer-motion';
+import { AnimatePresence, LazyMotion, domAnimation, motion } from 'framer-motion';
 
 function AnimatedRoutes() {
   return (
@@ -113,7 +113,7 @@ function App() {
     // Show loading screen on every page load/refresh
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3500); // 3.5 seconds for initial narrative animation load
+    }, 1500); // 1.5 seconds for initial narrative animation load
     return () => clearTimeout(timer);
   }, []);
 
@@ -121,13 +121,15 @@ function App() {
     <HelmetProvider>
       <ThemeProvider>
       <CursorProvider>
-        {loading ? (
-          <LoadingScreen />
-        ) : (
-          <BrowserRouter>
-            <AppContent />
-          </BrowserRouter>
-        )}
+        <AnimatePresence>
+          {loading ? (
+            <LoadingScreen key="loader" />
+          ) : (
+            <BrowserRouter key="router">
+              <AppContent />
+            </BrowserRouter>
+          )}
+        </AnimatePresence>
       </CursorProvider>
       </ThemeProvider>
     </HelmetProvider>
