@@ -40,7 +40,7 @@ export default function Services() {
         <motion.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-50px" }}
+          viewport={{ once: true, margin: "400px" }} // Trigger earlier to prevent decode lag
           transition={{ duration: 0.8, ease: "easeOut" }}
           onMouseLeave={() => setActive(null)} // Reset on mouse leave
           className="flex flex-col lg:flex-row w-full h-[85vh] min-h-[700px] lg:h-[650px] gap-2 lg:gap-4 p-2 lg:p-3 bg-gray-100 dark:bg-[#111] rounded-[2rem] border border-gray-200 dark:border-white/10 shadow-2xl"
@@ -51,47 +51,33 @@ export default function Services() {
             const Icon = iconMap[service.icon] || Globe;
 
             return (
-              <motion.div
+              <div
                 key={service.id}
-                layout
                 onClick={() => setActive(isActive ? null : index)} // Toggle on click for mobile
                 onMouseEnter={() => setActive(index)}
-                className={`relative overflow-hidden rounded-[1.5rem] cursor-pointer ${isActive ? 'flex-[6] lg:flex-[5]' : 'flex-[1] lg:flex-[1]'}`}
-                transition={{ type: "spring", stiffness: 250, damping: 25 }}
+                className={`relative overflow-hidden rounded-[1.5rem] cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'flex-[6] lg:flex-[5]' : 'flex-[1] lg:flex-[1]'}`}
               >
                 {/* Background Image */}
-                <motion.img 
+                <img 
                   src={service.image}
-                  className="absolute inset-0 w-full h-full object-cover origin-center"
-                  style={{ willChange: "transform, filter" }}
-                  initial={false}
-                  animate={{ 
-                    scale: isActive ? 1.05 : 1.2,
-                    filter: isActive ? "grayscale(0%)" : "grayscale(100%)"
-                  }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
+                  alt={service.title}
+                  decoding="async" // Decode off main thread to prevent scroll lag
+                  className={`absolute inset-0 w-full h-full object-cover origin-center transition-transform duration-[600ms] ease-out ${isActive ? 'scale-[1.05]' : 'scale-[1.15]'}`}
+                  style={{ willChange: "transform" }}
                 />
 
                 {/* Black Overlay for darkening */}
-                <motion.div
-                  className="absolute inset-0 bg-black pointer-events-none"
+                <div
+                  className={`absolute inset-0 bg-black pointer-events-none transition-opacity duration-[600ms] ease-out ${isActive ? 'opacity-10' : (isHoveringAny ? 'opacity-70' : 'opacity-40')}`}
                   style={{ willChange: "opacity" }}
-                  initial={false}
-                  animate={{
-                    opacity: isActive ? 0.1 : (isHoveringAny ? 0.6 : 0.3)
-                  }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
                 />
                 
                 {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent pointer-events-none" />
-                {!isActive && (
-                   <div className={`absolute inset-0 transition-colors duration-300 pointer-events-none ${isHoveringAny ? 'bg-black/40' : 'bg-black/20'}`} />
-                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
                 {/* Content */}
                 <div className="relative z-10 w-full h-full flex flex-col justify-end p-4 md:p-6 lg:p-8">
-                  <AnimatePresence mode="popLayout">
+                  <AnimatePresence mode="wait">
                     {isActive ? (
                       <motion.div 
                         key="active"
@@ -105,17 +91,17 @@ export default function Services() {
                           <div className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl bg-accent-blue/95 flex items-center justify-center text-white shadow-lg border border-white/20">
                             <Icon size={24} className="w-5 h-5 lg:w-6 lg:h-6" />
                           </div>
-                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white drop-shadow-lg">
+                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white">
                             {service.title}
                           </h3>
                         </div>
                         
-                        <p className="text-gray-200 text-sm lg:text-base max-w-xl line-clamp-3 drop-shadow-md pr-4">
+                        <p className="text-gray-200 text-sm lg:text-base max-w-xl line-clamp-3 pr-4">
                           {service.details}
                         </p>
 
                         <div className="flex flex-col sm:flex-row sm:items-center gap-4 lg:gap-6 mt-2">
-                          <span className="text-lg font-bold text-white drop-shadow-md">{service.price}</span>
+                          <span className="text-lg font-bold text-white">{service.price}</span>
                           <Link to={`/service/${service.slug}`} className="inline-flex items-center justify-center gap-2 text-sm font-bold bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition-colors w-fit shadow-xl pointer-events-auto">
                             Explore <ArrowRight size={16} />
                           </Link>
@@ -154,7 +140,7 @@ export default function Services() {
 
                 {/* Invisible full-card link */}
                 <Link to={`/service/${service.slug}`} className="absolute inset-0 z-0" aria-label={`Explore ${service.title}`} />
-              </motion.div>
+              </div>
             );
           })}
         </motion.div>
