@@ -121,15 +121,12 @@ function App() {
     <HelmetProvider>
       <ThemeProvider>
       <CursorProvider>
-        <AnimatePresence>
-          {loading ? (
-            <LoadingScreen key="loader" />
-          ) : (
-            <BrowserRouter key="router">
-              <AppContent />
-            </BrowserRouter>
-          )}
-        </AnimatePresence>
+        <BrowserRouter>
+          <AppContent />
+          <AnimatePresence>
+            {loading && <LoadingScreen key="loader" />}
+          </AnimatePresence>
+        </BrowserRouter>
       </CursorProvider>
       </ThemeProvider>
     </HelmetProvider>

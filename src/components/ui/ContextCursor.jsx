@@ -102,7 +102,7 @@ export default function ContextCursor() {
     <>
       {/* Outer Ring / Shape */}
       <motion.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center border-2 mix-blend-difference"
+        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center border-2"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,
@@ -119,7 +119,7 @@ export default function ContextCursor() {
 
       {/* Inner Dot (only visible on default/link) */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999] bg-accent-primary mix-blend-difference"
+        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999] bg-accent-primary"
         style={{
           x: cursorX,
           y: cursorY,

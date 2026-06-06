@@ -55,25 +55,28 @@ export default function Services() {
                 key={service.id}
                 onClick={() => setActive(isActive ? null : index)} // Toggle on click for mobile
                 onMouseEnter={() => setActive(index)}
-                className={`relative overflow-hidden rounded-[1.5rem] cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'flex-[6] lg:flex-[5]' : 'flex-[1] lg:flex-[1]'}`}
+                className={`relative overflow-hidden h-full rounded-[1.5rem] cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'flex-[6] lg:flex-[5]' : 'flex-[1] lg:flex-[1]'}`}
               >
-                {/* Background Image */}
-                <img 
-                  src={service.image}
-                  alt={service.title}
-                  decoding="async" // Decode off main thread to prevent scroll lag
-                  className={`absolute inset-0 w-full h-full object-cover origin-center transition-transform duration-[600ms] ease-out ${isActive ? 'scale-[1.05]' : 'scale-[1.15]'}`}
-                  style={{ willChange: "transform" }}
+                {/* Background Image Container - Guarantees 100% height fill */}
+                <div 
+                  className={`absolute inset-0 w-full h-full bg-cover bg-center origin-center transition-transform duration-[600ms] ease-out ${isActive ? 'scale-[1.05]' : 'scale-[1.15]'}`}
+                  style={{ 
+                    backgroundImage: `url(${service.image})`,
+                    willChange: "transform" 
+                  }}
                 />
 
-                {/* Black Overlay for darkening */}
+                {/* Base Dark Overlay */}
                 <div
-                  className={`absolute inset-0 bg-black pointer-events-none transition-opacity duration-[600ms] ease-out ${isActive ? 'opacity-10' : (isHoveringAny ? 'opacity-70' : 'opacity-40')}`}
+                  className={`absolute inset-0 bg-black pointer-events-none transition-opacity duration-[600ms] ease-out ${isActive ? 'opacity-30' : (isHoveringAny ? 'opacity-80' : 'opacity-60')}`}
                   style={{ willChange: "opacity" }}
                 />
                 
-                {/* Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
+                {/* Soft Vignette/Inner Shadow (Shadow jaise effect) */}
+                <div className="absolute inset-0 shadow-[inset_0_0_200px_rgba(0,0,0,0.9)] pointer-events-none" />
+                
+                {/* Bottom gradient to ensure text is always readable, but extremely smooth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent pointer-events-none" />
 
                 {/* Content */}
                 <div className="relative z-10 w-full h-full flex flex-col justify-end p-4 md:p-6 lg:p-8">
@@ -119,8 +122,8 @@ export default function Services() {
                         {/* Desktop: Vertical text reading bottom to top */}
                         <div className="hidden lg:flex flex-col items-center justify-center h-full">
                           <h3 
-                            className={`text-xl font-display font-bold uppercase tracking-widest whitespace-nowrap transition-colors duration-500 ${isHoveringAny ? 'text-white/70' : 'text-white'}`}
-                            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                            className={`text-xl font-display font-bold uppercase tracking-widest whitespace-nowrap transition-colors duration-500 drop-shadow-md ${isHoveringAny ? 'text-white/70' : 'text-white'}`}
+                            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
                           >
                             {service.title}
                           </h3>

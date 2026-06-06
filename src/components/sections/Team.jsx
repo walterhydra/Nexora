@@ -168,18 +168,17 @@ export default function Team() {
                 transition={{ type: 'spring', stiffness: 220, damping: 28 }}
                 className="group relative min-h-[82px] cursor-pointer overflow-hidden border border-white/10 bg-[#111318] outline-none lg:min-w-[72px]"
               >
-                <motion.img
+                <img
                   src={poster || member.image}
                   alt={member.name}
-                  className={`absolute inset-0 h-full w-full ${
+                  className={`absolute inset-0 h-full w-full transition-all duration-[600ms] ease-out ${
                     poster ? 'object-contain bg-white' : `object-cover ${member.imageClass || 'object-top'}`
-                  }`}
-                  animate={{
-                    scale: isActive ? 1 : poster ? 1.04 : 1.12,
-                    filter: isActive || poster ? 'grayscale(0%)' : 'grayscale(100%)',
-                    opacity: isActive ? 1 : 0
+                  } ${isActive || poster ? 'grayscale-0' : 'grayscale'}`}
+                  style={{
+                    transform: `scale(${isActive ? 1 : poster ? 1.04 : 1.12})`,
+                    opacity: isActive ? 1 : 0,
+                    willChange: 'transform, opacity'
                   }}
-                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
                 />
                 <motion.div
                   className="absolute inset-0"
