@@ -15,22 +15,15 @@ const row3 = allTech.filter(t => ['mobile', 'devops', 'automation', 'analytics']
 const MarqueeRow = ({ items, direction = "left", speed = 40 }) => {
   return (
     <div className="relative flex w-full overflow-hidden py-4 -my-2 mask-edges">
-      <motion.div
-        className="flex gap-6 whitespace-nowrap min-w-max px-3"
-        animate={{
-          x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"]
-        }}
-        transition={{
-          repeat: Infinity,
-          ease: "linear",
-          duration: speed
-        }}
+      <div
+        className={`flex gap-6 whitespace-nowrap min-w-max px-3 ${direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'}`}
+        style={{ animationDuration: `${speed}s`, willChange: 'transform' }}
       >
         {/* Render the items twice to create the seamless loop */}
         {[...items, ...items, ...items, ...items].map((tech, idx) => (
           <div 
             key={`${tech.name}-${idx}`}
-            className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-bg-tertiary/60 border border-white/5 backdrop-blur-md shadow-lg hover:border-accent-primary/40 hover:bg-white/5 transition-all duration-300 group cursor-default"
+            className="flex items-center gap-3 px-6 py-4 rounded-2xl bg-bg-tertiary/90 border border-white/5 shadow-lg hover:border-accent-primary/40 hover:bg-white/10 transition-all duration-300 group cursor-default"
           >
             <div className={`w-2 h-2 rounded-full shadow-[0_0_10px_rgba(255,255,255,0.5)] transition-colors duration-300
               ${tech.category === 'frontend' || tech.category === 'mobile' ? 'bg-accent-primary' : 
@@ -42,7 +35,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 40 }) => {
             </span>
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 };
@@ -57,7 +50,7 @@ export default function TechStack() {
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "200px" }}
           className="text-4xl md:text-5xl font-display font-bold mb-4"
         >
           Our <span className="text-gradient">Arsenal</span>
@@ -65,7 +58,7 @@ export default function TechStack() {
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: true, margin: "200px" }}
           transition={{ delay: 0.1 }}
           className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
@@ -74,11 +67,25 @@ export default function TechStack() {
       </div>
 
       <div className="w-full flex flex-col gap-2 relative z-20">
-        {/* CSS mask to fade out the edges of the marquee */}
+        {/* CSS mask to fade out the edges of the marquee and animation keyframes */}
         <style dangerouslySetInnerHTML={{__html: `
           .mask-edges {
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          }
+          @keyframes marquee-left {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+          @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0%); }
+          }
+          .animate-marquee-left {
+            animation: marquee-left linear infinite;
+          }
+          .animate-marquee-right {
+            animation: marquee-right linear infinite;
           }
         `}} />
         
