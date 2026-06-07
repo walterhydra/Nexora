@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { techStack } from '../../constants/techStack';
 
 // Helper to flatten arrays and add categories
@@ -17,7 +17,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 40 }) => {
     <div className="relative flex w-full overflow-hidden py-4 -my-2 mask-edges">
       <div
         className={`flex gap-6 whitespace-nowrap min-w-max px-3 ${direction === 'left' ? 'animate-marquee-left' : 'animate-marquee-right'}`}
-        style={{ animationDuration: `${speed}s`, willChange: 'transform' }}
+        style={{ animationDuration: `${speed}s` }}
       >
         {/* Render the items twice to create the seamless loop */}
         {[...items, ...items, ...items, ...items].map((tech, idx) => (
@@ -47,15 +47,15 @@ export default function TechStack() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-96 bg-accent-primary/5 rounded-[100%] blur-[120px] pointer-events-none opacity-50" />
       
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center relative z-20">
-        <motion.h2 
+        <m.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "200px" }}
           className="text-4xl md:text-5xl font-display font-bold mb-4"
         >
           Our <span className="text-gradient">Arsenal</span>
-        </motion.h2>
-        <motion.p 
+        </m.h2>
+        <m.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "200px" }}
@@ -63,7 +63,7 @@ export default function TechStack() {
           className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto"
         >
           We use the most powerful, modern technologies to build fast, scalable, and stunning digital products.
-        </motion.p>
+        </m.p>
       </div>
 
       <div className="w-full flex flex-col gap-2 relative z-20">

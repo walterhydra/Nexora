@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 
 import MorphingBlob from '../ui/MorphingBlob';
@@ -18,23 +18,23 @@ const MobilePreview = ({ step }) => {
       {/* Screen Content */}
       <div className="flex-1 relative w-full h-full bg-gray-950 flex flex-col p-2 md:p-3 pt-5 md:pt-6 gap-2 md:gap-3">
         {/* Step 1: Wireframe / Empty */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: step >= 1 ? 1 : 0 }}
           className="w-full flex justify-between items-center"
         >
           <div className="w-6 h-6 md:w-8 md:h-8 rounded-full bg-gray-800 animate-pulse" />
           <div className="w-12 h-2 md:w-16 md:h-3 rounded-full bg-gray-800 animate-pulse" />
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: step >= 1 ? 1 : 0, y: step >= 1 ? 0 : 10 }}
           transition={{ delay: 0.1 }}
           className="w-full h-24 md:h-32 rounded-lg md:rounded-xl bg-gray-900 border border-gray-800 animate-pulse mt-1 md:mt-2"
         />
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: step >= 1 ? 1 : 0 }}
           transition={{ delay: 0.2 }}
@@ -42,10 +42,10 @@ const MobilePreview = ({ step }) => {
         >
           <div className="w-1/2 h-16 md:h-20 rounded-lg md:rounded-xl bg-gray-900 border border-gray-800 animate-pulse" />
           <div className="w-1/2 h-16 md:h-20 rounded-lg md:rounded-xl bg-gray-900 border border-gray-800 animate-pulse" />
-        </motion.div>
+        </m.div>
 
         {/* Step 2: Design System Applied (Colors & Images) */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: step >= 2 ? 1 : 0 }}
           className="absolute inset-0 bg-bg-primary p-2 md:p-3 pt-5 md:pt-6 flex flex-col gap-2 md:gap-3 pointer-events-none"
@@ -71,29 +71,29 @@ const MobilePreview = ({ step }) => {
               <div className="w-1/2 h-1.5 md:h-2 bg-accent-secondary rounded-full" />
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Step 3: AI Integration (Scanning Effect) */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: step >= 3 ? 1 : 0 }}
           className="absolute inset-0 pointer-events-none overflow-hidden"
         >
-          <motion.div
+          <m.div
             animate={{ top: ["0%", "100%", "0%"] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
             className="absolute left-0 right-0 h-0.5 bg-accent-secondary shadow-[0_0_20px_rgba(139,92,246,1)] z-20"
           />
           <div className="absolute inset-0 bg-accent-secondary/10 mix-blend-overlay animate-pulse z-10"></div>
-        </motion.div>
+        </m.div>
 
         {/* Step 4: Polish / Success */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0 }}
           animate={{ opacity: step >= 4 ? 1 : 0 }}
           className="absolute inset-0 z-30 pointer-events-none flex items-center justify-center bg-black/60 backdrop-blur-sm"
         >
-          <motion.div
+          <m.div
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: step >= 4 ? 1 : 0.5, opacity: step >= 4 ? 1 : 0 }}
             transition={{ type: "spring", bounce: 0.5 }}
@@ -102,8 +102,8 @@ const MobilePreview = ({ step }) => {
             <svg className="w-6 h-6 md:w-8 md:h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
             </svg>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
       </div>
     </div>
@@ -153,7 +153,7 @@ export default function Hero() {
   };
 
   return (
-    <motion.section
+    <m.section
       ref={containerRef}
       id="home"
       initial={{ opacity: 0 }}
@@ -171,11 +171,11 @@ export default function Hero() {
       </div>
 
       {/* Absolute scrolling text at the top of the section - with fade transform */}
-      <motion.div
-        style={{ opacity: textOpacity, y: textY, willChange: "transform, opacity" }}
+      <m.div
+        style={{ opacity: textOpacity, y: textY }}
         className="absolute top-0 inset-x-0 z-10 w-full max-w-7xl mx-auto px-6 pt-32 md:pt-44 flex flex-col items-start text-left pointer-events-auto"
       >
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.1 }}
@@ -186,18 +186,18 @@ export default function Hero() {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
           </div>
           <span className="text-xs uppercase tracking-[0.2em] font-bold text-gray-700 dark:text-gray-300">Accepting New Projects</span>
-        </motion.div>
+        </m.div>
 
         <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[8rem] font-display font-black tracking-tighter leading-[0.9] mb-8 uppercase">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-gray-900 dark:text-white"
           >
             We Architect
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -217,10 +217,10 @@ export default function Hero() {
             ) : (
               <span className="opacity-0">Digital Reality</span>
             )}
-          </motion.div>
+          </m.div>
         </h1>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -230,9 +230,9 @@ export default function Hero() {
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl font-light leading-relaxed">
             Elevating brands with high-performance web development, mobile apps, and relentless innovation. Delivered at lightspeed.
           </p>
-        </motion.div>
+        </m.div>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -259,8 +259,8 @@ export default function Hero() {
               Start Project
             </span>
           </button>
-        </motion.div>
-      </motion.div>
+        </m.div>
+      </m.div>
 
       {/* Sticky container that contains ONLY the laptop centerpiece */}
       <div className="sticky top-[20vh] h-[80vh] w-full flex flex-col items-center justify-center overflow-hidden z-20 pointer-events-none mt-[460px]">
@@ -317,6 +317,6 @@ export default function Hero() {
         </div>
       </div>
 
-    </motion.section>
+    </m.section>
   );
 }

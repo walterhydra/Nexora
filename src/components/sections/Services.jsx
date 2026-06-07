@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Globe, Smartphone, Palette, Bot, Rocket, Briefcase, Link as LinkIcon, TrendingUp, ArrowRight } from 'lucide-react';
 import { fadeUp, staggerContainer } from '../../animations/variants';
@@ -21,23 +21,23 @@ export default function Services() {
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
         
         {/* Header */}
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
           className="mb-12 md:mb-16 flex flex-col items-center text-center"
         >
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight text-gray-900 dark:text-white">
+          <m.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight text-gray-900 dark:text-white">
             What We <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-purple-500">Build</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
+          </m.h2>
+          <m.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
             A comprehensive suite of digital services designed to scale your business. Tap a panel to explore.
-          </motion.p>
-        </motion.div>
+          </m.p>
+        </m.div>
 
         {/* Flex Accordion Container */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "400px" }} // Trigger earlier to prevent decode lag
@@ -61,15 +61,14 @@ export default function Services() {
                 <div 
                   className={`absolute inset-0 w-full h-full bg-cover bg-center origin-center transition-transform duration-[600ms] ease-out ${isActive ? 'scale-[1.05]' : 'scale-[1.15]'}`}
                   style={{ 
-                    backgroundImage: `url(${service.image})`,
-                    willChange: "transform" 
+                    backgroundImage: `url(${service.image})` 
                   }}
                 />
 
                 {/* Base Dark Overlay */}
                 <div
                   className={`absolute inset-0 bg-black pointer-events-none transition-opacity duration-[600ms] ease-out ${isActive ? 'opacity-30' : (isHoveringAny ? 'opacity-80' : 'opacity-60')}`}
-                  style={{ willChange: "opacity" }}
+                  
                 />
                 
                 {/* Soft Vignette/Inner Shadow (Shadow jaise effect) */}
@@ -82,7 +81,7 @@ export default function Services() {
                 <div className="relative z-10 w-full h-full flex flex-col justify-end p-4 md:p-6 lg:p-8">
                   <AnimatePresence mode="wait">
                     {isActive ? (
-                      <motion.div 
+                      <m.div 
                         key="active"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -109,9 +108,9 @@ export default function Services() {
                             Explore <ArrowRight size={16} />
                           </Link>
                         </div>
-                      </motion.div>
+                      </m.div>
                     ) : (
-                      <motion.div 
+                      <m.div 
                         key="inactive"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -136,7 +135,7 @@ export default function Services() {
                             {service.title}
                           </h3>
                         </div>
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
@@ -146,7 +145,7 @@ export default function Services() {
               </div>
             );
           })}
-        </motion.div>
+        </m.div>
 
       </div>
     </section>

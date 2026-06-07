@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
@@ -53,7 +53,7 @@ export default function Newsletter() {
   return (
     <section className="py-24 relative z-10 overflow-hidden" id="newsletter">
       <div className="max-w-4xl mx-auto px-6 relative z-20">
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -98,7 +98,7 @@ export default function Newsletter() {
               )}
             </button>
           </form>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

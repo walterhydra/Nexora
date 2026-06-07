@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, m } from 'framer-motion';
 import { ArrowUpRight, Code2, Radio, Sparkles, Target, X, Zap } from 'lucide-react';
 import { FiGithub, FiLinkedin } from 'react-icons/fi';
 import { team } from '../../constants/team';
@@ -102,7 +102,7 @@ export default function Team() {
       />
 
       <div className="relative z-10 mx-auto max-w-[1500px] px-4 md:px-6">
-        <motion.header
+        <m.header
           initial={{ opacity: 0, y: 28 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -135,9 +135,9 @@ export default function Team() {
               </div>
             </div>
           </div>
-        </motion.header>
+        </m.header>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
@@ -151,7 +151,7 @@ export default function Team() {
             const poster = posterMap[member.name];
 
             return (
-              <motion.article
+              <m.article
                 key={member.id}
                 layout
                 onMouseEnter={() => setActiveId(member.id)}
@@ -171,16 +171,19 @@ export default function Team() {
                 <img
                   src={poster || member.image}
                   alt={member.name}
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="1000"
                   className={`absolute inset-0 h-full w-full transition-all duration-[600ms] ease-out ${
                     poster ? 'object-contain bg-white' : `object-cover ${member.imageClass || 'object-top'}`
                   } ${isActive || poster ? 'grayscale-0' : 'grayscale'}`}
                   style={{
                     transform: `scale(${isActive ? 1 : poster ? 1.04 : 1.12})`,
-                    opacity: isActive ? 1 : 0,
-                    willChange: 'transform, opacity'
+                    opacity: isActive ? 1 : 0
                   }}
                 />
-                <motion.div
+                <m.div
                   className="absolute inset-0"
                   animate={{
                     backgroundColor: isActive ? 'rgba(0,0,0,0.24)' : panelColors[index]
@@ -191,7 +194,7 @@ export default function Team() {
 
                 <AnimatePresence mode="wait">
                   {isActive ? (
-                    <motion.div
+                    <m.div
                       key="active"
                       initial={{ opacity: 0, y: 24 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -232,9 +235,9 @@ export default function Team() {
                           </span>
                         </div>
                       </div>
-                    </motion.div>
+                    </m.div>
                   ) : (
-                    <motion.div
+                    <m.div
                       key="inactive"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
@@ -246,15 +249,15 @@ export default function Team() {
                         {firstName}
                       </span>
                       <span className="h-2 w-2 bg-white" />
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.article>
+              </m.article>
             );
           })}
 
           {hiringCard && (
-            <motion.a
+            <m.a
               layout
               href={hiringCard.links.apply}
               target="_blank"
@@ -265,9 +268,13 @@ export default function Team() {
               transition={{ type: 'spring', stiffness: 220, damping: 28 }}
               className="group relative min-h-[82px] min-w-0 overflow-hidden border border-red-400/30 bg-[#dc2626] outline-none lg:min-w-[72px]"
             >
-              <motion.img
+              <m.img
                 src={hiringCard.image}
                 alt=""
+                loading="lazy"
+                decoding="async"
+                width="800"
+                height="1000"
                 className="absolute inset-0 h-full w-full object-cover"
                 animate={{
                   opacity: activeId === 'hiring' ? 0.4 : 0,
@@ -279,7 +286,7 @@ export default function Team() {
 
               <AnimatePresence mode="wait">
                 {activeId === 'hiring' ? (
-                  <motion.div
+                  <m.div
                     key="hiring-active"
                     initial={{ opacity: 0, y: 24 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -307,9 +314,9 @@ export default function Team() {
                         View open roles <ArrowUpRight size={15} />
                       </span>
                     </div>
-                  </motion.div>
+                  </m.div>
                 ) : (
-                  <motion.div
+                  <m.div
                     key="hiring-inactive"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -321,24 +328,24 @@ export default function Team() {
                       Join us
                     </span>
                     <Sparkles size={14} />
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
-            </motion.a>
+            </m.a>
           )}
-        </motion.div>
+        </m.div>
       </div>
 
       <AnimatePresence>
         {selectedMember && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedId(null)}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-3 backdrop-blur-md md:p-6"
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0, y: 40, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 24, scale: 0.98 }}
@@ -362,6 +369,10 @@ export default function Team() {
                 <img
                   src={posterMap[selectedMember.name] || selectedMember.image}
                   alt={`${selectedMember.name} introduction poster`}
+                  loading="lazy"
+                  decoding="async"
+                  width="1920"
+                  height="1080"
                   className={`absolute inset-0 h-full w-full ${
                     posterMap[selectedMember.name]
                       ? 'object-contain'
@@ -432,8 +443,8 @@ export default function Team() {
                   </div>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
     </section>

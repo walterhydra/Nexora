@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { m, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { services } from '../constants/services';
 import { Globe, Smartphone, Palette, Bot, Rocket, Briefcase, Link as LinkIcon, TrendingUp, ArrowLeft, CheckCircle2, Shield, Clock, Check, X, HelpCircle } from 'lucide-react';
 import ScrambleText from '../components/ui/ScrambleText';
@@ -107,7 +107,7 @@ const ArchitectureBlueprint = ({ tier }) => {
         {tier === 'starter' && (
           <g>
             {/* Draw active line */}
-            <motion.path
+            <m.path
               d="M 125 100 L 375 100"
               stroke="#00F5FF"
               strokeWidth="2.5"
@@ -118,24 +118,24 @@ const ArchitectureBlueprint = ({ tier }) => {
               strokeLinecap="round"
             />
             {/* Nodes */}
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
               <rect x="40" y="70" width="110" height="60" rx="10" fill="#141416" stroke="#00F5FF" strokeWidth="1.5" />
               <text x="95" y="98" fill="white" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Client Web</text>
               <text x="95" y="114" fill="#888" fontSize="8" fontFamily="monospace" textAnchor="middle">Vite Engine</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.15 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.15 }}>
               <rect x="350" y="70" width="110" height="60" rx="10" fill="#141416" stroke="#00F5FF" strokeWidth="1.5" />
               <text x="405" y="98" fill="white" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Edge Host</text>
               <text x="405" y="114" fill="#888" fontSize="8" fontFamily="monospace" textAnchor="middle">Global CDN</text>
-            </motion.g>
+            </m.g>
           </g>
         )}
 
         {tier === 'growth' && (
           <g>
             {/* Draw active lines */}
-            <motion.path
+            <m.path
               d="M 100 100 L 210 100"
               stroke="#9B59FF"
               strokeWidth="2"
@@ -143,7 +143,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               animate={{ strokeDashoffset: [0, -18] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             />
-            <motion.path
+            <m.path
               d="M 310 100 L 380 65"
               stroke="#9B59FF"
               strokeWidth="1.5"
@@ -151,7 +151,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               animate={{ strokeDashoffset: [0, -18] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             />
-            <motion.path
+            <m.path
               d="M 310 100 L 380 135"
               stroke="#9B59FF"
               strokeWidth="1.5"
@@ -161,36 +161,36 @@ const ArchitectureBlueprint = ({ tier }) => {
             />
 
             {/* Nodes */}
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
               <rect x="15" y="70" width="95" height="60" rx="10" fill="#141416" stroke="#00F5FF" strokeWidth="1.5" />
               <text x="62" y="98" fill="white" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">App Client</text>
               <text x="62" y="114" fill="#888" fontSize="8" fontFamily="monospace" textAnchor="middle">React client</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.1 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.1 }}>
               <rect x="210" y="70" width="100" height="60" rx="10" fill="#141416" stroke="#9B59FF" strokeWidth="1.5" />
               <text x="260" y="98" fill="white" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Vercel Edge</text>
               <text x="260" y="114" fill="#888" fontSize="8" fontFamily="monospace" textAnchor="middle">Serverless API</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
               <rect x="380" y="35" width="105" height="50" rx="8" fill="#141416" stroke="#333" strokeWidth="1" />
               <text x="432" y="59" fill="#aaa" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">API Engine</text>
               <text x="432" y="72" fill="#666" fontSize="7" fontFamily="monospace" textAnchor="middle">Core Services</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.3 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.3 }}>
               <rect x="380" y="110" width="105" height="50" rx="8" fill="#141416" stroke="#00FF00" strokeWidth="1.5" />
               <text x="432" y="134" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Supabase DB</text>
               <text x="432" y="147" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Relational Postgres</text>
-            </motion.g>
+            </m.g>
           </g>
         )}
 
         {tier === 'scale' && (
           <g>
             {/* Draw active lines */}
-            <motion.path
+            <m.path
               d="M 90 70 L 170 100"
               stroke="#00F5FF"
               strokeWidth="1.5"
@@ -198,7 +198,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               animate={{ strokeDashoffset: [0, -18] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             />
-            <motion.path
+            <m.path
               d="M 90 130 L 170 100"
               stroke="#00F5FF"
               strokeWidth="1.5"
@@ -206,7 +206,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               animate={{ strokeDashoffset: [0, -18] }}
               transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
             />
-            <motion.path
+            <m.path
               d="M 270 100 L 365 100"
               stroke="#00FF00"
               strokeWidth="2.5"
@@ -215,54 +215,54 @@ const ArchitectureBlueprint = ({ tier }) => {
               transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
               filter="url(#glow-heavy)"
             />
-            <motion.path
+            <m.path
               d="M 365 100 L 375 60"
               stroke="#00FF00"
               strokeWidth="1.5"
             />
-            <motion.path
+            <m.path
               d="M 365 100 L 375 140"
               stroke="#00FF00"
               strokeWidth="1.5"
             />
 
             {/* Nodes */}
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
               <rect x="10" y="45" width="85" height="42" rx="8" fill="#141416" stroke="#333" strokeWidth="1" />
               <text x="52" y="66" fill="#aaa" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">NextJS App</text>
               <text x="52" y="77" fill="#666" fontSize="7" fontFamily="monospace" textAnchor="middle">Web Client</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.05 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.05 }}>
               <rect x="10" y="112" width="85" height="42" rx="8" fill="#141416" stroke="#333" strokeWidth="1" />
               <text x="52" y="133" fill="#aaa" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">React Native</text>
               <text x="52" y="144" fill="#666" fontSize="7" fontFamily="monospace" textAnchor="middle">Mobile Client</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.1 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.1 }}>
               <rect x="160" y="70" width="110" height="60" rx="10" fill="#141416" stroke="#00F5FF" strokeWidth="1.5" />
               <text x="215" y="98" fill="white" fontSize="10" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Cloudflare WAF</text>
               <text x="215" y="114" fill="#888" fontSize="8" fontFamily="monospace" textAnchor="middle">Secured Shield</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.2 }}>
               <rect x="365" y="25" width="115" height="46" rx="8" fill="#141416" stroke="#00FF00" strokeWidth="1.5" />
               <text x="422" y="47" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">API Server</text>
               <text x="422" y="58" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Scale Cluster</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.3 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.3 }}>
               <rect x="365" y="125" width="115" height="46" rx="8" fill="#141416" stroke="#00FF00" strokeWidth="1.5" />
               <text x="422" y="147" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">DB + Redis</text>
               <text x="422" y="158" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Failover Cluster</text>
-            </motion.g>
+            </m.g>
           </g>
         )}
 
         {tier === 'enterprise' && (
           <g>
             {/* Draw active lines */}
-            <motion.path
+            <m.path
               d="M 80 100 L 155 100"
               stroke="#FF007A"
               strokeWidth="2.5"
@@ -271,7 +271,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
               filter="url(#glow-heavy)"
             />
-            <motion.path
+            <m.path
               d="M 255 100 L 330 100"
               stroke="#00F5FF"
               strokeWidth="2.5"
@@ -280,7 +280,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               transition={{ repeat: Infinity, duration: 1, ease: "linear" }}
               filter="url(#glow-heavy)"
             />
-            <motion.path
+            <m.path
               d="M 330 100 L 400 55"
               stroke="#9B59FF"
               strokeWidth="2"
@@ -288,7 +288,7 @@ const ArchitectureBlueprint = ({ tier }) => {
               animate={{ strokeDashoffset: [0, -18] }}
               transition={{ repeat: Infinity, duration: 1.2, ease: "linear" }}
             />
-            <motion.path
+            <m.path
               d="M 330 100 L 400 145"
               stroke="#00FF00"
               strokeWidth="2"
@@ -298,29 +298,29 @@ const ArchitectureBlueprint = ({ tier }) => {
             />
 
             {/* Nodes */}
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4 }}>
               <rect x="5" y="70" width="85" height="60" rx="10" fill="#141416" stroke="#FF007A" strokeWidth="1.5" />
               <text x="47" y="98" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Anycast DNS</text>
               <text x="47" y="114" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Global edge</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.05 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.05 }}>
               <rect x="150" y="70" width="105" height="60" rx="10" fill="#141416" stroke="#00F5FF" strokeWidth="1.5" />
               <text x="202" y="98" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Dynamic ALB</text>
               <text x="202" y="114" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Security load</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.15 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.15 }}>
               <rect x="385" y="25" width="110" height="50" rx="8" fill="#141416" stroke="#9B59FF" strokeWidth="1.5" />
               <text x="440" y="49" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Kubernetes Pod</text>
               <text x="440" y="62" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Dedicated Node</text>
-            </motion.g>
+            </m.g>
 
-            <motion.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.25 }}>
+            <m.g initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.4, delay: 0.25 }}>
               <rect x="385" y="120" width="110" height="50" rx="8" fill="#141416" stroke="#00FF00" strokeWidth="1.5" />
               <text x="440" y="144" fill="white" fontSize="9" fontFamily="monospace" textAnchor="middle" fontWeight="bold">Distributed DB</text>
               <text x="440" y="157" fill="#888" fontSize="7" fontFamily="monospace" textAnchor="middle">Multi-Region RAID</text>
-            </motion.g>
+            </m.g>
           </g>
         )}
       </svg>
@@ -402,7 +402,7 @@ export default function ServiceDetails() {
 
 
   return (
-    <motion.div
+    <m.div
       ref={containerRef}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -420,7 +420,7 @@ export default function ServiceDetails() {
 
       {/* Floating Animated Background Orbs (Optimized for Performance) */}
       <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
-        <motion.div
+        <m.div
           animate={{
             x: [0, 100, -50, 0],
             y: [0, -100, 50, 0],
@@ -429,7 +429,7 @@ export default function ServiceDetails() {
           className="absolute -top-[20%] -left-[10%] w-[600px] h-[600px] rounded-full"
           style={{ background: 'radial-gradient(circle, rgba(0,245,255,0.15) 0%, rgba(0,0,0,0) 70%)' }}
         />
-        <motion.div
+        <m.div
           animate={{
             x: [0, -100, 50, 0],
             y: [0, 100, -50, 0],
@@ -445,7 +445,7 @@ export default function ServiceDetails() {
 
       {/* Navigation Bar */}
       <div className="fixed top-0 left-0 w-full z-50 p-6 text-white">
-        <motion.button
+        <m.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           onClick={() => navigate('/#services')}
@@ -453,7 +453,7 @@ export default function ServiceDetails() {
         >
           <ArrowLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
           <span>Back</span>
-        </motion.button>
+        </m.button>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 pt-32 pb-24 relative z-10">
@@ -501,7 +501,7 @@ export default function ServiceDetails() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {service.deliverables.map((item, i) => (
-                  <motion.div
+                  <m.div
                     key={i}
                     whileHover={{ scale: 1.02, y: -2 }}
                     className="group flex items-center gap-4 p-5 rounded-2xl border border-white/10 bg-[#161616] relative overflow-hidden cursor-default transition-colors duration-300 hover:border-white/20 hover:bg-[#1a1a1a]"
@@ -512,7 +512,7 @@ export default function ServiceDetails() {
                       <CheckCircle2 size={14} className="text-gray-500 group-hover:text-[#00F5FF] transition-colors duration-300" />
                     </div>
                     <span className="text-gray-300 font-medium group-hover:text-white transition-colors duration-300 relative z-10">{item}</span>
-                  </motion.div>
+                  </m.div>
                 ))}
               </div>
             </div>
@@ -633,13 +633,13 @@ export default function ServiceDetails() {
       {/* Immersive Comparison Modal */}
       <AnimatePresence>
         {showCompare && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[100] flex items-center justify-center p-4 md:p-6 overflow-y-auto"
           >
-            <motion.div
+            <m.div
               initial={{ opacity: 0, scale: 0.95, y: 30 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 30 }}
@@ -919,11 +919,11 @@ export default function ServiceDetails() {
                   </a>
                 </div>
               </div>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </m.div>
   );
 }
 

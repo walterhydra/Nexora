@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useCursor } from '../../context/CursorContext';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { m, useMotionValue, useSpring } from 'framer-motion';
 
 export default function ContextCursor() {
   const { cursorType } = useCursor();
@@ -14,16 +14,20 @@ export default function ContextCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
+    let animationFrameId;
     const moveCursor = (e) => {
-      cursorX.set(e.clientX);
-      cursorY.set(e.clientY);
-      if (!isVisible) setIsVisible(true);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      animationFrameId = requestAnimationFrame(() => {
+        cursorX.set(e.clientX);
+        cursorY.set(e.clientY);
+        if (!isVisible) setIsVisible(true);
+      });
     };
 
     const handleMouseLeave = () => setIsVisible(false);
     const handleMouseEnter = () => setIsVisible(true);
 
-    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mousemove', moveCursor, { passive: true });
     document.body.addEventListener('mouseleave', handleMouseLeave);
     document.body.addEventListener('mouseenter', handleMouseEnter);
 
@@ -31,6 +35,7 @@ export default function ContextCursor() {
       window.removeEventListener('mousemove', moveCursor);
       document.body.removeEventListener('mouseleave', handleMouseLeave);
       document.body.removeEventListener('mouseenter', handleMouseEnter);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, [cursorX, cursorY, isVisible]);
 
@@ -101,7 +106,7 @@ export default function ContextCursor() {
   return (
     <>
       {/* Outer Ring / Shape */}
-      <motion.div
+      <m.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center border-2"
         style={{
           x: cursorXSpring,
@@ -115,10 +120,10 @@ export default function ContextCursor() {
         transition={{ type: 'spring', damping: 20, stiffness: 300, mass: 0.5 }}
       >
         {getInnerText()}
-      </motion.div>
+      </m.div>
 
       {/* Inner Dot (only visible on default/link) */}
-      <motion.div
+      <m.div
         className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999] bg-accent-primary"
         style={{
           x: cursorX,

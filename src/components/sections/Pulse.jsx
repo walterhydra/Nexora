@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import { m, useAnimation, AnimatePresence } from 'framer-motion';
 import { Activity, Globe, Cpu, Zap, Shield, BarChart3 } from 'lucide-react';
 
 const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) => {
@@ -25,7 +25,7 @@ const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) 
   }, [value]);
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -60,7 +60,7 @@ const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) 
         </div>
 
         <div className="mt-6 h-1 w-full bg-white/5 rounded-full overflow-hidden">
-          <motion.div
+          <m.div
             initial={{ width: 0 }}
             whileInView={{ width: "70%" }}
             transition={{ duration: 2, delay: delay + 0.5 }}
@@ -69,7 +69,7 @@ const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) 
           />
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 });
 
@@ -92,7 +92,7 @@ export default function Pulse() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-24">
           <div>
-            <motion.div
+            <m.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -100,9 +100,9 @@ export default function Pulse() {
             >
               <Activity className="text-accent-primary animate-pulse" size={14} />
               <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60">Nexora Network Pulse</span>
-            </motion.div>
+            </m.div>
 
-            <motion.h2
+            <m.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -110,9 +110,9 @@ export default function Pulse() {
             >
               The Heartbeat of <br/>
               <span className="text-gradient">Innovation.</span>
-            </motion.h2>
+            </m.h2>
 
-            <motion.p
+            <m.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -120,10 +120,10 @@ export default function Pulse() {
               className="text-xl text-white/40 max-w-lg font-medium leading-relaxed"
             >
               Real-time monitoring of our global ecosystem. We don't just work; we sustain a high-frequency pulse of digital excellence across 15+ timezones.
-            </motion.p>
+            </m.p>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -132,7 +132,7 @@ export default function Pulse() {
             {/* Visualizer */}
             <div className="absolute inset-0 flex items-center justify-center">
               {[...Array(3)].map((_, i) => (
-                <motion.div
+                <m.div
                   key={i}
                   animate={{
                     scale: [1, 1.5, 1],
@@ -143,7 +143,7 @@ export default function Pulse() {
                     repeat: Infinity,
                     delay: i * 1.3,
                   }}
-                  style={{ willChange: "transform, opacity" }}
+                  
                   className="absolute w-full h-full rounded-full border border-accent-primary/20"
                 />
               ))}
@@ -154,7 +154,7 @@ export default function Pulse() {
                 <div className="text-[10px] font-mono text-accent-primary uppercase tracking-[0.5em]">System Sync Active</div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -195,10 +195,10 @@ export default function Pulse() {
 
       {/* Narrative Marquee */}
       <div className="mt-32 border-y border-white/5 py-8 overflow-hidden bg-white/[0.01]">
-        <motion.div
+        <m.div
           animate={{ x: [0, -1000] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-          style={{ willChange: "transform" }}
+          
           className="flex gap-12 whitespace-nowrap"
         >
           {[...Array(10)].map((_, i) => (
@@ -209,7 +209,7 @@ export default function Pulse() {
               <span className="w-3 h-3 rounded-full bg-accent-violet/20" />
             </div>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

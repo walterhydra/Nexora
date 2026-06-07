@@ -42,7 +42,7 @@ const PageLoader = () => (
 
 // Animated Routes Component to handle location
 import { useLocation } from 'react-router-dom';
-import { AnimatePresence, LazyMotion, domAnimation, motion } from 'framer-motion';
+import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
 
 function AnimatedRoutes() {
   return (
@@ -85,14 +85,14 @@ function AppContent() {
       {!isPortal && <ScrollProgress />}
       {!isPortal && <ContextCursor />}
       {!isPortal && <Navbar />}
-      
+
       <AnimatedRoutes />
 
       {!isPortal && <Footer />}
       {!isPortal && <BackToTop />}
       {!isPortal && <CookieBanner />}
-      
-      <Toaster 
+
+      <Toaster
         position="bottom-center"
         toastOptions={{
           style: {
@@ -108,26 +108,34 @@ function AppContent() {
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [isExiting, setIsExiting] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
     // Show loading screen on every page load/refresh
-    const timer = setTimeout(() => {
+    const timer1 = setTimeout(() => {
       setLoading(false);
+      setIsExiting(true);
+      
+      // Wait for exit transition to complete before removing from DOM
+      const timer2 = setTimeout(() => {
+        setShowLoader(false);
+      }, 1100); // matches the duration of the transition
+      
+      return () => clearTimeout(timer2);
     }, 1500); // 1.5 seconds for initial narrative animation load
-    return () => clearTimeout(timer);
+    return () => clearTimeout(timer1);
   }, []);
 
   return (
     <HelmetProvider>
       <ThemeProvider>
-      <CursorProvider>
-        <BrowserRouter>
-          <AppContent />
-          <AnimatePresence>
-            {loading && <LoadingScreen key="loader" />}
-          </AnimatePresence>
-        </BrowserRouter>
-      </CursorProvider>
+        <CursorProvider>
+          <BrowserRouter>
+            <AppContent />
+            {showLoader && <LoadingScreen isExiting={isExiting} />}
+          </BrowserRouter>
+        </CursorProvider>
       </ThemeProvider>
     </HelmetProvider>
   );

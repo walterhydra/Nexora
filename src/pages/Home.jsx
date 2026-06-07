@@ -18,7 +18,7 @@ import Testimonials from '../components/sections/Testimonials';
 import KineticManifesto from '../components/sections/KineticManifesto';
 
 
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function Home() {
   const location = useLocation();
@@ -36,7 +36,7 @@ export default function Home() {
   }, [location]);
 
   return (
-    <motion.main
+    <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0, y: -10 }}
@@ -69,6 +69,6 @@ export default function Home() {
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 60%)' }} />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 60%)' }} />
       </div>
-    </motion.main>
+    </m.main>
   );
 }

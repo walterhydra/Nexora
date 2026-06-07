@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion, useInView } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
 import { testimonials } from '../../constants/testimonials';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import GlowCard from '../ui/GlowCard';
@@ -13,7 +13,7 @@ const ClientVoiceVisualizer = () => {
   return (
     <div ref={ref} className="flex gap-[2px] items-center h-4">
       {[...Array(5)].map((_, i) => (
-        <motion.div
+        <m.div
           key={i}
           animate={isInView ? {
             scaleY: [0.3, 1, 0.3, 0.6, 0.3],
@@ -24,7 +24,7 @@ const ClientVoiceVisualizer = () => {
             delay: i * 0.1,
             ease: "easeInOut",
           }}
-          style={{ transformOrigin: "bottom", willChange: "transform" }}
+          style={{ transformOrigin: "bottom" }}
           className="w-[2px] h-3 bg-accent-primary/40 rounded-full"
         />
       ))}
@@ -40,7 +40,7 @@ const TrustSummary = () => {
   ];
   
   return (
-    <motion.div 
+    <m.div 
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -57,16 +57,16 @@ const TrustSummary = () => {
           <div className="w-8 h-1 bg-accent-primary/20 rounded-full mt-3 group-hover:w-12 group-hover:bg-accent-primary transition-all" />
         </div>
       ))}
-    </motion.div>
+    </m.div>
   );
 };
 
 const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
   return (
     <div className="relative flex w-full overflow-hidden py-6">
-      <motion.div
+      <m.div
         className="flex gap-6 whitespace-nowrap min-w-max px-3"
-        style={{ willChange: "transform" }}
+        
         animate={{
           x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"]
         }}
@@ -119,7 +119,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
             </GlowCard>
           </div>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 };
@@ -136,7 +136,7 @@ export default function Testimonials() {
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-violet/5 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 mb-20 text-center relative z-20">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -144,17 +144,17 @@ export default function Testimonials() {
         >
           <span className="flex h-2 w-2 rounded-full bg-accent-primary animate-pulse" />
           Trusted by Global Visionaries
-        </motion.div>
+        </m.div>
         
-        <motion.h2 
+        <m.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="text-5xl md:text-7xl font-display font-black mb-6 uppercase tracking-tighter"
         >
           Client <span className="text-gradient">Impact</span>
-        </motion.h2>
-        <motion.p 
+        </m.h2>
+        <m.p 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -162,7 +162,7 @@ export default function Testimonials() {
           className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto font-light leading-relaxed"
         >
           Real stories from the pioneers and founders we've helped scale through high-performance engineering.
-        </motion.p>
+        </m.p>
       </div>
 
       <div className="w-full flex flex-col relative z-20">
@@ -190,7 +190,7 @@ export default function Testimonials() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-20">
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -203,7 +203,7 @@ export default function Testimonials() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </span>
           </a>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   );

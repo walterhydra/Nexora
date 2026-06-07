@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { 
   ShieldAlert, CreditCard, Building2, Globe, 
   ArrowRight, ShieldCheck, Zap, Lock, Terminal, Activity
@@ -32,13 +32,13 @@ export default function PaymentPolicy() {
     <div className="pt-32 pb-20 min-h-screen bg-[#02000a] text-gray-100 relative overflow-hidden font-sans">
       {/* Deep Space Background Effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-900/20 via-[#02000a] to-[#02000a] -z-20" />
-      <motion.div 
+      <m.div 
         style={{ y: yBg }}
         className="absolute top-0 left-0 w-full h-[200vh] opacity-30 -z-10 pointer-events-none"
       >
         <div className="absolute top-[10%] left-[20%] w-96 h-96 bg-accent-blue/10 rounded-full blur-[120px]" />
         <div className="absolute top-[40%] right-[10%] w-[500px] h-[500px] bg-accent-violet/10 rounded-full blur-[150px]" />
-      </motion.div>
+      </m.div>
 
       {/* Grid Pattern Overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
@@ -46,13 +46,13 @@ export default function PaymentPolicy() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Hero Section */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center mb-32 mt-10 relative"
         >
-          <motion.div 
+          <m.div 
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -60,7 +60,7 @@ export default function PaymentPolicy() {
           >
             <Activity className="text-accent-blue" size={14} />
             <span className="text-xs font-mono font-bold uppercase tracking-[0.2em] text-accent-blue">Investment Architecture</span>
-          </motion.div>
+          </m.div>
           
           <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-display font-black mb-8 tracking-tighter leading-none">
             The Nexora <br/>
@@ -71,24 +71,24 @@ export default function PaymentPolicy() {
           <p className="text-xl text-gray-400 max-w-2xl mx-auto font-medium leading-relaxed">
             World-class engineering requires elite operational standards. Our financial architecture is built for speed, transparency, and mutual protection.
           </p>
-        </motion.div>
+        </m.div>
 
         {/* Engagement Models */}
-        <motion.div 
+        <m.div 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           className="mb-32"
         >
-          <motion.div variants={itemVariants} className="flex items-center gap-4 mb-12">
+          <m.div variants={itemVariants} className="flex items-center gap-4 mb-12">
             <Zap className="text-accent-blue" size={28} />
             <h2 className="text-3xl md:text-4xl font-display font-bold">Engagement Models</h2>
-          </motion.div>
+          </m.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Standard Protocol */}
-            <motion.div variants={itemVariants} className="group relative">
+            <m.div variants={itemVariants} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-b from-accent-blue/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] blur-xl" />
               <div className="relative h-full bg-[#0a0a14]/80 backdrop-blur-xl p-10 rounded-[2rem] border border-white/5 hover:border-accent-blue/30 transition-colors duration-500 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-blue to-transparent opacity-50" />
@@ -123,10 +123,10 @@ export default function PaymentPolicy() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
 
             {/* Enterprise Protocol */}
-            <motion.div variants={itemVariants} className="group relative">
+            <m.div variants={itemVariants} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-b from-accent-violet/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-[2rem] blur-xl" />
               <div className="relative h-full bg-[#0a0a14]/80 backdrop-blur-xl p-10 rounded-[2rem] border border-white/5 hover:border-accent-violet/30 transition-colors duration-500 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-accent-violet to-transparent opacity-50" />
@@ -171,12 +171,12 @@ export default function PaymentPolicy() {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </m.div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Non-Negotiable Standards */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
@@ -222,13 +222,13 @@ export default function PaymentPolicy() {
               ))}
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Global Commerce & Security */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-32">
           
           {/* Payment Gateways */}
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -263,10 +263,10 @@ export default function PaymentPolicy() {
                 <p className="text-xs text-gray-400">Direct Bank Transfer (NEFT / IMPS / RTGS / SWIFT)</p>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
           {/* Philosophy */}
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -281,11 +281,11 @@ export default function PaymentPolicy() {
               <br/><br/>
               This strict financial protocol ensures our engineering fleet remains 100% focused on architectural excellence, eliminating administrative friction and protecting both entities throughout the development lifecycle.
             </p>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* CTA Section */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -310,7 +310,7 @@ export default function PaymentPolicy() {
               </a>
             </div>
           </div>
-        </motion.div>
+        </m.div>
 
       </div>
     </div>

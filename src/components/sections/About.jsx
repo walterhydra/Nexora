@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import toast from 'react-hot-toast';
 
 export default function About() {
@@ -91,6 +91,8 @@ export default function About() {
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
+                  width="800"
+                  height="420"
                 />
                 {/* Click to flip hint */}
                 <div className="absolute bottom-3 left-4 flex items-center gap-2 text-[10px] text-white/70 uppercase tracking-widest font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1">
@@ -107,6 +109,8 @@ export default function About() {
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
+                  width="800"
+                  height="420"
                 />
                 {/* Click to flip hint */}
                 <div className="absolute bottom-3 left-4 flex items-center gap-2 text-[10px] text-white/70 uppercase tracking-widest font-mono opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/40 backdrop-blur-sm rounded-full px-3 py-1">

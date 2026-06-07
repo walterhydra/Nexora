@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import {
   AlertTriangle,
   ArrowRight,
@@ -102,7 +102,7 @@ export default function RefundPolicy() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] bg-gradient-to-b from-accent-blue/10 via-transparent to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-[1400px] px-4 md:px-6">
-        <motion.header
+        <m.header
           initial={{ opacity: 0, y: 28 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
@@ -142,9 +142,9 @@ export default function RefundPolicy() {
               ))}
             </div>
           </div>
-        </motion.header>
+        </m.header>
 
-        <motion.section {...reveal} id="eligibility" className="py-12 md:py-16">
+        <m.section {...reveal} id="eligibility" className="py-12 md:py-16">
           <div className="mb-7 flex items-center gap-3">
             <ShieldCheck className="text-accent-blue" size={24} />
             <h2 className="text-2xl font-display font-bold md:text-3xl">Refund eligibility at a glance</h2>
@@ -156,7 +156,7 @@ export default function RefundPolicy() {
               const Icon = tone.Icon;
 
               return (
-                <motion.article
+                <m.article
                   key={stage.label}
                   initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -175,11 +175,11 @@ export default function RefundPolicy() {
                   <div className="text-xs font-bold uppercase tracking-widest text-gray-400">{stage.timing}</div>
                   <h3 className="mt-2 text-2xl font-display font-bold">{stage.label}</h3>
                   <p className="mt-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">{stage.description}</p>
-                </motion.article>
+                </m.article>
               );
             })}
           </div>
-        </motion.section>
+        </m.section>
 
         <div className="grid gap-10 lg:grid-cols-[250px_minmax(0,1fr)]">
           <aside className="hidden lg:block">
@@ -201,7 +201,7 @@ export default function RefundPolicy() {
           </aside>
 
           <div className="space-y-6">
-            <motion.section {...reveal} id="overview" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
+            <m.section {...reveal} id="overview" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
               <div className="grid gap-8 md:grid-cols-[220px_minmax(0,1fr)]">
                 <div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-accent-blue/10 text-accent-blue">
@@ -218,9 +218,9 @@ export default function RefundPolicy() {
                   </p>
                 </div>
               </div>
-            </motion.section>
+            </m.section>
 
-            <motion.section {...reveal} id="subscriptions" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
+            <m.section {...reveal} id="subscriptions" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
               <div className="grid gap-8 md:grid-cols-[220px_minmax(0,1fr)]">
                 <div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-violet-500/10 text-violet-500">
@@ -248,9 +248,9 @@ export default function RefundPolicy() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </m.section>
 
-            <motion.section {...reveal} id="revisions" className="overflow-hidden rounded-lg border border-accent-blue/25 bg-[#07111d] text-white shadow-[0_20px_70px_rgba(15,23,42,0.16)]">
+            <m.section {...reveal} id="revisions" className="overflow-hidden rounded-lg border border-accent-blue/25 bg-[#07111d] text-white shadow-[0_20px_70px_rgba(15,23,42,0.16)]">
               <div className="grid md:grid-cols-[0.9fr_1.1fr]">
                 <div className="flex min-h-[280px] flex-col justify-between bg-accent-blue p-7 text-black md:p-8">
                   <RefreshCcw size={34} />
@@ -271,9 +271,9 @@ export default function RefundPolicy() {
                   </div>
                 </div>
               </div>
-            </motion.section>
+            </m.section>
 
-            <motion.section {...reveal} id="exclusions" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
+            <m.section {...reveal} id="exclusions" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
               <div className="mb-7 flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-red-500">
                   <AlertTriangle size={23} />
@@ -291,9 +291,9 @@ export default function RefundPolicy() {
                   </div>
                 ))}
               </div>
-            </motion.section>
+            </m.section>
 
-            <motion.section {...reveal} id="request" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
+            <m.section {...reveal} id="request" className="rounded-lg border border-black/10 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-[#0b0d12] md:p-8">
               <div className="mb-8 flex items-center justify-between gap-5">
                 <div>
                   <div className="text-xs font-bold uppercase tracking-widest text-accent-blue">Request process</div>
@@ -315,9 +315,9 @@ export default function RefundPolicy() {
                   </div>
                 ))}
               </div>
-            </motion.section>
+            </m.section>
 
-            <motion.section {...reveal} className="relative overflow-hidden rounded-lg bg-gray-950 p-7 text-white shadow-[0_24px_80px_rgba(15,23,42,0.2)] md:p-10">
+            <m.section {...reveal} className="relative overflow-hidden rounded-lg bg-gray-950 p-7 text-white shadow-[0_24px_80px_rgba(15,23,42,0.2)] md:p-10">
               <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-accent-blue/15 to-transparent" />
               <div className="relative z-10 grid gap-8 md:grid-cols-[1fr_auto] md:items-end">
                 <div>
@@ -337,7 +337,7 @@ export default function RefundPolicy() {
                   Contact billing <ArrowRight size={18} />
                 </a>
               </div>
-            </motion.section>
+            </m.section>
           </div>
         </div>
       </div>

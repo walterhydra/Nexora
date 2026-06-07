@@ -1,38 +1,52 @@
 import React, { useState, useRef, useCallback } from "react";
 import { ArrowUpRight, ArrowRight, ExternalLink } from "lucide-react";
 import { projects } from "../../constants/projects";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from 'framer-motion';
 import "./Work.css";
 
 /* ------------------------------------------------------------------ */
 /*  Featured Project Card – large immersive hero card                  */
 /* ------------------------------------------------------------------ */
-function FeaturedCard({ project, index }) {
+const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
   const cardRef = useRef(null);
+  const imageRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, margin: "-80px" });
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const rAFRef = useRef(null);
 
   const handleMouseMove = useCallback((e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-    setMousePos({ x, y });
+    if (!cardRef.current || !imageRef.current) return;
+    
+    if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
+    
+    rAFRef.current = requestAnimationFrame(() => {
+      const rect = cardRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      imageRef.current.style.transform = `scale(1.08) translate(${x * -8}px, ${y * -8}px)`;
+    });
   }, []);
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
+    if (imageRef.current) {
+      imageRef.current.style.transform = `scale(1)`;
+    }
+  };
 
   // Alternate layout: even index = image left, odd = image right
   const isReversed = index % 2 !== 0;
 
   return (
-    <motion.div
+    <m.div
       ref={cardRef}
       initial={{ opacity: 0, y: 80 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => { setIsHovered(false); setMousePos({ x: 0, y: 0 }); }}
+      onMouseLeave={handleMouseLeave}
       className="work-featured-card group"
       style={{ "--card-index": index }}
     >
@@ -46,16 +60,15 @@ function FeaturedCard({ project, index }) {
         >
           <div className="work-featured-image-container">
             <img
+              ref={imageRef}
               src={project.image}
               alt={project.title}
               loading="lazy"
               decoding="async"
+              width="1920"
+              height="1080"
               className="work-featured-image"
-              style={{
-                transform: isHovered
-                  ? `scale(1.08) translate(${mousePos.x * -8}px, ${mousePos.y * -8}px)`
-                  : "scale(1)",
-              }}
+              style={{ transition: "transform 0.1s ease-out" }}
             />
             {/* Gradient overlay */}
             <div className="work-featured-overlay" />
@@ -104,9 +117,9 @@ function FeaturedCard({ project, index }) {
           </a>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
-}
+});
 
 /* ------------------------------------------------------------------ */
 /*  Main Work Section                                                  */
@@ -126,7 +139,7 @@ export default function Work() {
 
       {/* Section Header */}
       <div className="work-header">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 40 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -135,28 +148,28 @@ export default function Work() {
           <span className="work-header-line" />
           <span className="work-header-tag">Portfolio</span>
           <span className="work-header-line" />
-        </motion.div>
+        </m.div>
 
-        <motion.h2
+        <m.h2
           initial={{ opacity: 0, y: 50 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="work-header-title"
         >
           Featured <span className="work-header-title-accent">Works</span>
-        </motion.h2>
+        </m.h2>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 30 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
           className="work-header-subtitle"
         >
           A curated selection of our most impactful digital experiences, crafted with precision and purpose.
-        </motion.p>
+        </m.p>
 
         {/* Stats row */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
@@ -176,7 +189,7 @@ export default function Work() {
             <span className="work-stat-value">5★</span>
             <span className="work-stat-label">Client Satisfaction</span>
           </div>
-        </motion.div>
+        </m.div>
       </div>
 
       {/* Featured Projects */}
@@ -188,7 +201,7 @@ export default function Work() {
 
       {/* View All Projects CTA — opens /projects in a new tab */}
       {totalProjects > 3 && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -217,7 +230,7 @@ export default function Work() {
           </div>
 
           <div className="work-cta-line" />
-        </motion.div>
+        </m.div>
       )}
     </section>
   );

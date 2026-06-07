@@ -8,14 +8,20 @@ export default function ParticleField() {
   const [particleCount, setParticleCount] = useState(150);
   const { isDark } = useTheme();
 
-  // Performance Rule: max 150 desktop, 60 mobile
   useEffect(() => {
+    let timeoutId;
     const checkSize = () => {
-      setParticleCount(window.innerWidth < 768 ? 30 : 80);
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        setParticleCount(window.innerWidth < 768 ? 30 : 80);
+      }, 150);
     };
     checkSize();
-    window.addEventListener('resize', checkSize);
-    return () => window.removeEventListener('resize', checkSize);
+    window.addEventListener('resize', checkSize, { passive: true });
+    return () => {
+      window.removeEventListener('resize', checkSize);
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   useEffect(() => {

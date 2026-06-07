@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { CheckCircle2, ArrowRight, Mail, Phone, MapPin } from 'lucide-react';
@@ -160,7 +160,7 @@ export default function Contact() {
     <div className="pt-32 pb-20 min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative">
       <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-accent-blue/5 to-transparent -z-10" />
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -170,10 +170,10 @@ export default function Contact() {
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             Ready to start your next big project? Let's talk about how Nexora can help you achieve your goals in 7 days.
           </p>
-        </motion.div>
+        </m.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -224,9 +224,9 @@ export default function Contact() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -291,7 +291,7 @@ export default function Contact() {
                 )}
               </MagneticButton>
             </form>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </div>

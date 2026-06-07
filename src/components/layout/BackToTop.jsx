@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence, useScroll } from 'framer-motion';
+import { m, AnimatePresence, useScroll } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 import { getScroll } from '../../utils/scroll';
 
@@ -35,7 +35,7 @@ export default function BackToTop() {
   return (
     <AnimatePresence>
       {isVisible && (
-        <motion.button
+        <m.button
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.5 }}
@@ -64,7 +64,7 @@ export default function BackToTop() {
             />
           </svg>
           <ArrowUp size={20} className="relative z-10" />
-        </motion.button>
+        </m.button>
       )}
     </AnimatePresence>
   );

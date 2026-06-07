@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function About() {
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function About() {
     <div className="pt-32 pb-20 min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative">
       <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-accent-blue/5 to-transparent -z-10" />
       <div className="max-w-5xl mx-auto px-6 relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -20,10 +20,10 @@ export default function About() {
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
             We are a premium digital agency specializing in high-performance web development, mobile applications, and intelligent automations.
           </p>
-        </motion.div>
+        </m.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-20">
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -36,9 +36,9 @@ export default function About() {
             <p className="text-gray-600 dark:text-gray-300">
               We believe in the power of speed without compromising quality. That's why we've engineered our processes to deliver world-class digital solutions in just 7 days.
             </p>
-          </motion.div>
+          </m.div>
 
-          <motion.div 
+          <m.div 
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -63,7 +63,7 @@ export default function About() {
                 <span className="text-gray-600 dark:text-gray-300"><strong>Dedicated Support:</strong> We don't just launch; we partner with you for the long haul.</span>
               </li>
             </ul>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Fingerprint } from 'lucide-react';
 import MagneticButton from '../ui/MagneticButton';
@@ -7,7 +7,7 @@ import MagneticButton from '../ui/MagneticButton';
 const MarqueeRow = ({ text, direction = 1, speed = 20 }) => {
   return (
     <div className="flex whitespace-nowrap overflow-hidden py-4 opacity-[0.03] select-none pointer-events-none font-display font-black text-6xl md:text-8xl lg:text-9xl tracking-tighter">
-      <motion.div
+      <m.div
         animate={{ x: direction > 0 ? ['0%', '-50%'] : ['-50%', '0%'] }}
         transition={{ duration: speed, repeat: Infinity, ease: "linear" }}
         className="flex gap-8 px-4"
@@ -16,7 +16,7 @@ const MarqueeRow = ({ text, direction = 1, speed = 20 }) => {
         <span>{text}</span>
         <span>{text}</span>
         <span>{text}</span>
-      </motion.div>
+      </m.div>
     </div>
   );
 };
@@ -45,7 +45,7 @@ export default function OnboardingTeaser() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-accent-blue/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Foreground Holographic Card */}
-      <motion.div 
+      <m.div 
         style={{ y, scale }}
         className="relative z-10 w-[90%] max-w-4xl mx-auto"
       >
@@ -84,7 +84,7 @@ export default function OnboardingTeaser() {
 
           </div>
         </div>
-      </motion.div>
+      </m.div>
     </section>
   );
 }

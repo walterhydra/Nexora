@@ -1,36 +1,50 @@
 import React, { useRef, useState, useCallback } from "react";
 import { ArrowUpRight, ExternalLink, ArrowLeft } from "lucide-react";
 import { projects } from "../constants/projects";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from 'framer-motion';
 import { Link } from "react-router-dom";
 import "../components/sections/Work.css";
 
 /* ------------------------------------------------------------------ */
 /*  Project Card                                                       */
 /* ------------------------------------------------------------------ */
-function ProjectCard({ project, index }) {
+const ProjectCard = React.memo(function ProjectCard({ project, index }) {
   const cardRef = useRef(null);
+  const imageRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, margin: "-60px" });
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
+  const rAFRef = useRef(null);
 
   const handleMouseMove = useCallback((e) => {
-    if (!cardRef.current) return;
-    const rect = cardRef.current.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-    setMousePos({ x, y });
+    if (!cardRef.current || !imageRef.current) return;
+    
+    if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
+    
+    rAFRef.current = requestAnimationFrame(() => {
+      const rect = cardRef.current.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+      imageRef.current.style.transform = `scale(1.06) translate(${x * -6}px, ${y * -6}px)`;
+    });
   }, []);
 
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
+    if (imageRef.current) {
+      imageRef.current.style.transform = `scale(1)`;
+    }
+  };
+
   return (
-    <motion.div
+    <m.div
       ref={cardRef}
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, delay: (index % 6) * 0.08, ease: [0.16, 1, 0.3, 1] }}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => { setIsHovered(false); setMousePos({ x: 0, y: 0 }); }}
+      onMouseLeave={handleMouseLeave}
       className="projects-page-card group"
     >
       <a
@@ -41,16 +55,15 @@ function ProjectCard({ project, index }) {
       >
         <div className="projects-page-card-image-container">
           <img
+            ref={imageRef}
             src={project.image}
             alt={project.title}
             loading="lazy"
             decoding="async"
+            width="1920"
+            height="1080"
             className="projects-page-card-image"
-            style={{
-              transform: isHovered
-                ? `scale(1.06) translate(${mousePos.x * -6}px, ${mousePos.y * -6}px)`
-                : "scale(1)",
-            }}
+            style={{ transition: "transform 0.1s ease-out" }}
           />
           <div className="projects-page-card-overlay" />
 
@@ -93,9 +106,9 @@ function ProjectCard({ project, index }) {
           <ArrowUpRight className="w-4 h-4" />
         </a>
       </div>
-    </motion.div>
+    </m.div>
   );
-}
+});
 
 /* ------------------------------------------------------------------ */
 /*  Projects Page                                                      */
@@ -105,7 +118,7 @@ export default function Projects() {
   const headerInView = useInView(headerRef, { once: true, margin: "-50px" });
 
   return (
-    <motion.main
+    <m.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -126,7 +139,7 @@ export default function Projects() {
 
       {/* Header */}
       <header className="projects-page-header" ref={headerRef}>
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -135,18 +148,18 @@ export default function Projects() {
           <span className="work-header-line" />
           <span className="work-header-tag">Complete Portfolio</span>
           <span className="work-header-line" />
-        </motion.div>
+        </m.div>
 
-        <motion.h1
+        <m.h1
           initial={{ opacity: 0, y: 50 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="projects-page-title"
         >
           All <span className="work-header-title-accent">Projects</span>
-        </motion.h1>
+        </m.h1>
 
-        <motion.p
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -154,7 +167,7 @@ export default function Projects() {
         >
           Every project we've delivered — from restaurant websites to full-scale EdTech platforms.
           <span className="projects-page-count">{projects.length} Projects</span>
-        </motion.p>
+        </m.p>
       </header>
 
       {/* Grid */}
@@ -163,6 +176,6 @@ export default function Projects() {
           <ProjectCard key={project.id} project={project} index={index} />
         ))}
       </div>
-    </motion.main>
+    </m.main>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import { motion, useInView } from 'framer-motion';
+import { m, useInView } from 'framer-motion';
 
 const VideoPlayer = ({ src, className }) => {
   const ref = useRef(null);
@@ -23,8 +23,9 @@ const VideoPlayer = ({ src, className }) => {
       loop 
       muted 
       playsInline
+      preload="none"
       className={className}
-      style={{ willChange: "transform" }}
+      
     />
   );
 };
@@ -105,7 +106,7 @@ export default function RealtimeWork() {
         
         {/* Massive Headline */}
         <div className="text-center mb-32">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -121,7 +122,7 @@ export default function RealtimeWork() {
             <p className="text-white/50 max-w-2xl mx-auto text-lg">
               Experience the scale, performance, and visual excellence of our recently deployed enterprise and commercial platforms.
             </p>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Project Showcase List */}
@@ -130,7 +131,7 @@ export default function RealtimeWork() {
             const isEven = idx % 2 === 0;
 
             return (
-              <motion.div 
+              <m.div 
                 key={project.id}
                 initial={{ opacity: 0, y: 100 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +205,7 @@ export default function RealtimeWork() {
                   </button>
                 </div>
 
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { pricing } from '../../constants/pricing';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import MagneticButton from '../ui/MagneticButton';
@@ -12,22 +12,22 @@ export default function Pricing() {
   return (
     <section id="pricing" className="py-16 bg-white dark:bg-black relative">
       <div className="max-w-7xl mx-auto px-6">
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
           className="text-center mb-10"
         >
-          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-display font-bold mb-3">
+          <m.h2 variants={fadeUp} className="text-3xl md:text-4xl font-display font-bold mb-3">
             Simple, Transparent <span className="text-gradient">Pricing</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-sm text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-6">
+          </m.h2>
+          <m.p variants={fadeUp} className="text-sm text-gray-600 dark:text-gray-400 max-w-xl mx-auto mb-6">
             No hidden fees. No surprise charges. Just world-class execution.
-          </motion.p>
+          </m.p>
 
           {/* Toggle */}
-          <motion.div variants={fadeUp} className="flex items-center justify-center gap-3">
+          <m.div variants={fadeUp} className="flex items-center justify-center gap-3">
             <span className={`text-xs font-medium ${!isAnnual ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>Pay per project</span>
             <button 
               onClick={() => setIsAnnual(!isAnnual)}
@@ -38,12 +38,12 @@ export default function Pricing() {
               />
             </button>
             <span className={`text-xs font-medium ${isAnnual ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-400'}`}>Retainer <span className="text-[10px] bg-green-500/10 text-green-500 px-1.5 py-0.5 rounded-full ml-1 font-bold">-20%</span></span>
-          </motion.div>
-        </motion.div>
+          </m.div>
+        </m.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {pricing.map((plan, idx) => (
-            <motion.div 
+            <m.div 
               key={plan.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function Pricing() {
                   {plan.price === "Custom" ? "Let's Talk" : "Get Started"}
                 </MagneticButton>
               </GlowCard>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

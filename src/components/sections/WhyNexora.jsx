@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
+import { m, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { 
   Zap, 
   Layers, 
@@ -38,7 +38,7 @@ const BentoCard = React.memo(({ children, className, title, description, icon: I
   }
 
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -48,12 +48,11 @@ const BentoCard = React.memo(({ children, className, title, description, icon: I
       style={{
         rotateX,
         rotateY,
-        transformStyle: "preserve-3d",
-        willChange: "transform"
+        transformStyle: "preserve-3d"
       }}
       className={`group relative overflow-hidden rounded-3xl border border-[var(--border-color)] bg-[var(--bg-secondary)] p-8 transition-colors hover:bg-[var(--bg-tertiary)] ${className}`}
     >
-      <motion.div
+      <m.div
         className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition duration-300 group-hover:opacity-100"
         style={{
           background: useTransform(
@@ -80,7 +79,7 @@ const BentoCard = React.memo(({ children, className, title, description, icon: I
 
       {/* Decorative Glitch lines on hover */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent-primary to-transparent opacity-0 group-hover:opacity-100 group-hover:translate-y-[290px] transition-all duration-[2s] pointer-events-none" />
-    </motion.div>
+    </m.div>
   );
 });
 
@@ -113,7 +112,7 @@ const WhyNexora = () => {
         />
         
         {/* Animated Mesh Gradients */}
-        <motion.div 
+        <m.div 
           animate={{ 
             scale: [1, 1.2, 1],
             rotate: [0, 90, 0],
@@ -121,9 +120,9 @@ const WhyNexora = () => {
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-accent-primary/20 rounded-full blur-[120px]"
-          style={{ willChange: "transform, opacity" }}
+          
         />
-        <motion.div 
+        <m.div 
           animate={{ 
             scale: [1.2, 1, 1.2],
             rotate: [0, -90, 0],
@@ -131,16 +130,16 @@ const WhyNexora = () => {
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] bg-accent-violet/20 rounded-full blur-[120px]"
-          style={{ willChange: "transform, opacity" }}
+          
         />
       </div>
 
-      <motion.div 
-        style={{ scale, opacity, willChange: "transform, opacity" }}
+      <m.div 
+        style={{ scale, opacity }}
         className="max-w-7xl mx-auto relative z-10"
       >
         <div className="mb-24 text-center">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--border-color)] bg-[var(--bg-secondary)]/50 backdrop-blur-sm mb-6 shadow-sm"
@@ -150,25 +149,25 @@ const WhyNexora = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent-primary"></span>
             </span>
             <span className="text-[10px] font-bold uppercase tracking-widest text-[var(--text-primary)] opacity-60">The Nexora Advantage</span>
-          </motion.div>
+          </m.div>
           
-          <motion.h2 
+          <m.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             className="text-5xl md:text-8xl font-black tracking-tighter leading-[0.9]"
           >
             Why Choose <br/>
             <span className="text-gradient">Nexora Studio?</span>
-          </motion.h2>
+          </m.h2>
           
-          <motion.p 
+          <m.p 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="mt-8 text-xl text-[var(--text-primary)]/50 max-w-2xl mx-auto font-medium"
           >
             We don't just build websites; we engineer high-performance digital engines that scale with your ambition.
-          </motion.p>
+          </m.p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[320px]">
@@ -204,7 +203,7 @@ const WhyNexora = () => {
                       <span className="text-accent-primary">{item.progress}</span>
                     </div>
                     <div className="h-2 w-full bg-[var(--bg-secondary)] rounded-full overflow-hidden border border-[var(--border-color)]">
-                      <motion.div 
+                      <m.div 
                         initial={{ width: 0 }}
                         whileInView={{ width: item.progress }}
                         transition={{ duration: 2, delay: 0.5 + (i * 0.2), ease: [0.16, 1, 0.3, 1] }}
@@ -212,7 +211,7 @@ const WhyNexora = () => {
                         style={{ backgroundColor: item.color }}
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent" />
-                      </motion.div>
+                      </m.div>
                     </div>
                   </div>
                 ))}
@@ -257,13 +256,13 @@ const WhyNexora = () => {
             color="#FF6B35"
           >
             <div className="mt-4 relative h-16 w-full flex items-center justify-center">
-               <motion.div 
+               <m.div 
                 animate={{ rotate: 360 }}
                 transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                 className="text-5xl text-accent-secondary/20"
                >
                  <Globe />
-               </motion.div>
+               </m.div>
                <div className="absolute inset-0 flex items-center justify-center">
                  <p className="text-xs font-bold text-accent-secondary uppercase tracking-[0.2em]">15+ Countries</p>
                </div>
@@ -282,7 +281,7 @@ const WhyNexora = () => {
                {[1,2,3,4].map(i => (
                  <div key={i} className="rounded-2xl bg-[var(--bg-primary)] border border-[var(--border-color)] overflow-hidden aspect-video relative group/item shadow-inner">
                     <div className="absolute inset-0 bg-gradient-to-tr from-accent-primary/10 to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity" />
-                    <motion.div 
+                    <m.div 
                       animate={{ 
                         opacity: [0.1, 0.3, 0.1],
                         scale: [1, 1.05, 1]
@@ -291,9 +290,9 @@ const WhyNexora = () => {
                       className="absolute inset-0 flex items-center justify-center"
                     >
                       <div className="w-1/2 h-0.5 bg-accent-primary/20 rounded-full" />
-                    </motion.div>
+                    </m.div>
                     <div className="absolute bottom-3 left-3 right-3 h-1 bg-white/5 rounded-full overflow-hidden">
-                       <motion.div 
+                       <m.div 
                         animate={{ x: ['-100%', '100%'] }}
                         transition={{ duration: 3, repeat: Infinity, ease: "linear", delay: i * 0.4 }}
                         className="w-full h-full bg-accent-primary/40"
@@ -331,7 +330,7 @@ const WhyNexora = () => {
           >
              <div className="mt-6 flex items-center gap-6">
                 <div className="flex-1 h-2 bg-[var(--bg-primary)] rounded-full border border-[var(--border-color)] overflow-hidden">
-                   <motion.div 
+                   <m.div 
                     animate={{ x: ['-100%', '100%'] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
                     className="w-1/2 h-full bg-accent-secondary shadow-[0_0_15px_var(--color-accent-secondary)]"
@@ -341,7 +340,7 @@ const WhyNexora = () => {
              </div>
           </BentoCard>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Global CSS for stroke text */}
       <style dangerouslySetInnerHTML={{__html: `

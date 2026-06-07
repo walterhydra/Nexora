@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform } from 'framer-motion';
 
 export default function KineticManifesto() {
   const containerRef = useRef(null);
@@ -17,8 +17,8 @@ export default function KineticManifesto() {
       <div className="relative whitespace-nowrap flex flex-col gap-4">
         
         {/* Row 1: Moves Left */}
-        <motion.div 
-          style={{ x: x1, willChange: "transform" }}
+        <m.div 
+          style={{ x: x1 }}
           className="flex gap-8"
         >
           {[...Array(4)].map((_, i) => (
@@ -29,11 +29,11 @@ export default function KineticManifesto() {
               <div className="w-8 h-8 rounded-full bg-accent-primary animate-pulse" />
             </div>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Row 2: Moves Right */}
-        <motion.div 
-          style={{ x: x2, willChange: "transform" }}
+        <m.div 
+          style={{ x: x2 }}
           className="flex gap-8"
         >
           {[...Array(4)].map((_, i) => (
@@ -44,7 +44,7 @@ export default function KineticManifesto() {
               <div className="w-8 h-8 rounded-full bg-accent-secondary animate-pulse" />
             </div>
           ))}
-        </motion.div>
+        </m.div>
 
       </div>
 

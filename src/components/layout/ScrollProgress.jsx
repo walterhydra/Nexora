@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useScroll, motion, useSpring } from 'framer-motion';
+import { useScroll, m, useSpring } from 'framer-motion';
 
 export default function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -27,7 +27,7 @@ export default function ScrollProgress() {
 
   return (
     <div className="fixed top-0 left-0 right-0 z-[100] flex items-center">
-      <motion.div
+      <m.div
         className="h-1 bg-accent-blue origin-left w-full"
         style={{ scaleX }}
       />

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function PrivacyPolicy() {
   useEffect(() => {
@@ -10,7 +10,7 @@ export default function PrivacyPolicy() {
     <div className="pt-32 pb-20 min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative">
       <div className="absolute top-0 left-0 w-full h-[50vh] bg-gradient-to-b from-accent-blue/5 to-transparent -z-10" />
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
               contact@nexora.studio
             </p>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useSpring, useTransform, useVelocity, useAnimationFrame, useMotionValue } from 'framer-motion';
+import { m, useScroll, useSpring, useTransform, useVelocity, useAnimationFrame, useMotionValue } from 'framer-motion';
 const wrap = (min, max, v) => {
   const rangeSize = max - min;
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
@@ -36,7 +36,7 @@ export default function ScrollVelocityText({ text, baseVelocity = 5, className =
 
   return (
     <div className={`overflow-hidden whitespace-nowrap flex flex-nowrap m-0 ${className}`}>
-      <motion.div className="flex whitespace-nowrap flex-nowrap" style={{ x, willChange: "transform" }}>
+      <m.div className="flex whitespace-nowrap flex-nowrap" style={{ x }}>
         <span className="block mr-8">{text} </span>
         <span className="block mr-8">{text} </span>
         <span className="block mr-8">{text} </span>
@@ -45,7 +45,7 @@ export default function ScrollVelocityText({ text, baseVelocity = 5, className =
         <span className="block mr-8">{text} </span>
         <span className="block mr-8">{text} </span>
         <span className="block mr-8">{text} </span>
-      </motion.div>
+      </m.div>
     </div>
   );
 }

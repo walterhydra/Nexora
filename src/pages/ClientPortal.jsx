@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { 
   Mail, Eye, Lock, Zap, MessageCircle, ShieldCheck, 
   LayoutDashboard, FolderKanban, Receipt, Settings, 
@@ -57,7 +57,7 @@ const LivePulseFeed = () => {
       <div className="p-6 flex-1 flex flex-col gap-4 font-mono text-xs overflow-hidden relative bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[#1a1c23] to-[#0f1115]">
         <AnimatePresence initial={false}>
           {logs.map((log) => (
-            <motion.div 
+            <m.div 
               key={log.id}
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
@@ -72,7 +72,7 @@ const LivePulseFeed = () => {
               }`}>
                 {log.text}
               </p>
-            </motion.div>
+            </m.div>
           ))}
         </AnimatePresence>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0f1115] to-transparent pointer-events-none" />
@@ -135,7 +135,7 @@ const InteractiveInvoice = () => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <motion.div
+        <m.div
           ref={cardRef}
           animate={{ rotateX: rotate.x, rotateY: rotate.y }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
@@ -184,7 +184,7 @@ const InteractiveInvoice = () => {
               <div className="text-sm font-semibold tracking-wide">OCT 12, 2026</div>
             </div>
           </div>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );
@@ -253,17 +253,17 @@ const AIConcierge = () => {
   return (
     <>
       {/* Floating Button with Pulse Animation */}
-      <motion.div
+      <m.div
         className={`fixed bottom-8 right-8 z-40 transition-opacity duration-300 ${isOpen ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
       >
         <div className="relative">
            {/* Pulsing ring behind the button */}
-           <motion.div 
+           <m.div 
              animate={{ scale: [1, 1.4, 1], opacity: [0.5, 0, 0.5] }} 
              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
              className="absolute inset-0 bg-blue-500 rounded-full blur-md"
            />
-           <motion.button
+           <m.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setIsOpen(true)}
@@ -271,14 +271,14 @@ const AIConcierge = () => {
           >
             <MessageSquare className="w-6 h-6" />
             <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 rounded-full border-2 border-white"></span>
-          </motion.button>
+          </m.button>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Chat Panel */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
@@ -290,7 +290,7 @@ const AIConcierge = () => {
             <div className="relative p-5 flex items-center justify-between text-white overflow-hidden bg-gray-900">
               {/* Animated abstract background for AI feel */}
               <div className="absolute inset-0 opacity-40">
-                <motion.div 
+                <m.div 
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
                   className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-b from-blue-500/30 to-purple-500/30 blur-2xl rounded-full"
@@ -300,7 +300,7 @@ const AIConcierge = () => {
               <div className="relative z-10 flex items-center gap-4">
                 {/* AI Orb Logo */}
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center relative shadow-[0_0_15px_rgba(59,130,246,0.5)]">
-                  <motion.div 
+                  <m.div 
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
                     className="absolute inset-0 bg-blue-500/20 rounded-full"
@@ -328,7 +328,7 @@ const AIConcierge = () => {
             <div className="flex-1 p-5 overflow-y-auto bg-[#fafafa] flex flex-col gap-5">
               <AnimatePresence>
                 {messages.map((msg) => (
-                  <motion.div 
+                  <m.div 
                     key={msg.id} 
                     initial={{ opacity: 0, y: 10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -341,27 +341,27 @@ const AIConcierge = () => {
                     }`}>
                       {msg.text}
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
               </AnimatePresence>
 
               {isTyping && (
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   className="flex justify-start"
                 >
                   <div className="bg-white border border-gray-200 px-4 py-3.5 rounded-2xl rounded-tl-sm shadow-sm flex items-center gap-2">
-                    <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                    <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
-                    <motion.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                    <m.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                    <m.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.2 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
+                    <m.div animate={{ y: [0, -4, 0] }} transition={{ duration: 0.6, repeat: Infinity, delay: 0.4 }} className="w-1.5 h-1.5 bg-blue-500 rounded-full" />
                   </div>
-                </motion.div>
+                </m.div>
               )}
               
               {/* Suggested Prompts */}
               {showSuggestions && !isTyping && (
-                <motion.div 
+                <m.div 
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
@@ -378,7 +378,7 @@ const AIConcierge = () => {
                       <ArrowRight className="w-3 h-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
                     </button>
                   ))}
-                </motion.div>
+                </m.div>
               )}
               
               <div ref={messagesEndRef} />
@@ -403,7 +403,7 @@ const AIConcierge = () => {
                 </button>
               </form>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>
@@ -411,7 +411,7 @@ const AIConcierge = () => {
 };
 
 const OverviewTab = () => (
-  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+  <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
     <div className="mb-8">
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Welcome back, Alex</h1>
       <p className="text-gray-500 text-sm">Here is what's happening with your projects today.</p>
@@ -487,11 +487,11 @@ const OverviewTab = () => (
 
     {/* Interactive 3D Invoice Feature */}
     <InteractiveInvoice />
-  </motion.div>
+  </m.div>
 );
 
 const ProjectsTab = () => (
-  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+  <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
     <div className="mb-8">
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Your Projects</h1>
       <p className="text-gray-500 text-sm">Manage and track your ongoing and completed projects.</p>
@@ -529,11 +529,11 @@ const ProjectsTab = () => (
         </div>
       </div>
     </div>
-  </motion.div>
+  </m.div>
 );
 
 const InvoicesTab = () => (
-  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+  <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
     <div className="mb-8 flex justify-between items-end">
       <div>
         <h1 className="text-2xl font-bold text-gray-900 mb-1">Billing & Invoices</h1>
@@ -578,11 +578,11 @@ const InvoicesTab = () => (
         </tbody>
       </table>
     </div>
-  </motion.div>
+  </m.div>
 );
 
 const MessagesTab = () => (
-  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full h-[calc(100vh-4rem)] flex flex-col">
+  <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full h-[calc(100vh-4rem)] flex flex-col">
     <div className="mb-6">
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Messages</h1>
       <p className="text-gray-500 text-sm">Communicate directly with the Nexora team.</p>
@@ -643,11 +643,11 @@ const MessagesTab = () => (
          </div>
       </div>
     </div>
-  </motion.div>
+  </m.div>
 );
 
 const SettingsTab = () => (
-  <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-3xl mx-auto w-full">
+  <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-3xl mx-auto w-full">
     <div className="mb-8">
       <h1 className="text-2xl font-bold text-gray-900 mb-1">Account Settings</h1>
       <p className="text-gray-500 text-sm">Manage your profile, company details, and notifications.</p>
@@ -656,7 +656,7 @@ const SettingsTab = () => (
     <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-8 mb-6">
        <h3 className="text-base font-bold text-gray-900 mb-6">Profile Information</h3>
        <div className="flex items-center gap-6 mb-8">
-          <img src="https://ui-avatars.com/api/?name=Alex+Client&background=2563eb&color=fff" alt="User" className="w-20 h-20 rounded-full border border-gray-200 shadow-sm" />
+          <img src="https://ui-avatars.com/api/?name=Alex+Client&background=2563eb&color=fff" alt="User" className="w-20 h-20 rounded-full border border-gray-200 shadow-sm" loading="lazy" decoding="async" width="80" height="80" />
           <div>
             <button className="bg-gray-100 text-gray-700 hover:bg-gray-200 px-4 py-2 rounded-lg text-sm font-semibold transition-colors border border-gray-200">Change Avatar</button>
           </div>
@@ -680,7 +680,7 @@ const SettingsTab = () => (
     <div className="flex justify-end">
        <button className="bg-blue-600 text-white hover:bg-blue-700 px-6 py-2.5 rounded-lg text-sm font-semibold transition-colors shadow-sm shadow-blue-600/20">Save Changes</button>
     </div>
-  </motion.div>
+  </m.div>
 );
 
 export default function ClientPortal() {

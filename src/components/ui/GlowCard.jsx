@@ -31,7 +31,7 @@ const GlowCard = React.memo(({ children, className }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ willChange: "transform" }}
+      
       className={cn(
         "relative overflow-hidden rounded-2xl p-[1px] group",
         className

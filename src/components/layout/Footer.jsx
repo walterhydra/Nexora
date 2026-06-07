@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-display font-bold mb-4 flex items-center gap-2">
-              <img src="/logo/logo.png" alt="Nexora Logo" className="w-6 h-6 object-contain" /> Nexora Studio
+              <img src="/logo/logo.png" alt="Nexora Logo" className="w-6 h-6 object-contain" loading="lazy" decoding="async" width="24" height="24" /> Nexora Studio
             </h3>
             <p className="text-gray-600 dark:text-gray-400 max-w-sm mb-6">
               We design and build digital products that help fast-growing companies scale.

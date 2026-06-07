@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { m, AnimatePresence } from 'framer-motion';
 import { faqs } from '../../constants/faq';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import { Plus, Minus } from 'lucide-react';
@@ -10,26 +10,26 @@ export default function FAQ() {
   return (
     <section className="py-24 bg-primary-light dark:bg-primary-dark">
       <div className="max-w-4xl mx-auto px-6">
-        <motion.div
+        <m.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
           className="text-center mb-16"
         >
-          <motion.h2 variants={fadeUp} className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <m.h2 variants={fadeUp} className="text-4xl md:text-5xl font-display font-bold mb-4">
             Frequently Asked <span className="text-gradient">Questions</span>
-          </motion.h2>
-          <motion.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400">
+          </m.h2>
+          <m.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400">
             Everything you need to know about working with us.
-          </motion.p>
-        </motion.div>
+          </m.p>
+        </m.div>
 
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = index === openIndex;
             return (
-              <motion.div 
+              <m.div 
                 key={faq.id}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -48,7 +48,7 @@ export default function FAQ() {
                 </button>
                 <AnimatePresence>
                   {isOpen && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -57,10 +57,10 @@ export default function FAQ() {
                       <div className="px-6 pb-6 text-gray-600 dark:text-gray-400">
                         {faq.answer}
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             );
           })}
         </div>

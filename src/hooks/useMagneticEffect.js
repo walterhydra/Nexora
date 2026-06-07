@@ -8,7 +8,7 @@ export function useMagneticEffect(sensorRef, targetRef) {
     const target = targetRef ? targetRef.current : sensor;
     if (!sensor || !target) return;
 
-    target.style.willChange = 'transform';
+    
 
     const xTo = gsap.quickTo(target, "x", { duration: 1, ease: "elastic.out(1, 0.3)" });
     const yTo = gsap.quickTo(target, "y", { duration: 1, ease: "elastic.out(1, 0.3)" });
@@ -41,7 +41,7 @@ export function useMagneticEffect(sensorRef, targetRef) {
     sensor.addEventListener("mouseleave", handleMouseLeave);
 
     return () => {
-      target.style.willChange = 'auto';
+      
       sensor.removeEventListener("mouseenter", handleMouseEnter);
       sensor.removeEventListener("mousemove", handleMouseMove);
       sensor.removeEventListener("mouseleave", handleMouseLeave);

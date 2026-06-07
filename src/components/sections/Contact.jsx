@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
 import { fadeUp, staggerContainer } from '../../animations/variants';
@@ -146,21 +146,21 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           
           {/* Left Column: Copy & Links */}
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
             variants={staggerContainer}
           >
-            <motion.h2 variants={fadeUp} className="text-5xl md:text-7xl font-display font-bold mb-6">
+            <m.h2 variants={fadeUp} className="text-5xl md:text-7xl font-display font-bold mb-6">
               Let's build <br />
               <span className="text-gradient">something great.</span>
-            </motion.h2>
-            <motion.p variants={fadeUp} className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-md">
+            </m.h2>
+            <m.p variants={fadeUp} className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-md">
               Have a project in mind? We'd love to hear about it. Drop us a line or schedule a quick chat.
-            </motion.p>
+            </m.p>
 
-            <motion.div variants={fadeUp} className="space-y-6">
+            <m.div variants={fadeUp} className="space-y-6">
               <a 
                 href="mailto:nexoraa.works@gmail.com" 
                 onClick={() => {
@@ -188,11 +188,11 @@ export default function Contact() {
                 </div>
                 WhatsApp Us
               </a>
-            </motion.div>
-          </motion.div>
+            </m.div>
+          </m.div>
 
           {/* Right Column: Form */}
-          <motion.div
+          <m.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -201,9 +201,9 @@ export default function Contact() {
             <div className="glass rounded-3xl p-8 border border-gray-200 dark:border-white/10 relative overflow-hidden">
               {isSuccess && (
                 <div className="absolute inset-0 z-20 bg-white/90 dark:bg-black/90 backdrop-blur-sm flex flex-col items-center justify-center text-center p-8">
-                  <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring" }}>
+                  <m.div initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring" }}>
                     <CheckCircle2 size={64} className="text-green-500 mb-4" />
-                  </motion.div>
+                  </m.div>
                   <h3 className="text-2xl font-bold mb-2">Got it!</h3>
                   <p className="text-gray-600 dark:text-gray-400">We'll get back to you within 24 hours.</p>
                 </div>
@@ -275,7 +275,7 @@ export default function Contact() {
                 </MagneticButton>
               </form>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </div>
     </section>

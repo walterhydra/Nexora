@@ -1,12 +1,12 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 
 export default function MarqueeStrip({ items, speed = 20, direction = 1 }) {
   // direction: 1 for left to right, -1 for right to left
   
   return (
     <div className="relative w-full overflow-hidden bg-primary-dark border-y border-black/10 dark:border-white/10 py-4">
-      <motion.div
+      <m.div
         className="flex whitespace-nowrap"
         animate={{
           x: direction === 1 ? [0, -1000] : [-1000, 0]
@@ -27,7 +27,7 @@ export default function MarqueeStrip({ items, speed = 20, direction = 1 }) {
             {item}
           </div>
         ))}
-      </motion.div>
+      </m.div>
     </div>
   );
 }

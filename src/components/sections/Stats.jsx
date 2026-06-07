@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { m, useMotionTemplate, useMotionValue } from 'framer-motion';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import { Code2, Clock, Star, Users, ArrowUpRight } from 'lucide-react';
 
@@ -71,7 +71,7 @@ const StatCard = React.memo(({ stat, idx }) => {
   }
 
   return (
-    <motion.div 
+    <m.div 
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -79,11 +79,11 @@ const StatCard = React.memo(({ stat, idx }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ willChange: "transform" }}
-      className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0a0a0a]/90 backdrop-blur-2xl border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-center group`}
+      
+      className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0a0a0a]/90  border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-center group`}
     >
       {/* High-Performance Cursor Spotlight Glow */}
-      <motion.div
+      <m.div
         className="pointer-events-none absolute -inset-px z-0 opacity-0 transition duration-500 group-hover:opacity-100"
         style={{
           background: useMotionTemplate`
@@ -134,7 +134,7 @@ const StatCard = React.memo(({ stat, idx }) => {
         </div>
 
       </div>
-    </motion.div>
+    </m.div>
   );
 });
 
@@ -148,7 +148,7 @@ export default function Stats() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <motion.div 
+        <m.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -163,7 +163,7 @@ export default function Stats() {
           <h2 className="text-4xl md:text-6xl font-display font-black text-white leading-tight">
             Performance at <span className="text-gradient italic font-light">Scale</span>
           </h2>
-        </motion.div>
+        </m.div>
 
         {/* Card Stacking Container */}
         <div className="relative pb-[20vh]">

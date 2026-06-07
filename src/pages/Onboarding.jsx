@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
+import { m, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { 
   MessageSquare, FileText, CreditCard, PenTool, 
   Code, CheckCircle, Rocket, Globe,
@@ -109,7 +109,7 @@ export default function Onboarding() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.03)_0%,transparent_50%)]" />
         <div className="absolute top-0 w-full h-[1px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
         
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -139,7 +139,7 @@ export default function Onboarding() {
               </span>
             </MagneticButton>
           </Link>
-        </motion.div>
+        </m.div>
       </section>
 
 
@@ -161,7 +161,7 @@ export default function Onboarding() {
             {steps.map((step, index) => {
               const Icon = step.icon;
               return (
-                <motion.div 
+                <m.div 
                   key={step.id}
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -204,7 +204,7 @@ export default function Onboarding() {
                       ))}
                     </ul>
                   </div>
-                </motion.div>
+                </m.div>
               );
             })}
           </div>
@@ -223,7 +223,7 @@ export default function Onboarding() {
             </p>
           </div>
 
-          <motion.div
+          <m.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -312,7 +312,7 @@ export default function Onboarding() {
                     <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
                       <AnimatePresence mode="wait">
                         {activePortalTab === 'kanban' && (
-                          <motion.div 
+                          <m.div 
                             key="kanban"
                             initial={{ opacity: 0, y: 5 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -361,11 +361,11 @@ export default function Onboarding() {
                                 <h4 className="text-sm font-bold text-gray-400 line-through mb-1">Database Schema</h4>
                               </div>
                             </div>
-                          </motion.div>
+                          </m.div>
                         )}
                         
                         {activePortalTab !== 'kanban' && (
-                          <motion.div
+                          <m.div
                             key="other"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
@@ -375,7 +375,7 @@ export default function Onboarding() {
                             <p className="text-sm text-gray-500 font-mono max-w-sm">
                               Encrypted data segment. Active during production lifecycle.
                             </p>
-                          </motion.div>
+                          </m.div>
                         )}
                       </AnimatePresence>
                     </div>
@@ -383,7 +383,7 @@ export default function Onboarding() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -416,7 +416,7 @@ export default function Onboarding() {
                 </button>
                 <AnimatePresence>
                   {expandedFaqIdx === idx && (
-                    <motion.div
+                    <m.div
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
@@ -425,7 +425,7 @@ export default function Onboarding() {
                       <p className="pb-8 text-gray-400 text-lg leading-relaxed font-light pr-12">
                         {faq.a}
                       </p>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
               </div>

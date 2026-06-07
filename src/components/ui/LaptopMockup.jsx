@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { motion, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { m, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 
 export default function LaptopMockup({ children, delay = 0, scrollProgress, onOpenComplete }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,9 +29,9 @@ export default function LaptopMockup({ children, delay = 0, scrollProgress, onOp
   return (
     <div ref={containerRef} className="relative w-full max-w-[800px] mx-auto perspective-[1500px]">
       {/* Laptop Lid */}
-      <motion.div
+      <m.div
         className="relative z-20 w-full rounded-t-xl overflow-hidden bg-white dark:bg-black border-4 border-gray-800 shadow-2xl origin-bottom"
-        style={{ rotateX, transformStyle: 'preserve-3d', willChange: 'transform' }}
+        style={{ rotateX, transformStyle: 'preserve-3d' }}
       >
         <div className="absolute inset-0 bg-gradient-to-tr from-gray-900 to-gray-800 opacity-50 z-0 pointer-events-none" />
         
@@ -46,24 +46,24 @@ export default function LaptopMockup({ children, delay = 0, scrollProgress, onOp
 
         {/* Screen Content - turns on when open */}
         <div className="relative z-10 aspect-[16/10] bg-white dark:bg-black overflow-hidden">
-          <motion.div 
+          <m.div 
             className="w-full h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: isOpen ? 1 : 0 }}
             transition={{ duration: 0.1 }}
           >
             {typeof children === 'function' ? children(isOpen) : children}
-          </motion.div>
+          </m.div>
         </div>
-      </motion.div>
+      </m.div>
 
       {/* Laptop Base (keyboard deck) */}
-      <motion.div
+      <m.div
         className="relative z-10 w-[110%] -ml-[5%] h-4 bg-gray-700 rounded-b-2xl shadow-xl border-t border-gray-600"
-        style={{ opacity: baseOpacity, y: baseY, willChange: 'transform, opacity' }}
+        style={{ opacity: baseOpacity, y: baseY }}
       >
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/4 h-1 bg-gray-800 rounded-b-md" />
-      </motion.div>
+      </m.div>
     </div>
   );
 }

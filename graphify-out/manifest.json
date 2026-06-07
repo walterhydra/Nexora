@@ -25,8 +25,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\App.jsx": {
-    "mtime": 1780764641.747511,
-    "ast_hash": "cba977959acd77fb5464084b4f8e1392",
+    "mtime": 1780825614.6106727,
+    "ast_hash": "7d6f51f799afd095e461089503dda4ff",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\fix_css.py": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\layout\\LoadingScreen.jsx": {
-    "mtime": 1780770537.832027,
-    "ast_hash": "f8c562cdfb661c0bee5bfac61fcbe3e7",
+    "mtime": 1780825695.4085789,
+    "ast_hash": "d05d2164ea5d0b1135b0eb7c05347746",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\layout\\MarqueeStrip.jsx": {
@@ -100,8 +100,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\About.jsx": {
-    "mtime": 1778966776.4641504,
-    "ast_hash": "ba4f74d8cbf94791a27ae0521a0b4878",
+    "mtime": 1780821439.8157473,
+    "ast_hash": "634cef407311f2dd85430dee61a87b23",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\BlogTeaser.jsx": {
@@ -125,8 +125,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\HowWeWork.jsx": {
-    "mtime": 1780560642.226412,
-    "ast_hash": "d57e21edb64dc129b588b3d3b194dc03",
+    "mtime": 1780825638.5377626,
+    "ast_hash": "997fedc329bdc23db687d99adec48a55",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\KineticManifesto.jsx": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\Work.jsx": {
-    "mtime": 1780474513.8230648,
-    "ast_hash": "3af66aeb3a4029984d3b6072613e58c4",
+    "mtime": 1780818220.2806544,
+    "ast_hash": "dffc9fdc0a792a905a28b47cf1c7527d",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\ui\\AnimatedCounter.jsx": {
@@ -300,8 +300,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\constants\\projects.js": {
-    "mtime": 1780052406.5880322,
-    "ast_hash": "17c4616b38c7230107344329fd5645ca",
+    "mtime": 1780819768.1390495,
+    "ast_hash": "aba6b7435e6f52889c1f4a1e1299b6af",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\constants\\services.js": {
@@ -335,8 +335,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\hooks\\useLenis.js": {
-    "mtime": 1777884792.6683085,
-    "ast_hash": "eee290e00cfd4ff9fd9aab196843db82",
+    "mtime": 1780825620.1095343,
+    "ast_hash": "a0c24aaf91ed1cf8574e38c76e16d970",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\hooks\\useMagneticEffect.js": {
@@ -735,8 +735,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\assets\\naitik.png": {
-    "mtime": 1780051756.724555,
-    "ast_hash": "fd2d27499d64b0e54b93f297eb9740ea",
+    "mtime": 1780819272.7352107,
+    "ast_hash": "9c60892cb1b2533559e605da56d291e6",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\assets\\nexora-logo.png": {
@@ -852,6 +852,21 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\utils\\image.png": {
     "mtime": 1780599843.6418686,
     "ast_hash": "211a856ef9d0c8f93bd2362448b3329d",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Projects.jsx": {
+    "mtime": 1780817836.5271835,
+    "ast_hash": "42ac75a552bba01cbc0af14566c608f1",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\assets\\work\\Company Card (2).jpeg": {
+    "mtime": 1780566946.323718,
+    "ast_hash": "3381879398880a6ba9bc23bff25419d3",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\assets\\work\\Company Card.jpeg": {
+    "mtime": 1780566808.5083172,
+    "ast_hash": "d53501c4378edc135e3700515bc06d89",
     "semantic_hash": ""
   }
 }

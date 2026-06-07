@@ -619,7 +619,7 @@
       "label": "AppContent()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L66",
+      "source_location": "L67",
       "id": "src_app_appcontent",
       "community": 0,
       "norm_label": "appcontent()"
@@ -1521,16 +1521,25 @@
       "source_file": "src/components/sections/Work.jsx",
       "source_location": "L1",
       "id": "src_components_sections_work_jsx",
-      "community": 4,
+      "community": 16,
       "norm_label": "work.jsx"
+    },
+    {
+      "label": "FeaturedCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L10",
+      "id": "sections_work_featuredcard",
+      "community": 16,
+      "norm_label": "featuredcard()"
     },
     {
       "label": "Work()",
       "file_type": "code",
       "source_file": "src/components/sections/Work.jsx",
-      "source_location": "L6",
+      "source_location": "L114",
       "id": "sections_work_work",
-      "community": 4,
+      "community": 16,
       "norm_label": "work()"
     },
     {
@@ -1908,7 +1917,7 @@
       "source_file": "src/constants/projects.js",
       "source_location": "L1",
       "id": "src_constants_projects_js",
-      "community": 4,
+      "community": 16,
       "norm_label": "projects.js"
     },
     {
@@ -1917,7 +1926,7 @@
       "source_file": "src/constants/projects.js",
       "source_location": "L8",
       "id": "constants_projects_projects",
-      "community": 4,
+      "community": 16,
       "norm_label": "projects"
     },
     {
@@ -2232,7 +2241,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L1",
       "id": "src_pages_contact_jsx",
-      "community": 6,
+      "community": 0,
       "norm_label": "contact.jsx"
     },
     {
@@ -2241,7 +2250,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L8",
       "id": "pages_contact_contact",
-      "community": 6,
+      "community": 0,
       "norm_label": "contact()"
     },
     {
@@ -2362,12 +2371,39 @@
       "norm_label": "privacypolicy()"
     },
     {
+      "label": "Projects.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L1",
+      "id": "src_pages_projects_jsx",
+      "community": 16,
+      "norm_label": "projects.jsx"
+    },
+    {
+      "label": "ProjectCard()",
+      "file_type": "code",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L11",
+      "id": "pages_projects_projectcard",
+      "community": 16,
+      "norm_label": "projectcard()"
+    },
+    {
+      "label": "Projects()",
+      "file_type": "code",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L103",
+      "id": "pages_projects_projects",
+      "community": 16,
+      "norm_label": "projects()"
+    },
+    {
       "label": "RefundPolicy.jsx",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_refundpolicy_jsx",
-      "community": 0,
+      "community": 31,
       "norm_label": "refundpolicy.jsx"
     },
     {
@@ -2376,7 +2412,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L19",
       "id": "pages_refundpolicy_stages",
-      "community": 0,
+      "community": 31,
       "norm_label": "stages"
     },
     {
@@ -2385,7 +2421,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L43",
       "id": "pages_refundpolicy_nonrefundable",
-      "community": 0,
+      "community": 31,
       "norm_label": "nonrefundable"
     },
     {
@@ -2394,7 +2430,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L50",
       "id": "pages_refundpolicy_navigation",
-      "community": 0,
+      "community": 31,
       "norm_label": "navigation"
     },
     {
@@ -2403,7 +2439,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L59",
       "id": "pages_refundpolicy_reveal",
-      "community": 0,
+      "community": 31,
       "norm_label": "reveal"
     },
     {
@@ -2412,7 +2448,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L66",
       "id": "pages_refundpolicy_tonestyles",
-      "community": 0,
+      "community": 31,
       "norm_label": "tonestyles"
     },
     {
@@ -2421,7 +2457,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L87",
       "id": "pages_refundpolicy_refundpolicy",
-      "community": 0,
+      "community": 31,
       "norm_label": "refundpolicy()"
     },
     {
@@ -2843,7 +2879,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Work.jsx",
       "source_location": "L7",
-      "community": 4,
+      "community": 16,
       "norm_label": "tiltcard()",
       "id": "sections_work_tiltcard"
     }
@@ -3741,6 +3777,17 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_pages_privacypolicy_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_projects_jsx",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5389,6 +5436,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/Work.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_sections_work_jsx",
+      "target": "sections_work_featuredcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Work.jsx",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -5934,6 +5991,28 @@
       "target": "constants_projects_projects"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_pages_projects_jsx",
+      "target": "src_constants_projects_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_pages_projects_jsx",
+      "target": "constants_projects_projects",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/constants/services.js",
@@ -6086,6 +6165,17 @@
       "confidence_score": 1.0,
       "source": "src_hooks_uselenis_js",
       "target": "utils_scroll_destroyscroll"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/hooks/useLenis.js",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "src_hooks_uselenis_js",
+      "target": "utils_scroll_getscroll",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -6431,6 +6521,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_pages_projects_jsx",
+      "target": "pages_projects_projectcard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Projects.jsx",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "src_pages_projects_jsx",
+      "target": "pages_projects_projects",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L50",
       "weight": 1.0,
@@ -6693,5 +6803,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7f73c85eb7799ec20a5f78f8d32618f2d27f71f8"
+  "built_at_commit": "7d11fe84ac4688898894b0e139e75af278fccfa4"
 }

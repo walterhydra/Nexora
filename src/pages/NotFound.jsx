@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import { m } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import MagneticButton from '../components/ui/MagneticButton';
 import { Canvas, useFrame } from '@react-three/fiber';
@@ -42,7 +42,7 @@ export default function NotFound() {
       </div>
 
       <div className="relative z-10 text-center flex flex-col items-center">
-        <motion.div
+        <m.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -54,18 +54,18 @@ export default function NotFound() {
             <span className="absolute top-0 left-0 ml-1 text-blue-500 opacity-70 animate-pulse mix-blend-screen" style={{ animationDelay: '0.1s'}}>404</span>
             404
           </h1>
-        </motion.div>
+        </m.div>
 
-        <motion.p 
+        <m.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 font-mono"
         >
           This page got lost in the void.
-        </motion.p>
+        </m.p>
 
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
@@ -75,7 +75,7 @@ export default function NotFound() {
               Back to Home
             </MagneticButton>
           </Link>
-        </motion.div>
+        </m.div>
       </div>
     </div>
   );

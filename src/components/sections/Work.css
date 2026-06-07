@@ -19,7 +19,7 @@
   pointer-events: none;
   z-index: 0;
   opacity: 0.15;
-  will-change: transform;
+  opacity: 0.15;
 }
 .work-ambient-glow--1 {
   width: 600px;
@@ -27,7 +27,7 @@
   background: radial-gradient(circle, #7B2FFF 0%, transparent 70%);
   top: -200px;
   left: -100px;
-  animation: work-glow-float 12s ease-in-out infinite alternate;
+  left: -100px;
 }
 .work-ambient-glow--2 {
   width: 500px;
@@ -35,7 +35,7 @@
   background: radial-gradient(circle, #00F5FF 0%, transparent 70%);
   bottom: -100px;
   right: -100px;
-  animation: work-glow-float 15s ease-in-out infinite alternate-reverse;
+  right: -100px;
 }
 
 @keyframes work-glow-float {
@@ -114,7 +114,7 @@
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 100px;
   background: rgba(255,255,255,0.02);
-  backdrop-filter: blur(8px);
+  
   width: fit-content;
   margin: 0 auto;
 }
@@ -230,7 +230,7 @@
   height: 5.5rem;
   border-radius: 50%;
   background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(12px);
+  
   border: 1px solid rgba(255,255,255,0.2);
   display: flex;
   flex-direction: column;
@@ -264,7 +264,7 @@
   letter-spacing: 0.15em;
   color: rgba(255,255,255,0.6);
   background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(8px);
+  
   border: 1px solid rgba(255,255,255,0.1);
   padding: 0.35rem 0.7rem;
   border-radius: 100px;
@@ -675,7 +675,7 @@
   height: 4.5rem;
   border-radius: 50%;
   background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
+  
   border: 1px solid rgba(255,255,255,0.2);
   display: flex;
   flex-direction: column;
@@ -709,7 +709,7 @@
   letter-spacing: 0.12em;
   color: rgba(255,255,255,0.6);
   background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(8px);
+  
   border: 1px solid rgba(255,255,255,0.1);
   padding: 0.25rem 0.6rem;
   border-radius: 100px;

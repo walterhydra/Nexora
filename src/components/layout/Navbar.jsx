@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useScroll, useMotionValueEvent, motion, AnimatePresence } from 'framer-motion';
+import { useScroll, useMotionValueEvent, m, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { cn } from '../../utils/cn';
@@ -64,7 +64,7 @@ export default function Navbar() {
     <>
       <div className="fixed top-6 inset-x-0 z-50 flex justify-center pointer-events-none px-4">
         {/* Outer Long Strip: Wide floating container */}
-        <motion.nav
+        <m.nav
           variants={{
             visible: { y: 0 },
             hidden: { y: "-180%" }
@@ -80,7 +80,7 @@ export default function Navbar() {
         >
           {/* Refractive Border Gloss Beam Sweep */}
           <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
-            <motion.div 
+            <m.div 
               animate={{ x: ['-200%', '200%'] }}
               transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
               className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
@@ -99,6 +99,10 @@ export default function Navbar() {
                   src="/logo/favicon.png" 
                   alt="Nexora Logo Icon" 
                   className="w-full h-full object-contain"
+                  loading="eager"
+                  fetchPriority="high"
+                  width="40"
+                  height="40"
                 />
               </div>
               <span className="font-display font-black text-lg md:text-xl tracking-[0.2em] text-white">
@@ -138,7 +142,7 @@ export default function Navbar() {
 
                     {/* Sliding Active Pill */}
                     {hoveredLink === link.name && (
-                      <motion.div
+                      <m.div
                         layoutId="capsule-active"
                         className="absolute inset-0 bg-white/10 rounded-full z-0"
                         transition={{ type: "spring", stiffness: 350, damping: 22 }}
@@ -189,13 +193,13 @@ export default function Navbar() {
             </button>
           </div>
 
-        </motion.nav>
+        </m.nav>
       </div>
 
       {/* Fullscreen Mobile Menu Overlay */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: '-10%' }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-10%' }}
@@ -209,6 +213,10 @@ export default function Navbar() {
                     src="/logo/favicon.png" 
                     alt="Nexora Logo Icon" 
                     className="w-full h-full object-contain"
+                    loading="lazy"
+                    decoding="async"
+                    width="40"
+                    height="40"
                   />
                 </div>
                 <span className="font-display font-black text-xl tracking-tight text-white">NEXORA</span>
@@ -223,7 +231,7 @@ export default function Navbar() {
             
             <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
               {navLinks.map((link, i) => (
-                <motion.div
+                <m.div
                   key={link.name}
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -246,10 +254,10 @@ export default function Navbar() {
                       {link.name}
                     </a>
                   )}
-                </motion.div>
+                </m.div>
               ))}
               
-              <motion.div 
+              <m.div 
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
@@ -269,9 +277,9 @@ export default function Navbar() {
                 >
                   Client Portal
                 </Link>
-              </motion.div>
+              </m.div>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </>
