@@ -7,6 +7,7 @@ const VideoPlayer = ({ src, className }) => {
 
   useEffect(() => {
     if (ref.current) {
+      ref.current.playbackRate = 2.0; // Increased playback speed
       if (isInView) {
         ref.current.play().catch(e => console.log('Autoplay blocked:', e));
       } else {
