@@ -17,6 +17,7 @@ import ScrollProgress from './components/ui/ScrollProgress';
 import BackToTop from './components/ui/BackToTop';
 import CookieBanner from './components/ui/CookieBanner';
 import LoadingScreen from './components/layout/LoadingScreen';
+import NovaWidget from './components/ui/NovaWidget';
 
 // Pages
 import Home from './pages/Home';
@@ -91,6 +92,7 @@ function AppContent() {
       {!isPortal && <Footer />}
       {!isPortal && <BackToTop />}
       {!isPortal && <CookieBanner />}
+      {!isPortal && <NovaWidget />}
 
       <Toaster
         position="bottom-center"
