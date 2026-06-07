@@ -32,6 +32,7 @@ import Terms from './pages/Terms';
 import RefundPolicy from './pages/RefundPolicy';
 import Onboarding from './pages/Onboarding';
 import PaymentPolicy from './pages/PaymentPolicy';
+import Projects from './pages/Projects';
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -52,6 +53,7 @@ function AnimatedRoutes() {
       <Route path="/portal" element={<ClientPortal />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
+      <Route path="/projects" element={<Projects />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />

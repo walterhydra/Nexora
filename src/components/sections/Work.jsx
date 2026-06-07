@@ -1,125 +1,224 @@
-import React, { useState } from "react";
-import { ArrowUpRight } from "lucide-react";
+import React, { useState, useRef, useCallback } from "react";
+import { ArrowUpRight, ArrowRight, ExternalLink } from "lucide-react";
 import { projects } from "../../constants/projects";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import "./Work.css";
 
-export default function Work() {
-  const [showAll, setShowAll] = useState(false);
-  const displayedProjects = showAll ? projects : projects.slice(0, 5);
+/* ------------------------------------------------------------------ */
+/*  Featured Project Card – large immersive hero card                  */
+/* ------------------------------------------------------------------ */
+function FeaturedCard({ project, index }) {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, margin: "-80px" });
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = useCallback((e) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+    const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+    setMousePos({ x, y });
+  }, []);
+
+  // Alternate layout: even index = image left, odd = image right
+  const isReversed = index % 2 !== 0;
 
   return (
-    <section id="work" className="relative bg-black text-white py-24 md:py-32 min-h-screen">
-      <div className="container mx-auto px-6 md:px-12 flex flex-col lg:flex-row gap-16 lg:gap-24 relative">
-        
-        {/* Left Sticky Column */}
-        <div className="w-full lg:w-1/3 lg:sticky lg:top-40 h-fit z-10">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="w-12 h-[1px] bg-white/30"></span>
-            <span className="font-mono text-sm tracking-widest uppercase text-white/50">
-              Interactive Index
-            </span>
-          </div>
-          <h2 className="text-5xl lg:text-7xl xl:text-8xl font-display font-black tracking-tighter uppercase mb-8">
-            Selected <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-white/20 to-white/80 italic font-light">Works</span>
-          </h2>
-          <p className="text-white/60 font-light text-lg md:text-xl mb-12 max-w-md leading-relaxed">
-            A curated selection of our most recent and impactful digital experiences, crafted with precision, passion, and purpose.
-          </p>
-          
-          {projects.length > 5 && (
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="hidden lg:inline-flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full transition-all duration-300 font-mono text-sm uppercase tracking-widest border border-white/10 group"
-            >
-              {showAll ? "Show Less" : "View All Projects"}
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </button>
-          )}
-        </div>
+    <motion.div
+      ref={cardRef}
+      initial={{ opacity: 0, y: 80 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => { setIsHovered(false); setMousePos({ x: 0, y: 0 }); }}
+      className="work-featured-card group"
+      style={{ "--card-index": index }}
+    >
+      <div className={`work-featured-inner ${isReversed ? "work-featured-reversed" : ""}`}>
+        {/* Image Panel */}
+        <a
+          href={project.link}
+          target="_blank"
+          rel="noreferrer"
+          className="work-featured-image-wrap"
+        >
+          <div className="work-featured-image-container">
+            <img
+              src={project.image}
+              alt={project.title}
+              loading="lazy"
+              decoding="async"
+              className="work-featured-image"
+              style={{
+                transform: isHovered
+                  ? `scale(1.08) translate(${mousePos.x * -8}px, ${mousePos.y * -8}px)`
+                  : "scale(1)",
+              }}
+            />
+            {/* Gradient overlay */}
+            <div className="work-featured-overlay" />
 
-        {/* Right Scrolling Column */}
-        <div className="w-full lg:w-2/3 flex flex-col gap-16 md:gap-32 pb-12">
-          {displayedProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="group block w-full relative"
-            >
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noreferrer" 
-                className="block relative overflow-hidden rounded-2xl aspect-[4/3] md:aspect-[16/10] mb-8 bg-white/5 border border-white/5"
-              >
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-                />
-                
-                {/* Floating View button inside image on hover */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-black/40 backdrop-blur-md rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 z-20 scale-50 group-hover:scale-100 border border-white/20">
-                  <span className="text-white font-mono text-sm uppercase tracking-widest">View</span>
-                </div>
-
-                {/* Tags overlaid on image */}
-                <div className="absolute bottom-6 left-6 z-20 flex gap-2">
-                  {project.tags.slice(0, 3).map((tag, i) => (
-                    <span key={i} className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/20 rounded-full text-xs text-white/80 uppercase tracking-wider font-mono">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </a>
-              
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 px-2">
-                <div className="flex-1">
-                  <div className="flex items-center gap-4 mb-3">
-                    <span className="font-mono text-white/30 text-sm">
-                      {String(index + 1).padStart(2, '0')}
-                    </span>
-                    <span className="font-mono text-xs text-white/50 uppercase tracking-widest px-2 py-1 border border-white/10 rounded-md">
-                      {project.category}
-                    </span>
-                  </div>
-                  <h3 className="text-3xl md:text-5xl font-display font-medium tracking-tight mb-2 group-hover:text-white/80 transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-white/50 font-light text-lg max-w-xl">
-                    {project.description} — {project.result}
-                  </p>
-                </div>
-                
-                <a 
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hidden md:flex w-14 h-14 rounded-full border border-white/20 items-center justify-center transition-all duration-500 hover:bg-white hover:text-black group-hover:border-white"
-                >
-                  <ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
-
-          {projects.length > 5 && (
-            <div className="flex justify-center mt-8 lg:hidden">
-              <button
-                onClick={() => setShowAll(!showAll)}
-                className="flex items-center gap-3 px-8 py-4 bg-white/5 hover:bg-white/10 text-white rounded-full transition-all duration-300 font-mono text-sm uppercase tracking-widest border border-white/10"
-              >
-                {showAll ? "Show Less" : "View All Projects"}
-                <ArrowUpRight className="w-4 h-4" />
-              </button>
+            {/* Floating "View" circle on hover */}
+            <div className="work-featured-view-circle">
+              <ExternalLink className="w-5 h-5" />
+              <span>View</span>
             </div>
-          )}
+          </div>
+
+          {/* Number badge */}
+          <div className="work-featured-number">
+            {String(index + 1).padStart(2, "0")}
+          </div>
+        </a>
+
+        {/* Content Panel */}
+        <div className="work-featured-content">
+          <div className="work-featured-meta">
+            <span className="work-featured-category">{project.category}</span>
+            <span className="work-featured-divider" />
+            <span className="work-featured-year">2024</span>
+          </div>
+
+          <h3 className="work-featured-title">{project.title}</h3>
+
+          <p className="work-featured-description">
+            {project.description} — {project.result}
+          </p>
+
+          <div className="work-featured-tags">
+            {project.tags.map((tag, i) => (
+              <span key={i} className="work-featured-tag">{tag}</span>
+            ))}
+          </div>
+
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noreferrer"
+            className="work-featured-link"
+          >
+            <span>View Project</span>
+            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+          </a>
         </div>
       </div>
+    </motion.div>
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Main Work Section                                                  */
+/* ------------------------------------------------------------------ */
+export default function Work() {
+  const sectionRef = useRef(null);
+  const headerInView = useInView(sectionRef, { once: true, margin: "-100px" });
+
+  const featuredProjects = projects.slice(0, 3);
+  const totalProjects = projects.length;
+
+  return (
+    <section id="work" className="work-section" ref={sectionRef}>
+      {/* Ambient background glow */}
+      <div className="work-ambient-glow work-ambient-glow--1" />
+      <div className="work-ambient-glow work-ambient-glow--2" />
+
+      {/* Section Header */}
+      <div className="work-header">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="work-header-label"
+        >
+          <span className="work-header-line" />
+          <span className="work-header-tag">Portfolio</span>
+          <span className="work-header-line" />
+        </motion.div>
+
+        <motion.h2
+          initial={{ opacity: 0, y: 50 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="work-header-title"
+        >
+          Featured <span className="work-header-title-accent">Works</span>
+        </motion.h2>
+
+        <motion.p
+          initial={{ opacity: 0, y: 30 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+          className="work-header-subtitle"
+        >
+          A curated selection of our most impactful digital experiences, crafted with precision and purpose.
+        </motion.p>
+
+        {/* Stats row */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={headerInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="work-stats"
+        >
+          <div className="work-stat">
+            <span className="work-stat-value">{totalProjects}+</span>
+            <span className="work-stat-label">Projects</span>
+          </div>
+          <div className="work-stat-divider" />
+          <div className="work-stat">
+            <span className="work-stat-value">100%</span>
+            <span className="work-stat-label">On-Time Delivery</span>
+          </div>
+          <div className="work-stat-divider" />
+          <div className="work-stat">
+            <span className="work-stat-value">5★</span>
+            <span className="work-stat-label">Client Satisfaction</span>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Featured Projects */}
+      <div className="work-featured-grid">
+        {featuredProjects.map((project, index) => (
+          <FeaturedCard key={project.id} project={project} index={index} />
+        ))}
+      </div>
+
+      {/* View All Projects CTA — opens /projects in a new tab */}
+      {totalProjects > 3 && (
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="work-cta-wrap"
+        >
+          <div className="work-cta-line" />
+
+          <div className="work-cta-content">
+            <p className="work-cta-text">
+              Explore our full portfolio of <span className="text-white font-medium">{totalProjects} projects</span> across web, apps, and brand design.
+            </p>
+
+            <a
+              href="/projects"
+              target="_blank"
+              rel="noreferrer"
+              className="work-cta-button group"
+            >
+              <span className="work-cta-button-bg" />
+              <span className="work-cta-button-text">
+                View All Projects
+                <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
+              </span>
+            </a>
+          </div>
+
+          <div className="work-cta-line" />
+        </motion.div>
+      )}
     </section>
   );
 }

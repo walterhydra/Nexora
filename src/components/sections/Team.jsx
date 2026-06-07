@@ -39,13 +39,13 @@ const memberIntroductions = {
 
 const panelColors = [
   '#0758f5',
-  '#00a98f',
+  '#db2777',
   '#7c3aed',
   '#e5484d',
   '#d97706',
   '#0891b2',
   '#2563eb',
-  '#db2777'
+  '#00a98f'
 ];
 
 function SocialLink({ href, label, children }) {

@@ -1411,7 +1411,7 @@
       "label": "TechStack()",
       "file_type": "code",
       "source_file": "src/components/sections/TechStack.jsx",
-      "source_location": "L50",
+      "source_location": "L43",
       "id": "sections_techstack_techstack",
       "community": 9,
       "norm_label": "techstack()"
@@ -3145,9 +3145,9 @@
       "source_file": "package.json",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_icons",
-      "confidence_score": 1.0
+      "target": "nexora_package_dependencies_react_icons"
     },
     {
       "relation": "contains",
@@ -3540,9 +3540,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_layout_loadingscreen_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_layout_loadingscreen_jsx"
     },
     {
       "relation": "imports_from",
@@ -5049,9 +5049,9 @@
       "source_file": "src/components/sections/Team.jsx",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_team_jsx",
-      "target": "sections_team_memberintroductions",
-      "confidence_score": 1.0
+      "target": "sections_team_memberintroductions"
     },
     {
       "relation": "contains",
@@ -5059,9 +5059,9 @@
       "source_file": "src/components/sections/Team.jsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_team_jsx",
-      "target": "sections_team_membernotes",
-      "confidence_score": 1.0
+      "target": "sections_team_membernotes"
     },
     {
       "relation": "contains",
@@ -5069,9 +5069,9 @@
       "source_file": "src/components/sections/Team.jsx",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_team_jsx",
-      "target": "sections_team_panelcolors",
-      "confidence_score": 1.0
+      "target": "sections_team_panelcolors"
     },
     {
       "relation": "contains",
@@ -5079,9 +5079,9 @@
       "source_file": "src/components/sections/Team.jsx",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_team_jsx",
-      "target": "sections_team_postermap",
-      "confidence_score": 1.0
+      "target": "sections_team_postermap"
     },
     {
       "relation": "contains",
@@ -5089,9 +5089,9 @@
       "source_file": "src/components/sections/Team.jsx",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_team_jsx",
-      "target": "sections_team_sociallink",
-      "confidence_score": 1.0
+      "target": "sections_team_sociallink"
     },
     {
       "relation": "contains",
@@ -6434,9 +6434,9 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
-      "target": "pages_refundpolicy_navigation",
-      "confidence_score": 1.0
+      "target": "pages_refundpolicy_navigation"
     },
     {
       "relation": "contains",
@@ -6444,9 +6444,9 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
-      "target": "pages_refundpolicy_nonrefundable",
-      "confidence_score": 1.0
+      "target": "pages_refundpolicy_nonrefundable"
     },
     {
       "relation": "contains",
@@ -6464,9 +6464,9 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L59",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
-      "target": "pages_refundpolicy_reveal",
-      "confidence_score": 1.0
+      "target": "pages_refundpolicy_reveal"
     },
     {
       "relation": "contains",
@@ -6474,9 +6474,9 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
-      "target": "pages_refundpolicy_stages",
-      "confidence_score": 1.0
+      "target": "pages_refundpolicy_stages"
     },
     {
       "relation": "contains",
@@ -6484,9 +6484,9 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
-      "target": "pages_refundpolicy_tonestyles",
-      "confidence_score": 1.0
+      "target": "pages_refundpolicy_tonestyles"
     },
     {
       "relation": "contains",
@@ -6693,5 +6693,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "96d484ec93197461bc7aa8af7951239326c8e78f"
+  "built_at_commit": "7f73c85eb7799ec20a5f78f8d32618f2d27f71f8"
 }

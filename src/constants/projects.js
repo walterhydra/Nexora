@@ -9,13 +9,13 @@ export const projects = [
   // General Websites
   {
     id: 1,
-    title: "Naitik",
-    category: "Web",
-    description: "Corporate Website",
-    tags: ["React", "Tailwind", "Vercel"],
-    result: "High-performance fine dining site",
-    image: naitikImg,
-    link: "https://naitik-steel.vercel.app/"
+    title: "Social by Naava",
+    category: "Brand",
+    description: "Cafe & Social Space",
+    tags: ["Next.js", "CMS"],
+    result: "Modernized web presence",
+    image: socialImg,
+    link: "https://naavasip.vercel.app/"
   },
   {
     id: 2,
@@ -29,16 +29,6 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Expecto",
-    category: "Brand",
-    description: "Restaurant & Story",
-    tags: ["React", "GSAP"],
-    result: "Unique identity & fast load times",
-    image: expectoImg,
-    link: "https://kingslayer-hi.vercel.app/"
-  },
-  {
-    id: 4,
     title: "JP Restaurant & Banquet",
     category: "Web",
     description: "Banquet & Dining",
@@ -48,14 +38,24 @@ export const projects = [
     link: "https://jp-gamma-eosin.vercel.app/"
   },
   {
-    id: 5,
-    title: "Social by Naava",
+    id: 4,
+    title: "Expecto",
     category: "Brand",
-    description: "Cafe & Social Space",
-    tags: ["Next.js", "CMS"],
-    result: "Modernized web presence",
-    image: socialImg,
-    link: "https://naavasip.vercel.app/"
+    description: "Restaurant & Story",
+    tags: ["React", "GSAP"],
+    result: "Unique identity & fast load times",
+    image: expectoImg,
+    link: "https://kingslayer-hi.vercel.app/"
+  },
+  {
+    id: 5,
+    title: "Naitik",
+    category: "Web",
+    description: "Corporate Website",
+    tags: ["React", "Tailwind", "Vercel"],
+    result: "High-performance fine dining site",
+    image: naitikImg,
+    link: "https://naitik-steel.vercel.app/"
   },
   {
     id: 6,
