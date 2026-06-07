@@ -13,7 +13,6 @@ import ScrollToTop from './components/layout/ScrollToTop';
 
 // UI Components
 import ContextCursor from './components/ui/ContextCursor';
-import WhatsAppButton from './components/ui/WhatsAppButton';
 import ScrollProgress from './components/ui/ScrollProgress';
 import BackToTop from './components/ui/BackToTop';
 import CookieBanner from './components/ui/CookieBanner';
@@ -90,7 +89,6 @@ function AppContent() {
       <AnimatedRoutes />
 
       {!isPortal && <Footer />}
-      {!isPortal && <WhatsAppButton />}
       {!isPortal && <BackToTop />}
       {!isPortal && <CookieBanner />}
       
