@@ -26,6 +26,7 @@ export default {
         'spin-slow': 'spin 8s linear infinite',
         'mesh': 'mesh 15s ease-in-out infinite',
         'shimmer': 'shimmer 1.5s infinite',
+        'float': 'float 3s ease-in-out infinite',
       },
       keyframes: {
         mesh: {
@@ -34,6 +35,10 @@ export default {
         },
         shimmer: {
           '100%': { transform: 'translateX(100%)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' },
         }
       }
     },

@@ -1,16 +1,16 @@
 # Graph Report - Nexora  (2026-06-07)
 
 ## Corpus Check
-- 89 files · ~1,912,065 words
+- 92 files · ~1,913,566 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 320 nodes · 377 edges · 32 communities (25 shown, 7 thin omitted)
+- 330 nodes · 385 edges · 32 communities (25 shown, 7 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7d11fe84`
+- Built from commit: `4493febb`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,7 +34,6 @@
 - [[_COMMUNITY_Community 18|Community 18]]
 - [[_COMMUNITY_Community 19|Community 19]]
 - [[_COMMUNITY_Community 26|Community 26]]
-- [[_COMMUNITY_Community 31|Community 31]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 10 edges
@@ -63,31 +62,27 @@
 ## Communities (32 total, 7 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.06
-Nodes (6): CursorContext, CursorProvider(), useCursor(), useLenis(), AppContent(), ContextCursor()
+Cohesion: 0.05
+Nodes (15): CursorContext, CursorProvider(), useCursor(), ThemeContext, ThemeProvider(), useTheme(), useLenis(), navigation (+7 more)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.06
 Nodes (35): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+27 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.09
-Nodes (12): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, faqs (+4 more)
+Cohesion: 0.05
+Nodes (16): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, faqs (+8 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.09
 Nodes (9): services, getServiceComparison(), iconMap, ServiceDetails(), bentoClasses, iconMap, destroyScroll(), getScroll() (+1 more)
-
-### Community 4 - "Community 4"
-Cohesion: 0.08
-Nodes (6): steps, PulseCard, showcaseProjects, StatCard, Stats, BentoCard
 
 ### Community 5 - "Community 5"
 Cohesion: 0.08
 Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.14
+Cohesion: 0.11
 Nodes (7): useMagneticEffect(), useMousePosition(), Navbar(), CustomCursor(), GlowCard, MagneticButton(), cn()
 
 ### Community 8 - "Community 8"
@@ -103,19 +98,19 @@ Cohesion: 0.40
 Nodes (3): docsData, faqs, steps
 
 ### Community 12 - "Community 12"
-Cohesion: 0.47
-Nodes (4): ThemeContext, ThemeProvider(), useTheme(), ParticleField()
+Cohesion: 0.33
+Nodes (4): content, __dirname, __filename, files
 
 ### Community 13 - "Community 13"
 Cohesion: 0.50
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + Vite
 
-### Community 31 - "Community 31"
-Cohesion: 0.29
-Nodes (5): navigation, nonRefundable, reveal, stages, toneStyles
+### Community 16 - "Community 16"
+Cohesion: 0.28
+Nodes (3): projects, ProjectCard, FeaturedCard
 
 ## Knowledge Gaps
-- **100 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+95 more)
+- **106 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+101 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **7 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -123,16 +118,16 @@ Nodes (5): navigation, nonRefundable, reveal, stages, toneStyles
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `Community 1` to `Community 5`?**
-  _High betweenness centrality (0.028) - this node is a cross-community bridge._
-- **What connects `name`, `private`, `version` to the rest of the system?**
-  _100 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _High betweenness centrality (0.026) - this node is a cross-community bridge._
+- **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
+  _106 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06349206349206349 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.04995374653098982 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05714285714285714 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.08901515151515152 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05203619909502263 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.08817204301075268 - nodes in this community are weakly interconnected._
-- **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.08 - nodes in this community are weakly interconnected._
