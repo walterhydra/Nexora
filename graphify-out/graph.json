@@ -211,10 +211,28 @@
       "norm_label": "@react-three/fiber"
     },
     {
-      "label": "@tailwindcss/vite",
+      "label": "@splinetool/react-spline",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
+      "id": "nexora_package_dependencies_splinetool_react_spline",
+      "community": 1,
+      "norm_label": "@splinetool/react-spline"
+    },
+    {
+      "label": "@splinetool/runtime",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "id": "nexora_package_dependencies_splinetool_runtime",
+      "community": 1,
+      "norm_label": "@splinetool/runtime"
+    },
+    {
+      "label": "@tailwindcss/vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L20",
       "id": "nexora_package_dependencies_tailwindcss_vite",
       "community": 1,
       "norm_label": "@tailwindcss/vite"
@@ -223,7 +241,7 @@
       "label": "@tsparticles/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L19",
+      "source_location": "L21",
       "id": "nexora_package_dependencies_tsparticles_react",
       "community": 1,
       "norm_label": "@tsparticles/react"
@@ -232,7 +250,7 @@
       "label": "@tsparticles/slim",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L20",
+      "source_location": "L22",
       "id": "nexora_package_dependencies_tsparticles_slim",
       "community": 1,
       "norm_label": "@tsparticles/slim"
@@ -241,7 +259,7 @@
       "label": "animejs",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L23",
       "id": "nexora_package_dependencies_animejs",
       "community": 1,
       "norm_label": "animejs"
@@ -250,7 +268,7 @@
       "label": "canvas-confetti",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L24",
       "id": "nexora_package_dependencies_canvas_confetti",
       "community": 1,
       "norm_label": "canvas-confetti"
@@ -259,7 +277,7 @@
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L25",
       "id": "nexora_package_dependencies_clsx",
       "community": 1,
       "norm_label": "clsx"
@@ -268,7 +286,7 @@
       "label": "framer-motion",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L26",
       "id": "nexora_package_dependencies_framer_motion",
       "community": 1,
       "norm_label": "framer-motion"
@@ -277,7 +295,7 @@
       "label": "gsap",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L27",
       "id": "nexora_package_dependencies_gsap",
       "community": 1,
       "norm_label": "gsap"
@@ -286,7 +304,7 @@
       "label": "jwt-decode",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L28",
       "id": "nexora_package_dependencies_jwt_decode",
       "community": 1,
       "norm_label": "jwt-decode"
@@ -295,7 +313,7 @@
       "label": "lenis",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L29",
       "id": "nexora_package_dependencies_lenis",
       "community": 1,
       "norm_label": "lenis"
@@ -304,7 +322,7 @@
       "label": "lottie-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L30",
       "id": "nexora_package_dependencies_lottie_react",
       "community": 1,
       "norm_label": "lottie-react"
@@ -313,7 +331,7 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L31",
       "id": "nexora_package_dependencies_lucide_react",
       "community": 1,
       "norm_label": "lucide-react"
@@ -322,16 +340,25 @@
       "label": "maath",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L32",
       "id": "nexora_package_dependencies_maath",
       "community": 1,
       "norm_label": "maath"
     },
     {
+      "label": "nodemailer",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L33",
+      "id": "nexora_package_dependencies_nodemailer",
+      "community": 1,
+      "norm_label": "nodemailer"
+    },
+    {
       "label": "pdf-parse",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L34",
       "id": "nexora_package_dependencies_pdf_parse",
       "community": 1,
       "norm_label": "pdf-parse"
@@ -340,7 +367,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L35",
       "id": "nexora_package_dependencies_react",
       "community": 1,
       "norm_label": "react"
@@ -349,7 +376,7 @@
       "label": "react-countup",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L36",
       "id": "nexora_package_dependencies_react_countup",
       "community": 1,
       "norm_label": "react-countup"
@@ -358,7 +385,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L37",
       "id": "nexora_package_dependencies_react_dom",
       "community": 1,
       "norm_label": "react-dom"
@@ -367,7 +394,7 @@
       "label": "react-helmet-async",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L38",
       "id": "nexora_package_dependencies_react_helmet_async",
       "community": 1,
       "norm_label": "react-helmet-async"
@@ -376,7 +403,7 @@
       "label": "react-hot-toast",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L39",
       "id": "nexora_package_dependencies_react_hot_toast",
       "community": 1,
       "norm_label": "react-hot-toast"
@@ -385,7 +412,7 @@
       "label": "react-icons",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L40",
       "id": "nexora_package_dependencies_react_icons",
       "community": 1,
       "norm_label": "react-icons"
@@ -394,7 +421,7 @@
       "label": "react-intersection-observer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L41",
       "id": "nexora_package_dependencies_react_intersection_observer",
       "community": 1,
       "norm_label": "react-intersection-observer"
@@ -403,7 +430,7 @@
       "label": "react-parallax-tilt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L42",
       "id": "nexora_package_dependencies_react_parallax_tilt",
       "community": 1,
       "norm_label": "react-parallax-tilt"
@@ -412,7 +439,7 @@
       "label": "react-router-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L43",
       "id": "nexora_package_dependencies_react_router_dom",
       "community": 1,
       "norm_label": "react-router-dom"
@@ -421,7 +448,7 @@
       "label": "react-tilt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L44",
       "id": "nexora_package_dependencies_react_tilt",
       "community": 1,
       "norm_label": "react-tilt"
@@ -430,7 +457,7 @@
       "label": "swiper",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L45",
       "id": "nexora_package_dependencies_swiper",
       "community": 1,
       "norm_label": "swiper"
@@ -439,7 +466,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L46",
       "id": "nexora_package_dependencies_tailwind_merge",
       "community": 1,
       "norm_label": "tailwind-merge"
@@ -448,7 +475,7 @@
       "label": "three",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L47",
       "id": "nexora_package_dependencies_three",
       "community": 1,
       "norm_label": "three"
@@ -457,7 +484,7 @@
       "label": "typed.js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L48",
       "id": "nexora_package_dependencies_typed_js",
       "community": 1,
       "norm_label": "typed.js"
@@ -466,7 +493,7 @@
       "label": "typewriter-effect",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L49",
       "id": "nexora_package_dependencies_typewriter_effect",
       "community": 1,
       "norm_label": "typewriter-effect"
@@ -475,7 +502,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L51",
       "id": "nexora_package_devdependencies",
       "community": 5,
       "norm_label": "devdependencies"
@@ -484,7 +511,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L52",
       "id": "nexora_package_devdependencies_eslint_js",
       "community": 5,
       "norm_label": "@eslint/js"
@@ -493,7 +520,7 @@
       "label": "@tailwindcss/forms",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L53",
       "id": "nexora_package_devdependencies_tailwindcss_forms",
       "community": 5,
       "norm_label": "@tailwindcss/forms"
@@ -502,7 +529,7 @@
       "label": "@tailwindcss/typography",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L54",
       "id": "nexora_package_devdependencies_tailwindcss_typography",
       "community": 5,
       "norm_label": "@tailwindcss/typography"
@@ -511,7 +538,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L52",
+      "source_location": "L55",
       "id": "nexora_package_devdependencies_types_react",
       "community": 5,
       "norm_label": "@types/react"
@@ -520,7 +547,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L53",
+      "source_location": "L56",
       "id": "nexora_package_devdependencies_types_react_dom",
       "community": 5,
       "norm_label": "@types/react-dom"
@@ -529,7 +556,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L54",
+      "source_location": "L57",
       "id": "nexora_package_devdependencies_vitejs_plugin_react",
       "community": 5,
       "norm_label": "@vitejs/plugin-react"
@@ -538,7 +565,7 @@
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L55",
+      "source_location": "L58",
       "id": "nexora_package_devdependencies_autoprefixer",
       "community": 5,
       "norm_label": "autoprefixer"
@@ -547,7 +574,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L56",
+      "source_location": "L59",
       "id": "nexora_package_devdependencies_eslint",
       "community": 5,
       "norm_label": "eslint"
@@ -556,7 +583,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L57",
+      "source_location": "L60",
       "id": "nexora_package_devdependencies_eslint_plugin_react_hooks",
       "community": 5,
       "norm_label": "eslint-plugin-react-hooks"
@@ -565,7 +592,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L58",
+      "source_location": "L61",
       "id": "nexora_package_devdependencies_eslint_plugin_react_refresh",
       "community": 5,
       "norm_label": "eslint-plugin-react-refresh"
@@ -574,7 +601,7 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L59",
+      "source_location": "L62",
       "id": "nexora_package_devdependencies_globals",
       "community": 5,
       "norm_label": "globals"
@@ -583,7 +610,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L60",
+      "source_location": "L63",
       "id": "nexora_package_devdependencies_postcss",
       "community": 5,
       "norm_label": "postcss"
@@ -592,7 +619,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L61",
+      "source_location": "L64",
       "id": "nexora_package_devdependencies_tailwindcss",
       "community": 5,
       "norm_label": "tailwindcss"
@@ -601,7 +628,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L62",
+      "source_location": "L65",
       "id": "nexora_package_devdependencies_vite",
       "community": 5,
       "norm_label": "vite"
@@ -643,6 +670,78 @@
       "norm_label": "vite.config.js"
     },
     {
+      "label": "__filename",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L8",
+      "id": "nexora_vite_config_filename",
+      "community": 29,
+      "norm_label": "__filename"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L9",
+      "id": "nexora_vite_config_dirname",
+      "community": 29,
+      "norm_label": "__dirname"
+    },
+    {
+      "label": "envPath",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L12",
+      "id": "nexora_vite_config_envpath",
+      "community": 29,
+      "norm_label": "envpath"
+    },
+    {
+      "label": "envContent",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L14",
+      "id": "nexora_vite_config_envcontent",
+      "community": 29,
+      "norm_label": "envcontent"
+    },
+    {
+      "label": "parts",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L16",
+      "id": "nexora_vite_config_parts",
+      "community": 29,
+      "norm_label": "parts"
+    },
+    {
+      "label": "key",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L18",
+      "id": "nexora_vite_config_key",
+      "community": 29,
+      "norm_label": "key"
+    },
+    {
+      "label": "val",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L19",
+      "id": "nexora_vite_config_val",
+      "community": 29,
+      "norm_label": "val"
+    },
+    {
+      "label": "configureServer()",
+      "file_type": "code",
+      "source_file": "vite.config.js",
+      "source_location": "L37",
+      "id": "nexora_vite_config_configureserver",
+      "community": 29,
+      "norm_label": "configureserver()"
+    },
+    {
       "label": "chat.js",
       "file_type": "code",
       "source_file": "api/chat.js",
@@ -661,6 +760,24 @@
       "norm_label": "handler()"
     },
     {
+      "label": "send-agreement.js",
+      "file_type": "code",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L1",
+      "id": "api_send_agreement_js",
+      "community": 35,
+      "norm_label": "send-agreement.js"
+    },
+    {
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L5",
+      "id": "api_send_agreement_handler",
+      "community": 35,
+      "norm_label": "handler()"
+    },
+    {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
@@ -673,7 +790,7 @@
       "label": "PageLoader()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L38",
+      "source_location": "L40",
       "id": "src_app_pageloader",
       "community": 0,
       "norm_label": "pageloader()"
@@ -682,7 +799,7 @@
       "label": "AnimatedRoutes()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L48",
+      "source_location": "L50",
       "id": "src_app_animatedroutes",
       "community": 0,
       "norm_label": "animatedroutes()"
@@ -691,7 +808,7 @@
       "label": "AppContent()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L68",
+      "source_location": "L72",
       "id": "src_app_appcontent",
       "community": 0,
       "norm_label": "appcontent()"
@@ -700,7 +817,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L111",
+      "source_location": "L115",
       "id": "src_app_app",
       "community": 0,
       "norm_label": "app()"
@@ -1035,7 +1152,7 @@
       "source_file": "src/components/sections/About.jsx",
       "source_location": "L1",
       "id": "src_components_sections_about_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "about.jsx"
     },
     {
@@ -1044,7 +1161,7 @@
       "source_file": "src/components/sections/About.jsx",
       "source_location": "L5",
       "id": "sections_about_about",
-      "community": 2,
+      "community": 4,
       "norm_label": "about()"
     },
     {
@@ -1143,7 +1260,7 @@
       "source_file": "src/components/sections/HowWeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_howwework_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "howwework.jsx"
     },
     {
@@ -1152,7 +1269,7 @@
       "source_file": "src/components/sections/HowWeWork.jsx",
       "source_location": "L5",
       "id": "sections_howwework_steps",
-      "community": 2,
+      "community": 4,
       "norm_label": "steps"
     },
     {
@@ -1161,7 +1278,7 @@
       "source_file": "src/components/sections/HowWeWork.jsx",
       "source_location": "L45",
       "id": "sections_howwework_howwework",
-      "community": 2,
+      "community": 4,
       "norm_label": "howwework()"
     },
     {
@@ -1170,7 +1287,7 @@
       "source_file": "src/components/sections/KineticManifesto.jsx",
       "source_location": "L1",
       "id": "src_components_sections_kineticmanifesto_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "kineticmanifesto.jsx"
     },
     {
@@ -1179,7 +1296,7 @@
       "source_file": "src/components/sections/KineticManifesto.jsx",
       "source_location": "L4",
       "id": "sections_kineticmanifesto_kineticmanifesto",
-      "community": 2,
+      "community": 4,
       "norm_label": "kineticmanifesto()"
     },
     {
@@ -1251,7 +1368,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L1",
       "id": "src_components_sections_pulse_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "pulse.jsx"
     },
     {
@@ -1260,7 +1377,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L5",
       "id": "sections_pulse_pulsecard",
-      "community": 2,
+      "community": 4,
       "norm_label": "pulsecard"
     },
     {
@@ -1269,7 +1386,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L76",
       "id": "sections_pulse_pulse",
-      "community": 2,
+      "community": 4,
       "norm_label": "pulse()"
     },
     {
@@ -1278,7 +1395,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_realtimework_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "realtimework.jsx"
     },
     {
@@ -1287,7 +1404,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L4",
       "id": "sections_realtimework_videoplayer",
-      "community": 2,
+      "community": 4,
       "norm_label": "videoplayer()"
     },
     {
@@ -1296,7 +1413,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L35",
       "id": "sections_realtimework_showcaseprojects",
-      "community": 2,
+      "community": 4,
       "norm_label": "showcaseprojects"
     },
     {
@@ -1305,7 +1422,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L96",
       "id": "sections_realtimework_realtimework",
-      "community": 2,
+      "community": 4,
       "norm_label": "realtimework()"
     },
     {
@@ -1566,7 +1683,7 @@
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L1",
       "id": "src_components_sections_whynexora_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "whynexora.jsx"
     },
     {
@@ -1575,7 +1692,7 @@
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L13",
       "id": "sections_whynexora_bentocard",
-      "community": 2,
+      "community": 4,
       "norm_label": "bentocard"
     },
     {
@@ -1584,7 +1701,7 @@
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L86",
       "id": "sections_whynexora_whynexora",
-      "community": 2,
+      "community": 4,
       "norm_label": "whynexora()"
     },
     {
@@ -1836,7 +1953,7 @@
       "source_file": "src/components/ui/ParticleField.jsx",
       "source_location": "L1",
       "id": "src_components_ui_particlefield_jsx",
-      "community": 0,
+      "community": 33,
       "norm_label": "particlefield.jsx"
     },
     {
@@ -1845,7 +1962,7 @@
       "source_file": "src/components/ui/ParticleField.jsx",
       "source_location": "L6",
       "id": "ui_particlefield_particlefield",
-      "community": 0,
+      "community": 33,
       "norm_label": "particlefield()"
     },
     {
@@ -2133,7 +2250,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L1",
       "id": "src_context_themecontext_jsx",
-      "community": 0,
+      "community": 33,
       "norm_label": "themecontext.jsx"
     },
     {
@@ -2142,7 +2259,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L3",
       "id": "context_themecontext_themecontext",
-      "community": 0,
+      "community": 33,
       "norm_label": "themecontext"
     },
     {
@@ -2151,7 +2268,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L5",
       "id": "context_themecontext_themeprovider",
-      "community": 0,
+      "community": 33,
       "norm_label": "themeprovider()"
     },
     {
@@ -2160,7 +2277,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L35",
       "id": "context_themecontext_usetheme",
-      "community": 0,
+      "community": 33,
       "norm_label": "usetheme()"
     },
     {
@@ -2236,6 +2353,33 @@
       "norm_label": "about()"
     },
     {
+      "label": "Agreement.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L1",
+      "id": "src_pages_agreement_jsx",
+      "community": 0,
+      "norm_label": "agreement.jsx"
+    },
+    {
+      "label": "purposeOptions",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L8",
+      "id": "pages_agreement_purposeoptions",
+      "community": 0,
+      "norm_label": "purposeoptions"
+    },
+    {
+      "label": "Agreement()",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L18",
+      "id": "pages_agreement_agreement",
+      "community": 0,
+      "norm_label": "agreement()"
+    },
+    {
       "label": "ClientPortal.jsx",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
@@ -2284,7 +2428,7 @@
       "label": "ProjectsTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L493",
+      "source_location": "L521",
       "id": "pages_clientportal_projectstab",
       "community": 7,
       "norm_label": "projectstab()"
@@ -2293,7 +2437,7 @@
       "label": "InvoicesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L535",
+      "source_location": "L563",
       "id": "pages_clientportal_invoicestab",
       "community": 7,
       "norm_label": "invoicestab()"
@@ -2302,16 +2446,25 @@
       "label": "MessagesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L584",
+      "source_location": "L612",
       "id": "pages_clientportal_messagestab",
       "community": 7,
       "norm_label": "messagestab()"
     },
     {
+      "label": "DeliverablesTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L677",
+      "id": "pages_clientportal_deliverablestab",
+      "community": 7,
+      "norm_label": "deliverablestab()"
+    },
+    {
       "label": "SettingsTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L649",
+      "source_location": "L758",
       "id": "pages_clientportal_settingstab",
       "community": 7,
       "norm_label": "settingstab()"
@@ -2320,7 +2473,7 @@
       "label": "ClientPortal()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L686",
+      "source_location": "L795",
       "id": "pages_clientportal_clientportal",
       "community": 7,
       "norm_label": "clientportal()"
@@ -2349,7 +2502,7 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L1",
       "id": "src_pages_home_jsx",
-      "community": 2,
+      "community": 4,
       "norm_label": "home.jsx"
     },
     {
@@ -2358,8 +2511,62 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L23",
       "id": "pages_home_home",
-      "community": 2,
+      "community": 4,
       "norm_label": "home()"
+    },
+    {
+      "label": "InvoiceSystem.jsx",
+      "file_type": "code",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L1",
+      "id": "src_pages_invoicesystem_jsx",
+      "community": 34,
+      "norm_label": "invoicesystem.jsx"
+    },
+    {
+      "label": "PREDEFINED_SERVICES",
+      "file_type": "code",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L4",
+      "id": "pages_invoicesystem_predefined_services",
+      "community": 34,
+      "norm_label": "predefined_services"
+    },
+    {
+      "label": "CURR_SYM",
+      "file_type": "code",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L13",
+      "id": "pages_invoicesystem_curr_sym",
+      "community": 34,
+      "norm_label": "curr_sym"
+    },
+    {
+      "label": "DEFAULT_SETTINGS",
+      "file_type": "code",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L17",
+      "id": "pages_invoicesystem_default_settings",
+      "community": 34,
+      "norm_label": "default_settings"
+    },
+    {
+      "label": "DEFAULT_INVOICE_DATA",
+      "file_type": "code",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L32",
+      "id": "pages_invoicesystem_default_invoice_data",
+      "community": 34,
+      "norm_label": "default_invoice_data"
+    },
+    {
+      "label": "InvoiceSystem()",
+      "file_type": "code",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L50",
+      "id": "pages_invoicesystem_invoicesystem",
+      "community": 34,
+      "norm_label": "invoicesystem()"
     },
     {
       "label": "NotFound.jsx",
@@ -2493,7 +2700,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_refundpolicy_jsx",
-      "community": 0,
+      "community": 32,
       "norm_label": "refundpolicy.jsx"
     },
     {
@@ -2502,7 +2709,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L19",
       "id": "pages_refundpolicy_stages",
-      "community": 0,
+      "community": 32,
       "norm_label": "stages"
     },
     {
@@ -2511,7 +2718,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L43",
       "id": "pages_refundpolicy_nonrefundable",
-      "community": 0,
+      "community": 32,
       "norm_label": "nonrefundable"
     },
     {
@@ -2520,7 +2727,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L50",
       "id": "pages_refundpolicy_navigation",
-      "community": 0,
+      "community": 32,
       "norm_label": "navigation"
     },
     {
@@ -2529,7 +2736,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L59",
       "id": "pages_refundpolicy_reveal",
-      "community": 0,
+      "community": 32,
       "norm_label": "reveal"
     },
     {
@@ -2538,7 +2745,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L66",
       "id": "pages_refundpolicy_tonestyles",
-      "community": 0,
+      "community": 32,
       "norm_label": "tonestyles"
     },
     {
@@ -2547,7 +2754,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L87",
       "id": "pages_refundpolicy_refundpolicy",
-      "community": 0,
+      "community": 32,
       "norm_label": "refundpolicy()"
     },
     {
@@ -2981,9 +3188,9 @@
       "source_file": "clean.mjs",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_content",
-      "confidence_score": 1.0
+      "target": "nexora_clean_content"
     },
     {
       "relation": "contains",
@@ -2991,9 +3198,9 @@
       "source_file": "clean.mjs",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_dirname",
-      "confidence_score": 1.0
+      "target": "nexora_clean_dirname"
     },
     {
       "relation": "contains",
@@ -3001,9 +3208,9 @@
       "source_file": "clean.mjs",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_filename",
-      "confidence_score": 1.0
+      "target": "nexora_clean_filename"
     },
     {
       "relation": "contains",
@@ -3011,9 +3218,9 @@
       "source_file": "clean.mjs",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_files",
-      "confidence_score": 1.0
+      "target": "nexora_clean_files"
     },
     {
       "relation": "contains",
@@ -3021,9 +3228,9 @@
       "source_file": "clean.mjs",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_walk",
-      "confidence_score": 1.0
+      "target": "nexora_clean_walk"
     },
     {
       "relation": "contains",
@@ -3259,6 +3466,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_nodemailer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
       "source_location": "L31",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3394,6 +3611,26 @@
       "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
       "target": "nexora_package_dependencies_react_tilt"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_splinetool_react_spline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_splinetool_runtime",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -3628,11 +3865,101 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_configureserver",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_dirname",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_envcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_envpath",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_filename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_key",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_parts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "vite.config.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "vite_config_js",
+      "target": "nexora_vite_config_val",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "api/chat.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_chat_js",
-      "target": "api_chat_handler",
+      "target": "api_chat_handler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "api_send_agreement_js",
+      "target": "api_send_agreement_handler",
       "confidence_score": 1.0
     },
     {
@@ -3792,9 +4119,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_ui_novawidget_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_ui_novawidget_jsx"
     },
     {
       "relation": "imports_from",
@@ -3867,6 +4194,17 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "src/App.jsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_agreement_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
       "source_location": "L26",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -3894,6 +4232,17 @@
       "confidence_score": 1.0,
       "source": "src_app_jsx",
       "target": "src_pages_home_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/App.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "src_app_jsx",
+      "target": "src_pages_invoicesystem_jsx",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -5981,9 +6330,9 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_novawidget",
-      "confidence_score": 1.0
+      "target": "ui_novawidget_novawidget"
     },
     {
       "relation": "imports",
@@ -6392,6 +6741,26 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_pages_agreement_jsx",
+      "target": "pages_agreement_agreement",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_pages_agreement_jsx",
+      "target": "pages_agreement_purposeoptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L193",
       "weight": 1.0,
@@ -6448,6 +6817,16 @@
       "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
       "target": "pages_clientportal_default_project_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L677",
+      "weight": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_deliverablestab",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6618,6 +6997,56 @@
       "confidence_score": 1.0,
       "source": "src_pages_home_jsx",
       "target": "pages_home_home"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_pages_invoicesystem_jsx",
+      "target": "pages_invoicesystem_curr_sym",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "src_pages_invoicesystem_jsx",
+      "target": "pages_invoicesystem_default_invoice_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_invoicesystem_jsx",
+      "target": "pages_invoicesystem_default_settings",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "src_pages_invoicesystem_jsx",
+      "target": "pages_invoicesystem_invoicesystem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_pages_invoicesystem_jsx",
+      "target": "pages_invoicesystem_predefined_services",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -6974,5 +7403,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "4493febb29dc996077ba8e663bf9d05b063be6fb"
+  "built_at_commit": "d5b59daefa61fe47aac9a2b7e2b0373f8ae969d3"
 }

@@ -34,6 +34,7 @@ import RefundPolicy from './pages/RefundPolicy';
 import Onboarding from './pages/Onboarding';
 import PaymentPolicy from './pages/PaymentPolicy';
 import Projects from './pages/Projects';
+import Agreement from './pages/Agreement';
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -62,6 +63,7 @@ function AnimatedRoutes() {
       <Route path="/refund-policy" element={<RefundPolicy />} />
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/payment-policy" element={<PaymentPolicy />} />
+      <Route path="/agreement" element={<Agreement />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

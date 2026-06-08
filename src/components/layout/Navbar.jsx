@@ -57,7 +57,8 @@ export default function Navbar() {
     { name: 'Work', id: 'work' },
     { name: 'Process', isRoute: true, path: '/onboarding' },
     { name: 'Pricing', id: 'pricing' },
-    { name: 'FAQ', id: 'faq' }
+    { name: 'FAQ', id: 'faq' },
+    { name: 'Agreement', isRoute: true, path: '/agreement' }
   ];
 
   return (

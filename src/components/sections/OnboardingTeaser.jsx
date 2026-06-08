@@ -82,6 +82,14 @@ export default function OnboardingTeaser() {
               </MagneticButton>
             </Link>
 
+            <Link 
+              to="/agreement"
+              className="mt-6 inline-flex items-center gap-2 px-6 py-3 rounded-full border border-white/20 text-gray-300 hover:text-white hover:border-accent-blue/50 hover:bg-white/5 transition-all duration-300 text-sm font-medium group/dl"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="group-hover/dl:translate-y-0.5 transition-transform"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Request Client Agreement
+            </Link>
+
           </div>
         </div>
       </m.div>

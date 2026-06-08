@@ -44,6 +44,7 @@ export default function Footer() {
               <li><Link to="/terms" className="hover:text-black dark:hover:text-white transition-colors">Terms of Service</Link></li>
               <li><Link to="/refund-policy" className="hover:text-black dark:hover:text-white transition-colors">Refund Policy</Link></li>
               <li><Link to="/payment-policy" className="hover:text-black dark:hover:text-white transition-colors">Payment Policy</Link></li>
+              <li><Link to="/agreement" className="hover:text-black dark:hover:text-white transition-colors">Client Agreement</Link></li>
             </ul>
           </div>
         </div>
