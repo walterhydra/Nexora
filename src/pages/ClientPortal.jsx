@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { m, AnimatePresence } from 'framer-motion';
 import { 
   Mail, Eye, Lock, Zap, MessageCircle, ShieldCheck, 
   LayoutDashboard, FolderKanban, Receipt, Settings, 
   Bell, ChevronDown, ArrowLeft, ArrowRight,
-  Clock, CheckCircle2, Terminal, Bot, X, Send, MessageSquare
+  Clock, CheckCircle2, Terminal, Bot, X, Send, MessageSquare, Download, File
 } from 'lucide-react';
 import nexoraLogo from '../assets/nexora-logo.png';
 
@@ -460,20 +460,29 @@ const OverviewTab = () => (
           <div className="space-y-5">
             {[
               { title: "Design System Approval", date: "Completed Oct 1", status: "done" },
-              { title: "Backend API Integration", date: "Due Oct 15", status: "active" },
-              { title: "Frontend Implementation", date: "Due Oct 28", status: "pending" }
+              { title: "Backend API Integration", date: "Awaiting your approval", status: "action_needed" },
+              { title: "Frontend Implementation", date: "Pending Phase 2", status: "pending" }
             ].map((milestone, i) => (
               <div key={i} className="flex items-start gap-4">
                 <div className={`mt-0.5 w-5 h-5 rounded-full flex items-center justify-center border-2 shrink-0 ${
                   milestone.status === 'done' ? 'bg-blue-600 border-blue-600' : 
-                  milestone.status === 'active' ? 'bg-white border-blue-600 shadow-[0_0_0_3px_rgba(37,99,235,0.1)]' : 'bg-gray-100 border-gray-200'
+                  milestone.status === 'action_needed' ? 'bg-amber-100 border-amber-500' : 'bg-gray-100 border-gray-200'
                 }`}>
                   {milestone.status === 'done' && <CheckCircle2 className="w-3 h-3 text-white" />}
-                  {milestone.status === 'active' && <div className="w-1.5 h-1.5 bg-blue-600 rounded-full" />}
+                  {milestone.status === 'action_needed' && <div className="w-2 h-2 bg-amber-500 rounded-full" />}
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className={`text-sm font-semibold ${milestone.status === 'pending' ? 'text-gray-500' : 'text-gray-900'}`}>{milestone.title}</p>
-                  <p className="text-xs text-gray-500 mt-0.5">{milestone.date}</p>
+                  <p className={`text-xs mt-0.5 ${milestone.status === 'action_needed' ? 'text-amber-600 font-medium' : 'text-gray-500'}`}>{milestone.date}</p>
+                  
+                  {milestone.status === 'action_needed' && (
+                    <div className="mt-3 p-3 bg-amber-50 border border-amber-100 rounded-lg flex items-center justify-between">
+                      <span className="text-xs font-semibold text-amber-800">Please review and approve to proceed.</span>
+                      <button className="bg-amber-500 hover:bg-amber-600 text-white text-xs font-bold px-3 py-1.5 rounded transition-colors shadow-sm">
+                        Approve Stage
+                      </button>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}
@@ -481,8 +490,27 @@ const OverviewTab = () => (
         </div>
       </div>
 
-      {/* Live Project Pulse Widget */}
-      <LivePulseFeed />
+      {/* Payment Status & Quick Actions */}
+      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+        <div className="px-6 py-5 border-b border-gray-100 flex items-center justify-between">
+          <h3 className="text-base font-bold text-gray-900">Current Balance</h3>
+          <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-700 text-xs font-semibold border border-amber-100">Due July 15</span>
+        </div>
+        <div className="p-6 flex-1 flex flex-col justify-center items-center text-center">
+          <div className="w-16 h-16 bg-amber-50 rounded-full flex items-center justify-center mb-4">
+            <Receipt className="w-8 h-8 text-amber-600" />
+          </div>
+          <p className="text-sm font-semibold text-gray-500 mb-1">Outstanding Invoice</p>
+          <h2 className="text-4xl font-bold text-gray-900 mb-6">₹45,000</h2>
+          
+          <button className="w-full bg-gray-900 hover:bg-black text-white font-semibold py-3 rounded-lg shadow-sm transition-colors mb-3">
+            Pay Now via Stripe
+          </button>
+          <button className="w-full bg-white hover:bg-gray-50 text-gray-700 border border-gray-200 font-semibold py-3 rounded-lg transition-colors">
+            View Invoice PDF
+          </button>
+        </div>
+      </div>
     </div>
 
     {/* Interactive 3D Invoice Feature */}
@@ -646,6 +674,87 @@ const MessagesTab = () => (
   </m.div>
 );
 
+const DeliverablesTab = () => (
+  <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-6xl mx-auto w-full">
+    <div className="mb-8">
+      <h1 className="text-2xl font-bold text-gray-900 mb-1">File Delivery Hub</h1>
+      <p className="text-gray-500 text-sm">Access your final assets, source files, and work in progress.</p>
+    </div>
+
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Final Deliverables */}
+      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+        <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-emerald-50">
+          <div className="flex items-center gap-2 text-emerald-800">
+            <CheckCircle2 className="w-5 h-5" />
+            <h3 className="font-bold">Final Deliverables</h3>
+          </div>
+          <span className="text-xs font-bold text-emerald-600 bg-white px-2 py-1 rounded border border-emerald-200">Approved</span>
+        </div>
+        <div className="p-4 space-y-2 flex-1">
+          {[
+            { name: "Brand_Guidelines_vFinal.pdf", size: "4.2 MB", date: "Oct 12", type: "pdf" },
+            { name: "Logo_Package_All_Formats.zip", size: "12.8 MB", date: "Oct 12", type: "zip" },
+            { name: "UI_Design_System.fig", size: "18.5 MB", date: "Oct 10", type: "fig" }
+          ].map((file, i) => (
+            <div key={i} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-all cursor-pointer group">
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs ${
+                  file.type === 'pdf' ? 'bg-red-50 text-red-600' : 
+                  file.type === 'zip' ? 'bg-blue-50 text-blue-600' : 'bg-purple-50 text-purple-600'
+                }`}>
+                  .{file.type}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{file.name}</p>
+                  <p className="text-xs text-gray-500">{file.size} • Uploaded {file.date}</p>
+                </div>
+              </div>
+              <button className="text-gray-400 hover:text-blue-600 transition-colors p-2">
+                <Download className="w-4 h-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Work In Progress */}
+      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden flex flex-col">
+        <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-blue-50">
+          <div className="flex items-center gap-2 text-blue-800">
+            <FolderKanban className="w-5 h-5" />
+            <h3 className="font-bold">Work In Progress</h3>
+          </div>
+          <span className="text-xs font-bold text-blue-600 bg-white px-2 py-1 rounded border border-blue-200">Active</span>
+        </div>
+        <div className="p-4 space-y-2 flex-1">
+          {[
+            { name: "Homepage_Draft_v2.fig", size: "8.1 MB", date: "Today", type: "fig" },
+            { name: "Copywriting_Wireframe.pdf", size: "1.2 MB", date: "Yesterday", type: "pdf" }
+          ].map((file, i) => (
+            <div key={i} className="flex items-center justify-between p-3 hover:bg-gray-50 rounded-lg border border-transparent hover:border-gray-200 transition-all cursor-pointer group">
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center font-bold text-xs ${
+                  file.type === 'pdf' ? 'bg-red-50 text-red-600' : 'bg-purple-50 text-purple-600'
+                }`}>
+                  .{file.type}
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">{file.name}</p>
+                  <p className="text-xs text-gray-500">{file.size} • Uploaded {file.date}</p>
+                </div>
+              </div>
+              <button className="text-gray-400 hover:text-blue-600 transition-colors p-2">
+                <Download className="w-4 h-4" />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </m.div>
+);
+
 const SettingsTab = () => (
   <m.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="p-8 max-w-3xl mx-auto w-full">
     <div className="mb-8">
@@ -684,8 +793,20 @@ const SettingsTab = () => (
 );
 
 export default function ClientPortal() {
+  const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if ((email === 'Nexoraa.works@gmail.com' || email === 'Nexoraa.Admin') && password === '220305@Nexoraa') {
+      navigate('/invoice-system');
+    } else {
+      setIsAuthenticated(true);
+    }
+  };
 
   // --- LOGIN SCREEN (Matches screenshot layout, adapted to Nexora Blue) ---
   if (!isAuthenticated) {
@@ -765,14 +886,15 @@ export default function ClientPortal() {
                 <h2 className="text-3xl font-bold text-[#1a1f36] mb-1">Client Login</h2>
                 <p className="text-sm text-gray-500 mb-8">Access the Nexora B2B partner dashboard</p>
 
-                <form onSubmit={(e) => { e.preventDefault(); setIsAuthenticated(true); }} className="space-y-5">
+                <form onSubmit={handleLogin} className="space-y-5">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Email</label>
+                    <label className="block text-xs font-semibold text-gray-700 mb-1.5">Email or ID</label>
                     <div className="relative">
                       <input 
-                        type="email" 
+                        type="text" 
                         required
-                        defaultValue="client@company.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="you@agency.com" 
                         className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-gray-900"
                       />
@@ -786,7 +908,8 @@ export default function ClientPortal() {
                       <input 
                         type="password" 
                         required
-                        defaultValue="password123"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
                         placeholder="Your password" 
                         className="w-full pl-4 pr-10 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all text-gray-900"
                       />
@@ -842,6 +965,7 @@ export default function ClientPortal() {
           {[
             { id: 'overview', icon: LayoutDashboard, label: "Dashboard" },
             { id: 'projects', icon: FolderKanban, label: "Projects" },
+            { id: 'deliverables', icon: File, label: "Deliverables" },
             { id: 'invoices', icon: Receipt, label: "Invoices" },
             { id: 'messages', icon: MessageCircle, label: "Messages" },
             { id: 'settings', icon: Settings, label: "Settings" },
@@ -899,6 +1023,7 @@ export default function ClientPortal() {
         <AnimatePresence mode="wait">
            {activeTab === 'overview' && <OverviewTab key="overview" />}
            {activeTab === 'projects' && <ProjectsTab key="projects" />}
+           {activeTab === 'deliverables' && <DeliverablesTab key="deliverables" />}
            {activeTab === 'invoices' && <InvoicesTab key="invoices" />}
            {activeTab === 'messages' && <MessagesTab key="messages" />}
            {activeTab === 'settings' && <SettingsTab key="settings" />}

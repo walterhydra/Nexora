@@ -24,6 +24,7 @@ import Home from './pages/Home';
 import ServiceDetails from './pages/ServiceDetails';
 import NotFound from './pages/NotFound';
 import ClientPortal from './pages/ClientPortal';
+import InvoiceSystem from './pages/InvoiceSystem';
 import About from './pages/About';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
@@ -51,6 +52,7 @@ function AnimatedRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/service/:slug" element={<ServiceDetails />} />
       <Route path="/portal" element={<ClientPortal />} />
+      <Route path="/invoice-system" element={<InvoiceSystem />} />
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/projects" element={<Projects />} />
@@ -69,7 +71,7 @@ function AppContent() {
   // Initialize Lenis Smooth Scroll
   useLenis();
   const location = useLocation();
-  const isPortal = location.pathname.startsWith('/portal');
+  const isPortal = location.pathname.startsWith('/portal') || location.pathname.startsWith('/invoice-system');
 
   return (
     <LazyMotion features={domAnimation}>

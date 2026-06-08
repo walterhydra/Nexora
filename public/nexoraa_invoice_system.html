@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexoraa Studio — Invoice System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --nx-bg:#0a0e1a;
+  --nx-surface:#0f1525;
+  --nx-card:#141c30;
+  --nx-border:#1e2d4a;
+  --nx-blue:#2563eb;
+  --nx-blue-light:#3b82f6;
+  --nx-blue-glow:#60a5fa;
+  --nx-silver:#c8d4e8;
+  --nx-text:#e2e8f0;
+  --nx-muted:#64748b;
+  --nx-success:#10b981;
+  --nx-warning:#f59e0b;
+  --nx-danger:#ef4444;
+  --nx-accent:#1d4ed8;
+}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--nx-bg);color:var(--nx-text);font-size:14px;}
+h1,h2,h3,.heading{font-family:'Rajdhani',sans-serif}
+.app{display:flex;height:100vh;width:100%;overflow:hidden}
+.sidebar{width:220px;background:var(--nx-surface);border-right:1px solid var(--nx-border);display:flex;flex-direction:column;flex-shrink:0}
+.logo-area{padding:18px 16px;border-bottom:1px solid var(--nx-border);display:flex;align-items:center;gap:10px}
+.logo-icon{width:36px;height:36px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;color:#fff;letter-spacing:-1px}
+.logo-text{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:16px;color:var(--nx-text);letter-spacing:1px}
+.logo-sub{font-size:10px;color:var(--nx-muted);letter-spacing:2px;text-transform:uppercase}
+.nav{padding:12px 0;flex:1}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 16px;cursor:pointer;font-size:13px;color:var(--nx-muted);transition:all 0.2s;border-left:2px solid transparent}
+.nav-item:hover{color:var(--nx-text);background:rgba(37,99,235,0.08)}
+.nav-item.active{color:var(--nx-blue-light);background:rgba(37,99,235,0.12);border-left-color:var(--nx-blue-light)}
+.nav-item i{font-size:16px;width:18px}
+.sidebar-footer{padding:12px 16px;border-top:1px solid var(--nx-border)}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.topbar{background:var(--nx-surface);border-bottom:1px solid var(--nx-border);padding:12px 20px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.topbar-title{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--nx-text);letter-spacing:0.5px}
+.topbar-right{display:flex;align-items:center;gap:10px}
+.btn{border:none;border-radius:6px;padding:7px 14px;font-size:12px;font-weight:500;cursor:pointer;display:inline-flex;align-items:center;gap:6px;transition:all 0.2s;font-family:'DM Sans',sans-serif;text-decoration:none}
+.btn-primary{background:var(--nx-blue);color:#fff}
+.btn-primary:hover{background:var(--nx-blue-light)}
+.btn-outline{background:transparent;color:var(--nx-muted);border:1px solid var(--nx-border)}
+.btn-outline:hover{color:var(--nx-text);border-color:var(--nx-blue)}
+.btn-sm{padding:5px 10px;font-size:11px}
+.btn-danger{background:#7f1d1d;color:#fca5a5;border:none}
+.btn-success{background:#064e3b;color:#6ee7b7;border:none}
+.content{flex:1;padding:20px;overflow-y:auto}
+.tab-bar{display:flex;gap:4px;background:var(--nx-surface);border-bottom:1px solid var(--nx-border);padding:0 20px;flex-shrink:0}
+.tab{padding:12px 16px;font-size:12px;font-weight:500;cursor:pointer;color:var(--nx-muted);border-bottom:2px solid transparent;transition:all 0.2s}
+.tab.active{color:var(--nx-blue-light);border-bottom-color:var(--nx-blue-light)}
+.tab:hover{color:var(--nx-text)}
+.card{background:var(--nx-card);border:1px solid var(--nx-border);border-radius:10px;padding:16px;margin-bottom:14px}
+.card:last-child{margin-bottom:0}
+.card-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+.card-title{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;color:var(--nx-text)}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.stat-card{background:var(--nx-card);border:1px solid var(--nx-border);border-radius:8px;padding:14px}
+.stat-label{font-size:11px;color:var(--nx-muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.stat-value{font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--nx-text)}
+.stat-sub{font-size:11px;color:var(--nx-muted);margin-top:2px}
+.stat-card.blue{border-top:2px solid var(--nx-blue)}
+.stat-card.green{border-top:2px solid var(--nx-success)}
+.stat-card.amber{border-top:2px solid var(--nx-warning)}
+.stat-card.red{border-top:2px solid var(--nx-danger)}
+table{width:100%;border-collapse:collapse}
+th{font-size:11px;color:var(--nx-muted);text-transform:uppercase;letter-spacing:0.8px;padding:8px 10px;text-align:left;border-bottom:1px solid var(--nx-border)}
+td{padding:10px 10px;border-bottom:1px solid rgba(30,45,74,0.5);font-size:13px;vertical-align:middle}
+tr:hover td{background:rgba(37,99,235,0.04)}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:500;gap:4px}
+.badge-paid{background:#064e3b;color:#6ee7b7}
+.badge-pending{background:#78350f;color:#fcd34d}
+.badge-draft{background:#1e293b;color:#94a3b8}
+.badge-overdue{background:#7f1d1d;color:#fca5a5}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.form-row.triple{grid-template-columns:1fr 1fr 1fr}
+.form-row.full{grid-template-columns:1fr}
+.form-group{display:flex;flex-direction:column;gap:5px}
+label{font-size:11px;color:var(--nx-muted);text-transform:uppercase;letter-spacing:0.8px}
+input,select,textarea{background:var(--nx-surface);border:1px solid var(--nx-border);border-radius:6px;padding:8px 10px;color:var(--nx-text);font-size:13px;font-family:'DM Sans',sans-serif;width:100%;transition:border 0.2s;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--nx-blue)}
+textarea{resize:vertical;min-height:60px}
+select option{background:var(--nx-card);color:var(--nx-text)}
+.divider{height:1px;background:var(--nx-border);margin:14px 0}
+.items-table th,.items-table td{padding:8px 8px}
+.items-table input{padding:6px 8px;font-size:12px}
+.total-box{background:var(--nx-surface);border:1px solid var(--nx-border);border-radius:8px;padding:14px;min-width:240px}
+.total-row{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}
+.total-row.grand{border-top:1px solid var(--nx-border);padding-top:8px;margin-top:4px;font-family:'Rajdhani',sans-serif;font-size:16px;font-weight:700;color:var(--nx-blue-light)}
+/* Invoice Preview (white paper) */
+.preview-wrap{background:#fff;border-radius:8px;padding:32px;color:#1e293b;font-family:'DM Sans',sans-serif;font-size:13px;max-width:860px;margin:0 auto}
+.inv-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:16px;border-bottom:3px solid #2563eb}
+.inv-logo{font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;color:#0f172a;letter-spacing:1px}
+.inv-logo span{color:#2563eb}
+.inv-meta{text-align:right}
+.inv-number{font-size:22px;font-weight:700;color:#0f172a}
+.inv-dates{font-size:11px;color:#64748b;margin-top:4px;line-height:1.7}
+.inv-parties{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.party-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#94a3b8;margin-bottom:4px}
+.party-name{font-weight:600;font-size:14px;color:#0f172a;margin-bottom:4px}
+.party-info{font-size:12px;color:#475569;line-height:1.6}
+.inv-table{width:100%;border-collapse:collapse;margin-bottom:16px}
+.inv-table th{background:#f1f5f9;font-size:11px;text-transform:uppercase;letter-spacing:0.8px;padding:8px 10px;text-align:left;color:#64748b}
+.inv-table td{padding:8px 10px;border-bottom:1px solid #f1f5f9;font-size:12px;color:#334155}
+.inv-table tr:last-child td{border-bottom:none}
+.inv-totals{display:flex;justify-content:flex-end;margin-bottom:16px}
+.inv-total-box{width:240px}
+.inv-total-row{display:flex;justify-content:space-between;padding:4px 0;font-size:12px;color:#475569}
+.inv-total-row.grand{border-top:2px solid #2563eb;margin-top:4px;padding-top:8px;font-weight:700;font-size:15px;color:#0f172a}
+.inv-footer{text-align:center;font-size:11px;color:#94a3b8;padding-top:14px;border-top:1px solid #e2e8f0;line-height:1.7}
+.inv-gst-badge{font-size:11px;background:#dbeafe;color:#1d4ed8;padding:2px 6px;border-radius:4px;font-weight:600;display:inline-block;margin-top:2px}
+/* Modal */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
+.modal{background:var(--nx-card);border:1px solid var(--nx-border);border-radius:12px;padding:22px;width:100%;max-width:440px;max-height:85vh;overflow-y:auto}
+.modal-title{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;color:var(--nx-text)}
+/* Utility */
+.hidden{display:none!important}
+.flex{display:flex}.gap-2{gap:8px}.items-center{align-items:center}.justify-between{justify-content:space-between}
+.text-right{text-align:right}.text-blue{color:var(--nx-blue-light)}.text-muted{color:var(--nx-muted)}.text-success{color:var(--nx-success)}.text-danger{color:var(--nx-danger)}.text-warning{color:var(--nx-warning)}
+.mt-2{margin-top:8px}.mb-2{margin-bottom:8px}.mt-3{margin-top:12px}.mb-3{margin-bottom:12px}
+.status-dot{width:7px;height:7px;border-radius:50%;display:inline-block;margin-right:5px}
+.dot-green{background:var(--nx-success)}.dot-amber{background:var(--nx-warning)}.dot-gray{background:var(--nx-muted)}.dot-red{background:var(--nx-danger)}
+.section-title{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;color:var(--nx-text);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.section-title::after{content:'';flex:1;height:1px;background:var(--nx-border)}
+.action-row{display:flex;gap:6px;align-items:center}
+.inv-tag{font-size:10px;background:#1e3a5f;color:#60a5fa;padding:2px 6px;border-radius:4px;font-weight:600}
+.print-btn{display:none}
+@media print{
+  .sidebar,.topbar,.tab-bar,.btn,.action-row{display:none!important}
+  .preview-wrap{box-shadow:none;border:none}
+  body{background:#fff}
+  .page{display:block!important}
+  #tab-preview-content{display:block!important}
+  .print-btn{display:inline-flex}
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="logo-area">
+      <div class="logo-icon">N</div>
+      <div>
+        <div class="logo-text">NEXORAA</div>
+        <div class="logo-sub">Studio</div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-item active" onclick="showPage('dashboard')">
+        <i class="ti ti-layout-dashboard"></i> Dashboard
+      </div>
+      <div class="nav-item" onclick="showPage('invoices')">
+        <i class="ti ti-file-invoice"></i> Invoices
+      </div>
+      <div class="nav-item" onclick="showPage('new')">
+        <i class="ti ti-plus"></i> New Invoice
+      </div>
+      <div class="nav-item" onclick="showPage('clients')">
+        <i class="ti ti-users"></i> Clients
+      </div>
+      <div class="nav-item" onclick="showPage('settings')">
+        <i class="ti ti-settings"></i> Settings
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <div style="font-size:12px;font-weight:500;color:var(--nx-text)" id="sf-owner">Milan Pandavadara</div>
+      <div style="font-size:10px;color:var(--nx-muted);margin-top:2px" id="sf-desig">Founder & CEO</div>
+      <div style="font-size:10px;color:var(--nx-blue-light);margin-top:4px">nexoraa.works</div>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <div class="main">
+
+    <!-- ==================== DASHBOARD ==================== -->
+    <div id="page-dashboard" class="page">
+      <div class="topbar">
+        <div class="topbar-title">Dashboard</div>
+        <div class="topbar-right">
+          <span style="font-size:12px;color:var(--nx-muted)" id="tb-website">nexoraa.works</span>
+          <button class="btn btn-primary" onclick="showPage('new')">
+            <i class="ti ti-plus"></i> New Invoice
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="stat-grid">
+          <div class="stat-card blue">
+            <div class="stat-label">Total Revenue</div>
+            <div class="stat-value" id="stat-total">₹0.00</div>
+            <div class="stat-sub">All invoices</div>
+          </div>
+          <div class="stat-card green">
+            <div class="stat-label">Paid</div>
+            <div class="stat-value" id="stat-paid">₹0.00</div>
+            <div class="stat-sub">Received</div>
+          </div>
+          <div class="stat-card amber">
+            <div class="stat-label">Pending</div>
+            <div class="stat-value" id="stat-pending">₹0.00</div>
+            <div class="stat-sub">Awaiting payment</div>
+          </div>
+          <div class="stat-card red">
+            <div class="stat-label">Overdue</div>
+            <div class="stat-value" id="stat-overdue">₹0.00</div>
+            <div class="stat-sub">Past due date</div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">Recent Invoices</div>
+            <button class="btn btn-outline btn-sm" onclick="showPage('invoices')">View All</button>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Invoice #</th><th>Client</th><th>Date</th><th>Amount</th><th>Status</th><th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="dashboard-inv-list">
+              <tr><td colspan="6" style="text-align:center;color:var(--nx-muted);padding:28px">No invoices yet — create your first one!</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== ALL INVOICES ==================== -->
+    <div id="page-invoices" class="page hidden">
+      <div class="topbar">
+        <div class="topbar-title">All Invoices</div>
+        <div class="topbar-right">
+          <select id="filter-status" onchange="renderInvoiceList()" style="width:140px;padding:6px 10px;font-size:12px">
+            <option value="">All Status</option>
+            <option value="Draft">Draft</option>
+            <option value="Pending">Pending</option>
+            <option value="Paid">Paid</option>
+            <option value="Overdue">Overdue</option>
+          </select>
+          <button class="btn btn-primary" onclick="showPage('new')">
+            <i class="ti ti-plus"></i> New Invoice
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Invoice #</th><th>Client</th><th>Date</th><th>Due Date</th>
+                <th>Amount</th><th>GST</th><th>Status</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="inv-list-body">
+              <tr><td colspan="8" style="text-align:center;color:var(--nx-muted);padding:28px">No invoices yet</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== NEW / EDIT INVOICE ==================== -->
+    <div id="page-new" class="page hidden">
+      <div class="topbar">
+        <div class="topbar-title" id="new-page-title">New Invoice</div>
+        <div class="topbar-right">
+          <button class="btn btn-outline" onclick="saveDraft()">
+            <i class="ti ti-device-floppy"></i> Save Draft
+          </button>
+          <button class="btn btn-primary" onclick="saveInvoice()">
+            <i class="ti ti-check"></i> Save Invoice
+          </button>
+        </div>
+      </div>
+      <div class="tab-bar">
+        <div class="tab active" id="tab-details" onclick="switchTab('details')">Invoice Details</div>
+        <div class="tab" id="tab-items" onclick="switchTab('items')">Line Items</div>
+        <div class="tab" id="tab-preview" onclick="switchTab('preview')">Preview & Print</div>
+      </div>
+      <div class="content">
+        <!-- TAB: DETAILS -->
+        <div id="tab-details-content">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Invoice Number</label>
+              <input type="text" id="inv-number" placeholder="INV-001">
+            </div>
+            <div class="form-group">
+              <label>Currency</label>
+              <select id="inv-currency" onchange="updateTotals()">
+                <option value="INR" data-sym="₹">🇮🇳 INR — Indian Rupee</option>
+                <option value="USD" data-sym="$">🇺🇸 USD — US Dollar</option>
+                <option value="EUR" data-sym="€">🇪🇺 EUR — Euro</option>
+                <option value="GBP" data-sym="£">🇬🇧 GBP — British Pound</option>
+                <option value="AED" data-sym="د.إ">🇦🇪 AED — UAE Dirham</option>
+                <option value="SGD" data-sym="S$">🇸🇬 SGD — Singapore Dollar</option>
+                <option value="CAD" data-sym="C$">🇨🇦 CAD — Canadian Dollar</option>
+                <option value="AUD" data-sym="A$">🇦🇺 AUD — Australian Dollar</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Invoice Date</label>
+              <input type="date" id="inv-date">
+            </div>
+            <div class="form-group">
+              <label>Due Date</label>
+              <input type="date" id="inv-due">
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="section-title"><i class="ti ti-building"></i> Bill To (Client Info)</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Client Name</label>
+              <input type="text" id="client-name" list="client-datalist" placeholder="Type or select client name" oninput="autofillClient()">
+              <datalist id="client-datalist"></datalist>
+            </div>
+            <div class="form-group">
+              <label>Company Name</label>
+              <input type="text" id="client-company" placeholder="Client Company Pvt. Ltd.">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" id="client-email" placeholder="client@email.com">
+            </div>
+            <div class="form-group">
+              <label>Phone</label>
+              <input type="text" id="client-phone" placeholder="+91 XXXXX XXXXX">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Billing Address</label>
+              <textarea id="client-address" placeholder="Full billing address..." rows="2"></textarea>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Client GST Number</label>
+              <input type="text" id="client-gst" placeholder="22AAAAA0000A1Z5">
+            </div>
+            <div class="form-group">
+              <label>Payment Status</label>
+              <select id="inv-status">
+                <option value="Draft">Draft</option>
+                <option value="Pending" selected>Pending</option>
+                <option value="Paid">Paid</option>
+                <option value="Overdue">Overdue</option>
+              </select>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="section-title"><i class="ti ti-receipt-tax"></i> GST / Tax Settings</div>
+          <div class="form-row triple">
+            <div class="form-group">
+              <label>GST Type</label>
+              <select id="gst-type" onchange="updateTotals()">
+                <option value="none">No GST</option>
+                <option value="exclusive" selected>GST Exclusive (added on top)</option>
+                <option value="inclusive">GST Inclusive (included in price)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>GST Rate</label>
+              <select id="gst-rate" onchange="updateTotals()">
+                <option value="0">0% — Exempt</option>
+                <option value="5">5% — Essential goods</option>
+                <option value="12">12% — Standard</option>
+                <option value="18" selected>18% — Standard services</option>
+                <option value="28">28% — Luxury</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your GSTIN</label>
+              <input type="text" id="your-gst" placeholder="24XXXXX0000X1Z5">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Notes / Payment Terms</label>
+              <textarea id="inv-notes" rows="3" placeholder="Payment terms, bank details, thank you note..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: LINE ITEMS -->
+        <div id="tab-items-content" class="hidden">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Line Items / Services</div>
+              <button class="btn btn-primary btn-sm" onclick="addItem()">
+                <i class="ti ti-plus"></i> Add Item
+              </button>
+            </div>
+            <table class="items-table" style="width:100%">
+              <thead>
+                <tr>
+                  <th style="width:38%">Description</th>
+                  <th style="width:12%">Qty</th>
+                  <th style="width:20%">Unit Price</th>
+                  <th style="width:20%">Amount</th>
+                  <th style="width:10%"></th>
+                </tr>
+              </thead>
+              <tbody id="items-body"></tbody>
+            </table>
+            <div style="display:flex;justify-content:flex-end;margin-top:16px">
+              <div class="total-box">
+                <div class="total-row">
+                  <span class="text-muted">Subtotal</span>
+                  <span id="t-subtotal">₹0.00</span>
+                </div>
+                <div class="total-row">
+                  <span class="text-muted" id="t-gst-label">GST (18%)</span>
+                  <span id="t-gst">₹0.00</span>
+                </div>
+                <div class="total-row grand">
+                  <span>Total</span>
+                  <span id="t-total">₹0.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: PREVIEW -->
+        <div id="tab-preview-content" class="hidden">
+          <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+            <button class="btn btn-primary" onclick="window.print()">
+              <i class="ti ti-printer"></i> Print / Save as PDF
+            </button>
+            <button class="btn btn-outline" onclick="switchTab('details')">
+              <i class="ti ti-edit"></i> Edit Details
+            </button>
+            <button class="btn btn-outline" onclick="switchTab('items')">
+              <i class="ti ti-list"></i> Edit Items
+            </button>
+          </div>
+          <div id="invoice-preview"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== CLIENTS ==================== -->
+    <div id="page-clients" class="page hidden">
+      <div class="topbar">
+        <div class="topbar-title">Client Database</div>
+        <div class="topbar-right">
+          <button class="btn btn-primary" onclick="openAddClient()">
+            <i class="ti ti-user-plus"></i> Add Client
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th><th>Company</th><th>Email</th><th>Phone</th>
+                <th>GST Number</th><th>Country</th><th>Invoices</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="client-list-body">
+              <tr><td colspan="8" style="text-align:center;color:var(--nx-muted);padding:28px">No clients yet — add your first client!</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== SETTINGS ==================== -->
+    <div id="page-settings" class="page hidden">
+      <div class="topbar">
+        <div class="topbar-title">Company Settings</div>
+        <div class="topbar-right">
+          <button class="btn btn-primary" onclick="saveSettings()">
+            <i class="ti ti-check"></i> Save Settings
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <div class="card">
+          <div class="card-header"><div class="card-title">Company Information</div></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Company Name</label>
+              <input id="s-company" value="Nexoraa Studio">
+            </div>
+            <div class="form-group">
+              <label>Tagline</label>
+              <input id="s-tagline" value="Smart Solutions for a Digital Future">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Owner / Contact Name</label>
+              <input id="s-owner" value="Milan Pandavadara">
+            </div>
+            <div class="form-group">
+              <label>Designation</label>
+              <input id="s-desig" value="Founder & CEO">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Phone</label>
+              <input id="s-phone" value="+91 7383303388">
+            </div>
+            <div class="form-group">
+              <label>Email</label>
+              <input id="s-email" value="nexoraa.works@gmail.com">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Website</label>
+              <input id="s-web" value="nexoraa.works">
+            </div>
+            <div class="form-group">
+              <label>GSTIN</label>
+              <input id="s-gst" value="">
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Address</label>
+              <textarea id="s-addr">Porbandar, Gujarat, India | Serving Clients Worldwide</textarea>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">Invoice Defaults</div></div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Invoice Number Prefix</label>
+              <input id="s-prefix" value="INV-">
+            </div>
+            <div class="form-group">
+              <label>Default Currency</label>
+              <select id="s-currency">
+                <option value="INR">INR — Indian Rupee (₹)</option>
+                <option value="USD">USD — US Dollar ($)</option>
+                <option value="EUR">EUR — Euro (€)</option>
+                <option value="GBP">GBP — British Pound (£)</option>
+                <option value="AED">AED — UAE Dirham</option>
+                <option value="SGD">SGD — Singapore Dollar</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row full">
+            <div class="form-group">
+              <label>Default Notes / Payment Terms</label>
+              <textarea id="s-notes" rows="3">Thank you for choosing Nexoraa Studio. Payment due within 15 days. Bank transfer / UPI preferred.</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end .main -->
+</div><!-- end .app -->
+
+<!-- ADD / EDIT CLIENT MODAL -->
+<div id="modal-client" class="modal-overlay hidden">
+  <div class="modal">
+    <div class="modal-title" id="modal-client-title">Add Client</div>
+    <input type="hidden" id="modal-client-id">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input id="mc-name" placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label>Company</label>
+        <input id="mc-company" placeholder="Company name">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>Email</label>
+        <input id="mc-email" placeholder="email@example.com">
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input id="mc-phone" placeholder="+91 XXXXX XXXXX">
+      </div>
+    </div>
+    <div class="form-row full">
+      <div class="form-group">
+        <label>Address</label>
+        <textarea id="mc-address" rows="2" placeholder="Full address"></textarea>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label>GST Number</label>
+        <input id="mc-gst" placeholder="22AAAAA0000A1Z5">
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <input id="mc-country" placeholder="India" value="India">
+      </div>
+    </div>
+    <div class="flex gap-2 mt-3">
+      <button class="btn btn-primary" style="flex:1" onclick="saveClient()">
+        <i class="ti ti-check"></i> Save Client
+      </button>
+      <button class="btn btn-outline" onclick="closeModal('modal-client')">Cancel</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ==================== STATE ====================
+var state = {
+  invoices: [],
+  clients: [],
+  nextInv: 1,
+  settings: {
+    company: 'Nexoraa Studio',
+    tagline: 'Smart Solutions for a Digital Future',
+    owner: 'Milan Pandavadara',
+    desig: 'Founder & CEO',
+    phone: '+91 7383303388',
+    email: 'nexoraa.works@gmail.com',
+    website: 'nexoraa.works',
+    gst: '',
+    address: 'Porbandar, Gujarat, India | Serving Clients Worldwide',
+    prefix: 'INV-',
+    currency: 'INR',
+    notes: 'Thank you for choosing Nexoraa Studio. Payment due within 15 days. Bank transfer / UPI preferred.'
+  }
+};
+var items = [];
+var editingInvId = null;
+
+var CURR_SYM = {
+  INR:'₹', USD:'$', EUR:'€', GBP:'£', AED:'د.إ', SGD:'S$', CAD:'C$', AUD:'A$'
+};
+
+// ==================== HELPERS ====================
+function fmt(n, sym) {
+  if (!sym) sym = getCurrSym();
+  var num = parseFloat(n) || 0;
+  return sym + num.toLocaleString('en-IN', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function getCurrSym() {
+  var sel = document.getElementById('inv-currency');
+  if (!sel) return '₹';
+  var opt = sel.options[sel.selectedIndex];
+  return opt ? (opt.getAttribute('data-sym') || '₹') : '₹';
+}
+function getCurr() {
+  var sel = document.getElementById('inv-currency');
+  return sel ? sel.value : 'INR';
+}
+function escH(s) {
+  return String(s || '')
+    .replace(/&/g,'&amp;')
+    .replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;');
+}
+function today() {
+  return new Date().toISOString().substr(0,10);
+}
+function addDays(d, n) {
+  var dt = new Date(d);
+  dt.setDate(dt.getDate() + n);
+  return dt.toISOString().substr(0,10);
+}
+
+// ==================== PAGE NAV ====================
+function showPage(p) {
+  document.querySelectorAll('.page').forEach(function(x){ x.classList.add('hidden'); });
+  document.getElementById('page-'+p).classList.remove('hidden');
+  var navMap = {dashboard:0, invoices:1, new:2, clients:3, settings:4};
+  document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
+  var navItems = document.querySelectorAll('.nav-item');
+  if (navItems[navMap[p]]) navItems[navMap[p]].classList.add('active');
+  if (p === 'new' && !editingInvId) resetNewInvoice();
+  if (p === 'dashboard') updateDashboard();
+  if (p === 'invoices') renderInvoiceList();
+  if (p === 'clients') renderClientList();
+}
+
+// ==================== INVOICE FORM ====================
+function resetNewInvoice() {
+  editingInvId = null;
+  document.getElementById('new-page-title').textContent = 'New Invoice';
+  items = [];
+  var d = today();
+  document.getElementById('inv-date').value = d;
+  document.getElementById('inv-due').value = addDays(d, 15);
+  document.getElementById('inv-number').value = state.settings.prefix + String(state.nextInv).padStart(3,'0');
+  document.getElementById('inv-currency').value = state.settings.currency || 'INR';
+  document.getElementById('inv-status').value = 'Pending';
+  document.getElementById('gst-type').value = 'exclusive';
+  document.getElementById('gst-rate').value = '18';
+  document.getElementById('your-gst').value = state.settings.gst || '';
+  document.getElementById('inv-notes').value = state.settings.notes;
+  ['client-name','client-company','client-email','client-phone','client-address','client-gst'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  switchTab('details');
+  renderItems();
+  updateTotals();
+}
+
+function switchTab(t) {
+  ['details','items','preview'].forEach(function(x) {
+    document.getElementById('tab-'+x).classList.remove('active');
+    document.getElementById('tab-'+x+'-content').classList.add('hidden');
+  });
+  document.getElementById('tab-'+t).classList.add('active');
+  document.getElementById('tab-'+t+'-content').classList.remove('hidden');
+  if (t === 'preview') renderPreview();
+  if (t === 'items') { renderItems(); updateTotals(); }
+}
+
+function addItem() {
+  items.push({desc:'', qty:1, price:0});
+  renderItems();
+  updateTotals();
+}
+function removeItem(i) {
+  items.splice(i,1);
+  renderItems();
+  updateTotals();
+}
+function renderItems() {
+  var sym = getCurrSym();
+  var b = document.getElementById('items-body');
+  if (!b) return;
+  if (items.length === 0) {
+    b.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--nx-muted);padding:22px">Click &quot;+ Add Item&quot; to add your services or products</td></tr>';
+    return;
+  }
+  b.innerHTML = items.map(function(item, i) {
+    return '<tr>' +
+      '<td><input type="text" value="' + escH(item.desc) + '" placeholder="Service / product description" oninput="items['+i+'].desc=this.value"></td>' +
+      '<td><input type="number" value="' + item.qty + '" min="1" step="1" style="width:70px" oninput="items['+i+'].qty=Math.max(1,+this.value||1);updateTotals()"></td>' +
+      '<td><input type="number" value="' + item.price + '" min="0" step="0.01" placeholder="0.00" style="width:120px" oninput="items['+i+'].price=+this.value||0;updateTotals()"></td>' +
+      '<td style="font-weight:500">' + fmt(item.qty * item.price, sym) + '</td>' +
+      '<td><button class="btn btn-outline btn-sm btn-danger" onclick="removeItem('+i+')" title="Remove"><i class="ti ti-trash"></i></button></td>' +
+      '</tr>';
+  }).join('');
+}
+
+function calcTotals() {
+  var sub = items.reduce(function(s,x){ return s + (x.qty * x.price); }, 0);
+  var rate = parseInt(document.getElementById('gst-rate') ? document.getElementById('gst-rate').value : 18) || 18;
+  var type = document.getElementById('gst-type') ? document.getElementById('gst-type').value : 'exclusive';
+  var gst = 0, actual_sub = sub;
+  if (type === 'exclusive') {
+    gst = sub * rate / 100;
+  } else if (type === 'inclusive') {
+    gst = sub - (sub * 100 / (100 + rate));
+    actual_sub = sub - gst;
+  }
+  return {sub: actual_sub, gst: gst, total: actual_sub + gst, rate: rate, type: type};
+}
+
+function updateTotals() {
+  renderItems();
+  var sym = getCurrSym();
+  var t = calcTotals();
+  var gs = document.getElementById('t-subtotal'); if(gs) gs.textContent = fmt(t.sub, sym);
+  var gg = document.getElementById('t-gst'); if(gg) gg.textContent = fmt(t.gst, sym);
+  var gl = document.getElementById('t-gst-label');
+  if(gl) gl.textContent = (t.type==='none') ? 'No GST' : 'GST (' + t.rate + '%)';
+  var gt = document.getElementById('t-total'); if(gt) gt.textContent = fmt(t.total, sym);
+}
+
+function getFormData() {
+  var t = calcTotals();
+  return {
+    id: editingInvId || Date.now(),
+    number: document.getElementById('inv-number').value,
+    date: document.getElementById('inv-date').value,
+    due: document.getElementById('inv-due').value,
+    currency: getCurr(),
+    currSym: getCurrSym(),
+    status: document.getElementById('inv-status').value,
+    clientName: document.getElementById('client-name').value,
+    clientCompany: document.getElementById('client-company').value,
+    clientEmail: document.getElementById('client-email').value,
+    clientPhone: document.getElementById('client-phone').value,
+    clientAddress: document.getElementById('client-address').value,
+    clientGst: document.getElementById('client-gst').value,
+    gstType: t.type,
+    gstRate: t.rate,
+    yourGst: document.getElementById('your-gst').value,
+    subtotal: t.sub,
+    gstAmt: t.gst,
+    total: t.total,
+    notes: document.getElementById('inv-notes').value,
+    items: JSON.parse(JSON.stringify(items))
+  };
+}
+
+function saveInvoice() {
+  var d = getFormData();
+  if (!d.clientName.trim()) { alert('Please enter client name.'); return; }
+  if (!items.length || items.every(function(x){ return !x.desc; })) {
+    alert('Please add at least one line item in the "Line Items" tab.'); return;
+  }
+  if (editingInvId) {
+    var idx = state.invoices.findIndex(function(x){ return x.id === editingInvId; });
+    if (idx >= 0) state.invoices[idx] = d; else state.invoices.push(d);
+  } else {
+    state.invoices.push(d);
+    state.nextInv++;
+  }
+  editingInvId = null;
+  alert('Invoice saved successfully!');
+  showPage('invoices');
+}
+
+function saveDraft() {
+  var d = getFormData();
+  d.status = 'Draft';
+  if (editingInvId) {
+    var idx = state.invoices.findIndex(function(x){ return x.id === editingInvId; });
+    if (idx >= 0) state.invoices[idx] = d; else state.invoices.push(d);
+  } else {
+    state.invoices.push(d);
+    state.nextInv++;
+  }
+  editingInvId = null;
+  showPage('invoices');
+}
+
+function editInvoice(id) {
+  var inv = state.invoices.find(function(x){ return x.id === id; });
+  if (!inv) return;
+  editingInvId = id;
+  showPage('new');
+  document.getElementById('new-page-title').textContent = 'Edit Invoice';
+  setTimeout(function() {
+    document.getElementById('inv-number').value = inv.number;
+    document.getElementById('inv-date').value = inv.date;
+    document.getElementById('inv-due').value = inv.due;
+    document.getElementById('inv-currency').value = inv.currency || 'INR';
+    document.getElementById('inv-status').value = inv.status;
+    document.getElementById('client-name').value = inv.clientName;
+    document.getElementById('client-company').value = inv.clientCompany || '';
+    document.getElementById('client-email').value = inv.clientEmail || '';
+    document.getElementById('client-phone').value = inv.clientPhone || '';
+    document.getElementById('client-address').value = inv.clientAddress || '';
+    document.getElementById('client-gst').value = inv.clientGst || '';
+    document.getElementById('gst-type').value = inv.gstType || 'exclusive';
+    document.getElementById('gst-rate').value = inv.gstRate || 18;
+    document.getElementById('your-gst').value = inv.yourGst || '';
+    document.getElementById('inv-notes').value = inv.notes || '';
+    items = JSON.parse(JSON.stringify(inv.items || []));
+    switchTab('details');
+    renderItems();
+    updateTotals();
+  }, 30);
+}
+
+function deleteInvoice(id) {
+  if (!confirm('Are you sure you want to delete this invoice?')) return;
+  state.invoices = state.invoices.filter(function(x){ return x.id !== id; });
+  renderInvoiceList();
+  updateDashboard();
+}
+
+function markPaid(id) {
+  var inv = state.invoices.find(function(x){ return x.id === id; });
+  if (inv) inv.status = 'Paid';
+  renderInvoiceList();
+  updateDashboard();
+}
+
+// ==================== STATUS BADGE ====================
+function statusBadge(s) {
+  var cls = {Paid:'badge-paid', Pending:'badge-pending', Draft:'badge-draft', Overdue:'badge-overdue'};
+  var dot = {Paid:'dot-green', Pending:'dot-amber', Draft:'dot-gray', Overdue:'dot-red'};
+  return '<span class="badge '+(cls[s]||'badge-draft')+'"><span class="status-dot '+(dot[s]||'dot-gray')+'"></span>'+s+'</span>';
+}
+
+// ==================== RENDER INVOICE LIST ====================
+function renderInvoiceList() {
+  var filter = (document.getElementById('filter-status') || {}).value || '';
+  var b = document.getElementById('inv-list-body');
+  if (!b) return;
+  var list = state.invoices.filter(function(x){ return !filter || x.status === filter; });
+  if (!list.length) {
+    b.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--nx-muted);padding:28px">No invoices found</td></tr>';
+    return;
+  }
+  b.innerHTML = list.slice().reverse().map(function(inv) {
+    return '<tr>' +
+      '<td><span class="text-blue" style="cursor:pointer;font-weight:500" onclick="editInvoice('+inv.id+')">'+escH(inv.number)+'</span></td>' +
+      '<td>'+escH(inv.clientName)+'</td>' +
+      '<td>'+inv.date+'</td>' +
+      '<td>'+inv.due+'</td>' +
+      '<td style="font-weight:500">'+fmt(inv.total, inv.currSym)+'</td>' +
+      '<td><span class="inv-tag">'+inv.gstRate+'%</span></td>' +
+      '<td>'+statusBadge(inv.status)+'</td>' +
+      '<td><div class="action-row">' +
+        '<button class="btn btn-outline btn-sm" onclick="editInvoice('+inv.id+')" title="Edit"><i class="ti ti-edit"></i></button>' +
+        (inv.status !== 'Paid' ? '<button class="btn btn-success btn-sm" onclick="markPaid('+inv.id+')" title="Mark as Paid"><i class="ti ti-check"></i></button>' : '') +
+        '<button class="btn btn-outline btn-sm btn-danger" onclick="deleteInvoice('+inv.id+')" title="Delete"><i class="ti ti-trash"></i></button>' +
+      '</div></td>' +
+    '</tr>';
+  }).join('');
+}
+
+// ==================== DASHBOARD ====================
+function updateDashboard() {
+  var total = state.invoices.reduce(function(s,x){ return s+x.total; },0);
+  var paid  = state.invoices.filter(function(x){ return x.status==='Paid'; }).reduce(function(s,x){ return s+x.total; },0);
+  var pend  = state.invoices.filter(function(x){ return x.status==='Pending'; }).reduce(function(s,x){ return s+x.total; },0);
+  var over  = state.invoices.filter(function(x){ return x.status==='Overdue'; }).reduce(function(s,x){ return s+x.total; },0);
+  document.getElementById('stat-total').textContent = fmt(total,'₹');
+  document.getElementById('stat-paid').textContent  = fmt(paid,'₹');
+  document.getElementById('stat-pending').textContent = fmt(pend,'₹');
+  document.getElementById('stat-overdue').textContent = fmt(over,'₹');
+  var b = document.getElementById('dashboard-inv-list');
+  var list = state.invoices.slice(-6).reverse();
+  if (!list.length) {
+    b.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--nx-muted);padding:28px">No invoices yet — create your first one!</td></tr>';
+    return;
+  }
+  b.innerHTML = list.map(function(inv) {
+    return '<tr>' +
+      '<td><span class="text-blue" style="cursor:pointer;font-weight:500" onclick="editInvoice('+inv.id+')">'+escH(inv.number)+'</span></td>' +
+      '<td>'+escH(inv.clientName)+'</td>' +
+      '<td>'+inv.date+'</td>' +
+      '<td style="font-weight:500">'+fmt(inv.total,inv.currSym)+'</td>' +
+      '<td>'+statusBadge(inv.status)+'</td>' +
+      '<td><button class="btn btn-outline btn-sm" onclick="editInvoice('+inv.id+')" title="Edit"><i class="ti ti-edit"></i></button></td>' +
+    '</tr>';
+  }).join('');
+}
+
+// ==================== CLIENT DB ====================
+function updateClientDatalist() {
+  var dl = document.getElementById('client-datalist');
+  if (!dl) return;
+  dl.innerHTML = state.clients.map(function(c){ return '<option value="'+escH(c.name)+'">'; }).join('');
+}
+function autofillClient() {
+  var name = document.getElementById('client-name').value;
+  var c = state.clients.find(function(x){ return x.name === name; });
+  if (c) {
+    document.getElementById('client-company').value = c.company || '';
+    document.getElementById('client-email').value   = c.email   || '';
+    document.getElementById('client-phone').value   = c.phone   || '';
+    document.getElementById('client-address').value = c.address || '';
+    document.getElementById('client-gst').value     = c.gst     || '';
+  }
+}
+function openAddClient() {
+  document.getElementById('modal-client-title').textContent = 'Add Client';
+  document.getElementById('modal-client-id').value = '';
+  ['mc-name','mc-company','mc-email','mc-phone','mc-address','mc-gst'].forEach(function(id){
+    document.getElementById(id).value = '';
+  });
+  document.getElementById('mc-country').value = 'India';
+  document.getElementById('modal-client').classList.remove('hidden');
+}
+function editClient(id) {
+  var c = state.clients.find(function(x){ return x.id === id; });
+  if (!c) return;
+  document.getElementById('modal-client-title').textContent = 'Edit Client';
+  document.getElementById('modal-client-id').value = id;
+  document.getElementById('mc-name').value    = c.name    || '';
+  document.getElementById('mc-company').value = c.company || '';
+  document.getElementById('mc-email').value   = c.email   || '';
+  document.getElementById('mc-phone').value   = c.phone   || '';
+  document.getElementById('mc-address').value = c.address || '';
+  document.getElementById('mc-gst').value     = c.gst     || '';
+  document.getElementById('mc-country').value = c.country || 'India';
+  document.getElementById('modal-client').classList.remove('hidden');
+}
+function saveClient() {
+  var name = document.getElementById('mc-name').value.trim();
+  if (!name) { alert('Client name is required.'); return; }
+  var editId = document.getElementById('modal-client-id').value;
+  var obj = {
+    id: editId || String(Date.now()),
+    name: name,
+    company: document.getElementById('mc-company').value,
+    email:   document.getElementById('mc-email').value,
+    phone:   document.getElementById('mc-phone').value,
+    address: document.getElementById('mc-address').value,
+    gst:     document.getElementById('mc-gst').value,
+    country: document.getElementById('mc-country').value
+  };
+  if (editId) {
+    var idx = state.clients.findIndex(function(x){ return x.id === editId; });
+    if (idx >= 0) state.clients[idx] = obj; else state.clients.push(obj);
+  } else {
+    state.clients.push(obj);
+  }
+  updateClientDatalist();
+  closeModal('modal-client');
+  renderClientList();
+}
+function deleteClient(id) {
+  if (!confirm('Delete this client?')) return;
+  state.clients = state.clients.filter(function(x){ return x.id !== id; });
+  renderClientList();
+}
+function renderClientList() {
+  var b = document.getElementById('client-list-body');
+  if (!b) return;
+  if (!state.clients.length) {
+    b.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--nx-muted);padding:28px">No clients yet — add your first client!</td></tr>';
+    return;
+  }
+  b.innerHTML = state.clients.map(function(c) {
+    var invCount = state.invoices.filter(function(x){ return x.clientName === c.name; }).length;
+    return '<tr>' +
+      '<td style="font-weight:500">'+escH(c.name)+'</td>' +
+      '<td>'+escH(c.company||'—')+'</td>' +
+      '<td>'+escH(c.email||'—')+'</td>' +
+      '<td>'+escH(c.phone||'—')+'</td>' +
+      '<td><span class="inv-tag">'+escH(c.gst||'—')+'</span></td>' +
+      '<td>'+escH(c.country||'—')+'</td>' +
+      '<td style="text-align:center">'+invCount+'</td>' +
+      '<td><div class="action-row">' +
+        '<button class="btn btn-outline btn-sm" onclick="editClient(\''+c.id+'\')"><i class="ti ti-edit"></i></button>' +
+        '<button class="btn btn-outline btn-sm btn-danger" onclick="deleteClient(\''+c.id+'\')"><i class="ti ti-trash"></i></button>' +
+      '</div></td>' +
+    '</tr>';
+  }).join('');
+}
+function closeModal(id) {
+  document.getElementById(id).classList.add('hidden');
+}
+
+// ==================== SETTINGS ====================
+function saveSettings() {
+  var s = state.settings;
+  s.company  = document.getElementById('s-company').value;
+  s.tagline  = document.getElementById('s-tagline').value;
+  s.owner    = document.getElementById('s-owner').value;
+  s.desig    = document.getElementById('s-desig').value;
+  s.phone    = document.getElementById('s-phone').value;
+  s.email    = document.getElementById('s-email').value;
+  s.website  = document.getElementById('s-web').value;
+  s.gst      = document.getElementById('s-gst').value;
+  s.address  = document.getElementById('s-addr').value;
+  s.prefix   = document.getElementById('s-prefix').value;
+  s.currency = document.getElementById('s-currency').value;
+  s.notes    = document.getElementById('s-notes').value;
+  document.getElementById('sf-owner').textContent = s.owner;
+  document.getElementById('sf-desig').textContent = s.desig;
+  document.getElementById('tb-website').textContent = s.website;
+  alert('Settings saved successfully!');
+}
+
+// ==================== INVOICE PREVIEW ====================
+function renderPreview() {
+  var d = getFormData();
+  var s = state.settings;
+  var itemsHtml = d.items.map(function(item, i) {
+    return '<tr>' +
+      '<td style="text-align:center">'+(i+1)+'</td>' +
+      '<td>'+escH(item.desc)+'</td>' +
+      '<td style="text-align:right">'+item.qty+'</td>' +
+      '<td style="text-align:right">'+fmt(item.price, d.currSym)+'</td>' +
+      '<td style="text-align:right;font-weight:600">'+fmt(item.qty*item.price, d.currSym)+'</td>' +
+    '</tr>';
+  }).join('');
+  var gstRow = (d.gstType !== 'none')
+    ? '<div class="inv-total-row"><span style="color:#2563eb;font-weight:600">GST ('+d.gstRate+'%)</span><span>'+fmt(d.gstAmt, d.currSym)+'</span></div>'
+    : '';
+  var yourGstin = d.yourGst || s.gst;
+  document.getElementById('invoice-preview').innerHTML =
+    '<div class="preview-wrap">' +
+      '<div class="inv-header">' +
+        '<div>' +
+          '<div class="inv-logo">NEX<span>O</span>RAA <span style="font-size:14px;color:#64748b;font-weight:400;letter-spacing:2px">STUDIO</span></div>' +
+          '<div style="font-size:11px;color:#64748b;margin-top:3px">'+escH(s.tagline)+'</div>' +
+          '<div style="font-size:11px;color:#475569;margin-top:6px;line-height:1.6">' +
+            escH(s.owner)+' &nbsp;·&nbsp; '+escH(s.desig)+'<br>' +
+            escH(s.phone)+' &nbsp;·&nbsp; '+escH(s.email)+'<br>' +
+            '<span style="color:#2563eb">'+escH(s.website)+'</span>' +
+            (yourGstin ? '<br><span class="inv-gst-badge">GSTIN: '+escH(yourGstin)+'</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="inv-meta">' +
+          '<div style="font-size:12px;font-weight:600;color:#64748b;letter-spacing:2px;text-transform:uppercase;margin-bottom:4px">INVOICE</div>' +
+          '<div class="inv-number">'+escH(d.number)+'</div>' +
+          '<div class="inv-dates">' +
+            'Date: '+d.date+'<br>' +
+            'Due: '+d.due +
+          '</div>' +
+          '<div style="margin-top:8px">'+statusBadge(d.status)+'</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="inv-parties">' +
+        '<div>' +
+          '<div class="party-label">From</div>' +
+          '<div class="party-name">'+escH(s.company)+'</div>' +
+          '<div class="party-info">'+escH(s.address)+'</div>' +
+        '</div>' +
+        '<div>' +
+          '<div class="party-label">Bill To</div>' +
+          '<div class="party-name">'+escH(d.clientName || '—')+'</div>' +
+          '<div class="party-info">' +
+            (d.clientCompany ? escH(d.clientCompany)+'<br>' : '') +
+            (d.clientEmail   ? escH(d.clientEmail)+'<br>'   : '') +
+            (d.clientPhone   ? escH(d.clientPhone)+'<br>'   : '') +
+            (d.clientAddress ? escH(d.clientAddress)+'<br>' : '') +
+            (d.clientGst     ? '<span class="inv-gst-badge">GSTIN: '+escH(d.clientGst)+'</span>' : '') +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<table class="inv-table">' +
+        '<thead><tr>' +
+          '<th style="width:5%;text-align:center">#</th>' +
+          '<th style="width:45%">Description</th>' +
+          '<th style="width:10%;text-align:right">Qty</th>' +
+          '<th style="width:20%;text-align:right">Unit Price</th>' +
+          '<th style="width:20%;text-align:right">Amount</th>' +
+        '</tr></thead>' +
+        '<tbody>'+itemsHtml+'</tbody>' +
+      '</table>' +
+      '<div class="inv-totals">' +
+        '<div class="inv-total-box">' +
+          '<div class="inv-total-row"><span>Subtotal</span><span>'+fmt(d.subtotal,d.currSym)+'</span></div>' +
+          gstRow +
+          '<div class="inv-total-row grand"><span>Total ('+d.currency+')</span><span>'+fmt(d.total,d.currSym)+'</span></div>' +
+        '</div>' +
+      '</div>' +
+      (d.notes ? '<div style="background:#f8fafc;border-radius:6px;padding:10px 14px;font-size:12px;color:#475569;margin-bottom:14px"><strong style="color:#0f172a">Notes & Payment Terms: </strong>'+escH(d.notes)+'</div>' : '') +
+      '<div class="inv-footer">' +
+        escH(s.company)+' &nbsp;|&nbsp; '+escH(s.website)+' &nbsp;|&nbsp; '+escH(s.email)+' &nbsp;|&nbsp; '+escH(s.phone)+'<br>' +
+        escH(s.address) +
+      '</div>' +
+    '</div>';
+}
+
+// ==================== INIT ====================
+document.addEventListener('DOMContentLoaded', function() {
+  // Set default dates
+  var d = today();
+  var invDate = document.getElementById('inv-date');
+  var invDue  = document.getElementById('inv-due');
+  if (invDate) invDate.value = d;
+  if (invDue)  invDue.value  = addDays(d, 15);
+  // Set default invoice number
+  document.getElementById('inv-number').value = state.settings.prefix + '001';
+  document.getElementById('your-gst').value = state.settings.gst;
+  document.getElementById('inv-notes').value = state.settings.notes;
+  // Sample clients (optional — remove if not needed)
+  state.clients = [
+    {id:'c1', name:'Rahul Sharma',   company:'TechCorp Pvt. Ltd.',  email:'rahul@techcorp.in',   phone:'+91 98765 43210', address:'Mumbai, Maharashtra',   gst:'27AABCT1332L1ZT', country:'India'},
+    {id:'c2', name:'Priya Patel',    company:'StartupXYZ',           email:'priya@startup.com',   phone:'+91 87654 32109', address:'Ahmedabad, Gujarat',    gst:'24AABCP1234P1ZR', country:'India'},
+    {id:'c3', name:'Ahmed Al Rashid',company:'Dubai Digital LLC',    email:'ahmed@dubai.ae',      phone:'+971 50 123 4567',address:'Dubai, UAE',            gst:'',                country:'UAE'},
+  ];
+  updateClientDatalist();
+  renderClientList();
+  renderItems();
+  updateDashboard();
+});
+</script>
+</body>
+</html>
