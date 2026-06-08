@@ -2,6 +2,7 @@ import React, { useState, useRef, useCallback } from "react";
 import { ArrowUpRight, ArrowRight, ExternalLink } from "lucide-react";
 import { projects } from "../../constants/projects";
 import { m, useInView } from 'framer-motion';
+import { Link } from "react-router-dom";
 import "./Work.css";
 
 /* ------------------------------------------------------------------ */
@@ -52,10 +53,8 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
     >
       <div className={`work-featured-inner ${isReversed ? "work-featured-reversed" : ""}`}>
         {/* Image Panel */}
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noreferrer"
+        <Link
+          to={`/projects/${project.id}`}
           className="work-featured-image-wrap"
         >
           <div className="work-featured-image-container">
@@ -75,8 +74,8 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
 
             {/* Floating "View" circle on hover */}
             <div className="work-featured-view-circle">
-              <ExternalLink className="w-5 h-5" />
-              <span>View</span>
+              <ArrowUpRight className="w-6 h-6" />
+              <span>Case Study</span>
             </div>
           </div>
 
@@ -84,7 +83,7 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
           <div className="work-featured-number">
             {String(index + 1).padStart(2, "0")}
           </div>
-        </a>
+        </Link>
 
         {/* Content Panel */}
         <div className="work-featured-content">
@@ -106,15 +105,25 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
             ))}
           </div>
 
-          <a
-            href={project.link}
-            target="_blank"
-            rel="noreferrer"
-            className="work-featured-link"
-          >
-            <span>View Project</span>
-            <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-          </a>
+          <div className="flex flex-wrap items-center gap-4 mt-2">
+            <Link
+              to={`/projects/${project.id}`}
+              className="work-featured-link"
+            >
+              <span>View Case Study</span>
+              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+            </Link>
+
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              className="text-xs font-black uppercase tracking-wider text-gray-500 hover:text-white transition-colors flex items-center gap-1.5 ml-2"
+            >
+              <span>Live Site</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          </div>
         </div>
       </div>
     </m.div>
@@ -215,10 +224,8 @@ export default function Work() {
               Explore our full portfolio of <span className="text-white font-medium">{totalProjects} projects</span> across web, apps, and brand design.
             </p>
 
-            <a
-              href="/projects"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/projects"
               className="work-cta-button group"
             >
               <span className="work-cta-button-bg" />
@@ -226,7 +233,7 @@ export default function Work() {
                 View All Projects
                 <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-2" />
               </span>
-            </a>
+            </Link>
           </div>
 
           <div className="work-cta-line" />

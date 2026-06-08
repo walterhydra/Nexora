@@ -34,6 +34,7 @@ import RefundPolicy from './pages/RefundPolicy';
 import Onboarding from './pages/Onboarding';
 import PaymentPolicy from './pages/PaymentPolicy';
 import Projects from './pages/Projects';
+import CaseStudyDetail from './pages/CaseStudyDetail';
 import Agreement from './pages/Agreement';
 
 // Initial Loading Fallback
@@ -57,6 +58,7 @@ function AnimatedRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/services" element={<Services />} />
       <Route path="/projects" element={<Projects />} />
+      <Route path="/projects/:id" element={<CaseStudyDetail />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/privacy-policy" element={<PrivacyPolicy />} />
       <Route path="/terms" element={<Terms />} />

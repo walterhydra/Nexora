@@ -206,7 +206,7 @@ export default function Hero() {
             {showTypewriter ? (
               <Typewriter
                 options={{
-                  strings: ['Digital Reality', 'Web Applications', 'Mobile Experiences', 'AI Automations'],
+                  strings: ['Business Assets', 'High-ROI Web Apps', 'Mobile Assets', 'AI Workflows'],
                   autoStart: true,
                   loop: true,
                   delay: 60,
@@ -215,7 +215,7 @@ export default function Hero() {
                 }}
               />
             ) : (
-              <span className="opacity-0">Digital Reality</span>
+              <span className="opacity-0">Business Assets</span>
             )}
           </m.div>
         </h1>
@@ -228,7 +228,7 @@ export default function Hero() {
         >
           <div className="w-12 h-[2px] bg-accent-primary/50 hidden md:block" />
           <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-xl font-light leading-relaxed">
-            Elevating brands with high-performance web development, mobile apps, and relentless innovation. Delivered at lightspeed.
+            We engineer high-performance digital assets—from custom web applications to intelligent workflows—designed to generate leads, optimize operations, and compound enterprise value.
           </p>
         </m.div>
 

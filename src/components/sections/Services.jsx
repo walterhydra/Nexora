@@ -29,10 +29,10 @@ export default function Services() {
           className="mb-12 md:mb-16 flex flex-col items-center text-center"
         >
           <m.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight text-gray-900 dark:text-white">
-            What We <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-purple-500">Build</span>
+            Asset <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-purple-500">Architecture</span>
           </m.h2>
           <m.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            A comprehensive suite of digital services designed to scale your business. Tap a panel to explore.
+            High-performance digital assets designed to optimize operations, capture demand, and compound enterprise equity. Tap a panel to explore.
           </m.p>
         </m.div>
 
