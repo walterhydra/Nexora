@@ -1044,7 +1044,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 0,
+      "community": 37,
       "norm_label": "footer.jsx"
     },
     {
@@ -1053,7 +1053,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 0,
+      "community": 37,
       "norm_label": "footer()"
     },
     {
@@ -1372,10 +1372,19 @@
       "norm_label": "pricing.jsx"
     },
     {
+      "label": "PricingCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L10",
+      "id": "sections_pricing_pricingcard",
+      "community": 2,
+      "norm_label": "pricingcard()"
+    },
+    {
       "label": "Pricing()",
       "file_type": "code",
       "source_file": "src/components/sections/Pricing.jsx",
-      "source_location": "L9",
+      "source_location": "L158",
       "id": "sections_pricing_pricing",
       "community": 2,
       "norm_label": "pricing()"
@@ -1566,7 +1575,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L1",
       "id": "src_components_sections_techstack_jsx",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack.jsx"
     },
     {
@@ -1575,7 +1584,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L6",
       "id": "sections_techstack_alltech",
-      "community": 9,
+      "community": 4,
       "norm_label": "alltech"
     },
     {
@@ -1584,7 +1593,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L11",
       "id": "sections_techstack_row1",
-      "community": 9,
+      "community": 4,
       "norm_label": "row1"
     },
     {
@@ -1593,7 +1602,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L12",
       "id": "sections_techstack_row2",
-      "community": 9,
+      "community": 4,
       "norm_label": "row2"
     },
     {
@@ -1602,7 +1611,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L13",
       "id": "sections_techstack_row3",
-      "community": 9,
+      "community": 4,
       "norm_label": "row3"
     },
     {
@@ -1611,7 +1620,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L15",
       "id": "sections_techstack_marqueerow",
-      "community": 9,
+      "community": 4,
       "norm_label": "marqueerow()"
     },
     {
@@ -1620,7 +1629,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L43",
       "id": "sections_techstack_techstack",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack()"
     },
     {
@@ -1791,7 +1800,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 0,
+      "community": 41,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -1800,7 +1809,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L5",
       "id": "ui_backtotop_backtotop",
-      "community": 0,
+      "community": 41,
       "norm_label": "backtotop()"
     },
     {
@@ -1809,7 +1818,7 @@
       "source_file": "src/components/ui/ContextCursor.jsx",
       "source_location": "L1",
       "id": "src_components_ui_contextcursor_jsx",
-      "community": 0,
+      "community": 9,
       "norm_label": "contextcursor.jsx"
     },
     {
@@ -1818,7 +1827,7 @@
       "source_file": "src/components/ui/ContextCursor.jsx",
       "source_location": "L5",
       "id": "ui_contextcursor_contextcursor",
-      "community": 0,
+      "community": 9,
       "norm_label": "contextcursor()"
     },
     {
@@ -1953,7 +1962,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L1",
       "id": "src_components_ui_novawidget_jsx",
-      "community": 0,
+      "community": 42,
       "norm_label": "novawidget.jsx"
     },
     {
@@ -1962,7 +1971,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L5",
       "id": "ui_novawidget_novawidget",
-      "community": 0,
+      "community": 42,
       "norm_label": "novawidget()"
     },
     {
@@ -1971,7 +1980,7 @@
       "source_file": "src/components/ui/ParticleField.jsx",
       "source_location": "L1",
       "id": "src_components_ui_particlefield_jsx",
-      "community": 0,
+      "community": 33,
       "norm_label": "particlefield.jsx"
     },
     {
@@ -1980,7 +1989,7 @@
       "source_file": "src/components/ui/ParticleField.jsx",
       "source_location": "L6",
       "id": "ui_particlefield_particlefield",
-      "community": 0,
+      "community": 33,
       "norm_label": "particlefield()"
     },
     {
@@ -2025,7 +2034,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 0,
+      "community": 43,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -2034,7 +2043,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 0,
+      "community": 43,
       "norm_label": "scrollprogress()"
     },
     {
@@ -2070,7 +2079,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 0,
+      "community": 44,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -2079,7 +2088,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 0,
+      "community": 44,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -2196,7 +2205,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "src_constants_techstack_js",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack.js"
     },
     {
@@ -2205,7 +2214,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "constants_techstack_techstack",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack"
     },
     {
@@ -2232,7 +2241,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L1",
       "id": "src_context_cursorcontext_jsx",
-      "community": 0,
+      "community": 9,
       "norm_label": "cursorcontext.jsx"
     },
     {
@@ -2241,7 +2250,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L3",
       "id": "context_cursorcontext_cursorcontext",
-      "community": 0,
+      "community": 9,
       "norm_label": "cursorcontext"
     },
     {
@@ -2250,7 +2259,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L5",
       "id": "context_cursorcontext_cursorprovider",
-      "community": 0,
+      "community": 9,
       "norm_label": "cursorprovider()"
     },
     {
@@ -2259,7 +2268,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L15",
       "id": "context_cursorcontext_usecursor",
-      "community": 0,
+      "community": 9,
       "norm_label": "usecursor()"
     },
     {
@@ -2268,7 +2277,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L1",
       "id": "src_context_themecontext_jsx",
-      "community": 0,
+      "community": 33,
       "norm_label": "themecontext.jsx"
     },
     {
@@ -2277,7 +2286,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L3",
       "id": "context_themecontext_themecontext",
-      "community": 0,
+      "community": 33,
       "norm_label": "themecontext"
     },
     {
@@ -2286,7 +2295,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L5",
       "id": "context_themecontext_themeprovider",
-      "community": 0,
+      "community": 33,
       "norm_label": "themeprovider()"
     },
     {
@@ -2295,7 +2304,7 @@
       "source_file": "src/context/ThemeContext.jsx",
       "source_location": "L35",
       "id": "context_themecontext_usetheme",
-      "community": 0,
+      "community": 33,
       "norm_label": "usetheme()"
     },
     {
@@ -2358,7 +2367,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 0,
+      "community": 38,
       "norm_label": "about.jsx"
     },
     {
@@ -2367,7 +2376,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L4",
       "id": "pages_about_about",
-      "community": 0,
+      "community": 38,
       "norm_label": "about()"
     },
     {
@@ -2376,7 +2385,7 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L1",
       "id": "src_pages_agreement_jsx",
-      "community": 0,
+      "community": 36,
       "norm_label": "agreement.jsx"
     },
     {
@@ -2385,7 +2394,7 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L8",
       "id": "pages_agreement_purposeoptions",
-      "community": 0,
+      "community": 36,
       "norm_label": "purposeoptions"
     },
     {
@@ -2394,7 +2403,7 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L18",
       "id": "pages_agreement_agreement",
-      "community": 0,
+      "community": 36,
       "norm_label": "agreement()"
     },
     {
@@ -2844,7 +2853,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 0,
+      "community": 39,
       "norm_label": "services.jsx"
     },
     {
@@ -2853,7 +2862,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 0,
+      "community": 39,
       "norm_label": "services()"
     },
     {
@@ -2862,7 +2871,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L1",
       "id": "src_pages_terms_jsx",
-      "community": 0,
+      "community": 40,
       "norm_label": "terms.jsx"
     },
     {
@@ -2871,7 +2880,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L4",
       "id": "pages_terms_terms",
-      "community": 0,
+      "community": 40,
       "norm_label": "terms()"
     },
     {
@@ -4263,9 +4272,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_pages_casestudydetail_jsx",
-      "confidence_score": 1.0
+      "target": "src_pages_casestudydetail_jsx"
     },
     {
       "relation": "imports_from",
@@ -5374,6 +5383,16 @@
       "confidence_score": 1.0,
       "source": "src_components_sections_pricing_jsx",
       "target": "sections_pricing_pricing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "sections_pricing_pricingcard",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -6584,9 +6603,9 @@
       "source_file": "src/pages/CaseStudyDetail.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_casestudydetail_jsx",
-      "target": "src_constants_projects_js",
-      "confidence_score": 1.0
+      "target": "src_constants_projects_js"
     },
     {
       "relation": "imports_from",
@@ -6606,9 +6625,9 @@
       "source_file": "src/pages/CaseStudyDetail.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_casestudydetail_jsx",
-      "target": "constants_projects_projects",
-      "confidence_score": 1.0
+      "target": "constants_projects_projects"
     },
     {
       "relation": "imports",
@@ -6853,9 +6872,9 @@
       "source_file": "src/pages/CaseStudyDetail.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_casestudydetail_jsx",
-      "target": "pages_casestudydetail_casestudydetail",
-      "confidence_score": 1.0
+      "target": "pages_casestudydetail_casestudydetail"
     },
     {
       "relation": "contains",
@@ -7502,5 +7521,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "2e50cec5362a6f1c051d77cce56c09f3ca6646d4"
+  "built_at_commit": "1e93a794398980f1f63320d6737bf42335a0168e"
 }
