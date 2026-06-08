@@ -769,10 +769,28 @@
       "norm_label": "send-agreement.js"
     },
     {
+      "label": "__filename",
+      "file_type": "code",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L6",
+      "id": "api_send_agreement_filename",
+      "community": 35,
+      "norm_label": "__filename"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L7",
+      "id": "api_send_agreement_dirname",
+      "community": 35,
+      "norm_label": "__dirname"
+    },
+    {
       "label": "handler()",
       "file_type": "code",
       "source_file": "api/send-agreement.js",
-      "source_location": "L5",
+      "source_location": "L9",
       "id": "api_send_agreement_handler",
       "community": 35,
       "norm_label": "handler()"
@@ -1152,7 +1170,7 @@
       "source_file": "src/components/sections/About.jsx",
       "source_location": "L1",
       "id": "src_components_sections_about_jsx",
-      "community": 4,
+      "community": 2,
       "norm_label": "about.jsx"
     },
     {
@@ -1161,7 +1179,7 @@
       "source_file": "src/components/sections/About.jsx",
       "source_location": "L5",
       "id": "sections_about_about",
-      "community": 4,
+      "community": 2,
       "norm_label": "about()"
     },
     {
@@ -1260,7 +1278,7 @@
       "source_file": "src/components/sections/HowWeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_howwework_jsx",
-      "community": 4,
+      "community": 2,
       "norm_label": "howwework.jsx"
     },
     {
@@ -1269,7 +1287,7 @@
       "source_file": "src/components/sections/HowWeWork.jsx",
       "source_location": "L5",
       "id": "sections_howwework_steps",
-      "community": 4,
+      "community": 2,
       "norm_label": "steps"
     },
     {
@@ -1278,7 +1296,7 @@
       "source_file": "src/components/sections/HowWeWork.jsx",
       "source_location": "L45",
       "id": "sections_howwework_howwework",
-      "community": 4,
+      "community": 2,
       "norm_label": "howwework()"
     },
     {
@@ -1287,7 +1305,7 @@
       "source_file": "src/components/sections/KineticManifesto.jsx",
       "source_location": "L1",
       "id": "src_components_sections_kineticmanifesto_jsx",
-      "community": 4,
+      "community": 2,
       "norm_label": "kineticmanifesto.jsx"
     },
     {
@@ -1296,7 +1314,7 @@
       "source_file": "src/components/sections/KineticManifesto.jsx",
       "source_location": "L4",
       "id": "sections_kineticmanifesto_kineticmanifesto",
-      "community": 4,
+      "community": 2,
       "norm_label": "kineticmanifesto()"
     },
     {
@@ -1368,7 +1386,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L1",
       "id": "src_components_sections_pulse_jsx",
-      "community": 4,
+      "community": 2,
       "norm_label": "pulse.jsx"
     },
     {
@@ -1377,7 +1395,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L5",
       "id": "sections_pulse_pulsecard",
-      "community": 4,
+      "community": 2,
       "norm_label": "pulsecard"
     },
     {
@@ -1386,7 +1404,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L76",
       "id": "sections_pulse_pulse",
-      "community": 4,
+      "community": 2,
       "norm_label": "pulse()"
     },
     {
@@ -1395,7 +1413,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_realtimework_jsx",
-      "community": 4,
+      "community": 32,
       "norm_label": "realtimework.jsx"
     },
     {
@@ -1404,7 +1422,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L4",
       "id": "sections_realtimework_videoplayer",
-      "community": 4,
+      "community": 32,
       "norm_label": "videoplayer()"
     },
     {
@@ -1413,7 +1431,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L35",
       "id": "sections_realtimework_showcaseprojects",
-      "community": 4,
+      "community": 32,
       "norm_label": "showcaseprojects"
     },
     {
@@ -1422,7 +1440,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L96",
       "id": "sections_realtimework_realtimework",
-      "community": 4,
+      "community": 32,
       "norm_label": "realtimework()"
     },
     {
@@ -1431,7 +1449,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L1",
       "id": "src_components_sections_services_jsx",
-      "community": 3,
+      "community": 2,
       "norm_label": "services.jsx"
     },
     {
@@ -1440,7 +1458,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L8",
       "id": "sections_services_iconmap",
-      "community": 3,
+      "community": 2,
       "norm_label": "iconmap"
     },
     {
@@ -1449,7 +1467,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L12",
       "id": "sections_services_services",
-      "community": 3,
+      "community": 2,
       "norm_label": "services()"
     },
     {
@@ -1683,7 +1701,7 @@
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L1",
       "id": "src_components_sections_whynexora_jsx",
-      "community": 4,
+      "community": 2,
       "norm_label": "whynexora.jsx"
     },
     {
@@ -1692,7 +1710,7 @@
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L13",
       "id": "sections_whynexora_bentocard",
-      "community": 4,
+      "community": 2,
       "norm_label": "bentocard"
     },
     {
@@ -1701,7 +1719,7 @@
       "source_file": "src/components/sections/WhyNexora.jsx",
       "source_location": "L86",
       "id": "sections_whynexora_whynexora",
-      "community": 4,
+      "community": 2,
       "norm_label": "whynexora()"
     },
     {
@@ -2142,7 +2160,7 @@
       "source_file": "src/constants/services.js",
       "source_location": "L1",
       "id": "src_constants_services_js",
-      "community": 3,
+      "community": 2,
       "norm_label": "services.js"
     },
     {
@@ -2151,7 +2169,7 @@
       "source_file": "src/constants/services.js",
       "source_location": "L1",
       "id": "constants_services_services",
-      "community": 3,
+      "community": 2,
       "norm_label": "services"
     },
     {
@@ -2502,7 +2520,7 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L1",
       "id": "src_pages_home_jsx",
-      "community": 4,
+      "community": 2,
       "norm_label": "home.jsx"
     },
     {
@@ -2511,7 +2529,7 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L23",
       "id": "pages_home_home",
-      "community": 4,
+      "community": 2,
       "norm_label": "home()"
     },
     {
@@ -2700,7 +2718,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_refundpolicy_jsx",
-      "community": 32,
+      "community": 0,
       "norm_label": "refundpolicy.jsx"
     },
     {
@@ -2709,7 +2727,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L19",
       "id": "pages_refundpolicy_stages",
-      "community": 32,
+      "community": 0,
       "norm_label": "stages"
     },
     {
@@ -2718,7 +2736,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L43",
       "id": "pages_refundpolicy_nonrefundable",
-      "community": 32,
+      "community": 0,
       "norm_label": "nonrefundable"
     },
     {
@@ -2727,7 +2745,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L50",
       "id": "pages_refundpolicy_navigation",
-      "community": 32,
+      "community": 0,
       "norm_label": "navigation"
     },
     {
@@ -2736,7 +2754,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L59",
       "id": "pages_refundpolicy_reveal",
-      "community": 32,
+      "community": 0,
       "norm_label": "reveal"
     },
     {
@@ -2745,7 +2763,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L66",
       "id": "pages_refundpolicy_tonestyles",
-      "community": 32,
+      "community": 0,
       "norm_label": "tonestyles"
     },
     {
@@ -2754,7 +2772,7 @@
       "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L87",
       "id": "pages_refundpolicy_refundpolicy",
-      "community": 32,
+      "community": 0,
       "norm_label": "refundpolicy()"
     },
     {
@@ -3041,7 +3059,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 3,
+      "community": 2,
       "norm_label": "servicecard()",
       "id": "sections_services_servicecard"
     },
@@ -3050,7 +3068,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 3,
+      "community": 2,
       "norm_label": "bentoclasses",
       "id": "sections_services_bentoclasses"
     },
@@ -3059,7 +3077,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L10",
-      "community": 3,
+      "community": 2,
       "norm_label": "servicerow()",
       "id": "sections_services_servicerow"
     },
@@ -3468,9 +3486,9 @@
       "source_file": "package.json",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_nodemailer",
-      "confidence_score": 1.0
+      "target": "nexora_package_dependencies_nodemailer"
     },
     {
       "relation": "contains",
@@ -3618,9 +3636,9 @@
       "source_file": "package.json",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_splinetool_react_spline",
-      "confidence_score": 1.0
+      "target": "nexora_package_dependencies_splinetool_react_spline"
     },
     {
       "relation": "contains",
@@ -3628,9 +3646,9 @@
       "source_file": "package.json",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_splinetool_runtime",
-      "confidence_score": 1.0
+      "target": "nexora_package_dependencies_splinetool_runtime"
     },
     {
       "relation": "contains",
@@ -3868,9 +3886,9 @@
       "source_file": "vite.config.js",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_configureserver",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_configureserver"
     },
     {
       "relation": "contains",
@@ -3878,9 +3896,9 @@
       "source_file": "vite.config.js",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_dirname",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_dirname"
     },
     {
       "relation": "contains",
@@ -3888,9 +3906,9 @@
       "source_file": "vite.config.js",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_envcontent",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_envcontent"
     },
     {
       "relation": "contains",
@@ -3898,9 +3916,9 @@
       "source_file": "vite.config.js",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_envpath",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_envpath"
     },
     {
       "relation": "contains",
@@ -3908,9 +3926,9 @@
       "source_file": "vite.config.js",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_filename",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_filename"
     },
     {
       "relation": "contains",
@@ -3918,9 +3936,9 @@
       "source_file": "vite.config.js",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_key",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_key"
     },
     {
       "relation": "contains",
@@ -3928,9 +3946,9 @@
       "source_file": "vite.config.js",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_parts",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_parts"
     },
     {
       "relation": "contains",
@@ -3938,9 +3956,9 @@
       "source_file": "vite.config.js",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_val",
-      "confidence_score": 1.0
+      "target": "nexora_vite_config_val"
     },
     {
       "relation": "contains",
@@ -3956,11 +3974,31 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "api/send-agreement.js",
-      "source_location": "L5",
+      "source_location": "L7",
       "weight": 1.0,
       "source": "api_send_agreement_js",
-      "target": "api_send_agreement_handler",
+      "target": "api_send_agreement_dirname",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "api_send_agreement_js",
+      "target": "api_send_agreement_filename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/send-agreement.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_send_agreement_js",
+      "target": "api_send_agreement_handler"
     },
     {
       "relation": "imports",
@@ -4196,9 +4234,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_pages_agreement_jsx",
-      "confidence_score": 1.0
+      "target": "src_pages_agreement_jsx"
     },
     {
       "relation": "imports_from",
@@ -4240,9 +4278,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_pages_invoicesystem_jsx",
-      "confidence_score": 1.0
+      "target": "src_pages_invoicesystem_jsx"
     },
     {
       "relation": "imports_from",
@@ -6744,9 +6782,9 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L18",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_agreement_jsx",
-      "target": "pages_agreement_agreement",
-      "confidence_score": 1.0
+      "target": "pages_agreement_agreement"
     },
     {
       "relation": "contains",
@@ -6754,9 +6792,9 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_agreement_jsx",
-      "target": "pages_agreement_purposeoptions",
-      "confidence_score": 1.0
+      "target": "pages_agreement_purposeoptions"
     },
     {
       "relation": "contains",
@@ -6824,9 +6862,9 @@
       "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L677",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
-      "target": "pages_clientportal_deliverablestab",
-      "confidence_score": 1.0
+      "target": "pages_clientportal_deliverablestab"
     },
     {
       "relation": "contains",
@@ -7004,9 +7042,9 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_invoicesystem_jsx",
-      "target": "pages_invoicesystem_curr_sym",
-      "confidence_score": 1.0
+      "target": "pages_invoicesystem_curr_sym"
     },
     {
       "relation": "contains",
@@ -7014,9 +7052,9 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_invoicesystem_jsx",
-      "target": "pages_invoicesystem_default_invoice_data",
-      "confidence_score": 1.0
+      "target": "pages_invoicesystem_default_invoice_data"
     },
     {
       "relation": "contains",
@@ -7024,9 +7062,9 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_invoicesystem_jsx",
-      "target": "pages_invoicesystem_default_settings",
-      "confidence_score": 1.0
+      "target": "pages_invoicesystem_default_settings"
     },
     {
       "relation": "contains",
@@ -7034,9 +7072,9 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_invoicesystem_jsx",
-      "target": "pages_invoicesystem_invoicesystem",
-      "confidence_score": 1.0
+      "target": "pages_invoicesystem_invoicesystem"
     },
     {
       "relation": "contains",
@@ -7044,9 +7082,9 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_invoicesystem_jsx",
-      "target": "pages_invoicesystem_predefined_services",
-      "confidence_score": 1.0
+      "target": "pages_invoicesystem_predefined_services"
     },
     {
       "relation": "contains",
@@ -7403,5 +7441,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "d5b59daefa61fe47aac9a2b7e2b0373f8ae969d3"
+  "built_at_commit": "3877c2b03f9e71720b90b2111786d91ddf4f1620"
 }

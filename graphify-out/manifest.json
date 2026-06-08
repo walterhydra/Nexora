@@ -885,13 +885,13 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\send-agreement.js": {
-    "mtime": 1780927427.0259678,
-    "ast_hash": "3a8b3e45392f06a78021cc538062216a",
+    "mtime": 1780928394.1148386,
+    "ast_hash": "9d3a6bc8ceb65ef6f543cd1981be9810",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Agreement.jsx": {
-    "mtime": 1780923107.9744363,
-    "ast_hash": "c7e7b756a782ab7eea09bc3e7cafd90e",
+    "mtime": 1780928400.6384628,
+    "ast_hash": "b0f813b59a714ef4c0f999e090ed4555",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -937,6 +937,11 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\team\\milan-chat.png": {
     "mtime": 1780918788.5152626,
     "ast_hash": "557184cd3a89c08971bee346a5e9cd87",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\Nexoraa_Client_Agreement.pdf": {
+    "mtime": 1780916260.782629,
+    "ast_hash": "0e783981e79024a3a9b03d86fcfedf81",
     "semantic_hash": ""
   }
 }

@@ -65,7 +65,7 @@ export default function Agreement() {
       console.warn('Primary SMTP api endpoint failed, attempting Web3Forms fallback:', error);
       
       // Try Web3Forms fallback
-      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY;
+      const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "221fc2cc-f511-4830-89f8-0f6f1e595fed";
       if (web3Key) {
         try {
           const web3Response = await fetch("https://api.web3forms.com/submit", {

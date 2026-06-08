@@ -1,6 +1,10 @@
 import nodemailer from 'nodemailer';
 import { readFileSync } from 'fs';
-import { join } from 'path';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default async function handler(req, res) {
   // CORS
@@ -91,10 +95,16 @@ export default async function handler(req, res) {
     // Read local PDF file for buffer
     let pdfBuffer;
     try {
-      const localPdfPath = join(process.cwd(), 'public', 'Video', 'Nexoraa_Client_Agreement.pdf');
-      pdfBuffer = readFileSync(localPdfPath);
-    } catch (e) {
-      console.warn('Could not read local PDF buffer:', e.message);
+      const apiPdfPath = join(__dirname, 'Nexoraa_Client_Agreement.pdf');
+      pdfBuffer = readFileSync(apiPdfPath);
+    } catch (apiErr) {
+      console.warn('Could not read PDF from api folder:', apiErr.message);
+      try {
+        const localPdfPath = join(process.cwd(), 'public', 'Video', 'Nexoraa_Client_Agreement.pdf');
+        pdfBuffer = readFileSync(localPdfPath);
+      } catch (e) {
+        console.warn('Could not read local public PDF buffer:', e.message);
+      }
     }
 
     const brevoApiKey = process.env.BREVO_API_KEY;
