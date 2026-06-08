@@ -113,20 +113,20 @@ export default function Navbar() {
           </div>
 
           {/* Stretched Inner Capsule (Desktop Center - Flex Grow / Stretch) */}
-          <div className="hidden md:flex flex-1 max-w-3xl mx-8">
+          <div className="hidden md:flex flex-1 max-w-5xl mx-4 lg:mx-8">
             <div 
-              className="bg-white/5 border border-white/5 rounded-full p-2 flex items-center justify-between w-full relative"
+              className="bg-white/5 border border-white/5 rounded-full p-1.5 flex items-center justify-between w-full relative"
               onMouseLeave={() => setHoveredLink(null)}
             >
-              {/* Spaced Links - Zoomed nav link text to text-lg */}
-              <div className="flex items-center justify-around flex-1 px-4">
+              {/* Spaced Links - Responsive text and padding */}
+              <div className="flex items-center justify-around flex-1 px-2 lg:px-4">
                 {navLinks.map((link) => (
                   <div key={link.name} className="relative">
                     {link.isRoute ? (
                       <Link
                         to={link.path}
                         onMouseEnter={() => setHoveredLink(link.name)}
-                        className="px-6 py-2.5 block text-base md:text-lg font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
+                        className="px-3 lg:px-4 xl:px-5 py-2 block text-sm lg:text-base font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
                       >
                         {link.name}
                       </Link>
@@ -135,7 +135,7 @@ export default function Navbar() {
                         href={`#${link.id}`}
                         onClick={(e) => handleNavClick(e, link.id)}
                         onMouseEnter={() => setHoveredLink(link.name)}
-                        className="px-6 py-2.5 block text-base md:text-lg font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
+                        className="px-3 lg:px-4 xl:px-5 py-2 block text-sm lg:text-base font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
                       >
                         {link.name}
                       </a>
@@ -153,10 +153,10 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Dark Pill Contact CTA inside capsule - Zoomed size and padding */}
+              {/* Dark Pill Contact CTA inside capsule - Optimized responsive padding and size */}
               <Link to="/contact" className="shrink-0 ml-2">
                 <MagneticButton 
-                  className="bg-black hover:bg-neutral-900 border border-white/10 text-white px-7 py-3 text-sm md:text-base font-black rounded-full transition-colors flex items-center justify-center whitespace-nowrap group"
+                  className="bg-black hover:bg-neutral-900 border border-white/10 text-white px-5 py-2 lg:px-6 lg:py-2.5 text-xs lg:text-sm font-black rounded-full transition-colors flex items-center justify-center whitespace-nowrap group"
                 >
                   <span className="flex items-center gap-2 whitespace-nowrap">
                     Initiate
@@ -171,13 +171,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-4 shrink-0">
             <Link
               to="/portal"
-              className="group relative flex items-center gap-2.5 bg-white/5 hover:bg-white border border-white/10 hover:border-white px-5 py-2.5 rounded-full transition-all duration-300 text-sm font-semibold text-gray-300 hover:text-black whitespace-nowrap"
+              className="group relative flex items-center gap-2 bg-white/5 hover:bg-white border border-white/10 hover:border-white px-4 py-2 lg:px-5 lg:py-2.5 rounded-full transition-all duration-300 text-xs lg:text-sm font-semibold text-gray-300 hover:text-black whitespace-nowrap"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="font-mono text-xs uppercase tracking-widest flex items-center gap-2">
+              <span className="font-mono text-2xs lg:text-xs uppercase tracking-widest flex items-center gap-2">
                 Client Portal
                 <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
               </span>
