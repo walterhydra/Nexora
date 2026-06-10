@@ -2371,15 +2371,6 @@
       "norm_label": "supabase.js"
     },
     {
-      "label": "supabase",
-      "file_type": "code",
-      "source_file": "src/lib/supabase.js",
-      "source_location": "L6",
-      "id": "lib_supabase_supabase",
-      "community": 7,
-      "norm_label": "supabase"
-    },
-    {
       "label": "About.jsx",
       "file_type": "code",
       "source_file": "src/pages/About.jsx",
@@ -3107,6 +3098,15 @@
       "id": "workflows_graphify_workflow_graphify",
       "community": 26,
       "norm_label": "workflow: graphify"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L35",
+      "id": "lib_supabase_supabase",
+      "community": 7,
+      "norm_label": "supabase"
     },
     {
       "label": "PricingCard()",
@@ -6949,17 +6949,6 @@
       "target": "src_lib_supabase_js"
     },
     {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_pages_clientportal_jsx",
-      "target": "lib_supabase_supabase"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/About.jsx",
@@ -6998,6 +6987,17 @@
       "confidence_score": 1.0,
       "source": "src_pages_casestudydetail_jsx",
       "target": "pages_casestudydetail_casestudydetail"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "lib_supabase_supabase"
     },
     {
       "relation": "contains",
@@ -7165,9 +7165,9 @@
       "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
-      "target": "pages_clientportal_mock_data",
-      "confidence_score": 1.0
+      "target": "pages_clientportal_mock_data"
     },
     {
       "relation": "contains",
@@ -7704,5 +7704,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "80fb4145c9bc837412356870ec87b94aa1c3fc40"
+  "built_at_commit": "5746ee8eef471f919c2a7c1e8d77f7cd4fbce12b"
 }

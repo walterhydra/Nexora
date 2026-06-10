@@ -2211,6 +2211,7 @@ export default function ClientPortal() {
   const [isPageLoading, setIsPageLoading] = useState(true);
   const [funFact, setFunFact] = useState('');
   const [loginError, setLoginError] = useState('');
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
 
   // Database-backed state variables
   const [clientInfo, setClientInfo] = useState(null);
@@ -2623,7 +2624,7 @@ export default function ClientPortal() {
                 </div>
                 <span className="text-gray-400 text-[13px] font-medium tracking-wide group-hover:text-gray-200 transition-colors">Remember me</span>
               </label>
-              <a href="#" className="text-blue-400/80 text-[13px] font-medium tracking-wide hover:text-blue-400 transition-colors">Forgot Password?</a>
+              <button type="button" onClick={() => setShowForgotPassword(true)} className="text-blue-400/80 text-[13px] font-medium tracking-wide hover:text-blue-400 transition-colors">Forgot Password?</button>
             </div>
             
             {/* Submit Button */}
@@ -2638,6 +2639,116 @@ export default function ClientPortal() {
             </div>
           </form>
         </div>
+
+        {/* Forgot Password Modal */}
+        <AnimatePresence>
+          {showForgotPassword && (
+            <m.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center p-6"
+              onClick={() => setShowForgotPassword(false)}
+            >
+              {/* Backdrop */}
+              <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
+              
+              {/* Modal Card */}
+              <m.div
+                initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-full max-w-[440px] bg-[#0d1017]/95 backdrop-blur-2xl border border-white/[0.1] rounded-2xl shadow-[0_30px_80px_rgba(0,0,0,0.6)] overflow-hidden"
+              >
+                {/* Ambient Glow */}
+                <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-[80px] pointer-events-none" />
+                <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
+                
+                {/* Header */}
+                <div className="relative px-8 pt-8 pb-4 flex items-start justify-between">
+                  <div>
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/20 flex items-center justify-center">
+                        <Lock className="w-5 h-5 text-blue-400" />
+                      </div>
+                      <h3 className="text-lg font-bold text-white tracking-tight">Forgot Password?</h3>
+                    </div>
+                    <p className="text-gray-400 text-sm leading-relaxed">
+                      Don't worry! Contact our team and we'll help you regain access to your account.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => setShowForgotPassword(false)}
+                    className="shrink-0 ml-4 mt-1 w-8 h-8 flex items-center justify-center rounded-lg border border-white/[0.08] bg-white/[0.03] text-gray-500 hover:text-white hover:bg-white/[0.08] transition-all"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+
+                {/* Contact Methods */}
+                <div className="relative px-8 pb-8 pt-2 space-y-4">
+                  {/* Email */}
+                  <a
+                    href="mailto:nexoraa.works@gmail.com"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-blue-500/[0.08] hover:border-blue-500/30 transition-all group cursor-pointer"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 transition-all">
+                      <Mail className="w-5 h-5 text-blue-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">Email Us</p>
+                      <p className="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors truncate">nexoraa.works@gmail.com</p>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-blue-400 shrink-0 ml-auto transition-colors" />
+                  </a>
+
+                  {/* Phone */}
+                  <a
+                    href="tel:+917383303388"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-emerald-500/[0.08] hover:border-emerald-500/30 transition-all group cursor-pointer"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center shrink-0 group-hover:bg-emerald-500/20 group-hover:border-emerald-500/40 transition-all">
+                      <svg className="w-5 h-5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">Call Us</p>
+                      <p className="text-sm font-semibold text-white group-hover:text-emerald-300 transition-colors">+91 7383303388</p>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-emerald-400 shrink-0 ml-auto transition-colors" />
+                  </a>
+
+                  {/* WhatsApp */}
+                  <a
+                    href="https://wa.me/917383303388?text=Hi%20Nexora%2C%20I%20forgot%20my%20Client%20Portal%20password.%20Can%20you%20help%20me%20reset%20it%3F"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-green-500/[0.08] hover:border-green-500/30 transition-all group cursor-pointer"
+                  >
+                    <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-green-500/20 flex items-center justify-center shrink-0 group-hover:bg-green-500/20 group-hover:border-green-500/40 transition-all">
+                      <MessageCircle className="w-5 h-5 text-green-400" />
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">WhatsApp</p>
+                      <p className="text-sm font-semibold text-white group-hover:text-green-300 transition-colors">Message us on WhatsApp</p>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-green-400 shrink-0 ml-auto transition-colors" />
+                  </a>
+
+                  {/* Divider + Note */}
+                  <div className="pt-2 border-t border-white/[0.06]">
+                    <p className="text-[11px] text-gray-500 leading-relaxed text-center">
+                      Our team typically responds within <span className="text-white font-semibold">30 minutes</span> during business hours (10 AM – 8 PM IST).
+                    </p>
+                  </div>
+                </div>
+              </m.div>
+            </m.div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
