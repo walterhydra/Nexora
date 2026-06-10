@@ -805,6 +805,1608 @@
       "norm_label": "handler()"
     },
     {
+      "label": "components.json",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_json",
+      "community": 45,
+      "norm_label": "components.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L2",
+      "id": "nexoraa_client_portal_components_schema",
+      "community": 45,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "style",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L3",
+      "id": "nexoraa_client_portal_components_style",
+      "community": 45,
+      "norm_label": "style"
+    },
+    {
+      "label": "rsc",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L4",
+      "id": "nexoraa_client_portal_components_rsc",
+      "community": 45,
+      "norm_label": "rsc"
+    },
+    {
+      "label": "tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L5",
+      "id": "nexoraa_client_portal_components_tsx",
+      "community": 45,
+      "norm_label": "tsx"
+    },
+    {
+      "label": "tailwind",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L6",
+      "id": "nexoraa_client_portal_components_tailwind",
+      "community": 45,
+      "norm_label": "tailwind"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L7",
+      "id": "nexoraa_client_portal_components_tailwind_config",
+      "community": 45,
+      "norm_label": "config"
+    },
+    {
+      "label": "css",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L8",
+      "id": "nexoraa_client_portal_components_tailwind_css",
+      "community": 45,
+      "norm_label": "css"
+    },
+    {
+      "label": "baseColor",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L9",
+      "id": "nexoraa_client_portal_components_tailwind_basecolor",
+      "community": 45,
+      "norm_label": "basecolor"
+    },
+    {
+      "label": "cssVariables",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L10",
+      "id": "nexoraa_client_portal_components_tailwind_cssvariables",
+      "community": 45,
+      "norm_label": "cssvariables"
+    },
+    {
+      "label": "prefix",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L11",
+      "id": "nexoraa_client_portal_components_tailwind_prefix",
+      "community": 45,
+      "norm_label": "prefix"
+    },
+    {
+      "label": "aliases",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L13",
+      "id": "nexoraa_client_portal_components_aliases",
+      "community": 45,
+      "norm_label": "aliases"
+    },
+    {
+      "label": "components",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L14",
+      "id": "nexoraa_client_portal_components_aliases_components",
+      "community": 45,
+      "norm_label": "components"
+    },
+    {
+      "label": "utils",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L15",
+      "id": "nexoraa_client_portal_components_aliases_utils",
+      "community": 45,
+      "norm_label": "utils"
+    },
+    {
+      "label": "ui",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L16",
+      "id": "nexoraa_client_portal_components_aliases_ui",
+      "community": 45,
+      "norm_label": "ui"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L17",
+      "id": "nexoraa_client_portal_components_aliases_lib",
+      "community": 45,
+      "norm_label": "lib"
+    },
+    {
+      "label": "hooks",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L18",
+      "id": "nexoraa_client_portal_components_aliases_hooks",
+      "community": 45,
+      "norm_label": "hooks"
+    },
+    {
+      "label": "iconLibrary",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L20",
+      "id": "nexoraa_client_portal_components_iconlibrary",
+      "community": 45,
+      "norm_label": "iconlibrary"
+    },
+    {
+      "label": "next.config.mjs",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/next.config.mjs",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_next_config_mjs",
+      "community": 56,
+      "norm_label": "next.config.mjs"
+    },
+    {
+      "label": "nextConfig",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/next.config.mjs",
+      "source_location": "L2",
+      "id": "nexoraa_client_portal_next_config_nextconfig",
+      "community": 56,
+      "norm_label": "nextconfig"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_package_json",
+      "community": 11,
+      "norm_label": "package.json"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L2",
+      "id": "nexoraa_client_portal_package_name",
+      "community": 11,
+      "norm_label": "name"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L3",
+      "id": "nexoraa_client_portal_package_version",
+      "community": 11,
+      "norm_label": "version"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L4",
+      "id": "nexoraa_client_portal_package_private",
+      "community": 11,
+      "norm_label": "private"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L5",
+      "id": "nexoraa_client_portal_package_scripts",
+      "community": 11,
+      "norm_label": "scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L6",
+      "id": "nexoraa_client_portal_package_scripts_dev",
+      "community": 11,
+      "norm_label": "dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L7",
+      "id": "nexoraa_client_portal_package_scripts_build",
+      "community": 11,
+      "norm_label": "build"
+    },
+    {
+      "label": "start",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L8",
+      "id": "nexoraa_client_portal_package_scripts_start",
+      "community": 11,
+      "norm_label": "start"
+    },
+    {
+      "label": "lint",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L9",
+      "id": "nexoraa_client_portal_package_scripts_lint",
+      "community": 11,
+      "norm_label": "lint"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L11",
+      "id": "nexoraa_client_portal_package_dependencies",
+      "community": 11,
+      "norm_label": "dependencies"
+    },
+    {
+      "label": "@base-ui/react",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L12",
+      "id": "nexoraa_client_portal_package_dependencies_base_ui_react",
+      "community": 11,
+      "norm_label": "@base-ui/react"
+    },
+    {
+      "label": "@vercel/analytics",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L13",
+      "id": "nexoraa_client_portal_package_dependencies_vercel_analytics",
+      "community": 11,
+      "norm_label": "@vercel/analytics"
+    },
+    {
+      "label": "class-variance-authority",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L14",
+      "id": "nexoraa_client_portal_package_dependencies_class_variance_authority",
+      "community": 11,
+      "norm_label": "class-variance-authority"
+    },
+    {
+      "label": "clsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L15",
+      "id": "nexoraa_client_portal_package_dependencies_clsx",
+      "community": 11,
+      "norm_label": "clsx"
+    },
+    {
+      "label": "framer-motion",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L16",
+      "id": "nexoraa_client_portal_package_dependencies_framer_motion",
+      "community": 11,
+      "norm_label": "framer-motion"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L17",
+      "id": "nexoraa_client_portal_package_dependencies_lucide_react",
+      "community": 11,
+      "norm_label": "lucide-react"
+    },
+    {
+      "label": "next",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L18",
+      "id": "nexoraa_client_portal_package_dependencies_next",
+      "community": 11,
+      "norm_label": "next"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L19",
+      "id": "nexoraa_client_portal_package_dependencies_react",
+      "community": 11,
+      "norm_label": "react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L20",
+      "id": "nexoraa_client_portal_package_dependencies_react_dom",
+      "community": 11,
+      "norm_label": "react-dom"
+    },
+    {
+      "label": "recharts",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L21",
+      "id": "nexoraa_client_portal_package_dependencies_recharts",
+      "community": 11,
+      "norm_label": "recharts"
+    },
+    {
+      "label": "shadcn",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L22",
+      "id": "nexoraa_client_portal_package_dependencies_shadcn",
+      "community": 11,
+      "norm_label": "shadcn"
+    },
+    {
+      "label": "sonner",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L23",
+      "id": "nexoraa_client_portal_package_dependencies_sonner",
+      "community": 11,
+      "norm_label": "sonner"
+    },
+    {
+      "label": "tailwind-merge",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L24",
+      "id": "nexoraa_client_portal_package_dependencies_tailwind_merge",
+      "community": 11,
+      "norm_label": "tailwind-merge"
+    },
+    {
+      "label": "tw-animate-css",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L25",
+      "id": "nexoraa_client_portal_package_dependencies_tw_animate_css",
+      "community": 11,
+      "norm_label": "tw-animate-css"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L27",
+      "id": "nexoraa_client_portal_package_devdependencies",
+      "community": 11,
+      "norm_label": "devdependencies"
+    },
+    {
+      "label": "@tailwindcss/postcss",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L28",
+      "id": "nexoraa_client_portal_package_devdependencies_tailwindcss_postcss",
+      "community": 11,
+      "norm_label": "@tailwindcss/postcss"
+    },
+    {
+      "label": "@types/node",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L29",
+      "id": "nexoraa_client_portal_package_devdependencies_types_node",
+      "community": 11,
+      "norm_label": "@types/node"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L30",
+      "id": "nexoraa_client_portal_package_devdependencies_types_react",
+      "community": 11,
+      "norm_label": "@types/react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L31",
+      "id": "nexoraa_client_portal_package_devdependencies_types_react_dom",
+      "community": 11,
+      "norm_label": "@types/react-dom"
+    },
+    {
+      "label": "postcss",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L32",
+      "id": "nexoraa_client_portal_package_devdependencies_postcss",
+      "community": 11,
+      "norm_label": "postcss"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L33",
+      "id": "nexoraa_client_portal_package_devdependencies_tailwindcss",
+      "community": 11,
+      "norm_label": "tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L34",
+      "id": "nexoraa_client_portal_package_devdependencies_typescript",
+      "community": 11,
+      "norm_label": "typescript"
+    },
+    {
+      "label": "postcss.config.mjs",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/postcss.config.mjs",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_postcss_config_mjs",
+      "community": 57,
+      "norm_label": "postcss.config.mjs"
+    },
+    {
+      "label": "config",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/postcss.config.mjs",
+      "source_location": "L2",
+      "id": "nexoraa_client_portal_postcss_config_config",
+      "community": 57,
+      "norm_label": "config"
+    },
+    {
+      "label": "tsconfig.json",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_tsconfig_json",
+      "community": 40,
+      "norm_label": "tsconfig.json"
+    },
+    {
+      "label": "compilerOptions",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L2",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions",
+      "community": 40,
+      "norm_label": "compileroptions"
+    },
+    {
+      "label": "lib",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L3",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_lib",
+      "community": 40,
+      "norm_label": "lib"
+    },
+    {
+      "label": "allowJs",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L8",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_allowjs",
+      "community": 40,
+      "norm_label": "allowjs"
+    },
+    {
+      "label": "target",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L9",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_target",
+      "community": 40,
+      "norm_label": "target"
+    },
+    {
+      "label": "skipLibCheck",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L10",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_skiplibcheck",
+      "community": 40,
+      "norm_label": "skiplibcheck"
+    },
+    {
+      "label": "strict",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L11",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_strict",
+      "community": 40,
+      "norm_label": "strict"
+    },
+    {
+      "label": "noEmit",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L12",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_noemit",
+      "community": 40,
+      "norm_label": "noemit"
+    },
+    {
+      "label": "esModuleInterop",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L13",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_esmoduleinterop",
+      "community": 40,
+      "norm_label": "esmoduleinterop"
+    },
+    {
+      "label": "module",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L14",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_module",
+      "community": 40,
+      "norm_label": "module"
+    },
+    {
+      "label": "moduleResolution",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L15",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_moduleresolution",
+      "community": 40,
+      "norm_label": "moduleresolution"
+    },
+    {
+      "label": "resolveJsonModule",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L16",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_resolvejsonmodule",
+      "community": 40,
+      "norm_label": "resolvejsonmodule"
+    },
+    {
+      "label": "isolatedModules",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L17",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_isolatedmodules",
+      "community": 40,
+      "norm_label": "isolatedmodules"
+    },
+    {
+      "label": "jsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L18",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_jsx",
+      "community": 40,
+      "norm_label": "jsx"
+    },
+    {
+      "label": "incremental",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L19",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_incremental",
+      "community": 40,
+      "norm_label": "incremental"
+    },
+    {
+      "label": "plugins",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L20",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_plugins",
+      "community": 40,
+      "norm_label": "plugins"
+    },
+    {
+      "label": "paths",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L25",
+      "id": "nexoraa_client_portal_tsconfig_compileroptions_paths",
+      "community": 40,
+      "norm_label": "paths"
+    },
+    {
+      "label": "@/*",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L26",
+      "id": "nexoraa_client_portal_tsconfig_paths",
+      "community": 40,
+      "norm_label": "@/*"
+    },
+    {
+      "label": "include",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L31",
+      "id": "nexoraa_client_portal_tsconfig_include",
+      "community": 40,
+      "norm_label": "include"
+    },
+    {
+      "label": "exclude",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L38",
+      "id": "nexoraa_client_portal_tsconfig_exclude",
+      "community": 40,
+      "norm_label": "exclude"
+    },
+    {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_app_layout_tsx",
+      "community": 53,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "inter",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L6",
+      "id": "app_layout_inter",
+      "community": 53,
+      "norm_label": "inter"
+    },
+    {
+      "label": "sora",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L11",
+      "id": "app_layout_sora",
+      "community": 53,
+      "norm_label": "sora"
+    },
+    {
+      "label": "jetbrainsMono",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L16",
+      "id": "app_layout_jetbrainsmono",
+      "community": 53,
+      "norm_label": "jetbrainsmono"
+    },
+    {
+      "label": "metadata",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L21",
+      "id": "app_layout_metadata",
+      "community": 53,
+      "norm_label": "metadata"
+    },
+    {
+      "label": "RootLayout()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L27",
+      "id": "app_layout_rootlayout",
+      "community": 53,
+      "norm_label": "rootlayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_app_page_tsx",
+      "community": 43,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "pageVariants",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L15",
+      "id": "app_page_pagevariants",
+      "community": 43,
+      "norm_label": "pagevariants"
+    },
+    {
+      "label": "PageRouter()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L21",
+      "id": "app_page_pagerouter",
+      "community": 43,
+      "norm_label": "pagerouter()"
+    },
+    {
+      "label": "Portal()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L37",
+      "id": "app_page_portal",
+      "community": 43,
+      "norm_label": "portal()"
+    },
+    {
+      "label": "Home()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L67",
+      "id": "app_page_home",
+      "community": 43,
+      "norm_label": "home()"
+    },
+    {
+      "label": "animated-counter.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_animated_counter_tsx",
+      "community": 46,
+      "norm_label": "animated-counter.tsx"
+    },
+    {
+      "label": "AnimatedCounterProps",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
+      "source_location": "L5",
+      "id": "components_animated_counter_animatedcounterprops",
+      "community": 46,
+      "norm_label": "animatedcounterprops"
+    },
+    {
+      "label": "AnimatedCounter()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
+      "source_location": "L14",
+      "id": "components_animated_counter_animatedcounter",
+      "community": 46,
+      "norm_label": "animatedcounter()"
+    },
+    {
+      "label": "command-palette.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_command_palette_tsx",
+      "community": 43,
+      "norm_label": "command-palette.tsx"
+    },
+    {
+      "label": "allItems",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L19",
+      "id": "components_command_palette_allitems",
+      "community": 43,
+      "norm_label": "allitems"
+    },
+    {
+      "label": "recentItems",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L29",
+      "id": "components_command_palette_recentitems",
+      "community": 43,
+      "norm_label": "recentitems"
+    },
+    {
+      "label": "CommandPalette()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L35",
+      "id": "components_command_palette_commandpalette",
+      "community": 43,
+      "norm_label": "commandpalette()"
+    },
+    {
+      "label": "notification-panel.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_notification_panel_tsx",
+      "community": 52,
+      "norm_label": "notification-panel.tsx"
+    },
+    {
+      "label": "iconMap",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L18",
+      "id": "components_notification_panel_iconmap",
+      "community": 52,
+      "norm_label": "iconmap"
+    },
+    {
+      "label": "colorMap",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L26",
+      "id": "components_notification_panel_colormap",
+      "community": 52,
+      "norm_label": "colormap"
+    },
+    {
+      "label": "NotificationPanel()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L34",
+      "id": "components_notification_panel_notificationpanel",
+      "community": 52,
+      "norm_label": "notificationpanel()"
+    },
+    {
+      "label": "request-modal.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_request_modal_tsx",
+      "community": 43,
+      "norm_label": "request-modal.tsx"
+    },
+    {
+      "label": "priorities",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L9",
+      "id": "components_request_modal_priorities",
+      "community": 43,
+      "norm_label": "priorities"
+    },
+    {
+      "label": "requestTypes",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L10",
+      "id": "components_request_modal_requesttypes",
+      "community": 43,
+      "norm_label": "requesttypes"
+    },
+    {
+      "label": "RequestModal()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L19",
+      "id": "components_request_modal_requestmodal",
+      "community": 43,
+      "norm_label": "requestmodal()"
+    },
+    {
+      "label": "sidebar.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_sidebar_tsx",
+      "community": 50,
+      "norm_label": "sidebar.tsx"
+    },
+    {
+      "label": "navItems",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L15",
+      "id": "components_sidebar_navitems",
+      "community": 50,
+      "norm_label": "navitems"
+    },
+    {
+      "label": "containerVariants",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L23",
+      "id": "components_sidebar_containervariants",
+      "community": 50,
+      "norm_label": "containervariants"
+    },
+    {
+      "label": "itemVariants",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L30",
+      "id": "components_sidebar_itemvariants",
+      "community": 50,
+      "norm_label": "itemvariants"
+    },
+    {
+      "label": "SidebarContent()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L35",
+      "id": "components_sidebar_sidebarcontent",
+      "community": 50,
+      "norm_label": "sidebarcontent()"
+    },
+    {
+      "label": "Sidebar()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L135",
+      "id": "components_sidebar_sidebar",
+      "community": 50,
+      "norm_label": "sidebar()"
+    },
+    {
+      "label": "top-navbar.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_top_navbar_tsx",
+      "community": 52,
+      "norm_label": "top-navbar.tsx"
+    },
+    {
+      "label": "pageLabels",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L10",
+      "id": "components_top_navbar_pagelabels",
+      "community": 52,
+      "norm_label": "pagelabels"
+    },
+    {
+      "label": "TopNavbar()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L18",
+      "id": "components_top_navbar_topnavbar",
+      "community": 52,
+      "norm_label": "topnavbar()"
+    },
+    {
+      "label": "asset-vault-page.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "community": 47,
+      "norm_label": "asset-vault-page.tsx"
+    },
+    {
+      "label": "stagger",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L27",
+      "id": "pages_asset_vault_page_stagger",
+      "community": 47,
+      "norm_label": "stagger"
+    },
+    {
+      "label": "fadeUp",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L31",
+      "id": "pages_asset_vault_page_fadeup",
+      "community": 47,
+      "norm_label": "fadeup"
+    },
+    {
+      "label": "FileType",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L36",
+      "id": "pages_asset_vault_page_filetype",
+      "community": 47,
+      "norm_label": "filetype"
+    },
+    {
+      "label": "getFileIcon()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L38",
+      "id": "pages_asset_vault_page_getfileicon",
+      "community": 47,
+      "norm_label": "getfileicon()"
+    },
+    {
+      "label": "filterByType()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L58",
+      "id": "pages_asset_vault_page_filterbytype",
+      "community": 47,
+      "norm_label": "filterbytype()"
+    },
+    {
+      "label": "DownloadButton()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L67",
+      "id": "pages_asset_vault_page_downloadbutton",
+      "community": 47,
+      "norm_label": "downloadbutton()"
+    },
+    {
+      "label": "FileCard()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L102",
+      "id": "pages_asset_vault_page_filecard",
+      "community": 47,
+      "norm_label": "filecard()"
+    },
+    {
+      "label": "FileRow()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L162",
+      "id": "pages_asset_vault_page_filerow",
+      "community": 47,
+      "norm_label": "filerow()"
+    },
+    {
+      "label": "AssetVaultPage()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L184",
+      "id": "pages_asset_vault_page_assetvaultpage",
+      "community": 47,
+      "norm_label": "assetvaultpage()"
+    },
+    {
+      "label": "billing-page.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "community": 46,
+      "norm_label": "billing-page.tsx"
+    },
+    {
+      "label": "stagger",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L17",
+      "id": "pages_billing_page_stagger",
+      "community": 46,
+      "norm_label": "stagger"
+    },
+    {
+      "label": "fadeUp",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L21",
+      "id": "pages_billing_page_fadeup",
+      "community": 46,
+      "norm_label": "fadeup"
+    },
+    {
+      "label": "fmt()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L26",
+      "id": "pages_billing_page_fmt",
+      "community": 36,
+      "norm_label": "fmt()"
+    },
+    {
+      "label": "fmtFull()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L29",
+      "id": "pages_billing_page_fmtfull",
+      "community": 46,
+      "norm_label": "fmtfull()"
+    },
+    {
+      "label": "statusConfig",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L33",
+      "id": "pages_billing_page_statusconfig",
+      "community": 46,
+      "norm_label": "statusconfig"
+    },
+    {
+      "label": "BillingPage()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L56",
+      "id": "pages_billing_page_billingpage",
+      "community": 46,
+      "norm_label": "billingpage()"
+    },
+    {
+      "label": "messages-page.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "community": 51,
+      "norm_label": "messages-page.tsx"
+    },
+    {
+      "label": "stagger",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L21",
+      "id": "pages_messages_page_stagger",
+      "community": 51,
+      "norm_label": "stagger"
+    },
+    {
+      "label": "fadeUp",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L25",
+      "id": "pages_messages_page_fadeup",
+      "community": 51,
+      "norm_label": "fadeup"
+    },
+    {
+      "label": "MessageBubble()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L30",
+      "id": "pages_messages_page_messagebubble",
+      "community": 51,
+      "norm_label": "messagebubble()"
+    },
+    {
+      "label": "TypingIndicator()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L89",
+      "id": "pages_messages_page_typingindicator",
+      "community": 51,
+      "norm_label": "typingindicator()"
+    },
+    {
+      "label": "MessagesPage()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L105",
+      "id": "pages_messages_page_messagespage",
+      "community": 51,
+      "norm_label": "messagespage()"
+    },
+    {
+      "label": "overview-page.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "community": 48,
+      "norm_label": "overview-page.tsx"
+    },
+    {
+      "label": "fadeUp",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L21",
+      "id": "pages_overview_page_fadeup",
+      "community": 48,
+      "norm_label": "fadeup"
+    },
+    {
+      "label": "stagger",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L30",
+      "id": "pages_overview_page_stagger",
+      "community": 48,
+      "norm_label": "stagger"
+    },
+    {
+      "label": "ProjectHeroCard()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L35",
+      "id": "pages_overview_page_projectherocard",
+      "community": 48,
+      "norm_label": "projectherocard()"
+    },
+    {
+      "label": "DomainItem()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L111",
+      "id": "pages_overview_page_domainitem",
+      "community": 48,
+      "norm_label": "domainitem()"
+    },
+    {
+      "label": "StatusBadge()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L133",
+      "id": "pages_overview_page_statusbadge",
+      "community": 48,
+      "norm_label": "statusbadge()"
+    },
+    {
+      "label": "StatsRow()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L160",
+      "id": "pages_overview_page_statsrow",
+      "community": 48,
+      "norm_label": "statsrow()"
+    },
+    {
+      "label": "TeamSection()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L239",
+      "id": "pages_overview_page_teamsection",
+      "community": 48,
+      "norm_label": "teamsection()"
+    },
+    {
+      "label": "MilestoneTimeline()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L294",
+      "id": "pages_overview_page_milestonetimeline",
+      "community": 48,
+      "norm_label": "milestonetimeline()"
+    },
+    {
+      "label": "OverviewPage()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L377",
+      "id": "pages_overview_page_overviewpage",
+      "community": 48,
+      "norm_label": "overviewpage()"
+    },
+    {
+      "label": "settings-page.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "community": 49,
+      "norm_label": "settings-page.tsx"
+    },
+    {
+      "label": "Tab",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L24",
+      "id": "pages_settings_page_tab",
+      "community": 49,
+      "norm_label": "tab"
+    },
+    {
+      "label": "tabs",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L26",
+      "id": "pages_settings_page_tabs",
+      "community": 49,
+      "norm_label": "tabs"
+    },
+    {
+      "label": "Toggle()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L34",
+      "id": "pages_settings_page_toggle",
+      "community": 49,
+      "norm_label": "toggle()"
+    },
+    {
+      "label": "ProfileTab()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L60",
+      "id": "pages_settings_page_profiletab",
+      "community": 49,
+      "norm_label": "profiletab()"
+    },
+    {
+      "label": "FormField()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L125",
+      "id": "pages_settings_page_formfield",
+      "community": 49,
+      "norm_label": "formfield()"
+    },
+    {
+      "label": "NotificationsTab()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L157",
+      "id": "pages_settings_page_notificationstab",
+      "community": 49,
+      "norm_label": "notificationstab()"
+    },
+    {
+      "label": "SecurityTab()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L198",
+      "id": "pages_settings_page_securitytab",
+      "community": 49,
+      "norm_label": "securitytab()"
+    },
+    {
+      "label": "AppearanceTab()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L305",
+      "id": "pages_settings_page_appearancetab",
+      "community": 49,
+      "norm_label": "appearancetab()"
+    },
+    {
+      "label": "DangerZoneTab()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L375",
+      "id": "pages_settings_page_dangerzonetab",
+      "community": 49,
+      "norm_label": "dangerzonetab()"
+    },
+    {
+      "label": "tabContent",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L442",
+      "id": "pages_settings_page_tabcontent",
+      "community": 49,
+      "norm_label": "tabcontent"
+    },
+    {
+      "label": "SettingsPage()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L450",
+      "id": "pages_settings_page_settingspage",
+      "community": 49,
+      "norm_label": "settingspage()"
+    },
+    {
+      "label": "button.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_components_ui_button_tsx",
+      "community": 50,
+      "norm_label": "button.tsx"
+    },
+    {
+      "label": "buttonVariants",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L6",
+      "id": "ui_button_buttonvariants",
+      "community": 50,
+      "norm_label": "buttonvariants"
+    },
+    {
+      "label": "Button()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L43",
+      "id": "ui_button_button",
+      "community": 50,
+      "norm_label": "button()"
+    },
+    {
+      "label": "data.ts",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_lib_data_ts",
+      "community": 51,
+      "norm_label": "data.ts"
+    },
+    {
+      "label": "project",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L1",
+      "id": "lib_data_project",
+      "community": 46,
+      "norm_label": "project"
+    },
+    {
+      "label": "teamMembers",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L21",
+      "id": "lib_data_teammembers",
+      "community": 48,
+      "norm_label": "teammembers"
+    },
+    {
+      "label": "milestones",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L78",
+      "id": "lib_data_milestones",
+      "community": 48,
+      "norm_label": "milestones"
+    },
+    {
+      "label": "notifications",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L121",
+      "id": "lib_data_notifications",
+      "community": 52,
+      "norm_label": "notifications"
+    },
+    {
+      "label": "invoices",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L164",
+      "id": "lib_data_invoices",
+      "community": 46,
+      "norm_label": "invoices"
+    },
+    {
+      "label": "paymentTimeline",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L202",
+      "id": "lib_data_paymenttimeline",
+      "community": 46,
+      "norm_label": "paymenttimeline"
+    },
+    {
+      "label": "assetFiles",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L229",
+      "id": "lib_data_assetfiles",
+      "community": 47,
+      "norm_label": "assetfiles"
+    },
+    {
+      "label": "folders",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L296",
+      "id": "lib_data_folders",
+      "community": 47,
+      "norm_label": "folders"
+    },
+    {
+      "label": "channels",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L304",
+      "id": "lib_data_channels",
+      "community": 51,
+      "norm_label": "channels"
+    },
+    {
+      "label": "messages",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L310",
+      "id": "lib_data_messages",
+      "community": 51,
+      "norm_label": "messages"
+    },
+    {
+      "label": "Message",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L423",
+      "id": "lib_data_message",
+      "community": 51,
+      "norm_label": "message"
+    },
+    {
+      "label": "portal-context.tsx",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_lib_portal_context_tsx",
+      "community": 43,
+      "norm_label": "portal-context.tsx"
+    },
+    {
+      "label": "Page",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L5",
+      "id": "lib_portal_context_page",
+      "community": 43,
+      "norm_label": "page"
+    },
+    {
+      "label": "PortalContextType",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L7",
+      "id": "lib_portal_context_portalcontexttype",
+      "community": 43,
+      "norm_label": "portalcontexttype"
+    },
+    {
+      "label": "PortalContext",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L20",
+      "id": "lib_portal_context_portalcontext",
+      "community": 43,
+      "norm_label": "portalcontext"
+    },
+    {
+      "label": "PortalProvider()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L22",
+      "id": "lib_portal_context_portalprovider",
+      "community": 43,
+      "norm_label": "portalprovider()"
+    },
+    {
+      "label": "usePortal()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L49",
+      "id": "lib_portal_context_useportal",
+      "community": 43,
+      "norm_label": "useportal()"
+    },
+    {
+      "label": "utils.ts",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/utils.ts",
+      "source_location": "L1",
+      "id": "nexoraa_client_portal_lib_utils_ts",
+      "community": 50,
+      "norm_label": "utils.ts"
+    },
+    {
+      "label": "cn()",
+      "file_type": "code",
+      "source_file": "nexoraa-client-portal/lib/utils.ts",
+      "source_location": "L4",
+      "id": "lib_utils_cn",
+      "community": 50,
+      "norm_label": "cn()"
+    },
+    {
+      "label": "refactor.py",
+      "file_type": "code",
+      "source_file": "scratch/refactor.py",
+      "source_location": "L1",
+      "id": "scratch_refactor_py",
+      "community": 59,
+      "norm_label": "refactor.py"
+    },
+    {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
@@ -1071,7 +2673,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 0,
+      "community": 55,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -1080,7 +2682,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 0,
+      "community": 55,
       "norm_label": "loadingscreen()"
     },
     {
@@ -1172,6 +2774,474 @@
       "id": "layout_sectiondivider_sectiondivider",
       "community": 17,
       "norm_label": "sectiondivider()"
+    },
+    {
+      "label": "AnimatedCounter.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/AnimatedCounter.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_animatedcounter_jsx",
+      "community": 58,
+      "norm_label": "animatedcounter.jsx"
+    },
+    {
+      "label": "AnimatedCounter()",
+      "file_type": "code",
+      "source_file": "src/components/portal/AnimatedCounter.jsx",
+      "source_location": "L3",
+      "id": "portal_animatedcounter_animatedcounter",
+      "community": 58,
+      "norm_label": "animatedcounter()"
+    },
+    {
+      "label": "AssetVaultPage.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/AssetVaultPage.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_assetvaultpage_jsx",
+      "community": 9,
+      "norm_label": "assetvaultpage.jsx"
+    },
+    {
+      "label": "AssetVaultPage()",
+      "file_type": "code",
+      "source_file": "src/components/portal/AssetVaultPage.jsx",
+      "source_location": "L5",
+      "id": "portal_assetvaultpage_assetvaultpage",
+      "community": 9,
+      "norm_label": "assetvaultpage()"
+    },
+    {
+      "label": "BillingPage.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/BillingPage.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_billingpage_jsx",
+      "community": 9,
+      "norm_label": "billingpage.jsx"
+    },
+    {
+      "label": "InteractiveInvoice()",
+      "file_type": "code",
+      "source_file": "src/components/portal/BillingPage.jsx",
+      "source_location": "L5",
+      "id": "portal_billingpage_interactiveinvoice",
+      "community": 9,
+      "norm_label": "interactiveinvoice()"
+    },
+    {
+      "label": "BillingPage()",
+      "file_type": "code",
+      "source_file": "src/components/portal/BillingPage.jsx",
+      "source_location": "L139",
+      "id": "portal_billingpage_billingpage",
+      "community": 9,
+      "norm_label": "billingpage()"
+    },
+    {
+      "label": "CommandPalette.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_commandpalette_jsx",
+      "community": 6,
+      "norm_label": "commandpalette.jsx"
+    },
+    {
+      "label": "allItems",
+      "file_type": "code",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L17",
+      "id": "portal_commandpalette_allitems",
+      "community": 6,
+      "norm_label": "allitems"
+    },
+    {
+      "label": "recentItems",
+      "file_type": "code",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L27",
+      "id": "portal_commandpalette_recentitems",
+      "community": 6,
+      "norm_label": "recentitems"
+    },
+    {
+      "label": "CommandPalette()",
+      "file_type": "code",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L33",
+      "id": "portal_commandpalette_commandpalette",
+      "community": 6,
+      "norm_label": "commandpalette()"
+    },
+    {
+      "label": "MessagesPage.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/MessagesPage.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_messagespage_jsx",
+      "community": 7,
+      "norm_label": "messagespage.jsx"
+    },
+    {
+      "label": "MessagesPage()",
+      "file_type": "code",
+      "source_file": "src/components/portal/MessagesPage.jsx",
+      "source_location": "L6",
+      "id": "portal_messagespage_messagespage",
+      "community": 7,
+      "norm_label": "messagespage()"
+    },
+    {
+      "label": "NotificationPanel.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_notificationpanel_jsx",
+      "community": 9,
+      "norm_label": "notificationpanel.jsx"
+    },
+    {
+      "label": "iconMap",
+      "file_type": "code",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L16",
+      "id": "portal_notificationpanel_iconmap",
+      "community": 9,
+      "norm_label": "iconmap"
+    },
+    {
+      "label": "colorMap",
+      "file_type": "code",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L24",
+      "id": "portal_notificationpanel_colormap",
+      "community": 9,
+      "norm_label": "colormap"
+    },
+    {
+      "label": "NotificationPanel()",
+      "file_type": "code",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L32",
+      "id": "portal_notificationpanel_notificationpanel",
+      "community": 9,
+      "norm_label": "notificationpanel()"
+    },
+    {
+      "label": "OverviewPage.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/OverviewPage.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_overviewpage_jsx",
+      "community": 9,
+      "norm_label": "overviewpage.jsx"
+    },
+    {
+      "label": "LivePulseFeed()",
+      "file_type": "code",
+      "source_file": "src/components/portal/OverviewPage.jsx",
+      "source_location": "L8",
+      "id": "portal_overviewpage_livepulsefeed",
+      "community": 9,
+      "norm_label": "livepulsefeed()"
+    },
+    {
+      "label": "OverviewPage()",
+      "file_type": "code",
+      "source_file": "src/components/portal/OverviewPage.jsx",
+      "source_location": "L99",
+      "id": "portal_overviewpage_overviewpage",
+      "community": 9,
+      "norm_label": "overviewpage()"
+    },
+    {
+      "label": "PortalContext.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_portalcontext_jsx",
+      "community": 9,
+      "norm_label": "portalcontext.jsx"
+    },
+    {
+      "label": "PortalContext",
+      "file_type": "code",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L3",
+      "id": "portal_portalcontext_portalcontext",
+      "community": 9,
+      "norm_label": "portalcontext"
+    },
+    {
+      "label": "PortalProvider()",
+      "file_type": "code",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L5",
+      "id": "portal_portalcontext_portalprovider",
+      "community": 9,
+      "norm_label": "portalprovider()"
+    },
+    {
+      "label": "usePortal()",
+      "file_type": "code",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L32",
+      "id": "portal_portalcontext_useportal",
+      "community": 9,
+      "norm_label": "useportal()"
+    },
+    {
+      "label": "PortalDashboardContent.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_portaldashboardcontent_jsx",
+      "community": 9,
+      "norm_label": "portaldashboardcontent.jsx"
+    },
+    {
+      "label": "PortalDashboardContent()",
+      "file_type": "code",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L12",
+      "id": "portal_portaldashboardcontent_portaldashboardcontent",
+      "community": 9,
+      "norm_label": "portaldashboardcontent()"
+    },
+    {
+      "label": "portalData.js",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L1",
+      "id": "src_components_portal_portaldata_js",
+      "community": 9,
+      "norm_label": "portaldata.js"
+    },
+    {
+      "label": "project",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L1",
+      "id": "portal_portaldata_project",
+      "community": 9,
+      "norm_label": "project"
+    },
+    {
+      "label": "teamMembers",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L21",
+      "id": "portal_portaldata_teammembers",
+      "community": 9,
+      "norm_label": "teammembers"
+    },
+    {
+      "label": "milestones",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L78",
+      "id": "portal_portaldata_milestones",
+      "community": 9,
+      "norm_label": "milestones"
+    },
+    {
+      "label": "notifications",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L121",
+      "id": "portal_portaldata_notifications",
+      "community": 9,
+      "norm_label": "notifications"
+    },
+    {
+      "label": "invoices",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L164",
+      "id": "portal_portaldata_invoices",
+      "community": 9,
+      "norm_label": "invoices"
+    },
+    {
+      "label": "paymentTimeline",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L202",
+      "id": "portal_portaldata_paymenttimeline",
+      "community": 9,
+      "norm_label": "paymenttimeline"
+    },
+    {
+      "label": "assetFiles",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L229",
+      "id": "portal_portaldata_assetfiles",
+      "community": 9,
+      "norm_label": "assetfiles"
+    },
+    {
+      "label": "folders",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L296",
+      "id": "portal_portaldata_folders",
+      "community": 9,
+      "norm_label": "folders"
+    },
+    {
+      "label": "channels",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L304",
+      "id": "portal_portaldata_channels",
+      "community": 9,
+      "norm_label": "channels"
+    },
+    {
+      "label": "messages",
+      "file_type": "code",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L310",
+      "id": "portal_portaldata_messages",
+      "community": 9,
+      "norm_label": "messages"
+    },
+    {
+      "label": "RequestModal.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_requestmodal_jsx",
+      "community": 9,
+      "norm_label": "requestmodal.jsx"
+    },
+    {
+      "label": "priorities",
+      "file_type": "code",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L7",
+      "id": "portal_requestmodal_priorities",
+      "community": 9,
+      "norm_label": "priorities"
+    },
+    {
+      "label": "requestTypes",
+      "file_type": "code",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L9",
+      "id": "portal_requestmodal_requesttypes",
+      "community": 9,
+      "norm_label": "requesttypes"
+    },
+    {
+      "label": "RequestModal()",
+      "file_type": "code",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L18",
+      "id": "portal_requestmodal_requestmodal",
+      "community": 9,
+      "norm_label": "requestmodal()"
+    },
+    {
+      "label": "SettingsPage.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/SettingsPage.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_settingspage_jsx",
+      "community": 9,
+      "norm_label": "settingspage.jsx"
+    },
+    {
+      "label": "SettingsPage()",
+      "file_type": "code",
+      "source_file": "src/components/portal/SettingsPage.jsx",
+      "source_location": "L5",
+      "id": "portal_settingspage_settingspage",
+      "community": 9,
+      "norm_label": "settingspage()"
+    },
+    {
+      "label": "Sidebar.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_sidebar_jsx",
+      "community": 9,
+      "norm_label": "sidebar.jsx"
+    },
+    {
+      "label": "navItems",
+      "file_type": "code",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L14",
+      "id": "portal_sidebar_navitems",
+      "community": 9,
+      "norm_label": "navitems"
+    },
+    {
+      "label": "containerVariants",
+      "file_type": "code",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L22",
+      "id": "portal_sidebar_containervariants",
+      "community": 9,
+      "norm_label": "containervariants"
+    },
+    {
+      "label": "itemVariants",
+      "file_type": "code",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L29",
+      "id": "portal_sidebar_itemvariants",
+      "community": 9,
+      "norm_label": "itemvariants"
+    },
+    {
+      "label": "SidebarContent()",
+      "file_type": "code",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L34",
+      "id": "portal_sidebar_sidebarcontent",
+      "community": 9,
+      "norm_label": "sidebarcontent()"
+    },
+    {
+      "label": "Sidebar()",
+      "file_type": "code",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L167",
+      "id": "portal_sidebar_sidebar",
+      "community": 9,
+      "norm_label": "sidebar()"
+    },
+    {
+      "label": "TopNavbar.jsx",
+      "file_type": "code",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L1",
+      "id": "src_components_portal_topnavbar_jsx",
+      "community": 9,
+      "norm_label": "topnavbar.jsx"
+    },
+    {
+      "label": "pageLabels",
+      "file_type": "code",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L8",
+      "id": "portal_topnavbar_pagelabels",
+      "community": 9,
+      "norm_label": "pagelabels"
+    },
+    {
+      "label": "TopNavbar()",
+      "file_type": "code",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L17",
+      "id": "portal_topnavbar_topnavbar",
+      "community": 9,
+      "norm_label": "topnavbar()"
     },
     {
       "label": "About.jsx",
@@ -1575,7 +3645,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L1",
       "id": "src_components_sections_techstack_jsx",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack.jsx"
     },
     {
@@ -1584,7 +3654,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L6",
       "id": "sections_techstack_alltech",
-      "community": 9,
+      "community": 4,
       "norm_label": "alltech"
     },
     {
@@ -1593,7 +3663,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L11",
       "id": "sections_techstack_row1",
-      "community": 9,
+      "community": 4,
       "norm_label": "row1"
     },
     {
@@ -1602,7 +3672,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L12",
       "id": "sections_techstack_row2",
-      "community": 9,
+      "community": 4,
       "norm_label": "row2"
     },
     {
@@ -1611,7 +3681,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L13",
       "id": "sections_techstack_row3",
-      "community": 9,
+      "community": 4,
       "norm_label": "row3"
     },
     {
@@ -1620,7 +3690,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L15",
       "id": "sections_techstack_marqueerow",
-      "community": 9,
+      "community": 4,
       "norm_label": "marqueerow()"
     },
     {
@@ -1629,7 +3699,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L43",
       "id": "sections_techstack_techstack",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack()"
     },
     {
@@ -1836,7 +3906,7 @@
       "source_file": "src/components/ui/CookieBanner.jsx",
       "source_location": "L1",
       "id": "src_components_ui_cookiebanner_jsx",
-      "community": 0,
+      "community": 41,
       "norm_label": "cookiebanner.jsx"
     },
     {
@@ -1845,7 +3915,7 @@
       "source_file": "src/components/ui/CookieBanner.jsx",
       "source_location": "L5",
       "id": "ui_cookiebanner_cookiebanner",
-      "community": 0,
+      "community": 41,
       "norm_label": "cookiebanner()"
     },
     {
@@ -1962,7 +4032,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L1",
       "id": "src_components_ui_novawidget_jsx",
-      "community": 43,
+      "community": 0,
       "norm_label": "novawidget.jsx"
     },
     {
@@ -1971,7 +4041,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L5",
       "id": "ui_novawidget_novawidget",
-      "community": 43,
+      "community": 0,
       "norm_label": "novawidget()"
     },
     {
@@ -2079,7 +4149,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 45,
+      "community": 0,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -2088,7 +4158,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 45,
+      "community": 0,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -2097,7 +4167,7 @@
       "source_file": "src/constants/docs.js",
       "source_location": "L1",
       "id": "src_constants_docs_js",
-      "community": 11,
+      "community": 6,
       "norm_label": "docs.js"
     },
     {
@@ -2106,7 +4176,7 @@
       "source_file": "src/constants/docs.js",
       "source_location": "L1",
       "id": "constants_docs_docsdata",
-      "community": 11,
+      "community": 6,
       "norm_label": "docsdata"
     },
     {
@@ -2169,7 +4239,7 @@
       "source_file": "src/constants/services.js",
       "source_location": "L1",
       "id": "src_constants_services_js",
-      "community": 3,
+      "community": 2,
       "norm_label": "services.js"
     },
     {
@@ -2178,7 +4248,7 @@
       "source_file": "src/constants/services.js",
       "source_location": "L1",
       "id": "constants_services_services",
-      "community": 3,
+      "community": 2,
       "norm_label": "services"
     },
     {
@@ -2205,7 +4275,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "src_constants_techstack_js",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack.js"
     },
     {
@@ -2214,7 +4284,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "constants_techstack_techstack",
-      "community": 9,
+      "community": 4,
       "norm_label": "techstack"
     },
     {
@@ -2446,142 +4516,16 @@
       "label": "MOCK_DATA",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L17",
+      "source_location": "L20",
       "id": "pages_clientportal_mock_data",
       "community": 7,
       "norm_label": "mock_data"
     },
     {
-      "label": "LivePulseFeed()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L341",
-      "id": "pages_clientportal_livepulsefeed",
-      "community": 7,
-      "norm_label": "livepulsefeed()"
-    },
-    {
-      "label": "InteractiveInvoice()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L413",
-      "id": "pages_clientportal_interactiveinvoice",
-      "community": 7,
-      "norm_label": "interactiveinvoice()"
-    },
-    {
-      "label": "AIConcierge()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L548",
-      "id": "pages_clientportal_aiconcierge",
-      "community": 7,
-      "norm_label": "aiconcierge()"
-    },
-    {
-      "label": "LegacyOverviewTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L802",
-      "id": "pages_clientportal_legacyoverviewtab",
-      "community": 7,
-      "norm_label": "legacyoverviewtab()"
-    },
-    {
-      "label": "OverviewTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L910",
-      "id": "pages_clientportal_overviewtab",
-      "community": 7,
-      "norm_label": "overviewtab()"
-    },
-    {
-      "label": "ProjectsTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L1073",
-      "id": "pages_clientportal_projectstab",
-      "community": 7,
-      "norm_label": "projectstab()"
-    },
-    {
-      "label": "InvoicesTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L1176",
-      "id": "pages_clientportal_invoicestab",
-      "community": 7,
-      "norm_label": "invoicestab()"
-    },
-    {
-      "label": "MessagesTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L1364",
-      "id": "pages_clientportal_messagestab",
-      "community": 7,
-      "norm_label": "messagestab()"
-    },
-    {
-      "label": "DeliverablesTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L1614",
-      "id": "pages_clientportal_deliverablestab",
-      "community": 7,
-      "norm_label": "deliverablestab()"
-    },
-    {
-      "label": "SettingsTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L1767",
-      "id": "pages_clientportal_settingstab",
-      "community": 7,
-      "norm_label": "settingstab()"
-    },
-    {
-      "label": "TelemetryTab()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L1862",
-      "id": "pages_clientportal_telemetrytab",
-      "community": 7,
-      "norm_label": "telemetrytab()"
-    },
-    {
-      "label": "portalNavItems",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L2078",
-      "id": "pages_clientportal_portalnavitems",
-      "community": 7,
-      "norm_label": "portalnavitems"
-    },
-    {
-      "label": "PortalBackdrop()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L2088",
-      "id": "pages_clientportal_portalbackdrop",
-      "community": 7,
-      "norm_label": "portalbackdrop()"
-    },
-    {
-      "label": "PortalSidebar()",
-      "file_type": "code",
-      "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L2113",
-      "id": "pages_clientportal_portalsidebar",
-      "community": 7,
-      "norm_label": "portalsidebar()"
-    },
-    {
       "label": "ClientPortal()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L2202",
+      "source_location": "L346",
       "id": "pages_clientportal_clientportal",
       "community": 7,
       "norm_label": "clientportal()"
@@ -2682,7 +4626,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 6,
+      "community": 54,
       "norm_label": "notfound.jsx"
     },
     {
@@ -2691,7 +4635,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 6,
+      "community": 54,
       "norm_label": "particlefield()"
     },
     {
@@ -2700,7 +4644,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 6,
+      "community": 54,
       "norm_label": "notfound()"
     },
     {
@@ -2709,7 +4653,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L1",
       "id": "src_pages_onboarding_jsx",
-      "community": 11,
+      "community": 6,
       "norm_label": "onboarding.jsx"
     },
     {
@@ -2718,7 +4662,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L13",
       "id": "pages_onboarding_steps",
-      "community": 11,
+      "community": 6,
       "norm_label": "steps"
     },
     {
@@ -2727,7 +4671,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L72",
       "id": "pages_onboarding_faqs",
-      "community": 11,
+      "community": 6,
       "norm_label": "faqs"
     },
     {
@@ -2736,7 +4680,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L91",
       "id": "pages_onboarding_onboarding",
-      "community": 11,
+      "community": 6,
       "norm_label": "onboarding()"
     },
     {
@@ -2916,7 +4860,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 40,
+      "community": 0,
       "norm_label": "services.jsx"
     },
     {
@@ -2925,7 +4869,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 40,
+      "community": 0,
       "norm_label": "services()"
     },
     {
@@ -3107,6 +5051,132 @@
       "id": "lib_supabase_supabase",
       "community": 7,
       "norm_label": "supabase"
+    },
+    {
+      "label": "LivePulseFeed()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L341",
+      "community": 7,
+      "norm_label": "livepulsefeed()",
+      "id": "pages_clientportal_livepulsefeed"
+    },
+    {
+      "label": "InteractiveInvoice()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L413",
+      "community": 7,
+      "norm_label": "interactiveinvoice()",
+      "id": "pages_clientportal_interactiveinvoice"
+    },
+    {
+      "label": "AIConcierge()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L548",
+      "community": 7,
+      "norm_label": "aiconcierge()",
+      "id": "pages_clientportal_aiconcierge"
+    },
+    {
+      "label": "LegacyOverviewTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L802",
+      "community": 7,
+      "norm_label": "legacyoverviewtab()",
+      "id": "pages_clientportal_legacyoverviewtab"
+    },
+    {
+      "label": "OverviewTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L910",
+      "community": 7,
+      "norm_label": "overviewtab()",
+      "id": "pages_clientportal_overviewtab"
+    },
+    {
+      "label": "ProjectsTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1142",
+      "community": 7,
+      "norm_label": "projectstab()",
+      "id": "pages_clientportal_projectstab"
+    },
+    {
+      "label": "InvoicesTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1245",
+      "community": 7,
+      "norm_label": "invoicestab()",
+      "id": "pages_clientportal_invoicestab"
+    },
+    {
+      "label": "MessagesTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1433",
+      "community": 7,
+      "norm_label": "messagestab()",
+      "id": "pages_clientportal_messagestab"
+    },
+    {
+      "label": "DeliverablesTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1683",
+      "community": 7,
+      "norm_label": "deliverablestab()",
+      "id": "pages_clientportal_deliverablestab"
+    },
+    {
+      "label": "SettingsTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1836",
+      "community": 7,
+      "norm_label": "settingstab()",
+      "id": "pages_clientportal_settingstab"
+    },
+    {
+      "label": "TelemetryTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1931",
+      "community": 7,
+      "norm_label": "telemetrytab()",
+      "id": "pages_clientportal_telemetrytab"
+    },
+    {
+      "label": "portalNavItems",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L2147",
+      "community": 7,
+      "norm_label": "portalnavitems",
+      "id": "pages_clientportal_portalnavitems"
+    },
+    {
+      "label": "PortalBackdrop()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L2157",
+      "community": 7,
+      "norm_label": "portalbackdrop()",
+      "id": "pages_clientportal_portalbackdrop"
+    },
+    {
+      "label": "PortalSidebar()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L2182",
+      "community": 7,
+      "norm_label": "portalsidebar()",
+      "id": "pages_clientportal_portalsidebar"
     },
     {
       "label": "PricingCard()",
@@ -4117,6 +6187,2414 @@
       "confidence_score": 1.0,
       "source": "api_send_agreement_js",
       "target": "api_send_agreement_handler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_aliases",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_iconlibrary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_rsc",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_style",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_tailwind",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_json",
+      "target": "nexoraa_client_portal_components_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_tailwind",
+      "target": "nexoraa_client_portal_components_tailwind_basecolor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_tailwind",
+      "target": "nexoraa_client_portal_components_tailwind_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_tailwind",
+      "target": "nexoraa_client_portal_components_tailwind_css",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_tailwind",
+      "target": "nexoraa_client_portal_components_tailwind_cssvariables",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_tailwind",
+      "target": "nexoraa_client_portal_components_tailwind_prefix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_aliases",
+      "target": "nexoraa_client_portal_components_aliases_components",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_aliases",
+      "target": "nexoraa_client_portal_components_aliases_hooks",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_aliases",
+      "target": "nexoraa_client_portal_components_aliases_lib",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_aliases",
+      "target": "nexoraa_client_portal_components_aliases_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_aliases",
+      "target": "nexoraa_client_portal_components_aliases_utils",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/next.config.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_next_config_mjs",
+      "target": "nexoraa_client_portal_next_config_nextconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_json",
+      "target": "nexoraa_client_portal_package_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_json",
+      "target": "nexoraa_client_portal_package_devdependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_json",
+      "target": "nexoraa_client_portal_package_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_json",
+      "target": "nexoraa_client_portal_package_private",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_json",
+      "target": "nexoraa_client_portal_package_scripts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_json",
+      "target": "nexoraa_client_portal_package_version",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_scripts",
+      "target": "nexoraa_client_portal_package_scripts_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_scripts",
+      "target": "nexoraa_client_portal_package_scripts_dev",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_scripts",
+      "target": "nexoraa_client_portal_package_scripts_lint",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_scripts",
+      "target": "nexoraa_client_portal_package_scripts_start",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_base_ui_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_class_variance_authority",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_clsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_framer_motion",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_lucide_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_next",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_recharts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_shadcn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_sonner",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_tailwind_merge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_tw_animate_css",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_dependencies",
+      "target": "nexoraa_client_portal_package_dependencies_vercel_analytics",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_tailwindcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_tailwindcss_postcss",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_types_node",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_types_react",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_types_react_dom",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/package.json",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_package_devdependencies",
+      "target": "nexoraa_client_portal_package_devdependencies_typescript",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/postcss.config.mjs",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_postcss_config_mjs",
+      "target": "nexoraa_client_portal_postcss_config_config",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_json",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_json",
+      "target": "nexoraa_client_portal_tsconfig_exclude",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_json",
+      "target": "nexoraa_client_portal_tsconfig_include",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_allowjs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_esmoduleinterop",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_incremental",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_isolatedmodules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_lib",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_module",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_moduleresolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_noemit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_plugins",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_resolvejsonmodule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_skiplibcheck",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_strict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions",
+      "target": "nexoraa_client_portal_tsconfig_compileroptions_target",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/tsconfig.json",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_tsconfig_compileroptions_paths",
+      "target": "nexoraa_client_portal_tsconfig_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_layout_tsx",
+      "target": "app_layout_inter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_layout_tsx",
+      "target": "app_layout_jetbrainsmono",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_layout_tsx",
+      "target": "app_layout_metadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_layout_tsx",
+      "target": "app_layout_rootlayout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/layout.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_layout_tsx",
+      "target": "app_layout_sora",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "app_page_home",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "app_page_pagerouter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "app_page_pagevariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "app_page_portal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "components_command_palette_commandpalette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "components_request_modal_requestmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "components_sidebar_sidebar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "components_top_navbar_topnavbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "lib_portal_context_portalprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_command_palette_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_request_modal_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_sidebar_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_components_top_navbar_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "nexoraa_client_portal_lib_portal_context_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "pages_asset_vault_page_assetvaultpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "pages_billing_page_billingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "pages_messages_page_messagespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "pages_overview_page_overviewpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_app_page_tsx",
+      "target": "pages_settings_page_settingspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/app/page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "app_page_pagerouter",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_animated_counter_tsx",
+      "target": "components_animated_counter_animatedcounter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_animated_counter_tsx",
+      "target": "components_animated_counter_animatedcounterprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "nexoraa_client_portal_components_animated_counter_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "nexoraa_client_portal_components_animated_counter_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "components_animated_counter_animatedcounter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "components_animated_counter_animatedcounter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "components_command_palette_allitems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "components_command_palette_commandpalette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "components_command_palette_recentitems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "nexoraa_client_portal_lib_portal_context_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/command-palette.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_command_palette_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "components_notification_panel_colormap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "components_notification_panel_iconmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "components_notification_panel_notificationpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "lib_data_notifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "nexoraa_client_portal_lib_data_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "nexoraa_client_portal_lib_portal_context_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/notification-panel.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_notification_panel_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_top_navbar_tsx",
+      "target": "nexoraa_client_portal_components_notification_panel_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_top_navbar_tsx",
+      "target": "components_notification_panel_notificationpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_request_modal_tsx",
+      "target": "components_request_modal_priorities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_request_modal_tsx",
+      "target": "components_request_modal_requestmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_request_modal_tsx",
+      "target": "components_request_modal_requesttypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_request_modal_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/request-modal.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_request_modal_tsx",
+      "target": "nexoraa_client_portal_lib_portal_context_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "components_sidebar_containervariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "components_sidebar_itemvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "components_sidebar_navitems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L135",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "components_sidebar_sidebar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "components_sidebar_sidebarcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "nexoraa_client_portal_lib_portal_context_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/sidebar.tsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_sidebar_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_top_navbar_tsx",
+      "target": "components_top_navbar_pagelabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_top_navbar_tsx",
+      "target": "components_top_navbar_topnavbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_top_navbar_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/top-navbar.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_top_navbar_tsx",
+      "target": "nexoraa_client_portal_lib_portal_context_tsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "lib_data_assetfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "lib_data_folders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "nexoraa_client_portal_lib_data_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L184",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_assetvaultpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L67",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_downloadbutton",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_fadeup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_filecard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L162",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_filerow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_filetype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_filterbytype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_getfileicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_asset_vault_page_tsx",
+      "target": "pages_asset_vault_page_stagger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "pages_asset_vault_page_filecard",
+      "target": "pages_asset_vault_page_getfileicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/asset-vault-page.tsx",
+      "source_location": "L163",
+      "weight": 1.0,
+      "source": "pages_asset_vault_page_filerow",
+      "target": "pages_asset_vault_page_getfileicon",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "lib_data_invoices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "lib_data_paymenttimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "lib_data_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "nexoraa_client_portal_lib_data_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L56",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "pages_billing_page_billingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "pages_billing_page_fadeup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "pages_billing_page_fmt",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "pages_billing_page_fmtfull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "pages_billing_page_stagger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_billing_page_tsx",
+      "target": "pages_billing_page_statusconfig",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "src/pages/InvoiceSystem.jsx",
+      "source_location": "L662",
+      "weight": 1.0,
+      "source": "pages_invoicesystem_invoicesystem",
+      "target": "pages_billing_page_fmt"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "pages_billing_page_billingpage",
+      "target": "pages_billing_page_fmtfull",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "lib_data_channels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "lib_data_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "lib_data_messages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "nexoraa_client_portal_lib_data_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L25",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "pages_messages_page_fadeup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "pages_messages_page_messagebubble",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "pages_messages_page_messagespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "pages_messages_page_stagger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_messages_page_tsx",
+      "target": "pages_messages_page_typingindicator",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "lib_data_milestones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "lib_data_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "lib_data_teammembers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "nexoraa_client_portal_lib_data_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_domainitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_fadeup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L294",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_milestonetimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L377",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_overviewpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_projectherocard",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_stagger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L160",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_statsrow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L133",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_statusbadge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
+      "source_location": "L239",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_overview_page_tsx",
+      "target": "pages_overview_page_teamsection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_appearancetab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L375",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_dangerzonetab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L125",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_formfield",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_notificationstab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_profiletab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L198",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_securitytab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L450",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_settingspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_tab",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L442",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_tabcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_tabs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/pages/settings-page.tsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_pages_settings_page_tsx",
+      "target": "pages_settings_page_toggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_ui_button_tsx",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_ui_button_tsx",
+      "target": "nexoraa_client_portal_lib_utils_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_ui_button_tsx",
+      "target": "ui_button_button",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_components_ui_button_tsx",
+      "target": "ui_button_buttonvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/components/ui/button.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "ui_button_button",
+      "target": "ui_button_buttonvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_assetfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_channels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_folders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_invoices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L423",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_message",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L310",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_messages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_milestones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_notifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_paymenttimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/data.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_data_ts",
+      "target": "lib_data_teammembers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_portal_context_tsx",
+      "target": "lib_portal_context_page",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_portal_context_tsx",
+      "target": "lib_portal_context_portalcontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_portal_context_tsx",
+      "target": "lib_portal_context_portalcontexttype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_portal_context_tsx",
+      "target": "lib_portal_context_portalprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/portal-context.tsx",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_portal_context_tsx",
+      "target": "lib_portal_context_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "nexoraa-client-portal/lib/utils.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "nexoraa_client_portal_lib_utils_ts",
+      "target": "lib_utils_cn",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -5136,6 +9614,782 @@
       "confidence_score": 1.0,
       "source": "src_components_layout_sectiondivider_jsx",
       "target": "layout_sectiondivider_sectiondivider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/AnimatedCounter.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_portal_animatedcounter_jsx",
+      "target": "portal_animatedcounter_animatedcounter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/AssetVaultPage.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_assetvaultpage_jsx",
+      "target": "portal_assetvaultpage_assetvaultpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_assetvaultpage_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/BillingPage.jsx",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "src_components_portal_billingpage_jsx",
+      "target": "portal_billingpage_billingpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/BillingPage.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_billingpage_jsx",
+      "target": "portal_billingpage_interactiveinvoice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_billingpage_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "portal_commandpalette_allitems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "portal_commandpalette_commandpalette",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "portal_commandpalette_recentitems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "src_utils_cn_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/CommandPalette.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "src_components_portal_commandpalette_jsx",
+      "target": "utils_cn_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/MessagesPage.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_messagespage_jsx",
+      "target": "lib_supabase_supabase",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/MessagesPage.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_portal_messagespage_jsx",
+      "target": "portal_messagespage_messagespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/MessagesPage.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_messagespage_jsx",
+      "target": "src_lib_supabase_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_messagespage_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L24",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "portal_notificationpanel_colormap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "portal_notificationpanel_iconmap",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "portal_notificationpanel_notificationpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "portal_portaldata_notifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "src_components_portal_portaldata_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "src_utils_cn_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/NotificationPanel.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_portal_notificationpanel_jsx",
+      "target": "utils_cn_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_topnavbar_jsx",
+      "target": "src_components_portal_notificationpanel_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_topnavbar_jsx",
+      "target": "portal_notificationpanel_notificationpanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/OverviewPage.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_components_portal_overviewpage_jsx",
+      "target": "portal_overviewpage_livepulsefeed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/OverviewPage.jsx",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "src_components_portal_overviewpage_jsx",
+      "target": "portal_overviewpage_overviewpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_overviewpage_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_portal_portalcontext_jsx",
+      "target": "portal_portalcontext_portalcontext",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_portalcontext_jsx",
+      "target": "portal_portalcontext_portalprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalContext.jsx",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "src_components_portal_portalcontext_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_requestmodal_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_topnavbar_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "src_components_portal_portalcontext_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "portal_portalcontext_portalprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "portal_sidebar_sidebarcontent",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_requestmodal_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_topnavbar_jsx",
+      "target": "portal_portalcontext_useportal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "portal_portaldashboardcontent_portaldashboardcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_settingspage_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_sidebar_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/PortalDashboardContent.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldashboardcontent_jsx",
+      "target": "src_components_portal_topnavbar_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "src_components_portal_portaldashboardcontent_jsx",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_assetfiles",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L304",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_channels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L296",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_folders",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L164",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_invoices",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L310",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_messages",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_milestones",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_notifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L202",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_paymenttimeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_project",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/portalData.js",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "src_components_portal_portaldata_js",
+      "target": "portal_portaldata_teammembers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "src_components_portal_requestmodal_jsx",
+      "target": "portal_requestmodal_priorities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "source": "src_components_portal_requestmodal_jsx",
+      "target": "portal_requestmodal_requestmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/RequestModal.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "src_components_portal_requestmodal_jsx",
+      "target": "portal_requestmodal_requesttypes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/SettingsPage.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_components_portal_settingspage_jsx",
+      "target": "portal_settingspage_settingspage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "portal_sidebar_containervariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "portal_sidebar_itemvariants",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "portal_sidebar_navitems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L167",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "portal_sidebar_sidebar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "portal_sidebar_sidebarcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "src_utils_cn_js",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "src_components_portal_sidebar_jsx",
+      "target": "utils_cn_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/Sidebar.jsx",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "portal_sidebar_sidebarcontent",
+      "target": "utils_cn_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_components_portal_topnavbar_jsx",
+      "target": "portal_topnavbar_pagelabels",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/portal/TopNavbar.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_components_portal_topnavbar_jsx",
+      "target": "portal_topnavbar_topnavbar",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -7704,5 +12958,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "5746ee8eef471f919c2a7c1e8d77f7cd4fbce12b"
+  "built_at_commit": "28aad980115de026914388854bc5ac657a4cdf01"
 }
