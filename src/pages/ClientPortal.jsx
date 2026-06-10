@@ -2204,7 +2204,12 @@ export default function ClientPortal() {
   const reduceMotion = useReducedMotion();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
-  const [email, setEmail] = useState('');
+  const [rememberMe, setRememberMe] = useState(() => {
+    return localStorage.getItem('nexora_remember_me') !== 'false';
+  });
+  const [email, setEmail] = useState(() => {
+    return localStorage.getItem('nexora_remembered_email') || '';
+  });
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -2337,8 +2342,8 @@ export default function ClientPortal() {
     ];
     setFunFact(facts[Math.floor(Math.random() * facts.length)]);
 
-    // Check for saved session in localStorage
-    const savedSession = localStorage.getItem('nexora_client_session');
+    // Check for saved session in localStorage or sessionStorage
+    const savedSession = localStorage.getItem('nexora_client_session') || sessionStorage.getItem('nexora_client_session');
     let fetchPromise = Promise.resolve();
     if (savedSession) {
       try {
@@ -2349,6 +2354,7 @@ export default function ClientPortal() {
       } catch (err) {
         console.error('Failed to parse saved session', err);
         localStorage.removeItem('nexora_client_session');
+        sessionStorage.removeItem('nexora_client_session');
       }
     }
 
@@ -2458,12 +2464,23 @@ export default function ClientPortal() {
       setLoginStatus('Workspace ready!');
       await new Promise(r => setTimeout(r, 300));
 
-      localStorage.setItem('nexora_client_session', JSON.stringify({ 
+      const sessionData = { 
         id: authenticatedClient.id, 
         email: authenticatedClient.email, 
         client_name: authenticatedClient.client_name, 
         company_name: authenticatedClient.company_name 
-      }));
+      };
+
+      if (rememberMe) {
+        localStorage.setItem('nexora_client_session', JSON.stringify(sessionData));
+        localStorage.setItem('nexora_remembered_email', email);
+        localStorage.setItem('nexora_remember_me', 'true');
+      } else {
+        sessionStorage.setItem('nexora_client_session', JSON.stringify(sessionData));
+        localStorage.removeItem('nexora_client_session');
+        localStorage.removeItem('nexora_remembered_email');
+        localStorage.setItem('nexora_remember_me', 'false');
+      }
       setClientInfo(authenticatedClient);
       setIsAuthenticated(true);
       await fetchClientData(authenticatedClient.id);
@@ -2477,6 +2494,7 @@ export default function ClientPortal() {
 
   const handleSignOut = () => {
     localStorage.removeItem('nexora_client_session');
+    sessionStorage.removeItem('nexora_client_session');
     setIsAuthenticated(false);
     setClientInfo(null);
     setProjects([]);
@@ -2645,9 +2663,26 @@ export default function ClientPortal() {
             
             {/* Remember me & Forgot Password */}
             <div className="flex items-center justify-between text-sm pt-2">
-              <label className="flex items-center gap-3 cursor-pointer group">
-                <div className="w-[16px] h-[16px] bg-white/[0.05] border border-white/[0.1] rounded-[4px] flex items-center justify-center group-hover:bg-blue-500/20 group-hover:border-blue-500/50 transition-all">
-                  <svg className="w-3 h-3 text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
+              <label className="flex items-center gap-3 cursor-pointer group select-none">
+                <input 
+                  type="checkbox" 
+                  checked={rememberMe} 
+                  onChange={(e) => setRememberMe(e.target.checked)} 
+                  className="sr-only" 
+                />
+                <div className={`w-[16px] h-[16px] rounded-[4px] flex items-center justify-center transition-all duration-200 ${
+                  rememberMe 
+                    ? 'bg-blue-500/20 border border-blue-500/50 shadow-[0_0_8px_rgba(59,130,246,0.3)]' 
+                    : 'bg-white/[0.05] border border-white/[0.1] group-hover:bg-blue-500/10 group-hover:border-blue-500/30'
+                }`}>
+                  <svg 
+                    className={`w-3 h-3 text-blue-400 transition-all duration-200 ${rememberMe ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} 
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
                 <span className="text-gray-400 text-[13px] font-medium tracking-wide group-hover:text-gray-200 transition-colors">Remember me</span>
               </label>
