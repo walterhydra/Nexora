@@ -2212,6 +2212,7 @@ export default function ClientPortal() {
   const [funFact, setFunFact] = useState('');
   const [loginError, setLoginError] = useState('');
   const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
 
   // Database-backed state variables
   const [clientInfo, setClientInfo] = useState(null);
@@ -2390,12 +2391,20 @@ export default function ClientPortal() {
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoginError('');
+    setIsLoggingIn(true);
 
     // Check for Admin/Invoice system access
     if ((email === 'Nexoraa.works@gmail.com' || email === 'Nexoraa.Admin') && password === '220305@Nexoraa') {
+      // Brief loading animation before redirect
+      await new Promise(r => setTimeout(r, 1200));
+      setIsLoggingIn(false);
       navigate('/invoice-system');
       return;
     }
+
+    // Minimum loading time for professional feel
+    const loginStart = Date.now();
+    const MIN_LOADING_MS = 1500;
 
     let authenticatedClient = null;
     let loginErr = null;
@@ -2433,6 +2442,12 @@ export default function ClientPortal() {
       }
     }
 
+    // Ensure minimum loading time for a premium feel
+    const elapsed = Date.now() - loginStart;
+    if (elapsed < MIN_LOADING_MS) {
+      await new Promise(r => setTimeout(r, MIN_LOADING_MS - elapsed));
+    }
+
     if (authenticatedClient) {
       localStorage.setItem('nexora_client_session', JSON.stringify({ 
         id: authenticatedClient.id, 
@@ -2446,6 +2461,7 @@ export default function ClientPortal() {
     } else {
       setLoginError(loginErr || 'Invalid username or password. Access Denied.');
     }
+    setIsLoggingIn(false);
   };
 
   const handleSignOut = () => {
@@ -2631,10 +2647,32 @@ export default function ClientPortal() {
             <div className="pt-6 flex justify-center">
               <button 
                 type="submit" 
-                className="w-full relative overflow-hidden group bg-blue-500/10 border border-blue-400/20 text-blue-300 font-bold tracking-[0.15em] text-[13px] py-4 rounded-lg transition-all hover:bg-blue-500/20 hover:border-blue-400/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:text-white"
+                disabled={isLoggingIn}
+                className={`w-full relative overflow-hidden group border font-bold tracking-[0.15em] text-[13px] py-4 rounded-lg transition-all ${
+                  isLoggingIn 
+                    ? 'bg-blue-500/20 border-blue-400/40 text-blue-200 cursor-not-allowed shadow-[0_0_40px_rgba(59,130,246,0.25)]' 
+                    : 'bg-blue-500/10 border-blue-400/20 text-blue-300 hover:bg-blue-500/20 hover:border-blue-400/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:text-white'
+                }`}
               >
-                <span className="relative z-10">LOGIN</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                <span className="relative z-10 flex items-center justify-center gap-3">
+                  {isLoggingIn ? (
+                    <>
+                      <svg className="animate-spin h-4 w-4 text-blue-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      <span className="animate-pulse">AUTHENTICATING...</span>
+                    </>
+                  ) : (
+                    'LOGIN'
+                  )}
+                </span>
+                {!isLoggingIn && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/10 to-transparent -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+                )}
+                {isLoggingIn && (
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-blue-400/15 to-transparent animate-[shimmer_1s_infinite]" />
+                )}
               </button>
             </div>
           </form>
