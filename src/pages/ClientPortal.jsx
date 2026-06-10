@@ -2213,6 +2213,7 @@ export default function ClientPortal() {
   const [loginError, setLoginError] = useState('');
   const [showForgotPassword, setShowForgotPassword] = useState(false);
   const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [loginStatus, setLoginStatus] = useState('');
 
   // Database-backed state variables
   const [clientInfo, setClientInfo] = useState(null);
@@ -2392,19 +2393,24 @@ export default function ClientPortal() {
     e.preventDefault();
     setLoginError('');
     setIsLoggingIn(true);
+    setLoginStatus('Connecting to database...');
 
     // Check for Admin/Invoice system access
     if ((email === 'Nexoraa.works@gmail.com' || email === 'Nexoraa.Admin') && password === '220305@Nexoraa') {
-      // Brief loading animation before redirect
-      await new Promise(r => setTimeout(r, 1200));
+      await new Promise(r => setTimeout(r, 500));
+      setLoginStatus('Verifying credentials...');
+      await new Promise(r => setTimeout(r, 500));
+      setLoginStatus('Access granted. Redirecting...');
+      await new Promise(r => setTimeout(r, 400));
       setIsLoggingIn(false);
       navigate('/invoice-system');
       return;
     }
 
-    // Minimum loading time for professional feel
-    const loginStart = Date.now();
-    const MIN_LOADING_MS = 1500;
+    // Step 1: Connecting
+    await new Promise(r => setTimeout(r, 500));
+    setLoginStatus('Verifying credentials...');
+    await new Promise(r => setTimeout(r, 400));
 
     let authenticatedClient = null;
     let loginErr = null;
@@ -2442,13 +2448,16 @@ export default function ClientPortal() {
       }
     }
 
-    // Ensure minimum loading time for a premium feel
-    const elapsed = Date.now() - loginStart;
-    if (elapsed < MIN_LOADING_MS) {
-      await new Promise(r => setTimeout(r, MIN_LOADING_MS - elapsed));
-    }
-
     if (authenticatedClient) {
+      setLoginStatus('Authenticating session...');
+      await new Promise(r => setTimeout(r, 400));
+      setLoginStatus('Decrypting handshake...');
+      await new Promise(r => setTimeout(r, 450));
+      setLoginStatus('Fetching portal records...');
+      await new Promise(r => setTimeout(r, 450));
+      setLoginStatus('Workspace ready!');
+      await new Promise(r => setTimeout(r, 300));
+
       localStorage.setItem('nexora_client_session', JSON.stringify({ 
         id: authenticatedClient.id, 
         email: authenticatedClient.email, 
@@ -2459,6 +2468,8 @@ export default function ClientPortal() {
       setIsAuthenticated(true);
       await fetchClientData(authenticatedClient.id);
     } else {
+      setLoginStatus('Access denied.');
+      await new Promise(r => setTimeout(r, 600));
       setLoginError(loginErr || 'Invalid username or password. Access Denied.');
     }
     setIsLoggingIn(false);
@@ -2661,7 +2672,7 @@ export default function ClientPortal() {
                         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                       </svg>
-                      <span className="animate-pulse">AUTHENTICATING...</span>
+                      <span className="animate-pulse tracking-widest">{loginStatus.toUpperCase()}</span>
                     </>
                   ) : (
                     'LOGIN'
