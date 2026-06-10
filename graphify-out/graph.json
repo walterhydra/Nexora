@@ -229,10 +229,19 @@
       "norm_label": "@splinetool/runtime"
     },
     {
-      "label": "@tailwindcss/vite",
+      "label": "@supabase/supabase-js",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
+      "id": "nexora_package_dependencies_supabase_supabase_js",
+      "community": 1,
+      "norm_label": "@supabase/supabase-js"
+    },
+    {
+      "label": "@tailwindcss/vite",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L21",
       "id": "nexora_package_dependencies_tailwindcss_vite",
       "community": 1,
       "norm_label": "@tailwindcss/vite"
@@ -241,7 +250,7 @@
       "label": "@tsparticles/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L21",
+      "source_location": "L22",
       "id": "nexora_package_dependencies_tsparticles_react",
       "community": 1,
       "norm_label": "@tsparticles/react"
@@ -250,7 +259,7 @@
       "label": "@tsparticles/slim",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L22",
+      "source_location": "L23",
       "id": "nexora_package_dependencies_tsparticles_slim",
       "community": 1,
       "norm_label": "@tsparticles/slim"
@@ -259,7 +268,7 @@
       "label": "animejs",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L23",
+      "source_location": "L24",
       "id": "nexora_package_dependencies_animejs",
       "community": 1,
       "norm_label": "animejs"
@@ -268,7 +277,7 @@
       "label": "canvas-confetti",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L24",
+      "source_location": "L25",
       "id": "nexora_package_dependencies_canvas_confetti",
       "community": 1,
       "norm_label": "canvas-confetti"
@@ -277,7 +286,7 @@
       "label": "clsx",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L25",
+      "source_location": "L26",
       "id": "nexora_package_dependencies_clsx",
       "community": 1,
       "norm_label": "clsx"
@@ -286,7 +295,7 @@
       "label": "framer-motion",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L26",
+      "source_location": "L27",
       "id": "nexora_package_dependencies_framer_motion",
       "community": 1,
       "norm_label": "framer-motion"
@@ -295,7 +304,7 @@
       "label": "gsap",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L27",
+      "source_location": "L28",
       "id": "nexora_package_dependencies_gsap",
       "community": 1,
       "norm_label": "gsap"
@@ -304,7 +313,7 @@
       "label": "jwt-decode",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L28",
+      "source_location": "L29",
       "id": "nexora_package_dependencies_jwt_decode",
       "community": 1,
       "norm_label": "jwt-decode"
@@ -313,7 +322,7 @@
       "label": "lenis",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L29",
+      "source_location": "L30",
       "id": "nexora_package_dependencies_lenis",
       "community": 1,
       "norm_label": "lenis"
@@ -322,7 +331,7 @@
       "label": "lottie-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L30",
+      "source_location": "L31",
       "id": "nexora_package_dependencies_lottie_react",
       "community": 1,
       "norm_label": "lottie-react"
@@ -331,7 +340,7 @@
       "label": "lucide-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L31",
+      "source_location": "L32",
       "id": "nexora_package_dependencies_lucide_react",
       "community": 1,
       "norm_label": "lucide-react"
@@ -340,7 +349,7 @@
       "label": "maath",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "id": "nexora_package_dependencies_maath",
       "community": 1,
       "norm_label": "maath"
@@ -349,7 +358,7 @@
       "label": "nodemailer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "id": "nexora_package_dependencies_nodemailer",
       "community": 1,
       "norm_label": "nodemailer"
@@ -358,7 +367,7 @@
       "label": "pdf-parse",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "id": "nexora_package_dependencies_pdf_parse",
       "community": 1,
       "norm_label": "pdf-parse"
@@ -367,7 +376,7 @@
       "label": "react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "id": "nexora_package_dependencies_react",
       "community": 1,
       "norm_label": "react"
@@ -376,7 +385,7 @@
       "label": "react-countup",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "nexora_package_dependencies_react_countup",
       "community": 1,
       "norm_label": "react-countup"
@@ -385,7 +394,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "id": "nexora_package_dependencies_react_dom",
       "community": 1,
       "norm_label": "react-dom"
@@ -394,7 +403,7 @@
       "label": "react-helmet-async",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "id": "nexora_package_dependencies_react_helmet_async",
       "community": 1,
       "norm_label": "react-helmet-async"
@@ -403,7 +412,7 @@
       "label": "react-hot-toast",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "id": "nexora_package_dependencies_react_hot_toast",
       "community": 1,
       "norm_label": "react-hot-toast"
@@ -412,7 +421,7 @@
       "label": "react-icons",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "nexora_package_dependencies_react_icons",
       "community": 1,
       "norm_label": "react-icons"
@@ -421,7 +430,7 @@
       "label": "react-intersection-observer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L42",
       "id": "nexora_package_dependencies_react_intersection_observer",
       "community": 1,
       "norm_label": "react-intersection-observer"
@@ -430,7 +439,7 @@
       "label": "react-parallax-tilt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L43",
       "id": "nexora_package_dependencies_react_parallax_tilt",
       "community": 1,
       "norm_label": "react-parallax-tilt"
@@ -439,7 +448,7 @@
       "label": "react-router-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L43",
+      "source_location": "L44",
       "id": "nexora_package_dependencies_react_router_dom",
       "community": 1,
       "norm_label": "react-router-dom"
@@ -448,7 +457,7 @@
       "label": "react-tilt",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "nexora_package_dependencies_react_tilt",
       "community": 1,
       "norm_label": "react-tilt"
@@ -457,7 +466,7 @@
       "label": "swiper",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "id": "nexora_package_dependencies_swiper",
       "community": 1,
       "norm_label": "swiper"
@@ -466,7 +475,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L47",
       "id": "nexora_package_dependencies_tailwind_merge",
       "community": 1,
       "norm_label": "tailwind-merge"
@@ -475,7 +484,7 @@
       "label": "three",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "nexora_package_dependencies_three",
       "community": 1,
       "norm_label": "three"
@@ -484,7 +493,7 @@
       "label": "typed.js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L49",
       "id": "nexora_package_dependencies_typed_js",
       "community": 1,
       "norm_label": "typed.js"
@@ -493,7 +502,7 @@
       "label": "typewriter-effect",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L50",
       "id": "nexora_package_dependencies_typewriter_effect",
       "community": 1,
       "norm_label": "typewriter-effect"
@@ -502,7 +511,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L52",
       "id": "nexora_package_devdependencies",
       "community": 5,
       "norm_label": "devdependencies"
@@ -511,7 +520,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L52",
+      "source_location": "L53",
       "id": "nexora_package_devdependencies_eslint_js",
       "community": 5,
       "norm_label": "@eslint/js"
@@ -520,7 +529,7 @@
       "label": "@tailwindcss/forms",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L53",
+      "source_location": "L54",
       "id": "nexora_package_devdependencies_tailwindcss_forms",
       "community": 5,
       "norm_label": "@tailwindcss/forms"
@@ -529,7 +538,7 @@
       "label": "@tailwindcss/typography",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L54",
+      "source_location": "L55",
       "id": "nexora_package_devdependencies_tailwindcss_typography",
       "community": 5,
       "norm_label": "@tailwindcss/typography"
@@ -538,7 +547,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L55",
+      "source_location": "L56",
       "id": "nexora_package_devdependencies_types_react",
       "community": 5,
       "norm_label": "@types/react"
@@ -547,7 +556,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L56",
+      "source_location": "L57",
       "id": "nexora_package_devdependencies_types_react_dom",
       "community": 5,
       "norm_label": "@types/react-dom"
@@ -556,7 +565,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L57",
+      "source_location": "L58",
       "id": "nexora_package_devdependencies_vitejs_plugin_react",
       "community": 5,
       "norm_label": "@vitejs/plugin-react"
@@ -565,7 +574,7 @@
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L58",
+      "source_location": "L59",
       "id": "nexora_package_devdependencies_autoprefixer",
       "community": 5,
       "norm_label": "autoprefixer"
@@ -574,7 +583,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L59",
+      "source_location": "L60",
       "id": "nexora_package_devdependencies_eslint",
       "community": 5,
       "norm_label": "eslint"
@@ -583,7 +592,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L60",
+      "source_location": "L61",
       "id": "nexora_package_devdependencies_eslint_plugin_react_hooks",
       "community": 5,
       "norm_label": "eslint-plugin-react-hooks"
@@ -592,7 +601,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L61",
+      "source_location": "L62",
       "id": "nexora_package_devdependencies_eslint_plugin_react_refresh",
       "community": 5,
       "norm_label": "eslint-plugin-react-refresh"
@@ -601,7 +610,7 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L62",
+      "source_location": "L63",
       "id": "nexora_package_devdependencies_globals",
       "community": 5,
       "norm_label": "globals"
@@ -610,7 +619,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L63",
+      "source_location": "L64",
       "id": "nexora_package_devdependencies_postcss",
       "community": 5,
       "norm_label": "postcss"
@@ -619,7 +628,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L64",
+      "source_location": "L65",
       "id": "nexora_package_devdependencies_tailwindcss",
       "community": 5,
       "norm_label": "tailwindcss"
@@ -628,7 +637,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L65",
+      "source_location": "L66",
       "id": "nexora_package_devdependencies_vite",
       "community": 5,
       "norm_label": "vite"
@@ -1044,7 +1053,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 37,
+      "community": 38,
       "norm_label": "footer.jsx"
     },
     {
@@ -1053,7 +1062,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 37,
+      "community": 38,
       "norm_label": "footer()"
     },
     {
@@ -1372,19 +1381,10 @@
       "norm_label": "pricing.jsx"
     },
     {
-      "label": "PricingCard()",
-      "file_type": "code",
-      "source_file": "src/components/sections/Pricing.jsx",
-      "source_location": "L10",
-      "id": "sections_pricing_pricingcard",
-      "community": 2,
-      "norm_label": "pricingcard()"
-    },
-    {
       "label": "Pricing()",
       "file_type": "code",
       "source_file": "src/components/sections/Pricing.jsx",
-      "source_location": "L158",
+      "source_location": "L9",
       "id": "sections_pricing_pricing",
       "community": 2,
       "norm_label": "pricing()"
@@ -1458,7 +1458,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L1",
       "id": "src_components_sections_services_jsx",
-      "community": 3,
+      "community": 2,
       "norm_label": "services.jsx"
     },
     {
@@ -1467,7 +1467,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L8",
       "id": "sections_services_iconmap",
-      "community": 3,
+      "community": 2,
       "norm_label": "iconmap"
     },
     {
@@ -1476,7 +1476,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L12",
       "id": "sections_services_services",
-      "community": 3,
+      "community": 2,
       "norm_label": "services()"
     },
     {
@@ -1575,7 +1575,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L1",
       "id": "src_components_sections_techstack_jsx",
-      "community": 4,
+      "community": 9,
       "norm_label": "techstack.jsx"
     },
     {
@@ -1584,7 +1584,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L6",
       "id": "sections_techstack_alltech",
-      "community": 4,
+      "community": 9,
       "norm_label": "alltech"
     },
     {
@@ -1593,7 +1593,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L11",
       "id": "sections_techstack_row1",
-      "community": 4,
+      "community": 9,
       "norm_label": "row1"
     },
     {
@@ -1602,7 +1602,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L12",
       "id": "sections_techstack_row2",
-      "community": 4,
+      "community": 9,
       "norm_label": "row2"
     },
     {
@@ -1611,7 +1611,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L13",
       "id": "sections_techstack_row3",
-      "community": 4,
+      "community": 9,
       "norm_label": "row3"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L15",
       "id": "sections_techstack_marqueerow",
-      "community": 4,
+      "community": 9,
       "norm_label": "marqueerow()"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L43",
       "id": "sections_techstack_techstack",
-      "community": 4,
+      "community": 9,
       "norm_label": "techstack()"
     },
     {
@@ -1800,7 +1800,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 41,
+      "community": 42,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -1809,7 +1809,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L5",
       "id": "ui_backtotop_backtotop",
-      "community": 41,
+      "community": 42,
       "norm_label": "backtotop()"
     },
     {
@@ -1818,7 +1818,7 @@
       "source_file": "src/components/ui/ContextCursor.jsx",
       "source_location": "L1",
       "id": "src_components_ui_contextcursor_jsx",
-      "community": 9,
+      "community": 34,
       "norm_label": "contextcursor.jsx"
     },
     {
@@ -1827,7 +1827,7 @@
       "source_file": "src/components/ui/ContextCursor.jsx",
       "source_location": "L5",
       "id": "ui_contextcursor_contextcursor",
-      "community": 9,
+      "community": 34,
       "norm_label": "contextcursor()"
     },
     {
@@ -1962,7 +1962,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L1",
       "id": "src_components_ui_novawidget_jsx",
-      "community": 42,
+      "community": 43,
       "norm_label": "novawidget.jsx"
     },
     {
@@ -1971,7 +1971,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L5",
       "id": "ui_novawidget_novawidget",
-      "community": 42,
+      "community": 43,
       "norm_label": "novawidget()"
     },
     {
@@ -2034,7 +2034,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 43,
+      "community": 44,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -2043,7 +2043,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 43,
+      "community": 44,
       "norm_label": "scrollprogress()"
     },
     {
@@ -2079,7 +2079,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 44,
+      "community": 45,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -2088,7 +2088,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 44,
+      "community": 45,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -2205,7 +2205,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "src_constants_techstack_js",
-      "community": 4,
+      "community": 9,
       "norm_label": "techstack.js"
     },
     {
@@ -2214,7 +2214,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "constants_techstack_techstack",
-      "community": 4,
+      "community": 9,
       "norm_label": "techstack"
     },
     {
@@ -2241,7 +2241,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L1",
       "id": "src_context_cursorcontext_jsx",
-      "community": 9,
+      "community": 34,
       "norm_label": "cursorcontext.jsx"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L3",
       "id": "context_cursorcontext_cursorcontext",
-      "community": 9,
+      "community": 34,
       "norm_label": "cursorcontext"
     },
     {
@@ -2259,7 +2259,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L5",
       "id": "context_cursorcontext_cursorprovider",
-      "community": 9,
+      "community": 34,
       "norm_label": "cursorprovider()"
     },
     {
@@ -2268,7 +2268,7 @@
       "source_file": "src/context/CursorContext.jsx",
       "source_location": "L15",
       "id": "context_cursorcontext_usecursor",
-      "community": 9,
+      "community": 34,
       "norm_label": "usecursor()"
     },
     {
@@ -2362,12 +2362,30 @@
       "norm_label": "usemouseposition()"
     },
     {
+      "label": "supabase.js",
+      "file_type": "code",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L1",
+      "id": "src_lib_supabase_js",
+      "community": 7,
+      "norm_label": "supabase.js"
+    },
+    {
+      "label": "supabase",
+      "file_type": "code",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L6",
+      "id": "lib_supabase_supabase",
+      "community": 7,
+      "norm_label": "supabase"
+    },
+    {
       "label": "About.jsx",
       "file_type": "code",
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 38,
+      "community": 39,
       "norm_label": "about.jsx"
     },
     {
@@ -2376,7 +2394,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L4",
       "id": "pages_about_about",
-      "community": 38,
+      "community": 39,
       "norm_label": "about()"
     },
     {
@@ -2385,7 +2403,7 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L1",
       "id": "src_pages_agreement_jsx",
-      "community": 36,
+      "community": 37,
       "norm_label": "agreement.jsx"
     },
     {
@@ -2394,7 +2412,7 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L8",
       "id": "pages_agreement_purposeoptions",
-      "community": 36,
+      "community": 37,
       "norm_label": "purposeoptions"
     },
     {
@@ -2403,7 +2421,7 @@
       "source_file": "src/pages/Agreement.jsx",
       "source_location": "L18",
       "id": "pages_agreement_agreement",
-      "community": 36,
+      "community": 37,
       "norm_label": "agreement()"
     },
     {
@@ -2434,10 +2452,19 @@
       "norm_label": "clientportal.jsx"
     },
     {
+      "label": "MOCK_DATA",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L17",
+      "id": "pages_clientportal_mock_data",
+      "community": 7,
+      "norm_label": "mock_data"
+    },
+    {
       "label": "LivePulseFeed()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L12",
+      "source_location": "L341",
       "id": "pages_clientportal_livepulsefeed",
       "community": 7,
       "norm_label": "livepulsefeed()"
@@ -2446,7 +2473,7 @@
       "label": "InteractiveInvoice()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L84",
+      "source_location": "L413",
       "id": "pages_clientportal_interactiveinvoice",
       "community": 7,
       "norm_label": "interactiveinvoice()"
@@ -2455,16 +2482,25 @@
       "label": "AIConcierge()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L193",
+      "source_location": "L548",
       "id": "pages_clientportal_aiconcierge",
       "community": 7,
       "norm_label": "aiconcierge()"
     },
     {
+      "label": "LegacyOverviewTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L802",
+      "id": "pages_clientportal_legacyoverviewtab",
+      "community": 7,
+      "norm_label": "legacyoverviewtab()"
+    },
+    {
       "label": "OverviewTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L413",
+      "source_location": "L910",
       "id": "pages_clientportal_overviewtab",
       "community": 7,
       "norm_label": "overviewtab()"
@@ -2473,7 +2509,7 @@
       "label": "ProjectsTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L521",
+      "source_location": "L1073",
       "id": "pages_clientportal_projectstab",
       "community": 7,
       "norm_label": "projectstab()"
@@ -2482,7 +2518,7 @@
       "label": "InvoicesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L563",
+      "source_location": "L1176",
       "id": "pages_clientportal_invoicestab",
       "community": 7,
       "norm_label": "invoicestab()"
@@ -2491,7 +2527,7 @@
       "label": "MessagesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L612",
+      "source_location": "L1364",
       "id": "pages_clientportal_messagestab",
       "community": 7,
       "norm_label": "messagestab()"
@@ -2500,7 +2536,7 @@
       "label": "DeliverablesTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L677",
+      "source_location": "L1614",
       "id": "pages_clientportal_deliverablestab",
       "community": 7,
       "norm_label": "deliverablestab()"
@@ -2509,16 +2545,52 @@
       "label": "SettingsTab()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L758",
+      "source_location": "L1767",
       "id": "pages_clientportal_settingstab",
       "community": 7,
       "norm_label": "settingstab()"
     },
     {
+      "label": "TelemetryTab()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1862",
+      "id": "pages_clientportal_telemetrytab",
+      "community": 7,
+      "norm_label": "telemetrytab()"
+    },
+    {
+      "label": "portalNavItems",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L2078",
+      "id": "pages_clientportal_portalnavitems",
+      "community": 7,
+      "norm_label": "portalnavitems"
+    },
+    {
+      "label": "PortalBackdrop()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L2088",
+      "id": "pages_clientportal_portalbackdrop",
+      "community": 7,
+      "norm_label": "portalbackdrop()"
+    },
+    {
+      "label": "PortalSidebar()",
+      "file_type": "code",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L2113",
+      "id": "pages_clientportal_portalsidebar",
+      "community": 7,
+      "norm_label": "portalsidebar()"
+    },
+    {
       "label": "ClientPortal()",
       "file_type": "code",
       "source_file": "src/pages/ClientPortal.jsx",
-      "source_location": "L795",
+      "source_location": "L2202",
       "id": "pages_clientportal_clientportal",
       "community": 7,
       "norm_label": "clientportal()"
@@ -2565,7 +2637,7 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L1",
       "id": "src_pages_invoicesystem_jsx",
-      "community": 34,
+      "community": 36,
       "norm_label": "invoicesystem.jsx"
     },
     {
@@ -2574,7 +2646,7 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L4",
       "id": "pages_invoicesystem_predefined_services",
-      "community": 34,
+      "community": 36,
       "norm_label": "predefined_services"
     },
     {
@@ -2583,7 +2655,7 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L13",
       "id": "pages_invoicesystem_curr_sym",
-      "community": 34,
+      "community": 36,
       "norm_label": "curr_sym"
     },
     {
@@ -2592,7 +2664,7 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L17",
       "id": "pages_invoicesystem_default_settings",
-      "community": 34,
+      "community": 36,
       "norm_label": "default_settings"
     },
     {
@@ -2601,7 +2673,7 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L32",
       "id": "pages_invoicesystem_default_invoice_data",
-      "community": 34,
+      "community": 36,
       "norm_label": "default_invoice_data"
     },
     {
@@ -2610,7 +2682,7 @@
       "source_file": "src/pages/InvoiceSystem.jsx",
       "source_location": "L50",
       "id": "pages_invoicesystem_invoicesystem",
-      "community": 34,
+      "community": 36,
       "norm_label": "invoicesystem()"
     },
     {
@@ -2853,7 +2925,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 39,
+      "community": 40,
       "norm_label": "services.jsx"
     },
     {
@@ -2862,7 +2934,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 39,
+      "community": 40,
       "norm_label": "services()"
     },
     {
@@ -2871,7 +2943,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L1",
       "id": "src_pages_terms_jsx",
-      "community": 40,
+      "community": 41,
       "norm_label": "terms.jsx"
     },
     {
@@ -2880,7 +2952,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L4",
       "id": "pages_terms_terms",
-      "community": 40,
+      "community": 41,
       "norm_label": "terms()"
     },
     {
@@ -3037,6 +3109,15 @@
       "norm_label": "workflow: graphify"
     },
     {
+      "label": "PricingCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L10",
+      "community": 2,
+      "norm_label": "pricingcard()",
+      "id": "sections_pricing_pricingcard"
+    },
+    {
       "label": "LinkedinIcon()",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
@@ -3086,7 +3167,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 3,
+      "community": 2,
       "norm_label": "servicecard()",
       "id": "sections_services_servicecard"
     },
@@ -3095,7 +3176,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 3,
+      "community": 2,
       "norm_label": "bentoclasses",
       "id": "sections_services_bentoclasses"
     },
@@ -3104,7 +3185,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L10",
-      "community": 3,
+      "community": 2,
       "norm_label": "servicerow()",
       "id": "sections_services_servicerow"
     },
@@ -3676,6 +3757,16 @@
       "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
       "target": "nexora_package_dependencies_splinetool_runtime"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_supabase_supabase_js"
     },
     {
       "relation": "contains",
@@ -5390,9 +5481,9 @@
       "source_file": "src/components/sections/Pricing.jsx",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_pricing_jsx",
-      "target": "sections_pricing_pricingcard",
-      "confidence_score": 1.0
+      "target": "sections_pricing_pricingcard"
     },
     {
       "relation": "imports_from",
@@ -6839,6 +6930,38 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/lib/supabase.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_lib_supabase_js",
+      "target": "lib_supabase_supabase"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "src_lib_supabase_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "lib_supabase_supabase"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/pages/About.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -7000,6 +7123,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L478",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_legacyoverviewtab"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L12",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7030,6 +7163,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_mock_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
       "source_location": "L779",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -7055,6 +7198,36 @@
       "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
       "target": "pages_clientportal_particlebackground"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1764",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_portalbackdrop"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1754",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_portalnavitems"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L1789",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_portalsidebar"
     },
     {
       "relation": "contains",
@@ -7095,6 +7268,16 @@
       "confidence_score": 1.0,
       "source": "src_pages_clientportal_jsx",
       "target": "pages_clientportal_spotlightcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/ClientPortal.jsx",
+      "source_location": "L796",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_clientportal_jsx",
+      "target": "pages_clientportal_telemetrytab"
     },
     {
       "relation": "contains",
@@ -7521,5 +7704,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "1e93a794398980f1f63320d6737bf42335a0168e"
+  "built_at_commit": "80fb4145c9bc837412356870ec87b94aa1c3fc40"
 }

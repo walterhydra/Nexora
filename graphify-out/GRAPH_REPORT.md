@@ -1,16 +1,16 @@
-# Graph Report - Nexora  (2026-06-08)
+# Graph Report - Nexora  (2026-06-10)
 
 ## Corpus Check
-- 96 files · ~2,067,252 words
+- 98 files · ~2,074,191 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 358 nodes · 414 edges · 45 communities (36 shown, 9 thin omitted)
+- 367 nodes · 424 edges · 46 communities (38 shown, 8 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `1e93a794`
+- Built from commit: `80fb4145`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -40,6 +40,7 @@
 - [[_COMMUNITY_Community 34|Community 34]]
 - [[_COMMUNITY_Community 35|Community 35]]
 - [[_COMMUNITY_Community 36|Community 36]]
+- [[_COMMUNITY_Community 37|Community 37]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `cn()` - 10 edges
@@ -65,23 +66,23 @@
 - `CustomCursor()` --calls--> `useMousePosition()`  [EXTRACTED]
   src/components/ui/CustomCursor.jsx → src/hooks/useMousePosition.js
 
-## Communities (45 total, 9 thin omitted)
+## Communities (46 total, 8 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
-Nodes (38): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+30 more)
+Nodes (39): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+31 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.09
-Nodes (12): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, faqs (+4 more)
+Cohesion: 0.07
+Nodes (14): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, faqs (+6 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.09
-Nodes (9): services, getServiceComparison(), iconMap, ServiceDetails(), bentoClasses, iconMap, destroyScroll(), getScroll() (+1 more)
+Cohesion: 0.11
+Nodes (7): services, getServiceComparison(), iconMap, ServiceDetails(), destroyScroll(), getScroll(), initScroll()
 
 ### Community 4 - "Community 4"
-Cohesion: 0.06
-Nodes (11): techStack, steps, PulseCard, showcaseProjects, StatCard, Stats, allTech, row1 (+3 more)
+Cohesion: 0.08
+Nodes (6): steps, PulseCard, showcaseProjects, StatCard, Stats, BentoCard
 
 ### Community 5 - "Community 5"
 Cohesion: 0.08
@@ -91,13 +92,17 @@ Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-rea
 Cohesion: 0.11
 Nodes (7): useMagneticEffect(), useMousePosition(), Navbar(), CustomCursor(), GlowCard, MagneticButton(), cn()
 
+### Community 7 - "Community 7"
+Cohesion: 0.07
+Nodes (5): supabase, DEFAULT_PROJECT_DATA, LOG_POOL, MOCK_DATA, portalNavItems
+
 ### Community 8 - "Community 8"
 Cohesion: 0.15
 Nodes (7): team, darkBgColors, hexColors, memberIntroductions, memberNotes, panelColors, posterMap
 
 ### Community 9 - "Community 9"
-Cohesion: 0.47
-Nodes (4): CursorContext, CursorProvider(), useCursor(), ContextCursor()
+Cohesion: 0.25
+Nodes (5): techStack, allTech, row1, row2, row3
 
 ### Community 11 - "Community 11"
 Cohesion: 0.40
@@ -128,13 +133,17 @@ Cohesion: 0.47
 Nodes (4): ThemeContext, ThemeProvider(), useTheme(), ParticleField()
 
 ### Community 34 - "Community 34"
+Cohesion: 0.47
+Nodes (4): CursorContext, CursorProvider(), useCursor(), ContextCursor()
+
+### Community 36 - "Community 36"
 Cohesion: 0.33
 Nodes (4): CURR_SYM, DEFAULT_INVOICE_DATA, DEFAULT_SETTINGS, PREDEFINED_SERVICES
 
 ## Knowledge Gaps
-- **123 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+118 more)
+- **126 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+121 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **8 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -142,14 +151,14 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `dependencies` connect `Community 1` to `Community 5`?**
   _High betweenness centrality (0.025) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
-  _123 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _126 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 1` be split into smaller, more focused modules?**
-  _Cohesion score 0.05263157894736842 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.0855614973262032 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07179487179487179 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.08817204301075268 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.0625 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 5` be split into smaller, more focused modules?**
   _Cohesion score 0.08 - nodes in this community are weakly interconnected._

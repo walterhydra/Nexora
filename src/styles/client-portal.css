@@ -1,0 +1,92 @@
+.client-portal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(96, 165, 250, 0.35) rgba(255, 255, 255, 0.03);
+}
+
+.client-portal-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.client-portal-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.client-portal-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgba(96, 165, 250, 0.5), rgba(99, 102, 241, 0.35));
+  border-radius: 999px;
+}
+
+.portal-grid-mask {
+  mask-image: linear-gradient(to bottom, black 20%, transparent 92%);
+  -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 92%);
+}
+
+.portal-stage {
+  background:
+    radial-gradient(circle at 24% 0%, rgba(99, 102, 241, 0.08), transparent 28%),
+    radial-gradient(circle at 90% 42%, rgba(34, 211, 238, 0.045), transparent 24%),
+    #080914;
+}
+
+.portal-stage::before {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.14;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.28) 0.6px, transparent 0.6px);
+  background-size: 24px 24px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+  -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.portal-stage table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.portal-stage input,
+.portal-stage button {
+  font-family: inherit;
+}
+
+.portal-stage ::selection {
+  color: #080914;
+  background: #d8ff63;
+}
+
+.portal-page {
+  position: relative;
+}
+
+.portal-page h1,
+.portal-page h2,
+.portal-page h3 {
+  letter-spacing: -0.025em;
+}
+
+.portal-page > div:first-child {
+  position: relative;
+  z-index: 1;
+}
+
+.portal-page::before {
+  position: absolute;
+  top: 1rem;
+  right: 8%;
+  width: 12rem;
+  height: 12rem;
+  pointer-events: none;
+  content: "";
+  border: 1px solid rgba(216, 255, 99, 0.04);
+  border-radius: 999px;
+  box-shadow: 0 0 90px rgba(129, 140, 248, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portal-stage *,
+  .portal-stage *::before,
+  .portal-stage *::after {
+    scroll-behavior: auto !important;
+  }
+}

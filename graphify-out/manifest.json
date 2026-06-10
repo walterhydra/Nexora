@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\package.json": {
-    "mtime": 1780922787.2983346,
-    "ast_hash": "2f9c8330938f697e53b8ab8764d01014",
+    "mtime": 1781082923.3701694,
+    "ast_hash": "3832b442fa1708f3716bc642541b099f",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\tailwind.config.js": {
@@ -25,7 +25,7 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\App.jsx": {
-    "mtime": 1780934160.7244332,
+    "mtime": 1780982704.2306325,
     "ast_hash": "9afc2be33704520d95431f571b9708eb",
     "semantic_hash": ""
   },
@@ -145,8 +145,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\Pricing.jsx": {
-    "mtime": 1780938941.6432006,
-    "ast_hash": "a8db6fd77947119be6ca37e9236ebff0",
+    "mtime": 1780940245.2285328,
+    "ast_hash": "4ee4913e17fa1b20a6260cc9c26df756",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\Pulse.jsx": {
@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\ClientPortal.jsx": {
-    "mtime": 1780938481.1463993,
-    "ast_hash": "32806b5161792ed6f1bbe5afadc14faa",
+    "mtime": 1781086881.7466962,
+    "ast_hash": "5f2e31ed56c8ab1e79bbbd1d25261264",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Contact.jsx": {
@@ -947,6 +947,16 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\CaseStudyDetail.jsx": {
     "mtime": 1780934152.1318953,
     "ast_hash": "1a97c6d65faf99f106e0358c852dffaf",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\supabase-setup.sql": {
+    "mtime": 1781083917.2100823,
+    "ast_hash": "7c4f187b6415a1b263793976005b570f",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\lib\\supabase.js": {
+    "mtime": 1781083184.435636,
+    "ast_hash": "0f0d650b58a32e42853f7fe3ab7df7b1",
     "semantic_hash": ""
   }
 }
