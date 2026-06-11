@@ -57,9 +57,13 @@ export default function NovaWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const [flowState, setFlowState] = useState(() => 
-    sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init'
-  );
+  const [flowState, setFlowState] = useState(() => {
+    const isLocal = typeof window !== 'undefined' && 
+      (window.location.hostname === 'localhost' || 
+       window.location.hostname === '127.0.0.1' || 
+       window.location.hostname.startsWith('192.168.'));
+    return isLocal || sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init';
+  });
   const [userEmail, setUserEmail] = useState('');
   const [otpToken, setOtpToken] = useState('');
 
@@ -131,7 +135,7 @@ export default function NovaWidget() {
             content: flowState === 'completed'
               ? "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
               : "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore?",
-            isNew: flowState === 'completed' ? false : true
+            isNew: true
           }
         ]);
       }, 500);
