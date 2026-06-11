@@ -2425,87 +2425,6 @@
       "norm_label": "refactor.py"
     },
     {
-      "label": "test-brevo.js",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L1",
-      "id": "scratch_test_brevo_js",
-      "community": 38,
-      "norm_label": "test-brevo.js"
-    },
-    {
-      "label": "fs",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L1",
-      "id": "scratch_test_brevo_fs",
-      "community": 38,
-      "norm_label": "fs"
-    },
-    {
-      "label": "path",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L2",
-      "id": "scratch_test_brevo_path",
-      "community": 38,
-      "norm_label": "path"
-    },
-    {
-      "label": "envPath",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L5",
-      "id": "scratch_test_brevo_envpath",
-      "community": 38,
-      "norm_label": "envpath"
-    },
-    {
-      "label": "envContent",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L7",
-      "id": "scratch_test_brevo_envcontent",
-      "community": 38,
-      "norm_label": "envcontent"
-    },
-    {
-      "label": "parts",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L9",
-      "id": "scratch_test_brevo_parts",
-      "community": 38,
-      "norm_label": "parts"
-    },
-    {
-      "label": "key",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L11",
-      "id": "scratch_test_brevo_key",
-      "community": 38,
-      "norm_label": "key"
-    },
-    {
-      "label": "val",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L12",
-      "id": "scratch_test_brevo_val",
-      "community": 38,
-      "norm_label": "val"
-    },
-    {
-      "label": "runTest()",
-      "file_type": "code",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L30",
-      "id": "scratch_test_brevo_runtest",
-      "community": 38,
-      "norm_label": "runtest()"
-    },
-    {
       "label": "App.jsx",
       "file_type": "code",
       "source_file": "src/App.jsx",
@@ -2754,7 +2673,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 0,
+      "community": 64,
       "norm_label": "footer.jsx"
     },
     {
@@ -2763,7 +2682,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 0,
+      "community": 64,
       "norm_label": "footer()"
     },
     {
@@ -2772,7 +2691,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 0,
+      "community": 65,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -2781,7 +2700,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 0,
+      "community": 65,
       "norm_label": "loadingscreen()"
     },
     {
@@ -2790,7 +2709,7 @@
       "source_file": "src/components/layout/MarqueeStrip.jsx",
       "source_location": "L1",
       "id": "src_components_layout_marqueestrip_jsx",
-      "community": 2,
+      "community": 42,
       "norm_label": "marqueestrip.jsx"
     },
     {
@@ -2799,7 +2718,7 @@
       "source_file": "src/components/layout/MarqueeStrip.jsx",
       "source_location": "L4",
       "id": "layout_marqueestrip_marqueestrip",
-      "community": 2,
+      "community": 42,
       "norm_label": "marqueestrip()"
     },
     {
@@ -3411,7 +3330,7 @@
       "source_file": "src/components/sections/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_sections_faq_jsx",
-      "community": 2,
+      "community": 61,
       "norm_label": "faq.jsx"
     },
     {
@@ -3420,7 +3339,7 @@
       "source_file": "src/components/sections/FAQ.jsx",
       "source_location": "L7",
       "id": "sections_faq_faq",
-      "community": 2,
+      "community": 61,
       "norm_label": "faq()"
     },
     {
@@ -3546,7 +3465,7 @@
       "source_file": "src/components/sections/Pricing.jsx",
       "source_location": "L1",
       "id": "src_components_sections_pricing_jsx",
-      "community": 2,
+      "community": 54,
       "norm_label": "pricing.jsx"
     },
     {
@@ -3555,7 +3474,7 @@
       "source_file": "src/components/sections/Pricing.jsx",
       "source_location": "L9",
       "id": "sections_pricing_pricing",
-      "community": 2,
+      "community": 54,
       "norm_label": "pricing()"
     },
     {
@@ -3591,7 +3510,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_realtimework_jsx",
-      "community": 4,
+      "community": 62,
       "norm_label": "realtimework.jsx"
     },
     {
@@ -3600,7 +3519,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L4",
       "id": "sections_realtimework_videoplayer",
-      "community": 4,
+      "community": 62,
       "norm_label": "videoplayer()"
     },
     {
@@ -3609,7 +3528,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L35",
       "id": "sections_realtimework_showcaseprojects",
-      "community": 4,
+      "community": 62,
       "norm_label": "showcaseprojects"
     },
     {
@@ -3618,7 +3537,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L96",
       "id": "sections_realtimework_realtimework",
-      "community": 4,
+      "community": 62,
       "norm_label": "realtimework()"
     },
     {
@@ -3627,7 +3546,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L1",
       "id": "src_components_sections_services_jsx",
-      "community": 2,
+      "community": 44,
       "norm_label": "services.jsx"
     },
     {
@@ -3636,7 +3555,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L8",
       "id": "sections_services_iconmap",
-      "community": 2,
+      "community": 44,
       "norm_label": "iconmap"
     },
     {
@@ -3645,7 +3564,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L12",
       "id": "sections_services_services",
-      "community": 2,
+      "community": 44,
       "norm_label": "services()"
     },
     {
@@ -3654,7 +3573,7 @@
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L1",
       "id": "src_components_sections_stats_jsx",
-      "community": 4,
+      "community": 55,
       "norm_label": "stats.jsx"
     },
     {
@@ -3663,7 +3582,7 @@
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L141",
       "id": "sections_stats_stats",
-      "community": 4,
+      "community": 55,
       "norm_label": "stats"
     },
     {
@@ -3672,7 +3591,7 @@
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L53",
       "id": "sections_stats_statcard",
-      "community": 4,
+      "community": 55,
       "norm_label": "statcard"
     },
     {
@@ -3744,7 +3663,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L1",
       "id": "src_components_sections_techstack_jsx",
-      "community": 4,
+      "community": 38,
       "norm_label": "techstack.jsx"
     },
     {
@@ -3753,7 +3672,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L6",
       "id": "sections_techstack_alltech",
-      "community": 4,
+      "community": 38,
       "norm_label": "alltech"
     },
     {
@@ -3762,7 +3681,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L11",
       "id": "sections_techstack_row1",
-      "community": 4,
+      "community": 38,
       "norm_label": "row1"
     },
     {
@@ -3771,7 +3690,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L12",
       "id": "sections_techstack_row2",
-      "community": 4,
+      "community": 38,
       "norm_label": "row2"
     },
     {
@@ -3780,7 +3699,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L13",
       "id": "sections_techstack_row3",
-      "community": 4,
+      "community": 38,
       "norm_label": "row3"
     },
     {
@@ -3789,7 +3708,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L15",
       "id": "sections_techstack_marqueerow",
-      "community": 4,
+      "community": 38,
       "norm_label": "marqueerow()"
     },
     {
@@ -3798,7 +3717,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L43",
       "id": "sections_techstack_techstack",
-      "community": 4,
+      "community": 38,
       "norm_label": "techstack()"
     },
     {
@@ -3807,7 +3726,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L1",
       "id": "src_components_sections_testimonials_jsx",
-      "community": 2,
+      "community": 42,
       "norm_label": "testimonials.jsx"
     },
     {
@@ -3816,7 +3735,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L9",
       "id": "sections_testimonials_clientvoicevisualizer",
-      "community": 2,
+      "community": 42,
       "norm_label": "clientvoicevisualizer()"
     },
     {
@@ -3825,7 +3744,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L35",
       "id": "sections_testimonials_trustsummary",
-      "community": 2,
+      "community": 42,
       "norm_label": "trustsummary()"
     },
     {
@@ -3834,7 +3753,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L64",
       "id": "sections_testimonials_marqueerow",
-      "community": 2,
+      "community": 42,
       "norm_label": "marqueerow()"
     },
     {
@@ -3843,7 +3762,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L127",
       "id": "sections_testimonials_testimonials",
-      "community": 2,
+      "community": 42,
       "norm_label": "testimonials()"
     },
     {
@@ -3933,7 +3852,7 @@
       "source_file": "src/components/ui/AnimatedCounter.jsx",
       "source_location": "L1",
       "id": "src_components_ui_animatedcounter_jsx",
-      "community": 4,
+      "community": 55,
       "norm_label": "animatedcounter.jsx"
     },
     {
@@ -3942,7 +3861,7 @@
       "source_file": "src/components/ui/AnimatedCounter.jsx",
       "source_location": "L4",
       "id": "ui_animatedcounter_animatedcounter",
-      "community": 4,
+      "community": 55,
       "norm_label": "animatedcounter()"
     },
     {
@@ -3969,7 +3888,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 42,
+      "community": 0,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -3978,7 +3897,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L5",
       "id": "ui_backtotop_backtotop",
-      "community": 42,
+      "community": 0,
       "norm_label": "backtotop()"
     },
     {
@@ -4221,7 +4140,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 44,
+      "community": 0,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4230,7 +4149,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 44,
+      "community": 0,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4266,7 +4185,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 54,
+      "community": 0,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -4275,7 +4194,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 54,
+      "community": 0,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -4302,7 +4221,7 @@
       "source_file": "src/constants/faq.js",
       "source_location": "L1",
       "id": "src_constants_faq_js",
-      "community": 2,
+      "community": 61,
       "norm_label": "faq.js"
     },
     {
@@ -4311,7 +4230,7 @@
       "source_file": "src/constants/faq.js",
       "source_location": "L1",
       "id": "constants_faq_faqs",
-      "community": 2,
+      "community": 61,
       "norm_label": "faqs"
     },
     {
@@ -4320,7 +4239,7 @@
       "source_file": "src/constants/pricing.js",
       "source_location": "L1",
       "id": "src_constants_pricing_js",
-      "community": 2,
+      "community": 54,
       "norm_label": "pricing.js"
     },
     {
@@ -4329,7 +4248,7 @@
       "source_file": "src/constants/pricing.js",
       "source_location": "L1",
       "id": "constants_pricing_pricing",
-      "community": 2,
+      "community": 54,
       "norm_label": "pricing"
     },
     {
@@ -4392,7 +4311,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "src_constants_techstack_js",
-      "community": 4,
+      "community": 38,
       "norm_label": "techstack.js"
     },
     {
@@ -4401,7 +4320,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "constants_techstack_techstack",
-      "community": 4,
+      "community": 38,
       "norm_label": "techstack"
     },
     {
@@ -4410,7 +4329,7 @@
       "source_file": "src/constants/testimonials.js",
       "source_location": "L1",
       "id": "src_constants_testimonials_js",
-      "community": 2,
+      "community": 42,
       "norm_label": "testimonials.js"
     },
     {
@@ -4419,7 +4338,7 @@
       "source_file": "src/constants/testimonials.js",
       "source_location": "L1",
       "id": "constants_testimonials_testimonials",
-      "community": 2,
+      "community": 42,
       "norm_label": "testimonials"
     },
     {
@@ -4563,7 +4482,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 0,
+      "community": 66,
       "norm_label": "about.jsx"
     },
     {
@@ -4572,7 +4491,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L4",
       "id": "pages_about_about",
-      "community": 0,
+      "community": 66,
       "norm_label": "about()"
     },
     {
@@ -4653,7 +4572,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L1",
       "id": "src_pages_contact_jsx",
-      "community": 6,
+      "community": 67,
       "norm_label": "contact.jsx"
     },
     {
@@ -4662,7 +4581,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L8",
       "id": "pages_contact_contact",
-      "community": 6,
+      "community": 67,
       "norm_label": "contact()"
     },
     {
@@ -4743,7 +4662,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 6,
+      "community": 63,
       "norm_label": "notfound.jsx"
     },
     {
@@ -4752,7 +4671,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 6,
+      "community": 63,
       "norm_label": "particlefield()"
     },
     {
@@ -4761,7 +4680,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 6,
+      "community": 63,
       "norm_label": "notfound()"
     },
     {
@@ -4806,7 +4725,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_paymentpolicy_jsx",
-      "community": 6,
+      "community": 68,
       "norm_label": "paymentpolicy.jsx"
     },
     {
@@ -4815,7 +4734,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L9",
       "id": "pages_paymentpolicy_paymentpolicy",
-      "community": 6,
+      "community": 68,
       "norm_label": "paymentpolicy()"
     },
     {
@@ -4977,7 +4896,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 0,
+      "community": 69,
       "norm_label": "services.jsx"
     },
     {
@@ -4986,7 +4905,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 0,
+      "community": 69,
       "norm_label": "services()"
     },
     {
@@ -5309,7 +5228,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Pricing.jsx",
       "source_location": "L10",
-      "community": 2,
+      "community": 54,
       "norm_label": "pricingcard()",
       "id": "sections_pricing_pricingcard"
     },
@@ -5363,7 +5282,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 2,
+      "community": 44,
       "norm_label": "servicecard()",
       "id": "sections_services_servicecard"
     },
@@ -5372,7 +5291,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 2,
+      "community": 44,
       "norm_label": "bentoclasses",
       "id": "sections_services_bentoclasses"
     },
@@ -5381,7 +5300,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L10",
-      "community": 2,
+      "community": 44,
       "norm_label": "servicerow()",
       "id": "sections_services_servicerow"
     },
@@ -8731,86 +8650,6 @@
       "confidence_score": 1.0,
       "source": "nexoraa_client_portal_lib_utils_ts",
       "target": "lib_utils_cn"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_envcontent",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_envpath",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_fs",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_key",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_parts",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L2",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_path",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_runtest",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test-brevo.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "scratch_test_brevo_js",
-      "target": "scratch_test_brevo_val",
-      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -13248,5 +13087,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "49bc7d861b74dccb8f93aefd8c665b313b71afb2"
+  "built_at_commit": "ce335cc5edfefd21c71180d3238a8ccb37aa24e4"
 }

@@ -68,7 +68,7 @@ export default async function handler(req, res) {
       `;
 
       if (brevoApiKey) {
-        const senderEmail = process.env.BREVO_SENDER || 'realme11119412@gmail.com';
+        const senderEmail = process.env.BREVO_SENDER || 'nexoraa.works@gmail.com';
         const response = await fetch('https://api.brevo.com/v3/smtp/email', {
           method: 'POST',
           headers: {
