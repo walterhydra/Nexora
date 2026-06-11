@@ -595,127 +595,192 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
             data-lenis-prevent="true"
-            className="fixed bottom-24 right-4 md:right-8 w-[calc(100vw-32px)] md:w-[400px] h-[600px] max-h-[calc(100vh-120px)] bg-[#0B1220]/85 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8)] flex flex-col z-[100] overflow-hidden"
+            className="fixed bottom-24 right-4 md:right-8 w-[calc(100vw-32px)] md:w-[760px] h-[600px] max-h-[calc(100vh-120px)] bg-[#0B1220]/85 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8)] flex z-[100] overflow-hidden"
           >
-            {/* Ambient background glows */}
-            <div className="absolute top-[20%] left-[-15%] w-[220px] h-[220px] rounded-full bg-accent-blue/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
-            <div className="absolute bottom-[20%] right-[-15%] w-[220px] h-[220px] rounded-full bg-accent-purple/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
-
-            {/* Header */}
-            <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10">
-              <div className="flex items-center gap-3">
-                <div className="relative">
-                  <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
-                    <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
-                  </div>
-                  <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
-                    <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
-                  </div>
-                </div>
-                <div>
-                  <h3 className="text-white font-semibold text-lg flex items-center gap-2">
-                    Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10 shadow-[0_0_10px_rgba(0,245,255,0.1)]">AI</span>
-                  </h3>
-                  <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
-                </div>
+            {/* Left Sidebar (WhatsApp Style) */}
+            <div className="w-[260px] border-r border-white/10 flex-col hidden md:flex bg-white/[0.01] shrink-0">
+              {/* Sidebar Header */}
+              <div className="p-5 border-b border-white/[0.08] flex items-center justify-between">
+                <h3 className="text-white font-bold text-base tracking-wide flex items-center gap-2">
+                  Chats <span className="text-[10px] bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded-full uppercase font-bold border border-emerald-500/20">Live</span>
+                </h3>
               </div>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-300"
-              >
-                <ChevronDown className="w-5 h-5" />
-              </button>
+
+              {/* Chat List */}
+              <div className="flex-1 overflow-y-auto divide-y divide-white/[0.04] scrollbar-none">
+                {/* Active Chat Item */}
+                <div className="p-4 flex items-center gap-3 bg-white/[0.03] border-l-2 border-accent-blue cursor-pointer transition-all">
+                  <div className="relative w-10 h-10 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner shrink-0">
+                    <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
+                    <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-500 border-2 border-[#0B1220] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
+                      <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
+                    </div>
+                  </div>
+                  <div className="flex-1 min-w-0 text-left">
+                    <div className="flex justify-between items-baseline mb-0.5">
+                      <h4 className="text-white font-semibold text-xs truncate">Nova AI Assistant</h4>
+                      <span className="text-[9px] text-gray-500">Active</span>
+                    </div>
+                    <p className="text-[10px] text-accent-blue truncate font-medium">Usually replies instantly</p>
+                  </div>
+                </div>
+
+                {/* Direct WhatsApp Chat */}
+                <a 
+                  href="https://wa.me/917383303388"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-4 flex items-center gap-3 hover:bg-white/[0.02] cursor-pointer transition-colors duration-200"
+                >
+                  <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 text-emerald-400 shrink-0">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                  </div>
+                  <div className="flex-1 min-w-0 text-left">
+                    <h4 className="text-white font-semibold text-xs truncate">WhatsApp Chat</h4>
+                    <p className="text-[10px] text-gray-400 truncate">Chat directly with Milan</p>
+                  </div>
+                </a>
+
+                {/* Direct Email Chat */}
+                <a 
+                  href="mailto:nexoraa.works@gmail.com"
+                  className="p-4 flex items-center gap-3 hover:bg-white/[0.02] cursor-pointer transition-colors duration-200"
+                >
+                  <div className="w-10 h-10 rounded-full bg-accent-purple/10 flex items-center justify-center border border-accent-purple/20 text-accent-purple shrink-0">
+                    <Mail className="w-5 h-5" />
+                  </div>
+                  <div className="flex-1 min-w-0 text-left">
+                    <h4 className="text-white font-semibold text-xs truncate">Email Collaboration</h4>
+                    <p className="text-[10px] text-gray-400 truncate">nexoraa.works@gmail.com</p>
+                  </div>
+                </a>
+              </div>
             </div>
 
-            {/* Messages */}
-            <div 
-              data-lenis-prevent="true"
-              className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0"
-            >
-              {messages.map((msg, idx) => (
-                <div
-                  key={idx}
-                  className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} max-w-full`}
-                >
-                  <div className={`flex gap-3 max-w-[88%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} items-end`}>
+            {/* Right Chat Column (Active Chat Thread) */}
+            <div className="flex-1 flex flex-col h-full overflow-hidden relative">
+              {/* Ambient background glows */}
+              <div className="absolute top-[20%] left-[-15%] w-[220px] h-[220px] rounded-full bg-accent-blue/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
+              <div className="absolute bottom-[20%] right-[-15%] w-[220px] h-[220px] rounded-full bg-accent-purple/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
 
-                    <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                      {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />}
+              {/* Header */}
+              <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10 shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="relative">
+                    <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
+                      <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
                     </div>
+                    <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
+                      <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
+                    </div>
+                  </div>
+                  <div className="text-left">
+                    <h3 className="text-white font-semibold text-lg flex items-center gap-2">
+                      Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10 shadow-[0_0_10px_rgba(0,245,255,0.1)]">AI</span>
+                    </h3>
+                    <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setIsOpen(false)}
+                  className="w-9 h-9 flex items-center justify-center rounded-full hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-300"
+                >
+                  <ChevronDown className="w-5 h-5" />
+                </button>
+              </div>
 
-                    <div
-                      className={`relative text-sm ${msg.role === 'user'
-                          ? 'p-4 rounded-2xl shadow-[0_4px_16px_rgba(91,164,230,0.2)] bg-gradient-to-br from-accent-blue via-[#4f46e5] to-accent-purple border border-white/10 text-white rounded-br-sm'
-                          : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
-                        }`}
-                    >
-                      {msg.role !== 'user' && (
-                        <>
-                          {/* Dot Grid Background */}
-                          <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-                          {/* Top Glowing Edge */}
-                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
-                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[6px] opacity-80"></div>
-                        </>
-                      )}
-                      <div className="relative z-10 text-gray-200 leading-relaxed font-light tracking-wide">
-                        {renderMessageContent(msg, idx)}
+              {/* Messages */}
+              <div 
+                data-lenis-prevent="true"
+                className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0"
+              >
+                {messages.map((msg, idx) => (
+                  <div
+                    key={idx}
+                    className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} max-w-full`}
+                  >
+                    <div className={`flex gap-3 max-w-[88%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} items-end`}>
+
+                      <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
+                        {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />}
+                      </div>
+
+                      <div
+                        className={`relative text-sm text-left ${msg.role === 'user'
+                            ? 'p-4 rounded-2xl shadow-[0_4px_16px_rgba(91,164,230,0.2)] bg-gradient-to-br from-accent-blue via-[#4f46e5] to-accent-purple border border-white/10 text-white rounded-br-sm'
+                            : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
+                          }`}
+                      >
+                        {msg.role !== 'user' && (
+                          <>
+                            {/* Dot Grid Background */}
+                            <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
+                            {/* Top Glowing Edge */}
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
+                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[6px] opacity-80"></div>
+                          </>
+                        )}
+                        <div className="relative z-10 text-gray-200 leading-relaxed font-light tracking-wide">
+                          {renderMessageContent(msg, idx)}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              {isLoading && (
-                <div className="flex justify-start">
-                  <div className="flex gap-3 max-w-[88%] items-end">
-                    <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                      <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
-                    </div>
-                    <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-                      {/* Dot Grid Background */}
-                      <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-                      {/* Top Glowing Edge */}
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[4px] opacity-80"></div>
+                {isLoading && (
+                  <div className="flex justify-start">
+                    <div className="flex gap-3 max-w-[88%] items-end">
+                      <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
+                        <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
+                      </div>
+                      <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+                        {/* Dot Grid Background */}
+                        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
+                        {/* Top Glowing Edge */}
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[4px] opacity-80"></div>
 
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '0ms' }}></div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce relative z-10" style={{ animationDelay: '150ms' }}></div>
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '300ms' }}></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '0ms' }}></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce relative z-10" style={{ animationDelay: '150ms' }}></div>
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '300ms' }}></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              )}
-              <div ref={messagesEndRef} />
-            </div>
-
-            {/* Input Area */}
-            <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10">
-              <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
-                <input
-                  type="text"
-                  value={inputValue}
-                  onChange={(e) => setInputValue(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder={
-                    flowState === 'awaiting_email'
-                      ? "Enter your email address..."
-                      : flowState === 'awaiting_otp'
-                      ? "Enter 6-digit verification code..."
-                      : "Ask Nova anything..."
-                  }
-                  className="w-full bg-transparent py-2.5 pl-4 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none"
-                />
-                <button
-                  onClick={() => handleSend()}
-                  disabled={!inputValue.trim() || isLoading}
-                  className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-[0_0_12px_rgba(91,164,230,0.3)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all"
-                >
-                  <Send className="w-4 h-4 ml-0.5" />
-                </button>
+                )}
+                <div ref={messagesEndRef} />
               </div>
-              <div className="text-center mt-3 mb-1">
-                <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexora AI</p>
+
+              {/* Input Area */}
+              <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10 shrink-0">
+                <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
+                  <input
+                    type="text"
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                    onKeyPress={handleKeyPress}
+                    placeholder={
+                      flowState === 'awaiting_email'
+                        ? "Enter your email address..."
+                        : flowState === 'awaiting_otp'
+                        ? "Enter 6-digit verification code..."
+                        : "Ask Nova anything..."
+                    }
+                    className="w-full bg-transparent py-2.5 pl-4 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none"
+                  />
+                  <button
+                    onClick={() => handleSend()}
+                    disabled={!inputValue.trim() || isLoading}
+                    className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-[0_0_12px_rgba(91,164,230,0.3)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all"
+                  >
+                    <Send className="w-4 h-4 ml-0.5" />
+                  </button>
+                </div>
+                <div className="text-center mt-3 mb-1">
+                  <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexora AI</p>
+                </div>
               </div>
             </div>
           </m.div>
