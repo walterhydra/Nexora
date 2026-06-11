@@ -2416,103 +2416,13 @@
       "norm_label": "cn()"
     },
     {
-      "label": "check_bbox.js",
+      "label": "check_image.ps1",
       "file_type": "code",
-      "source_file": "scratch/check_bbox.js",
+      "source_file": "scratch/check_image.ps1",
       "source_location": "L1",
-      "id": "scratch_check_bbox_js",
-      "community": 67,
-      "norm_label": "check_bbox.js"
-    },
-    {
-      "label": "getPngNonTransparentBBox()",
-      "file_type": "code",
-      "source_file": "scratch/check_bbox.js",
-      "source_location": "L4",
-      "id": "scratch_check_bbox_getpngnontransparentbbox",
-      "community": 67,
-      "norm_label": "getpngnontransparentbbox()"
-    },
-    {
-      "label": "check_bbox_defilter.js",
-      "file_type": "code",
-      "source_file": "scratch/check_bbox_defilter.js",
-      "source_location": "L1",
-      "id": "scratch_check_bbox_defilter_js",
-      "community": 63,
-      "norm_label": "check_bbox_defilter.js"
-    },
-    {
-      "label": "getBBox()",
-      "file_type": "code",
-      "source_file": "scratch/check_bbox_defilter.js",
-      "source_location": "L4",
-      "id": "scratch_check_bbox_defilter_getbbox",
-      "community": 63,
-      "norm_label": "getbbox()"
-    },
-    {
-      "label": "check_color_type.js",
-      "file_type": "code",
-      "source_file": "scratch/check_color_type.js",
-      "source_location": "L1",
-      "id": "scratch_check_color_type_js",
-      "community": 68,
-      "norm_label": "check_color_type.js"
-    },
-    {
-      "label": "checkColorType()",
-      "file_type": "code",
-      "source_file": "scratch/check_color_type.js",
-      "source_location": "L3",
-      "id": "scratch_check_color_type_checkcolortype",
-      "community": 68,
-      "norm_label": "checkcolortype()"
-    },
-    {
-      "label": "check_png.js",
-      "file_type": "code",
-      "source_file": "scratch/check_png.js",
-      "source_location": "L1",
-      "id": "scratch_check_png_js",
-      "community": 69,
-      "norm_label": "check_png.js"
-    },
-    {
-      "label": "getPngDimensions()",
-      "file_type": "code",
-      "source_file": "scratch/check_png.js",
-      "source_location": "L4",
-      "id": "scratch_check_png_getpngdimensions",
-      "community": 69,
-      "norm_label": "getpngdimensions()"
-    },
-    {
-      "label": "print_image.js",
-      "file_type": "code",
-      "source_file": "scratch/print_image.js",
-      "source_location": "L1",
-      "id": "scratch_print_image_js",
-      "community": 70,
-      "norm_label": "print_image.js"
-    },
-    {
-      "label": "printImageAscii()",
-      "file_type": "code",
-      "source_file": "scratch/print_image.js",
-      "source_location": "L4",
-      "id": "scratch_print_image_printimageascii",
-      "community": 70,
-      "norm_label": "printimageascii()"
-    },
-    {
-      "label": "refactor.py",
-      "file_type": "code",
-      "source_file": "scratch/refactor.py",
-      "source_location": "L1",
-      "id": "scratch_refactor_py",
-      "community": 59,
-      "norm_label": "refactor.py"
+      "id": "scratch_check_image_ps1",
+      "community": 71,
+      "norm_label": "check_image.ps1"
     },
     {
       "label": "test_png_pixels.js",
@@ -2520,89 +2430,35 @@
       "source_file": "scratch/test_png_pixels.js",
       "source_location": "L1",
       "id": "scratch_test_png_pixels_js",
-      "community": 46,
+      "community": 65,
       "norm_label": "test_png_pixels.js"
     },
     {
-      "label": "buffer",
+      "label": "fs",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L1",
+      "id": "scratch_test_png_pixels_fs",
+      "community": 65,
+      "norm_label": "fs"
+    },
+    {
+      "label": "path",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L2",
+      "id": "scratch_test_png_pixels_path",
+      "community": 65,
+      "norm_label": "path"
+    },
+    {
+      "label": "analyzePng()",
       "file_type": "code",
       "source_file": "scratch/test_png_pixels.js",
       "source_location": "L4",
-      "id": "scratch_test_png_pixels_buffer",
-      "community": 46,
-      "norm_label": "buffer"
-    },
-    {
-      "label": "width",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L5",
-      "id": "scratch_test_png_pixels_width",
-      "community": 46,
-      "norm_label": "width"
-    },
-    {
-      "label": "height",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L6",
-      "id": "scratch_test_png_pixels_height",
-      "community": 46,
-      "norm_label": "height"
-    },
-    {
-      "label": "idats",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L9",
-      "id": "scratch_test_png_pixels_idats",
-      "community": 46,
-      "norm_label": "idats"
-    },
-    {
-      "label": "length",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L11",
-      "id": "scratch_test_png_pixels_length",
-      "community": 46,
-      "norm_label": "length"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L12",
-      "id": "scratch_test_png_pixels_type",
-      "community": 46,
-      "norm_label": "type"
-    },
-    {
-      "label": "idatBuffer",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L19",
-      "id": "scratch_test_png_pixels_idatbuffer",
-      "community": 46,
-      "norm_label": "idatbuffer"
-    },
-    {
-      "label": "decompressed",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L20",
-      "id": "scratch_test_png_pixels_decompressed",
-      "community": 46,
-      "norm_label": "decompressed"
-    },
-    {
-      "label": "y",
-      "file_type": "code",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L30",
-      "id": "scratch_test_png_pixels_y",
-      "community": 46,
-      "norm_label": "y"
+      "id": "scratch_test_png_pixels_analyzepng",
+      "community": 65,
+      "norm_label": "analyzepng()"
     },
     {
       "label": "App.jsx",
@@ -2835,7 +2691,7 @@
       "source_file": "src/components/layout/CookieBanner.jsx",
       "source_location": "L1",
       "id": "src_components_layout_cookiebanner_jsx",
-      "community": 6,
+      "community": 51,
       "norm_label": "cookiebanner.jsx"
     },
     {
@@ -2844,7 +2700,7 @@
       "source_file": "src/components/layout/CookieBanner.jsx",
       "source_location": "L5",
       "id": "layout_cookiebanner_cookiebanner",
-      "community": 6,
+      "community": 51,
       "norm_label": "cookiebanner()"
     },
     {
@@ -2853,7 +2709,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 64,
+      "community": 0,
       "norm_label": "footer.jsx"
     },
     {
@@ -2862,7 +2718,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 64,
+      "community": 0,
       "norm_label": "footer()"
     },
     {
@@ -2871,7 +2727,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 65,
+      "community": 0,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -2880,7 +2736,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 65,
+      "community": 0,
       "norm_label": "loadingscreen()"
     },
     {
@@ -2907,7 +2763,7 @@
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L1",
       "id": "src_components_layout_navbar_jsx",
-      "community": 6,
+      "community": 51,
       "norm_label": "navbar.jsx"
     },
     {
@@ -2916,7 +2772,7 @@
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L9",
       "id": "layout_navbar_navbar",
-      "community": 6,
+      "community": 51,
       "norm_label": "navbar()"
     },
     {
@@ -3015,7 +2871,7 @@
       "source_file": "src/components/portal/BillingPage.jsx",
       "source_location": "L1",
       "id": "src_components_portal_billingpage_jsx",
-      "community": 9,
+      "community": 66,
       "norm_label": "billingpage.jsx"
     },
     {
@@ -3024,7 +2880,7 @@
       "source_file": "src/components/portal/BillingPage.jsx",
       "source_location": "L5",
       "id": "portal_billingpage_interactiveinvoice",
-      "community": 9,
+      "community": 66,
       "norm_label": "interactiveinvoice()"
     },
     {
@@ -3033,7 +2889,7 @@
       "source_file": "src/components/portal/BillingPage.jsx",
       "source_location": "L139",
       "id": "portal_billingpage_billingpage",
-      "community": 9,
+      "community": 66,
       "norm_label": "billingpage()"
     },
     {
@@ -3042,7 +2898,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L1",
       "id": "src_components_portal_commandpalette_jsx",
-      "community": 6,
+      "community": 51,
       "norm_label": "commandpalette.jsx"
     },
     {
@@ -3051,7 +2907,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L17",
       "id": "portal_commandpalette_allitems",
-      "community": 6,
+      "community": 51,
       "norm_label": "allitems"
     },
     {
@@ -3060,7 +2916,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L27",
       "id": "portal_commandpalette_recentitems",
-      "community": 6,
+      "community": 51,
       "norm_label": "recentitems"
     },
     {
@@ -3069,7 +2925,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L33",
       "id": "portal_commandpalette_commandpalette",
-      "community": 6,
+      "community": 51,
       "norm_label": "commandpalette()"
     },
     {
@@ -3096,7 +2952,7 @@
       "source_file": "src/components/portal/NotificationPanel.jsx",
       "source_location": "L1",
       "id": "src_components_portal_notificationpanel_jsx",
-      "community": 9,
+      "community": 46,
       "norm_label": "notificationpanel.jsx"
     },
     {
@@ -3105,7 +2961,7 @@
       "source_file": "src/components/portal/NotificationPanel.jsx",
       "source_location": "L16",
       "id": "portal_notificationpanel_iconmap",
-      "community": 9,
+      "community": 46,
       "norm_label": "iconmap"
     },
     {
@@ -3114,7 +2970,7 @@
       "source_file": "src/components/portal/NotificationPanel.jsx",
       "source_location": "L24",
       "id": "portal_notificationpanel_colormap",
-      "community": 9,
+      "community": 46,
       "norm_label": "colormap"
     },
     {
@@ -3213,7 +3069,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L1",
       "id": "src_components_portal_portaldata_js",
-      "community": 9,
+      "community": 46,
       "norm_label": "portaldata.js"
     },
     {
@@ -3222,7 +3078,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L1",
       "id": "portal_portaldata_project",
-      "community": 9,
+      "community": 46,
       "norm_label": "project"
     },
     {
@@ -3231,7 +3087,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L21",
       "id": "portal_portaldata_teammembers",
-      "community": 9,
+      "community": 46,
       "norm_label": "teammembers"
     },
     {
@@ -3240,7 +3096,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L78",
       "id": "portal_portaldata_milestones",
-      "community": 9,
+      "community": 46,
       "norm_label": "milestones"
     },
     {
@@ -3249,7 +3105,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L121",
       "id": "portal_portaldata_notifications",
-      "community": 9,
+      "community": 46,
       "norm_label": "notifications"
     },
     {
@@ -3258,7 +3114,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L164",
       "id": "portal_portaldata_invoices",
-      "community": 9,
+      "community": 46,
       "norm_label": "invoices"
     },
     {
@@ -3267,7 +3123,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L202",
       "id": "portal_portaldata_paymenttimeline",
-      "community": 9,
+      "community": 46,
       "norm_label": "paymenttimeline"
     },
     {
@@ -3276,7 +3132,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L229",
       "id": "portal_portaldata_assetfiles",
-      "community": 9,
+      "community": 46,
       "norm_label": "assetfiles"
     },
     {
@@ -3285,7 +3141,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L296",
       "id": "portal_portaldata_folders",
-      "community": 9,
+      "community": 46,
       "norm_label": "folders"
     },
     {
@@ -3294,7 +3150,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L304",
       "id": "portal_portaldata_channels",
-      "community": 9,
+      "community": 46,
       "norm_label": "channels"
     },
     {
@@ -3303,7 +3159,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L310",
       "id": "portal_portaldata_messages",
-      "community": 9,
+      "community": 46,
       "norm_label": "messages"
     },
     {
@@ -3312,7 +3168,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L1",
       "id": "src_components_portal_requestmodal_jsx",
-      "community": 9,
+      "community": 64,
       "norm_label": "requestmodal.jsx"
     },
     {
@@ -3321,7 +3177,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L7",
       "id": "portal_requestmodal_priorities",
-      "community": 9,
+      "community": 64,
       "norm_label": "priorities"
     },
     {
@@ -3330,7 +3186,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L9",
       "id": "portal_requestmodal_requesttypes",
-      "community": 9,
+      "community": 64,
       "norm_label": "requesttypes"
     },
     {
@@ -3339,7 +3195,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L18",
       "id": "portal_requestmodal_requestmodal",
-      "community": 9,
+      "community": 64,
       "norm_label": "requestmodal()"
     },
     {
@@ -3366,7 +3222,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L1",
       "id": "src_components_portal_sidebar_jsx",
-      "community": 9,
+      "community": 59,
       "norm_label": "sidebar.jsx"
     },
     {
@@ -3375,7 +3231,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L14",
       "id": "portal_sidebar_navitems",
-      "community": 9,
+      "community": 59,
       "norm_label": "navitems"
     },
     {
@@ -3384,7 +3240,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L22",
       "id": "portal_sidebar_containervariants",
-      "community": 9,
+      "community": 59,
       "norm_label": "containervariants"
     },
     {
@@ -3393,7 +3249,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L29",
       "id": "portal_sidebar_itemvariants",
-      "community": 9,
+      "community": 59,
       "norm_label": "itemvariants"
     },
     {
@@ -3402,7 +3258,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L34",
       "id": "portal_sidebar_sidebarcontent",
-      "community": 9,
+      "community": 59,
       "norm_label": "sidebarcontent()"
     },
     {
@@ -3411,7 +3267,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L167",
       "id": "portal_sidebar_sidebar",
-      "community": 9,
+      "community": 59,
       "norm_label": "sidebar()"
     },
     {
@@ -4068,7 +3924,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 0,
+      "community": 68,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -4077,7 +3933,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L5",
       "id": "ui_backtotop_backtotop",
-      "community": 0,
+      "community": 68,
       "norm_label": "backtotop()"
     },
     {
@@ -4122,7 +3978,7 @@
       "source_file": "src/components/ui/CustomCursor.jsx",
       "source_location": "L1",
       "id": "src_components_ui_customcursor_jsx",
-      "community": 6,
+      "community": 63,
       "norm_label": "customcursor.jsx"
     },
     {
@@ -4131,7 +3987,7 @@
       "source_file": "src/components/ui/CustomCursor.jsx",
       "source_location": "L5",
       "id": "ui_customcursor_customcursor",
-      "community": 6,
+      "community": 63,
       "norm_label": "customcursor()"
     },
     {
@@ -4158,7 +4014,7 @@
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L1",
       "id": "src_components_ui_glowcard_jsx",
-      "community": 6,
+      "community": 51,
       "norm_label": "glowcard.jsx"
     },
     {
@@ -4167,7 +4023,7 @@
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L4",
       "id": "ui_glowcard_glowcard",
-      "community": 6,
+      "community": 51,
       "norm_label": "glowcard"
     },
     {
@@ -4320,7 +4176,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 71,
+      "community": 69,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4329,7 +4185,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 71,
+      "community": 69,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4365,7 +4221,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 72,
+      "community": 70,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -4374,7 +4230,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 72,
+      "community": 70,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -4635,7 +4491,7 @@
       "source_file": "src/hooks/useMousePosition.js",
       "source_location": "L1",
       "id": "src_hooks_usemouseposition_js",
-      "community": 6,
+      "community": 63,
       "norm_label": "usemouseposition.js"
     },
     {
@@ -4644,7 +4500,7 @@
       "source_file": "src/hooks/useMousePosition.js",
       "source_location": "L3",
       "id": "hooks_usemouseposition_usemouseposition",
-      "community": 6,
+      "community": 63,
       "norm_label": "usemouseposition()"
     },
     {
@@ -4662,7 +4518,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 66,
+      "community": 0,
       "norm_label": "about.jsx"
     },
     {
@@ -4671,7 +4527,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L4",
       "id": "pages_about_about",
-      "community": 66,
+      "community": 0,
       "norm_label": "about()"
     },
     {
@@ -4752,7 +4608,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L1",
       "id": "src_pages_contact_jsx",
-      "community": 0,
+      "community": 6,
       "norm_label": "contact.jsx"
     },
     {
@@ -4761,7 +4617,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L8",
       "id": "pages_contact_contact",
-      "community": 0,
+      "community": 6,
       "norm_label": "contact()"
     },
     {
@@ -4923,7 +4779,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_privacypolicy_jsx",
-      "community": 0,
+      "community": 67,
       "norm_label": "privacypolicy.jsx"
     },
     {
@@ -4932,7 +4788,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L4",
       "id": "pages_privacypolicy_privacypolicy",
-      "community": 0,
+      "community": 67,
       "norm_label": "privacypolicy()"
     },
     {
@@ -5094,7 +4950,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L1",
       "id": "src_pages_terms_jsx",
-      "community": 51,
+      "community": 0,
       "norm_label": "terms.jsx"
     },
     {
@@ -5103,7 +4959,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L4",
       "id": "pages_terms_terms",
-      "community": 51,
+      "community": 0,
       "norm_label": "terms()"
     },
     {
@@ -5139,7 +4995,7 @@
       "source_file": "src/utils/cn.js",
       "source_location": "L1",
       "id": "src_utils_cn_js",
-      "community": 6,
+      "community": 51,
       "norm_label": "cn.js"
     },
     {
@@ -5148,7 +5004,7 @@
       "source_file": "src/utils/cn.js",
       "source_location": "L4",
       "id": "utils_cn_cn",
-      "community": 6,
+      "community": 51,
       "norm_label": "cn()"
     },
     {
@@ -8834,141 +8690,31 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "scratch/check_bbox.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "scratch_check_bbox_js",
-      "target": "scratch_check_bbox_getpngnontransparentbbox",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/check_bbox_defilter.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "scratch_check_bbox_defilter_js",
-      "target": "scratch_check_bbox_defilter_getbbox",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/check_color_type.js",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "scratch_check_color_type_js",
-      "target": "scratch_check_color_type_checkcolortype",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/check_png.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "scratch_check_png_js",
-      "target": "scratch_check_png_getpngdimensions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/print_image.js",
-      "source_location": "L4",
-      "weight": 1.0,
-      "source": "scratch_print_image_js",
-      "target": "scratch_print_image_printimageascii",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "scratch/test_png_pixels.js",
       "source_location": "L4",
       "weight": 1.0,
       "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_buffer",
+      "target": "scratch_test_png_pixels_analyzepng",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L20",
+      "source_location": "L1",
       "weight": 1.0,
       "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_decompressed",
+      "target": "scratch_test_png_pixels_fs",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L6",
+      "source_location": "L2",
       "weight": 1.0,
       "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_height",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L19",
-      "weight": 1.0,
-      "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_idatbuffer",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_idats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_length",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L12",
-      "weight": 1.0,
-      "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_type",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L5",
-      "weight": 1.0,
-      "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_width",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "scratch/test_png_pixels.js",
-      "source_location": "L30",
-      "weight": 1.0,
-      "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_y",
+      "target": "scratch_test_png_pixels_path",
       "confidence_score": 1.0
     },
     {
@@ -13407,5 +13153,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "0cf931a2e02d07bfa31550035f9e2f4219c0502b"
+  "built_at_commit": "3565be8feff29dea27f26a71c72769bed18bf067"
 }

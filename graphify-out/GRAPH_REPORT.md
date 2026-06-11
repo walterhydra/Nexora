@@ -1,16 +1,16 @@
 # Graph Report - Nexora  (2026-06-11)
 
 ## Corpus Check
-- 142 files · ~2,094,360 words
+- 137 files · ~2,092,918 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 622 nodes · 753 edges · 73 communities (56 shown, 17 thin omitted)
+- 606 nodes · 742 edges · 72 communities (52 shown, 20 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `0cf931a2`
+- Built from commit: `3565be8f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -54,14 +54,19 @@
 - [[_COMMUNITY_Community 48|Community 48]]
 - [[_COMMUNITY_Community 49|Community 49]]
 - [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 51|Community 51]]
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
+- [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 63|Community 63]]
+- [[_COMMUNITY_Community 64|Community 64]]
+- [[_COMMUNITY_Community 65|Community 65]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
@@ -84,10 +89,10 @@
   src/components/layout/Navbar.jsx → src/utils/cn.js
 - `OverviewPage()` --calls--> `usePortal()`  [EXTRACTED]
   src/components/portal/OverviewPage.jsx → src/components/portal/PortalContext.jsx
-- `SidebarContent()` --calls--> `cn()`  [EXTRACTED]
-  src/components/portal/Sidebar.jsx → src/utils/cn.js
+- `SidebarContent()` --calls--> `usePortal()`  [EXTRACTED]
+  src/components/portal/Sidebar.jsx → src/components/portal/PortalContext.jsx
 
-## Communities (73 total, 17 thin omitted)
+## Communities (72 total, 20 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -110,8 +115,8 @@ Cohesion: 0.08
 Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.08
-Nodes (12): docsData, useMagneticEffect(), useMousePosition(), Navbar(), faqs, steps, allItems, recentItems (+4 more)
+Cohesion: 0.12
+Nodes (5): docsData, useMagneticEffect(), faqs, steps, MagneticButton()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
@@ -122,8 +127,8 @@ Cohesion: 0.15
 Nodes (7): team, darkBgColors, hexColors, memberIntroductions, memberNotes, panelColors, posterMap
 
 ### Community 9 - "Community 9"
-Cohesion: 0.06
-Nodes (24): colorMap, iconMap, NotificationPanel(), OverviewPage(), PortalContext, PortalProvider(), usePortal(), assetFiles (+16 more)
+Cohesion: 0.16
+Nodes (6): NotificationPanel(), OverviewPage(), PortalContext, PortalProvider(), usePortal(), pageLabels
 
 ### Community 11 - "Community 11"
 Cohesion: 0.06
@@ -182,8 +187,8 @@ Cohesion: 0.11
 Nodes (17): aliases, components, hooks, lib, ui, utils, iconLibrary, rsc (+9 more)
 
 ### Community 46 - "Community 46"
-Cohesion: 0.20
-Nodes (9): buffer, decompressed, height, idatBuffer, idats, length, type, width (+1 more)
+Cohesion: 0.15
+Nodes (12): colorMap, iconMap, assetFiles, channels, folders, invoices, messages, milestones (+4 more)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.20
@@ -201,6 +206,10 @@ Nodes (4): SettingsPage(), Tab, tabContent, tabs
 Cohesion: 0.31
 Nodes (6): allItems, CommandPalette(), recentItems, cn(), Button(), buttonVariants
 
+### Community 51 - "Community 51"
+Cohesion: 0.26
+Nodes (5): Navbar(), allItems, recentItems, GlowCard, cn()
+
 ### Community 52 - "Community 52"
 Cohesion: 0.29
 Nodes (6): colorMap, iconMap, NotificationPanel(), pageLabels, TopNavbar(), notifications
@@ -209,22 +218,26 @@ Nodes (6): colorMap, iconMap, NotificationPanel(), pageLabels, TopNavbar(), noti
 Cohesion: 0.33
 Nodes (4): inter, jetbrainsMono, metadata, sora
 
+### Community 59 - "Community 59"
+Cohesion: 0.33
+Nodes (4): containerVariants, itemVariants, navItems, SidebarContent()
+
 ## Knowledge Gaps
-- **249 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+244 more)
+- **242 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+237 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **20 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `fmt()` connect `Community 36` to `Community 41`?**
-  _High betweenness centrality (0.151) - this node is a cross-community bridge._
-- **Why does `cn()` connect `Community 6` to `Community 9`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+  _High betweenness centrality (0.159) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 51` to `Community 59`, `Community 6`, `Community 46`, `Community 63`?**
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
-  _249 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _242 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
