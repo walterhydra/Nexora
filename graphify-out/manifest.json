@@ -880,8 +880,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
-    "mtime": 1781196914.6352675,
-    "ast_hash": "cb88f23497ddf3d506a8c2809cb2b5b4",
+    "mtime": 1781197225.4868715,
+    "ast_hash": "3d25f7819c7f7146834e36cf3f666f46",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\send-agreement.js": {
@@ -1197,6 +1197,36 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\otp.js": {
     "mtime": 1781187753.6509085,
     "ast_hash": "96e48a2b5cad54f24aa49a33e81e496e",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\check_bbox.js": {
+    "mtime": 1781197138.1738882,
+    "ast_hash": "007444f1746d0634851f636ed599ea25",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\check_bbox_defilter.js": {
+    "mtime": 1781197166.1502738,
+    "ast_hash": "f0fc48bf12cda0cc407dfcb858b468af",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\check_color_type.js": {
+    "mtime": 1781197127.3032463,
+    "ast_hash": "a437790a52deacd764569222f6c0a420",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\check_png.js": {
+    "mtime": 1781197116.4029481,
+    "ast_hash": "0bfb78c1a01118d88c7cbfe602fcce77",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\print_image.js": {
+    "mtime": 1781197204.335822,
+    "ast_hash": "2bd23be5100584de6ba053270416051e",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\test_png_pixels.js": {
+    "mtime": 1781197155.6522954,
+    "ast_hash": "8c07006d983dfb61e3c7dea510de2357",
     "semantic_hash": ""
   }
 }

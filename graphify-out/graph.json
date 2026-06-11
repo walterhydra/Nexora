@@ -1593,7 +1593,7 @@
       "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_animated_counter_tsx",
-      "community": 46,
+      "community": 48,
       "norm_label": "animated-counter.tsx"
     },
     {
@@ -1602,7 +1602,7 @@
       "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
       "source_location": "L5",
       "id": "components_animated_counter_animatedcounterprops",
-      "community": 46,
+      "community": 48,
       "norm_label": "animatedcounterprops"
     },
     {
@@ -1611,7 +1611,7 @@
       "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
       "source_location": "L14",
       "id": "components_animated_counter_animatedcounter",
-      "community": 46,
+      "community": 48,
       "norm_label": "animatedcounter()"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_command_palette_tsx",
-      "community": 43,
+      "community": 50,
       "norm_label": "command-palette.tsx"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L19",
       "id": "components_command_palette_allitems",
-      "community": 43,
+      "community": 50,
       "norm_label": "allitems"
     },
     {
@@ -1638,7 +1638,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L29",
       "id": "components_command_palette_recentitems",
-      "community": 43,
+      "community": 50,
       "norm_label": "recentitems"
     },
     {
@@ -1647,7 +1647,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L35",
       "id": "components_command_palette_commandpalette",
-      "community": 43,
+      "community": 50,
       "norm_label": "commandpalette()"
     },
     {
@@ -1728,7 +1728,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_sidebar_tsx",
-      "community": 50,
+      "community": 43,
       "norm_label": "sidebar.tsx"
     },
     {
@@ -1737,7 +1737,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L15",
       "id": "components_sidebar_navitems",
-      "community": 50,
+      "community": 43,
       "norm_label": "navitems"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L23",
       "id": "components_sidebar_containervariants",
-      "community": 50,
+      "community": 43,
       "norm_label": "containervariants"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L30",
       "id": "components_sidebar_itemvariants",
-      "community": 50,
+      "community": 43,
       "norm_label": "itemvariants"
     },
     {
@@ -1764,7 +1764,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L35",
       "id": "components_sidebar_sidebarcontent",
-      "community": 50,
+      "community": 43,
       "norm_label": "sidebarcontent()"
     },
     {
@@ -1773,7 +1773,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L135",
       "id": "components_sidebar_sidebar",
-      "community": 50,
+      "community": 43,
       "norm_label": "sidebar()"
     },
     {
@@ -1899,7 +1899,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_pages_billing_page_tsx",
-      "community": 46,
+      "community": 41,
       "norm_label": "billing-page.tsx"
     },
     {
@@ -1908,7 +1908,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L17",
       "id": "pages_billing_page_stagger",
-      "community": 46,
+      "community": 41,
       "norm_label": "stagger"
     },
     {
@@ -1917,7 +1917,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L21",
       "id": "pages_billing_page_fadeup",
-      "community": 46,
+      "community": 41,
       "norm_label": "fadeup"
     },
     {
@@ -1935,7 +1935,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L29",
       "id": "pages_billing_page_fmtfull",
-      "community": 46,
+      "community": 41,
       "norm_label": "fmtfull()"
     },
     {
@@ -1944,7 +1944,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L33",
       "id": "pages_billing_page_statusconfig",
-      "community": 46,
+      "community": 41,
       "norm_label": "statusconfig"
     },
     {
@@ -1953,7 +1953,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L56",
       "id": "pages_billing_page_billingpage",
-      "community": 46,
+      "community": 41,
       "norm_label": "billingpage()"
     },
     {
@@ -2007,7 +2007,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L105",
       "id": "pages_messages_page_messagespage",
-      "community": 41,
+      "community": 43,
       "norm_label": "messagespage()"
     },
     {
@@ -2097,7 +2097,7 @@
       "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
       "source_location": "L377",
       "id": "pages_overview_page_overviewpage",
-      "community": 48,
+      "community": 43,
       "norm_label": "overviewpage()"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L1",
       "id": "lib_data_project",
-      "community": 46,
+      "community": 41,
       "norm_label": "project"
     },
     {
@@ -2286,7 +2286,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L164",
       "id": "lib_data_invoices",
-      "community": 46,
+      "community": 41,
       "norm_label": "invoices"
     },
     {
@@ -2295,7 +2295,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L202",
       "id": "lib_data_paymenttimeline",
-      "community": 46,
+      "community": 41,
       "norm_label": "paymenttimeline"
     },
     {
@@ -2416,6 +2416,96 @@
       "norm_label": "cn()"
     },
     {
+      "label": "check_bbox.js",
+      "file_type": "code",
+      "source_file": "scratch/check_bbox.js",
+      "source_location": "L1",
+      "id": "scratch_check_bbox_js",
+      "community": 67,
+      "norm_label": "check_bbox.js"
+    },
+    {
+      "label": "getPngNonTransparentBBox()",
+      "file_type": "code",
+      "source_file": "scratch/check_bbox.js",
+      "source_location": "L4",
+      "id": "scratch_check_bbox_getpngnontransparentbbox",
+      "community": 67,
+      "norm_label": "getpngnontransparentbbox()"
+    },
+    {
+      "label": "check_bbox_defilter.js",
+      "file_type": "code",
+      "source_file": "scratch/check_bbox_defilter.js",
+      "source_location": "L1",
+      "id": "scratch_check_bbox_defilter_js",
+      "community": 63,
+      "norm_label": "check_bbox_defilter.js"
+    },
+    {
+      "label": "getBBox()",
+      "file_type": "code",
+      "source_file": "scratch/check_bbox_defilter.js",
+      "source_location": "L4",
+      "id": "scratch_check_bbox_defilter_getbbox",
+      "community": 63,
+      "norm_label": "getbbox()"
+    },
+    {
+      "label": "check_color_type.js",
+      "file_type": "code",
+      "source_file": "scratch/check_color_type.js",
+      "source_location": "L1",
+      "id": "scratch_check_color_type_js",
+      "community": 68,
+      "norm_label": "check_color_type.js"
+    },
+    {
+      "label": "checkColorType()",
+      "file_type": "code",
+      "source_file": "scratch/check_color_type.js",
+      "source_location": "L3",
+      "id": "scratch_check_color_type_checkcolortype",
+      "community": 68,
+      "norm_label": "checkcolortype()"
+    },
+    {
+      "label": "check_png.js",
+      "file_type": "code",
+      "source_file": "scratch/check_png.js",
+      "source_location": "L1",
+      "id": "scratch_check_png_js",
+      "community": 69,
+      "norm_label": "check_png.js"
+    },
+    {
+      "label": "getPngDimensions()",
+      "file_type": "code",
+      "source_file": "scratch/check_png.js",
+      "source_location": "L4",
+      "id": "scratch_check_png_getpngdimensions",
+      "community": 69,
+      "norm_label": "getpngdimensions()"
+    },
+    {
+      "label": "print_image.js",
+      "file_type": "code",
+      "source_file": "scratch/print_image.js",
+      "source_location": "L1",
+      "id": "scratch_print_image_js",
+      "community": 70,
+      "norm_label": "print_image.js"
+    },
+    {
+      "label": "printImageAscii()",
+      "file_type": "code",
+      "source_file": "scratch/print_image.js",
+      "source_location": "L4",
+      "id": "scratch_print_image_printimageascii",
+      "community": 70,
+      "norm_label": "printimageascii()"
+    },
+    {
       "label": "refactor.py",
       "file_type": "code",
       "source_file": "scratch/refactor.py",
@@ -2423,6 +2513,96 @@
       "id": "scratch_refactor_py",
       "community": 59,
       "norm_label": "refactor.py"
+    },
+    {
+      "label": "test_png_pixels.js",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L1",
+      "id": "scratch_test_png_pixels_js",
+      "community": 46,
+      "norm_label": "test_png_pixels.js"
+    },
+    {
+      "label": "buffer",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L4",
+      "id": "scratch_test_png_pixels_buffer",
+      "community": 46,
+      "norm_label": "buffer"
+    },
+    {
+      "label": "width",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L5",
+      "id": "scratch_test_png_pixels_width",
+      "community": 46,
+      "norm_label": "width"
+    },
+    {
+      "label": "height",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L6",
+      "id": "scratch_test_png_pixels_height",
+      "community": 46,
+      "norm_label": "height"
+    },
+    {
+      "label": "idats",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L9",
+      "id": "scratch_test_png_pixels_idats",
+      "community": 46,
+      "norm_label": "idats"
+    },
+    {
+      "label": "length",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L11",
+      "id": "scratch_test_png_pixels_length",
+      "community": 46,
+      "norm_label": "length"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L12",
+      "id": "scratch_test_png_pixels_type",
+      "community": 46,
+      "norm_label": "type"
+    },
+    {
+      "label": "idatBuffer",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L19",
+      "id": "scratch_test_png_pixels_idatbuffer",
+      "community": 46,
+      "norm_label": "idatbuffer"
+    },
+    {
+      "label": "decompressed",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L20",
+      "id": "scratch_test_png_pixels_decompressed",
+      "community": 46,
+      "norm_label": "decompressed"
+    },
+    {
+      "label": "y",
+      "file_type": "code",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L30",
+      "id": "scratch_test_png_pixels_y",
+      "community": 46,
+      "norm_label": "y"
     },
     {
       "label": "App.jsx",
@@ -4140,7 +4320,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 0,
+      "community": 71,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4149,7 +4329,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 0,
+      "community": 71,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4185,7 +4365,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 0,
+      "community": 72,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -4194,7 +4374,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 0,
+      "community": 72,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -4572,7 +4752,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L1",
       "id": "src_pages_contact_jsx",
-      "community": 67,
+      "community": 0,
       "norm_label": "contact.jsx"
     },
     {
@@ -4581,7 +4761,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L8",
       "id": "pages_contact_contact",
-      "community": 67,
+      "community": 0,
       "norm_label": "contact()"
     },
     {
@@ -4662,7 +4842,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 63,
+      "community": 6,
       "norm_label": "notfound.jsx"
     },
     {
@@ -4671,7 +4851,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 63,
+      "community": 6,
       "norm_label": "particlefield()"
     },
     {
@@ -4680,7 +4860,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 63,
+      "community": 6,
       "norm_label": "notfound()"
     },
     {
@@ -4725,7 +4905,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_paymentpolicy_jsx",
-      "community": 68,
+      "community": 6,
       "norm_label": "paymentpolicy.jsx"
     },
     {
@@ -4734,7 +4914,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L9",
       "id": "pages_paymentpolicy_paymentpolicy",
-      "community": 68,
+      "community": 6,
       "norm_label": "paymentpolicy()"
     },
     {
@@ -4743,7 +4923,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_privacypolicy_jsx",
-      "community": 51,
+      "community": 0,
       "norm_label": "privacypolicy.jsx"
     },
     {
@@ -4752,7 +4932,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L4",
       "id": "pages_privacypolicy_privacypolicy",
-      "community": 51,
+      "community": 0,
       "norm_label": "privacypolicy()"
     },
     {
@@ -4896,7 +5076,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 69,
+      "community": 0,
       "norm_label": "services.jsx"
     },
     {
@@ -4905,7 +5085,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 69,
+      "community": 0,
       "norm_label": "services()"
     },
     {
@@ -4914,7 +5094,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L1",
       "id": "src_pages_terms_jsx",
-      "community": 0,
+      "community": 51,
       "norm_label": "terms.jsx"
     },
     {
@@ -4923,7 +5103,7 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L4",
       "id": "pages_terms_terms",
-      "community": 0,
+      "community": 51,
       "norm_label": "terms()"
     },
     {
@@ -8650,6 +8830,146 @@
       "confidence_score": 1.0,
       "source": "nexoraa_client_portal_lib_utils_ts",
       "target": "lib_utils_cn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/check_bbox.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_check_bbox_js",
+      "target": "scratch_check_bbox_getpngnontransparentbbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/check_bbox_defilter.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_check_bbox_defilter_js",
+      "target": "scratch_check_bbox_defilter_getbbox",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/check_color_type.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "scratch_check_color_type_js",
+      "target": "scratch_check_color_type_checkcolortype",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/check_png.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_check_png_js",
+      "target": "scratch_check_png_getpngdimensions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/print_image.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_print_image_js",
+      "target": "scratch_print_image_printimageascii",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_buffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_decompressed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_height",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_idatbuffer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_idats",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_length",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_type",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_width",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scratch/test_png_pixels.js",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "scratch_test_png_pixels_js",
+      "target": "scratch_test_png_pixels_y",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -13087,5 +13407,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7dba13c8a70bccd11486615a7b3c4b6817a0c277"
+  "built_at_commit": "0cf931a2e02d07bfa31550035f9e2f4219c0502b"
 }

@@ -623,7 +623,12 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                   <div className="flex items-center gap-3">
                     <div className="relative">
                       <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 shadow-md">
-                        <img src="/team/milan.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
+                        <img 
+                          src="/team/milan.png" 
+                          alt="Milan" 
+                          className="w-full h-full object-cover" 
+                          style={{ transform: 'scale(1.75)', transformOrigin: '50% 38%' }}
+                        />
                       </div>
                       <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#0B1220] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
                     </div>

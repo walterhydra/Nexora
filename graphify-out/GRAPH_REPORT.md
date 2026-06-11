@@ -1,16 +1,16 @@
 # Graph Report - Nexora  (2026-06-11)
 
 ## Corpus Check
-- 136 files · ~2,092,048 words
+- 142 files · ~2,094,360 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 602 nodes · 739 edges · 70 communities (53 shown, 17 thin omitted)
+- 622 nodes · 753 edges · 73 communities (56 shown, 17 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `7dba13c8`
+- Built from commit: `0cf931a2`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -87,7 +87,7 @@
 - `SidebarContent()` --calls--> `cn()`  [EXTRACTED]
   src/components/portal/Sidebar.jsx → src/utils/cn.js
 
-## Communities (70 total, 17 thin omitted)
+## Communities (73 total, 17 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -110,7 +110,7 @@ Cohesion: 0.08
 Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.10
+Cohesion: 0.08
 Nodes (12): docsData, useMagneticEffect(), useMousePosition(), Navbar(), faqs, steps, allItems, recentItems (+4 more)
 
 ### Community 7 - "Community 7"
@@ -170,12 +170,12 @@ Cohesion: 0.10
 Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules, jsx, lib, module (+11 more)
 
 ### Community 41 - "Community 41"
-Cohesion: 0.27
-Nodes (6): channels, Message, messages, fadeUp, MessagesPage(), stagger
+Cohesion: 0.16
+Nodes (13): channels, invoices, Message, messages, paymentTimeline, project, BillingPage(), fadeUp (+5 more)
 
 ### Community 43 - "Community 43"
-Cohesion: 0.16
-Nodes (13): PageRouter(), pageVariants, allItems, CommandPalette(), recentItems, priorities, RequestModal(), requestTypes (+5 more)
+Cohesion: 0.12
+Nodes (16): PageRouter(), pageVariants, priorities, RequestModal(), requestTypes, containerVariants, itemVariants, navItems (+8 more)
 
 ### Community 45 - "Community 45"
 Cohesion: 0.11
@@ -183,23 +183,23 @@ Nodes (17): aliases, components, hooks, lib, ui, utils, iconLibrary, rsc (+9 mor
 
 ### Community 46 - "Community 46"
 Cohesion: 0.20
-Nodes (10): AnimatedCounter(), AnimatedCounterProps, invoices, paymentTimeline, project, BillingPage(), fadeUp, fmtFull() (+2 more)
+Nodes (9): buffer, decompressed, height, idatBuffer, idats, length, type, width (+1 more)
 
 ### Community 47 - "Community 47"
 Cohesion: 0.20
 Nodes (9): assetFiles, folders, AssetVaultPage(), fadeUp, FileCard(), FileRow(), FileType, getFileIcon() (+1 more)
 
 ### Community 48 - "Community 48"
-Cohesion: 0.17
-Nodes (5): milestones, teamMembers, fadeUp, OverviewPage(), stagger
+Cohesion: 0.15
+Nodes (6): AnimatedCounter(), AnimatedCounterProps, milestones, teamMembers, fadeUp, stagger
 
 ### Community 49 - "Community 49"
 Cohesion: 0.17
 Nodes (4): SettingsPage(), Tab, tabContent, tabs
 
 ### Community 50 - "Community 50"
-Cohesion: 0.24
-Nodes (7): containerVariants, itemVariants, navItems, Sidebar(), cn(), Button(), buttonVariants
+Cohesion: 0.31
+Nodes (6): allItems, CommandPalette(), recentItems, cn(), Button(), buttonVariants
 
 ### Community 52 - "Community 52"
 Cohesion: 0.29
@@ -210,19 +210,19 @@ Cohesion: 0.33
 Nodes (4): inter, jetbrainsMono, metadata, sora
 
 ## Knowledge Gaps
-- **240 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+235 more)
+- **249 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+244 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **17 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `fmt()` connect `Community 36` to `Community 46`?**
-  _High betweenness centrality (0.161) - this node is a cross-community bridge._
+- **Why does `fmt()` connect `Community 36` to `Community 41`?**
+  _High betweenness centrality (0.151) - this node is a cross-community bridge._
 - **Why does `cn()` connect `Community 6` to `Community 9`?**
-  _High betweenness centrality (0.035) - this node is a cross-community bridge._
+  _High betweenness centrality (0.033) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
-  _240 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _249 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
