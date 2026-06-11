@@ -177,7 +177,8 @@ export default function NovaWidget() {
         });
 
         if (!res.ok) {
-          throw new Error('Failed to send OTP');
+          const errData = await res.json().catch(() => ({}));
+          throw new Error(errData.details || errData.error || 'Failed to send OTP');
         }
 
         const data = await res.json();
@@ -193,7 +194,7 @@ export default function NovaWidget() {
         console.error(err);
         setMessages([...nextMsgs, {
           role: 'assistant',
-          content: "We had trouble sending a verification code. Please check your email address and try again:",
+          content: `We had trouble sending a verification code (${err.message}). Please check your email address and try again:`,
           isNew: true
         }]);
       } finally {

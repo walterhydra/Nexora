@@ -880,8 +880,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
-    "mtime": 1781182422.9997818,
-    "ast_hash": "0ac2dee8bc635e12c6bc8acf42e7cdc4",
+    "mtime": 1781183272.6794324,
+    "ast_hash": "2eec8ad2878c5ac851945fca8931a87f",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\send-agreement.js": {
@@ -1197,6 +1197,11 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\otp.js": {
     "mtime": 1781181669.6164296,
     "ast_hash": "1493e54816b7cfc08b62988df027e4ad",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\test-brevo.js": {
+    "mtime": 1781183070.3785179,
+    "ast_hash": "cfacbf1959f27c8f0664c14524d8cd70",
     "semantic_hash": ""
   }
 }
