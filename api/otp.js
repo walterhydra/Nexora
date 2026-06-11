@@ -1,4 +1,5 @@
 import crypto from 'crypto';
+import nodemailer from 'nodemailer';
 
 const SECRET_KEY = process.env.OTP_SECRET || 'nexora-otp-secret-key-2026';
 
@@ -67,7 +68,24 @@ export default async function handler(req, res) {
         </div>
       `;
 
-      if (brevoApiKey) {
+      if (smtpPassword) {
+        // Send directly via Gmail SMTP (100% Inbox Delivery & bypasses Brevo/DMARC blocks)
+        const transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: smtpEmail || 'nexoraa.works@gmail.com',
+            pass: smtpPassword
+          }
+        });
+
+        await transporter.sendMail({
+          from: `"Nexora Studio" <${smtpEmail || 'nexoraa.works@gmail.com'}>`,
+          to: email,
+          subject: `🔑 ${generatedOtp} is your Nexora Verification Code`,
+          html: emailHtml
+        });
+      } else if (brevoApiKey) {
+        // Fallback to Brevo API
         const senderEmail = process.env.BREVO_SENDER || 'nexoraa.works@gmail.com';
         const response = await fetch('https://api.brevo.com/v3/smtp/email', {
           method: 'POST',
@@ -89,7 +107,7 @@ export default async function handler(req, res) {
           throw new Error(errData.message || 'Brevo API error');
         }
       } else {
-        throw new Error('No email provider setup found (BREVO_API_KEY is missing)');
+        throw new Error('No email provider setup found (neither SMTP_PASSWORD nor BREVO_API_KEY is configured)');
       }
 
       return res.status(200).json({
