@@ -278,7 +278,7 @@ Milan leads Nexora with a builder-first philosophy, bridging the gap between adv
 • **Email**: nexoraa.works@gmail.com
 • **Phone**: +91 7383303388
 
-Would you like to learn more about **Meet the Team**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
+Do you want to know about other things? \n\n[OPTIONS]`;
 
       const nextMsgs = [...messages, { role: 'user', content: text }];
       setMessages(nextMsgs);
@@ -308,7 +308,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
 • **Rajkumar Shah** — Software Engineer (Web Systems)
 • **Riya Sharma** — Social Media Handler (Branding & Strategy)
 
-Would you like to learn more about **About Nexora**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
+Do you want to know about other things? \n\n[OPTIONS]`;
 
       const nextMsgs = [...messages, { role: 'user', content: text }];
       setMessages(nextMsgs);
@@ -335,7 +335,7 @@ Would you like to learn more about **About Nexora**, **Our Services**, or **Cont
 • **API & Platform Integrations**: Seamless connections with payment, CRM, and communication platforms.
 • **Search Engine Optimization (SEO)**: Advanced SEO audit and implementation for visibility and performance.
 
-Would you like to learn more about **About Nexora**, **Meet the Team**, or **Contact Us**? \n\n[OPTIONS]`;
+Do you want to know about other things? \n\n[OPTIONS]`;
 
       const nextMsgs = [...messages, { role: 'user', content: text }];
       setMessages(nextMsgs);
@@ -360,7 +360,7 @@ Would you like to learn more about **About Nexora**, **Meet the Team**, or **Con
 • 💼 **LinkedIn**: [Nexora Studio](https://www.linkedin.com/in/milan-pandavdara/)
 • 💻 **GitHub**: [walterhydra](https://github.com/walterhydra)
 
-Let us know what you are looking to build! \n\n[OPTIONS]`;
+Do you want to know about other things? \n\n[OPTIONS]`;
 
       const nextMsgs = [...messages, { role: 'user', content: text }];
       setMessages(nextMsgs);
