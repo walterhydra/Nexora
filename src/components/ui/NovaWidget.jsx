@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail, Zap, Coins } from 'lucide-react';
 
 // Simple Markdown Bold Parser
 const parseMarkdown = (text) => {
@@ -85,6 +85,18 @@ export default function NovaWidget() {
       desc: 'Premium design & dev solutions',
       icon: <Sparkles className="w-3.5 h-3.5 text-accent-blue" />,
       text: '🚀 Our Services'
+    },
+    {
+      title: 'Our Process',
+      desc: '7-day elite build sprints',
+      icon: <Zap className="w-3.5 h-3.5 text-accent-blue" />,
+      text: '⚡ Our Process'
+    },
+    {
+      title: 'Pricing & Packages',
+      desc: 'Flexible investment tiers',
+      icon: <Coins className="w-3.5 h-3.5 text-accent-purple" />,
+      text: '💰 Pricing & Packages'
     },
     {
       title: 'Contact Us',
@@ -345,6 +357,63 @@ Do you want to know about other things? \n\n[OPTIONS]`;
         setMessages([...nextMsgs, {
           role: 'assistant',
           content: servicesResponse,
+          isNew: true
+        }]);
+        setIsLoading(false);
+      }, 800);
+      return;
+    }
+
+    if (lowerText.includes('process') || text === '⚡ Our Process') {
+      const processResponse = `⚡ **Our Elite Development Sprint Process**
+We build and deploy premium digital products in structured, high-intensity sprints designed for speed and absolute quality:
+
+• **Day 1: Architectural Blueprint**: We align on product specifications, complete the system mapping, and define database schemas.
+• **Day 2-3: UI/UX Conception**: We craft high-fidelity, interactive Figma designs matching your brand aesthetic.
+• **Day 4-5: Full-Stack Engineering**: Our developers write clean, modular, and optimized code (React, Next.js, Node.js).
+• **Day 6: Refactoring & Audits**: We perform rigorous visual validation, speed optimizations, and security audits.
+• **Day 7: Launch & Handover**: Your site is deployed live on secure production servers (Vercel, AWS) with full code handover.
+
+Do you want to know about other things? \n\n[OPTIONS]`;
+
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: processResponse,
+          isNew: true
+        }]);
+        setIsLoading(false);
+      }, 800);
+      return;
+    }
+
+    if (lowerText.includes('pricing') || lowerText.includes('package') || text === '💰 Pricing & Packages') {
+      const pricingResponse = `💰 **Nexora Pricing & Packages**
+We offer transparent, package-based pricing tailored to your project goals and scale:
+
+• **Starter Package** (₹15,000 / $200)
+Best for landing pages and simple business sites. Includes single-page design, responsive layout, contact form, and basic SEO. Delivered in 3 days.
+
+• **Growth Package** (₹35,000 / $450)
+Best for dynamic business websites. Includes multi-page React/Next.js build, interactive UI components, blog system, CMS setup, and full SEO audit. Delivered in 7 days.
+
+• **Scale Package** (₹75,000+ / $950+)
+Best for custom web platforms and e-commerce. Includes full-stack database architecture, user authentication, secure payment gateways, customized dashboards, and API integrations.
+
+Do you want to know about other things? \n\n[OPTIONS]`;
+
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: pricingResponse,
           isNew: true
         }]);
         setIsLoading(false);
