@@ -4,6 +4,7 @@ import {
   Terminal, CheckCircle2, MessageSquare, Play, 
   Check, Sparkles, WalletCards, Gauge, ArrowRight, Activity, Clock 
 } from 'lucide-react';
+import { usePortal } from './PortalContext';
 
 const LivePulseFeed = () => {
   const [logs, setLogs] = useState([
@@ -97,6 +98,7 @@ const LivePulseFeed = () => {
 };
 
 const OverviewPage = ({ clientInfo, projects = [], milestones = [], invoices = [] }) => {
+  const { setActivePage } = usePortal();
   const reduceMotion = useReducedMotion();
   const rise = (delay = 0) => ({
     initial: reduceMotion ? false : { opacity: 0, y: 30, scale: 0.98 },
@@ -168,12 +170,18 @@ const OverviewPage = ({ clientInfo, projects = [], milestones = [], invoices = [
             transition={{ delay: 0.3 }}
             className="flex flex-wrap items-center gap-3 shrink-0"
           >
-            <button className="group relative flex items-center justify-center gap-2 rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-3 text-xs font-bold text-gray-300 transition-all hover:bg-white/[0.08] hover:text-white hover:border-white/20 active:scale-95 overflow-hidden">
+            <button 
+              onClick={() => setActivePage('messages')}
+              className="group relative flex items-center justify-center gap-2 rounded-xl bg-white/[0.03] border border-white/[0.08] px-5 py-3 text-xs font-bold text-gray-300 transition-all hover:bg-white/[0.08] hover:text-white hover:border-white/20 active:scale-95 overflow-hidden"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               <MessageSquare className="h-4 w-4 text-indigo-400 group-hover:text-indigo-300 transition-colors" />
               <span className="relative z-10">Message Team</span>
             </button>
-            <button className="group relative flex items-center justify-center gap-2 rounded-xl bg-white text-[#030407] px-6 py-3 text-xs font-black transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-[1.02] active:scale-95 overflow-hidden">
+            <button 
+              onClick={() => window.open('https://rfelectrotech.com/', '_blank')}
+              className="group relative flex items-center justify-center gap-2 rounded-xl bg-white text-[#030407] px-6 py-3 text-xs font-black transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-[1.02] active:scale-95 overflow-hidden"
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
               <span className="relative z-10">Review Build</span>
               <Play className="h-3 w-3 fill-current transition-transform group-hover:translate-x-1 relative z-10" />

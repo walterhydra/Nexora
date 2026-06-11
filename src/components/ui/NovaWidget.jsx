@@ -1,6 +1,54 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail } from 'lucide-react';
+
+// Simple Markdown Bold Parser
+const parseMarkdown = (text) => {
+  if (!text) return '';
+  const boldRegex = /\*\*(.*?)\*\*/g;
+  const parts = text.split(boldRegex);
+  return parts.map((part, i) => {
+    if (i % 2 === 1) {
+      return <strong key={i} className="font-semibold text-white">{part}</strong>;
+    }
+    return part;
+  });
+};
+
+// Word-by-word Typewriter streaming animation component
+const TypewriterText = ({ text, onComplete, onWordTyped }) => {
+  const [displayedText, setDisplayedText] = useState('');
+
+  useEffect(() => {
+    let index = 0;
+    const words = text.split(' ');
+    setDisplayedText('');
+
+    const interval = setInterval(() => {
+      if (index < words.length) {
+        setDisplayedText((prev) => (prev ? prev + ' ' + words[index] : words[index]));
+        index++;
+        if (onWordTyped) onWordTyped();
+      } else {
+        clearInterval(interval);
+        if (onComplete) {
+          setTimeout(onComplete, 100);
+        }
+      }
+    }, 40); // 40ms per word is highly natural
+
+    return () => clearInterval(interval);
+  }, [text, onComplete, onWordTyped]);
+
+  return (
+    <span>
+      {parseMarkdown(displayedText)}
+      {displayedText.length < text.length && (
+        <span className="inline-block w-1.5 h-3.5 ml-1 bg-accent-blue/80 animate-pulse rounded-sm align-middle" />
+      )}
+    </span>
+  );
+};
 
 export default function NovaWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,15 +57,64 @@ export default function NovaWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const quickReplies = [
-    '🏢 About Nexora',
-    '👥 Meet the Team',
-    '🚀 Our Services',
-    '📩 Contact Us'
+  const [flowState, setFlowState] = useState(() => 
+    sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init'
+  );
+  const [userEmail, setUserEmail] = useState('');
+  const [otpToken, setOtpToken] = useState('');
+
+  const quickRepliesData = [
+    {
+      title: 'About Nexora',
+      desc: 'Our vision & agency details',
+      icon: <Building2 className="w-3.5 h-3.5 text-accent-blue" />,
+      text: '🏢 About Nexora'
+    },
+    {
+      title: 'Meet the Team',
+      desc: 'Our experts & engineers',
+      icon: <Users className="w-3.5 h-3.5 text-accent-purple" />,
+      text: '👥 Meet the Team'
+    },
+    {
+      title: 'Our Services',
+      desc: 'Premium design & dev solutions',
+      icon: <Sparkles className="w-3.5 h-3.5 text-accent-blue" />,
+      text: '🚀 Our Services'
+    },
+    {
+      title: 'Contact Us',
+      desc: "Let's collaborate on a project",
+      icon: <Mail className="w-3.5 h-3.5 text-accent-purple" />,
+      text: '📩 Contact Us'
+    }
   ];
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const markMessageTyped = (index) => {
+    setMessages((prev) =>
+      prev.map((msg, i) => (i === index ? { ...msg, isNew: false } : msg))
+    );
+
+    // If greeting finished typing, trigger email request!
+    if (index === 0 && flowState === 'init') {
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: 'assistant',
+            content: "To begin our chat, please enter your email address below:",
+            isNew: true
+          }
+        ]);
+        setFlowState('awaiting_email');
+        setIsLoading(false);
+      }, 500);
+    }
   };
 
   useEffect(() => {
@@ -31,7 +128,10 @@ export default function NovaWidget() {
         setMessages([
           {
             role: 'assistant',
-            content: "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
+            content: flowState === 'completed'
+              ? "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
+              : "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore?",
+            isNew: flowState === 'completed' ? false : true
           }
         ]);
       }, 500);
@@ -42,7 +142,237 @@ export default function NovaWidget() {
     const text = textOverride || inputValue.trim();
     if (!text) return;
 
-    // Add user message
+    if (flowState === 'awaiting_email') {
+      // Validate email format
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(text)) {
+        // Append user message and error prompt
+        const nextMsgs = [...messages, { role: 'user', content: text }];
+        setMessages(nextMsgs);
+        setInputValue('');
+        setIsLoading(true);
+        setTimeout(() => {
+          setMessages([...nextMsgs, {
+            role: 'assistant',
+            content: "That doesn't look like a valid email address. Please check and try again:",
+            isNew: true
+          }]);
+          setIsLoading(false);
+        }, 500);
+        return;
+      }
+
+      // Valid email - send OTP
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setUserEmail(text);
+
+      try {
+        const res = await fetch('/api/otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ action: 'send', email: text })
+        });
+
+        if (!res.ok) {
+          throw new Error('Failed to send OTP');
+        }
+
+        const data = await res.json();
+        setOtpToken(data.token);
+        setFlowState('awaiting_otp');
+
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: `I've sent a 6-digit verification code to **${text}**. Please enter it below:`,
+          isNew: true
+        }]);
+      } catch (err) {
+        console.error(err);
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: "We had trouble sending a verification code. Please check your email address and try again:",
+          isNew: true
+        }]);
+      } finally {
+        setIsLoading(false);
+      }
+      return;
+    }
+
+    if (flowState === 'awaiting_otp') {
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+
+      try {
+        const res = await fetch('/api/otp', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            action: 'verify',
+            email: userEmail,
+            otp: text,
+            token: otpToken
+          })
+        });
+
+        if (!res.ok) {
+          throw new Error('Invalid OTP');
+        }
+
+        sessionStorage.setItem('nova_chat_verified', 'true');
+        setFlowState('completed');
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: "Email verified successfully! Welcome to Nexora Studio. What would you like to explore? \n\n[OPTIONS]",
+          isNew: true
+        }]);
+      } catch (err) {
+        console.error(err);
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: "The verification code you entered is incorrect or expired. Please try again:",
+          isNew: true
+        }]);
+      } finally {
+        setIsLoading(false);
+      }
+      return;
+    }
+
+    // Intercept quick replies for instant premium responses
+    const lowerText = text.toLowerCase();
+    if (
+      lowerText.includes('about nexora') ||
+      lowerText.includes('about founder') ||
+      lowerText.includes('about company') ||
+      lowerText.includes('about section') ||
+      lowerText.includes('who is the founder') ||
+      lowerText.includes('milan') ||
+      text === '🏢 About Nexora'
+    ) {
+      const aboutResponse = `🏢 **About Nexora Studio**
+Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
+
+👑 **Meet the Founder & CEO**
+• **Milan Pandavadara** (Full Stack Architect & Visionary)
+Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
+• **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/
+• **GitHub**: https://github.com/walterhydra
+
+🚀 **Our Core Values & Strengths**
+• **End-to-End Solutions**: We handle everything from discovery, architecture, and UI/UX design to backend engineering and cloud deployment.
+• **High-Performance Code**: Every application is optimized for speed, reliability, and modern SEO best practices.
+• **Innovative Design**: We build custom layouts with smooth animations and curated color palettes, refusing generic templates.
+
+📞 **Contact Nexora**
+• **Email**: nexoraa.works@gmail.com
+• **Phone**: +91 7383303388
+
+Would you like to learn more about **Meet the Team**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
+
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: aboutResponse,
+          isNew: true
+        }]);
+        setIsLoading(false);
+      }, 800);
+      return;
+    }
+
+    if (lowerText.includes('meet the team') || text === '👥 Meet the Team') {
+      const teamResponse = `We have an exceptional, remote-first team of experts led by our Founder & CEO, **Milan**.
+
+**Core Team & Leadership:**
+• **Milan Pandavadara** — Founder & CEO (Full Stack Architect)
+• **Gaurav Thakur** — Technical Lead (Mobile & Backend Systems)
+• **Alis Patel** — Full-Stack Architect (Node.js & DevOps)
+• **Abhishek Jha** — Backend Developer (Java & Systems)
+• **Stany Gregor** — Software Engineer (Web Systems)
+• **Divyansh** — Software Engineer (Frontend Engineer)
+• **Rajkumar Shah** — Software Engineer (Web Systems)
+• **Riya Sharma** — Social Media Handler (Branding & Strategy)
+
+Would you like to learn more about **About Nexora**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
+
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: teamResponse,
+          isNew: true
+        }]);
+        setIsLoading(false);
+      }, 800);
+      return;
+    }
+
+    if (lowerText.includes('our services') || text === '🚀 Our Services') {
+      const servicesResponse = `Nexora Studio offers premium end-to-end digital solutions tailored to elevate your business:
+
+• **Web & Mobile App Development**: High-performance, responsive React/Next.js/Vite applications and robust mobile apps.
+• **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX designs.
+• **Automation & AI Integration**: Custom AI pipelines, chatbot integrations, and workflow automation.
+• **DevOps & Cloud Systems**: Secure, scalable architecture set up on AWS, Vercel, and Supabase.
+• **API & Platform Integrations**: Seamless connections with payment, CRM, and communication platforms.
+• **Search Engine Optimization (SEO)**: Advanced SEO audit and implementation for visibility and performance.
+
+Would you like to learn more about **About Nexora**, **Meet the Team**, or **Contact Us**? \n\n[OPTIONS]`;
+
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: servicesResponse,
+          isNew: true
+        }]);
+        setIsLoading(false);
+      }, 800);
+      return;
+    }
+
+    if (lowerText.includes('contact') || text === '📩 Contact Us') {
+      const contactResponse = `We'd love to collaborate on your next premium project! You can connect with us directly:
+
+• 📩 **Email**: [nexoraa.works@gmail.com](mailto:nexoraa.works@gmail.com)
+• 📞 **Phone**: [+91 7383303388](tel:+917383303388)
+• 💼 **LinkedIn**: [Nexora Studio](https://www.linkedin.com/in/milan-pandavdara/)
+• 💻 **GitHub**: [walterhydra](https://github.com/walterhydra)
+
+Let us know what you are looking to build! \n\n[OPTIONS]`;
+
+      const nextMsgs = [...messages, { role: 'user', content: text }];
+      setMessages(nextMsgs);
+      setInputValue('');
+      setIsLoading(true);
+      setTimeout(() => {
+        setMessages([...nextMsgs, {
+          role: 'assistant',
+          content: contactResponse,
+          isNew: true
+        }]);
+        setIsLoading(false);
+      }, 800);
+      return;
+    }
+
+    // Normal chat handler (flowState === 'completed' or fallback)
     const newMessages = [...messages, { role: 'user', content: text }];
     setMessages(newMessages);
     setInputValue('');
@@ -53,7 +383,6 @@ export default function NovaWidget() {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        // Map messages for Anthropic, removing the [OPTIONS] placeholder from history
         body: JSON.stringify({
           messages: newMessages.map(m => ({
             role: m.role,
@@ -70,7 +399,8 @@ export default function NovaWidget() {
 
       setMessages([...newMessages, {
         role: 'assistant',
-        content: data.content[0].text
+        content: data.content[0].text,
+        isNew: true
       }]);
     } catch (error) {
       console.error("Chat error:", error);
@@ -81,8 +411,26 @@ export default function NovaWidget() {
 
       if (lowerText.match(/^(hi|hello|hey|how are you|hii)/i)) {
         fallbackResponse = "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]";
-      } else if (lowerText.includes('about')) {
-        fallbackResponse = "Nexora Studio is a Premium Digital Agency and Technology Innovator. We specialize in end-to-end development, stunning design, and high-performance web apps. Check out our About Page to learn more!";
+      } else if (lowerText.includes('about') || lowerText.includes('founder') || lowerText.includes('milan')) {
+        fallbackResponse = `🏢 **About Nexora Studio**
+Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
+
+👑 **Meet the Founder & CEO**
+• **Milan Pandavadara** (Full Stack Architect & Visionary)
+Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
+• **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/
+• **GitHub**: https://github.com/walterhydra
+
+🚀 **Our Core Values & Strengths**
+• **End-to-End Solutions**: We handle everything from discovery, architecture, and UI/UX design to backend engineering and cloud deployment.
+• **High-Performance Code**: Every application is optimized for speed, reliability, and modern SEO best practices.
+• **Innovative Design**: We build custom layouts with smooth animations and curated color palettes, refusing generic templates.
+
+📞 **Contact Nexora**
+• **Email**: nexoraa.works@gmail.com
+• **Phone**: +91 7383303388
+
+Would you like to learn more about **Meet the Team**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
       } else if (lowerText.includes('team')) {
         fallbackResponse = "We have a fantastic team led by our Founder & CEO, Milan. Want to know about anyone specific?";
       } else if (lowerText.includes('services')) {
@@ -92,7 +440,7 @@ export default function NovaWidget() {
       }
 
       setTimeout(() => {
-        setMessages([...newMessages, { role: 'assistant', content: fallbackResponse }]);
+        setMessages([...newMessages, { role: 'assistant', content: fallbackResponse, isNew: true }]);
         setIsLoading(false);
       }, 1000);
       return;
@@ -107,26 +455,60 @@ export default function NovaWidget() {
     }
   };
 
-  const renderMessageContent = (content) => {
-    if (content.includes('[OPTIONS]')) {
+  const renderMessageContent = (msg, idx) => {
+    const hasOptions = msg.content.includes('[OPTIONS]');
+    const cleanContent = msg.content.replace('[OPTIONS]', '').trim();
+
+    if (msg.role === 'assistant' && msg.isNew) {
       return (
-        <>
-          <p className="whitespace-pre-wrap leading-relaxed">{content.replace('[OPTIONS]', '')}</p>
-          <div className="flex flex-wrap gap-2 mt-4">
-            {quickReplies.map((reply, i) => (
-              <button
-                key={i}
-                onClick={() => handleSend(reply)}
-                className="text-xs font-medium px-4 py-2 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:bg-white/10 hover:text-white hover:border-accent-blue/40 hover:shadow-[0_0_15px_rgba(91,164,230,0.15)] transition-all duration-300"
-              >
-                {reply}
-              </button>
-            ))}
-          </div>
-        </>
+        <div className="space-y-4">
+          <p className="whitespace-pre-wrap leading-relaxed">
+            <TypewriterText
+              text={cleanContent}
+              onComplete={() => markMessageTyped(idx)}
+              onWordTyped={scrollToBottom}
+            />
+          </p>
+        </div>
       );
     }
-    return <p className="whitespace-pre-wrap leading-relaxed">{content}</p>;
+
+    return (
+      <div className="space-y-4 animate-fade-in">
+        <p className="whitespace-pre-wrap leading-relaxed">{parseMarkdown(cleanContent)}</p>
+        {hasOptions && (
+          <m.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut' }}
+            className="grid grid-cols-2 gap-2 mt-4"
+          >
+            {quickRepliesData.map((reply, i) => (
+              <button
+                key={i}
+                onClick={() => handleSend(reply.text)}
+                className="flex flex-col items-start p-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-blue/30 shadow-sm hover:shadow-[0_4px_20px_rgba(91,164,230,0.1)] transition-all duration-300 group relative overflow-hidden text-left"
+              >
+                {/* Sweep light effect on hover */}
+                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.04] to-transparent pointer-events-none" />
+                
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="p-1 rounded-lg bg-white/[0.03] border border-white/5 group-hover:bg-accent-blue/15 group-hover:border-accent-blue/30 transition-all duration-300">
+                    {reply.icon}
+                  </div>
+                  <span className="text-[11px] font-semibold text-white group-hover:text-accent-blue transition-colors duration-300">
+                    {reply.title}
+                  </span>
+                </div>
+                <p className="text-[9px] leading-snug text-gray-400 font-light group-hover:text-gray-300 transition-colors">
+                  {reply.desc}
+                </p>
+              </button>
+            ))}
+          </m.div>
+        )}
+      </div>
+    );
   };
 
   return (
@@ -138,22 +520,27 @@ export default function NovaWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-24 right-4 md:right-8 w-[calc(100vw-32px)] md:w-[400px] h-[600px] max-h-[calc(100vh-120px)] bg-[#0B1120]/80 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_20px_40px_-15px_rgba(0,0,0,0.7)] flex flex-col z-[100] overflow-hidden"
+            data-lenis-prevent="true"
+            className="fixed bottom-24 right-4 md:right-8 w-[calc(100vw-32px)] md:w-[400px] h-[600px] max-h-[calc(100vh-120px)] bg-[#0B1220]/85 backdrop-blur-3xl border border-white/10 rounded-3xl shadow-[0_24px_50px_-12px_rgba(0,0,0,0.8)] flex flex-col z-[100] overflow-hidden"
           >
+            {/* Ambient background glows */}
+            <div className="absolute top-[20%] left-[-15%] w-[220px] h-[220px] rounded-full bg-accent-blue/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="absolute bottom-[20%] right-[-15%] w-[220px] h-[220px] rounded-full bg-accent-purple/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
+
             {/* Header */}
-            <div className="bg-white/[0.02] border-b border-white/10 p-5 flex items-center justify-between backdrop-blur-md z-10">
+            <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10">
               <div className="flex items-center gap-3">
                 <div className="relative">
                   <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
                     <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
                   </div>
-                  <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full">
+                  <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
                     <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
                   </div>
                 </div>
                 <div>
                   <h3 className="text-white font-semibold text-lg flex items-center gap-2">
-                    Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10">AI</span>
+                    Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10 shadow-[0_0_10px_rgba(0,245,255,0.1)]">AI</span>
                   </h3>
                   <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
                 </div>
@@ -167,9 +554,10 @@ export default function NovaWidget() {
             </div>
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-accent-blue/5 to-transparent pointer-events-none -z-10"></div>
-
+            <div 
+              data-lenis-prevent="true"
+              className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0"
+            >
               {messages.map((msg, idx) => (
                 <div
                   key={idx}
@@ -183,21 +571,21 @@ export default function NovaWidget() {
 
                     <div
                       className={`relative text-sm ${msg.role === 'user'
-                          ? 'p-4 rounded-2xl shadow-md bg-gradient-to-br from-accent-blue to-accent-purple text-white rounded-br-sm'
-                          : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#090E17] border border-white/10 overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.4)]'
+                          ? 'p-4 rounded-2xl shadow-[0_4px_16px_rgba(91,164,230,0.2)] bg-gradient-to-br from-accent-blue via-[#4f46e5] to-accent-purple border border-white/10 text-white rounded-br-sm'
+                          : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
                         }`}
                     >
                       {msg.role !== 'user' && (
                         <>
                           {/* Dot Grid Background */}
-                          <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
+                          <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
                           {/* Top Glowing Edge */}
                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
                           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[6px] opacity-80"></div>
                         </>
                       )}
                       <div className="relative z-10 text-gray-200 leading-relaxed font-light tracking-wide">
-                        {renderMessageContent(msg.content)}
+                        {renderMessageContent(msg, idx)}
                       </div>
                     </div>
                   </div>
@@ -210,9 +598,9 @@ export default function NovaWidget() {
                     <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
                       <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
                     </div>
-                    <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#090E17] border border-white/10 flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.4)]">
+                    <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
                       {/* Dot Grid Background */}
-                      <div className="absolute inset-0 opacity-[0.12] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
+                      <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
                       {/* Top Glowing Edge */}
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[4px] opacity-80"></div>
@@ -228,20 +616,26 @@ export default function NovaWidget() {
             </div>
 
             {/* Input Area */}
-            <div className="p-4 bg-white/[0.02] border-t border-white/10 backdrop-blur-md z-10">
-              <div className="relative flex items-center bg-[#0B1120] border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/40 focus-within:ring-1 focus-within:ring-accent-blue/40 transition-all duration-300">
+            <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10">
+              <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
                 <input
                   type="text"
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Type your message..."
+                  placeholder={
+                    flowState === 'awaiting_email'
+                      ? "Enter your email address..."
+                      : flowState === 'awaiting_otp'
+                      ? "Enter 6-digit verification code..."
+                      : "Ask Nova anything..."
+                  }
                   className="w-full bg-transparent py-2.5 pl-4 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none"
                 />
                 <button
                   onClick={() => handleSend()}
                   disabled={!inputValue.trim() || isLoading}
-                  className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-lg disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 transition-transform"
+                  className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-[0_0_12px_rgba(91,164,230,0.3)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all"
                 >
                   <Send className="w-4 h-4 ml-0.5" />
                 </button>
