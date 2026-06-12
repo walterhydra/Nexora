@@ -81,6 +81,14 @@ export default function Pulse() {
     return () => clearInterval(timer);
   }, []);
 
+  const timeString = pulseTime.toLocaleTimeString('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: true
+  });
+  const [timeVal, ampm] = timeString.split(' ');
+
   return (
     <section className="py-32 relative overflow-hidden bg-black">
       {/* Cinematic Background */}
@@ -148,8 +156,9 @@ export default function Pulse() {
                 />
               ))}
               <div className="relative z-10 text-center">
-                <div className="text-6xl font-black text-white tracking-tighter mb-2">
-                  {pulseTime.toLocaleTimeString([], { hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' })}
+                <div className="text-6xl font-black text-white tracking-tighter mb-2 flex items-baseline justify-center gap-2">
+                  <span>{timeVal}</span>
+                  <span className="text-xl font-bold text-accent-primary uppercase tracking-widest">{ampm}</span>
                 </div>
                 <div className="text-[10px] font-mono text-accent-primary uppercase tracking-[0.5em]">System Sync Active</div>
               </div>

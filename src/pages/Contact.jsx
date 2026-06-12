@@ -51,7 +51,43 @@ export default function Contact() {
     const email = formData.get('user_email');
     const message = formData.get('message');
 
-    // 1. Try sending via Web3Forms if configured
+    // 1. Try sending via primary local serverless endpoint (direct SMTP/Brevo/Resend)
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name: name,
+          email: email,
+          message: message
+        })
+      });
+
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (parseErr) {
+        throw new Error("Invalid response from api server");
+      }
+
+      if (response.ok && data.success) {
+        setIsSubmitting(false);
+        setIsSuccess(true);
+        toast.success("Inquiry sent successfully! We'll contact you soon.");
+        formRef.current.reset();
+        setMessageValue('');
+        setTimeout(() => setIsSuccess(false), 5000);
+        return;
+      } else {
+        throw new Error(data.error || "Primary contact endpoint failed");
+      }
+    } catch (err) {
+      console.warn("Primary local API endpoint failed, trying fallback Web3Forms:", err);
+    }
+
+    // 2. Try sending via Web3Forms if configured
     if (web3Key) {
       try {
         const response = await fetch("https://api.web3forms.com/submit", {
@@ -76,6 +112,7 @@ export default function Contact() {
           setIsSuccess(true);
           toast.success("Inquiry sent successfully! We'll contact you soon.");
           formRef.current.reset();
+          setMessageValue('');
           setTimeout(() => setIsSuccess(false), 5000);
           return;
         } else {
@@ -86,7 +123,7 @@ export default function Contact() {
       }
     }
 
-    // 2. Try sending via EmailJS SMTP relay if configured
+    // 3. Try sending via EmailJS SMTP relay if configured
     if (serviceId && templateId && publicKey) {
       try {
         await emailjs.send(
@@ -105,6 +142,7 @@ export default function Contact() {
         setIsSuccess(true);
         toast.success("Inquiry sent successfully! We'll contact you soon.");
         formRef.current.reset();
+        setMessageValue('');
         setTimeout(() => setIsSuccess(false), 5000);
         return;
       } catch (err) {
@@ -112,7 +150,7 @@ export default function Contact() {
       }
     }
 
-    // 3. Fallback to FormSubmit API
+    // 4. Fallback to FormSubmit API
     try {
       const payload = {
         name,
@@ -135,6 +173,7 @@ export default function Contact() {
         setIsSuccess(true);
         toast.success("Inquiry sent successfully! We'll contact you soon.");
         formRef.current.reset();
+        setMessageValue('');
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
         throw new Error("FormSubmit response not OK");

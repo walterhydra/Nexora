@@ -85,11 +85,29 @@ export default async function handler(req, res) {
           html: emailHtml
         });
       } else if (brevoApiKey) {
-        console.warn("[OTP Warning] SMTP_PASSWORD / GMAIL_APP_PASSWORD is not set in local .env. Falling back to Brevo. " +
-                     "Note: Sending emails from '@gmail.com' via third-party providers like Brevo is blocked by Gmail's DMARC policy. " +
-                     "Please add your Gmail App Password to your local .env as SMTP_PASSWORD to test sending locally.");
+        // Fetch verified senders list from Brevo dynamically to ensure delivery
+        let senderEmail = 'realme11119412@gmail.com'; // Verified sender fallback
+        try {
+          const sendersRes = await fetch('https://api.brevo.com/v3/senders', {
+            method: 'GET',
+            headers: {
+              'accept': 'application/json',
+              'api-key': brevoApiKey
+            }
+          });
+          if (sendersRes.ok) {
+            const sendersData = await sendersRes.json();
+            const activeSender = sendersData.senders?.find(s => s.active);
+            if (activeSender) {
+              senderEmail = activeSender.email;
+              console.log('[API OTP] Resolved active verified Brevo sender:', senderEmail);
+            }
+          }
+        } catch (senderErr) {
+          console.warn('[API OTP] Failed to fetch verified senders from Brevo, using default:', senderErr.message);
+        }
+
         // Fallback to Brevo API
-        const senderEmail = process.env.BREVO_SENDER || 'nexoraa.works@gmail.com';
         const response = await fetch('https://api.brevo.com/v3/smtp/email', {
           method: 'POST',
           headers: {

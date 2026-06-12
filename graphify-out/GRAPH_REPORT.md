@@ -1,16 +1,16 @@
 # Graph Report - Nexora  (2026-06-12)
 
 ## Corpus Check
-- 137 files · ~2,758,459 words
+- 138 files · ~2,760,900 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 605 nodes · 741 edges · 66 communities (48 shown, 18 thin omitted)
+- 607 nodes · 742 edges · 70 communities (52 shown, 18 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `b90fb6e5`
+- Built from commit: `3d1abdf6`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -87,7 +87,7 @@
 - `SidebarContent()` --calls--> `cn()`  [EXTRACTED]
   src/components/portal/Sidebar.jsx → src/utils/cn.js
 
-## Communities (66 total, 18 thin omitted)
+## Communities (70 total, 18 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -110,7 +110,7 @@ Cohesion: 0.08
 Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.08
+Cohesion: 0.09
 Nodes (12): docsData, useMagneticEffect(), useMousePosition(), Navbar(), faqs, steps, allItems, recentItems (+4 more)
 
 ### Community 7 - "Community 7"
@@ -214,7 +214,7 @@ Nodes (4): inter, jetbrainsMono, metadata, sora
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `fmt()` connect `Community 36` to `Community 38`?**
-  _High betweenness centrality (0.159) - this node is a cross-community bridge._
+  _High betweenness centrality (0.158) - this node is a cross-community bridge._
 - **Why does `cn()` connect `Community 6` to `Community 9`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**

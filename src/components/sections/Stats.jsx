@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { m, useMotionTemplate, useMotionValue } from 'framer-motion';
+import { m, useMotionTemplate, useMotionValue, useScroll, useTransform } from 'framer-motion';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import { Code2, Clock, Star, Users, ArrowUpRight } from 'lucide-react';
 
@@ -50,10 +50,13 @@ const stats = [
   }
 ];
 
-const StatCard = React.memo(({ stat, idx }) => {
+const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
   const rectRef = useRef(null);
+
+  const scale = useTransform(progress, range, [1, targetScale]);
+  const dimOpacity = useTransform(progress, range, [0, 0.4]);
 
   function handleMouseEnter({ currentTarget }) {
     rectRef.current = currentTarget.getBoundingClientRect();
@@ -79,9 +82,15 @@ const StatCard = React.memo(({ stat, idx }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      
-      className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0a0a0a]/90  border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col justify-center group`}
+      style={{ scale, transformOrigin: "top center" }}
+      className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0c0c0c] border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-center group`}
     >
+      {/* Scroll Dimming Overlay */}
+      <m.div 
+        className="absolute inset-0 bg-black pointer-events-none z-20"
+        style={{ opacity: dimOpacity }}
+      />
+
       {/* High-Performance Cursor Spotlight Glow */}
       <m.div
         className="pointer-events-none absolute -inset-px z-0 opacity-0 transition duration-500 group-hover:opacity-100"
@@ -139,8 +148,14 @@ const StatCard = React.memo(({ stat, idx }) => {
 });
 
 export default function Stats() {
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  });
+
   return (
-    <section className="py-32 relative bg-[#050505] z-10">
+    <section ref={containerRef} className="py-32 relative bg-[#050505] z-10">
       
       {/* Background ambient light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-accent-primary/10 blur-[150px] pointer-events-none rounded-full" />
@@ -166,10 +181,21 @@ export default function Stats() {
         </m.div>
 
         {/* Card Stacking Container */}
-        <div className="relative pb-[20vh]">
-          {stats.map((stat, idx) => (
-            <StatCard key={idx} stat={stat} idx={idx} />
-          ))}
+        <div className="relative pb-[30vh]">
+          {stats.map((stat, idx) => {
+            const range = [idx * 0.22, 1];
+            const targetScale = 1 - ((stats.length - 1 - idx) * 0.04);
+            return (
+              <StatCard 
+                key={idx} 
+                stat={stat} 
+                idx={idx} 
+                progress={scrollYProgress}
+                range={range}
+                targetScale={targetScale}
+              />
+            );
+          })}
         </div>
 
       </div>

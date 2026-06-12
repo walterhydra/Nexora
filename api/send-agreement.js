@@ -114,12 +114,28 @@ export default async function handler(req, res) {
 
     // 1. BREVO PROVIDER (API-based, no App Password needed)
     if (brevoApiKey) {
-      const senderEmail = process.env.BREVO_SENDER || 'realme11119412@gmail.com';
-      if (senderEmail.endsWith('@gmail.com') && !smtpPassword) {
-        console.warn("[Agreement Warning] SMTP_PASSWORD / GMAIL_APP_PASSWORD is not set in local .env. Falling back to Brevo. " +
-                     "Note: Sending emails from '@gmail.com' via third-party providers like Brevo is blocked by Gmail's DMARC policy. " +
-                     "Please add your Gmail App Password to your local .env as SMTP_PASSWORD to test sending locally.");
+      // Fetch verified senders list from Brevo dynamically to ensure delivery
+      let senderEmail = 'realme11119412@gmail.com'; // Verified sender fallback
+      try {
+        const sendersRes = await fetch('https://api.brevo.com/v3/senders', {
+          method: 'GET',
+          headers: {
+            'accept': 'application/json',
+            'api-key': brevoApiKey
+          }
+        });
+        if (sendersRes.ok) {
+          const sendersData = await sendersRes.json();
+          const activeSender = sendersData.senders?.find(s => s.active);
+          if (activeSender) {
+            senderEmail = activeSender.email;
+            console.log('[API Send-Agreement] Resolved active verified Brevo sender:', senderEmail);
+          }
+        }
+      } catch (senderErr) {
+        console.warn('[API Send-Agreement] Failed to fetch verified senders from Brevo, using default:', senderErr.message);
       }
+
       const payload = {
         sender: { name: 'Nexora Studio', email: senderEmail },
         to: [{ email: email, name: fullName }],

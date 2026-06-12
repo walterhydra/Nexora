@@ -769,6 +769,24 @@
       "norm_label": "handler()"
     },
     {
+      "label": "contact.js",
+      "file_type": "code",
+      "source_file": "api/contact.js",
+      "source_location": "L1",
+      "id": "api_contact_js",
+      "community": 63,
+      "norm_label": "contact.js"
+    },
+    {
+      "label": "handler()",
+      "file_type": "code",
+      "source_file": "api/contact.js",
+      "source_location": "L3",
+      "id": "api_contact_handler",
+      "community": 63,
+      "norm_label": "handler()"
+    },
+    {
       "label": "otp.js",
       "file_type": "code",
       "source_file": "api/otp.js",
@@ -2727,7 +2745,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 0,
+      "community": 64,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -2736,7 +2754,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 0,
+      "community": 64,
       "norm_label": "loadingscreen()"
     },
     {
@@ -3616,7 +3634,7 @@
       "label": "Stats",
       "file_type": "code",
       "source_file": "src/components/sections/Stats.jsx",
-      "source_location": "L141",
+      "source_location": "L150",
       "id": "sections_stats_stats",
       "community": 55,
       "norm_label": "stats"
@@ -4176,7 +4194,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 0,
+      "community": 67,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4185,7 +4203,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 0,
+      "community": 67,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4698,7 +4716,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 6,
+      "community": 44,
       "norm_label": "notfound.jsx"
     },
     {
@@ -4707,7 +4725,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 6,
+      "community": 44,
       "norm_label": "particlefield()"
     },
     {
@@ -4716,7 +4734,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 6,
+      "community": 44,
       "norm_label": "notfound()"
     },
     {
@@ -4761,7 +4779,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_paymentpolicy_jsx",
-      "community": 6,
+      "community": 66,
       "norm_label": "paymentpolicy.jsx"
     },
     {
@@ -4770,7 +4788,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L9",
       "id": "pages_paymentpolicy_paymentpolicy",
-      "community": 6,
+      "community": 66,
       "norm_label": "paymentpolicy()"
     },
     {
@@ -4779,7 +4797,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_privacypolicy_jsx",
-      "community": 44,
+      "community": 0,
       "norm_label": "privacypolicy.jsx"
     },
     {
@@ -4788,7 +4806,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L4",
       "id": "pages_privacypolicy_privacypolicy",
-      "community": 44,
+      "community": 0,
       "norm_label": "privacypolicy()"
     },
     {
@@ -4932,7 +4950,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 44,
+      "community": 0,
       "norm_label": "services.jsx"
     },
     {
@@ -4941,7 +4959,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 44,
+      "community": 0,
       "norm_label": "services()"
     },
     {
@@ -6229,6 +6247,16 @@
       "confidence_score": 1.0,
       "source": "api_chat_js",
       "target": "api_chat_handler"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/contact.js",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "api_contact_js",
+      "target": "api_contact_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -8865,9 +8893,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_ui_novawidget_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_ui_novawidget_jsx"
     },
     {
       "relation": "imports_from",
@@ -11906,9 +11934,9 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_novawidget",
-      "confidence_score": 1.0
+      "target": "ui_novawidget_novawidget"
     },
     {
       "relation": "contains",
@@ -11916,9 +11944,9 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_parsemarkdown",
-      "confidence_score": 1.0
+      "target": "ui_novawidget_parsemarkdown"
     },
     {
       "relation": "contains",
@@ -11926,9 +11954,9 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_typewritertext",
-      "confidence_score": 1.0
+      "target": "ui_novawidget_typewritertext"
     },
     {
       "relation": "calls",
@@ -11937,9 +11965,9 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L45",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_novawidget_typewritertext",
-      "target": "ui_novawidget_parsemarkdown",
-      "confidence_score": 1.0
+      "target": "ui_novawidget_parsemarkdown"
     },
     {
       "relation": "imports",
@@ -13134,5 +13162,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "b90fb6e5f75aec9f8eb4164ee290df43129b5dbb"
+  "built_at_commit": "3d1abdf6f9dfccf032d11ae943797f2485afff62"
 }
