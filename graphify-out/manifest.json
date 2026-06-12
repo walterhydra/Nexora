@@ -25,7 +25,7 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\App.jsx": {
-    "mtime": 1780982704.2306325,
+    "mtime": 1781260736.0830386,
     "ast_hash": "9afc2be33704520d95431f571b9708eb",
     "semantic_hash": ""
   },
@@ -430,7 +430,7 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\index.html": {
-    "mtime": 1780835643.3254862,
+    "mtime": 1781257927.8487678,
     "ast_hash": "0d1b8c711be3af54563b3c8cb233a6ab",
     "semantic_hash": ""
   },
@@ -465,8 +465,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\favicon.png": {
-    "mtime": 1778747287.8774526,
-    "ast_hash": "daf8e1a2333397e0197f5e8efa93f563",
+    "mtime": 1781259345.7614775,
+    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\favicon.svg": {
@@ -485,13 +485,13 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\favicon.png": {
-    "mtime": 1778480626.8111515,
-    "ast_hash": "017d2aea4558301e3558e9c64c58c4f4",
+    "mtime": 1781259345.7614775,
+    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\logo.png": {
-    "mtime": 1778480204.8971293,
-    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
+    "mtime": 1781020060.4365926,
+    "ast_hash": "791c5f373e56015d4625eeaf4593b633",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\WhatsApp Image 2026-05-11 at 12.12.56 PM.jpeg": {
@@ -879,11 +879,6 @@
     "ast_hash": "9f623f6a9fc3c66855396957d0e3ca46",
     "semantic_hash": ""
   },
-  "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
-    "mtime": 1781199544.2427466,
-    "ast_hash": "1887397d7ebebd1bec13c2233dced2f7",
-    "semantic_hash": ""
-  },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\send-agreement.js": {
     "mtime": 1780928394.1148386,
     "ast_hash": "9d3a6bc8ceb65ef6f543cd1981be9810",
@@ -1202,6 +1197,81 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\test_png_pixels.js": {
     "mtime": 1781198126.6951535,
     "ast_hash": "7704c0b12ace483a68b659bc92a75aa6",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\ChatGPT Image Jun 3, 2026, 01_09_31 PM.png": {
+    "mtime": 1780472372.5946088,
+    "ast_hash": "e692eaf2f9c4fa22d0f551e969633096",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_0.png": {
+    "mtime": 1781247888.7996347,
+    "ast_hash": "b867d4a969ce83108f7559a90d2abb05",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_1.png": {
+    "mtime": 1781247888.8238275,
+    "ast_hash": "434b406b301a8bde9491e3675a6bc3ab",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_2.png": {
+    "mtime": 1781247888.8495355,
+    "ast_hash": "5115398039b31b025b132c1f79f7ab17",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_3.png": {
+    "mtime": 1781247888.8810923,
+    "ast_hash": "d4731dc19df04de75adf2c47c27538e8",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_4.png": {
+    "mtime": 1781247888.9044926,
+    "ast_hash": "782c2706a412873dcc844c9f9fcde558",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_5.png": {
+    "mtime": 1781247888.9303725,
+    "ast_hash": "d35e4ab17eeb256c85b0e9bbc0ac83d6",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\scratch\\col_6.png": {
+    "mtime": 1781247888.9544678,
+    "ast_hash": "c39c3dde24df557f5a29586e558e841d",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\image.png": {
+    "mtime": 1781258166.6719985,
+    "ast_hash": "0a9003a277dc1fee3dcb2305e0ef14f4",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\ChatGPT Image Jun 9, 2026, 09_17_40 PM.png": {
+    "mtime": 1781020060.4365926,
+    "ast_hash": "791c5f373e56015d4625eeaf4593b633",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\gemini-bot.png": {
+    "mtime": 1781259134.3347926,
+    "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\Gemini_Generated_Image_n8mran8mran8mran (1).png": {
+    "mtime": 1781259134.3347926,
+    "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\logo copy.png": {
+    "mtime": 1781259345.7614775,
+    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\ChatGPT Image May 11, 2026, 11_53_46 AM.png": {
+    "mtime": 1778480626.8111515,
+    "ast_hash": "017d2aea4558301e3558e9c64c58c4f4",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
+    "mtime": 1781261391.026779,
+    "ast_hash": "092963c6ce37f64b08d1d63aa7d87f1d",
     "semantic_hash": ""
   }
 }

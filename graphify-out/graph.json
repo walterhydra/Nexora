@@ -1899,7 +1899,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_pages_billing_page_tsx",
-      "community": 41,
+      "community": 38,
       "norm_label": "billing-page.tsx"
     },
     {
@@ -1908,7 +1908,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L17",
       "id": "pages_billing_page_stagger",
-      "community": 41,
+      "community": 38,
       "norm_label": "stagger"
     },
     {
@@ -1917,7 +1917,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L21",
       "id": "pages_billing_page_fadeup",
-      "community": 41,
+      "community": 38,
       "norm_label": "fadeup"
     },
     {
@@ -1935,7 +1935,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L29",
       "id": "pages_billing_page_fmtfull",
-      "community": 41,
+      "community": 38,
       "norm_label": "fmtfull()"
     },
     {
@@ -1944,7 +1944,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L33",
       "id": "pages_billing_page_statusconfig",
-      "community": 41,
+      "community": 38,
       "norm_label": "statusconfig"
     },
     {
@@ -1953,7 +1953,7 @@
       "source_file": "nexoraa-client-portal/components/pages/billing-page.tsx",
       "source_location": "L56",
       "id": "pages_billing_page_billingpage",
-      "community": 41,
+      "community": 38,
       "norm_label": "billingpage()"
     },
     {
@@ -1962,7 +1962,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_pages_messages_page_tsx",
-      "community": 41,
+      "community": 38,
       "norm_label": "messages-page.tsx"
     },
     {
@@ -1971,7 +1971,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L21",
       "id": "pages_messages_page_stagger",
-      "community": 41,
+      "community": 38,
       "norm_label": "stagger"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L25",
       "id": "pages_messages_page_fadeup",
-      "community": 41,
+      "community": 38,
       "norm_label": "fadeup"
     },
     {
@@ -1989,7 +1989,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L30",
       "id": "pages_messages_page_messagebubble",
-      "community": 41,
+      "community": 38,
       "norm_label": "messagebubble()"
     },
     {
@@ -1998,7 +1998,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L89",
       "id": "pages_messages_page_typingindicator",
-      "community": 41,
+      "community": 38,
       "norm_label": "typingindicator()"
     },
     {
@@ -2241,7 +2241,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L1",
       "id": "nexoraa_client_portal_lib_data_ts",
-      "community": 41,
+      "community": 38,
       "norm_label": "data.ts"
     },
     {
@@ -2250,7 +2250,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L1",
       "id": "lib_data_project",
-      "community": 41,
+      "community": 38,
       "norm_label": "project"
     },
     {
@@ -2286,7 +2286,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L164",
       "id": "lib_data_invoices",
-      "community": 41,
+      "community": 38,
       "norm_label": "invoices"
     },
     {
@@ -2295,7 +2295,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L202",
       "id": "lib_data_paymenttimeline",
-      "community": 41,
+      "community": 38,
       "norm_label": "paymenttimeline"
     },
     {
@@ -2322,7 +2322,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L304",
       "id": "lib_data_channels",
-      "community": 41,
+      "community": 38,
       "norm_label": "channels"
     },
     {
@@ -2331,7 +2331,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L310",
       "id": "lib_data_messages",
-      "community": 41,
+      "community": 38,
       "norm_label": "messages"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L423",
       "id": "lib_data_message",
-      "community": 41,
+      "community": 38,
       "norm_label": "message"
     },
     {
@@ -2691,7 +2691,7 @@
       "source_file": "src/components/layout/CookieBanner.jsx",
       "source_location": "L1",
       "id": "src_components_layout_cookiebanner_jsx",
-      "community": 51,
+      "community": 6,
       "norm_label": "cookiebanner.jsx"
     },
     {
@@ -2700,7 +2700,7 @@
       "source_file": "src/components/layout/CookieBanner.jsx",
       "source_location": "L5",
       "id": "layout_cookiebanner_cookiebanner",
-      "community": 51,
+      "community": 6,
       "norm_label": "cookiebanner()"
     },
     {
@@ -2709,7 +2709,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 0,
+      "community": 39,
       "norm_label": "footer.jsx"
     },
     {
@@ -2718,7 +2718,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 0,
+      "community": 39,
       "norm_label": "footer()"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "src/components/layout/MarqueeStrip.jsx",
       "source_location": "L1",
       "id": "src_components_layout_marqueestrip_jsx",
-      "community": 42,
+      "community": 46,
       "norm_label": "marqueestrip.jsx"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "src/components/layout/MarqueeStrip.jsx",
       "source_location": "L4",
       "id": "layout_marqueestrip_marqueestrip",
-      "community": 42,
+      "community": 46,
       "norm_label": "marqueestrip()"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L1",
       "id": "src_components_layout_navbar_jsx",
-      "community": 51,
+      "community": 6,
       "norm_label": "navbar.jsx"
     },
     {
@@ -2772,7 +2772,7 @@
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L9",
       "id": "layout_navbar_navbar",
-      "community": 51,
+      "community": 6,
       "norm_label": "navbar()"
     },
     {
@@ -2871,7 +2871,7 @@
       "source_file": "src/components/portal/BillingPage.jsx",
       "source_location": "L1",
       "id": "src_components_portal_billingpage_jsx",
-      "community": 66,
+      "community": 9,
       "norm_label": "billingpage.jsx"
     },
     {
@@ -2880,7 +2880,7 @@
       "source_file": "src/components/portal/BillingPage.jsx",
       "source_location": "L5",
       "id": "portal_billingpage_interactiveinvoice",
-      "community": 66,
+      "community": 9,
       "norm_label": "interactiveinvoice()"
     },
     {
@@ -2889,7 +2889,7 @@
       "source_file": "src/components/portal/BillingPage.jsx",
       "source_location": "L139",
       "id": "portal_billingpage_billingpage",
-      "community": 66,
+      "community": 9,
       "norm_label": "billingpage()"
     },
     {
@@ -2898,7 +2898,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L1",
       "id": "src_components_portal_commandpalette_jsx",
-      "community": 51,
+      "community": 6,
       "norm_label": "commandpalette.jsx"
     },
     {
@@ -2907,7 +2907,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L17",
       "id": "portal_commandpalette_allitems",
-      "community": 51,
+      "community": 6,
       "norm_label": "allitems"
     },
     {
@@ -2916,7 +2916,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L27",
       "id": "portal_commandpalette_recentitems",
-      "community": 51,
+      "community": 6,
       "norm_label": "recentitems"
     },
     {
@@ -2925,7 +2925,7 @@
       "source_file": "src/components/portal/CommandPalette.jsx",
       "source_location": "L33",
       "id": "portal_commandpalette_commandpalette",
-      "community": 51,
+      "community": 6,
       "norm_label": "commandpalette()"
     },
     {
@@ -2952,7 +2952,7 @@
       "source_file": "src/components/portal/NotificationPanel.jsx",
       "source_location": "L1",
       "id": "src_components_portal_notificationpanel_jsx",
-      "community": 46,
+      "community": 9,
       "norm_label": "notificationpanel.jsx"
     },
     {
@@ -2961,7 +2961,7 @@
       "source_file": "src/components/portal/NotificationPanel.jsx",
       "source_location": "L16",
       "id": "portal_notificationpanel_iconmap",
-      "community": 46,
+      "community": 9,
       "norm_label": "iconmap"
     },
     {
@@ -2970,7 +2970,7 @@
       "source_file": "src/components/portal/NotificationPanel.jsx",
       "source_location": "L24",
       "id": "portal_notificationpanel_colormap",
-      "community": 46,
+      "community": 9,
       "norm_label": "colormap"
     },
     {
@@ -3069,7 +3069,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L1",
       "id": "src_components_portal_portaldata_js",
-      "community": 46,
+      "community": 9,
       "norm_label": "portaldata.js"
     },
     {
@@ -3078,7 +3078,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L1",
       "id": "portal_portaldata_project",
-      "community": 46,
+      "community": 9,
       "norm_label": "project"
     },
     {
@@ -3087,7 +3087,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L21",
       "id": "portal_portaldata_teammembers",
-      "community": 46,
+      "community": 9,
       "norm_label": "teammembers"
     },
     {
@@ -3096,7 +3096,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L78",
       "id": "portal_portaldata_milestones",
-      "community": 46,
+      "community": 9,
       "norm_label": "milestones"
     },
     {
@@ -3105,7 +3105,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L121",
       "id": "portal_portaldata_notifications",
-      "community": 46,
+      "community": 9,
       "norm_label": "notifications"
     },
     {
@@ -3114,7 +3114,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L164",
       "id": "portal_portaldata_invoices",
-      "community": 46,
+      "community": 9,
       "norm_label": "invoices"
     },
     {
@@ -3123,7 +3123,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L202",
       "id": "portal_portaldata_paymenttimeline",
-      "community": 46,
+      "community": 9,
       "norm_label": "paymenttimeline"
     },
     {
@@ -3132,7 +3132,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L229",
       "id": "portal_portaldata_assetfiles",
-      "community": 46,
+      "community": 9,
       "norm_label": "assetfiles"
     },
     {
@@ -3141,7 +3141,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L296",
       "id": "portal_portaldata_folders",
-      "community": 46,
+      "community": 9,
       "norm_label": "folders"
     },
     {
@@ -3150,7 +3150,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L304",
       "id": "portal_portaldata_channels",
-      "community": 46,
+      "community": 9,
       "norm_label": "channels"
     },
     {
@@ -3159,7 +3159,7 @@
       "source_file": "src/components/portal/portalData.js",
       "source_location": "L310",
       "id": "portal_portaldata_messages",
-      "community": 46,
+      "community": 9,
       "norm_label": "messages"
     },
     {
@@ -3168,7 +3168,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L1",
       "id": "src_components_portal_requestmodal_jsx",
-      "community": 64,
+      "community": 9,
       "norm_label": "requestmodal.jsx"
     },
     {
@@ -3177,7 +3177,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L7",
       "id": "portal_requestmodal_priorities",
-      "community": 64,
+      "community": 9,
       "norm_label": "priorities"
     },
     {
@@ -3186,7 +3186,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L9",
       "id": "portal_requestmodal_requesttypes",
-      "community": 64,
+      "community": 9,
       "norm_label": "requesttypes"
     },
     {
@@ -3195,7 +3195,7 @@
       "source_file": "src/components/portal/RequestModal.jsx",
       "source_location": "L18",
       "id": "portal_requestmodal_requestmodal",
-      "community": 64,
+      "community": 9,
       "norm_label": "requestmodal()"
     },
     {
@@ -3222,7 +3222,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L1",
       "id": "src_components_portal_sidebar_jsx",
-      "community": 59,
+      "community": 9,
       "norm_label": "sidebar.jsx"
     },
     {
@@ -3231,7 +3231,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L14",
       "id": "portal_sidebar_navitems",
-      "community": 59,
+      "community": 9,
       "norm_label": "navitems"
     },
     {
@@ -3240,7 +3240,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L22",
       "id": "portal_sidebar_containervariants",
-      "community": 59,
+      "community": 9,
       "norm_label": "containervariants"
     },
     {
@@ -3249,7 +3249,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L29",
       "id": "portal_sidebar_itemvariants",
-      "community": 59,
+      "community": 9,
       "norm_label": "itemvariants"
     },
     {
@@ -3258,7 +3258,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L34",
       "id": "portal_sidebar_sidebarcontent",
-      "community": 59,
+      "community": 9,
       "norm_label": "sidebarcontent()"
     },
     {
@@ -3267,7 +3267,7 @@
       "source_file": "src/components/portal/Sidebar.jsx",
       "source_location": "L167",
       "id": "portal_sidebar_sidebar",
-      "community": 59,
+      "community": 9,
       "norm_label": "sidebar()"
     },
     {
@@ -3366,7 +3366,7 @@
       "source_file": "src/components/sections/FAQ.jsx",
       "source_location": "L1",
       "id": "src_components_sections_faq_jsx",
-      "community": 61,
+      "community": 59,
       "norm_label": "faq.jsx"
     },
     {
@@ -3375,7 +3375,7 @@
       "source_file": "src/components/sections/FAQ.jsx",
       "source_location": "L7",
       "id": "sections_faq_faq",
-      "community": 61,
+      "community": 59,
       "norm_label": "faq()"
     },
     {
@@ -3546,7 +3546,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_realtimework_jsx",
-      "community": 62,
+      "community": 61,
       "norm_label": "realtimework.jsx"
     },
     {
@@ -3555,7 +3555,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L4",
       "id": "sections_realtimework_videoplayer",
-      "community": 62,
+      "community": 61,
       "norm_label": "videoplayer()"
     },
     {
@@ -3564,7 +3564,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L35",
       "id": "sections_realtimework_showcaseprojects",
-      "community": 62,
+      "community": 61,
       "norm_label": "showcaseprojects"
     },
     {
@@ -3573,7 +3573,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L96",
       "id": "sections_realtimework_realtimework",
-      "community": 62,
+      "community": 61,
       "norm_label": "realtimework()"
     },
     {
@@ -3582,7 +3582,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L1",
       "id": "src_components_sections_services_jsx",
-      "community": 44,
+      "community": 51,
       "norm_label": "services.jsx"
     },
     {
@@ -3591,7 +3591,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L8",
       "id": "sections_services_iconmap",
-      "community": 44,
+      "community": 51,
       "norm_label": "iconmap"
     },
     {
@@ -3600,7 +3600,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L12",
       "id": "sections_services_services",
-      "community": 44,
+      "community": 51,
       "norm_label": "services()"
     },
     {
@@ -3699,7 +3699,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L1",
       "id": "src_components_sections_techstack_jsx",
-      "community": 38,
+      "community": 41,
       "norm_label": "techstack.jsx"
     },
     {
@@ -3708,7 +3708,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L6",
       "id": "sections_techstack_alltech",
-      "community": 38,
+      "community": 41,
       "norm_label": "alltech"
     },
     {
@@ -3717,7 +3717,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L11",
       "id": "sections_techstack_row1",
-      "community": 38,
+      "community": 41,
       "norm_label": "row1"
     },
     {
@@ -3726,7 +3726,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L12",
       "id": "sections_techstack_row2",
-      "community": 38,
+      "community": 41,
       "norm_label": "row2"
     },
     {
@@ -3735,7 +3735,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L13",
       "id": "sections_techstack_row3",
-      "community": 38,
+      "community": 41,
       "norm_label": "row3"
     },
     {
@@ -3744,7 +3744,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L15",
       "id": "sections_techstack_marqueerow",
-      "community": 38,
+      "community": 41,
       "norm_label": "marqueerow()"
     },
     {
@@ -3753,7 +3753,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L43",
       "id": "sections_techstack_techstack",
-      "community": 38,
+      "community": 41,
       "norm_label": "techstack()"
     },
     {
@@ -3762,7 +3762,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L1",
       "id": "src_components_sections_testimonials_jsx",
-      "community": 42,
+      "community": 46,
       "norm_label": "testimonials.jsx"
     },
     {
@@ -3771,7 +3771,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L9",
       "id": "sections_testimonials_clientvoicevisualizer",
-      "community": 42,
+      "community": 46,
       "norm_label": "clientvoicevisualizer()"
     },
     {
@@ -3780,7 +3780,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L35",
       "id": "sections_testimonials_trustsummary",
-      "community": 42,
+      "community": 46,
       "norm_label": "trustsummary()"
     },
     {
@@ -3789,7 +3789,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L64",
       "id": "sections_testimonials_marqueerow",
-      "community": 42,
+      "community": 46,
       "norm_label": "marqueerow()"
     },
     {
@@ -3798,7 +3798,7 @@
       "source_file": "src/components/sections/Testimonials.jsx",
       "source_location": "L127",
       "id": "sections_testimonials_testimonials",
-      "community": 42,
+      "community": 46,
       "norm_label": "testimonials()"
     },
     {
@@ -3924,7 +3924,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 68,
+      "community": 0,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -3933,7 +3933,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L5",
       "id": "ui_backtotop_backtotop",
-      "community": 68,
+      "community": 0,
       "norm_label": "backtotop()"
     },
     {
@@ -3978,7 +3978,7 @@
       "source_file": "src/components/ui/CustomCursor.jsx",
       "source_location": "L1",
       "id": "src_components_ui_customcursor_jsx",
-      "community": 63,
+      "community": 6,
       "norm_label": "customcursor.jsx"
     },
     {
@@ -3987,7 +3987,7 @@
       "source_file": "src/components/ui/CustomCursor.jsx",
       "source_location": "L5",
       "id": "ui_customcursor_customcursor",
-      "community": 63,
+      "community": 6,
       "norm_label": "customcursor()"
     },
     {
@@ -4014,7 +4014,7 @@
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L1",
       "id": "src_components_ui_glowcard_jsx",
-      "community": 51,
+      "community": 6,
       "norm_label": "glowcard.jsx"
     },
     {
@@ -4023,7 +4023,7 @@
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L4",
       "id": "ui_glowcard_glowcard",
-      "community": 51,
+      "community": 6,
       "norm_label": "glowcard"
     },
     {
@@ -4086,7 +4086,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L1",
       "id": "src_components_ui_novawidget_jsx",
-      "community": 39,
+      "community": 62,
       "norm_label": "novawidget.jsx"
     },
     {
@@ -4095,7 +4095,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L6",
       "id": "ui_novawidget_parsemarkdown",
-      "community": 39,
+      "community": 62,
       "norm_label": "parsemarkdown()"
     },
     {
@@ -4104,7 +4104,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L19",
       "id": "ui_novawidget_typewritertext",
-      "community": 39,
+      "community": 62,
       "norm_label": "typewritertext()"
     },
     {
@@ -4113,7 +4113,7 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L53",
       "id": "ui_novawidget_novawidget",
-      "community": 39,
+      "community": 62,
       "norm_label": "novawidget()"
     },
     {
@@ -4176,7 +4176,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 69,
+      "community": 0,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4185,7 +4185,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 69,
+      "community": 0,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4257,7 +4257,7 @@
       "source_file": "src/constants/faq.js",
       "source_location": "L1",
       "id": "src_constants_faq_js",
-      "community": 61,
+      "community": 59,
       "norm_label": "faq.js"
     },
     {
@@ -4266,7 +4266,7 @@
       "source_file": "src/constants/faq.js",
       "source_location": "L1",
       "id": "constants_faq_faqs",
-      "community": 61,
+      "community": 59,
       "norm_label": "faqs"
     },
     {
@@ -4347,7 +4347,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "src_constants_techstack_js",
-      "community": 38,
+      "community": 41,
       "norm_label": "techstack.js"
     },
     {
@@ -4356,7 +4356,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "constants_techstack_techstack",
-      "community": 38,
+      "community": 41,
       "norm_label": "techstack"
     },
     {
@@ -4365,7 +4365,7 @@
       "source_file": "src/constants/testimonials.js",
       "source_location": "L1",
       "id": "src_constants_testimonials_js",
-      "community": 42,
+      "community": 46,
       "norm_label": "testimonials.js"
     },
     {
@@ -4374,7 +4374,7 @@
       "source_file": "src/constants/testimonials.js",
       "source_location": "L1",
       "id": "constants_testimonials_testimonials",
-      "community": 42,
+      "community": 46,
       "norm_label": "testimonials"
     },
     {
@@ -4491,7 +4491,7 @@
       "source_file": "src/hooks/useMousePosition.js",
       "source_location": "L1",
       "id": "src_hooks_usemouseposition_js",
-      "community": 63,
+      "community": 6,
       "norm_label": "usemouseposition.js"
     },
     {
@@ -4500,7 +4500,7 @@
       "source_file": "src/hooks/useMousePosition.js",
       "source_location": "L3",
       "id": "hooks_usemouseposition_usemouseposition",
-      "community": 63,
+      "community": 6,
       "norm_label": "usemouseposition()"
     },
     {
@@ -4518,7 +4518,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 0,
+      "community": 42,
       "norm_label": "about.jsx"
     },
     {
@@ -4527,7 +4527,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L4",
       "id": "pages_about_about",
-      "community": 0,
+      "community": 42,
       "norm_label": "about()"
     },
     {
@@ -4779,7 +4779,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_privacypolicy_jsx",
-      "community": 67,
+      "community": 44,
       "norm_label": "privacypolicy.jsx"
     },
     {
@@ -4788,7 +4788,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L4",
       "id": "pages_privacypolicy_privacypolicy",
-      "community": 67,
+      "community": 44,
       "norm_label": "privacypolicy()"
     },
     {
@@ -4932,7 +4932,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 0,
+      "community": 44,
       "norm_label": "services.jsx"
     },
     {
@@ -4941,7 +4941,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 0,
+      "community": 44,
       "norm_label": "services()"
     },
     {
@@ -4995,7 +4995,7 @@
       "source_file": "src/utils/cn.js",
       "source_location": "L1",
       "id": "src_utils_cn_js",
-      "community": 51,
+      "community": 6,
       "norm_label": "cn.js"
     },
     {
@@ -5004,7 +5004,7 @@
       "source_file": "src/utils/cn.js",
       "source_location": "L4",
       "id": "utils_cn_cn",
-      "community": 51,
+      "community": 6,
       "norm_label": "cn()"
     },
     {
@@ -5123,15 +5123,6 @@
       "id": "lib_supabase_supabase",
       "community": 7,
       "norm_label": "supabase"
-    },
-    {
-      "label": "NovaAvatar()",
-      "file_type": "code",
-      "source_file": "src/components/ui/NovaWidget.jsx",
-      "source_location": "L5",
-      "community": 39,
-      "norm_label": "novaavatar()",
-      "id": "ui_novawidget_novaavatar"
     },
     {
       "label": "LivePulseFeed()",
@@ -5318,7 +5309,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 44,
+      "community": 51,
       "norm_label": "servicecard()",
       "id": "sections_services_servicecard"
     },
@@ -5327,7 +5318,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 44,
+      "community": 51,
       "norm_label": "bentoclasses",
       "id": "sections_services_bentoclasses"
     },
@@ -5336,7 +5327,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L10",
-      "community": 44,
+      "community": 51,
       "norm_label": "servicerow()",
       "id": "sections_services_servicerow"
     },
@@ -8693,9 +8684,9 @@
       "source_file": "scratch/test_png_pixels.js",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_analyzepng",
-      "confidence_score": 1.0
+      "target": "scratch_test_png_pixels_analyzepng"
     },
     {
       "relation": "contains",
@@ -8703,9 +8694,9 @@
       "source_file": "scratch/test_png_pixels.js",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_fs",
-      "confidence_score": 1.0
+      "target": "scratch_test_png_pixels_fs"
     },
     {
       "relation": "contains",
@@ -8713,9 +8704,9 @@
       "source_file": "scratch/test_png_pixels.js",
       "source_location": "L2",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "scratch_test_png_pixels_js",
-      "target": "scratch_test_png_pixels_path",
-      "confidence_score": 1.0
+      "target": "scratch_test_png_pixels_path"
     },
     {
       "relation": "imports",
@@ -8874,9 +8865,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_components_ui_novawidget_jsx"
+      "target": "src_components_ui_novawidget_jsx",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -11913,21 +11904,11 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/NovaWidget.jsx",
-      "source_location": "L5",
+      "source_location": "L53",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_novaavatar"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src/components/ui/NovaWidget.jsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_novawidget"
+      "target": "ui_novawidget_novawidget",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11935,9 +11916,9 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_parsemarkdown"
+      "target": "ui_novawidget_parsemarkdown",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -11945,20 +11926,20 @@
       "source_file": "src/components/ui/NovaWidget.jsx",
       "source_location": "L19",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "src_components_ui_novawidget_jsx",
-      "target": "ui_novawidget_typewritertext"
+      "target": "ui_novawidget_typewritertext",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "src/components/ui/NovaWidget.jsx",
-      "source_location": "L44",
+      "source_location": "L45",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_novawidget_typewritertext",
-      "target": "ui_novawidget_parsemarkdown"
+      "target": "ui_novawidget_parsemarkdown",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -13153,5 +13134,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "3565be8feff29dea27f26a71c72769bed18bf067"
+  "built_at_commit": "b90fb6e5f75aec9f8eb4164ee290df43129b5dbb"
 }

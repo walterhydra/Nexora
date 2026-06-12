@@ -1304,7 +1304,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                 <div className="flex items-center gap-3">
                   <div className="relative">
                     <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
-                      <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
+                      <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
                     </div>
                     <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
                       <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
@@ -1385,7 +1385,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                           >
                             <div className={`flex gap-3 max-w-[88%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} items-end`}>
                               <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                                {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />}
+                                {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />}
                               </div>
 
                               <div
@@ -1413,7 +1413,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                           <div className="flex justify-start">
                             <div className="flex gap-3 max-w-[88%] items-end">
                               <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                                <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
+                                <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
                               </div>
                               <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
                                 <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
@@ -1568,7 +1568,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                 {/* Avatar */}
                 <div className="relative flex-shrink-0 w-10 h-10 z-10">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center border border-white/[0.08] overflow-hidden">
-                    <img src="/team/milan-chat.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%] group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%] group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   {/* Online dot */}
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-[#0D1117] rounded-full z-20">
@@ -1660,7 +1660,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="w-[85%] h-[85%] absolute group-hover:scale-110 transition-transform duration-300 flex items-center justify-center"
                 >
-                  <img src="/logo/favicon.png" alt="Nova Chat" className="w-full h-full object-contain scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
+                  <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Nova Chat" className="w-full h-full rounded-full object-cover object-[50%_30%] scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
                 </m.div>
               </m.div>
             )}
