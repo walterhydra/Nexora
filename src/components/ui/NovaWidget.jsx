@@ -661,17 +661,17 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                 {isSigned ? 'SIGNED & EXECUTED' : 'PENDING SIGNATURE'}
               </span>
             </div>
-            
+
             <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Scope of Engagement</p>
               <p>Nexora Studio agrees to design, develop, and deliver a high-performance digital product in accordance with the 7-Day Elite Sprint methodology. Project goals, database schemas, and visual requirements will be locked prior to sprint commencement.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Fees & Investment</p>
               <p>The client agrees to invest the sum of ₹35,000 ($450 USD) for the Growth Package sprint. A 50% deposit is required before architecture mapping begins. Remaining balance is due upon successful handover.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Intellectual Property</p>
               <p>Upon final payment receipt, all proprietary software source code, digital assets, Figma designs, and configurations will be fully transferred to the client with worldwide rights.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">4. Indemnity & Liability</p>
               <p>Nexora Studio warrants that all development work is original and does not violate third-party copyright laws. The maximum aggregate liability for any claim shall not exceed the fees paid under this agreement.</p>
             </div>
@@ -758,7 +758,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                 ))}
               </div>
             )}
-            
+
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
               <div className="flex items-center gap-2">
                 <Award className="w-5 h-5 text-accent-blue" />
@@ -773,15 +773,15 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
               <div className="text-center font-bold text-white text-[10px] tracking-widest uppercase border-b border-white/5 pb-2 mb-2 font-mono">NEXORA STUDIO HR DEPT</div>
               <p>Dear Candidate,</p>
               <p>We are thrilled to offer you the position of **Full Stack Developer Intern** at Nexora Studio. During your time with us, you will work closely with Milan (Founder) and our engineering leaders to design and implement premium, high-performance web products.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Stipend & Compensation</p>
               <p>You will receive a monthly stipend of ₹15,000 INR, paid during the first week of each consecutive month.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Role & Duration</p>
               <p>This is a 3-month remote engagement, with the possibility of conversion to a full-time associate developer role based on outstanding performance and sprint delivery.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Expected Outcomes</p>
-              <p>• Engineering clean React & Next.js client components.<br/>• Architecting APIs and managing databases (Postgres/Supabase).<br/>• Performing speed audits and visual validation before deployment.</p>
+              <p>• Engineering clean React & Next.js client components.<br />• Architecting APIs and managing databases (Postgres/Supabase).<br />• Performing speed audits and visual validation before deployment.</p>
             </div>
 
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mt-4 shrink-0">
@@ -836,16 +836,15 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
             {/* 3D Glassmorphic Card Container with Flip Animation */}
             <div className="flex justify-center items-center py-6 shrink-0 z-20">
               <div className="w-full max-w-[320px] h-[180px] [perspective:1000px]">
-                <div 
-                  className={`w-full h-full rounded-2xl relative transition-transform duration-700 [transform-style:preserve-3d] shadow-2xl ${
-                    revealedCvv ? '[transform:rotateY(180deg)]' : ''
-                  }`}
+                <div
+                  className={`w-full h-full rounded-2xl relative transition-transform duration-700 [transform-style:preserve-3d] shadow-2xl ${revealedCvv ? '[transform:rotateY(180deg)]' : ''
+                    }`}
                 >
                   {/* FRONT OF THE CARD */}
                   <div className="absolute inset-0 w-full h-full rounded-2xl p-5 bg-gradient-to-br from-white/15 via-white/[0.03] to-white/[0.08] border border-white/20 backdrop-blur-xl [backface-visibility:hidden] flex flex-col justify-between overflow-hidden shadow-[inset_0_2px_20px_rgba(255,255,255,0.06)]">
                     {/* Glowing highlight orb */}
                     <div className="absolute top-0 right-0 w-28 h-28 rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 blur-xl pointer-events-none" />
-                    
+
                     {/* Card Brand Header */}
                     <div className="flex justify-between items-start z-10">
                       <div className="flex items-center gap-1.5">
@@ -856,7 +855,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                       </div>
                       <div className="text-white font-black text-xs italic tracking-widest text-right">VISA</div>
                     </div>
-                    
+
                     {/* Chip */}
                     <div className="w-8 h-6 rounded-md bg-gradient-to-br from-[#ffd700]/80 to-[#b8860b]/60 border border-white/10 shadow-sm relative z-10 flex flex-col overflow-hidden p-0.5">
                       <div className="grid grid-cols-3 gap-0.5 h-full opacity-60">
@@ -975,13 +974,13 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
 
             <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               <p>This Mutual Non-Disclosure Agreement ("Agreement") is entered into by and between Nexora Studio and the Client/Recipient, to protect proprietary ideas and codebases shared during technical sprint discovery.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Definition of Confidentiality</p>
               <p>Confidential Information includes but is not limited to source code, API keys, design templates, software topology mapping, client databases, and pricing proposals.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Non-Use and Non-Disclosure</p>
               <p>Each party agrees to hold the other's confidential information in strict confidence and shall not use it for any purpose other than evaluating proposed project collaboration.</p>
-              
+
               <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Duration of Protection</p>
               <p>Confidentiality obligations shall continue to protect proprietary code assets for a period of three (3) years from execution or until otherwise agreed in writing.</p>
             </div>
@@ -1037,7 +1036,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
             <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               <div className="text-center font-bold text-white text-xs pb-1 uppercase font-mono tracking-wider">7-Day Elite Development Sprint</div>
               <p>Nexora Studio proposes a high-fidelity client portal build featuring database integration, secure authentication modules, and customized user dashboards.</p>
-              
+
               <div className="border border-white/5 rounded-xl p-3 bg-white/[0.01] space-y-2">
                 <div className="flex justify-between items-center text-[9px] uppercase font-bold text-gray-400">
                   <span>Development Milestone</span>
@@ -1062,9 +1061,9 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                   <span>₹35,000</span>
                 </div>
               </div>
-              
+
               <p className="font-semibold text-white uppercase text-[9px] tracking-wider text-accent-blue">Expected Deliverables</p>
-              <p>• Highly responsive dashboard interface matching the brand book.<br/>• Full database schema mapping and Postgres setup.<br/>• Handover of clean source code and Vercel cloud deployment.</p>
+              <p>• Highly responsive dashboard interface matching the brand book.<br />• Full database schema mapping and Postgres setup.<br />• Handover of clean source code and Vercel cloud deployment.</p>
             </div>
 
             <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mt-4 shrink-0">
@@ -1121,32 +1120,32 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
           >
             {/* Physical Tablet Frame */}
             <div className="relative w-full h-full bg-[#080d19] border border-white/15 rounded-[38px] shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] p-4 flex flex-col md:flex-row overflow-visible">
-              
+
               {/* Front Camera Dot */}
               <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#111] border border-white/5 flex items-center justify-center z-50">
                 <div className="w-0.5 h-0.5 rounded-full bg-blue-900/60" />
               </div>
 
               {/* Physical Volume Buttons on Left Edge */}
-              <button 
+              <button
                 onClick={() => handleVolumeChange(10)}
                 aria-label="Volume Up"
-                className="absolute left-[-5px] top-28 w-[5px] h-10 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0" 
+                className="absolute left-[-5px] top-28 w-[5px] h-10 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0"
               />
-              <button 
+              <button
                 onClick={() => handleVolumeChange(-10)}
                 aria-label="Volume Down"
-                className="absolute left-[-5px] top-[152px] w-[5px] h-10 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0" 
+                className="absolute left-[-5px] top-[152px] w-[5px] h-10 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0"
               />
 
               {/* Physical Power / Switch Button on Top Edge */}
-              <button 
+              <button
                 onClick={() => {
                   playClickSound(500, 0.08);
                   setIsOpen(false);
                 }}
                 aria-label="Power Switch"
-                className="absolute right-14 top-[-5px] w-12 h-[5px] bg-[#1e293b] hover:bg-[#334155] active:translate-y-[2px] transition-all border border-white/10 border-b-0 rounded-t-[5px] cursor-pointer shadow-lg z-0" 
+                className="absolute right-14 top-[-5px] w-12 h-[5px] bg-[#1e293b] hover:bg-[#334155] active:translate-y-[2px] transition-all border border-white/10 border-b-0 rounded-t-[5px] cursor-pointer shadow-lg z-0"
               />
 
               {/* Speaker Grille Detail */}
@@ -1163,7 +1162,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
 
               {/* Screen Area Container */}
               <div className="flex-1 flex flex-col md:flex-row bg-[#0B1220]/95 backdrop-blur-3xl rounded-[24px] overflow-hidden border border-white/5 relative h-full w-full">
-                
+
                 {/* Volume HUD (iPadOS style) */}
                 <AnimatePresence>
                   {showVolumeHud && (
@@ -1175,8 +1174,8 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                     >
                       <span className="text-[8px] font-black text-gray-400 tracking-wider">VOL</span>
                       <div className="w-1.5 h-20 bg-white/10 rounded-full overflow-hidden relative">
-                        <div 
-                          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-accent-blue to-accent-purple rounded-full transition-all duration-150" 
+                        <div
+                          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-accent-blue to-accent-purple rounded-full transition-all duration-150"
                           style={{ height: `${volume}%` }}
                         />
                       </div>
@@ -1188,357 +1187,347 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                 {/* Left Sidebar (Tablet-like Info Panel) */}
                 <div className="hidden md:flex flex-col w-[280px] border-r border-white/10 bg-white/[0.01] p-6 justify-between select-none relative z-10">
                   <div className="space-y-6">
-                {/* Brand */}
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(91,164,230,0.3)]">
-                    <img src="/logo/favicon.png" alt="Nexora Logo" className="w-full h-full object-contain" />
-                  </div>
-                  <div>
-                    <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexora Studio</h2>
-                    <p className="text-[9px] text-accent-blue font-mono">DIGITAL INNOVATOR</p>
-                  </div>
-                </div>
-
-                <div className="h-[1px] bg-white/[0.08] w-full" />
-
-                {/* Founder Card */}
-                <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 space-y-3 relative overflow-hidden group">
-                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.02] to-transparent pointer-events-none" />
-                  <div className="flex items-center gap-3">
-                    <div className="relative">
-                      <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 shadow-md">
-                        <img 
-                          src="/team/milan.png" 
-                          alt="Milan" 
-                          className="w-full h-full object-cover" 
-                          style={{ 
-                            height: '100%', 
-                            width: '100%', 
-                            objectFit: 'cover', 
-                            transform: 'scale(1.15)', 
-                            transformOrigin: '50% 38%' 
-                          }}
-                        />
+                    {/* Brand */}
+                    <div className="flex items-center gap-3">
+                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(91,164,230,0.3)]">
+                        <img src="/logo/favicon.png" alt="Nexora Logo" className="w-full h-full object-contain" />
                       </div>
-                      <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#0B1220] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                      <div>
+                        <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexora Studio</h2>
+                        <p className="text-[9px] text-accent-blue font-mono">DIGITAL INNOVATOR</p>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-white font-semibold text-xs">Milan</h4>
-                      <p className="text-[9px] text-gray-400">Founder & CEO</p>
-                    </div>
-                  </div>
-                  <p className="text-[10px] leading-relaxed text-gray-400 font-light">
-                    Full Stack Architect leading Nexora Studio with a builder-first vision.
-                  </p>
-                </div>
 
-                {/* Secure Vault */}
-                <div className="space-y-2">
-                  <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Secure Vault</span>
-                  <div className="flex flex-col gap-1.5">
-                    {vaultDocuments.map((doc) => {
-                      const IconComponent = doc.icon;
-                      const isActive = activeDocument === doc.id;
-                      return (
-                        <button
-                          key={doc.id}
-                          onClick={() => {
-                            playClickSound(750, 0.05);
-                            setActiveDocument(isActive ? null : doc.id);
-                          }}
-                          className={`flex items-center gap-2.5 w-full py-1.5 px-3 rounded-xl border transition-all duration-300 text-left cursor-pointer ${
-                            isActive
-                              ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_15px_rgba(91,164,230,0.1)]'
-                              : 'bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.04] hover:text-white'
-                          }`}
+                    <div className="h-[1px] bg-white/[0.08] w-full" />
+
+                    {/* Founder Card */}
+                    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 space-y-3 relative overflow-hidden group">
+                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.02] to-transparent pointer-events-none" />
+                      <div className="flex items-center gap-3">
+                        <div className="relative">
+                          <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 shadow-md">
+                            <img
+                              src="/team/milan-chat.png"
+                              alt="Milan"
+                              className="w-full h-full object-cover object-top scale-125"
+                            />
+                          </div>
+                          <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#0B1220] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
+                        </div>
+                        <div>
+                          <h4 className="text-white font-semibold text-xs">Milan</h4>
+                          <p className="text-[9px] text-gray-400">Founder & CEO</p>
+                        </div>
+                      </div>
+                      <p className="text-[10px] leading-relaxed text-gray-400 font-light">
+                        Full Stack Architect leading Nexora Studio with a builder-first vision.
+                      </p>
+                    </div>
+
+                    {/* Secure Vault */}
+                    <div className="space-y-2">
+                      <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Secure Vault</span>
+                      <div className="flex flex-col gap-1.5">
+                        {vaultDocuments.map((doc) => {
+                          const IconComponent = doc.icon;
+                          const isActive = activeDocument === doc.id;
+                          return (
+                            <button
+                              key={doc.id}
+                              onClick={() => {
+                                playClickSound(750, 0.05);
+                                setActiveDocument(isActive ? null : doc.id);
+                              }}
+                              className={`flex items-center gap-2.5 w-full py-1.5 px-3 rounded-xl border transition-all duration-300 text-left cursor-pointer ${isActive
+                                ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_15px_rgba(91,164,230,0.1)]'
+                                : 'bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.04] hover:text-white'
+                                }`}
+                            >
+                              <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
+                              <span className="text-[10px] font-medium tracking-wide">{doc.label}</span>
+                              {doc.completed && (
+                                <Check className="w-3 h-3 text-emerald-400 ml-auto shrink-0" />
+                              )}
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Shortcuts */}
+                    <div className="space-y-2">
+                      <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Quick Connect</span>
+                      <div className="grid grid-cols-2 gap-2">
+                        <a
+                          href="https://www.linkedin.com/in/milan-pandavdara/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
                         >
-                          <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
-                          <span className="text-[10px] font-medium tracking-wide">{doc.label}</span>
-                          {doc.completed && (
-                            <Check className="w-3 h-3 text-emerald-400 ml-auto shrink-0" />
-                          )}
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Shortcuts */}
-                <div className="space-y-2">
-                  <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Quick Connect</span>
-                  <div className="grid grid-cols-2 gap-2">
-                    <a
-                      href="https://www.linkedin.com/in/milan-pandavdara/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
-                    >
-                      LinkedIn
-                    </a>
-                    <a
-                      href="https://github.com/walterhydra"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
-                    >
-                      GitHub
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Status */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-2 text-[10px] text-gray-400 font-medium">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>System Status: 100% Online</span>
-                </div>
-                <p className="text-[9px] text-gray-600 font-mono">v1.2.0 (Tablet UI)</p>
-              </div>
-            </div>
-
-            {/* Right Chat Console Panel */}
-            <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
-              {/* Header */}
-              <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10">
-                <div className="flex items-center gap-3">
-                  <div className="relative">
-                    <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
-                      <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
-                    </div>
-                    <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
-                      <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
+                          LinkedIn
+                        </a>
+                        <a
+                          href="https://github.com/walterhydra"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
+                        >
+                          GitHub
+                        </a>
+                      </div>
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold text-lg flex items-center gap-2">
-                      Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10 shadow-[0_0_10px_rgba(0,245,255,0.1)]">AI</span>
-                    </h3>
-                    <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
+
+                  {/* Status */}
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2 text-[10px] text-gray-400 font-medium">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span>System Status: 100% Online</span>
+                    </div>
+                    <p className="text-[9px] text-gray-600 font-mono">v1.2.0 (Tablet UI)</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-2">
-                  <button
-                    onClick={() => {
-                      playClickSound(750, 0.04);
-                      setShowDocsMenu(!showDocsMenu);
-                    }}
-                    className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 relative border ${
-                      showDocsMenu || activeDocument
-                        ? 'bg-accent-blue/10 border-accent-blue/40 text-accent-blue'
-                        : 'bg-white/[0.02] border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.08]'
-                    }`}
-                    title="Secure Document Vault"
-                  >
-                    <FolderLock className="w-4 h-4" />
-                    {/* Pulsing indicator if uncompleted documents exist */}
-                    {(!isSigned || !offerAccepted || !ndaExecuted || !proposalApproved) && (
-                      <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-accent-blue animate-ping" />
-                    )}
-                  </button>
 
-                  <button
-                    onClick={() => {
-                      playClickSound(500, 0.08);
-                      setIsOpen(false);
-                      setActiveDocument(null);
-                      setShowDocsMenu(false);
-                    }}
-                    className="w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-300"
-                  >
-                    <ChevronDown className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
-
-              {/* Document Vault Overlay or Normal Chat */}
-              <div className="flex-1 flex flex-col overflow-hidden relative min-h-0">
-                <AnimatePresence mode="wait">
-                  {activeDocument ? (
-                    <m.div
-                      key={activeDocument}
-                      initial={{ opacity: 0, y: 15 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 15 }}
-                      transition={{ duration: 0.25 }}
-                      className="flex-1 flex flex-col overflow-hidden bg-[#070b14]/98 p-6 relative z-10 h-full"
-                    >
-                      {renderActiveDocument()}
-                    </m.div>
-                  ) : (
-                    <m.div
-                      key="chat-messages"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      className="flex-1 flex flex-col overflow-hidden h-full"
-                    >
-                      {/* Messages */}
-                      <div
-                        data-lenis-prevent="true"
-                        className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0 text-left"
-                      >
-                        {messages.map((msg, idx) => (
-                          <div
-                            key={idx}
-                            className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} max-w-full`}
-                          >
-                            <div className={`flex gap-3 max-w-[88%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} items-end`}>
-                              <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                                {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />}
-                              </div>
-
-                              <div
-                                className={`relative text-sm ${msg.role === 'user'
-                                  ? 'p-4 rounded-2xl shadow-[0_4px_16px_rgba(91,164,230,0.2)] bg-gradient-to-br from-accent-blue via-[#4f46e5] to-accent-purple border border-white/10 text-white rounded-br-sm'
-                                  : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
-                                  }`}
-                              >
-                                {msg.role !== 'user' && (
-                                  <>
-                                    <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[6px] opacity-80"></div>
-                                  </>
-                                )}
-                                <div className="relative z-10 text-gray-200 leading-relaxed font-light tracking-wide">
-                                  {renderMessageContent(msg, idx)}
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        ))}
-
-                        {isLoading && (
-                          <div className="flex justify-start">
-                            <div className="flex gap-3 max-w-[88%] items-end">
-                              <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                                <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%]" />
-                              </div>
-                              <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-                                <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
-                                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[4px] opacity-80"></div>
-                                <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '0ms' }}></div>
-                                <div className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce relative z-10" style={{ animationDelay: '150ms' }}></div>
-                                <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '300ms' }}></div>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                        <div ref={messagesEndRef} />
-                      </div>
-
-                      {/* Input Area */}
-                      <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10">
-                        <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
-                          <input
-                            type="text"
-                            value={inputValue}
-                            onChange={(e) => setInputValue(e.target.value)}
-                            onKeyPress={handleKeyPress}
-                            placeholder={
-                              flowState === 'awaiting_email'
-                                ? "Enter your email address..."
-                                : flowState === 'awaiting_otp'
-                                  ? "Enter 6-digit verification code..."
-                                  : "Ask Nova anything..."
-                            }
-                            className="w-full bg-transparent py-2.5 pl-4 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none"
-                          />
-                          <button
-                            onClick={() => {
-                              playClickSound(850, 0.03);
-                              handleSend();
-                            }}
-                            disabled={!inputValue.trim() || isLoading}
-                            className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-[0_0_12px_rgba(91,164,230,0.3)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all cursor-pointer border-0"
-                          >
-                            <Send className="w-4 h-4 ml-0.5" />
-                          </button>
+                {/* Right Chat Console Panel */}
+                <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
+                  {/* Header */}
+                  <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10">
+                    <div className="flex items-center gap-3">
+                      <div className="relative">
+                        <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
+                          <img src="/projects/Ai boat inside photo.png" alt="Nova AI" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4]" />
                         </div>
-                        <div className="text-center mt-3 mb-1 font-sans">
-                          <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexora AI</p>
+                        <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
+                          <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
                         </div>
                       </div>
-                    </m.div>
-                  )}
-                </AnimatePresence>
-              </div>
-
-              {/* Mobile/Global Documents Dropdown Drawer */}
-              <AnimatePresence>
-                {showDocsMenu && (
-                  <m.div
-                    initial={{ opacity: 0, y: '100%' }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: '100%' }}
-                    transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-                    className="absolute inset-x-0 bottom-0 bg-[#0c1222]/98 backdrop-blur-2xl border-t border-white/10 rounded-t-3xl z-40 p-6 shadow-[0_-15px_30px_rgba(0,0,0,0.8)] max-h-[85%] overflow-y-auto"
-                  >
-                    <div className="flex items-center justify-between mb-5">
-                      <div className="flex items-center gap-2">
-                        <FolderLock className="w-5 h-5 text-accent-blue" />
-                        <h4 className="text-white font-bold text-xs uppercase tracking-wider">Secure Document Vault</h4>
+                      <div>
+                        <h3 className="text-white font-semibold text-lg flex items-center gap-2">
+                          Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10 shadow-[0_0_10px_rgba(0,245,255,0.1)]">AI</span>
+                        </h3>
+                        <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
                       </div>
+                    </div>
+                    <div className="flex items-center gap-2">
                       <button
                         onClick={() => {
-                          playClickSound(500, 0.05);
+                          playClickSound(750, 0.04);
+                          setShowDocsMenu(!showDocsMenu);
+                        }}
+                        className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 relative border ${showDocsMenu || activeDocument
+                          ? 'bg-accent-blue/10 border-accent-blue/40 text-accent-blue'
+                          : 'bg-white/[0.02] border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.08]'
+                          }`}
+                        title="Secure Document Vault"
+                      >
+                        <FolderLock className="w-4 h-4" />
+                        {/* Pulsing indicator if uncompleted documents exist */}
+                        {(!isSigned || !offerAccepted || !ndaExecuted || !proposalApproved) && (
+                          <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-accent-blue animate-ping" />
+                        )}
+                      </button>
+
+                      <button
+                        onClick={() => {
+                          playClickSound(500, 0.08);
+                          setIsOpen(false);
+                          setActiveDocument(null);
                           setShowDocsMenu(false);
                         }}
-                        className="w-7 h-7 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors cursor-pointer border-0"
+                        className="w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-300"
                       >
-                        <X className="w-4 h-4" />
+                        <ChevronDown className="w-5 h-5" />
                       </button>
                     </div>
+                  </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                      {vaultDocuments.map((doc) => {
-                        const IconComponent = doc.icon;
-                        const isActive = activeDocument === doc.id;
-                        return (
-                          <button
-                            key={doc.id}
-                            onClick={() => {
-                              playClickSound(750, 0.05);
-                              setActiveDocument(isActive ? null : doc.id);
-                              setShowDocsMenu(false);
-                            }}
-                            className={`flex items-center gap-3.5 w-full p-4 rounded-2xl border transition-all duration-300 text-left relative overflow-hidden group cursor-pointer ${
-                              isActive
-                                ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_20px_rgba(91,164,230,0.15)]'
-                                : 'bg-white/[0.02] border-white/5 text-gray-300 hover:bg-white/[0.05] hover:border-white/10'
-                            }`}
+                  {/* Document Vault Overlay or Normal Chat */}
+                  <div className="flex-1 flex flex-col overflow-hidden relative min-h-0">
+                    <AnimatePresence mode="wait">
+                      {activeDocument ? (
+                        <m.div
+                          key={activeDocument}
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 15 }}
+                          transition={{ duration: 0.25 }}
+                          className="flex-1 flex flex-col overflow-hidden bg-[#070b14]/98 p-6 relative z-10 h-full"
+                        >
+                          {renderActiveDocument()}
+                        </m.div>
+                      ) : (
+                        <m.div
+                          key="chat-messages"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          className="flex-1 flex flex-col overflow-hidden h-full"
+                        >
+                          {/* Messages */}
+                          <div
+                            data-lenis-prevent="true"
+                            className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0 text-left"
                           >
-                            <div className={`p-2.5 rounded-xl border ${isActive ? 'bg-accent-blue/10 border-accent-blue/20' : 'bg-white/5 border-white/5 group-hover:bg-white/10'} transition-all`}>
-                              <IconComponent className={`w-4 h-4 ${isActive ? 'text-accent-blue' : 'text-gray-400 group-hover:text-white'}`} />
-                            </div>
-                            <div className="flex flex-col text-left">
-                              <span className="text-[12px] font-semibold tracking-wide text-white">{doc.label}</span>
-                              <span className="text-[9px] text-gray-500 font-light mt-0.5">
-                                {doc.id === 'client_agreement' && (isSigned ? 'Signed & Executed' : 'Digital Contract Signature')}
-                                {doc.id === 'internship_offer' && (offerAccepted ? 'Offer Accepted' : 'Full Stack Dev Intern Offer')}
-                                {doc.id === 'card_details' && (cardCopied ? 'Card Copied' : 'Interactive Billing Card')}
-                                {doc.id === 'nda' && (ndaExecuted ? 'Executed NDA' : 'Mutual Confidentiality Agreement')}
-                                {doc.id === 'project_proposal' && (proposalApproved ? 'Proposal Approved' : '7-Day Sprint Roadmap')}
-                              </span>
-                            </div>
-                            {doc.completed && (
-                              <div className="ml-auto w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
-                                <Check className="w-3.5 h-3.5 text-emerald-400" />
+                            {messages.map((msg, idx) => (
+                              <div
+                                key={idx}
+                                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} max-w-full`}
+                              >
+                                <div className={`flex gap-3 max-w-[88%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} items-end`}>
+                                  <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
+                                    {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/projects/Ai boat inside photo.png" alt="Nova AI" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4]" />}
+                                  </div>
+
+                                  <div
+                                    className={`relative text-sm ${msg.role === 'user'
+                                      ? 'p-4 rounded-2xl shadow-[0_4px_16px_rgba(91,164,230,0.2)] bg-gradient-to-br from-accent-blue via-[#4f46e5] to-accent-purple border border-white/10 text-white rounded-br-sm'
+                                      : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
+                                      }`}
+                                  >
+                                    {msg.role !== 'user' && (
+                                      <>
+                                        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
+                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
+                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[6px] opacity-80"></div>
+                                      </>
+                                    )}
+                                    <div className="relative z-10 text-gray-200 leading-relaxed font-light tracking-wide">
+                                      {renderMessageContent(msg, idx)}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+
+                            {isLoading && (
+                              <div className="flex justify-start">
+                                <div className="flex gap-3 max-w-[88%] items-end">
+                                  <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
+                                    <img src="/projects/Ai boat inside photo.png" alt="Nova AI" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4]" />
+                                  </div>
+                                  <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
+                                    <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
+                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[4px] opacity-80"></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '0ms' }}></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce relative z-10" style={{ animationDelay: '150ms' }}></div>
+                                    <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '300ms' }}></div>
+                                  </div>
+                                </div>
                               </div>
                             )}
+                            <div ref={messagesEndRef} />
+                          </div>
+
+                          {/* Input Area */}
+                          <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10">
+                            <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
+                              <input
+                                type="text"
+                                value={inputValue}
+                                onChange={(e) => setInputValue(e.target.value)}
+                                onKeyPress={handleKeyPress}
+                                placeholder={
+                                  flowState === 'awaiting_email'
+                                    ? "Enter your email address..."
+                                    : flowState === 'awaiting_otp'
+                                      ? "Enter 6-digit verification code..."
+                                      : "Ask Nova anything..."
+                                }
+                                className="w-full bg-transparent py-2.5 pl-4 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none"
+                              />
+                              <button
+                                onClick={() => {
+                                  playClickSound(850, 0.03);
+                                  handleSend();
+                                }}
+                                disabled={!inputValue.trim() || isLoading}
+                                className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-[0_0_12px_rgba(91,164,230,0.3)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all cursor-pointer border-0"
+                              >
+                                <Send className="w-4 h-4 ml-0.5" />
+                              </button>
+                            </div>
+                            <div className="text-center mt-3 mb-1 font-sans">
+                              <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexora AI</p>
+                            </div>
+                          </div>
+                        </m.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+
+                  {/* Mobile/Global Documents Dropdown Drawer */}
+                  <AnimatePresence>
+                    {showDocsMenu && (
+                      <m.div
+                        initial={{ opacity: 0, y: '100%' }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: '100%' }}
+                        transition={{ type: 'spring', damping: 25, stiffness: 250 }}
+                        className="absolute inset-x-0 bottom-0 bg-[#0c1222]/98 backdrop-blur-2xl border-t border-white/10 rounded-t-3xl z-40 p-6 shadow-[0_-15px_30px_rgba(0,0,0,0.8)] max-h-[85%] overflow-y-auto"
+                      >
+                        <div className="flex items-center justify-between mb-5">
+                          <div className="flex items-center gap-2">
+                            <FolderLock className="w-5 h-5 text-accent-blue" />
+                            <h4 className="text-white font-bold text-xs uppercase tracking-wider">Secure Document Vault</h4>
+                          </div>
+                          <button
+                            onClick={() => {
+                              playClickSound(500, 0.05);
+                              setShowDocsMenu(false);
+                            }}
+                            className="w-7 h-7 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors cursor-pointer border-0"
+                          >
+                            <X className="w-4 h-4" />
                           </button>
-                        );
-                      })}
-                    </div>
-                  </m.div>
-                )}
-              </AnimatePresence>
-            </div> {/* Close Right Chat Console Panel */}
-            
-            </div> {/* Close Screen Area Container */}
-          </div> {/* Close Physical Tablet Frame */}
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+                          {vaultDocuments.map((doc) => {
+                            const IconComponent = doc.icon;
+                            const isActive = activeDocument === doc.id;
+                            return (
+                              <button
+                                key={doc.id}
+                                onClick={() => {
+                                  playClickSound(750, 0.05);
+                                  setActiveDocument(isActive ? null : doc.id);
+                                  setShowDocsMenu(false);
+                                }}
+                                className={`flex items-center gap-3.5 w-full p-4 rounded-2xl border transition-all duration-300 text-left relative overflow-hidden group cursor-pointer ${isActive
+                                  ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_20px_rgba(91,164,230,0.15)]'
+                                  : 'bg-white/[0.02] border-white/5 text-gray-300 hover:bg-white/[0.05] hover:border-white/10'
+                                  }`}
+                              >
+                                <div className={`p-2.5 rounded-xl border ${isActive ? 'bg-accent-blue/10 border-accent-blue/20' : 'bg-white/5 border-white/5 group-hover:bg-white/10'} transition-all`}>
+                                  <IconComponent className={`w-4 h-4 ${isActive ? 'text-accent-blue' : 'text-gray-400 group-hover:text-white'}`} />
+                                </div>
+                                <div className="flex flex-col text-left">
+                                  <span className="text-[12px] font-semibold tracking-wide text-white">{doc.label}</span>
+                                  <span className="text-[9px] text-gray-500 font-light mt-0.5">
+                                    {doc.id === 'client_agreement' && (isSigned ? 'Signed & Executed' : 'Digital Contract Signature')}
+                                    {doc.id === 'internship_offer' && (offerAccepted ? 'Offer Accepted' : 'Full Stack Dev Intern Offer')}
+                                    {doc.id === 'card_details' && (cardCopied ? 'Card Copied' : 'Interactive Billing Card')}
+                                    {doc.id === 'nda' && (ndaExecuted ? 'Executed NDA' : 'Mutual Confidentiality Agreement')}
+                                    {doc.id === 'project_proposal' && (proposalApproved ? 'Proposal Approved' : '7-Day Sprint Roadmap')}
+                                  </span>
+                                </div>
+                                {doc.completed && (
+                                  <div className="ml-auto w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                                    <Check className="w-3.5 h-3.5 text-emerald-400" />
+                                  </div>
+                                )}
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </m.div>
+                    )}
+                  </AnimatePresence>
+                </div> {/* Close Right Chat Console Panel */}
+
+              </div> {/* Close Screen Area Container */}
+            </div> {/* Close Physical Tablet Frame */}
           </m.div>
         )}
       </AnimatePresence>
@@ -1568,7 +1557,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                 {/* Avatar */}
                 <div className="relative flex-shrink-0 w-10 h-10 z-10">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center border border-white/[0.08] overflow-hidden">
-                    <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Milan" className="w-full h-full object-cover object-[50%_30%] group-hover:scale-110 transition-transform duration-500" />
+                    <img src="/projects/Ai boat inside photo.png" alt="Milan" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" />
                   </div>
                   {/* Online dot */}
                   <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-[#0D1117] rounded-full z-20">

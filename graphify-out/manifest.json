@@ -1254,11 +1254,6 @@
     "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
     "semantic_hash": ""
   },
-  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\Gemini_Generated_Image_n8mran8mran8mran (1).png": {
-    "mtime": 1781259134.3347926,
-    "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
-    "semantic_hash": ""
-  },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\logo copy.png": {
     "mtime": 1781259345.7614775,
     "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
@@ -1270,8 +1265,13 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
-    "mtime": 1781261391.026779,
-    "ast_hash": "092963c6ce37f64b08d1d63aa7d87f1d",
+    "mtime": 1781263536.385553,
+    "ast_hash": "5bd7c1679dfe78891f8dbee5de139a16",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\Ai boat inside photo.png": {
+    "mtime": 1781259134.3347926,
+    "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
     "semantic_hash": ""
   }
 }
