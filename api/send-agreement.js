@@ -26,10 +26,13 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
+  const resolvedSmtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
+  const resolvedSmtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
+
   console.log('[API Send-Agreement] Environment keys check:', {
     BREVO_API_KEY: process.env.BREVO_API_KEY ? `Present (len: ${process.env.BREVO_API_KEY.length})` : 'Missing',
-    SMTP_EMAIL: process.env.SMTP_EMAIL ? 'Present' : 'Missing',
-    SMTP_PASSWORD: process.env.SMTP_PASSWORD ? 'Present' : 'Missing',
+    SMTP_EMAIL: resolvedSmtpEmail ? 'Present' : 'Missing',
+    SMTP_PASSWORD: resolvedSmtpPassword ? 'Present' : 'Missing',
   });
 
   try {
@@ -112,6 +115,11 @@ export default async function handler(req, res) {
     // 1. BREVO PROVIDER (API-based, no App Password needed)
     if (brevoApiKey) {
       const senderEmail = process.env.BREVO_SENDER || 'realme11119412@gmail.com';
+      if (senderEmail.endsWith('@gmail.com') && !smtpPassword) {
+        console.warn("[Agreement Warning] SMTP_PASSWORD / GMAIL_APP_PASSWORD is not set in local .env. Falling back to Brevo. " +
+                     "Note: Sending emails from '@gmail.com' via third-party providers like Brevo is blocked by Gmail's DMARC policy. " +
+                     "Please add your Gmail App Password to your local .env as SMTP_PASSWORD to test sending locally.");
+      }
       const payload = {
         sender: { name: 'Nexora Studio', email: senderEmail },
         to: [{ email: email, name: fullName }],
@@ -225,18 +233,21 @@ export default async function handler(req, res) {
       return res.status(200).json({ success: true, message: 'Agreement sent successfully via Resend' });
     }
 
+    const smtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
+    const smtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
+
     // 3. SMTP PROVIDER (Gmail/Outlook fallback)
-    if (process.env.SMTP_EMAIL && process.env.SMTP_PASSWORD) {
+    if (smtpEmail && smtpPassword) {
       const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: process.env.SMTP_EMAIL,
-          pass: process.env.SMTP_PASSWORD,
+          user: smtpEmail,
+          pass: smtpPassword,
         },
       });
 
       const clientMailOptions = {
-        from: `"Nexora Studio" <${process.env.SMTP_EMAIL}>`,
+        from: `"Nexora Studio" <${smtpEmail}>`,
         to: email,
         subject: '📄 Nexora Client Agreement',
         html: clientHtml,
@@ -249,8 +260,8 @@ export default async function handler(req, res) {
       };
 
       const adminMailOptions = {
-        from: `"Agreement Portal" <${process.env.SMTP_EMAIL}>`,
-        to: process.env.SMTP_EMAIL,
+        from: `"Agreement Portal" <${smtpEmail}>`,
+        to: smtpEmail,
         subject: `📋 New Agreement Request — ${fullName}`,
         html: adminHtml
       };

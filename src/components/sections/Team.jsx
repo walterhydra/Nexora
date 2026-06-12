@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 import { ArrowUpRight, Code2, Radio, Sparkles, Target, X, Zap } from 'lucide-react';
-import { FiGithub, FiLinkedin } from 'react-icons/fi';
+import { FiGithub, FiLinkedin, FiGlobe } from 'react-icons/fi';
 import { team } from '../../constants/team';
 
 const posterMap = {
@@ -230,6 +230,11 @@ export default function Team() {
                           <SocialLink href={member.links?.linkedin} label={`${member.name} on LinkedIn`}>
                             <FiLinkedin size={18} />
                           </SocialLink>
+                          {member.links?.portfolio && (
+                            <SocialLink href={member.links.portfolio} label={`${member.name} Portfolio`}>
+                              <FiGlobe size={18} />
+                            </SocialLink>
+                          )}
                           <span className="ml-2 inline-flex items-center gap-2 border border-white/20 bg-white px-4 py-3 text-xs font-black uppercase tracking-wider text-black">
                             Full introduction <ArrowUpRight size={15} />
                           </span>
@@ -440,6 +445,11 @@ export default function Team() {
                     <SocialLink href={selectedMember.links?.linkedin} label={`${selectedMember.name} on LinkedIn`}>
                       <FiLinkedin size={18} />
                     </SocialLink>
+                    {selectedMember.links?.portfolio && (
+                      <SocialLink href={selectedMember.links.portfolio} label={`${selectedMember.name} Portfolio`}>
+                        <FiGlobe size={18} />
+                      </SocialLink>
+                    )}
                   </div>
                 </div>
               </div>

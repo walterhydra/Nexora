@@ -20,7 +20,7 @@ Nexora Studio is a Premium Digital Agency & Technology Innovator specializing in
 
 FOUNDER:
 Milan Pandavadara (Founder & CEO) - Full Stack Architect & Visionary. Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
-LinkedIn: https://www.linkedin.com/in/milan-pandavdara/ | GitHub: https://github.com/walterhydra
+LinkedIn: https://www.linkedin.com/in/milan-pandavdara/ | GitHub: https://github.com/walterhydra | Personal Portfolio: https://www.walterhydra.me
 
 TEAM:
 - Riya Sharma: Social Media Handler (Digital Branding + Content Strategy)

@@ -70,6 +70,7 @@ export default function About() {
                 <div className="flex gap-4">
                   <a href="https://www.linkedin.com/in/milan-pandavdara/" target="_blank" rel="noopener noreferrer" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">LinkedIn</a>
                   <a href="https://github.com/walterhydra" target="_blank" rel="noopener noreferrer" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">GitHub</a>
+                  <a href="https://www.walterhydra.me" target="_blank" rel="noopener noreferrer" className="text-accent-blue hover:text-gray-900 dark:hover:text-white transition-colors">Portfolio</a>
                 </div>
               </div>
             </div>

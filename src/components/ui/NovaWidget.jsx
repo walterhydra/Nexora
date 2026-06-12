@@ -57,7 +57,12 @@ export default function NovaWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const [flowState, setFlowState] = useState('completed');
+  const [flowState, setFlowState] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init';
+    }
+    return 'init';
+  });
   const [userEmail, setUserEmail] = useState('');
   const [otpToken, setOtpToken] = useState('');
 
@@ -76,6 +81,17 @@ export default function NovaWidget() {
   const [offerAccepted, setOfferAccepted] = useState(false);
   const [ndaExecuted, setNdaExecuted] = useState(false);
   const [proposalApproved, setProposalApproved] = useState(false);
+
+  // Internship Vault State
+  const [internshipIdInput, setInternshipIdInput] = useState('');
+  const [isIdVerified, setIsIdVerified] = useState(false);
+  const [selectedIntern, setSelectedIntern] = useState(null);
+  const [showOfferLetter, setShowOfferLetter] = useState(false);
+  const [internIdError, setInternIdError] = useState(false);
+  const [acceptedOffers, setAcceptedOffers] = useState({});
+  const [expandedOptions, setExpandedOptions] = useState({});
+
+
 
   // Synthesize soft click sounds using Web Audio API
   const playClickSound = (freq = 800, dur = 0.04) => {
@@ -153,9 +169,88 @@ export default function NovaWidget() {
     }
   ];
 
+  const internsData = [
+    {
+      id: 'milan',
+      name: 'Milan Pandavadara',
+      role: 'Full Stack Developer Intern',
+      department: 'Core Engineering',
+      stipend: '₹25,000 / month',
+      duration: '6 Months',
+      joiningDate: 'June 1, 2026',
+      outcomes: [
+        'Architecting core dashboard UI & components',
+        'Setting up Postgres & Supabase database integration',
+        'Managing high-fidelity Vercel cloud deployments',
+        'Implementing speed optimization and image generation tools'
+      ]
+    },
+    {
+      id: 'divyansh',
+      name: 'Divyansh',
+      role: 'Frontend Developer Intern',
+      department: 'Design & Frontend',
+      stipend: '₹18,000 / month',
+      duration: '3 Months',
+      joiningDate: 'June 15, 2026',
+      outcomes: [
+        'Engineering clean React & Next.js client components',
+        'Implementing responsive layouts and visual validation',
+        'Integrating micro-animations and custom styling',
+        'Optimizing component performance and load speed'
+      ]
+    },
+    {
+      id: 'stany',
+      name: 'Stany Gregor',
+      role: 'Software Engineer Intern',
+      department: 'Web Systems',
+      stipend: '₹15,000 / month',
+      duration: '3 Months',
+      joiningDate: 'June 10, 2026',
+      outcomes: [
+        'Managing REST API integrations and data flow',
+        'Setting up automated CI/CD workflows',
+        'Performing speed audits and optimizing performance',
+        'Resolving bugs and styling inconsistencies across pages'
+      ]
+    },
+    {
+      id: 'rajkumar',
+      name: 'Rajkumar Shah',
+      role: 'Software Engineer Intern',
+      department: 'Core Backend',
+      stipend: '₹15,000 / month',
+      duration: '3 Months',
+      joiningDate: 'June 10, 2026',
+      outcomes: [
+        'Implementing server-side logic and endpoints',
+        'Database migration scripting and caching systems',
+        'Integrating background processes and scheduling systems',
+        'Reviewing API structures and backend error logs'
+      ]
+    },
+    {
+      id: 'riya',
+      name: 'Riya Sharma',
+      role: 'Social Media & Branding Intern',
+      department: 'Marketing & Strategy',
+      stipend: '₹12,000 / month',
+      duration: '3 Months',
+      joiningDate: 'June 20, 2026',
+      outcomes: [
+        'Designing branding and visual asset collections',
+        'Coordinating outreach programs and email sequences',
+        'Managing brand voice across X and LinkedIn channels',
+        'Analyzing traffic campaigns and user onboarding'
+      ]
+    }
+  ];
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
+
 
   const markMessageTyped = (index) => {
     setMessages((prev) =>
@@ -200,6 +295,29 @@ export default function NovaWidget() {
       }, 500);
     }
   }, [isOpen]);
+
+  // Reset internship sub-state when changing files
+  useEffect(() => {
+    if (activeDocument !== 'internship_offer') {
+      setInternshipIdInput('');
+      setIsIdVerified(false);
+      setSelectedIntern(null);
+      setShowOfferLetter(false);
+      setInternIdError(false);
+    }
+  }, [activeDocument]);
+
+  const handleVerifyInternId = () => {
+    playClickSound(800, 0.05);
+    if (internshipIdInput.trim() === '220305') {
+      setIsIdVerified(true);
+      setInternIdError(false);
+    } else {
+      setInternIdError(true);
+      playClickSound(400, 0.1);
+    }
+  };
+
 
   const handleSend = async (textOverride) => {
     const text = textOverride || inputValue.trim();
@@ -327,6 +445,7 @@ Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializin
 Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
 • **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/
 • **GitHub**: https://github.com/walterhydra
+• **Portfolio**: https://www.walterhydra.me
 
 🚀 **Our Core Values & Strengths**
 • **End-to-End Solutions**: We handle everything from discovery, architecture, and UI/UX design to backend engineering and cloud deployment.
@@ -475,6 +594,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
 • 📞 **Phone**: [+91 7383303388](tel:+917383303388)
 • 💼 **LinkedIn**: [Nexora Studio](https://www.linkedin.com/in/milan-pandavdara/)
 • 💻 **GitHub**: [walterhydra](https://github.com/walterhydra)
+• 🌐 **Portfolio**: [walterhydra.me](https://www.walterhydra.me)
 
 Do you want to know about other things? \n\n[OPTIONS]`;
 
@@ -527,11 +647,21 @@ Do you want to know about other things? \n\n[OPTIONS]`;
       console.error("Chat error:", error);
 
       // Fallback for local testing without API key
-      const lowerText = text.toLowerCase();
-      let fallbackResponse = "That's a great question! I don't have that info right now, but you can reach our team directly at nexoraa.works@gmail.com.";
+      const lowerText = text.toLowerCase().trim();
+      let fallbackResponse = `I'm on it! 💻 While I'm local and offline, I can guide you through our agency's features. Feel free to ask about our Founder, Services, Team, or Pricing Packages! \n\n[OPTIONS]`;
 
-      if (lowerText.match(/^(hi|hello|hey|how are you|hii)/i)) {
+      if (
+        lowerText.match(/^(hi|hello|hey|hii|heyy|yo|hola|namaste|good morning|good afternoon|good evening)/i) ||
+        lowerText === 'hi' ||
+        lowerText === 'hii' ||
+        lowerText === 'hello' ||
+        lowerText === 'hey'
+      ) {
         fallbackResponse = "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]";
+      } else if (lowerText.match(/^(how are you|hows it going|how do you do|are you okay|doing)/i)) {
+        fallbackResponse = "I'm doing fantastic, thank you! 🚀 Ready to help you build premium web apps or explore Nexora. What's on your mind? \n\n[OPTIONS]";
+      } else if (lowerText.match(/^(thank you|thanks|ty|awesome|great|perfect|ok|okay|nice)/i)) {
+        fallbackResponse = "You're very welcome! Let me know if there's anything else I can assist you with. 😊 \n\n[OPTIONS]";
       } else if (lowerText.includes('about') || lowerText.includes('founder') || lowerText.includes('milan')) {
         fallbackResponse = `🏢 **About Nexora Studio**
 Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
@@ -541,6 +671,7 @@ Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializin
 Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
 • **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/
 • **GitHub**: https://github.com/walterhydra
+• **Portfolio**: https://www.walterhydra.me
 
 🚀 **Our Core Values & Strengths**
 • **End-to-End Solutions**: We handle everything from discovery, architecture, and UI/UX design to backend engineering and cloud deployment.
@@ -553,11 +684,20 @@ Milan leads Nexora with a builder-first philosophy, bridging the gap between adv
 
 Would you like to learn more about **Meet the Team**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
       } else if (lowerText.includes('team')) {
-        fallbackResponse = "We have a fantastic team led by our Founder & CEO, Milan. Want to know about anyone specific?";
+        fallbackResponse = "We have an exceptional, remote-first team of experts led by our Founder & CEO, **Milan**.\n\n**Core Team & Leadership:**\n• **Milan Pandavadara** — Founder & CEO (Full Stack Architect)\n• **Gaurav Thakur** — Technical Lead (Mobile & Backend Systems)\n• **Alis Patel** — Full-Stack Architect (Node.js & DevOps)\n• **Abhishek Jha** — Backend Developer (Java & Systems)\n• **Stany Gregor** — Software Engineer (Web Systems)\n• **Divyansh** — Software Engineer (Frontend Engineer)\n• **Rajkumar Shah** — Software Engineer (Web Systems)\n• **Riya Sharma** — Social Media Handler (Branding & Strategy)\n\nWhat would you like to explore? \n\n[OPTIONS]";
       } else if (lowerText.includes('services')) {
-        fallbackResponse = "We offer Web & App Development, Brand & Design, Automation & AI, DevOps, API Integrations, and SEO. What are you looking to build?";
+        fallbackResponse = "Nexora Studio offers premium end-to-end digital solutions:\n\n• **Web & Mobile App Development**: React/Next.js/Vite and robust mobile apps.\n• **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX.\n• **Automation & AI Integration**: Custom AI pipelines and chatbot integrations.\n• **DevOps & Cloud Systems**: Secure, scalable setup on AWS, Vercel, and Supabase.\n• **SEO**: Advanced SEO audit and implementation for visibility.\n\nWhat are you looking to build? \n\n[OPTIONS]";
       } else if (lowerText.includes('contact')) {
-        fallbackResponse = "You can reach us at nexoraa.works@gmail.com or call +91 7383303388. Our team is ready to help!";
+        fallbackResponse = "We'd love to collaborate on your next premium project!\n\n• 📩 **Email**: nexoraa.works@gmail.com\n• 📞 **Phone**: +91 7383303388\n• 💼 **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/\n• 🌐 **Portfolio**: https://www.walterhydra.me\n\nLet us know how we can help! \n\n[OPTIONS]";
+      } else if (lowerText.includes('pricing') || lowerText.includes('package')) {
+        fallbackResponse = `💰 **Nexora Pricing & Packages**
+We offer transparent, package-based pricing:
+
+• **Starter Package** (₹15,000 / $200): Best for landing pages and simple business sites.
+• **Growth Package** (₹35,000 / $450): Best for dynamic business websites. React/Next.js build.
+• **Scale Package** (₹75,000+ / $950+): Best for custom web platforms and e-commerce. Full-stack database architecture.
+
+What package matches your requirements? \n\n[OPTIONS]`;
       }
 
       setTimeout(() => {
@@ -580,7 +720,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
   const renderMessageContent = (msg, idx) => {
     const hasOptions = msg.content.includes('[OPTIONS]');
     const cleanContent = msg.content.replace('[OPTIONS]', '').trim();
-
+ 
     if (msg.role === 'assistant' && msg.isNew) {
       return (
         <div className="space-y-4">
@@ -597,11 +737,25 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
         </div>
       );
     }
-
+ 
+    const showOptionsGrid = hasOptions && expandedOptions[idx];
+ 
     return (
       <div className="space-y-4 animate-fade-in">
         <p className="whitespace-pre-wrap leading-relaxed">{parseMarkdown(cleanContent)}</p>
-        {hasOptions && (
+        {hasOptions && !expandedOptions[idx] && (
+          <button
+            onClick={() => {
+              playClickSound(800, 0.05);
+              setExpandedOptions(prev => ({ ...prev, [idx]: true }));
+            }}
+            className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-blue/30 text-gray-400 hover:text-white transition-all duration-300 text-[11px] font-semibold cursor-pointer group mt-2"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-accent-blue group-hover:scale-110 transition-transform" />
+            Explore Menu Options
+          </button>
+        )}
+        {showOptionsGrid && (
           <m.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -619,7 +773,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
               >
                 {/* Sweep light effect on hover */}
                 <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.04] to-transparent pointer-events-none" />
-
+ 
                 <div className="flex items-center gap-2 mb-1">
                   <div className="p-1 rounded-lg bg-white/[0.03] border border-white/5 group-hover:bg-accent-blue/15 group-hover:border-accent-blue/30 transition-all duration-300">
                     {reply.icon}
@@ -640,9 +794,8 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
   };
 
   const vaultDocuments = [
-    { id: 'client_agreement', label: 'Client Agreement', icon: FileText, completed: isSigned },
+    { id: 'client_agreement', label: 'Client Agreement', icon: FileText, completed: true },
     { id: 'internship_offer', label: 'Internship Offer', icon: Award, completed: offerAccepted },
-    { id: 'card_details', label: 'Card Details', icon: CreditCard, completed: cardCopied },
     { id: 'nda', label: 'NDA Agreement', icon: Lock, completed: ndaExecuted },
     { id: 'project_proposal', label: 'Project Proposal', icon: Compass, completed: proposalApproved },
   ];
@@ -651,71 +804,26 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
     switch (activeDocument) {
       case 'client_agreement':
         return (
-          <div className="flex flex-col h-full text-left relative z-10 min-h-0">
+          <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
               <div className="flex items-center gap-2">
                 <FileText className="w-5 h-5 text-accent-blue" />
                 <h3 className="text-white font-bold text-sm uppercase tracking-wider">Client Service Agreement</h3>
               </div>
-              <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono ${isSigned ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-amber-500/10 border-amber-500/30 text-amber-400'}`}>
-                {isSigned ? 'SIGNED & EXECUTED' : 'PENDING SIGNATURE'}
+              <span className="text-[10px] px-2 py-0.5 rounded-full border font-mono bg-emerald-500/10 border-emerald-500/30 text-emerald-400">
+                OFFICIAL DOCUMENT
               </span>
             </div>
 
-            <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Scope of Engagement</p>
-              <p>Nexora Studio agrees to design, develop, and deliver a high-performance digital product in accordance with the 7-Day Elite Sprint methodology. Project goals, database schemas, and visual requirements will be locked prior to sprint commencement.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Fees & Investment</p>
-              <p>The client agrees to invest the sum of ₹35,000 ($450 USD) for the Growth Package sprint. A 50% deposit is required before architecture mapping begins. Remaining balance is due upon successful handover.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Intellectual Property</p>
-              <p>Upon final payment receipt, all proprietary software source code, digital assets, Figma designs, and configurations will be fully transferred to the client with worldwide rights.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">4. Indemnity & Liability</p>
-              <p>Nexora Studio warrants that all development work is original and does not violate third-party copyright laws. The maximum aggregate liability for any claim shall not exceed the fees paid under this agreement.</p>
+            <div className="flex-1 min-h-0 relative rounded-2xl border border-white/10 overflow-hidden bg-black/40 shadow-[inset_0_2px_20px_rgba(0,0,0,0.6)] flex flex-col mb-4">
+              <iframe
+                src="/Video/Nexoraa_Client_Agreement.pdf#toolbar=0&navpanes=0"
+                className="w-full h-full flex-1 border-0 rounded-2xl"
+                title="Client Agreement PDF"
+              />
             </div>
 
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mt-4 shrink-0">
-              {isSigned ? (
-                <div className="space-y-3">
-                  <div className="flex items-center gap-2.5 text-emerald-400">
-                    <CheckCircle2 className="w-5 h-5" />
-                    <span className="text-xs font-semibold">Document Signed Electronically</span>
-                  </div>
-                  <div className="border-t border-white/5 pt-2.5 flex justify-between items-center text-[9px] text-gray-500 font-mono">
-                    <span>SIGNATORY: {signatureName.toUpperCase()}</span>
-                    <span>TIMESTAMP: {new Date().toLocaleDateString()} SECURE</span>
-                  </div>
-                </div>
-              ) : (
-                <div className="space-y-3">
-                  <label className="block text-[9px] uppercase tracking-wider font-semibold text-gray-400 text-left">Signatory Full Name</label>
-                  <div className="flex gap-2">
-                    <input
-                      type="text"
-                      value={signatureName}
-                      onChange={(e) => setSignatureName(e.target.value)}
-                      placeholder="Enter full name to sign..."
-                      className="flex-1 bg-black/50 border border-white/10 rounded-xl px-3 py-2 text-xs text-white placeholder-gray-600 focus:outline-none focus:border-accent-blue/50"
-                    />
-                    <button
-                      onClick={() => {
-                        if (!signatureName.trim()) return;
-                        playClickSound(900, 0.08);
-                        setIsSigned(true);
-                      }}
-                      disabled={!signatureName.trim()}
-                      className="px-4 py-2 rounded-xl bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-bold disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-all cursor-pointer"
-                    >
-                      Sign Agreement
-                    </button>
-                  </div>
-                </div>
-              )}
-            </div>
-
-            <div className="flex gap-2.5 pt-3 shrink-0">
+            <div className="flex gap-2.5 pt-2 shrink-0">
               <button
                 onClick={() => {
                   playClickSound(600, 0.04);
@@ -725,243 +833,344 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
               >
                 <Undo2 className="w-3.5 h-3.5" /> Back to Chat
               </button>
+              <a
+                href="/Video/Nexoraa_Client_Agreement.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playClickSound(800, 0.04)}
+                className="flex-1 py-2.5 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 transition-all text-xs font-semibold flex items-center justify-center gap-1.5"
+              >
+                <Eye className="w-3.5 h-3.5" /> Open PDF
+              </a>
             </div>
           </div>
         );
       case 'internship_offer':
-        return (
-          <div className="flex flex-col h-full text-left relative z-10 min-h-0 overflow-hidden">
-            {/* Custom Confetti Animation Elements */}
-            {offerAccepted && (
-              <div className="absolute inset-0 pointer-events-none z-50">
-                {[...Array(20)].map((_, i) => (
-                  <m.div
-                    key={i}
-                    initial={{ y: -10, x: Math.random() * 300 - 150, scale: Math.random() * 0.5 + 0.5, opacity: 1 }}
-                    animate={{
-                      y: 500,
-                      x: Math.random() * 300 - 150,
-                      rotate: 360,
-                      opacity: 0
-                    }}
-                    transition={{
-                      duration: Math.random() * 2 + 1.5,
-                      ease: "easeOut",
-                      repeat: Infinity,
-                      repeatDelay: Math.random() * 2
-                    }}
-                    className="absolute top-0 left-1/2 w-2 h-2 rounded-full"
-                    style={{
-                      backgroundColor: ['#00F5FF', '#A020F0', '#10B981', '#F59E0B', '#EF4444'][i % 5]
-                    }}
-                  />
-                ))}
-              </div>
-            )}
+        if (!isIdVerified) {
+          return (
+            <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full justify-between">
+              <div>
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-6 shrink-0">
+                  <div className="flex items-center gap-2">
+                    <FolderLock className="w-5 h-5 text-accent-blue" />
+                    <h3 className="text-white font-bold text-sm uppercase tracking-wider font-mono">Secure Intern Vault</h3>
+                  </div>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border font-mono bg-red-500/10 border-red-500/30 text-red-400">
+                    LOCKED
+                  </span>
+                </div>
 
-            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
-              <div className="flex items-center gap-2">
-                <Award className="w-5 h-5 text-accent-blue" />
-                <h3 className="text-white font-bold text-sm uppercase tracking-wider">Internship Offer Letter</h3>
-              </div>
-              <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono ${offerAccepted ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-amber-500/10 border-amber-500/30 text-amber-400'}`}>
-                {offerAccepted ? 'OFFER ACCEPTED' : 'PENDING RESPONSE'}
-              </span>
-            </div>
+                <div className="space-y-4 max-w-sm mx-auto text-center py-6">
+                  <div className="w-12 h-12 rounded-full bg-white/[0.02] border border-white/10 flex items-center justify-center mx-auto mb-2 shadow-inner">
+                    <Lock className="w-5 h-5 text-accent-blue/80" />
+                  </div>
+                  <h4 className="text-white font-semibold text-sm">Verification Required</h4>
+                  <p className="text-gray-400 text-[11px] leading-relaxed">
+                    Please enter your **Internship Access Code** to unlock the onboarding files and official offer letters.
+                  </p>
 
-            <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-              <div className="text-center font-bold text-white text-[10px] tracking-widest uppercase border-b border-white/5 pb-2 mb-2 font-mono">NEXORA STUDIO HR DEPT</div>
-              <p>Dear Candidate,</p>
-              <p>We are thrilled to offer you the position of **Full Stack Developer Intern** at Nexora Studio. During your time with us, you will work closely with Milan (Founder) and our engineering leaders to design and implement premium, high-performance web products.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Stipend & Compensation</p>
-              <p>You will receive a monthly stipend of ₹15,000 INR, paid during the first week of each consecutive month.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Role & Duration</p>
-              <p>This is a 3-month remote engagement, with the possibility of conversion to a full-time associate developer role based on outstanding performance and sprint delivery.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Expected Outcomes</p>
-              <p>• Engineering clean React & Next.js client components.<br />• Architecting APIs and managing databases (Postgres/Supabase).<br />• Performing speed audits and visual validation before deployment.</p>
-            </div>
-
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mt-4 shrink-0">
-              {offerAccepted ? (
-                <div className="flex items-center gap-2.5 text-emerald-400">
-                  <CheckCircle2 className="w-5 h-5 animate-pulse" />
-                  <div className="flex flex-col text-left">
-                    <span className="text-xs font-semibold">Offer Accepted successfully!</span>
-                    <span className="text-[9px] text-gray-500 font-mono mt-0.5">Welcome to the elite developer sprints.</span>
+                  <div className="space-y-2 pt-2">
+                    <input
+                      type="text"
+                      value={internshipIdInput}
+                      onChange={(e) => {
+                        setInternshipIdInput(e.target.value);
+                        setInternIdError(false);
+                      }}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                          handleVerifyInternId();
+                        }
+                      }}
+                      placeholder="Enter Access Code"
+                      className={`w-full px-4 py-3 rounded-xl bg-black/40 border text-center text-white placeholder-gray-600 focus:outline-none transition-all duration-300 font-mono text-xs tracking-wider ${
+                        internIdError
+                          ? 'border-red-500/50 focus:border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.1)]'
+                          : 'border-white/10 focus:border-accent-blue/50 focus:shadow-[0_0_15px_rgba(91,164,230,0.15)]'
+                      }`}
+                    />
+                    {internIdError && (
+                      <p className="text-red-500 font-semibold text-[10px] uppercase tracking-wider animate-pulse">
+                        Access Denied
+                      </p>
+                    )}
                   </div>
                 </div>
-              ) : (
+              </div>
+
+              <div className="flex gap-2.5 pt-4 border-t border-white/5 shrink-0">
                 <button
                   onClick={() => {
-                    playClickSound(1100, 0.15);
-                    setTimeout(() => playClickSound(1400, 0.1), 80);
-                    setOfferAccepted(true);
+                    playClickSound(600, 0.04);
+                    setActiveDocument(null);
                   }}
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-0"
+                  className="flex-1 py-2.5 rounded-xl border border-white/10 bg-transparent text-gray-400 hover:text-white hover:bg-white/5 transition-all text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer"
                 >
-                  Accept Offer & Commit Sprints
+                  <Undo2 className="w-3.5 h-3.5" /> Cancel
                 </button>
-              )}
-            </div>
-
-            <div className="flex gap-2.5 pt-3 shrink-0">
-              <button
-                onClick={() => {
-                  playClickSound(600, 0.04);
-                  setActiveDocument(null);
-                }}
-                className="flex-1 py-2.5 rounded-xl border border-white/10 bg-transparent text-gray-400 hover:text-white hover:bg-white/5 transition-all text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer"
-              >
-                <Undo2 className="w-3.5 h-3.5" /> Back to Chat
-              </button>
-            </div>
-          </div>
-        );
-      case 'card_details':
-        return (
-          <div className="flex flex-col h-full text-left relative z-10 min-h-0">
-            <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
-              <div className="flex items-center gap-2">
-                <CreditCard className="w-5 h-5 text-accent-blue" />
-                <h3 className="text-white font-bold text-sm uppercase tracking-wider">Nexora Studio Billing Card</h3>
-              </div>
-              <span className="text-[10px] px-2 py-0.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 font-mono">
-                SECURE CARD
-              </span>
-            </div>
-
-            {/* 3D Glassmorphic Card Container with Flip Animation */}
-            <div className="flex justify-center items-center py-6 shrink-0 z-20">
-              <div className="w-full max-w-[320px] h-[180px] [perspective:1000px]">
-                <div
-                  className={`w-full h-full rounded-2xl relative transition-transform duration-700 [transform-style:preserve-3d] shadow-2xl ${revealedCvv ? '[transform:rotateY(180deg)]' : ''
-                    }`}
+                <button
+                  onClick={handleVerifyInternId}
+                  className="flex-1 py-2.5 rounded-xl bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-semibold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-1.5"
                 >
-                  {/* FRONT OF THE CARD */}
-                  <div className="absolute inset-0 w-full h-full rounded-2xl p-5 bg-gradient-to-br from-white/15 via-white/[0.03] to-white/[0.08] border border-white/20 backdrop-blur-xl [backface-visibility:hidden] flex flex-col justify-between overflow-hidden shadow-[inset_0_2px_20px_rgba(255,255,255,0.06)]">
-                    {/* Glowing highlight orb */}
-                    <div className="absolute top-0 right-0 w-28 h-28 rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 blur-xl pointer-events-none" />
+                  Unlock Vault
+                </button>
+              </div>
+            </div>
+          );
+        }
 
-                    {/* Card Brand Header */}
-                    <div className="flex justify-between items-start z-10">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-5 h-5 rounded-md bg-white/10 flex items-center justify-center p-1">
-                          <img src="/logo/favicon.png" alt="Nexora logo" className="w-full h-full object-contain" />
-                        </div>
-                        <span className="text-[9px] font-bold tracking-wider text-white">NEXORA STUDIO</span>
-                      </div>
-                      <div className="text-white font-black text-xs italic tracking-widest text-right">VISA</div>
-                    </div>
+        if (!selectedIntern) {
+          return (
+            <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full justify-between">
+              <div className="flex-1 flex flex-col min-h-0">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
+                  <div className="flex items-center gap-2">
+                    <Users className="w-5 h-5 text-accent-blue" />
+                    <h3 className="text-white font-bold text-sm uppercase tracking-wider">Intern Directory</h3>
+                  </div>
+                  <span className="text-[10px] px-2 py-0.5 rounded-full border font-mono bg-emerald-500/10 border-emerald-500/30 text-emerald-400">
+                    AUTHORIZED
+                  </span>
+                </div>
 
-                    {/* Chip */}
-                    <div className="w-8 h-6 rounded-md bg-gradient-to-br from-[#ffd700]/80 to-[#b8860b]/60 border border-white/10 shadow-sm relative z-10 flex flex-col overflow-hidden p-0.5">
-                      <div className="grid grid-cols-3 gap-0.5 h-full opacity-60">
-                        <div className="border-r border-b border-[#222]" />
-                        <div className="border-r border-b border-[#222]" />
-                        <div className="border-b border-[#222]" />
-                        <div className="border-r border-[#222]" />
-                        <div className="border-r border-[#222]" />
-                        <div className="" />
-                      </div>
-                    </div>
+                <p className="text-gray-400 text-[11px] mb-4">
+                  Select a team member to view onboarding details, project scope, and official offer letters:
+                </p>
 
-                    {/* Card Number */}
-                    <div className="flex items-center justify-between z-10 mt-1">
-                      <span className="text-sm font-mono tracking-widest text-white font-semibold">4000 1234 5678 7383</span>
+                <div className="flex-1 overflow-y-auto space-y-2.5 pr-1 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                  {internsData.map((intern) => {
+                    const isAccepted = acceptedOffers[intern.id];
+                    return (
                       <button
+                        key={intern.id}
                         onClick={() => {
                           playClickSound(800, 0.04);
-                          navigator.clipboard.writeText('4000 1234 5678 7383');
-                          setCardCopied(true);
-                          setTimeout(() => setCardCopied(false), 2000);
+                          setSelectedIntern(intern);
                         }}
-                        className="p-1 rounded-lg bg-white/5 border border-white/10 hover:bg-white/15 text-gray-400 hover:text-white transition-all cursor-pointer"
-                        title="Copy Card Number"
+                        className="w-full flex items-center justify-between p-3.5 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.05] hover:border-accent-blue/30 transition-all duration-300 group text-left cursor-pointer"
                       >
-                        {cardCopied ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                        <div className="flex items-center gap-3">
+                          <div className="w-8 h-8 rounded-full bg-accent-blue/10 border border-accent-blue/25 flex items-center justify-center font-bold text-accent-blue text-xs group-hover:scale-105 transition-transform">
+                            {intern.name.charAt(0)}
+                          </div>
+                          <div>
+                            <h4 className="text-white font-semibold text-xs group-hover:text-accent-blue transition-colors">
+                              {intern.name}
+                            </h4>
+                            <p className="text-gray-500 text-[10px] mt-0.5">{intern.role}</p>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          {isAccepted && (
+                            <span className="text-[9px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono scale-95">
+                              SIGNED
+                            </span>
+                          )}
+                          <ChevronDown className="w-4 h-4 text-gray-500 group-hover:text-white transition-colors -rotate-90" />
+                        </div>
                       </button>
-                    </div>
+                    );
+                  })}
+                </div>
+              </div>
 
-                    {/* Footer Name / Expiry */}
-                    <div className="flex justify-between items-end z-10">
-                      <div className="flex flex-col text-left">
-                        <span className="text-[6px] text-gray-500 font-semibold uppercase tracking-wider">Cardholder</span>
-                        <span className="text-[9px] text-gray-300 font-bold uppercase tracking-wide">MILAN PANDAVDARA</span>
-                      </div>
-                      <div className="flex flex-col text-right">
-                        <span className="text-[6px] text-gray-500 font-semibold uppercase tracking-wider">Expires</span>
-                        <span className="text-[9px] text-gray-300 font-bold font-mono">06/31</span>
-                      </div>
+              <div className="flex gap-2.5 pt-4 border-t border-white/5 shrink-0 mt-4">
+                <button
+                  onClick={() => {
+                    playClickSound(600, 0.04);
+                    setIsIdVerified(false);
+                  }}
+                  className="flex-1 py-2.5 rounded-xl border border-white/10 bg-transparent text-gray-400 hover:text-white hover:bg-white/5 transition-all text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer"
+                >
+                  Lock Vault
+                </button>
+              </div>
+            </div>
+          );
+        }
+
+        if (!showOfferLetter) {
+          const isAccepted = acceptedOffers[selectedIntern.id];
+          return (
+            <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full justify-between">
+              <div className="flex-1 flex flex-col min-h-0">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
+                  <button
+                    onClick={() => {
+                      playClickSound(600, 0.04);
+                      setSelectedIntern(null);
+                    }}
+                    className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  >
+                    <Undo2 className="w-3.5 h-3.5" /> Back to Directory
+                  </button>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono ${isAccepted ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-amber-500/10 border-amber-500/30 text-amber-400'}`}>
+                    {isAccepted ? 'OFFER SIGNED' : 'PENDING ACTION'}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-3.5 mb-5">
+                  <div className="w-11 h-11 rounded-full bg-accent-blue/15 border border-accent-blue/30 flex items-center justify-center font-bold text-accent-blue text-sm">
+                    {selectedIntern.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h3 className="text-white font-bold text-sm tracking-wide">{selectedIntern.name}</h3>
+                    <p className="text-gray-400 text-xs mt-0.5">{selectedIntern.role}</p>
+                  </div>
+                </div>
+
+                <div className="flex-1 overflow-y-auto space-y-4 pr-1 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                  {/* Key-Value Details Grid */}
+                  <div className="grid grid-cols-2 gap-3 bg-white/[0.01] border border-white/5 rounded-xl p-3.5">
+                    <div>
+                      <span className="text-[10px] text-gray-500 uppercase block tracking-wider font-medium">Department</span>
+                      <span className="text-white text-xs font-medium mt-0.5 block">{selectedIntern.department}</span>
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-gray-500 uppercase block tracking-wider font-medium">Stipend</span>
+                      <span className="text-accent-blue text-xs font-semibold mt-0.5 block">{selectedIntern.stipend}</span>
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-gray-500 uppercase block tracking-wider font-medium">Duration</span>
+                      <span className="text-white text-xs font-medium mt-0.5 block">{selectedIntern.duration}</span>
+                    </div>
+                    <div>
+                      <span className="text-[10px] text-gray-500 uppercase block tracking-wider font-medium">Joining Date</span>
+                      <span className="text-white text-xs font-medium mt-0.5 block">{selectedIntern.joiningDate}</span>
                     </div>
                   </div>
 
-                  {/* BACK OF THE CARD */}
-                  <div className="absolute inset-0 w-full h-full rounded-2xl bg-gradient-to-br from-white/15 via-[#0A0D15] to-[#070b14] border border-white/20 backdrop-blur-xl [backface-visibility:hidden] [transform:rotateY(180deg)] flex flex-col justify-between py-4 overflow-hidden shadow-2xl">
-                    {/* Magnetic Stripe */}
-                    <div className="w-full h-7 bg-black/90 mt-1" />
+                  {/* Outcomes Section */}
+                  <div>
+                    <h4 className="text-[10px] text-accent-blue font-bold uppercase tracking-widest mb-2 border-b border-white/5 pb-1 font-mono">Expected Deliverables</h4>
+                    <ul className="space-y-1.5 pl-1.5 text-gray-300 text-[11px] leading-relaxed">
+                      {selectedIntern.outcomes.map((outcome, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-accent-purple/80 mt-0.5 font-bold">•</span>
+                          <span>{outcome}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
 
-                    {/* Signature Strip & CVV */}
-                    <div className="px-5 flex items-center gap-3">
-                      <div className="flex-1 h-6 bg-white/5 border border-white/10 rounded-sm flex items-center justify-end px-3 select-none pointer-events-none">
-                        <span className="text-[8px] text-gray-400 font-mono italic">Milan Pandavadara</span>
-                      </div>
-                      <div className="w-10 h-6 bg-[#ffd700] rounded-sm flex items-center justify-center font-mono font-bold text-black text-xs select-text">
-                        388
-                      </div>
-                    </div>
+              <div className="flex gap-2.5 pt-4 border-t border-white/5 shrink-0 mt-4">
+                <button
+                  onClick={() => {
+                    playClickSound(800, 0.04);
+                    setShowOfferLetter(true);
+                  }}
+                  className="w-full py-3 rounded-xl bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer flex items-center justify-center gap-2"
+                >
+                  <FileText className="w-3.5 h-3.5" /> View Official Offer Letter
+                </button>
+              </div>
+            </div>
+          );
+        }
 
-                    {/* Details */}
-                    <div className="px-5 text-[6px] text-gray-500 font-light text-left leading-tight">
-                      This is a secure billing demonstration card for Nexora Studio Client Portal. Not valid for real bank transactions.
-                    </div>
+        {
+          const isAccepted = acceptedOffers[selectedIntern.id];
+          return (
+            <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full justify-between">
+              {/* Custom Confetti Animation Elements */}
+              {isAccepted && (
+                <div className="absolute inset-0 pointer-events-none z-50">
+                  {[...Array(20)].map((_, i) => (
+                    <m.div
+                      key={i}
+                      initial={{ y: -10, x: Math.random() * 300 - 150, scale: Math.random() * 0.5 + 0.5, opacity: 1 }}
+                      animate={{
+                        y: 500,
+                        x: Math.random() * 300 - 150,
+                        rotate: 360,
+                        opacity: 0
+                      }}
+                      transition={{
+                        duration: Math.random() * 2 + 1.5,
+                        ease: "easeOut",
+                        repeat: Infinity,
+                        repeatDelay: Math.random() * 2
+                      }}
+                      className="absolute top-0 left-1/2 w-2 h-2 rounded-full"
+                      style={{
+                        backgroundColor: ['#00F5FF', '#A020F0', '#10B981', '#F59E0B', '#EF4444'][i % 5]
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+
+              <div className="flex-1 flex flex-col min-h-0">
+                <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
+                  <button
+                    onClick={() => {
+                      playClickSound(600, 0.04);
+                      setShowOfferLetter(false);
+                    }}
+                    className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-white transition-colors cursor-pointer"
+                  >
+                    <Undo2 className="w-3.5 h-3.5" /> Back to Profile
+                  </button>
+                  <span className={`text-[10px] px-2 py-0.5 rounded-full border font-mono ${isAccepted ? 'bg-emerald-500/10 border-emerald-500/30 text-emerald-400' : 'bg-amber-500/10 border-amber-500/30 text-amber-400'}`}>
+                    {isAccepted ? 'SIGNED & EXECUTED' : 'PENDING SIGNATURE'}
+                  </span>
+                </div>
+
+                <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+                  <div className="text-center font-bold text-white text-[10px] tracking-widest uppercase border-b border-white/5 pb-2 mb-2 font-mono">NEXORA STUDIO HR DEPT</div>
+                  <p className="text-[10px] text-gray-500 font-mono">Date: June 12, 2026</p>
+                  <p>Dear **{selectedIntern.name}**,</p>
+                  <p>We are thrilled to offer you the position of **{selectedIntern.role}** at Nexora Studio. During your time with us, you will work closely with Milan (Founder) and our engineering leaders to design and implement premium, high-performance web products.</p>
+
+                  <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Stipend & Compensation</p>
+                  <p>You will receive a monthly stipend of **{selectedIntern.stipend}**, paid during the first week of each consecutive month.</p>
+
+                  <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Role & Duration</p>
+                  <p>This is a **{selectedIntern.duration}** remote engagement, starting on **{selectedIntern.joiningDate}**, with the possibility of conversion to a full-time role based on outstanding performance and sprint delivery.</p>
+
+                  <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Expected Outcomes</p>
+                  <ul className="list-disc list-inside space-y-1 pl-1">
+                    {selectedIntern.outcomes.map((outcome, idx) => (
+                      <li key={idx}>{outcome}</li>
+                    ))}
+                  </ul>
+
+                  <div className="h-[1px] bg-white/5 my-4" />
+
+                  {/* Interactive Signature Area */}
+                  <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 shrink-0">
+                    {isAccepted ? (
+                      <div className="flex items-center gap-2.5 text-emerald-400">
+                        <CheckCircle2 className="w-5 h-5 animate-pulse" />
+                        <div className="flex flex-col text-left">
+                          <span className="text-xs font-semibold">Offer Accepted successfully!</span>
+                          <span className="text-[9px] text-gray-500 font-mono mt-0.5">Welcome to the elite developer sprints. Signed as: {selectedIntern.name}</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <button
+                        onClick={() => {
+                          playClickSound(1100, 0.15);
+                          setTimeout(() => playClickSound(1400, 0.1), 80);
+                          setAcceptedOffers((prev) => ({ ...prev, [selectedIntern.id]: true }));
+                        }}
+                        className="w-full py-3 rounded-xl bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-0"
+                      >
+                        Accept Offer & Commit Sprints
+                      </button>
+                    )}
                   </div>
                 </div>
               </div>
             </div>
+          );
+        }
 
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 text-center z-10 mt-auto shrink-0">
-              <p className="text-gray-400 text-xs font-light mb-3">
-                {revealedCvv ? "Showing back of card with CVV code." : "Flip the card to reveal the secure CVV code."}
-              </p>
-              <button
-                onClick={() => {
-                  playClickSound(800, 0.05);
-                  setRevealedCvv(!revealedCvv);
-                }}
-                className="px-5 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-white text-xs font-bold transition-all flex items-center justify-center gap-1.5 mx-auto cursor-pointer"
-              >
-                {revealedCvv ? (
-                  <>
-                    <EyeOff className="w-3.5 h-3.5" /> Show Card Front
-                  </>
-                ) : (
-                  <>
-                    <Eye className="w-3.5 h-3.5" /> Reveal CVV / Flip
-                  </>
-                )}
-              </button>
-            </div>
-
-            <div className="flex gap-2.5 pt-3 shrink-0">
-              <button
-                onClick={() => {
-                  playClickSound(600, 0.04);
-                  setActiveDocument(null);
-                  setRevealedCvv(false);
-                }}
-                className="flex-1 py-2.5 rounded-xl border border-white/10 bg-transparent text-gray-400 hover:text-white hover:bg-white/5 transition-all text-xs font-semibold flex items-center justify-center gap-1.5 cursor-pointer"
-              >
-                <Undo2 className="w-3.5 h-3.5" /> Back to Chat
-              </button>
-            </div>
-          </div>
-        );
       case 'nda':
         return (
-          <div className="flex flex-col h-full text-left relative z-10 min-h-0">
+          <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
               <div className="flex items-center gap-2">
                 <Lock className="w-5 h-5 text-accent-blue" />
@@ -972,42 +1181,15 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
               </span>
             </div>
 
-            <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-              <p>This Mutual Non-Disclosure Agreement ("Agreement") is entered into by and between Nexora Studio and the Client/Recipient, to protect proprietary ideas and codebases shared during technical sprint discovery.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Definition of Confidentiality</p>
-              <p>Confidential Information includes but is not limited to source code, API keys, design templates, software topology mapping, client databases, and pricing proposals.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">2. Non-Use and Non-Disclosure</p>
-              <p>Each party agrees to hold the other's confidential information in strict confidence and shall not use it for any purpose other than evaluating proposed project collaboration.</p>
-
-              <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">3. Duration of Protection</p>
-              <p>Confidentiality obligations shall continue to protect proprietary code assets for a period of three (3) years from execution or until otherwise agreed in writing.</p>
+            <div className="flex-1 min-h-0 relative rounded-2xl border border-white/10 overflow-hidden bg-black/40 shadow-[inset_0_2px_20px_rgba(0,0,0,0.6)] flex flex-col mb-4">
+              <iframe
+                src="/Video/Nexoraa_Studio_NDA.pdf#toolbar=0&navpanes=0"
+                className="w-full h-full flex-1 border-0 rounded-2xl"
+                title="Mutual NDA PDF"
+              />
             </div>
 
-            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 mt-4 shrink-0">
-              {ndaExecuted ? (
-                <div className="flex items-center gap-2.5 text-emerald-400">
-                  <CheckCircle2 className="w-5 h-5" />
-                  <div className="flex flex-col text-left">
-                    <span className="text-xs font-semibold">Mutual NDA Executed successfully!</span>
-                    <span className="text-[9px] text-gray-500 font-mono mt-0.5">Protected & Encrypted Secure Socket.</span>
-                  </div>
-                </div>
-              ) : (
-                <button
-                  onClick={() => {
-                    playClickSound(950, 0.1);
-                    setNdaExecuted(true);
-                  }}
-                  className="w-full py-3 rounded-xl bg-gradient-to-r from-accent-blue to-accent-purple text-white text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-0"
-                >
-                  Execute Mutual NDA
-                </button>
-              )}
-            </div>
-
-            <div className="flex gap-2.5 pt-3 shrink-0">
+            <div className="flex gap-2.5 pt-2 shrink-0">
               <button
                 onClick={() => {
                   playClickSound(600, 0.04);
@@ -1017,12 +1199,21 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
               >
                 <Undo2 className="w-3.5 h-3.5" /> Back to Chat
               </button>
+              <a
+                href="/Video/Nexoraa_Studio_NDA.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => playClickSound(800, 0.04)}
+                className="flex-1 py-2.5 rounded-xl border border-white/10 bg-white/5 text-gray-300 hover:text-white hover:bg-white/10 transition-all text-xs font-semibold flex items-center justify-center gap-1.5"
+              >
+                <Eye className="w-3.5 h-3.5" /> Open PDF
+              </a>
             </div>
           </div>
         );
       case 'project_proposal':
         return (
-          <div className="flex flex-col h-full text-left relative z-10 min-h-0">
+          <div className="flex-1 flex flex-col h-full text-left relative z-10 min-h-0 w-full">
             <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-4 shrink-0">
               <div className="flex items-center gap-2">
                 <Compass className="w-5 h-5 text-accent-blue" />
@@ -1190,10 +1381,10 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                     {/* Brand */}
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(91,164,230,0.3)]">
-                        <img src="/logo/favicon.png" alt="Nexora Logo" className="w-full h-full object-contain" />
+                        <img src="/logo/ChatGPT Image Jun 9, 2026, 09_17_40 PM.png" alt="Nexora Logo" className="w-full h-full object-contain" />
                       </div>
                       <div>
-                        <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexora Studio</h2>
+                        <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexoraa Studio</h2>
                         <p className="text-[9px] text-accent-blue font-mono">DIGITAL INNOVATOR</p>
                       </div>
                     </div>
@@ -1245,7 +1436,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                             >
                               <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
                               <span className="text-[10px] font-medium tracking-wide">{doc.label}</span>
-                              {doc.completed && (
+                              {isActive && (
                                 <Check className="w-3 h-3 text-emerald-400 ml-auto shrink-0" />
                               )}
                             </button>
@@ -1254,25 +1445,35 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                       </div>
                     </div>
 
-                    {/* Shortcuts */}
+                     {/* Shortcuts */}
                     <div className="space-y-2">
                       <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Quick Connect</span>
-                      <div className="grid grid-cols-2 gap-2">
+                      <div className="flex flex-col gap-2">
+                        <div className="grid grid-cols-2 gap-2">
+                          <a
+                            href="https://www.linkedin.com/in/milan-pandavdara/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
+                          >
+                            LinkedIn
+                          </a>
+                          <a
+                            href="https://github.com/walterhydra"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
+                          >
+                            GitHub
+                          </a>
+                        </div>
                         <a
-                          href="https://www.linkedin.com/in/milan-pandavdara/"
+                          href="https://www.walterhydra.me"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
                         >
-                          LinkedIn
-                        </a>
-                        <a
-                          href="https://github.com/walterhydra"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
-                        >
-                          GitHub
+                          Portfolio
                         </a>
                       </div>
                     </div>
@@ -1351,7 +1552,9 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 15 }}
                           transition={{ duration: 0.25 }}
-                          className="flex-1 flex flex-col overflow-hidden bg-[#070b14]/98 p-6 relative z-10 h-full"
+                          className={`flex-1 flex flex-col overflow-hidden bg-[#070b14]/98 relative z-10 min-h-0 h-full ${
+                            activeDocument ? 'p-3 pb-2' : 'p-6'
+                          }`}
                         >
                           {renderActiveDocument()}
                         </m.div>
@@ -1512,7 +1715,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
                                     {doc.id === 'project_proposal' && (proposalApproved ? 'Proposal Approved' : '7-Day Sprint Roadmap')}
                                   </span>
                                 </div>
-                                {doc.completed && (
+                                {isActive && (
                                   <div className="ml-auto w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
                                     <Check className="w-3.5 h-3.5 text-emerald-400" />
                                   </div>

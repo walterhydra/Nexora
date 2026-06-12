@@ -7,7 +7,8 @@ export const team = [
     specialty: "Full Stack Architect + Visionary",
     links: { 
       github: "https://github.com/walterhydra", 
-      linkedin: "https://www.linkedin.com/in/milan-pandavdara/" 
+      linkedin: "https://www.linkedin.com/in/milan-pandavdara/",
+      portfolio: "https://www.walterhydra.me" 
     }
   },
   {

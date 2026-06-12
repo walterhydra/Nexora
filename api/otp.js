@@ -39,8 +39,8 @@ export default async function handler(req, res) {
     const verificationToken = `${newExpiry}.${hash}`;
 
     const brevoApiKey = process.env.BREVO_API_KEY;
-    const smtpEmail = process.env.SMTP_EMAIL;
-    const smtpPassword = process.env.SMTP_PASSWORD;
+    const smtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
+    const smtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
 
     try {
       const emailHtml = `
@@ -85,6 +85,9 @@ export default async function handler(req, res) {
           html: emailHtml
         });
       } else if (brevoApiKey) {
+        console.warn("[OTP Warning] SMTP_PASSWORD / GMAIL_APP_PASSWORD is not set in local .env. Falling back to Brevo. " +
+                     "Note: Sending emails from '@gmail.com' via third-party providers like Brevo is blocked by Gmail's DMARC policy. " +
+                     "Please add your Gmail App Password to your local .env as SMTP_PASSWORD to test sending locally.");
         // Fallback to Brevo API
         const senderEmail = process.env.BREVO_SENDER || 'nexoraa.works@gmail.com';
         const response = await fetch('https://api.brevo.com/v3/smtp/email', {
