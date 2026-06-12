@@ -368,7 +368,7 @@ export default function NovaWidget() {
 
         setMessages([...nextMsgs, {
           role: 'assistant',
-          content: `I've sent a 6-digit verification code to **${text}**. Please enter it below:`,
+          content: `I've sent a 6-digit verification code to **${text}**. Please enter it below (be sure to check your spam folder as well):`,
           isNew: true
         }]);
       } catch (err) {
