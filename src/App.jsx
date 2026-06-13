@@ -114,12 +114,16 @@ function AppContent() {
   );
 }
 
+const MemoizedAppContent = React.memo(AppContent);
+
 function App() {
   const [loading, setLoading] = useState(true);
   const [isExiting, setIsExiting] = useState(false);
   const [showLoader, setShowLoader] = useState(true);
 
   useEffect(() => {
+    window.isLoaderActive = true;
+    
     // Show loading screen on every page load/refresh
     const timer1 = setTimeout(() => {
       setLoading(false);
@@ -128,6 +132,7 @@ function App() {
       // Wait for exit transition to complete before removing from DOM
       const timer2 = setTimeout(() => {
         setShowLoader(false);
+        window.isLoaderActive = false;
       }, 1100); // matches the duration of the transition
       
       return () => clearTimeout(timer2);
@@ -140,7 +145,7 @@ function App() {
       <ThemeProvider>
         <CursorProvider>
           <BrowserRouter>
-            <AppContent />
+            <MemoizedAppContent />
             {showLoader && <LoadingScreen isExiting={isExiting} />}
           </BrowserRouter>
         </CursorProvider>

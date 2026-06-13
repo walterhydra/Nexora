@@ -3,9 +3,14 @@ import React, { useState, useEffect } from 'react';
 export default function LoadingScreen({ isExiting }) {
   return (
     <div
-      className={`fixed inset-0 z-[10000] flex flex-col bg-[#050505] text-white overflow-hidden pointer-events-none transition-all duration-[1.1s] ease-[cubic-bezier(0.85,0,0.15,1)] ${
-        isExiting ? 'opacity-0 invisible -translate-y-full' : 'opacity-100 visible translate-y-0'
-      }`}
+      className="fixed inset-0 z-[10000] flex flex-col bg-[#050505] text-white overflow-hidden pointer-events-none"
+      style={{
+        transition: 'transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.1s',
+        transform: isExiting ? 'translate3d(0, -100%, 0)' : 'translate3d(0, 0, 0)',
+        opacity: isExiting ? 0 : 1,
+        visibility: isExiting ? 'hidden' : 'visible',
+        willChange: 'transform, opacity',
+      }}
     >
       <style dangerouslySetInnerHTML={{
         __html: `
@@ -13,9 +18,13 @@ export default function LoadingScreen({ isExiting }) {
           0% { opacity: 0; transform: scale(1.15); }
           100% { opacity: 1; transform: scale(1); }
         }
-        @keyframes loader-wipe {
-          0% { clip-path: inset(0 100% 0 0); }
-          100% { clip-path: inset(0 0% 0 0); }
+        @keyframes loader-mask-slide {
+          0% { transform: translate3d(-100%, 0, 0); }
+          100% { transform: translate3d(0, 0, 0); }
+        }
+        @keyframes loader-text-slide {
+          0% { transform: translate3d(100%, 0, 0); }
+          100% { transform: translate3d(0, 0, 0); }
         }
         @keyframes loader-progress {
           0% { transform: scaleX(0); }
@@ -26,13 +35,24 @@ export default function LoadingScreen({ isExiting }) {
           100% { opacity: 1; transform: translateY(0); }
         }
         .animate-loader-center {
-          animation: loader-center-scale 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          animation: loader-center-scale 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
         }
-        .animate-loader-wipe {
-          animation: loader-wipe 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        .animate-loader-mask {
+          animation: loader-mask-slide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
+        }
+        .animate-loader-text {
+          animation: loader-text-slide 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
         }
         .animate-loader-progress {
-          animation: loader-progress 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+          animation: loader-progress 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          backface-visibility: hidden;
+          transform-style: preserve-3d;
         }
         .animate-loader-fade-1 {
           animation: loader-fade-down 0.5s ease-out 0.2s forwards;
@@ -67,10 +87,15 @@ export default function LoadingScreen({ isExiting }) {
 
       {/* Center Typography Fill Effect */}
       <div
-        className={`relative z-10 flex h-full w-full items-center justify-center px-4 animate-loader-center transition-all duration-500 ease-[cubic-bezier(0.85,0,0.15,1)] ${
-          isExiting ? 'opacity-0 scale-90' : 'opacity-100 scale-100'
+        className={`relative z-10 flex h-full w-full items-center justify-center px-4 ${
+          isExiting ? '' : 'animate-loader-center'
         }`}
-        style={{ willChange: "transform, opacity" }}
+        style={{
+          transition: 'transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+          transform: isExiting ? 'scale(0.9)' : 'scale(1)',
+          opacity: isExiting ? 0 : 1,
+          willChange: 'transform, opacity',
+        }}
       >
         <div className="relative text-[13vw] md:text-[11vw] lg:text-[9.5vw] font-display font-black tracking-tighter leading-none select-none">
 
@@ -82,12 +107,21 @@ export default function LoadingScreen({ isExiting }) {
             NEXORA STUDIO
           </div>
 
-          {/* Solid Fill Overlay (Masked by Width) */}
+          {/* Solid Fill Overlay (Masked by Width, Hardware Accelerated) */}
           <div
-            className="absolute top-0 left-0 h-full w-full animate-loader-wipe"
-            style={{ willChange: "clip-path" }}
+            className={`absolute top-0 left-0 w-full h-full overflow-hidden ${isExiting ? '' : 'animate-loader-mask'}`}
+            style={{
+              willChange: "transform",
+              transform: isExiting ? 'translate3d(0, 0, 0)' : undefined
+            }}
           >
-            <div className="text-white whitespace-nowrap">
+            <div
+              className={`text-white whitespace-nowrap absolute top-0 left-0 w-full h-full ${isExiting ? '' : 'animate-loader-text'}`}
+              style={{
+                willChange: "transform",
+                transform: isExiting ? 'translate3d(0, 0, 0)' : undefined
+              }}
+            >
               NEXORA STUDIO
             </div>
           </div>
@@ -97,7 +131,7 @@ export default function LoadingScreen({ isExiting }) {
       {/* Absolute Progress Line at bottom edge */}
       <div className="absolute bottom-0 left-0 w-full h-[3px] bg-white/5 z-20">
         <div
-          className="h-full bg-accent-blue shadow-[0_0_15px_rgba(0,169,143,0.8)] origin-left animate-loader-progress"
+          className="h-full bg-accent-blue origin-left animate-loader-progress"
           style={{ willChange: "transform" }}
         />
       </div>
@@ -105,3 +139,4 @@ export default function LoadingScreen({ isExiting }) {
     </div>
   );
 }
+

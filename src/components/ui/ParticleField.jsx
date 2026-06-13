@@ -88,6 +88,10 @@ export default function ParticleField() {
     // Animation loop — pure requestAnimationFrame, zero scroll dependency
     let time = 0;
     const animate = () => {
+      if (window.isLoaderActive) {
+        animFrameRef.current = requestAnimationFrame(animate);
+        return;
+      }
       time++;
       ctx.clearRect(0, 0, width, height);
 

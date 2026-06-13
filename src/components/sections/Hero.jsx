@@ -130,11 +130,14 @@ export default function Hero() {
   const [previewStep, setPreviewStep] = useState(0);
 
   useEffect(() => {
-    // Delay typewriter to sync perfectly with the fade-in reveal peak
-    const timer = setTimeout(() => {
-      setShowTypewriter(true);
-    }, 800);
-    return () => clearTimeout(timer);
+    // Delay typewriter until the loader is completely gone, ensuring smooth animations
+    const checkLoader = setInterval(() => {
+      if (!window.isLoaderActive) {
+        setShowTypewriter(true);
+        clearInterval(checkLoader);
+      }
+    }, 100);
+    return () => clearInterval(checkLoader);
   }, []);
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
