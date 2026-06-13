@@ -1611,7 +1611,7 @@
       "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_animated_counter_tsx",
-      "community": 48,
+      "community": 38,
       "norm_label": "animated-counter.tsx"
     },
     {
@@ -1620,7 +1620,7 @@
       "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
       "source_location": "L5",
       "id": "components_animated_counter_animatedcounterprops",
-      "community": 48,
+      "community": 38,
       "norm_label": "animatedcounterprops"
     },
     {
@@ -1629,7 +1629,7 @@
       "source_file": "nexoraa-client-portal/components/animated-counter.tsx",
       "source_location": "L14",
       "id": "components_animated_counter_animatedcounter",
-      "community": 48,
+      "community": 38,
       "norm_label": "animatedcounter()"
     },
     {
@@ -1638,7 +1638,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_command_palette_tsx",
-      "community": 50,
+      "community": 43,
       "norm_label": "command-palette.tsx"
     },
     {
@@ -1647,7 +1647,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L19",
       "id": "components_command_palette_allitems",
-      "community": 50,
+      "community": 43,
       "norm_label": "allitems"
     },
     {
@@ -1656,7 +1656,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L29",
       "id": "components_command_palette_recentitems",
-      "community": 50,
+      "community": 43,
       "norm_label": "recentitems"
     },
     {
@@ -1665,7 +1665,7 @@
       "source_file": "nexoraa-client-portal/components/command-palette.tsx",
       "source_location": "L35",
       "id": "components_command_palette_commandpalette",
-      "community": 50,
+      "community": 43,
       "norm_label": "commandpalette()"
     },
     {
@@ -1746,7 +1746,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_sidebar_tsx",
-      "community": 43,
+      "community": 50,
       "norm_label": "sidebar.tsx"
     },
     {
@@ -1755,7 +1755,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L15",
       "id": "components_sidebar_navitems",
-      "community": 43,
+      "community": 50,
       "norm_label": "navitems"
     },
     {
@@ -1764,7 +1764,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L23",
       "id": "components_sidebar_containervariants",
-      "community": 43,
+      "community": 50,
       "norm_label": "containervariants"
     },
     {
@@ -1773,7 +1773,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L30",
       "id": "components_sidebar_itemvariants",
-      "community": 43,
+      "community": 50,
       "norm_label": "itemvariants"
     },
     {
@@ -1782,7 +1782,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L35",
       "id": "components_sidebar_sidebarcontent",
-      "community": 43,
+      "community": 50,
       "norm_label": "sidebarcontent()"
     },
     {
@@ -1791,7 +1791,7 @@
       "source_file": "nexoraa-client-portal/components/sidebar.tsx",
       "source_location": "L135",
       "id": "components_sidebar_sidebar",
-      "community": 43,
+      "community": 50,
       "norm_label": "sidebar()"
     },
     {
@@ -1980,7 +1980,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_pages_messages_page_tsx",
-      "community": 38,
+      "community": 39,
       "norm_label": "messages-page.tsx"
     },
     {
@@ -1989,7 +1989,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L21",
       "id": "pages_messages_page_stagger",
-      "community": 38,
+      "community": 39,
       "norm_label": "stagger"
     },
     {
@@ -1998,7 +1998,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L25",
       "id": "pages_messages_page_fadeup",
-      "community": 38,
+      "community": 39,
       "norm_label": "fadeup"
     },
     {
@@ -2007,7 +2007,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L30",
       "id": "pages_messages_page_messagebubble",
-      "community": 38,
+      "community": 39,
       "norm_label": "messagebubble()"
     },
     {
@@ -2016,7 +2016,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L89",
       "id": "pages_messages_page_typingindicator",
-      "community": 38,
+      "community": 39,
       "norm_label": "typingindicator()"
     },
     {
@@ -2025,7 +2025,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L105",
       "id": "pages_messages_page_messagespage",
-      "community": 43,
+      "community": 39,
       "norm_label": "messagespage()"
     },
     {
@@ -2115,7 +2115,7 @@
       "source_file": "nexoraa-client-portal/components/pages/overview-page.tsx",
       "source_location": "L377",
       "id": "pages_overview_page_overviewpage",
-      "community": 43,
+      "community": 48,
       "norm_label": "overviewpage()"
     },
     {
@@ -2259,7 +2259,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L1",
       "id": "nexoraa_client_portal_lib_data_ts",
-      "community": 38,
+      "community": 39,
       "norm_label": "data.ts"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L304",
       "id": "lib_data_channels",
-      "community": 38,
+      "community": 39,
       "norm_label": "channels"
     },
     {
@@ -2349,7 +2349,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L310",
       "id": "lib_data_messages",
-      "community": 38,
+      "community": 39,
       "norm_label": "messages"
     },
     {
@@ -2358,7 +2358,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L423",
       "id": "lib_data_message",
-      "community": 38,
+      "community": 39,
       "norm_label": "message"
     },
     {
@@ -2736,7 +2736,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 42,
+      "community": 64,
       "norm_label": "footer.jsx"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 42,
+      "community": 64,
       "norm_label": "footer()"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 44,
+      "community": 66,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -2763,7 +2763,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 44,
+      "community": 66,
       "norm_label": "loadingscreen()"
     },
     {
@@ -3744,7 +3744,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L1",
       "id": "src_components_sections_techstack_jsx",
-      "community": 16,
+      "community": 44,
       "norm_label": "techstack.jsx"
     },
     {
@@ -3753,7 +3753,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L6",
       "id": "sections_techstack_alltech",
-      "community": 16,
+      "community": 44,
       "norm_label": "alltech"
     },
     {
@@ -3762,7 +3762,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L11",
       "id": "sections_techstack_row1",
-      "community": 16,
+      "community": 44,
       "norm_label": "row1"
     },
     {
@@ -3771,7 +3771,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L12",
       "id": "sections_techstack_row2",
-      "community": 16,
+      "community": 44,
       "norm_label": "row2"
     },
     {
@@ -3780,7 +3780,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L13",
       "id": "sections_techstack_row3",
-      "community": 16,
+      "community": 44,
       "norm_label": "row3"
     },
     {
@@ -3789,7 +3789,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L15",
       "id": "sections_techstack_marqueerow",
-      "community": 16,
+      "community": 44,
       "norm_label": "marqueerow()"
     },
     {
@@ -3798,7 +3798,7 @@
       "source_file": "src/components/sections/TechStack.jsx",
       "source_location": "L43",
       "id": "sections_techstack_techstack",
-      "community": 16,
+      "community": 44,
       "norm_label": "techstack()"
     },
     {
@@ -3969,7 +3969,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 64,
+      "community": 0,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -3978,7 +3978,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L5",
       "id": "ui_backtotop_backtotop",
-      "community": 64,
+      "community": 0,
       "norm_label": "backtotop()"
     },
     {
@@ -4221,7 +4221,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 66,
+      "community": 67,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4230,7 +4230,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 66,
+      "community": 67,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4266,7 +4266,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 0,
+      "community": 68,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -4275,7 +4275,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 0,
+      "community": 68,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -4401,7 +4401,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "src_constants_techstack_js",
-      "community": 16,
+      "community": 44,
       "norm_label": "techstack.js"
     },
     {
@@ -4410,7 +4410,7 @@
       "source_file": "src/constants/techStack.js",
       "source_location": "L1",
       "id": "constants_techstack_techstack",
-      "community": 16,
+      "community": 44,
       "norm_label": "techstack"
     },
     {
@@ -4579,7 +4579,7 @@
       "label": "About()",
       "file_type": "code",
       "source_file": "src/pages/About.jsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "id": "pages_about_about",
       "community": 0,
       "norm_label": "about()"
@@ -4597,34 +4597,16 @@
       "label": "purposeOptions",
       "file_type": "code",
       "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L11",
+      "source_location": "L12",
       "id": "pages_agreement_purposeoptions",
       "community": 37,
       "norm_label": "purposeoptions"
     },
     {
-      "label": "backgroundGlows",
-      "file_type": "code",
-      "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L21",
-      "id": "pages_agreement_backgroundglows",
-      "community": 37,
-      "norm_label": "backgroundglows"
-    },
-    {
-      "label": "slideVariants",
-      "file_type": "code",
-      "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L29",
-      "id": "pages_agreement_slidevariants",
-      "community": 37,
-      "norm_label": "slidevariants"
-    },
-    {
       "label": "Agreement()",
       "file_type": "code",
       "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L44",
+      "source_location": "L22",
       "id": "pages_agreement_agreement",
       "community": 37,
       "norm_label": "agreement()"
@@ -4680,7 +4662,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L1",
       "id": "src_pages_contact_jsx",
-      "community": 6,
+      "community": 0,
       "norm_label": "contact.jsx"
     },
     {
@@ -4689,7 +4671,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L8",
       "id": "pages_contact_contact",
-      "community": 6,
+      "community": 0,
       "norm_label": "contact()"
     },
     {
@@ -4770,7 +4752,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 6,
+      "community": 61,
       "norm_label": "notfound.jsx"
     },
     {
@@ -4779,7 +4761,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 6,
+      "community": 61,
       "norm_label": "particlefield()"
     },
     {
@@ -4788,7 +4770,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 6,
+      "community": 61,
       "norm_label": "notfound()"
     },
     {
@@ -4833,7 +4815,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_paymentpolicy_jsx",
-      "community": 39,
+      "community": 6,
       "norm_label": "paymentpolicy.jsx"
     },
     {
@@ -4842,7 +4824,7 @@
       "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L9",
       "id": "pages_paymentpolicy_paymentpolicy",
-      "community": 39,
+      "community": 6,
       "norm_label": "paymentpolicy()"
     },
     {
@@ -4858,7 +4840,7 @@
       "label": "PrivacyPolicy()",
       "file_type": "code",
       "source_file": "src/pages/PrivacyPolicy.jsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "id": "pages_privacypolicy_privacypolicy",
       "community": 41,
       "norm_label": "privacypolicy()"
@@ -4903,7 +4885,7 @@
       "label": "stages",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L19",
+      "source_location": "L21",
       "id": "pages_refundpolicy_stages",
       "community": 32,
       "norm_label": "stages"
@@ -4912,7 +4894,7 @@
       "label": "nonRefundable",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L43",
+      "source_location": "L45",
       "id": "pages_refundpolicy_nonrefundable",
       "community": 32,
       "norm_label": "nonrefundable"
@@ -4921,7 +4903,7 @@
       "label": "navigation",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L50",
+      "source_location": "L52",
       "id": "pages_refundpolicy_navigation",
       "community": 32,
       "norm_label": "navigation"
@@ -4930,7 +4912,7 @@
       "label": "reveal",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L59",
+      "source_location": "L61",
       "id": "pages_refundpolicy_reveal",
       "community": 32,
       "norm_label": "reveal"
@@ -4939,7 +4921,7 @@
       "label": "toneStyles",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L66",
+      "source_location": "L68",
       "id": "pages_refundpolicy_tonestyles",
       "community": 32,
       "norm_label": "tonestyles"
@@ -4948,7 +4930,7 @@
       "label": "RefundPolicy()",
       "file_type": "code",
       "source_file": "src/pages/RefundPolicy.jsx",
-      "source_location": "L87",
+      "source_location": "L89",
       "id": "pages_refundpolicy_refundpolicy",
       "community": 32,
       "norm_label": "refundpolicy()"
@@ -5004,7 +4986,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L1",
       "id": "src_pages_services_jsx",
-      "community": 61,
+      "community": 0,
       "norm_label": "services.jsx"
     },
     {
@@ -5013,7 +4995,7 @@
       "source_file": "src/pages/Services.jsx",
       "source_location": "L4",
       "id": "pages_services_services",
-      "community": 61,
+      "community": 0,
       "norm_label": "services()"
     },
     {
@@ -5022,16 +5004,16 @@
       "source_file": "src/pages/Terms.jsx",
       "source_location": "L1",
       "id": "src_pages_terms_jsx",
-      "community": 0,
+      "community": 42,
       "norm_label": "terms.jsx"
     },
     {
       "label": "Terms()",
       "file_type": "code",
       "source_file": "src/pages/Terms.jsx",
-      "source_location": "L4",
+      "source_location": "L5",
       "id": "pages_terms_terms",
-      "community": 0,
+      "community": 42,
       "norm_label": "terms()"
     },
     {
@@ -5195,6 +5177,276 @@
       "id": "lib_supabase_supabase",
       "community": 7,
       "norm_label": "supabase"
+    },
+    {
+      "label": "backgroundGlows",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L21",
+      "community": 37,
+      "norm_label": "backgroundglows",
+      "id": "pages_agreement_backgroundglows"
+    },
+    {
+      "label": "slideVariants",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L29",
+      "community": 37,
+      "norm_label": "slidevariants",
+      "id": "pages_agreement_slidevariants"
+    },
+    {
+      "label": "mobilePageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L10",
+      "community": 6,
+      "norm_label": "mobilepagevariants",
+      "id": "pages_paymentpolicy_mobilepagevariants"
+    },
+    {
+      "label": "leftPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L31",
+      "community": 6,
+      "norm_label": "leftpagevariants",
+      "id": "pages_paymentpolicy_leftpagevariants"
+    },
+    {
+      "label": "rightPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L48",
+      "community": 6,
+      "norm_label": "rightpagevariants",
+      "id": "pages_paymentpolicy_rightpagevariants"
+    },
+    {
+      "label": "renderPageHeader()",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L65",
+      "community": 6,
+      "norm_label": "renderpageheader()",
+      "id": "pages_paymentpolicy_renderpageheader"
+    },
+    {
+      "label": "renderPageContent()",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L82",
+      "community": 6,
+      "norm_label": "renderpagecontent()",
+      "id": "pages_paymentpolicy_renderpagecontent"
+    },
+    {
+      "label": "renderSignatureBlock()",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L265",
+      "community": 6,
+      "norm_label": "rendersignatureblock()",
+      "id": "pages_paymentpolicy_rendersignatureblock"
+    },
+    {
+      "label": "mobilePageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L5",
+      "community": 41,
+      "norm_label": "mobilepagevariants",
+      "id": "pages_privacypolicy_mobilepagevariants"
+    },
+    {
+      "label": "leftPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L26",
+      "community": 41,
+      "norm_label": "leftpagevariants",
+      "id": "pages_privacypolicy_leftpagevariants"
+    },
+    {
+      "label": "rightPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L43",
+      "community": 41,
+      "norm_label": "rightpagevariants",
+      "id": "pages_privacypolicy_rightpagevariants"
+    },
+    {
+      "label": "renderPageHeader()",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L60",
+      "community": 41,
+      "norm_label": "renderpageheader()",
+      "id": "pages_privacypolicy_renderpageheader"
+    },
+    {
+      "label": "renderPageContent()",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L77",
+      "community": 41,
+      "norm_label": "renderpagecontent()",
+      "id": "pages_privacypolicy_renderpagecontent"
+    },
+    {
+      "label": "renderSignatureBlock()",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L155",
+      "community": 41,
+      "norm_label": "rendersignatureblock()",
+      "id": "pages_privacypolicy_rendersignatureblock"
+    },
+    {
+      "label": "mobilePageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L20",
+      "community": 32,
+      "norm_label": "mobilepagevariants",
+      "id": "pages_refundpolicy_mobilepagevariants"
+    },
+    {
+      "label": "leftPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L41",
+      "community": 32,
+      "norm_label": "leftpagevariants",
+      "id": "pages_refundpolicy_leftpagevariants"
+    },
+    {
+      "label": "rightPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L58",
+      "community": 32,
+      "norm_label": "rightpagevariants",
+      "id": "pages_refundpolicy_rightpagevariants"
+    },
+    {
+      "label": "renderPageHeader()",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L127",
+      "community": 32,
+      "norm_label": "renderpageheader()",
+      "id": "pages_refundpolicy_renderpageheader"
+    },
+    {
+      "label": "renderPageContent()",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L144",
+      "community": 32,
+      "norm_label": "renderpagecontent()",
+      "id": "pages_refundpolicy_renderpagecontent"
+    },
+    {
+      "label": "renderSignatureBlock()",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L306",
+      "community": 32,
+      "norm_label": "rendersignatureblock()",
+      "id": "pages_refundpolicy_rendersignatureblock"
+    },
+    {
+      "label": "mobilePageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L5",
+      "community": 42,
+      "norm_label": "mobilepagevariants",
+      "id": "pages_terms_mobilepagevariants"
+    },
+    {
+      "label": "leftPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L26",
+      "community": 42,
+      "norm_label": "leftpagevariants",
+      "id": "pages_terms_leftpagevariants"
+    },
+    {
+      "label": "rightPageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L43",
+      "community": 42,
+      "norm_label": "rightpagevariants",
+      "id": "pages_terms_rightpagevariants"
+    },
+    {
+      "label": "renderPageHeader()",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L60",
+      "community": 42,
+      "norm_label": "renderpageheader()",
+      "id": "pages_terms_renderpageheader"
+    },
+    {
+      "label": "renderPageContent()",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L77",
+      "community": 42,
+      "norm_label": "renderpagecontent()",
+      "id": "pages_terms_renderpagecontent"
+    },
+    {
+      "label": "renderSignatureBlock()",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L144",
+      "community": 42,
+      "norm_label": "rendersignatureblock()",
+      "id": "pages_terms_rendersignatureblock"
+    },
+    {
+      "label": "pageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L9",
+      "community": 6,
+      "norm_label": "pagevariants",
+      "id": "pages_paymentpolicy_pagevariants"
+    },
+    {
+      "label": "pageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L4",
+      "community": 41,
+      "norm_label": "pagevariants",
+      "id": "pages_privacypolicy_pagevariants"
+    },
+    {
+      "label": "pageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L71",
+      "community": 32,
+      "norm_label": "pagevariants",
+      "id": "pages_refundpolicy_pagevariants"
+    },
+    {
+      "label": "pageVariants",
+      "file_type": "code",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L4",
+      "community": 42,
+      "norm_label": "pagevariants",
+      "id": "pages_terms_pagevariants"
     },
     {
       "label": "FAQ_KEYWORDS",
@@ -8904,9 +9156,9 @@
       "source_file": "src/App.jsx",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_app_jsx",
-      "target": "src_app_memoizedappcontent",
-      "confidence_score": 1.0
+      "target": "src_app_memoizedappcontent"
     },
     {
       "relation": "contains",
@@ -13136,11 +13388,144 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_leftpagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_mobilepagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_pagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
       "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_paymentpolicy_jsx",
       "target": "pages_paymentpolicy_paymentpolicy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_renderpagecontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_renderpageheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L265",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_rendersignatureblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_paymentpolicy_jsx",
+      "target": "pages_paymentpolicy_rightpagevariants"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L347",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_paymentpolicy_paymentpolicy",
+      "target": "pages_paymentpolicy_renderpagecontent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L346",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_paymentpolicy_paymentpolicy",
+      "target": "pages_paymentpolicy_renderpageheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PaymentPolicy.jsx",
+      "source_location": "L398",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_paymentpolicy_paymentpolicy",
+      "target": "pages_paymentpolicy_rendersignatureblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_leftpagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_mobilepagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_pagevariants"
     },
     {
       "relation": "contains",
@@ -13151,6 +13536,79 @@
       "confidence_score": 1.0,
       "source": "src_pages_privacypolicy_jsx",
       "target": "pages_privacypolicy_privacypolicy"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_renderpagecontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_renderpageheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L155",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_rendersignatureblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_privacypolicy_jsx",
+      "target": "pages_privacypolicy_rightpagevariants"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L239",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_privacypolicy_privacypolicy",
+      "target": "pages_privacypolicy_renderpagecontent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L238",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_privacypolicy_privacypolicy",
+      "target": "pages_privacypolicy_renderpageheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/PrivacyPolicy.jsx",
+      "source_location": "L290",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_privacypolicy_privacypolicy",
+      "target": "pages_privacypolicy_rendersignatureblock"
     },
     {
       "relation": "contains",
@@ -13176,6 +13634,26 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_leftpagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_mobilepagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L50",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13196,6 +13674,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L71",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_pagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13206,11 +13694,51 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L144",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_renderpagecontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L127",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_renderpageheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L306",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_rendersignatureblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
       "source_location": "L59",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
       "target": "pages_refundpolicy_reveal"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_refundpolicy_jsx",
+      "target": "pages_refundpolicy_rightpagevariants"
     },
     {
       "relation": "contains",
@@ -13231,6 +13759,39 @@
       "confidence_score": 1.0,
       "source": "src_pages_refundpolicy_jsx",
       "target": "pages_refundpolicy_tonestyles"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L388",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_refundpolicy_refundpolicy",
+      "target": "pages_refundpolicy_renderpagecontent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L387",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_refundpolicy_refundpolicy",
+      "target": "pages_refundpolicy_renderpageheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/RefundPolicy.jsx",
+      "source_location": "L439",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_refundpolicy_refundpolicy",
+      "target": "pages_refundpolicy_rendersignatureblock"
     },
     {
       "relation": "contains",
@@ -13319,11 +13880,114 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/pages/Terms.jsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_leftpagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_mobilepagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_pagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_renderpagecontent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_renderpageheader"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L144",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_rendersignatureblock"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_terms_jsx",
+      "target": "pages_terms_rightpagevariants"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_terms_jsx",
       "target": "pages_terms_terms"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L228",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_terms_terms",
+      "target": "pages_terms_renderpagecontent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L227",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_terms_terms",
+      "target": "pages_terms_renderpageheader"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Terms.jsx",
+      "source_location": "L279",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "pages_terms_terms",
+      "target": "pages_terms_rendersignatureblock"
     },
     {
       "relation": "contains",
@@ -13437,5 +14101,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "7e0b4a58ad697d6bcdd980ca2a918a40ba47820b"
+  "built_at_commit": "eeba44ddbdfe7cc31a320af7850a977436179cb9"
 }

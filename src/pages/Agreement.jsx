@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { m, AnimatePresence } from 'framer-motion';
-import { 
-  FileText, Send, CheckCircle, Loader2, ArrowLeft, ShieldCheck, 
+import {
+  FileText, Send, CheckCircle, Loader2, ArrowLeft, ShieldCheck,
   User, Mail, Calendar, Briefcase, Lock, Download, Check, Sparkles
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -49,7 +49,7 @@ export default function Agreement() {
     dob: '',
     purpose: ''
   });
-  
+
   const [currentStep, setCurrentStep] = useState(1);
   const [direction, setDirection] = useState(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -65,7 +65,7 @@ export default function Agreement() {
   const [otpVerified, setOtpVerified] = useState(false);
   const [isSendingOtp, setIsSendingOtp] = useState(false);
   const [isVerifyingOtp, setIsVerifyingOtp] = useState(false);
-  
+
   useEffect(() => {
     setCurrentDate(new Date().toLocaleDateString('en-US', {
       year: 'numeric',
@@ -236,7 +236,7 @@ export default function Agreement() {
       }
     } catch (error) {
       console.warn('Primary SMTP API failed, executing Web3Forms fallback:', error);
-      
+
       const web3Key = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || "221fc2cc-f511-4830-89f8-0f6f1e595fed";
       if (web3Key) {
         try {
@@ -353,7 +353,7 @@ export default function Agreement() {
                   />
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-[9px] text-slate-400 font-bold uppercase tracking-wider mb-1.5">Date of Birth</label>
                 <div className="relative">
@@ -367,7 +367,7 @@ export default function Agreement() {
                   />
                 </div>
                 {formData.dob && !isAgeValid(formData.dob) && (
-                  <m.p 
+                  <m.p
                     initial={{ opacity: 0, y: -5 }}
                     animate={{ opacity: 1, y: 0 }}
                     className="text-red-400 text-[10px] mt-1.5 flex items-center gap-1 font-medium"
@@ -444,7 +444,7 @@ export default function Agreement() {
                               )}
                             </m.button>
                           </div>
-                          
+
                           <div className="flex justify-between items-center px-1">
                             <span className="text-[9px] text-slate-500">Didn't receive code?</span>
                             <button
@@ -480,11 +480,10 @@ export default function Agreement() {
                   whileHover={{ scale: 1.01 }}
                   whileTap={{ scale: 0.99 }}
                   onClick={() => setFormData(prev => ({ ...prev, purpose: opt }))}
-                  className={`p-3 rounded-lg border text-left text-xs font-semibold transition-all flex justify-between items-center ${
-                    formData.purpose === opt 
-                      ? 'bg-blue-600/10 border-blue-500 text-white shadow-[0_0_12px_rgba(37,99,235,0.15)]' 
+                  className={`p-3 rounded-lg border text-left text-xs font-semibold transition-all flex justify-between items-center ${formData.purpose === opt
+                      ? 'bg-blue-600/10 border-blue-500 text-white shadow-[0_0_12px_rgba(37,99,235,0.15)]'
                       : 'bg-[#182030] border-white/5 text-slate-400 hover:border-white/10 hover:text-slate-200'
-                  }`}
+                    }`}
                 >
                   <span>{opt}</span>
                   {formData.purpose === opt && (
@@ -552,7 +551,7 @@ export default function Agreement() {
           >
             {/* Sealed Envelope Graphic */}
             <div className="relative w-64 h-40 mx-auto mb-8">
-              <m.div 
+              <m.div
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 className="bg-[#1E293B] border border-slate-700 w-full h-full rounded-2xl relative shadow-2xl flex flex-col items-center justify-end pb-5 overflow-hidden"
@@ -562,10 +561,10 @@ export default function Agreement() {
                 <div className="absolute top-0 inset-x-0 h-[65px] bg-[#334155] rounded-b-[40%_20%]" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }} />
                 <span className="font-mono text-[8px] text-slate-500 font-semibold">{docHash}</span>
               </m.div>
-              
+
               {/* Hot Melted Wax Stamp */}
               <div className="absolute left-1/2 -translate-x-1/2 top-9 z-20">
-                <m.div 
+                <m.div
                   initial={{ scale: 3, rotate: -45, opacity: 0 }}
                   animate={{ scale: 1, rotate: 12, opacity: 1 }}
                   transition={{ type: 'spring', damping: 10, stiffness: 120, delay: 0.2 }}
@@ -589,7 +588,7 @@ export default function Agreement() {
                 <span className="text-[9px] text-slate-500 uppercase tracking-widest font-semibold">Secure Key</span>
                 <span className="font-mono text-[10px] text-emerald-400 font-bold">{docHash}</span>
               </div>
-              
+
               <div className="space-y-2 text-xs">
                 <div className="flex justify-between border-b border-white/[0.02] pb-1.5">
                   <span className="text-slate-500">Signatory:</span>
@@ -638,7 +637,7 @@ export default function Agreement() {
       {/* Sealing Overlay Animation */}
       <AnimatePresence>
         {isSealing && (
-          <m.div 
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -646,7 +645,7 @@ export default function Agreement() {
           >
             <div className="relative max-w-sm w-full">
               {/* Envelope back panel */}
-              <m.div 
+              <m.div
                 initial={{ y: 200, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', damping: 20, stiffness: 100 }}
@@ -694,8 +693,8 @@ export default function Agreement() {
                 className="absolute inset-0 bg-white pointer-events-none z-40 rounded-2xl mix-blend-overlay"
               />
             </div>
-            
-            <m.div 
+
+            <m.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 1.2 }}
@@ -709,8 +708,8 @@ export default function Agreement() {
 
       <section className="min-h-screen bg-[#0A0D14] relative overflow-hidden flex items-center justify-center px-4 py-24">
         {/* Dynamic glow tracking step coordinates */}
-        <m.div 
-          animate={{ 
+        <m.div
+          animate={{
             x: currentStep === 1 ? -120 : currentStep === 2 ? 120 : currentStep === 3 ? -60 : 60,
             y: currentStep === 1 ? -60 : currentStep === 2 ? -120 : currentStep === 3 ? 120 : -60,
           }}
@@ -726,7 +725,7 @@ export default function Agreement() {
         >
           {/* Header */}
           <div className="text-center mb-10">
-            <m.div 
+            <m.div
               initial={{ scale: 0.95, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 0.1 }}
@@ -744,16 +743,16 @@ export default function Agreement() {
 
           {/* Unified Split Layout */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* Left Card: Glassmorphic Onboarding Wizard */}
             <div className="lg:col-span-5 w-full">
-              <m.div 
-                layout 
+              <m.div
+                layout
                 className="bg-[#121824]/90 border border-white/5 rounded-2xl p-6 md:p-8 shadow-2xl relative overflow-hidden backdrop-blur-md"
               >
                 {/* Dot grid decoration inside form */}
                 <div className="absolute inset-0 opacity-[0.02] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '12px 12px' }}></div>
-                
+
                 {/* Progress Indicators */}
                 <div className="flex justify-center items-center gap-3 mb-6">
                   {[1, 2, 3, 4].map(idx => (
@@ -765,20 +764,18 @@ export default function Agreement() {
                           setDirection(idx > currentStep ? 1 : -1);
                           setCurrentStep(idx);
                         }}
-                        className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${
-                          currentStep === idx 
-                            ? 'bg-blue-600 text-white font-black scale-110 shadow-[0_0_15px_rgba(37,99,235,0.4)]' 
-                            : currentStep > idx 
-                              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30' 
+                        className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 ${currentStep === idx
+                            ? 'bg-blue-600 text-white font-black scale-110 shadow-[0_0_15px_rgba(37,99,235,0.4)]'
+                            : currentStep > idx
+                              ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
                               : 'bg-white/5 text-slate-500 border border-white/5 cursor-not-allowed'
-                        }`}
+                          }`}
                       >
                         {currentStep > idx ? <Check className="w-3.5 h-3.5" /> : idx}
                       </button>
                       {idx < 4 && (
-                        <div className={`h-[2px] w-6 sm:w-10 mx-1 rounded transition-colors duration-300 ${
-                          currentStep > idx ? 'bg-emerald-500/30' : 'bg-white/5'
-                        }`} />
+                        <div className={`h-[2px] w-6 sm:w-10 mx-1 rounded transition-colors duration-300 ${currentStep > idx ? 'bg-emerald-500/30' : 'bg-white/5'
+                          }`} />
                       )}
                     </div>
                   ))}
@@ -819,7 +816,7 @@ export default function Agreement() {
                         </button>
                       )}
                     </div>
-                    
+
                     <div>
                       {currentStep < 4 ? (
                         <m.button
@@ -845,17 +842,16 @@ export default function Agreement() {
             {/* Right Card: Live White Paper Document Preview */}
             <div className="lg:col-span-7 w-full h-full lg:sticky lg:top-24">
               <div className="bg-slate-50 border border-slate-200 rounded-2xl p-8 md:p-10 shadow-2xl relative overflow-hidden min-h-[520px] flex flex-col justify-between text-slate-800">
-                
+
                 {/* Visual watermark grid lines */}
                 <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #000 1px, transparent 0)', backgroundSize: '20px 20px' }}></div>
-                
+
                 {/* Dynamic Notary Stamp */}
                 <div className="absolute top-8 right-8 z-20">
-                  <div className={`w-16 h-16 rounded-full border-2 border-dashed flex items-center justify-center transition-all duration-700 ${
-                    progress === 100 
-                      ? 'border-red-500/70 bg-red-50/50 text-red-600 rotate-[14deg] scale-110 shadow-sm font-bold' 
+                  <div className={`w-16 h-16 rounded-full border-2 border-dashed flex items-center justify-center transition-all duration-700 ${progress === 100
+                      ? 'border-red-500/70 bg-red-50/50 text-red-600 rotate-[14deg] scale-110 shadow-sm font-bold'
                       : 'border-slate-300 bg-slate-100/50 text-slate-400 rotate-0 font-medium'
-                  }`}>
+                    }`}>
                     <div className="text-center text-[7px] uppercase tracking-wider font-semibold leading-none">
                       {progress === 100 ? (
                         <>
@@ -891,37 +887,34 @@ export default function Agreement() {
 
                   {/* Body Clauses with Step Highlights */}
                   <div className="space-y-4 text-xs text-slate-600 leading-relaxed">
-                    
+
                     {/* Clause 1: Parties */}
                     <p className={`transition-all duration-200 p-1.5 rounded ${currentStep === 1 ? 'bg-blue-50/70 border border-blue-100' : 'border border-transparent'}`}>
                       This transaction is initiated on <strong className="text-slate-900">{currentDate || 'June 13, 2026'}</strong>, by and between <span className="font-semibold text-slate-900">Nexora Studio LLC</span> and Client&nbsp;
-                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${
-                        currentStep === 1
-                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105' 
-                          : formData.firstName || formData.lastName 
-                            ? 'text-slate-950 underline decoration-slate-400 font-medium' 
+                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${currentStep === 1
+                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105'
+                          : formData.firstName || formData.lastName
+                            ? 'text-slate-950 underline decoration-slate-400 font-medium'
                             : 'text-slate-450 border-b border-dashed border-slate-300'
-                      }`}>
+                        }`}>
                         {formData.firstName || formData.lastName ? `${formData.firstName} ${formData.lastName}` : '[Client Name]'}
                       </span>
                       &nbsp;('Client'), with digital email validation profile&nbsp;
-                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${
-                        currentStep === 2
-                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105' 
-                          : formData.email 
-                            ? 'text-slate-950 underline decoration-slate-400 font-medium' 
+                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${currentStep === 2
+                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105'
+                          : formData.email
+                            ? 'text-slate-950 underline decoration-slate-400 font-medium'
                             : 'text-slate-450 border-b border-dashed border-slate-300'
-                      }`}>
+                        }`}>
                         {formData.email || '[client@email.com]'}
                       </span>
                       &nbsp;and registered birthdate of&nbsp;
-                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${
-                        currentStep === 2
-                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105' 
-                          : formData.dob 
-                            ? 'text-slate-950 underline decoration-slate-400 font-medium' 
+                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${currentStep === 2
+                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105'
+                          : formData.dob
+                            ? 'text-slate-950 underline decoration-slate-400 font-medium'
                             : 'text-slate-450 border-b border-dashed border-slate-300'
-                      }`}>
+                        }`}>
                         {formData.dob ? new Date(formData.dob).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '[Date of Birth]'}
                       </span>.
                     </p>
@@ -929,13 +922,12 @@ export default function Agreement() {
                     {/* Clause 2: Purpose */}
                     <p className={`transition-all duration-200 p-1.5 rounded ${currentStep === 3 ? 'bg-blue-50/70 border border-blue-100' : 'border border-transparent'}`}>
                       <strong>1. Category of Collaboration:</strong> The Client registers formal specification and request for review under the category:&nbsp;
-                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${
-                        currentStep === 3
-                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105' 
-                          : formData.purpose 
-                            ? 'text-slate-950 underline decoration-slate-400 font-medium' 
+                      <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${currentStep === 3
+                          ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105'
+                          : formData.purpose
+                            ? 'text-slate-950 underline decoration-slate-400 font-medium'
                             : 'text-slate-450 border-b border-dashed border-slate-300'
-                      }`}>
+                        }`}>
                         {formData.purpose || '[Selected Purpose]'}
                       </span>.
                     </p>
@@ -959,9 +951,9 @@ export default function Agreement() {
                   <div>
                     <div className="text-[9px] text-slate-400 uppercase tracking-wider mb-2 font-semibold">For Nexora Studio</div>
                     <div className="h-10 flex items-center select-none">
-                      <img 
-                        src="/team/Screenshot_2026-06-10_134835-Picsart-AiImageEnhancer-removebg-preview.png" 
-                        alt="Milan Pandavadra Signature" 
+                      <img
+                        src="/team/Screenshot_2026-06-10_134835-Picsart-AiImageEnhancer-removebg-preview.png"
+                        alt="Milan Pandavadra Signature"
                         className="h-12 object-contain -my-2 mix-blend-darken"
                       />
                     </div>
@@ -975,7 +967,7 @@ export default function Agreement() {
                     <div className="text-[9px] text-slate-400 uppercase tracking-wider mb-2 font-semibold">For Client</div>
                     <div className="h-10 flex items-center">
                       {formData.firstName || formData.lastName ? (
-                        <m.span 
+                        <m.span
                           initial={{ opacity: 0, y: 3 }}
                           animate={{ opacity: 1, y: 0 }}
                           className="font-medium text-2xl text-[#0F52BA] select-none tracking-wide"
