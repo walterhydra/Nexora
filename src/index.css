@@ -191,3 +191,9 @@
 }
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Hide default calendar picker indicator icon in the agreement section */
+.no-calendar-icon::-webkit-calendar-picker-indicator {
+  display: none !important;
+  -webkit-appearance: none !important;
+}

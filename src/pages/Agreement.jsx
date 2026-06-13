@@ -357,16 +357,13 @@ export default function Agreement() {
               <div>
                 <label className="block text-[9px] text-slate-400 font-bold uppercase tracking-wider mb-1.5">Date of Birth</label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                    <Calendar className="w-3.5 h-3.5 text-slate-500" />
-                  </div>
                   <input
                     type="date"
                     name="dob"
                     required
                     value={formData.dob}
                     onChange={handleChange}
-                    className="w-full bg-[#182030] border border-white/5 rounded-lg pl-9 pr-4 py-2.5 text-white text-xs placeholder-slate-600 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500/50 transition-all [color-scheme:dark]"
+                    className="w-full bg-[#182030] border border-white/5 rounded-lg px-4 py-2.5 text-white text-xs placeholder-slate-600 focus:outline-none focus:border-slate-500 focus:ring-1 focus:ring-slate-500/50 transition-all [color-scheme:dark] no-calendar-icon cursor-pointer"
                   />
                 </div>
                 {formData.dob && !isAgeValid(formData.dob) && (

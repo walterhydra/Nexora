@@ -20,9 +20,9 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { firstName, lastName, email, dob, purpose } = req.body;
+  const { firstName, lastName, email, purpose } = req.body;
 
-  if (!firstName || !lastName || !email || !dob || !purpose) {
+  if (!firstName || !lastName || !email || !purpose) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
@@ -88,7 +88,6 @@ export default async function handler(req, res) {
           <table style="border-collapse: collapse; width: 100%;">
             <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Name</td><td style="padding: 8px; border: 1px solid #ddd;">${fullName}</td></tr>
             <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Email</td><td style="padding: 8px; border: 1px solid #ddd;">${email}</td></tr>
-            <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">DOB</td><td style="padding: 8px; border: 1px solid #ddd;">${dob}</td></tr>
             <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Purpose</td><td style="padding: 8px; border: 1px solid #ddd;">${purpose}</td></tr>
             <tr><td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">Time</td><td style="padding: 8px; border: 1px solid #ddd;">${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}</td></tr>
           </table>
