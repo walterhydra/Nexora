@@ -1,16 +1,16 @@
-# Graph Report - Nexora  (2026-06-12)
+# Graph Report - Nexora  (2026-06-13)
 
 ## Corpus Check
-- 138 files · ~2,760,900 words
+- 138 files · ~2,763,291 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 607 nodes · 742 edges · 70 communities (52 shown, 18 thin omitted)
+- 615 nodes · 753 edges · 68 communities (53 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `3d1abdf6`
+- Built from commit: `85a36af7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -59,8 +59,8 @@
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 59|Community 59]]
-- [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
 
 ## God Nodes (most connected - your core abstractions)
@@ -87,7 +87,7 @@
 - `SidebarContent()` --calls--> `cn()`  [EXTRACTED]
   src/components/portal/Sidebar.jsx → src/utils/cn.js
 
-## Communities (70 total, 18 thin omitted)
+## Communities (68 total, 15 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -102,15 +102,15 @@ Cohesion: 0.11
 Nodes (7): services, getServiceComparison(), iconMap, ServiceDetails(), destroyScroll(), getScroll(), initScroll()
 
 ### Community 4 - "Community 4"
-Cohesion: 0.13
-Nodes (3): steps, PulseCard, BentoCard
+Cohesion: 0.11
+Nodes (4): steps, PulseCard, showcaseProjects, BentoCard
 
 ### Community 5 - "Community 5"
 Cohesion: 0.08
 Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+16 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.09
+Cohesion: 0.08
 Nodes (12): docsData, useMagneticEffect(), useMousePosition(), Navbar(), faqs, steps, allItems, recentItems (+4 more)
 
 ### Community 7 - "Community 7"
@@ -161,9 +161,13 @@ Nodes (4): CursorContext, CursorProvider(), useCursor(), ContextCursor()
 Cohesion: 0.29
 Nodes (6): fmt(), CURR_SYM, DEFAULT_INVOICE_DATA, DEFAULT_SETTINGS, InvoiceSystem(), PREDEFINED_SERVICES
 
+### Community 37 - "Community 37"
+Cohesion: 0.40
+Nodes (3): backgroundGlows, purposeOptions, slideVariants
+
 ### Community 38 - "Community 38"
-Cohesion: 0.16
-Nodes (13): channels, invoices, Message, messages, paymentTimeline, project, BillingPage(), fadeUp (+5 more)
+Cohesion: 0.20
+Nodes (10): AnimatedCounter(), AnimatedCounterProps, invoices, paymentTimeline, project, BillingPage(), fadeUp, fmtFull() (+2 more)
 
 ### Community 40 - "Community 40"
 Cohesion: 0.10
@@ -174,8 +178,8 @@ Cohesion: 0.25
 Nodes (5): techStack, allTech, row1, row2, row3
 
 ### Community 43 - "Community 43"
-Cohesion: 0.12
-Nodes (16): PageRouter(), pageVariants, priorities, RequestModal(), requestTypes, containerVariants, itemVariants, navItems (+8 more)
+Cohesion: 0.16
+Nodes (13): PageRouter(), pageVariants, allItems, CommandPalette(), recentItems, priorities, RequestModal(), requestTypes (+5 more)
 
 ### Community 45 - "Community 45"
 Cohesion: 0.11
@@ -186,16 +190,16 @@ Cohesion: 0.20
 Nodes (9): assetFiles, folders, AssetVaultPage(), fadeUp, FileCard(), FileRow(), FileType, getFileIcon() (+1 more)
 
 ### Community 48 - "Community 48"
-Cohesion: 0.15
-Nodes (6): AnimatedCounter(), AnimatedCounterProps, milestones, teamMembers, fadeUp, stagger
+Cohesion: 0.17
+Nodes (5): milestones, teamMembers, fadeUp, OverviewPage(), stagger
 
 ### Community 49 - "Community 49"
 Cohesion: 0.17
 Nodes (4): SettingsPage(), Tab, tabContent, tabs
 
 ### Community 50 - "Community 50"
-Cohesion: 0.31
-Nodes (6): allItems, CommandPalette(), recentItems, cn(), Button(), buttonVariants
+Cohesion: 0.24
+Nodes (7): containerVariants, itemVariants, navItems, Sidebar(), cn(), Button(), buttonVariants
 
 ### Community 52 - "Community 52"
 Cohesion: 0.29
@@ -205,10 +209,18 @@ Nodes (6): colorMap, iconMap, NotificationPanel(), pageLabels, TopNavbar(), noti
 Cohesion: 0.33
 Nodes (4): inter, jetbrainsMono, metadata, sora
 
+### Community 59 - "Community 59"
+Cohesion: 0.24
+Nodes (5): faqCategories, faqs, FAQ_KEYWORDS, iconMap, INITIAL_MESSAGES
+
+### Community 64 - "Community 64"
+Cohesion: 0.27
+Nodes (6): channels, Message, messages, fadeUp, MessagesPage(), stagger
+
 ## Knowledge Gaps
-- **242 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+237 more)
+- **247 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+242 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **18 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
@@ -218,7 +230,7 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `cn()` connect `Community 6` to `Community 9`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
-  _242 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _247 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
@@ -226,4 +238,4 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.11333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._

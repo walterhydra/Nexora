@@ -16,7 +16,7 @@ import Stats from '../components/sections/Stats';
 import Pulse from '../components/sections/Pulse';
 import Testimonials from '../components/sections/Testimonials';
 import KineticManifesto from '../components/sections/KineticManifesto';
-
+import FAQ from '../components/sections/FAQ';
 
 import { m } from 'framer-motion';
 
@@ -61,6 +61,7 @@ export default function Home() {
         <RealtimeWork />
         <Pricing />
         <KineticManifesto />
+        <FAQ />
         <Contact />
       </div>
 

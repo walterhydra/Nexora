@@ -115,8 +115,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\FAQ.jsx": {
-    "mtime": 1780827320.7141693,
-    "ast_hash": "a7b3a25ff6050ce26b0724b08bda00c7",
+    "mtime": 1781331617.7161062,
+    "ast_hash": "9b4ea5672125436879a5609847fd3dea",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\components\\sections\\Hero.jsx": {
@@ -290,8 +290,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\constants\\faq.js": {
-    "mtime": 1777960904.6565197,
-    "ast_hash": "19084e294940d0e0ddb7e3d6e13cd22b",
+    "mtime": 1781330933.3985035,
+    "ast_hash": "d3f0f0b5dec04a1ea8b649434e19ab53",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\constants\\pricing.js": {
@@ -365,8 +365,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Home.jsx": {
-    "mtime": 1780827320.7607045,
-    "ast_hash": "cf8eae8f6480d452c81eb3ba18e073b3",
+    "mtime": 1781330485.549203,
+    "ast_hash": "5f36c025ceca696499d93b98c037a8d5",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\NotFound.jsx": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Agreement.jsx": {
-    "mtime": 1780928400.6384628,
-    "ast_hash": "b0f813b59a714ef4c0f999e090ed4555",
+    "mtime": 1781342193.6107068,
+    "ast_hash": "672b258fec8137776c7e0c42fb9d7437",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -1287,6 +1287,11 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\api\\contact.js": {
     "mtime": 1781273821.0403626,
     "ast_hash": "ba54a0123f8daa701c90ed4627e05e80",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\team\\Screenshot_2026-06-10_134835-Picsart-AiImageEnhancer-removebg-preview.png": {
+    "mtime": 1781079679.6308403,
+    "ast_hash": "ae82578d786bed16cff1907d1041e3a9",
     "semantic_hash": ""
   }
 }
