@@ -57,7 +57,12 @@ export default function NovaWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const [flowState, setFlowState] = useState('completed');
+  const [flowState, setFlowState] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init';
+    }
+    return 'init';
+  });
   const [userEmail, setUserEmail] = useState('');
   const [otpToken, setOtpToken] = useState('');
 
@@ -1527,7 +1532,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                       </div>
                       <div>
                         <h3 className="text-white font-semibold text-lg flex items-center gap-2">
-                          Nova <span className="text-[10px] bg-gradient-to-r from-accent-blue to-accent-purple text-transparent bg-clip-text px-2 py-0.5 rounded-full uppercase font-bold border border-white/10 shadow-[0_0_10px_rgba(0,245,255,0.1)]">AI</span>
+                          Nova
                         </h3>
                         <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
                       </div>
