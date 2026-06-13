@@ -57,12 +57,7 @@ export default function NovaWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const [flowState, setFlowState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init';
-    }
-    return 'init';
-  });
+  const [flowState, setFlowState] = useState('completed');
   const [userEmail, setUserEmail] = useState('');
   const [otpToken, setOtpToken] = useState('');
 
