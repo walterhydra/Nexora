@@ -1980,7 +1980,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L1",
       "id": "nexoraa_client_portal_components_pages_messages_page_tsx",
-      "community": 64,
+      "community": 39,
       "norm_label": "messages-page.tsx"
     },
     {
@@ -1989,7 +1989,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L21",
       "id": "pages_messages_page_stagger",
-      "community": 64,
+      "community": 39,
       "norm_label": "stagger"
     },
     {
@@ -1998,7 +1998,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L25",
       "id": "pages_messages_page_fadeup",
-      "community": 64,
+      "community": 39,
       "norm_label": "fadeup"
     },
     {
@@ -2007,7 +2007,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L30",
       "id": "pages_messages_page_messagebubble",
-      "community": 64,
+      "community": 39,
       "norm_label": "messagebubble()"
     },
     {
@@ -2016,7 +2016,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L89",
       "id": "pages_messages_page_typingindicator",
-      "community": 64,
+      "community": 39,
       "norm_label": "typingindicator()"
     },
     {
@@ -2025,7 +2025,7 @@
       "source_file": "nexoraa-client-portal/components/pages/messages-page.tsx",
       "source_location": "L105",
       "id": "pages_messages_page_messagespage",
-      "community": 64,
+      "community": 39,
       "norm_label": "messagespage()"
     },
     {
@@ -2259,7 +2259,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L1",
       "id": "nexoraa_client_portal_lib_data_ts",
-      "community": 64,
+      "community": 39,
       "norm_label": "data.ts"
     },
     {
@@ -2340,7 +2340,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L304",
       "id": "lib_data_channels",
-      "community": 64,
+      "community": 39,
       "norm_label": "channels"
     },
     {
@@ -2349,7 +2349,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L310",
       "id": "lib_data_messages",
-      "community": 64,
+      "community": 39,
       "norm_label": "messages"
     },
     {
@@ -2358,7 +2358,7 @@
       "source_file": "nexoraa-client-portal/lib/data.ts",
       "source_location": "L423",
       "id": "lib_data_message",
-      "community": 64,
+      "community": 39,
       "norm_label": "message"
     },
     {
@@ -2727,7 +2727,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L1",
       "id": "src_components_layout_footer_jsx",
-      "community": 39,
+      "community": 42,
       "norm_label": "footer.jsx"
     },
     {
@@ -2736,7 +2736,7 @@
       "source_file": "src/components/layout/Footer.jsx",
       "source_location": "L4",
       "id": "layout_footer_footer",
-      "community": 39,
+      "community": 42,
       "norm_label": "footer()"
     },
     {
@@ -2745,7 +2745,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 0,
+      "community": 44,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -2754,7 +2754,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 0,
+      "community": 44,
       "norm_label": "loadingscreen()"
     },
     {
@@ -3564,7 +3564,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L1",
       "id": "src_components_sections_realtimework_jsx",
-      "community": 4,
+      "community": 34,
       "norm_label": "realtimework.jsx"
     },
     {
@@ -3573,7 +3573,7 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L4",
       "id": "sections_realtimework_videoplayer",
-      "community": 4,
+      "community": 34,
       "norm_label": "videoplayer()"
     },
     {
@@ -3582,16 +3582,34 @@
       "source_file": "src/components/sections/RealtimeWork.jsx",
       "source_location": "L35",
       "id": "sections_realtimework_showcaseprojects",
-      "community": 4,
+      "community": 34,
       "norm_label": "showcaseprojects"
+    },
+    {
+      "label": "architectureDetails",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L99",
+      "id": "sections_realtimework_architecturedetails",
+      "community": 34,
+      "norm_label": "architecturedetails"
+    },
+    {
+      "label": "ArchitectureFlow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L156",
+      "id": "sections_realtimework_architectureflow",
+      "community": 34,
+      "norm_label": "architectureflow()"
     },
     {
       "label": "RealtimeWork()",
       "file_type": "code",
       "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L96",
+      "source_location": "L212",
       "id": "sections_realtimework_realtimework",
-      "community": 4,
+      "community": 34,
       "norm_label": "realtimework()"
     },
     {
@@ -3978,7 +3996,7 @@
       "source_file": "src/components/ui/CookieBanner.jsx",
       "source_location": "L1",
       "id": "src_components_ui_cookiebanner_jsx",
-      "community": 42,
+      "community": 0,
       "norm_label": "cookiebanner.jsx"
     },
     {
@@ -3987,7 +4005,7 @@
       "source_file": "src/components/ui/CookieBanner.jsx",
       "source_location": "L5",
       "id": "ui_cookiebanner_cookiebanner",
-      "community": 42,
+      "community": 0,
       "norm_label": "cookiebanner()"
     },
     {
@@ -4147,7 +4165,7 @@
       "label": "ParticleField()",
       "file_type": "code",
       "source_file": "src/components/ui/ParticleField.jsx",
-      "source_location": "L6",
+      "source_location": "L9",
       "id": "ui_particlefield_particlefield",
       "community": 33,
       "norm_label": "particlefield()"
@@ -4194,7 +4212,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L1",
       "id": "src_components_ui_scrollprogress_jsx",
-      "community": 61,
+      "community": 0,
       "norm_label": "scrollprogress.jsx"
     },
     {
@@ -4203,7 +4221,7 @@
       "source_file": "src/components/ui/ScrollProgress.jsx",
       "source_location": "L4",
       "id": "ui_scrollprogress_scrollprogress",
-      "community": 61,
+      "community": 0,
       "norm_label": "scrollprogress()"
     },
     {
@@ -4239,7 +4257,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_whatsappbutton_jsx",
-      "community": 68,
+      "community": 61,
       "norm_label": "whatsappbutton.jsx"
     },
     {
@@ -4248,7 +4266,7 @@
       "source_file": "src/components/ui/WhatsAppButton.jsx",
       "source_location": "L3",
       "id": "ui_whatsappbutton_whatsappbutton",
-      "community": 68,
+      "community": 61,
       "norm_label": "whatsappbutton()"
     },
     {
@@ -4471,7 +4489,7 @@
       "label": "useTheme()",
       "file_type": "code",
       "source_file": "src/context/ThemeContext.jsx",
-      "source_location": "L35",
+      "source_location": "L29",
       "id": "context_themecontext_usetheme",
       "community": 33,
       "norm_label": "usetheme()"
@@ -4824,7 +4842,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L1",
       "id": "src_pages_privacypolicy_jsx",
-      "community": 44,
+      "community": 0,
       "norm_label": "privacypolicy.jsx"
     },
     {
@@ -4833,7 +4851,7 @@
       "source_file": "src/pages/PrivacyPolicy.jsx",
       "source_location": "L4",
       "id": "pages_privacypolicy_privacypolicy",
-      "community": 44,
+      "community": 0,
       "norm_label": "privacypolicy()"
     },
     {
@@ -11143,6 +11161,37 @@
       "target": "src_components_sections_pulse_jsx"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "context_cursorcontext_usecursor"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L99",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "sections_realtimework_architecturedetails"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L156",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "sections_realtimework_architectureflow"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/RealtimeWork.jsx",
@@ -11176,12 +11225,34 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "src_context_cursorcontext_jsx"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "src/pages/Home.jsx",
       "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_home_jsx",
       "target": "src_components_sections_realtimework_jsx"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L215",
+      "weight": 1.0,
+      "source": "sections_realtimework_realtimework",
+      "target": "context_cursorcontext_usecursor"
     },
     {
       "relation": "imports",
@@ -13347,5 +13418,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "85a36af7325cd3d7c12dc24d84cc6e3958c4f240"
+  "built_at_commit": "e8b495ca2537e53524761d66e732b66454d3d4eb"
 }

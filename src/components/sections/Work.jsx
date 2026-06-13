@@ -17,9 +17,9 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
 
   const handleMouseMove = useCallback((e) => {
     if (!cardRef.current || !imageRef.current) return;
-    
+
     if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
-    
+
     rAFRef.current = requestAnimationFrame(() => {
       const rect = cardRef.current.getBoundingClientRect();
       const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
@@ -165,7 +165,7 @@ export default function Work() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
           className="work-header-title"
         >
-          Featured <span className="work-header-title-accent">Works</span>
+          Featured <span className="work-header-title-accent">Demo Works</span>
         </m.h2>
 
         <m.p
@@ -195,7 +195,7 @@ export default function Work() {
           </div>
           <div className="work-stat-divider" />
           <div className="work-stat">
-            <span className="work-stat-value">5★</span>
+            <span className="work-stat-value">4★</span>
             <span className="work-stat-label">Client Satisfaction</span>
           </div>
         </m.div>

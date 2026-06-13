@@ -90,6 +90,14 @@ export default function ContextCursor() {
       borderColor: 'transparent',
       borderRadius: '50%',
       scale: 1,
+    },
+    visit: {
+      width: 80,
+      height: 80,
+      backgroundColor: 'var(--color-accent-primary)',
+      borderColor: 'transparent',
+      borderRadius: '50%',
+      scale: 1.1,
     }
   };
 
@@ -99,6 +107,7 @@ export default function ContextCursor() {
       case 'image': return <span className="text-[12px] font-bold text-black uppercase tracking-widest">View</span>;
       case 'drag': return <div className="flex justify-between w-full px-2"><span className="text-accent-violet font-bold text-xl">←</span><span className="text-accent-violet font-bold text-xl">→</span></div>;
       case 'video': return <span className="text-gray-900 dark:text-white text-xl">▶</span>;
+      case 'visit': return <span className="text-[11px] font-black text-black uppercase tracking-widest">Visit</span>;
       default: return null;
     }
   };

@@ -1,16 +1,16 @@
 # Graph Report - Nexora  (2026-06-13)
 
 ## Corpus Check
-- 138 files · ~2,763,291 words
+- 138 files · ~2,769,190 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 615 nodes · 753 edges · 68 communities (53 shown, 15 thin omitted)
+- 617 nodes · 758 edges · 66 communities (51 shown, 15 thin omitted)
 - Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `85a36af7`
+- Built from commit: `e8b495ca`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -42,6 +42,7 @@
 - [[_COMMUNITY_Community 36|Community 36]]
 - [[_COMMUNITY_Community 37|Community 37]]
 - [[_COMMUNITY_Community 38|Community 38]]
+- [[_COMMUNITY_Community 39|Community 39]]
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 43|Community 43]]
@@ -60,7 +61,6 @@
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 62|Community 62]]
-- [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
 
 ## God Nodes (most connected - your core abstractions)
@@ -87,7 +87,7 @@
 - `SidebarContent()` --calls--> `cn()`  [EXTRACTED]
   src/components/portal/Sidebar.jsx → src/utils/cn.js
 
-## Communities (68 total, 15 thin omitted)
+## Communities (66 total, 15 thin omitted)
 
 ### Community 1 - "Community 1"
 Cohesion: 0.05
@@ -102,8 +102,8 @@ Cohesion: 0.11
 Nodes (7): services, getServiceComparison(), iconMap, ServiceDetails(), destroyScroll(), getScroll(), initScroll()
 
 ### Community 4 - "Community 4"
-Cohesion: 0.11
-Nodes (4): steps, PulseCard, showcaseProjects, BentoCard
+Cohesion: 0.13
+Nodes (3): steps, PulseCard, BentoCard
 
 ### Community 5 - "Community 5"
 Cohesion: 0.08
@@ -154,8 +154,8 @@ Cohesion: 0.47
 Nodes (4): ThemeContext, ThemeProvider(), useTheme(), ParticleField()
 
 ### Community 34 - "Community 34"
-Cohesion: 0.47
-Nodes (4): CursorContext, CursorProvider(), useCursor(), ContextCursor()
+Cohesion: 0.23
+Nodes (7): CursorContext, CursorProvider(), useCursor(), architectureDetails, RealtimeWork(), showcaseProjects, ContextCursor()
 
 ### Community 36 - "Community 36"
 Cohesion: 0.29
@@ -168,6 +168,10 @@ Nodes (3): backgroundGlows, purposeOptions, slideVariants
 ### Community 38 - "Community 38"
 Cohesion: 0.20
 Nodes (10): AnimatedCounter(), AnimatedCounterProps, invoices, paymentTimeline, project, BillingPage(), fadeUp, fmtFull() (+2 more)
+
+### Community 39 - "Community 39"
+Cohesion: 0.27
+Nodes (6): channels, Message, messages, fadeUp, MessagesPage(), stagger
 
 ### Community 40 - "Community 40"
 Cohesion: 0.10
@@ -213,12 +217,8 @@ Nodes (4): inter, jetbrainsMono, metadata, sora
 Cohesion: 0.24
 Nodes (5): faqCategories, faqs, FAQ_KEYWORDS, iconMap, INITIAL_MESSAGES
 
-### Community 64 - "Community 64"
-Cohesion: 0.27
-Nodes (6): channels, Message, messages, fadeUp, MessagesPage(), stagger
-
 ## Knowledge Gaps
-- **247 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+242 more)
+- **248 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+243 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **15 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -230,12 +230,12 @@ _Questions this graph is uniquely positioned to answer:_
 - **Why does `cn()` connect `Community 6` to `Community 9`?**
   _High betweenness centrality (0.034) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
-  _247 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _248 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.11333333333333333 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

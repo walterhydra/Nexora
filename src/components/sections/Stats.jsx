@@ -4,10 +4,10 @@ import AnimatedCounter from '../ui/AnimatedCounter';
 import { Code2, Clock, Star, Users, ArrowUpRight } from 'lucide-react';
 
 const stats = [
-  { 
+  {
     id: "01",
-    label: "Projects Delivered", 
-    value: 50, 
+    label: "Projects Delivered",
+    value: 16,
     suffix: "+",
     icon: <Code2 size={40} className="text-accent-primary" />,
     color: "from-accent-primary/20 to-transparent",
@@ -15,10 +15,10 @@ const stats = [
     desc: "We have successfully designed, built, and launched premium digital products for brands across the globe, focusing on scalable architecture and pixel-perfect design.",
     top: "top-[10vh]"
   },
-  { 
+  {
     id: "02",
-    label: "Avg. Delivery Time", 
-    value: 7, 
+    label: "Avg. Delivery Time",
+    value: 7,
     suffix: " Days",
     icon: <Clock size={40} className="text-accent-secondary" />,
     color: "from-accent-secondary/20 to-transparent",
@@ -26,10 +26,10 @@ const stats = [
     desc: "By utilizing modern frameworks and an elite agile workflow, we drastically reduce time-to-market without ever compromising on quality.",
     top: "top-[15vh]"
   },
-  { 
+  {
     id: "03",
-    label: "Client Satisfaction", 
-    value: 98, 
+    label: "Client Satisfaction",
+    value: 98,
     suffix: "%",
     icon: <Star size={40} className="text-yellow-400" />,
     color: "from-yellow-400/20 to-transparent",
@@ -37,10 +37,10 @@ const stats = [
     desc: "Our commitment to communication, transparency, and post-launch support results in long-term partnerships rather than one-off projects.",
     top: "top-[20vh]"
   },
-  { 
+  {
     id: "04",
-    label: "Team Experts", 
-    value: 24, 
+    label: "Team Experts",
+    value: 10,
     suffix: "",
     icon: <Users size={40} className="text-green-400" />,
     color: "from-green-400/20 to-transparent",
@@ -74,7 +74,7 @@ const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
   }
 
   return (
-    <m.div 
+    <m.div
       initial={{ opacity: 0, y: 100 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
@@ -86,7 +86,7 @@ const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
       className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0c0c0c] border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-center group`}
     >
       {/* Scroll Dimming Overlay */}
-      <m.div 
+      <m.div
         className="absolute inset-0 bg-black pointer-events-none z-20"
         style={{ opacity: dimOpacity }}
       />
@@ -107,9 +107,9 @@ const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
 
       {/* Internal Gradient Glow */}
       <div className={`absolute top-0 left-0 w-full h-full bg-gradient-to-b ${stat.color} opacity-30 pointer-events-none z-0`} />
-      
+
       <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-16">
-        
+
         {/* Left Side: Number & Title */}
         <div className="flex-1 w-full">
           <div className="flex items-center gap-4 mb-6">
@@ -118,11 +118,11 @@ const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
               {stat.icon}
             </div>
           </div>
-          
+
           <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
             {stat.label}
           </h3>
-          
+
           <p className="text-base md:text-lg text-gray-400 leading-relaxed max-w-md">
             {stat.desc}
           </p>
@@ -131,10 +131,10 @@ const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
         {/* Right Side: Massive Animated Number */}
         <div className="flex-1 flex justify-start lg:justify-end w-full">
           <div className="relative group/num">
-            <AnimatedCounter 
-              end={stat.value} 
-              suffix={stat.suffix} 
-              className="text-6xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500" 
+            <AnimatedCounter
+              end={stat.value}
+              suffix={stat.suffix}
+              className="text-6xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500"
             />
             <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover/num:opacity-100 group-hover/num:translate-x-2 group-hover/num:-translate-y-2 transition-all duration-300">
               <ArrowUpRight className="text-white w-5 h-5" />
@@ -156,14 +156,14 @@ export default function Stats() {
 
   return (
     <section ref={containerRef} className="py-32 relative bg-[#050505] z-10">
-      
+
       {/* Background ambient light */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-accent-primary/10 blur-[150px] pointer-events-none rounded-full" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        
+
         {/* Section Header */}
-        <m.div 
+        <m.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -186,10 +186,10 @@ export default function Stats() {
             const range = [idx * 0.22, 1];
             const targetScale = 1 - ((stats.length - 1 - idx) * 0.04);
             return (
-              <StatCard 
-                key={idx} 
-                stat={stat} 
-                idx={idx} 
+              <StatCard
+                key={idx}
+                stat={stat}
+                idx={idx}
                 progress={scrollYProgress}
                 range={range}
                 targetScale={targetScale}

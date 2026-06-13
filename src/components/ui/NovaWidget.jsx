@@ -247,8 +247,12 @@ export default function NovaWidget() {
     }
   ];
 
+  const messagesContainerRef = useRef(null);
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const container = messagesContainerRef.current;
+    if (container) {
+      container.scrollTop = container.scrollHeight;
+    }
   };
 
 
@@ -1516,7 +1520,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                 {/* Right Chat Console Panel */}
                 <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
                   {/* Header */}
-                  <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10">
+                  <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10 shrink-0">
                     <div className="flex items-center gap-3">
                       <div className="relative">
                         <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
@@ -1593,12 +1597,13 @@ What package matches your requirements? \n\n[OPTIONS]`;
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="flex-1 flex flex-col overflow-hidden h-full"
+                          className="flex-1 flex flex-col overflow-hidden h-full min-h-0"
                         >
                           {/* Messages */}
                           <div
+                            ref={messagesContainerRef}
                             data-lenis-prevent="true"
-                            className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0 text-left"
+                            className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0 text-left min-h-0"
                           >
                             {messages.map((msg, idx) => (
                               <div
@@ -1648,11 +1653,11 @@ What package matches your requirements? \n\n[OPTIONS]`;
                                 </div>
                               </div>
                             )}
-                            <div ref={messagesEndRef} />
+                            <div ref={messagesEndRef} className="shrink-0 h-px" />
                           </div>
 
                           {/* Input Area */}
-                          <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10">
+                          <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10 shrink-0">
                             <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
                               <input
                                 type="text"

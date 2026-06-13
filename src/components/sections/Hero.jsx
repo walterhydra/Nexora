@@ -137,7 +137,7 @@ export default function Hero() {
     return () => clearTimeout(timer);
   }, []);
 
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "919876543210";
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexora Studio, I'd like to discuss a project")}`;
 
   const scrollToSection = (id) => {

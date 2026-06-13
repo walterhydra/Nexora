@@ -55,7 +55,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Services', id: 'services' },
     { name: 'Work', id: 'work' },
-    { name: 'Process', isRoute: true, path: '/onboarding' },
+    { name: 'Projects', id: 'realtimework' },
     { name: 'Pricing', id: 'pricing' },
     { name: 'FAQ', id: 'faq' },
     { name: 'Agreement', isRoute: true, path: '/agreement' }

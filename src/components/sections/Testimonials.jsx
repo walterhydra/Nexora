@@ -34,13 +34,13 @@ const ClientVoiceVisualizer = () => {
 
 const TrustSummary = () => {
   const stats = [
-    { label: "Client Satisfaction", value: "99.9%" },
-    { label: "Successful Projects", value: "150+" },
+    { label: "Client Satisfaction", value: "98.9%" },
+    { label: "Successful Projects", value: "16+" },
     { label: "Repeat Clients", value: "85%" }
   ];
-  
+
   return (
-    <m.div 
+    <m.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -66,7 +66,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
     <div className="relative flex w-full overflow-hidden py-6">
       <m.div
         className="flex gap-6 whitespace-nowrap min-w-max px-3"
-        
+
         animate={{
           x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"]
         }}
@@ -95,7 +95,7 @@ const MarqueeRow = ({ items, direction = "left", speed = 50 }) => {
                   "{testimonial.quote}"
                 </p>
               </div>
-              
+
               <div className="flex items-center justify-between border-t border-gray-200 dark:border-white/10 pt-6 mt-auto">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-tr from-accent-primary to-accent-violet text-white font-bold border-2 border-white/10 shadow-lg shrink-0 overflow-hidden relative">
@@ -145,8 +145,8 @@ export default function Testimonials() {
           <span className="flex h-2 w-2 rounded-full bg-accent-primary animate-pulse" />
           Trusted by Global Visionaries
         </m.div>
-        
-        <m.h2 
+
+        <m.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -154,7 +154,7 @@ export default function Testimonials() {
         >
           Client <span className="text-gradient">Impact</span>
         </m.h2>
-        <m.p 
+        <m.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -169,19 +169,20 @@ export default function Testimonials() {
         {/* Trust Summary Bar */}
         <TrustSummary />
 
-        <style dangerouslySetInnerHTML={{__html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           .mask-edges-testimonials {
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
           }
         `}} />
-        
+
         <div className="mask-edges-testimonials">
           <MarqueeRow items={row1} direction="left" speed={50} />
           <div className="my-6">
-            <MarqueeStrip 
-              items={["QUALITY FIRST", "CUSTOMER OBSESSED", "PIXEL PERFECT", "FUTURE READY", "24/7 SUPPORT"]} 
-              speed={25} 
+            <MarqueeStrip
+              items={["QUALITY FIRST", "CUSTOMER OBSESSED", "PIXEL PERFECT", "FUTURE READY", "24/7 SUPPORT"]}
+              speed={25}
               direction={-1}
             />
           </div>
@@ -190,7 +191,7 @@ export default function Testimonials() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-20">
-        <m.div 
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
