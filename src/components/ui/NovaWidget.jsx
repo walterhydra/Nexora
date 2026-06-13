@@ -296,6 +296,14 @@ export default function NovaWidget() {
     }
   }, [isOpen]);
 
+  // Reset active document if user is not verified
+  useEffect(() => {
+    if (flowState !== 'completed') {
+      setActiveDocument(null);
+      setShowDocsMenu(false);
+    }
+  }, [flowState]);
+
   // Reset internship sub-state when changing files
   useEffect(() => {
     if (activeDocument !== 'internship_offer') {
@@ -1417,27 +1425,43 @@ What package matches your requirements? \n\n[OPTIONS]`;
 
                     {/* Secure Vault */}
                     <div className="space-y-2">
-                      <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Secure Vault</span>
+                      <div className="flex items-center justify-between">
+                        <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Secure Vault</span>
+                        {flowState !== 'completed' && (
+                          <span className="text-[8px] font-mono text-accent-purple flex items-center gap-1">
+                            <Lock className="w-2.5 h-2.5" /> LOCKED
+                          </span>
+                        )}
+                      </div>
                       <div className="flex flex-col gap-1.5">
                         {vaultDocuments.map((doc) => {
-                          const IconComponent = doc.icon;
+                          const IconComponent = flowState !== 'completed' ? Lock : doc.icon;
                           const isActive = activeDocument === doc.id;
+                          const isLocked = flowState !== 'completed';
                           return (
                             <button
                               key={doc.id}
+                              disabled={isLocked}
                               onClick={() => {
                                 playClickSound(750, 0.05);
                                 setActiveDocument(isActive ? null : doc.id);
                               }}
-                              className={`flex items-center gap-2.5 w-full py-1.5 px-3 rounded-xl border transition-all duration-300 text-left cursor-pointer ${isActive
-                                ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_15px_rgba(91,164,230,0.1)]'
-                                : 'bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.04] hover:text-white'
-                                }`}
+                              className={`flex items-center gap-2.5 w-full py-1.5 px-3 rounded-xl border transition-all duration-300 text-left ${
+                                isLocked
+                                  ? 'bg-white/[0.01]/30 border-white/5 text-gray-600 cursor-not-allowed opacity-50'
+                                  : isActive
+                                    ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_15px_rgba(91,164,230,0.1)] cursor-pointer'
+                                    : 'bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.04] hover:text-white cursor-pointer'
+                              }`}
+                              title={isLocked ? "Verify your email to access" : `View ${doc.label}`}
                             >
-                              <IconComponent className={`w-3.5 h-3.5 ${isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
+                              <IconComponent className={`w-3.5 h-3.5 ${isLocked ? 'text-gray-600' : isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
                               <span className="text-[10px] font-medium tracking-wide">{doc.label}</span>
                               {isActive && (
                                 <Check className="w-3 h-3 text-emerald-400 ml-auto shrink-0" />
+                              )}
+                              {isLocked && (
+                                <Lock className="w-2.5 h-2.5 text-gray-600 ml-auto shrink-0" />
                               )}
                             </button>
                           );
@@ -1512,18 +1536,23 @@ What package matches your requirements? \n\n[OPTIONS]`;
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => {
+                          if (flowState !== 'completed') return;
                           playClickSound(750, 0.04);
                           setShowDocsMenu(!showDocsMenu);
                         }}
-                        className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 relative border ${showDocsMenu || activeDocument
-                          ? 'bg-accent-blue/10 border-accent-blue/40 text-accent-blue'
-                          : 'bg-white/[0.02] border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.08]'
+                        disabled={flowState !== 'completed'}
+                        className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 relative border ${
+                          flowState !== 'completed'
+                            ? 'bg-white/[0.01]/30 border-white/5 text-gray-600 cursor-not-allowed opacity-50'
+                            : showDocsMenu || activeDocument
+                              ? 'bg-accent-blue/10 border-accent-blue/40 text-accent-blue cursor-pointer'
+                              : 'bg-white/[0.02] border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.08] cursor-pointer'
                           }`}
-                        title="Secure Document Vault"
+                        title={flowState !== 'completed' ? "Verify your email to access" : "Secure Document Vault"}
                       >
                         <FolderLock className="w-4 h-4" />
-                        {/* Pulsing indicator if uncompleted documents exist */}
-                        {(!isSigned || !offerAccepted || !ndaExecuted || !proposalApproved) && (
+                        {/* Pulsing indicator if uncompleted documents exist and verified */}
+                        {flowState === 'completed' && (!isSigned || !offerAccepted || !ndaExecuted || !proposalApproved) && (
                           <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-accent-blue animate-ping" />
                         )}
                       </button>
