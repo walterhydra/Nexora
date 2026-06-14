@@ -355,8 +355,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\ClientPortal.jsx": {
-    "mtime": 1781114523.4575734,
-    "ast_hash": "7f706d2e9099a7ac8daedcb69ef5bb03",
+    "mtime": 1781419036.1296546,
+    "ast_hash": "e1ca2088b72e9fb5771c2be8c472a583",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Contact.jsx": {
@@ -885,8 +885,8 @@
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\Agreement.jsx": {
-    "mtime": 1781374551.2551503,
-    "ast_hash": "d35727d2f756faf8737f1a3cc3a22a33",
+    "mtime": 1781374720.0748415,
+    "ast_hash": "ba8d372c261d74d04803e3d7b8809b27",
     "semantic_hash": ""
   },
   "M:\\PROJECT FILES\\Business Website\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -1302,6 +1302,11 @@
   "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\projects\\stamp2.jpeg": {
     "mtime": 1781371835.3852012,
     "ast_hash": "95a2145fe63bdfc3f29c0cbb5d6abc43",
+    "semantic_hash": ""
+  },
+  "M:\\PROJECT FILES\\Business Website\\Nexora\\public\\logo\\portal.png": {
+    "mtime": 1781418860.972662,
+    "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
     "semantic_hash": ""
   }
 }

@@ -4597,16 +4597,34 @@
       "label": "purposeOptions",
       "file_type": "code",
       "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L12",
+      "source_location": "L11",
       "id": "pages_agreement_purposeoptions",
       "community": 37,
       "norm_label": "purposeoptions"
     },
     {
+      "label": "backgroundGlows",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L21",
+      "id": "pages_agreement_backgroundglows",
+      "community": 37,
+      "norm_label": "backgroundglows"
+    },
+    {
+      "label": "slideVariants",
+      "file_type": "code",
+      "source_file": "src/pages/Agreement.jsx",
+      "source_location": "L29",
+      "id": "pages_agreement_slidevariants",
+      "community": 37,
+      "norm_label": "slidevariants"
+    },
+    {
       "label": "Agreement()",
       "file_type": "code",
       "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L22",
+      "source_location": "L44",
       "id": "pages_agreement_agreement",
       "community": 37,
       "norm_label": "agreement()"
@@ -5177,24 +5195,6 @@
       "id": "lib_supabase_supabase",
       "community": 7,
       "norm_label": "supabase"
-    },
-    {
-      "label": "backgroundGlows",
-      "file_type": "code",
-      "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L21",
-      "community": 37,
-      "norm_label": "backgroundglows",
-      "id": "pages_agreement_backgroundglows"
-    },
-    {
-      "label": "slideVariants",
-      "file_type": "code",
-      "source_file": "src/pages/Agreement.jsx",
-      "source_location": "L29",
-      "community": 37,
-      "norm_label": "slidevariants",
-      "id": "pages_agreement_slidevariants"
     },
     {
       "label": "mobilePageVariants",
@@ -14101,5 +14101,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "eeba44ddbdfe7cc31a320af7850a977436179cb9"
+  "built_at_commit": "fbe59bd0c70090e2c1eb654f6740c7c14036844a"
 }

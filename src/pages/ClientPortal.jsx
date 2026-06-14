@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { m, AnimatePresence, useDragControls, useReducedMotion } from 'framer-motion';
-import { 
-  Mail, Eye, Zap, MessageCircle, ShieldCheck, 
-  LayoutDashboard, FolderKanban, Receipt, Settings, 
+import {
+  Mail, Eye, Zap, MessageCircle, ShieldCheck,
+  LayoutDashboard, FolderKanban, Receipt, Settings,
   Bell, ChevronDown, ArrowLeft, ArrowRight,
   CheckCircle2, Terminal, X, Send, MessageSquare, Download, File,
   Activity, Cpu, Globe, TrendingUp, Menu, Search, Sparkles, LogOut, EyeOff,
@@ -440,12 +440,12 @@ export default function ClientPortal() {
       }
     } catch (error) {
       console.error('Error fetching client data from Supabase, falling back to local storage/mock data:', error);
-      
-      const localClient = MOCK_DATA.clients.find(c => c.id === clientId) || 
-                          MOCK_DATA.clients.find(c => c.email === email?.trim().toLowerCase()) ||
-                          MOCK_DATA.clients[0];
+
+      const localClient = MOCK_DATA.clients.find(c => c.id === clientId) ||
+        MOCK_DATA.clients.find(c => c.email === email?.trim().toLowerCase()) ||
+        MOCK_DATA.clients[0];
       setClientInfo(localClient);
-      
+
       const localProj = MOCK_DATA.projects.filter(p => p.client_id === localClient.id);
       setProjects(localProj);
 
@@ -541,6 +541,10 @@ export default function ClientPortal() {
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!email.trim() || !password.trim()) {
+      setLoginError('Please enter both username and password.');
+      return;
+    }
     setLoginError('');
     setIsLoggingIn(true);
     setLoginStatus('Connecting to database...');
@@ -608,11 +612,11 @@ export default function ClientPortal() {
       setLoginStatus('Workspace ready!');
       await new Promise(r => setTimeout(r, 300));
 
-      const sessionData = { 
-        id: authenticatedClient.id, 
-        email: authenticatedClient.email, 
-        client_name: authenticatedClient.client_name, 
-        company_name: authenticatedClient.company_name 
+      const sessionData = {
+        id: authenticatedClient.id,
+        email: authenticatedClient.email,
+        client_name: authenticatedClient.client_name,
+        company_name: authenticatedClient.company_name
       };
 
       if (rememberMe) {
@@ -662,9 +666,9 @@ export default function ClientPortal() {
           }
         ])
         .select();
-      
+
       if (error) throw error;
-      
+
       if (data && data[0]) {
         setMessages((prev) => {
           if (prev.some(m => m.id === data[0].id)) return prev;
@@ -682,7 +686,7 @@ export default function ClientPortal() {
         is_read: false,
         created_at: new Date().toISOString()
       };
-      
+
       setMessages((prev) => [...prev, newMessage]);
       const savedMessagesKey = `nexora_messages_${clientInfo.id}`;
       const currentSaved = localStorage.getItem(savedMessagesKey);
@@ -710,8 +714,8 @@ export default function ClientPortal() {
     return (
       <div className="min-h-screen bg-[#030407] flex flex-col gap-10 items-center justify-center font-sans px-6 text-center">
         <div className="w-24 h-24 border-[6px] border-white/20 border-t-white rounded-full animate-spin shrink-0" />
-        
-        <m.div 
+
+        <m.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
@@ -734,17 +738,17 @@ export default function ClientPortal() {
         <div className="absolute inset-0 bg-[#030407]">
           {/* Huge Blurred Logo Watermarks */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1000px] opacity-15 pointer-events-none">
-            <img 
-              src="/logo/logo.png" 
-              alt="" 
+            <img
+              src="/logo/portal.png"
+              alt=""
               className="w-full h-full object-contain blur-[8px] animate-pulse"
               style={{ animationDuration: '8s' }}
             />
           </div>
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1000px] opacity-25 pointer-events-none">
-            <img 
-              src="/logo/logo.png" 
-              alt="" 
+            <img
+              src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png"
+              alt=""
               className="w-full h-full object-contain blur-[40px] animate-pulse"
               style={{ animationDuration: '10s' }}
             />
@@ -754,16 +758,30 @@ export default function ClientPortal() {
           <div className="absolute -top-[10%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-[#004dff] blur-[140px] opacity-20 animate-pulse" style={{ animationDuration: '7s' }} />
           <div className="absolute bottom-[0%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-[#00f0ff] blur-[140px] opacity-15 animate-pulse" style={{ animationDuration: '10s' }} />
           <div className="absolute top-[40%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-[#7000ff] blur-[130px] opacity-15" />
-          
+
           {/* Subtle Grid Overlay */}
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)]" />
         </div>
-        
+
         <div className="relative z-10 w-full max-w-[420px] flex flex-col items-center pl-6 pr-12">
+          {/* Premium Logo Badge */}
+          <m.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5 }}
+            className="w-20 h-20 mb-6 shadow-[0_8px_32px_rgba(59,130,246,0.2)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.35)] hover:scale-105 transition-all duration-300 ml-8 pointer-events-auto rounded-2xl overflow-hidden border border-white/10"
+          >
+            <img
+              src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png"
+              alt="Nexora Logo"
+              className="w-full h-full object-cover"
+            />
+          </m.div>
+
           <h2 className="text-[28px] tracking-[0.15em] text-white mb-10 font-light text-center w-full pl-8">
             CUSTOMER LOGIN
           </h2>
-          
+
           <form onSubmit={handleLogin} className="w-full space-y-6">
             {loginError && (
               <div className="w-full bg-red-500/10 border border-red-500/20 text-red-400 text-sm py-3 px-4 rounded-lg text-center font-medium backdrop-blur-md">
@@ -775,54 +793,53 @@ export default function ClientPortal() {
               <div className="absolute -left-12 w-12 flex justify-center">
                 <User className="w-6 h-6 text-gray-500 group-focus-within:text-blue-400 transition-colors" strokeWidth={1.5} />
               </div>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Username" 
+                placeholder="Username"
                 className="w-full bg-white/[0.03] border border-white/[0.05] rounded-lg text-white placeholder:text-gray-500 px-5 py-3 backdrop-blur-xl outline-none focus:bg-white/[0.06] focus:border-blue-500/50 transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)]"
               />
             </div>
-            
+
             {/* Password Input */}
             <div className="relative flex items-center group">
               <div className="absolute -left-12 w-12 flex justify-center">
                 <Lock className="w-6 h-6 text-gray-500 group-focus-within:text-blue-400 transition-colors" strokeWidth={1.5} />
               </div>
-              <input 
-                type={showPassword ? 'text' : 'password'} 
+              <input
+                type={showPassword ? 'text' : 'password'}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Password" 
+                placeholder="Password"
                 className="w-full bg-white/[0.03] border border-white/[0.05] rounded-lg text-white placeholder:text-gray-500 px-5 py-3 backdrop-blur-xl outline-none focus:bg-white/[0.06] focus:border-blue-500/50 transition-all shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] pr-12"
               />
-              <button 
-                type="button" 
+              <button
+                type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 className="absolute right-4 text-gray-500 hover:text-blue-400 transition-colors focus:outline-none"
               >
                 {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
               </button>
             </div>
-            
+
             {/* Remember me & Forgot Password */}
             <div className="flex items-center justify-between text-sm pt-2">
               <label className="flex items-center gap-3 cursor-pointer group select-none">
-                <input 
-                  type="checkbox" 
-                  checked={rememberMe} 
-                  onChange={(e) => setRememberMe(e.target.checked)} 
-                  className="sr-only" 
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
+                  className="sr-only"
                 />
-                <div className={`w-[16px] h-[16px] rounded-[4px] flex items-center justify-center transition-all duration-200 ${
-                  rememberMe 
-                    ? 'bg-blue-500/20 border border-blue-500/50 shadow-[0_0_8px_rgba(59,130,246,0.3)]' 
-                    : 'bg-white/[0.05] border border-white/[0.1] group-hover:bg-blue-500/10 group-hover:border-blue-500/30'
-                }`}>
-                  <svg 
-                    className={`w-3 h-3 text-blue-400 transition-all duration-200 ${rememberMe ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`} 
-                    fill="none" 
-                    viewBox="0 0 24 24" 
+                <div className={`w-[16px] h-[16px] rounded-[4px] flex items-center justify-center transition-all duration-200 ${rememberMe
+                  ? 'bg-blue-500/20 border border-blue-500/50 shadow-[0_0_8px_rgba(59,130,246,0.3)]'
+                  : 'bg-white/[0.05] border border-white/[0.1] group-hover:bg-blue-500/10 group-hover:border-blue-500/30'
+                  }`}>
+                  <svg
+                    className={`w-3 h-3 text-blue-400 transition-all duration-200 ${rememberMe ? 'scale-100 opacity-100' : 'scale-50 opacity-0'}`}
+                    fill="none"
+                    viewBox="0 0 24 24"
                     stroke="currentColor"
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
@@ -832,17 +849,16 @@ export default function ClientPortal() {
               </label>
               <button type="button" onClick={() => setShowForgotPassword(true)} className="text-blue-400/80 text-[13px] font-medium tracking-wide hover:text-blue-400 transition-colors">Forgot Password?</button>
             </div>
-            
+
             {/* Submit Button */}
             <div className="pt-6 flex justify-center">
-              <button 
-                type="submit" 
-                disabled={isLoggingIn}
-                className={`w-full relative overflow-hidden group border font-bold tracking-[0.15em] text-[13px] py-4 rounded-lg transition-all ${
-                  isLoggingIn 
-                    ? 'bg-blue-500/20 border-blue-400/40 text-blue-200 cursor-not-allowed shadow-[0_0_40px_rgba(59,130,246,0.25)]' 
-                    : 'bg-blue-500/10 border-blue-400/20 text-blue-300 hover:bg-blue-500/20 hover:border-blue-400/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:text-white'
-                }`}
+              <button
+                type="submit"
+                disabled={isLoggingIn || !email.trim() || !password.trim()}
+                className={`w-full relative overflow-hidden group border font-bold tracking-[0.15em] text-[13px] py-4 rounded-lg transition-all ${(isLoggingIn || !email.trim() || !password.trim())
+                  ? 'bg-white/[0.02] border-white/[0.05] text-gray-500 cursor-not-allowed'
+                  : 'bg-blue-500/10 border-blue-400/20 text-blue-300 hover:bg-blue-500/20 hover:border-blue-400/40 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] hover:text-white'
+                  }`}
               >
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   {isLoggingIn ? (
@@ -880,7 +896,7 @@ export default function ClientPortal() {
             >
               {/* Backdrop */}
               <div className="absolute inset-0 bg-black/70 backdrop-blur-md" />
-              
+
               {/* Modal Card */}
               <m.div
                 initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -893,7 +909,7 @@ export default function ClientPortal() {
                 {/* Ambient Glow */}
                 <div className="absolute -top-20 -right-20 w-40 h-40 bg-blue-500/20 rounded-full blur-[80px] pointer-events-none" />
                 <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-cyan-500/15 rounded-full blur-[80px] pointer-events-none" />
-                
+
                 {/* Header */}
                 <div className="relative px-8 pt-8 pb-4 flex items-start justify-between">
                   <div>
@@ -981,10 +997,10 @@ export default function ClientPortal() {
     );
   }
 
-    // --- POST-LOGIN DASHBOARD ---
+  // --- POST-LOGIN DASHBOARD ---
   return (
     <PortalProvider>
-      <PortalDashboardContent 
+      <PortalDashboardContent
         clientInfo={clientInfo}
         projects={projects}
         milestones={milestones}
