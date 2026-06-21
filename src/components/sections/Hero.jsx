@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react';
-import { m, useScroll, useTransform } from 'framer-motion';
+import { m, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Typewriter from 'typewriter-effect';
 
 import MorphingBlob from '../ui/MorphingBlob';
@@ -143,6 +143,18 @@ export default function Hero() {
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexoraa Studio, I'd like to discuss a project")}`;
 
+  const [isWarping, setIsWarping] = useState(false);
+
+  const handleStartProjectClick = (e) => {
+    e.preventDefault();
+    setIsWarping(true);
+    
+    setTimeout(() => {
+      scrollToSection('contact');
+      setTimeout(() => setIsWarping(false), 500);
+    }, 600); 
+  };
+
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -176,7 +188,7 @@ export default function Hero() {
       {/* Absolute scrolling text at the top of the section - with fade transform */}
       <m.div
         style={{ opacity: textOpacity, y: textY }}
-        className="absolute top-0 inset-x-0 z-10 w-full max-w-7xl mx-auto px-6 pt-32 md:pt-44 flex flex-col items-start text-left pointer-events-auto"
+        className="absolute top-0 inset-x-0 z-30 w-full max-w-7xl mx-auto px-6 pt-32 md:pt-44 flex flex-col items-start text-left pointer-events-auto"
       >
         <m.div
           initial={{ opacity: 0, x: -20 }}
@@ -245,7 +257,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-wrap items-center gap-6 relative z-20"
+          className="flex flex-wrap items-center gap-6 relative z-50 pointer-events-auto"
         >
           <button
             onClick={() => scrollToSection('work')}
@@ -261,10 +273,21 @@ export default function Hero() {
           </button>
 
           <button
-            onClick={() => scrollToSection('contact')}
-            className="group px-8 py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 hover:border-white/60 transition-colors duration-300"
+            onClick={handleStartProjectClick}
+            disabled={isWarping}
+            className="group px-8 py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 transition-all duration-300 relative overflow-hidden"
           >
-            <span className="flex items-center gap-2">
+            {/* Click Ripple Effect */}
+            <m.div
+              initial={{ scale: 0, opacity: 0 }}
+              animate={isWarping ? { scale: 50, opacity: 1 } : { scale: 0, opacity: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="absolute top-1/2 left-1/2 w-4 h-4 bg-accent-primary rounded-full origin-center transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+            />
+            {/* Hover Sweep Effect */}
+            <div className="absolute inset-0 bg-black/5 dark:bg-white/10 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out pointer-events-none" />
+            
+            <span className={`flex items-center justify-center gap-2 relative z-10 pointer-events-none transition-colors duration-300 ${isWarping ? 'text-white' : ''}`}>
               Start Project
             </span>
           </button>
