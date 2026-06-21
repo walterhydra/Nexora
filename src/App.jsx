@@ -36,6 +36,7 @@ import PaymentPolicy from './pages/PaymentPolicy';
 import Projects from './pages/Projects';
 import CaseStudyDetail from './pages/CaseStudyDetail';
 import Agreement from './pages/Agreement';
+import SystemBoot from './pages/SystemBoot';
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -66,6 +67,7 @@ function AnimatedRoutes() {
       <Route path="/onboarding" element={<Onboarding />} />
       <Route path="/payment-policy" element={<PaymentPolicy />} />
       <Route path="/agreement" element={<Agreement />} />
+      <Route path="/system-boot" element={<SystemBoot />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

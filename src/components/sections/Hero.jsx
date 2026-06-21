@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { m, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
 
 import MorphingBlob from '../ui/MorphingBlob';
@@ -7,6 +8,7 @@ import ParticleField from '../ui/ParticleField';
 import ScrambleText from '../ui/ScrambleText';
 import LaptopMockup from '../ui/LaptopMockup';
 import MagneticButton from '../ui/MagneticButton';
+import FlashbackTransition from '../ui/FlashbackTransition';
 import { getScroll } from '../../utils/scroll';
 
 const MobilePreview = ({ step }) => {
@@ -112,6 +114,7 @@ const MobilePreview = ({ step }) => {
 
 export default function Hero() {
   const containerRef = useRef(null);
+  const navigate = useNavigate();
 
   const { scrollY, scrollYProgress } = useScroll({
     target: containerRef,
@@ -150,9 +153,9 @@ export default function Hero() {
     setIsWarping(true);
     
     setTimeout(() => {
-      scrollToSection('contact');
-      setTimeout(() => setIsWarping(false), 500);
-    }, 600); 
+      navigate('/system-boot');
+      setTimeout(() => setIsWarping(false), 200);
+    }, 1600); 
   };
 
   const scrollToSection = (id) => {
@@ -168,14 +171,16 @@ export default function Hero() {
   };
 
   return (
-    <m.section
-      ref={containerRef}
-      id="home"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, ease: "easeOut" }}
-      className="relative h-[165vh] bg-bg-primary overflow-hidden"
-    >
+    <>
+      <FlashbackTransition isActive={isWarping} />
+      <m.section
+        ref={containerRef}
+        id="home"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
+        className="relative h-[165vh] bg-bg-primary overflow-hidden"
+      >
 
       {/* High-Graphics Primitives */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -350,5 +355,6 @@ export default function Hero() {
       </div>
 
     </m.section>
+    </>
   );
 }
