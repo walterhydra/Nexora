@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { m, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail, Zap, Coins, FileText, CreditCard, Lock, Award, Compass, Eye, EyeOff, Copy, Check, CheckCircle2, FolderLock, Undo2 } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail, Zap, Coins, FileText, CreditCard, Lock, Award, Compass, Eye, EyeOff, Copy, Check, CheckCircle2, FolderLock, Undo2, ArrowRight } from 'lucide-react';
 
 // Simple Markdown Bold Parser
 const parseMarkdown = (text) => {
@@ -55,6 +56,7 @@ export default function NovaWidget() {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [lockedModalOpen, setLockedModalOpen] = useState(false);
   const messagesEndRef = useRef(null);
 
   const [flowState, setFlowState] = useState(() => {
@@ -1445,19 +1447,22 @@ What package matches your requirements? \n\n[OPTIONS]`;
                           return (
                             <button
                               key={doc.id}
-                              disabled={isLocked}
                               onClick={() => {
                                 playClickSound(750, 0.05);
-                                setActiveDocument(isActive ? null : doc.id);
+                                if (isLocked) {
+                                  setLockedModalOpen(true);
+                                } else {
+                                  setActiveDocument(isActive ? null : doc.id);
+                                }
                               }}
                               className={`flex items-center gap-2.5 w-full py-1.5 px-3 rounded-xl border transition-all duration-300 text-left ${
                                 isLocked
-                                  ? 'bg-white/[0.01]/30 border-white/5 text-gray-600 cursor-not-allowed opacity-50'
+                                  ? 'bg-white/[0.01] border-white/5 text-gray-500 hover:bg-white/[0.04] hover:text-white cursor-pointer'
                                   : isActive
                                     ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_15px_rgba(91,164,230,0.1)] cursor-pointer'
                                     : 'bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.04] hover:text-white cursor-pointer'
                               }`}
-                              title={isLocked ? "Verify your email to access" : `View ${doc.label}`}
+                              title={isLocked ? "Access Restricted" : `View ${doc.label}`}
                             >
                               <IconComponent className={`w-3.5 h-3.5 ${isLocked ? 'text-gray-600' : isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
                               <span className="text-[10px] font-medium tracking-wide">{doc.label}</span>
@@ -1898,6 +1903,70 @@ What package matches your requirements? \n\n[OPTIONS]`;
           )}
         </m.button>
       </div>
+
+      {/* Fullscreen Locked Strip */}
+      <AnimatePresence>
+        {lockedModalOpen && (
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+            className="fixed inset-0 z-[110] bg-black/40 backdrop-blur-md flex items-center justify-center"
+          >
+            <m.div
+              initial={{ scaleY: 0, opacity: 0 }}
+              animate={{ scaleY: 1, opacity: 1 }}
+              exit={{ scaleY: 0, opacity: 0 }}
+              transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+              className="w-full bg-[#050505]/95 border-y border-white/10 py-8 md:py-10 px-6 flex items-center justify-center shadow-[0_0_100px_rgba(0,0,0,0.8)] backdrop-blur-2xl relative origin-center overflow-hidden"
+            >
+              {/* Glossy Reflection overlay */}
+              <m.div 
+                animate={{ x: ['-200%', '200%'] }}
+                transition={{ duration: 5, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
+                className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 pointer-events-none"
+              />
+              
+              <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+                
+                {/* Left side: Icon + Text */}
+                <div className="flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-8 text-center md:text-left">
+                  <div className="w-14 h-14 md:w-20 md:h-20 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
+                    <span className="text-2xl md:text-4xl">🔒</span>
+                  </div>
+                  <div className="flex flex-col justify-center">
+                    <h3 className="text-2xl md:text-4xl font-display font-black text-white tracking-tighter uppercase">
+                      Access Restricted
+                    </h3>
+                    <p className="text-gray-400 text-sm md:text-base mt-2 max-w-xl leading-relaxed">
+                      This asset is secured and requires exclusive clearance. Please contact our team to verify your identity and unlock this document.
+                    </p>
+                  </div>
+                </div>
+                
+                {/* Right side: Buttons */}
+                <div className="flex flex-row items-center gap-3 w-full md:w-auto mt-2 md:mt-0">
+                  <button 
+                    onClick={() => setLockedModalOpen(false)}
+                    className="flex-1 md:flex-none px-6 py-3.5 rounded-full bg-transparent hover:bg-white/5 text-gray-400 hover:text-white font-bold transition-colors border border-transparent hover:border-white/10 text-sm md:text-base whitespace-nowrap"
+                  >
+                    Cancel
+                  </button>
+                  <Link to="/contact" onClick={() => setLockedModalOpen(false)} className="flex-1 md:flex-none">
+                    <button className="w-full bg-white text-black px-8 py-3.5 font-bold text-sm md:text-base rounded-full hover:bg-gray-200 transition-colors flex items-center justify-center whitespace-nowrap group">
+                      <span className="flex items-center justify-center gap-2 whitespace-nowrap">
+                        Unlock Access <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform shrink-0" />
+                      </span>
+                    </button>
+                  </Link>
+                </div>
+
+              </div>
+            </m.div>
+          </m.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
