@@ -1441,9 +1441,9 @@ What package matches your requirements? \n\n[OPTIONS]`;
                       </div>
                       <div className="flex flex-col gap-1.5">
                         {vaultDocuments.map((doc) => {
-                          const IconComponent = flowState !== 'completed' ? Lock : doc.icon;
+                          const isLocked = flowState !== 'completed' || doc.id === 'client_agreement' || doc.id === 'nda';
+                          const IconComponent = isLocked ? Lock : doc.icon;
                           const isActive = activeDocument === doc.id;
-                          const isLocked = flowState !== 'completed';
                           return (
                             <button
                               key={doc.id}
@@ -1728,7 +1728,8 @@ What package matches your requirements? \n\n[OPTIONS]`;
 
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                           {vaultDocuments.map((doc) => {
-                            const IconComponent = doc.icon;
+                            const isLocked = flowState !== 'completed' || doc.id === 'client_agreement' || doc.id === 'nda';
+                            const IconComponent = isLocked ? Lock : doc.icon;
                             const isActive = activeDocument === doc.id;
                             return (
                               <button
