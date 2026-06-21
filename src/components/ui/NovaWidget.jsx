@@ -1449,7 +1449,9 @@ What package matches your requirements? \n\n[OPTIONS]`;
                               key={doc.id}
                               onClick={() => {
                                 playClickSound(750, 0.05);
-                                if (isLocked) {
+                                if (doc.id === 'client_agreement' || doc.id === 'nda') {
+                                  setLockedModalOpen(true);
+                                } else if (isLocked) {
                                   setLockedModalOpen(true);
                                 } else {
                                   setActiveDocument(isActive ? null : doc.id);
@@ -1733,7 +1735,11 @@ What package matches your requirements? \n\n[OPTIONS]`;
                                 key={doc.id}
                                 onClick={() => {
                                   playClickSound(750, 0.05);
-                                  setActiveDocument(isActive ? null : doc.id);
+                                  if (doc.id === 'client_agreement' || doc.id === 'nda') {
+                                    setLockedModalOpen(true);
+                                  } else {
+                                    setActiveDocument(isActive ? null : doc.id);
+                                  }
                                   setShowDocsMenu(false);
                                 }}
                                 className={`flex items-center gap-3.5 w-full p-4 rounded-2xl border transition-all duration-300 text-left relative overflow-hidden group cursor-pointer ${isActive
