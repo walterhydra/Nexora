@@ -98,7 +98,7 @@ export default function Navbar() {
               <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
                 <img 
                   src="/logo/favicon.png" 
-                  alt="Nexora Logo Icon" 
+                  alt="Nexoraa Logo Icon" 
                   className="w-full h-full object-contain"
                   loading="eager"
                   fetchPriority="high"
@@ -107,7 +107,7 @@ export default function Navbar() {
                 />
               </div>
               <span className="font-display font-black text-lg md:text-xl tracking-[0.2em] text-white">
-                NEXORA
+                NEXORAA
               </span>
             </Link>
           </div>
@@ -212,7 +212,7 @@ export default function Navbar() {
                 <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                   <img 
                     src="/logo/favicon.png" 
-                    alt="Nexora Logo Icon" 
+                    alt="Nexoraa Logo Icon" 
                     className="w-full h-full object-contain"
                     loading="lazy"
                     decoding="async"
@@ -220,7 +220,7 @@ export default function Navbar() {
                     height="40"
                   />
                 </div>
-                <span className="font-display font-black text-xl tracking-tight text-white">NEXORA</span>
+                <span className="font-display font-black text-xl tracking-tight text-white">NEXORAA</span>
               </div>
               <button 
                 onClick={() => setMobileMenuOpen(false)} 

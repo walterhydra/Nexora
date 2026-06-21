@@ -1,7 +1,7 @@
 import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 
-const SECRET_KEY = process.env.OTP_SECRET || 'nexora-otp-secret-key-2026';
+const SECRET_KEY = process.env.OTP_SECRET || 'nexoraa-otp-secret-key-2026';
 
 export default async function handler(req, res) {
   // CORS
@@ -46,12 +46,12 @@ export default async function handler(req, res) {
       const emailHtml = `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 500px; margin: 0 auto; background: #0B1120; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
           <div style="background: linear-gradient(135deg, #1a1a2e 0%, #0B1120 100%); padding: 30px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <h1 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexora Studio</h1>
+            <h1 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexoraa Studio</h1>
             <p style="margin: 6px 0 0; color: #6b7280; font-size: 12px;">Verification Code</p>
           </div>
           <div style="padding: 30px; text-align: center;">
             <p style="color: #d1d5db; font-size: 15px; margin: 0 0 24px;">
-              Your one-time passcode (OTP) for Nexora Assistant is:
+              Your one-time passcode (OTP) for Nexoraa Assistant is:
             </p>
             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; display: inline-block; font-size: 32px; font-weight: 800; letter-spacing: 6px; color: #00F5FF; margin-bottom: 24px;">
               ${generatedOtp}
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
           </div>
           <div style="background: rgba(255,255,255,0.02); padding: 16px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
             <p style="margin: 0; color: #4b5563; font-size: 11px;">
-              © ${new Date().getFullYear()} Nexora Studio. All rights reserved.
+              © ${new Date().getFullYear()} Nexoraa Studio. All rights reserved.
             </p>
           </div>
         </div>
@@ -79,9 +79,9 @@ export default async function handler(req, res) {
         });
 
         await transporter.sendMail({
-          from: `"Nexora Studio" <${smtpEmail || 'nexoraa.works@gmail.com'}>`,
+          from: `"Nexoraa Studio" <${smtpEmail || 'nexoraa.works@gmail.com'}>`,
           to: email,
-          subject: `🔑 ${generatedOtp} is your Nexora Verification Code`,
+          subject: `🔑 ${generatedOtp} is your Nexoraa Verification Code`,
           html: emailHtml
         });
       } else if (brevoApiKey) {
@@ -116,9 +116,9 @@ export default async function handler(req, res) {
             'content-type': 'application/json'
           },
           body: JSON.stringify({
-            sender: { name: 'Nexora Studio', email: senderEmail },
+            sender: { name: 'Nexoraa Studio', email: senderEmail },
             to: [{ email: email }],
-            subject: `🔑 ${generatedOtp} is your Nexora Verification Code`,
+            subject: `🔑 ${generatedOtp} is your Nexoraa Verification Code`,
             htmlContent: emailHtml
           })
         });

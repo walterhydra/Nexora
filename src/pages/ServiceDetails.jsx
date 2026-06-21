@@ -381,7 +381,7 @@ export default function ServiceDetails() {
     const timelineFeature = comparisonData.features.find(f => f.name.toLowerCase().includes("timeline"));
     const selectedTimeline = timelineFeature ? timelineFeature[rec.tier] : "Flexible";
 
-    const message = `Hey Nexora! 🚀\n\nI am extremely interested in your *${rec.name}* tier for *${service.title}*!\n\n📋 *Selected Package Specifications:*\n- *Service:* ${service.title}\n- *Package:* ${rec.name} Node\n- *Investment:* ${selectedPrice}\n- *Delivery Timeline:* ${selectedTimeline}\n\nLet's construct an elite product architecture together! ✨`;
+    const message = `Hey Nexoraa! 🚀\n\nI am extremely interested in your *${rec.name}* tier for *${service.title}*!\n\n📋 *Selected Package Specifications:*\n- *Service:* ${service.title}\n- *Package:* ${rec.name} Node\n- *Investment:* ${selectedPrice}\n- *Delivery Timeline:* ${selectedTimeline}\n\nLet's construct an elite product architecture together! ✨`;
     
     return `https://wa.me/917383303388?text=${encodeURIComponent(message)}`;
   };
@@ -394,7 +394,7 @@ export default function ServiceDetails() {
     const selectedTimeline = timelineFeature ? timelineFeature[rec.tier] : "Flexible";
 
     const subject = `Elite Collaboration: ${service.title} - ${rec.name} Node`;
-    const body = `Hey Nexora Team! 🚀\n\nI am looking to deploy and scale a premium ${service.title} project using the ${rec.name} architecture!\n\n📋 Selected Package Specifications:\n- Service: ${service.title}\n- Architecture Node: ${rec.name} Node\n- Estimated Investment: ${selectedPrice}\n- Timeline: ${selectedTimeline}\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`;
+    const body = `Hey Nexoraa Team! 🚀\n\nI am looking to deploy and scale a premium ${service.title} project using the ${rec.name} architecture!\n\n📋 Selected Package Specifications:\n- Service: ${service.title}\n- Architecture Node: ${rec.name} Node\n- Estimated Investment: ${selectedPrice}\n- Timeline: ${selectedTimeline}\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`;
     
     return `https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
@@ -557,7 +557,7 @@ export default function ServiceDetails() {
                     ) : (
                       <div className="flex flex-col gap-3 w-full">
                         <a
-                          href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexora!  I am looking to build and scale a premium project, and would love to collaborate on your elite ${service.title} solutions. Let's build something epic together!`)}`}
+                          href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexoraa!  I am looking to build and scale a premium project, and would love to collaborate on your elite ${service.title} solutions. Let's build something epic together!`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="relative w-full py-4 bg-[#00F5FF] text-black font-bold rounded-xl flex items-center justify-center gap-2 overflow-hidden shadow-[0_0_20px_rgba(0,245,255,0.2)] hover:shadow-[0_0_40px_rgba(0,245,255,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
@@ -567,7 +567,7 @@ export default function ServiceDetails() {
                           </span>
                         </a>
                         <a
-                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(`Elite Collaboration: ${service.title} Project`)}&body=${encodeURIComponent(`Hey Nexora Team! 🚀\n\nI am looking to build and scale a premium digital solution and would love to collaborate on your elite ${service.title} services.\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`)}`}
+                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(`Elite Collaboration: ${service.title} Project`)}&body=${encodeURIComponent(`Hey Nexoraa Team! 🚀\n\nI am looking to build and scale a premium digital solution and would love to collaborate on your elite ${service.title} services.\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="relative w-full py-4 bg-transparent overflow-hidden rounded-xl border border-white/10 text-white font-semibold flex items-center justify-center hover:border-white/30 transition-all text-center cursor-pointer"
@@ -831,7 +831,7 @@ export default function ServiceDetails() {
                               {/* Starter CTA */}
                               <td className={`p-3 text-center transition-all duration-300 ${currentRec.tier === "starter" ? "bg-white/[0.01]" : "opacity-30"}`}>
                                 <a
-                                  href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexora! I am looking to book your Starter ${service.title} package. Let's construct a roadmap together!`)}`}
+                                  href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexoraa! I am looking to book your Starter ${service.title} package. Let's construct a roadmap together!`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-block py-1.5 px-3 rounded-lg text-[9px] font-bold bg-[#00F5FF] text-black hover:scale-[1.03] active:scale-[0.98] transition-all uppercase tracking-wider text-center"
@@ -843,7 +843,7 @@ export default function ServiceDetails() {
                               {/* Growth CTA */}
                               <td className={`p-3 text-center transition-all duration-300 ${currentRec.tier === "growth" ? "bg-white/[0.01]" : "opacity-30"}`}>
                                 <a
-                                  href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexora! I am looking to book your Growth ${service.title} package. Let's construct a roadmap together!`)}`}
+                                  href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexoraa! I am looking to book your Growth ${service.title} package. Let's construct a roadmap together!`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-block py-1.5 px-3 rounded-lg text-[9px] font-bold bg-[#9B59FF] text-white hover:scale-[1.03] active:scale-[0.98] transition-all uppercase tracking-wider text-center"
@@ -855,7 +855,7 @@ export default function ServiceDetails() {
                               {/* Scale CTA */}
                               <td className={`p-3 text-center transition-all duration-300 ${currentRec.tier === "scale" ? "bg-white/[0.01]" : "opacity-30"}`}>
                                 <a
-                                  href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexora! I am looking to book your Scale ${service.title} package. Let's construct a roadmap together!`)}`}
+                                  href={`https://wa.me/917383303388?text=${encodeURIComponent(`Hey Nexoraa! I am looking to book your Scale ${service.title} package. Let's construct a roadmap together!`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-block py-1.5 px-3 rounded-lg text-[9px] font-bold bg-[#00FF00] text-black hover:scale-[1.03] active:scale-[0.98] transition-all uppercase tracking-wider text-center"
@@ -867,7 +867,7 @@ export default function ServiceDetails() {
                               {/* Enterprise CTA */}
                               <td className={`p-3 text-center transition-all duration-300 ${currentRec.tier === "enterprise" ? "bg-white/[0.01]" : "opacity-30"}`}>
                                 <a
-                                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(`Enterprise Custom Consultation: ${service.title}`)}&body=${encodeURIComponent(`Hey Nexora Team! 🚀\n\nI am looking for a customized Enterprise plan for our ${service.title} project. Let's setup a consultation.\n\nBest regards,\n[Your Name]`)}`}
+                                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(`Enterprise Custom Consultation: ${service.title}`)}&body=${encodeURIComponent(`Hey Nexoraa Team! 🚀\n\nI am looking for a customized Enterprise plan for our ${service.title} project. Let's setup a consultation.\n\nBest regards,\n[Your Name]`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-block py-1.5 px-3 rounded-lg text-[9px] font-bold bg-[#FF007A] text-white hover:scale-[1.03] active:scale-[0.98] transition-all uppercase tracking-wider text-center shadow-[0_0_15px_rgba(255,0,122,0.3)]"

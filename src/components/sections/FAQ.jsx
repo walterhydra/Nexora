@@ -118,7 +118,7 @@ export default function FAQ() {
 
                 {/* Card footer redirect */}
                 <div className="mt-8 pt-6 border-t border-gray-100 dark:border-white/5 flex items-center justify-between relative z-10">
-                  <span className="text-xs text-gray-400 dark:text-gray-500 font-mono">Nexora Studio Handbook v1.0</span>
+                  <span className="text-xs text-gray-400 dark:text-gray-500 font-mono">Nexoraa Studio Handbook v1.0</span>
                   <Link to="/contact" className="flex items-center gap-1.5 text-xs font-bold text-accent-blue hover:text-accent-blue/80 dark:text-accent-primary dark:hover:text-accent-primary/80 transition-colors group/link cursor-pointer">
                     Ask Milan directly
                     <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform" />

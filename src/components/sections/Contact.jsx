@@ -78,7 +78,7 @@ export default function Contact() {
             budget: budget,
             message: message,
             subject: `Elite Project Inquiry from ${name}`,
-            from_name: "Nexora Studio Portal"
+            from_name: "Nexoraa Studio Portal"
           })
         });
 
@@ -171,7 +171,7 @@ export default function Contact() {
   };
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexora Studio, I'd like to discuss a project")}`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexoraa Studio, I'd like to discuss a project")}`;
 
   return (
     <section id="contact" className="py-24 bg-white dark:bg-black relative overflow-hidden">

@@ -106,11 +106,11 @@ export default function PaymentPolicy() {
               <div className="space-y-3.5 font-mono text-[11px] mb-6 text-gray-300">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-500">Node Directory:</span>
-                  <span className="text-white">Nexora_Finance_v1.0</span>
+                  <span className="text-white">Nexoraa_Finance_v1.0</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-500">Audit Authority:</span>
-                  <span className="text-white">Nexora Treasury</span>
+                  <span className="text-white">Nexoraa Treasury</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-500">Integrity:</span>
@@ -220,7 +220,7 @@ export default function PaymentPolicy() {
             >
               <img 
                 src="/projects/stamp.png" 
-                alt="Nexora Official Seal" 
+                alt="Nexoraa Official Seal" 
                 className="w-full h-full object-contain"
               />
             </m.div>
@@ -233,7 +233,7 @@ export default function PaymentPolicy() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-[4rem] font-display font-black mb-6 tracking-tighter leading-none text-white">
-                The Nexora <br/>
+                The Nexoraa <br/>
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-indigo-400 to-accent-violet">
                   Protocol
                 </span>
@@ -371,7 +371,7 @@ export default function PaymentPolicy() {
                     },
                     {
                       title: "Codebase Quarantine",
-                      desc: "All development happens on Nexora secure staging servers. Source code, IP transfers, and live domain deployments are quarantined until 100% ledger clearance."
+                      desc: "All development happens on Nexoraa secure staging servers. Source code, IP transfers, and live domain deployments are quarantined until 100% ledger clearance."
                     },
                     {
                       title: "Phase-Locked Revisions",
@@ -488,10 +488,10 @@ export default function PaymentPolicy() {
                 <div className="text-[10px] uppercase tracking-widest text-gray-500 font-mono">Authorized Signatures</div>
                 <div className="flex gap-8 items-center font-mono">
                   <div className="text-sm italic font-serif text-accent-blue dark:text-accent-blue/90 border-b border-white/10 pb-1 pr-6 select-none">
-                    Nexora Finance Officer
+                    Nexoraa Finance Officer
                   </div>
                 </div>
-                <div className="text-[9px] text-gray-500 font-mono">Nexora Treasury & Ledger Directorate</div>
+                <div className="text-[9px] text-gray-500 font-mono">Nexoraa Treasury & Ledger Directorate</div>
               </div>
 
               {/* SHA Checksum Verification */}

@@ -17,7 +17,7 @@
       "file_type": "code",
       "source_file": "clean.mjs",
       "source_location": "L5",
-      "id": "nexora_clean_filename",
+      "id": "nexoraa_clean_filename",
       "community": 12,
       "norm_label": "__filename"
     },
@@ -26,7 +26,7 @@
       "file_type": "code",
       "source_file": "clean.mjs",
       "source_location": "L6",
-      "id": "nexora_clean_dirname",
+      "id": "nexoraa_clean_dirname",
       "community": 12,
       "norm_label": "__dirname"
     },
@@ -35,7 +35,7 @@
       "file_type": "code",
       "source_file": "clean.mjs",
       "source_location": "L8",
-      "id": "nexora_clean_walk",
+      "id": "nexoraa_clean_walk",
       "community": 12,
       "norm_label": "walk()"
     },
@@ -44,7 +44,7 @@
       "file_type": "code",
       "source_file": "clean.mjs",
       "source_location": "L25",
-      "id": "nexora_clean_files",
+      "id": "nexoraa_clean_files",
       "community": 12,
       "norm_label": "files"
     },
@@ -53,7 +53,7 @@
       "file_type": "code",
       "source_file": "clean.mjs",
       "source_location": "L30",
-      "id": "nexora_clean_content",
+      "id": "nexoraa_clean_content",
       "community": 12,
       "norm_label": "content"
     },
@@ -80,7 +80,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L2",
-      "id": "nexora_package_name",
+      "id": "nexoraa_package_name",
       "community": 5,
       "norm_label": "name"
     },
@@ -89,7 +89,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
-      "id": "nexora_package_private",
+      "id": "nexoraa_package_private",
       "community": 5,
       "norm_label": "private"
     },
@@ -98,7 +98,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
-      "id": "nexora_package_version",
+      "id": "nexoraa_package_version",
       "community": 5,
       "norm_label": "version"
     },
@@ -107,7 +107,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L5",
-      "id": "nexora_package_type",
+      "id": "nexoraa_package_type",
       "community": 5,
       "norm_label": "type"
     },
@@ -116,7 +116,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L6",
-      "id": "nexora_package_scripts",
+      "id": "nexoraa_package_scripts",
       "community": 5,
       "norm_label": "scripts"
     },
@@ -125,7 +125,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
-      "id": "nexora_package_scripts_dev",
+      "id": "nexoraa_package_scripts_dev",
       "community": 5,
       "norm_label": "dev"
     },
@@ -134,7 +134,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
-      "id": "nexora_package_scripts_build",
+      "id": "nexoraa_package_scripts_build",
       "community": 5,
       "norm_label": "build"
     },
@@ -143,7 +143,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
-      "id": "nexora_package_scripts_lint",
+      "id": "nexoraa_package_scripts_lint",
       "community": 5,
       "norm_label": "lint"
     },
@@ -152,7 +152,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L10",
-      "id": "nexora_package_scripts_preview",
+      "id": "nexoraa_package_scripts_preview",
       "community": 5,
       "norm_label": "preview"
     },
@@ -161,7 +161,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L12",
-      "id": "nexora_package_dependencies",
+      "id": "nexoraa_package_dependencies",
       "community": 1,
       "norm_label": "dependencies"
     },
@@ -170,7 +170,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L13",
-      "id": "nexora_package_dependencies_emailjs_browser",
+      "id": "nexoraa_package_dependencies_emailjs_browser",
       "community": 1,
       "norm_label": "@emailjs/browser"
     },
@@ -179,7 +179,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L14",
-      "id": "nexora_package_dependencies_gsap_react",
+      "id": "nexoraa_package_dependencies_gsap_react",
       "community": 1,
       "norm_label": "@gsap/react"
     },
@@ -188,7 +188,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L15",
-      "id": "nexora_package_dependencies_react_oauth_google",
+      "id": "nexoraa_package_dependencies_react_oauth_google",
       "community": 1,
       "norm_label": "@react-oauth/google"
     },
@@ -197,7 +197,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L16",
-      "id": "nexora_package_dependencies_react_three_drei",
+      "id": "nexoraa_package_dependencies_react_three_drei",
       "community": 1,
       "norm_label": "@react-three/drei"
     },
@@ -206,7 +206,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L17",
-      "id": "nexora_package_dependencies_react_three_fiber",
+      "id": "nexoraa_package_dependencies_react_three_fiber",
       "community": 1,
       "norm_label": "@react-three/fiber"
     },
@@ -215,7 +215,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L18",
-      "id": "nexora_package_dependencies_splinetool_react_spline",
+      "id": "nexoraa_package_dependencies_splinetool_react_spline",
       "community": 1,
       "norm_label": "@splinetool/react-spline"
     },
@@ -224,7 +224,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L19",
-      "id": "nexora_package_dependencies_splinetool_runtime",
+      "id": "nexoraa_package_dependencies_splinetool_runtime",
       "community": 1,
       "norm_label": "@splinetool/runtime"
     },
@@ -233,7 +233,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L20",
-      "id": "nexora_package_dependencies_supabase_supabase_js",
+      "id": "nexoraa_package_dependencies_supabase_supabase_js",
       "community": 1,
       "norm_label": "@supabase/supabase-js"
     },
@@ -242,7 +242,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L21",
-      "id": "nexora_package_dependencies_tailwindcss_vite",
+      "id": "nexoraa_package_dependencies_tailwindcss_vite",
       "community": 1,
       "norm_label": "@tailwindcss/vite"
     },
@@ -251,7 +251,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L22",
-      "id": "nexora_package_dependencies_tsparticles_react",
+      "id": "nexoraa_package_dependencies_tsparticles_react",
       "community": 1,
       "norm_label": "@tsparticles/react"
     },
@@ -260,7 +260,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L23",
-      "id": "nexora_package_dependencies_tsparticles_slim",
+      "id": "nexoraa_package_dependencies_tsparticles_slim",
       "community": 1,
       "norm_label": "@tsparticles/slim"
     },
@@ -269,7 +269,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L24",
-      "id": "nexora_package_dependencies_animejs",
+      "id": "nexoraa_package_dependencies_animejs",
       "community": 1,
       "norm_label": "animejs"
     },
@@ -278,7 +278,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L25",
-      "id": "nexora_package_dependencies_canvas_confetti",
+      "id": "nexoraa_package_dependencies_canvas_confetti",
       "community": 1,
       "norm_label": "canvas-confetti"
     },
@@ -287,7 +287,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L26",
-      "id": "nexora_package_dependencies_clsx",
+      "id": "nexoraa_package_dependencies_clsx",
       "community": 1,
       "norm_label": "clsx"
     },
@@ -296,7 +296,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L27",
-      "id": "nexora_package_dependencies_framer_motion",
+      "id": "nexoraa_package_dependencies_framer_motion",
       "community": 1,
       "norm_label": "framer-motion"
     },
@@ -305,7 +305,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L28",
-      "id": "nexora_package_dependencies_gsap",
+      "id": "nexoraa_package_dependencies_gsap",
       "community": 1,
       "norm_label": "gsap"
     },
@@ -314,7 +314,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L29",
-      "id": "nexora_package_dependencies_jwt_decode",
+      "id": "nexoraa_package_dependencies_jwt_decode",
       "community": 1,
       "norm_label": "jwt-decode"
     },
@@ -323,7 +323,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L30",
-      "id": "nexora_package_dependencies_lenis",
+      "id": "nexoraa_package_dependencies_lenis",
       "community": 1,
       "norm_label": "lenis"
     },
@@ -332,7 +332,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L31",
-      "id": "nexora_package_dependencies_lottie_react",
+      "id": "nexoraa_package_dependencies_lottie_react",
       "community": 1,
       "norm_label": "lottie-react"
     },
@@ -341,7 +341,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L32",
-      "id": "nexora_package_dependencies_lucide_react",
+      "id": "nexoraa_package_dependencies_lucide_react",
       "community": 1,
       "norm_label": "lucide-react"
     },
@@ -350,7 +350,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L33",
-      "id": "nexora_package_dependencies_maath",
+      "id": "nexoraa_package_dependencies_maath",
       "community": 1,
       "norm_label": "maath"
     },
@@ -359,7 +359,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L34",
-      "id": "nexora_package_dependencies_nodemailer",
+      "id": "nexoraa_package_dependencies_nodemailer",
       "community": 1,
       "norm_label": "nodemailer"
     },
@@ -368,7 +368,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L35",
-      "id": "nexora_package_dependencies_pdf_parse",
+      "id": "nexoraa_package_dependencies_pdf_parse",
       "community": 1,
       "norm_label": "pdf-parse"
     },
@@ -377,7 +377,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L36",
-      "id": "nexora_package_dependencies_react",
+      "id": "nexoraa_package_dependencies_react",
       "community": 1,
       "norm_label": "react"
     },
@@ -386,7 +386,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L37",
-      "id": "nexora_package_dependencies_react_countup",
+      "id": "nexoraa_package_dependencies_react_countup",
       "community": 1,
       "norm_label": "react-countup"
     },
@@ -395,7 +395,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L38",
-      "id": "nexora_package_dependencies_react_dom",
+      "id": "nexoraa_package_dependencies_react_dom",
       "community": 1,
       "norm_label": "react-dom"
     },
@@ -404,7 +404,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L39",
-      "id": "nexora_package_dependencies_react_helmet_async",
+      "id": "nexoraa_package_dependencies_react_helmet_async",
       "community": 1,
       "norm_label": "react-helmet-async"
     },
@@ -413,7 +413,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L40",
-      "id": "nexora_package_dependencies_react_hot_toast",
+      "id": "nexoraa_package_dependencies_react_hot_toast",
       "community": 1,
       "norm_label": "react-hot-toast"
     },
@@ -422,7 +422,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L41",
-      "id": "nexora_package_dependencies_react_icons",
+      "id": "nexoraa_package_dependencies_react_icons",
       "community": 1,
       "norm_label": "react-icons"
     },
@@ -431,7 +431,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L42",
-      "id": "nexora_package_dependencies_react_intersection_observer",
+      "id": "nexoraa_package_dependencies_react_intersection_observer",
       "community": 1,
       "norm_label": "react-intersection-observer"
     },
@@ -440,7 +440,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L43",
-      "id": "nexora_package_dependencies_react_parallax_tilt",
+      "id": "nexoraa_package_dependencies_react_parallax_tilt",
       "community": 1,
       "norm_label": "react-parallax-tilt"
     },
@@ -449,7 +449,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L44",
-      "id": "nexora_package_dependencies_react_router_dom",
+      "id": "nexoraa_package_dependencies_react_router_dom",
       "community": 1,
       "norm_label": "react-router-dom"
     },
@@ -458,7 +458,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L45",
-      "id": "nexora_package_dependencies_react_tilt",
+      "id": "nexoraa_package_dependencies_react_tilt",
       "community": 1,
       "norm_label": "react-tilt"
     },
@@ -467,7 +467,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L46",
-      "id": "nexora_package_dependencies_swiper",
+      "id": "nexoraa_package_dependencies_swiper",
       "community": 1,
       "norm_label": "swiper"
     },
@@ -476,7 +476,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L47",
-      "id": "nexora_package_dependencies_tailwind_merge",
+      "id": "nexoraa_package_dependencies_tailwind_merge",
       "community": 1,
       "norm_label": "tailwind-merge"
     },
@@ -485,7 +485,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L48",
-      "id": "nexora_package_dependencies_three",
+      "id": "nexoraa_package_dependencies_three",
       "community": 1,
       "norm_label": "three"
     },
@@ -494,7 +494,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L49",
-      "id": "nexora_package_dependencies_typed_js",
+      "id": "nexoraa_package_dependencies_typed_js",
       "community": 1,
       "norm_label": "typed.js"
     },
@@ -503,7 +503,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L50",
-      "id": "nexora_package_dependencies_typewriter_effect",
+      "id": "nexoraa_package_dependencies_typewriter_effect",
       "community": 1,
       "norm_label": "typewriter-effect"
     },
@@ -512,7 +512,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L52",
-      "id": "nexora_package_devdependencies",
+      "id": "nexoraa_package_devdependencies",
       "community": 5,
       "norm_label": "devdependencies"
     },
@@ -521,7 +521,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L53",
-      "id": "nexora_package_devdependencies_eslint_js",
+      "id": "nexoraa_package_devdependencies_eslint_js",
       "community": 5,
       "norm_label": "@eslint/js"
     },
@@ -530,7 +530,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L54",
-      "id": "nexora_package_devdependencies_tailwindcss_forms",
+      "id": "nexoraa_package_devdependencies_tailwindcss_forms",
       "community": 5,
       "norm_label": "@tailwindcss/forms"
     },
@@ -539,7 +539,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L55",
-      "id": "nexora_package_devdependencies_tailwindcss_typography",
+      "id": "nexoraa_package_devdependencies_tailwindcss_typography",
       "community": 5,
       "norm_label": "@tailwindcss/typography"
     },
@@ -548,7 +548,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L56",
-      "id": "nexora_package_devdependencies_types_react",
+      "id": "nexoraa_package_devdependencies_types_react",
       "community": 5,
       "norm_label": "@types/react"
     },
@@ -557,7 +557,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L57",
-      "id": "nexora_package_devdependencies_types_react_dom",
+      "id": "nexoraa_package_devdependencies_types_react_dom",
       "community": 5,
       "norm_label": "@types/react-dom"
     },
@@ -566,7 +566,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L58",
-      "id": "nexora_package_devdependencies_vitejs_plugin_react",
+      "id": "nexoraa_package_devdependencies_vitejs_plugin_react",
       "community": 5,
       "norm_label": "@vitejs/plugin-react"
     },
@@ -575,7 +575,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L59",
-      "id": "nexora_package_devdependencies_autoprefixer",
+      "id": "nexoraa_package_devdependencies_autoprefixer",
       "community": 5,
       "norm_label": "autoprefixer"
     },
@@ -584,7 +584,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L60",
-      "id": "nexora_package_devdependencies_eslint",
+      "id": "nexoraa_package_devdependencies_eslint",
       "community": 5,
       "norm_label": "eslint"
     },
@@ -593,7 +593,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L61",
-      "id": "nexora_package_devdependencies_eslint_plugin_react_hooks",
+      "id": "nexoraa_package_devdependencies_eslint_plugin_react_hooks",
       "community": 5,
       "norm_label": "eslint-plugin-react-hooks"
     },
@@ -602,7 +602,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L62",
-      "id": "nexora_package_devdependencies_eslint_plugin_react_refresh",
+      "id": "nexoraa_package_devdependencies_eslint_plugin_react_refresh",
       "community": 5,
       "norm_label": "eslint-plugin-react-refresh"
     },
@@ -611,7 +611,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L63",
-      "id": "nexora_package_devdependencies_globals",
+      "id": "nexoraa_package_devdependencies_globals",
       "community": 5,
       "norm_label": "globals"
     },
@@ -620,7 +620,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L64",
-      "id": "nexora_package_devdependencies_postcss",
+      "id": "nexoraa_package_devdependencies_postcss",
       "community": 5,
       "norm_label": "postcss"
     },
@@ -629,7 +629,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L65",
-      "id": "nexora_package_devdependencies_tailwindcss",
+      "id": "nexoraa_package_devdependencies_tailwindcss",
       "community": 5,
       "norm_label": "tailwindcss"
     },
@@ -638,7 +638,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L66",
-      "id": "nexora_package_devdependencies_vite",
+      "id": "nexoraa_package_devdependencies_vite",
       "community": 5,
       "norm_label": "vite"
     },
@@ -665,7 +665,7 @@
       "file_type": "code",
       "source_file": "vercel.json",
       "source_location": "L2",
-      "id": "nexora_vercel_rewrites",
+      "id": "nexoraa_vercel_rewrites",
       "community": 18,
       "norm_label": "rewrites"
     },
@@ -683,7 +683,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L8",
-      "id": "nexora_vite_config_filename",
+      "id": "nexoraa_vite_config_filename",
       "community": 29,
       "norm_label": "__filename"
     },
@@ -692,7 +692,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L9",
-      "id": "nexora_vite_config_dirname",
+      "id": "nexoraa_vite_config_dirname",
       "community": 29,
       "norm_label": "__dirname"
     },
@@ -701,7 +701,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L12",
-      "id": "nexora_vite_config_envpath",
+      "id": "nexoraa_vite_config_envpath",
       "community": 29,
       "norm_label": "envpath"
     },
@@ -710,7 +710,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L14",
-      "id": "nexora_vite_config_envcontent",
+      "id": "nexoraa_vite_config_envcontent",
       "community": 29,
       "norm_label": "envcontent"
     },
@@ -719,7 +719,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L16",
-      "id": "nexora_vite_config_parts",
+      "id": "nexoraa_vite_config_parts",
       "community": 29,
       "norm_label": "parts"
     },
@@ -728,7 +728,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L18",
-      "id": "nexora_vite_config_key",
+      "id": "nexoraa_vite_config_key",
       "community": 29,
       "norm_label": "key"
     },
@@ -737,7 +737,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L19",
-      "id": "nexora_vite_config_val",
+      "id": "nexoraa_vite_config_val",
       "community": 29,
       "norm_label": "val"
     },
@@ -746,7 +746,7 @@
       "file_type": "code",
       "source_file": "vite.config.js",
       "source_location": "L37",
-      "id": "nexora_vite_config_configureserver",
+      "id": "nexoraa_vite_config_configureserver",
       "community": 29,
       "norm_label": "configureserver()"
     },
@@ -3874,31 +3874,31 @@
       "norm_label": "trustbadges()"
     },
     {
-      "label": "WhyNexora.jsx",
+      "label": "WhyNexoraa.jsx",
       "file_type": "code",
-      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_file": "src/components/sections/WhyNexoraa.jsx",
       "source_location": "L1",
-      "id": "src_components_sections_whynexora_jsx",
+      "id": "src_components_sections_whynexoraa_jsx",
       "community": 4,
-      "norm_label": "whynexora.jsx"
+      "norm_label": "whynexoraa.jsx"
     },
     {
       "label": "BentoCard",
       "file_type": "code",
-      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_file": "src/components/sections/WhyNexoraa.jsx",
       "source_location": "L13",
-      "id": "sections_whynexora_bentocard",
+      "id": "sections_whynexoraa_bentocard",
       "community": 4,
       "norm_label": "bentocard"
     },
     {
-      "label": "WhyNexora()",
+      "label": "WhyNexoraa()",
       "file_type": "code",
-      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_file": "src/components/sections/WhyNexoraa.jsx",
       "source_location": "L86",
-      "id": "sections_whynexora_whynexora",
+      "id": "sections_whynexoraa_whynexoraa",
       "community": 4,
-      "norm_label": "whynexora()"
+      "norm_label": "whynexoraa()"
     },
     {
       "label": "Work.jsx",
@@ -5129,7 +5129,7 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L1",
-      "id": "nexora_readme_react_vite",
+      "id": "nexoraa_readme_react_vite",
       "community": 13,
       "norm_label": "react + vite"
     },
@@ -5138,7 +5138,7 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L10",
-      "id": "nexora_readme_react_compiler",
+      "id": "nexoraa_readme_react_compiler",
       "community": 13,
       "norm_label": "react compiler"
     },
@@ -5147,7 +5147,7 @@
       "file_type": "document",
       "source_file": "README.md",
       "source_location": "L14",
-      "id": "nexora_readme_expanding_the_eslint_configuration",
+      "id": "nexoraa_readme_expanding_the_eslint_configuration",
       "community": 13,
       "norm_label": "expanding the eslint configuration"
     },
@@ -5827,7 +5827,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_content"
+      "target": "nexoraa_clean_content"
     },
     {
       "relation": "contains",
@@ -5837,7 +5837,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_dirname"
+      "target": "nexoraa_clean_dirname"
     },
     {
       "relation": "contains",
@@ -5847,7 +5847,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_filename"
+      "target": "nexoraa_clean_filename"
     },
     {
       "relation": "contains",
@@ -5857,7 +5857,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_files"
+      "target": "nexoraa_clean_files"
     },
     {
       "relation": "contains",
@@ -5867,7 +5867,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "clean_mjs",
-      "target": "nexora_clean_walk"
+      "target": "nexoraa_clean_walk"
     },
     {
       "relation": "contains",
@@ -5877,7 +5877,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_dependencies"
+      "target": "nexoraa_package_dependencies"
     },
     {
       "relation": "contains",
@@ -5887,7 +5887,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_devdependencies"
+      "target": "nexoraa_package_devdependencies"
     },
     {
       "relation": "contains",
@@ -5897,7 +5897,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_name"
+      "target": "nexoraa_package_name"
     },
     {
       "relation": "contains",
@@ -5907,7 +5907,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_private"
+      "target": "nexoraa_package_private"
     },
     {
       "relation": "contains",
@@ -5917,7 +5917,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_scripts"
+      "target": "nexoraa_package_scripts"
     },
     {
       "relation": "contains",
@@ -5927,7 +5927,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_type"
+      "target": "nexoraa_package_type"
     },
     {
       "relation": "contains",
@@ -5937,7 +5937,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "package_json",
-      "target": "nexora_package_version"
+      "target": "nexoraa_package_version"
     },
     {
       "relation": "contains",
@@ -5946,8 +5946,8 @@
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_scripts",
-      "target": "nexora_package_scripts_build"
+      "source": "nexoraa_package_scripts",
+      "target": "nexoraa_package_scripts_build"
     },
     {
       "relation": "contains",
@@ -5956,8 +5956,8 @@
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_scripts",
-      "target": "nexora_package_scripts_dev"
+      "source": "nexoraa_package_scripts",
+      "target": "nexoraa_package_scripts_dev"
     },
     {
       "relation": "contains",
@@ -5966,8 +5966,8 @@
       "source_location": "L9",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_scripts",
-      "target": "nexora_package_scripts_lint"
+      "source": "nexoraa_package_scripts",
+      "target": "nexoraa_package_scripts_lint"
     },
     {
       "relation": "contains",
@@ -5976,8 +5976,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_scripts",
-      "target": "nexora_package_scripts_preview"
+      "source": "nexoraa_package_scripts",
+      "target": "nexoraa_package_scripts_preview"
     },
     {
       "relation": "contains",
@@ -5986,8 +5986,8 @@
       "source_location": "L21",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_animejs"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_animejs"
     },
     {
       "relation": "contains",
@@ -5996,8 +5996,8 @@
       "source_location": "L22",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_canvas_confetti"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_canvas_confetti"
     },
     {
       "relation": "contains",
@@ -6006,8 +6006,8 @@
       "source_location": "L23",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_clsx"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_clsx"
     },
     {
       "relation": "contains",
@@ -6016,8 +6016,8 @@
       "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_emailjs_browser"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_emailjs_browser"
     },
     {
       "relation": "contains",
@@ -6026,8 +6026,8 @@
       "source_location": "L24",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_framer_motion"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_framer_motion"
     },
     {
       "relation": "contains",
@@ -6036,8 +6036,8 @@
       "source_location": "L25",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_gsap"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_gsap"
     },
     {
       "relation": "contains",
@@ -6046,8 +6046,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_gsap_react"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_gsap_react"
     },
     {
       "relation": "contains",
@@ -6056,8 +6056,8 @@
       "source_location": "L26",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_jwt_decode"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_jwt_decode"
     },
     {
       "relation": "contains",
@@ -6066,8 +6066,8 @@
       "source_location": "L27",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_lenis"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_lenis"
     },
     {
       "relation": "contains",
@@ -6076,8 +6076,8 @@
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_lottie_react"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_lottie_react"
     },
     {
       "relation": "contains",
@@ -6086,8 +6086,8 @@
       "source_location": "L29",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_lucide_react"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_lucide_react"
     },
     {
       "relation": "contains",
@@ -6096,8 +6096,8 @@
       "source_location": "L30",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_maath"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_maath"
     },
     {
       "relation": "contains",
@@ -6106,8 +6106,8 @@
       "source_location": "L33",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_nodemailer"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_nodemailer"
     },
     {
       "relation": "contains",
@@ -6116,8 +6116,8 @@
       "source_location": "L31",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_pdf_parse"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_pdf_parse"
     },
     {
       "relation": "contains",
@@ -6126,8 +6126,8 @@
       "source_location": "L32",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react"
     },
     {
       "relation": "contains",
@@ -6136,8 +6136,8 @@
       "source_location": "L33",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_countup"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_countup"
     },
     {
       "relation": "contains",
@@ -6146,8 +6146,8 @@
       "source_location": "L34",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_dom"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_dom"
     },
     {
       "relation": "contains",
@@ -6156,8 +6156,8 @@
       "source_location": "L35",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_helmet_async"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_helmet_async"
     },
     {
       "relation": "contains",
@@ -6166,8 +6166,8 @@
       "source_location": "L36",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_hot_toast"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_hot_toast"
     },
     {
       "relation": "contains",
@@ -6176,8 +6176,8 @@
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_icons"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_icons"
     },
     {
       "relation": "contains",
@@ -6186,8 +6186,8 @@
       "source_location": "L37",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_intersection_observer"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_intersection_observer"
     },
     {
       "relation": "contains",
@@ -6196,8 +6196,8 @@
       "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_oauth_google"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_oauth_google"
     },
     {
       "relation": "contains",
@@ -6206,8 +6206,8 @@
       "source_location": "L38",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_parallax_tilt"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_parallax_tilt"
     },
     {
       "relation": "contains",
@@ -6216,8 +6216,8 @@
       "source_location": "L39",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_router_dom"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_router_dom"
     },
     {
       "relation": "contains",
@@ -6226,8 +6226,8 @@
       "source_location": "L16",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_three_drei"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_three_drei"
     },
     {
       "relation": "contains",
@@ -6236,8 +6236,8 @@
       "source_location": "L17",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_three_fiber"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_three_fiber"
     },
     {
       "relation": "contains",
@@ -6246,8 +6246,8 @@
       "source_location": "L40",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_react_tilt"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_react_tilt"
     },
     {
       "relation": "contains",
@@ -6256,8 +6256,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_splinetool_react_spline"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_splinetool_react_spline"
     },
     {
       "relation": "contains",
@@ -6266,8 +6266,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_splinetool_runtime"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_splinetool_runtime"
     },
     {
       "relation": "contains",
@@ -6276,8 +6276,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_supabase_supabase_js"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_supabase_supabase_js"
     },
     {
       "relation": "contains",
@@ -6286,8 +6286,8 @@
       "source_location": "L41",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_swiper"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_swiper"
     },
     {
       "relation": "contains",
@@ -6296,8 +6296,8 @@
       "source_location": "L42",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_tailwind_merge"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_tailwind_merge"
     },
     {
       "relation": "contains",
@@ -6306,8 +6306,8 @@
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_tailwindcss_vite"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_tailwindcss_vite"
     },
     {
       "relation": "contains",
@@ -6316,8 +6316,8 @@
       "source_location": "L43",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_three"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_three"
     },
     {
       "relation": "contains",
@@ -6326,8 +6326,8 @@
       "source_location": "L19",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_tsparticles_react"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_tsparticles_react"
     },
     {
       "relation": "contains",
@@ -6336,8 +6336,8 @@
       "source_location": "L20",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_tsparticles_slim"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_tsparticles_slim"
     },
     {
       "relation": "contains",
@@ -6346,8 +6346,8 @@
       "source_location": "L44",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_typed_js"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_typed_js"
     },
     {
       "relation": "contains",
@@ -6356,8 +6356,8 @@
       "source_location": "L45",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_dependencies",
-      "target": "nexora_package_dependencies_typewriter_effect"
+      "source": "nexoraa_package_dependencies",
+      "target": "nexoraa_package_dependencies_typewriter_effect"
     },
     {
       "relation": "contains",
@@ -6366,8 +6366,8 @@
       "source_location": "L54",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_autoprefixer"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_autoprefixer"
     },
     {
       "relation": "contains",
@@ -6376,8 +6376,8 @@
       "source_location": "L55",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_eslint"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_eslint"
     },
     {
       "relation": "contains",
@@ -6386,8 +6386,8 @@
       "source_location": "L48",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_eslint_js"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_eslint_js"
     },
     {
       "relation": "contains",
@@ -6396,8 +6396,8 @@
       "source_location": "L56",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_eslint_plugin_react_hooks"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_eslint_plugin_react_hooks"
     },
     {
       "relation": "contains",
@@ -6406,8 +6406,8 @@
       "source_location": "L57",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_eslint_plugin_react_refresh"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_eslint_plugin_react_refresh"
     },
     {
       "relation": "contains",
@@ -6416,8 +6416,8 @@
       "source_location": "L58",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_globals"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_globals"
     },
     {
       "relation": "contains",
@@ -6426,8 +6426,8 @@
       "source_location": "L59",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_postcss"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_postcss"
     },
     {
       "relation": "contains",
@@ -6436,8 +6436,8 @@
       "source_location": "L60",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_tailwindcss"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_tailwindcss"
     },
     {
       "relation": "contains",
@@ -6446,8 +6446,8 @@
       "source_location": "L49",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_tailwindcss_forms"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_tailwindcss_forms"
     },
     {
       "relation": "contains",
@@ -6456,8 +6456,8 @@
       "source_location": "L50",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_tailwindcss_typography"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_tailwindcss_typography"
     },
     {
       "relation": "contains",
@@ -6466,8 +6466,8 @@
       "source_location": "L51",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_types_react"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_types_react"
     },
     {
       "relation": "contains",
@@ -6476,8 +6476,8 @@
       "source_location": "L52",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_types_react_dom"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_types_react_dom"
     },
     {
       "relation": "contains",
@@ -6486,8 +6486,8 @@
       "source_location": "L61",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_vite"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_vite"
     },
     {
       "relation": "contains",
@@ -6496,8 +6496,8 @@
       "source_location": "L53",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_package_devdependencies",
-      "target": "nexora_package_devdependencies_vitejs_plugin_react"
+      "source": "nexoraa_package_devdependencies",
+      "target": "nexoraa_package_devdependencies_vitejs_plugin_react"
     },
     {
       "relation": "contains",
@@ -6507,7 +6507,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vercel_json",
-      "target": "nexora_vercel_rewrites"
+      "target": "nexoraa_vercel_rewrites"
     },
     {
       "relation": "contains",
@@ -6517,7 +6517,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_configureserver"
+      "target": "nexoraa_vite_config_configureserver"
     },
     {
       "relation": "contains",
@@ -6527,7 +6527,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_dirname"
+      "target": "nexoraa_vite_config_dirname"
     },
     {
       "relation": "contains",
@@ -6537,7 +6537,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_envcontent"
+      "target": "nexoraa_vite_config_envcontent"
     },
     {
       "relation": "contains",
@@ -6547,7 +6547,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_envpath"
+      "target": "nexoraa_vite_config_envpath"
     },
     {
       "relation": "contains",
@@ -6557,7 +6557,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_filename"
+      "target": "nexoraa_vite_config_filename"
     },
     {
       "relation": "contains",
@@ -6567,7 +6567,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_key"
+      "target": "nexoraa_vite_config_key"
     },
     {
       "relation": "contains",
@@ -6577,7 +6577,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_parts"
+      "target": "nexoraa_vite_config_parts"
     },
     {
       "relation": "contains",
@@ -6587,7 +6587,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "vite_config_js",
-      "target": "nexora_vite_config_val"
+      "target": "nexoraa_vite_config_val"
     },
     {
       "relation": "contains",
@@ -12004,22 +12004,22 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_file": "src/components/sections/WhyNexoraa.jsx",
       "source_location": "L13",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_components_sections_whynexora_jsx",
-      "target": "sections_whynexora_bentocard"
+      "source": "src_components_sections_whynexoraa_jsx",
+      "target": "sections_whynexoraa_bentocard"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src/components/sections/WhyNexora.jsx",
+      "source_file": "src/components/sections/WhyNexoraa.jsx",
       "source_location": "L77",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_components_sections_whynexora_jsx",
-      "target": "sections_whynexora_whynexora"
+      "source": "src_components_sections_whynexoraa_jsx",
+      "target": "sections_whynexoraa_whynexoraa"
     },
     {
       "relation": "imports_from",
@@ -12030,7 +12030,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "src_pages_home_jsx",
-      "target": "src_components_sections_whynexora_jsx"
+      "target": "src_components_sections_whynexoraa_jsx"
     },
     {
       "relation": "imports",
@@ -14057,7 +14057,7 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "readme_md",
-      "target": "nexora_readme_react_vite"
+      "target": "nexoraa_readme_react_vite"
     },
     {
       "relation": "contains",
@@ -14066,8 +14066,8 @@
       "source_location": "L14",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_readme_react_vite",
-      "target": "nexora_readme_expanding_the_eslint_configuration"
+      "source": "nexoraa_readme_react_vite",
+      "target": "nexoraa_readme_expanding_the_eslint_configuration"
     },
     {
       "relation": "contains",
@@ -14076,8 +14076,8 @@
       "source_location": "L10",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "nexora_readme_react_vite",
-      "target": "nexora_readme_react_compiler"
+      "source": "nexoraa_readme_react_vite",
+      "target": "nexoraa_readme_react_compiler"
     },
     {
       "relation": "contains",

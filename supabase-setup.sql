@@ -1,5 +1,5 @@
 -- ============================================
--- NEXORA CLIENT PORTAL - DATABASE SETUP
+-- NEXORAA CLIENT PORTAL - DATABASE SETUP
 -- Copy this ENTIRE script into Supabase SQL Editor and click "Run"
 -- ============================================
 
@@ -104,11 +104,11 @@ CREATE POLICY "Allow all operations on deliverables" ON public.deliverables FOR 
 
 -- Client 1: Nova Corp
 INSERT INTO public.clients (id, email, password_hash, client_name, company_name) VALUES
-  ('a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'nova@nexora.com', 'Nova@2026', 'Alex Johnson', 'Nova Corp');
+  ('a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'nova@nexoraa.com', 'Nova@2026', 'Alex Johnson', 'Nova Corp');
 
 -- Client 2: Stellar Inc
 INSERT INTO public.clients (id, email, password_hash, client_name, company_name) VALUES
-  ('b2c3d4e5-f6a7-8901-bcde-f12345678901', 'stellar@nexora.com', 'Stellar@2026', 'Sarah Williams', 'Stellar Inc');
+  ('b2c3d4e5-f6a7-8901-bcde-f12345678901', 'stellar@nexoraa.com', 'Stellar@2026', 'Sarah Williams', 'Stellar Inc');
 
 -- Projects for Client 1 (Nova Corp)
 INSERT INTO public.projects (id, client_id, project_name, description, status, progress, start_date, due_date) VALUES
@@ -148,7 +148,7 @@ INSERT INTO public.invoices (client_id, project_id, invoice_number, amount, stat
 
 -- Messages for Nova Corp
 INSERT INTO public.messages (client_id, sender, message, is_read) VALUES
-  ('a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'admin', 'Welcome to Nexora Studio! Your project dashboard is now live.', true),
+  ('a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'admin', 'Welcome to Nexoraa Studio! Your project dashboard is now live.', true),
   ('a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'client', 'Thanks! The mockups look amazing. Can we add one more page?', true),
   ('a1b2c3d4-e5f6-7890-abcd-ef1234567890', 'admin', 'Absolutely! I have added the extra page to the scope. Updated timeline shared.', false);
 

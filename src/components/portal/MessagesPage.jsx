@@ -157,7 +157,7 @@ const MessagesPage = ({ projectId, messages = [], setMessages }) => {
                 </div>
              </div>
              <div>
-                <h3 className="font-black text-white text-base tracking-wide">Nexora Core Team</h3>
+                <h3 className="font-black text-white text-base tracking-wide">Nexoraa Core Team</h3>
                 <p className="text-[11px] text-emerald-400 font-bold uppercase tracking-wider mt-0.5">Online & Ready</p>
              </div>
           </div>
@@ -175,7 +175,7 @@ const MessagesPage = ({ projectId, messages = [], setMessages }) => {
               </div>
               <div className="bg-white/[0.03] border border-white/[0.05] rounded-2xl rounded-tl-sm p-5 text-sm text-gray-300 max-w-[80%] leading-relaxed shadow-sm">
                 <p className="mb-3 font-bold text-white">{getGreeting()},</p>
-                <p>Welcome to your dedicated communication channel. This is the fastest way to reach the Nexora team for updates, questions, or feedback regarding your project.</p>
+                <p>Welcome to your dedicated communication channel. This is the fastest way to reach the Nexoraa team for updates, questions, or feedback regarding your project.</p>
                 <div className="mt-4 pt-3 border-t border-white/[0.05] flex items-center justify-between">
                   <span className="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Automated Message</span>
                   <span className="text-[10px] text-gray-500 font-mono">{new Date().toLocaleDateString()}</span>

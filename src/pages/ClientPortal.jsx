@@ -10,7 +10,7 @@ import {
   CalendarDays, Layers3, Play, MoreHorizontal, Plus, Command, Gauge, Users,
   ExternalLink, CircleDot, WalletCards, User, Lock, AlertCircle
 } from 'lucide-react';
-import nexoraLogo from '../assets/nexora-logo.png';
+import nexoraaLogo from '../assets/nexoraa-logo.png';
 import '../styles/client-portal.css';
 import { supabase } from '../lib/supabase';
 
@@ -21,25 +21,25 @@ const MOCK_DATA = {
   clients: [
     {
       id: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
-      email: 'ashish@nexora.com',
+      email: 'ashish@nexoraa.com',
       password_hash: 'Ashish@2026',
       client_name: 'Ashish Kumar',
-      company_name: 'Nexora',
+      company_name: 'Nexoraa',
       avatar_url: '/Video/image.png'
     },
     {
       id: 'b2c3d4e5-f6a7-8901-bcde-f12345678901',
-      email: 'stellar@nexora.com',
+      email: 'stellar@nexoraa.com',
       password_hash: 'Stellar@2026',
       client_name: 'Sarah Williams',
       company_name: 'Stellar Inc'
     },
     {
       id: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
-      email: 'client@nexora.com',
-      password_hash: 'NexoraClient2026',
+      email: 'client@nexoraa.com',
+      password_hash: 'NexoraaClient2026',
       client_name: 'Ashish Kumar',
-      company_name: 'Nexora',
+      company_name: 'Nexoraa',
       avatar_url: '/Video/image.png'
     }
   ],
@@ -246,7 +246,7 @@ const MOCK_DATA = {
       id: 'msg1',
       client_id: 'a1b2c3d4-e5f6-7890-abcd-ef1234567890',
       sender: 'admin',
-      message: 'Welcome to Nexora Studio! Your project dashboard is now live.',
+      message: 'Welcome to Nexoraa Studio! Your project dashboard is now live.',
       is_read: true,
       created_at: '2026-06-09T09:00:00Z'
     },
@@ -349,10 +349,10 @@ export default function ClientPortal() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [activeTab, setActiveTab] = useState('overview');
   const [rememberMe, setRememberMe] = useState(() => {
-    return localStorage.getItem('nexora_remember_me') !== 'false';
+    return localStorage.getItem('nexoraa_remember_me') !== 'false';
   });
   const [email, setEmail] = useState(() => {
-    return localStorage.getItem('nexora_remembered_email') || '';
+    return localStorage.getItem('nexoraa_remembered_email') || '';
   });
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -456,7 +456,7 @@ export default function ClientPortal() {
       const localInvs = MOCK_DATA.invoices.filter(i => i.client_id === localClient.id);
       setInvoices(localInvs);
 
-      const savedMessagesKey = `nexora_messages_${localClient.id}`;
+      const savedMessagesKey = `nexoraa_messages_${localClient.id}`;
       const savedMsgs = localStorage.getItem(savedMessagesKey);
       if (savedMsgs) {
         try {
@@ -477,9 +477,9 @@ export default function ClientPortal() {
 
   useEffect(() => {
     const facts = [
-      "Nexora Studio crafts premium digital business assets.",
+      "Nexoraa Studio crafts premium digital business assets.",
       "We blend high-end dark glassmorphism with buttery-smooth UI.",
-      "Nexora transforms standard dashboards into 'Mission Control' centers.",
+      "Nexoraa transforms standard dashboards into 'Mission Control' centers.",
       "Every pixel is engineered for a luxury digital experience.",
       "We don't just build websites; we engineer secure, scalable portals.",
       "Nexoraa Studio focuses on performance, aesthetics, and scalable growth."
@@ -487,7 +487,7 @@ export default function ClientPortal() {
     setFunFact(facts[Math.floor(Math.random() * facts.length)]);
 
     // Check for saved session in localStorage or sessionStorage
-    const savedSession = localStorage.getItem('nexora_client_session') || sessionStorage.getItem('nexora_client_session');
+    const savedSession = localStorage.getItem('nexoraa_client_session') || sessionStorage.getItem('nexoraa_client_session');
     let fetchPromise = Promise.resolve();
     if (savedSession) {
       try {
@@ -497,8 +497,8 @@ export default function ClientPortal() {
         fetchPromise = fetchClientData(clientData.id);
       } catch (err) {
         console.error('Failed to parse saved session', err);
-        localStorage.removeItem('nexora_client_session');
-        sessionStorage.removeItem('nexora_client_session');
+        localStorage.removeItem('nexoraa_client_session');
+        sessionStorage.removeItem('nexoraa_client_session');
       }
     }
 
@@ -620,14 +620,14 @@ export default function ClientPortal() {
       };
 
       if (rememberMe) {
-        localStorage.setItem('nexora_client_session', JSON.stringify(sessionData));
-        localStorage.setItem('nexora_remembered_email', email);
-        localStorage.setItem('nexora_remember_me', 'true');
+        localStorage.setItem('nexoraa_client_session', JSON.stringify(sessionData));
+        localStorage.setItem('nexoraa_remembered_email', email);
+        localStorage.setItem('nexoraa_remember_me', 'true');
       } else {
-        sessionStorage.setItem('nexora_client_session', JSON.stringify(sessionData));
-        localStorage.removeItem('nexora_client_session');
-        localStorage.removeItem('nexora_remembered_email');
-        localStorage.setItem('nexora_remember_me', 'false');
+        sessionStorage.setItem('nexoraa_client_session', JSON.stringify(sessionData));
+        localStorage.removeItem('nexoraa_client_session');
+        localStorage.removeItem('nexoraa_remembered_email');
+        localStorage.setItem('nexoraa_remember_me', 'false');
       }
       setClientInfo(authenticatedClient);
       setIsAuthenticated(true);
@@ -641,8 +641,8 @@ export default function ClientPortal() {
   };
 
   const handleSignOut = () => {
-    localStorage.removeItem('nexora_client_session');
-    sessionStorage.removeItem('nexora_client_session');
+    localStorage.removeItem('nexoraa_client_session');
+    sessionStorage.removeItem('nexoraa_client_session');
     setIsAuthenticated(false);
     setClientInfo(null);
     setProjects([]);
@@ -688,7 +688,7 @@ export default function ClientPortal() {
       };
 
       setMessages((prev) => [...prev, newMessage]);
-      const savedMessagesKey = `nexora_messages_${clientInfo.id}`;
+      const savedMessagesKey = `nexoraa_messages_${clientInfo.id}`;
       const currentSaved = localStorage.getItem(savedMessagesKey);
       let msgsArray = [];
       if (currentSaved) {
@@ -734,7 +734,7 @@ export default function ClientPortal() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen relative overflow-hidden flex items-center justify-center font-sans">
-        {/* Nexora Premium Dark Background */}
+        {/* Nexoraa Premium Dark Background */}
         <div className="absolute inset-0 bg-[#030407]">
           {/* Huge Blurred Logo Watermarks */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1000px] opacity-15 pointer-events-none">
@@ -773,7 +773,7 @@ export default function ClientPortal() {
           >
             <img
               src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png"
-              alt="Nexora Logo"
+              alt="Nexoraa Logo"
               className="w-full h-full object-cover"
             />
           </m.div>
@@ -967,7 +967,7 @@ export default function ClientPortal() {
 
                   {/* WhatsApp */}
                   <a
-                    href="https://wa.me/917383303388?text=Hi%20Nexora%2C%20I%20forgot%20my%20Client%20Portal%20password.%20Can%20you%20help%20me%20reset%20it%3F"
+                    href="https://wa.me/917383303388?text=Hi%20Nexoraa%2C%20I%20forgot%20my%20Client%20Portal%20password.%20Can%20you%20help%20me%20reset%20it%3F"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-green-500/[0.08] hover:border-green-500/30 transition-all group cursor-pointer"

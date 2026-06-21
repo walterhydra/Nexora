@@ -43,7 +43,7 @@ export default async function handler(req, res) {
     const clientHtml = `
         <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0B1120; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
           <div style="background: linear-gradient(135deg, #1a1a2e 0%, #0B1120 100%); padding: 40px 30px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexora Studio</h1>
+            <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexoraa Studio</h1>
             <p style="margin: 8px 0 0; color: #6b7280; font-size: 13px;">Client Agreement Document</p>
           </div>
           <div style="padding: 30px;">
@@ -51,7 +51,7 @@ export default async function handler(req, res) {
               Hi <strong style="color: #ffffff;">${fullName}</strong>,
             </p>
             <p style="color: #d1d5db; font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
-              Thank you for your interest in working with Nexora Studio. Please find the Client Agreement attached to this email.
+              Thank you for your interest in working with Nexoraa Studio. Please find the Client Agreement attached to this email.
             </p>
             <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin: 24px 0;">
               <p style="margin: 0 0 8px; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Your Details</p>
@@ -76,7 +76,7 @@ export default async function handler(req, res) {
           </div>
           <div style="background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
             <p style="margin: 0; color: #4b5563; font-size: 12px;">
-              © ${new Date().getFullYear()} Nexora Studio. All rights reserved.
+              © ${new Date().getFullYear()} Nexoraa Studio. All rights reserved.
             </p>
           </div>
         </div>
@@ -136,9 +136,9 @@ export default async function handler(req, res) {
       }
 
       const payload = {
-        sender: { name: 'Nexora Studio', email: senderEmail },
+        sender: { name: 'Nexoraa Studio', email: senderEmail },
         to: [{ email: email, name: fullName }],
-        subject: '📄 Nexora Client Agreement',
+        subject: '📄 Nexoraa Client Agreement',
         htmlContent: clientHtml,
       };
 
@@ -184,7 +184,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           sender: { name: 'Agreement Portal', email: senderEmail },
-          to: [{ email: adminEmail, name: 'Nexora Admin' }],
+          to: [{ email: adminEmail, name: 'Nexoraa Admin' }],
           subject: `📋 New Agreement Request — ${fullName}`,
           htmlContent: adminHtml
         })
@@ -196,9 +196,9 @@ export default async function handler(req, res) {
     // 2. RESEND PROVIDER (API-based, no App Password needed)
     if (process.env.RESEND_API_KEY) {
       const payload = {
-        from: 'Nexora Studio <onboarding@resend.dev>', // Default Resend test domain sender
+        from: 'Nexoraa Studio <onboarding@resend.dev>', // Default Resend test domain sender
         to: email,
-        subject: '📄 Nexora Client Agreement',
+        subject: '📄 Nexoraa Client Agreement',
         html: clientHtml,
       };
 
@@ -262,9 +262,9 @@ export default async function handler(req, res) {
       });
 
       const clientMailOptions = {
-        from: `"Nexora Studio" <${smtpEmail}>`,
+        from: `"Nexoraa Studio" <${smtpEmail}>`,
         to: email,
-        subject: '📄 Nexora Client Agreement',
+        subject: '📄 Nexoraa Client Agreement',
         html: clientHtml,
         attachments: [
           {

@@ -132,10 +132,10 @@ export default function NovaWidget() {
 
   const quickRepliesData = [
     {
-      title: 'About Nexora',
+      title: 'About Nexoraa',
       desc: 'Our vision & agency details',
       icon: <Building2 className="w-3.5 h-3.5 text-accent-blue" />,
-      text: '🏢 About Nexora'
+      text: '🏢 About Nexoraa'
     },
     {
       title: 'Meet the Team',
@@ -291,8 +291,8 @@ export default function NovaWidget() {
           {
             role: 'assistant',
             content: flowState === 'completed'
-              ? "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
-              : "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore?",
+              ? "Hey! 👋 I'm Nova, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
+              : "Hey! 👋 I'm Nova, your guide to Nexoraa Studio. Great to have you here! What would you like to explore?",
             isNew: true
           }
         ]);
@@ -422,7 +422,7 @@ export default function NovaWidget() {
         setFlowState('completed');
         setMessages([...nextMsgs, {
           role: 'assistant',
-          content: "Email verified successfully! Welcome to Nexora Studio. What would you like to explore? \n\n[OPTIONS]",
+          content: "Email verified successfully! Welcome to Nexoraa Studio. What would you like to explore? \n\n[OPTIONS]",
           isNew: true
         }]);
       } catch (err) {
@@ -441,20 +441,20 @@ export default function NovaWidget() {
     // Intercept quick replies for instant premium responses
     const lowerText = text.toLowerCase();
     if (
-      lowerText.includes('about nexora') ||
+      lowerText.includes('about nexoraa') ||
       lowerText.includes('about founder') ||
       lowerText.includes('about company') ||
       lowerText.includes('about section') ||
       lowerText.includes('who is the founder') ||
       lowerText.includes('milan') ||
-      text === '🏢 About Nexora'
+      text === '🏢 About Nexoraa'
     ) {
-      const aboutResponse = `🏢 **About Nexora Studio**
-Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
+      const aboutResponse = `🏢 **About Nexoraa Studio**
+Nexoraa Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
 
 👑 **Meet the Founder & CEO**
 • **Milan Pandavadara** (Full Stack Architect & Visionary)
-Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
+Milan leads Nexoraa with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
 • **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/
 • **GitHub**: https://github.com/walterhydra
 • **Portfolio**: https://www.walterhydra.me
@@ -464,7 +464,7 @@ Milan leads Nexora with a builder-first philosophy, bridging the gap between adv
 • **High-Performance Code**: Every application is optimized for speed, reliability, and modern SEO best practices.
 • **Innovative Design**: We build custom layouts with smooth animations and curated color palettes, refusing generic templates.
 
-📞 **Contact Nexora**
+📞 **Contact Nexoraa**
 • **Email**: nexoraa.works@gmail.com
 • **Phone**: +91 7383303388
 
@@ -516,7 +516,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
     }
 
     if (lowerText.includes('our services') || text === '🚀 Our Services') {
-      const servicesResponse = `Nexora Studio offers premium end-to-end digital solutions tailored to elevate your business:
+      const servicesResponse = `Nexoraa Studio offers premium end-to-end digital solutions tailored to elevate your business:
 
 • **Web & Mobile App Development**: High-performance, responsive React/Next.js/Vite applications and robust mobile apps.
 • **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX designs.
@@ -570,7 +570,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
     }
 
     if (lowerText.includes('pricing') || lowerText.includes('package') || text === '💰 Pricing & Packages') {
-      const pricingResponse = `💰 **Nexora Pricing & Packages**
+      const pricingResponse = `💰 **Nexoraa Pricing & Packages**
 We offer transparent, package-based pricing tailored to your project goals and scale:
 
 • **Starter Package** (₹15,000 / $200)
@@ -604,7 +604,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
 
 • 📩 **Email**: [nexoraa.works@gmail.com](mailto:nexoraa.works@gmail.com)
 • 📞 **Phone**: [+91 7383303388](tel:+917383303388)
-• 💼 **LinkedIn**: [Nexora Studio](https://www.linkedin.com/in/milan-pandavdara/)
+• 💼 **LinkedIn**: [Nexoraa Studio](https://www.linkedin.com/in/milan-pandavdara/)
 • 💻 **GitHub**: [walterhydra](https://github.com/walterhydra)
 • 🌐 **Portfolio**: [walterhydra.me](https://www.walterhydra.me)
 
@@ -669,18 +669,18 @@ Do you want to know about other things? \n\n[OPTIONS]`;
         lowerText === 'hello' ||
         lowerText === 'hey'
       ) {
-        fallbackResponse = "Hey! 👋 I'm Nova, your guide to Nexora Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]";
+        fallbackResponse = "Hey! 👋 I'm Nova, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]";
       } else if (lowerText.match(/^(how are you|hows it going|how do you do|are you okay|doing)/i)) {
-        fallbackResponse = "I'm doing fantastic, thank you! 🚀 Ready to help you build premium web apps or explore Nexora. What's on your mind? \n\n[OPTIONS]";
+        fallbackResponse = "I'm doing fantastic, thank you! 🚀 Ready to help you build premium web apps or explore Nexoraa. What's on your mind? \n\n[OPTIONS]";
       } else if (lowerText.match(/^(thank you|thanks|ty|awesome|great|perfect|ok|okay|nice)/i)) {
         fallbackResponse = "You're very welcome! Let me know if there's anything else I can assist you with. 😊 \n\n[OPTIONS]";
       } else if (lowerText.includes('about') || lowerText.includes('founder') || lowerText.includes('milan')) {
-        fallbackResponse = `🏢 **About Nexora Studio**
-Nexora Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
+        fallbackResponse = `🏢 **About Nexoraa Studio**
+Nexoraa Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
 
 👑 **Meet the Founder & CEO**
 • **Milan Pandavadara** (Full Stack Architect & Visionary)
-Milan leads Nexora with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
+Milan leads Nexoraa with a builder-first philosophy, bridging the gap between advanced engineering and high-level product design. With years of hands-on experience in full-stack architecture, API integration, and cloud ecosystems, he ensures that every digital solution we deliver is optimized for scale, performance, and unmatched visual aesthetics.
 • **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/
 • **GitHub**: https://github.com/walterhydra
 • **Portfolio**: https://www.walterhydra.me
@@ -690,7 +690,7 @@ Milan leads Nexora with a builder-first philosophy, bridging the gap between adv
 • **High-Performance Code**: Every application is optimized for speed, reliability, and modern SEO best practices.
 • **Innovative Design**: We build custom layouts with smooth animations and curated color palettes, refusing generic templates.
 
-📞 **Contact Nexora**
+📞 **Contact Nexoraa**
 • **Email**: nexoraa.works@gmail.com
 • **Phone**: +91 7383303388
 
@@ -698,11 +698,11 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
       } else if (lowerText.includes('team')) {
         fallbackResponse = "We have an exceptional, remote-first team of experts led by our Founder & CEO, **Milan**.\n\n**Core Team & Leadership:**\n• **Milan Pandavadara** — Founder & CEO (Full Stack Architect)\n• **Gaurav Thakur** — Technical Lead (Mobile & Backend Systems)\n• **Alis Patel** — Full-Stack Architect (Node.js & DevOps)\n• **Abhishek Jha** — Backend Developer (Java & Systems)\n• **Stany Gregor** — Software Engineer (Web Systems)\n• **Divyansh** — Software Engineer (Frontend Engineer)\n• **Rajkumar Shah** — Software Engineer (Web Systems)\n• **Riya Sharma** — Social Media Handler (Branding & Strategy)\n\nWhat would you like to explore? \n\n[OPTIONS]";
       } else if (lowerText.includes('services')) {
-        fallbackResponse = "Nexora Studio offers premium end-to-end digital solutions:\n\n• **Web & Mobile App Development**: React/Next.js/Vite and robust mobile apps.\n• **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX.\n• **Automation & AI Integration**: Custom AI pipelines and chatbot integrations.\n• **DevOps & Cloud Systems**: Secure, scalable setup on AWS, Vercel, and Supabase.\n• **SEO**: Advanced SEO audit and implementation for visibility.\n\nWhat are you looking to build? \n\n[OPTIONS]";
+        fallbackResponse = "Nexoraa Studio offers premium end-to-end digital solutions:\n\n• **Web & Mobile App Development**: React/Next.js/Vite and robust mobile apps.\n• **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX.\n• **Automation & AI Integration**: Custom AI pipelines and chatbot integrations.\n• **DevOps & Cloud Systems**: Secure, scalable setup on AWS, Vercel, and Supabase.\n• **SEO**: Advanced SEO audit and implementation for visibility.\n\nWhat are you looking to build? \n\n[OPTIONS]";
       } else if (lowerText.includes('contact')) {
         fallbackResponse = "We'd love to collaborate on your next premium project!\n\n• 📩 **Email**: nexoraa.works@gmail.com\n• 📞 **Phone**: +91 7383303388\n• 💼 **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/\n• 🌐 **Portfolio**: https://www.walterhydra.me\n\nLet us know how we can help! \n\n[OPTIONS]";
       } else if (lowerText.includes('pricing') || lowerText.includes('package')) {
-        fallbackResponse = `💰 **Nexora Pricing & Packages**
+        fallbackResponse = `💰 **Nexoraa Pricing & Packages**
 We offer transparent, package-based pricing:
 
 • **Starter Package** (₹15,000 / $200): Best for landing pages and simple business sites.
@@ -1131,10 +1131,10 @@ What package matches your requirements? \n\n[OPTIONS]`;
                 </div>
 
                 <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-                  <div className="text-center font-bold text-white text-[10px] tracking-widest uppercase border-b border-white/5 pb-2 mb-2 font-mono">NEXORA STUDIO HR DEPT</div>
+                  <div className="text-center font-bold text-white text-[10px] tracking-widest uppercase border-b border-white/5 pb-2 mb-2 font-mono">NEXORAA STUDIO HR DEPT</div>
                   <p className="text-[10px] text-gray-500 font-mono">Date: June 12, 2026</p>
                   <p>Dear **{selectedIntern.name}**,</p>
-                  <p>We are thrilled to offer you the position of **{selectedIntern.role}** at Nexora Studio. During your time with us, you will work closely with Milan (Founder) and our engineering leaders to design and implement premium, high-performance web products.</p>
+                  <p>We are thrilled to offer you the position of **{selectedIntern.role}** at Nexoraa Studio. During your time with us, you will work closely with Milan (Founder) and our engineering leaders to design and implement premium, high-performance web products.</p>
 
                   <p className="font-semibold text-white uppercase text-[10px] tracking-wider text-accent-blue">1. Stipend & Compensation</p>
                   <p>You will receive a monthly stipend of **{selectedIntern.stipend}**, paid during the first week of each consecutive month.</p>
@@ -1238,7 +1238,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
 
             <div className="flex-1 overflow-y-auto space-y-4 pr-1 text-gray-300 text-xs leading-relaxed font-light scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
               <div className="text-center font-bold text-white text-xs pb-1 uppercase font-mono tracking-wider">7-Day Elite Development Sprint</div>
-              <p>Nexora Studio proposes a high-fidelity client portal build featuring database integration, secure authentication modules, and customized user dashboards.</p>
+              <p>Nexoraa Studio proposes a high-fidelity client portal build featuring database integration, secure authentication modules, and customized user dashboards.</p>
 
               <div className="border border-white/5 rounded-xl p-3 bg-white/[0.01] space-y-2">
                 <div className="flex justify-between items-center text-[9px] uppercase font-bold text-gray-400">
@@ -1393,7 +1393,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                     {/* Brand */}
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(91,164,230,0.3)]">
-                        <img src="/logo/ChatGPT Image Jun 9, 2026, 09_17_40 PM.png" alt="Nexora Logo" className="w-full h-full object-contain" />
+                        <img src="/logo/ChatGPT Image Jun 9, 2026, 09_17_40 PM.png" alt="Nexoraa Logo" className="w-full h-full object-contain" />
                       </div>
                       <div>
                         <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexoraa Studio</h2>
@@ -1423,7 +1423,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                         </div>
                       </div>
                       <p className="text-[10px] leading-relaxed text-gray-400 font-light">
-                        Full Stack Architect leading Nexora Studio with a builder-first vision.
+                        Full Stack Architect leading Nexoraa Studio with a builder-first vision.
                       </p>
                     </div>
 
@@ -1685,7 +1685,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                               </button>
                             </div>
                             <div className="text-center mt-3 mb-1 font-sans">
-                              <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexora AI</p>
+                              <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexoraa AI</p>
                             </div>
                           </div>
                         </m.div>

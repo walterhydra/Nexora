@@ -1,4 +1,4 @@
-# Graph Report - Nexora  (2026-06-14)
+# Graph Report - Nexoraa  (2026-06-14)
 
 ## Corpus Check
 - 138 files · ~2,789,311 words

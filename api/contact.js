@@ -32,12 +32,12 @@ export default async function handler(req, res) {
   const emailHtml = `
     <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0B1120; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
       <div style="background: linear-gradient(135deg, #1a1a2e 0%, #0B1120 100%); padding: 40px 30px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-        <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexora Studio</h1>
+        <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexoraa Studio</h1>
         <p style="margin: 8px 0 0; color: #00F5FF; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;">New Project Inquiry</p>
       </div>
       <div style="padding: 30px;">
         <p style="color: #d1d5db; font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
-          Hello Nexora Team,
+          Hello Nexoraa Team,
         </p>
         <p style="color: #d1d5db; font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
           You have received a new project inquiry from the website contact form. Here are the client's details:
@@ -71,14 +71,14 @@ export default async function handler(req, res) {
         <div style="background: rgba(255,255,255,0.02); border-left: 3px solid #8B5CF6; border-radius: 4px; padding: 16px; margin: 12px 0 24px; color: #e5e7eb; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</div>
 
         <div style="text-align: center; margin: 24px 0 10px;">
-          <a href="mailto:${email}?subject=Re: Your Project Inquiry with Nexora Studio" style="display: inline-block; background: linear-gradient(135deg, #00F5FF, #8B5CF6); color: #000000; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);">
+          <a href="mailto:${email}?subject=Re: Your Project Inquiry with Nexoraa Studio" style="display: inline-block; background: linear-gradient(135deg, #00F5FF, #8B5CF6); color: #000000; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);">
             ✉️ Reply to Client
           </a>
         </div>
       </div>
       <div style="background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
         <p style="margin: 0; color: #4b5563; font-size: 12px;">
-          © ${new Date().getFullYear()} Nexora Studio. All rights reserved.
+          © ${new Date().getFullYear()} Nexoraa Studio. All rights reserved.
         </p>
       </div>
     </div>
@@ -119,10 +119,10 @@ export default async function handler(req, res) {
           'content-type': 'application/json'
         },
         body: JSON.stringify({
-          sender: { name: `Nexora Inquiry Portal`, email: senderEmail },
-          to: [{ email: adminEmail, name: 'Nexora Admin' }],
+          sender: { name: `Nexoraa Inquiry Portal`, email: senderEmail },
+          to: [{ email: adminEmail, name: 'Nexoraa Admin' }],
           replyTo: { email: email, name: name },
-          subject: `🚀 Nexora Inquiry: ${name} (${budget || 'Contact Page'})`,
+          subject: `🚀 Nexoraa Inquiry: ${name} (${budget || 'Contact Page'})`,
           htmlContent: emailHtml
         })
       });
@@ -147,10 +147,10 @@ export default async function handler(req, res) {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from: `Nexora Portal <${senderEmail}>`,
+          from: `Nexoraa Portal <${senderEmail}>`,
           to: adminEmail,
           reply_to: email,
-          subject: `🚀 Nexora Inquiry: ${name} (${budget || 'Contact Page'})`,
+          subject: `🚀 Nexoraa Inquiry: ${name} (${budget || 'Contact Page'})`,
           html: emailHtml
         })
       });
@@ -175,10 +175,10 @@ export default async function handler(req, res) {
       });
 
       await transporter.sendMail({
-        from: `"${name} via Nexora Portal" <${resolvedSmtpEmail}>`,
+        from: `"${name} via Nexoraa Portal" <${resolvedSmtpEmail}>`,
         to: adminEmail,
         replyTo: email,
-        subject: `🚀 Nexora Inquiry: ${name} (${budget || 'Contact Page'})`,
+        subject: `🚀 Nexoraa Inquiry: ${name} (${budget || 'Contact Page'})`,
         html: emailHtml
       });
 

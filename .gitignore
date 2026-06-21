@@ -26,3 +26,8 @@ dist-ssr
 # Environment variables
 .env
 
+# Flutter apps generated files
+flutter_app/build/
+flutter_app/.dart_tool/
+flutter_webview_app/build/
+flutter_webview_app/.dart_tool/

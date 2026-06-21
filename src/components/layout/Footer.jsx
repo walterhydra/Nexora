@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-2">
             <h3 className="text-2xl font-display font-bold mb-4 flex items-center gap-2">
-              <img src="/logo/logo.png" alt="Nexora Logo" className="w-6 h-6 object-contain" loading="lazy" decoding="async" width="24" height="24" /> Nexora Studio
+              <img src="/logo/logo.png" alt="Nexoraa Logo" className="w-6 h-6 object-contain" loading="lazy" decoding="async" width="24" height="24" /> Nexoraa Studio
             </h3>
             <p className="text-gray-600 dark:text-gray-400 max-w-sm mb-6 leading-relaxed">
               Crafting immersive digital experiences and scalable architectures for forward-thinking brands.
@@ -68,9 +68,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200 dark:border-white/10 text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">
-          <p>&copy; {currentYear} Nexora Studio. All rights reserved.</p>
+          <p>&copy; {currentYear} Nexoraa Studio. All rights reserved.</p>
           <div className="flex items-center gap-1 mt-4 md:mt-0">
-            Crafted with <span className="text-red-500">&hearts;</span> by Nexora Studio
+            Crafted with <span className="text-red-500">&hearts;</span> by Nexoraa Studio
           </div>
         </div>
       </div>

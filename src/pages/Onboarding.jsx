@@ -241,7 +241,7 @@ export default function Onboarding() {
                   <div className="w-3 h-3 rounded-full bg-[#27C93F] border border-[#1AAB29]" />
                 </div>
                 <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-2 px-4 py-1.5 rounded-md bg-white/5 border border-white/5 text-[10px] font-mono text-gray-400">
-                  <Lock size={10} className="text-gray-500" /> portal.nexora.agency/client/ACME
+                  <Lock size={10} className="text-gray-500" /> portal.nexoraa.agency/client/ACME
                 </div>
               </div>
               
@@ -249,7 +249,7 @@ export default function Onboarding() {
                 {/* Minimalist Sidebar */}
                 <div className="w-64 border-r border-white/5 bg-black/20 flex-col hidden md:flex">
                   <div className="p-6 pb-2">
-                    <div className="text-xl font-display font-bold text-white mb-8 tracking-tighter">NEXORA.</div>
+                    <div className="text-xl font-display font-bold text-white mb-8 tracking-tighter">NEXORAA.</div>
                     <div className="space-y-1">
                       {[
                         { id: 'kanban', icon: KanbanSquare, label: 'Sprint Board' },

@@ -141,7 +141,7 @@ export default function Hero() {
   }, []);
 
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
-  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexora Studio, I'd like to discuss a project")}`;
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexoraa Studio, I'd like to discuss a project")}`;
 
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -279,8 +279,8 @@ export default function Hero() {
                       typewriter
                         .changeDelay(1)
                         .pasteString('<span style="color:#6B7280">// Initialize Engine</span><br/>')
-                        .pasteString('<span style="color:#C678DD">import</span> { createProject, deploy, injectAI } <span style="color:#C678DD">from</span> <span style="color:#98C379">\'@nexora/core\'</span>;<br/>')
-                        .pasteString('<span style="color:#C678DD">import</span> { applyDesign } <span style="color:#C678DD">from</span> <span style="color:#98C379">\'@nexora/ui\'</span>;<br/><br/>')
+                        .pasteString('<span style="color:#C678DD">import</span> { createProject, deploy, injectAI } <span style="color:#C678DD">from</span> <span style="color:#98C379">\'@nexoraa/core\'</span>;<br/>')
+                        .pasteString('<span style="color:#C678DD">import</span> { applyDesign } <span style="color:#C678DD">from</span> <span style="color:#98C379">\'@nexoraa/ui\'</span>;<br/><br/>')
                         .callFunction(() => setPreviewStep(1)) // Show Wireframe
                         .pasteString('<span style="color:#C678DD">const</span> project = createProject({<br/>')
                         .pasteString('  <span style="color:#E06C75">client</span>: <span style="color:#98C379">\'Next Big Thing\'</span>,<br/>')

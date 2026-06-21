@@ -107,7 +107,7 @@ export default function Pulse() {
               className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-8"
             >
               <Activity className="text-accent-primary animate-pulse" size={14} />
-              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60">Nexora Network Pulse</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white/60">Nexoraa Network Pulse</span>
             </m.div>
 
             <m.h2

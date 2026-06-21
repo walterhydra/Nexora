@@ -83,11 +83,11 @@ export default function Terms() {
               <div className="space-y-3.5 font-mono text-[11px] mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Node Directory:</span>
-                  <span className="text-black dark:text-white">Nexora_Terms_v1.0</span>
+                  <span className="text-black dark:text-white">Nexoraa_Terms_v1.0</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Audit Authority:</span>
-                  <span className="text-black dark:text-white">Nexora Legal Directorate</span>
+                  <span className="text-black dark:text-white">Nexoraa Legal Directorate</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Integrity:</span>
@@ -197,7 +197,7 @@ export default function Terms() {
             >
               <img 
                 src="/projects/stamp.png" 
-                alt="Nexora Official Seal" 
+                alt="Nexoraa Official Seal" 
                 className="w-full h-full object-contain"
               />
             </m.div>
@@ -219,7 +219,7 @@ export default function Terms() {
               <h3 className="text-xl md:text-2xl font-display font-bold text-black dark:text-white mt-8 flex items-center gap-2">
                 <span className="text-accent-blue">§ 1.</span> Agreement to Terms
               </h3>
-              <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Nexora Studio ("we," "us," or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").</p>
+              <p>These Terms and Conditions constitute a legally binding agreement made between you, whether personally or on behalf of an entity ("you") and Nexoraa Studio ("we," "us," or "our"), concerning your access to and use of our website as well as any other media form, media channel, mobile website or mobile application related, linked, or otherwise connected thereto (collectively, the "Site").</p>
               <p>You agree that by accessing the Site, you have read, understood, and agree to be bound by all of these Terms and Conditions. If you do not agree with all of these Terms and Conditions, then you are expressly prohibited from using the Site and you must discontinue use immediately.</p>
 
               {/* 2. Intellectual Property Rights */}
@@ -263,7 +263,7 @@ export default function Terms() {
               <h3 className="text-xl md:text-2xl font-display font-bold text-black dark:text-white mt-8 flex items-center gap-2">
                 <span className="text-accent-blue">§ 8.</span> Governing Jurisdiction
               </h3>
-              <p>These Terms shall be governed by and defined following the laws of the jurisdiction in which our business operates. Nexora Studio and yourself irrevocably consent that the courts of the applicable jurisdiction shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.</p>
+              <p>These Terms shall be governed by and defined following the laws of the jurisdiction in which our business operates. Nexoraa Studio and yourself irrevocably consent that the courts of the applicable jurisdiction shall have exclusive jurisdiction to resolve any dispute which may arise in connection with these terms.</p>
 
               {/* 9. Contact Us */}
               <h3 className="text-xl md:text-2xl font-display font-bold text-black dark:text-white mt-8 flex items-center gap-2">
@@ -271,9 +271,9 @@ export default function Terms() {
               </h3>
               <p>In order to resolve a complaint regarding the Site or to receive further information regarding use of the Site, please contact us at:</p>
               <p className="font-mono bg-black/5 dark:bg-white/5 p-4 rounded-xl border border-black/5 dark:border-white/5 inline-block text-sm">
-                Nexora Studio<br />
+                Nexoraa Studio<br />
                 Legal Department<br />
-                contact@nexora.studio
+                contact@nexoraa.studio
               </p>
             </div>
 
@@ -284,10 +284,10 @@ export default function Terms() {
                 <div className="text-[10px] uppercase tracking-widest text-gray-400">Authorized Signatures</div>
                 <div className="flex gap-8 items-center">
                   <div className="text-sm italic font-serif text-accent-blue dark:text-accent-blue/90 border-b border-black/20 dark:border-white/20 pb-1 pr-6 select-none">
-                    Nexora Compliance Officer
+                    Nexoraa Compliance Officer
                   </div>
                 </div>
-                <div className="text-[9px] text-gray-400">Nexora Legal Directorate & Data Board</div>
+                <div className="text-[9px] text-gray-400">Nexoraa Legal Directorate & Data Board</div>
               </div>
 
               {/* SHA Checksum Verification */}

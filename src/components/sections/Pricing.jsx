@@ -197,7 +197,7 @@ export default function Pricing() {
 
                 {/* Email */}
                 <a
-                  href={`mailto:milan@nexora.studio?subject=${encodeURIComponent(`Inquiry for ${selectedPlan.name}`)}&body=${encodeURIComponent(messageText)}`}
+                  href={`mailto:milan@nexoraa.studio?subject=${encodeURIComponent(`Inquiry for ${selectedPlan.name}`)}&body=${encodeURIComponent(messageText)}`}
                   onClick={() => setSelectedPlan(null)}
                   className="flex-1 py-3.5 px-5 rounded-2xl bg-white/10 hover:bg-white/15 border border-white/10 text-white text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
                 >

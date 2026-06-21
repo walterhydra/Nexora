@@ -65,7 +65,7 @@ export default function OnboardingTeaser() {
             </div>
 
             <h2 className="text-4xl md:text-6xl font-display font-black text-white mb-6 tracking-tight leading-tight">
-              Enter the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-purple-500">Nexora Protocol.</span>
+              Enter the <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-purple-500">Nexoraa Protocol.</span>
             </h2>
             
             <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-12 leading-relaxed">

@@ -22,7 +22,7 @@ export default function Contact() {
     const priority = params.get('priority');
 
     if (projectType) {
-      let prefilledMsg = `Hi Nexora, I'm interested in building a ${projectType}.\n`;
+      let prefilledMsg = `Hi Nexoraa, I'm interested in building a ${projectType}.\n`;
       if (addons) {
         prefilledMsg += `Selected Add-ons: ${addons}\n`;
       }
@@ -102,7 +102,7 @@ export default function Contact() {
             email: email,
             message: message,
             subject: `Elite Contact Page Inquiry from ${name}`,
-            from_name: "Nexora Studio Portal"
+            from_name: "Nexoraa Studio Portal"
           })
         });
 
@@ -207,7 +207,7 @@ export default function Contact() {
         >
           <h1 className="text-5xl md:text-7xl font-display font-bold mb-6">Get in <span className="text-accent-blue">Touch</span></h1>
           <p className="text-xl text-gray-500 max-w-2xl mx-auto">
-            Ready to start your next big project? Let's talk about how Nexora can help you achieve your goals in 7 days.
+            Ready to start your next big project? Let's talk about how Nexoraa can help you achieve your goals in 7 days.
           </p>
         </m.div>
         

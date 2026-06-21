@@ -83,11 +83,11 @@ export default function About() {
               <div className="space-y-3.5 font-mono text-[11px] mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Node Directory:</span>
-                  <span className="text-black dark:text-white">Nexora_About_v1.0</span>
+                  <span className="text-black dark:text-white">Nexoraa_About_v1.0</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Audit Authority:</span>
-                  <span className="text-black dark:text-white">Nexora Compliance</span>
+                  <span className="text-black dark:text-white">Nexoraa Compliance</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Integrity:</span>
@@ -197,7 +197,7 @@ export default function About() {
             >
               <img 
                 src="/projects/stamp.png" 
-                alt="Nexora Official Seal" 
+                alt="Nexoraa Official Seal" 
                 className="w-full h-full object-contain"
               />
             </m.div>
@@ -208,7 +208,7 @@ export default function About() {
                 Authorized Organization Charter
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black tracking-tight mt-3 text-black dark:text-white">
-                About <span className="text-accent-blue">Nexora</span>
+                About <span className="text-accent-blue">Nexoraa</span>
               </h2>
             </div>
 
@@ -220,7 +220,7 @@ export default function About() {
                   Section I. Constitution of Enterprise
                 </h3>
                 <p>
-                  Pursuant to the laws of digital innovation and architectural design excellence, Nexora Studio is established as an advanced engineering collective. We reject standard framework defaults and commercial templates, committing exclusively to bespoke system development, speed optimization, and premium aesthetic structures.
+                  Pursuant to the laws of digital innovation and architectural design excellence, Nexoraa Studio is established as an advanced engineering collective. We reject standard framework defaults and commercial templates, committing exclusively to bespoke system development, speed optimization, and premium aesthetic structures.
                 </p>
                 <p>
                   Our charter is simple: to deploy custom-engineered interfaces and intelligent backend layers that command target objectives, elevate branding positions, and deliver maximum operational value.
@@ -255,10 +255,10 @@ export default function About() {
                 <div className="text-[10px] uppercase tracking-widest text-gray-400">Authorized Signatures</div>
                 <div className="flex gap-8 items-center">
                   <div className="text-sm italic font-serif text-accent-blue dark:text-accent-blue/90 border-b border-black/20 dark:border-white/20 pb-1 pr-6 select-none">
-                    Milan & Nexora Directorate
+                    Milan & Nexoraa Directorate
                   </div>
                 </div>
-                <div className="text-[9px] text-gray-400">Nexora Corporate Directorate</div>
+                <div className="text-[9px] text-gray-400">Nexoraa Corporate Directorate</div>
               </div>
 
               {/* SHA Checksum Verification */}

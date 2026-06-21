@@ -167,11 +167,11 @@ export default function RefundPolicy() {
               <div className="space-y-3.5 font-mono text-[11px] mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Node Directory:</span>
-                  <span className="text-black dark:text-white">Nexora_Refund_v1.0</span>
+                  <span className="text-black dark:text-white">Nexoraa_Refund_v1.0</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Audit Authority:</span>
-                  <span className="text-black dark:text-white">Nexora Treasury</span>
+                  <span className="text-black dark:text-white">Nexoraa Treasury</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Integrity:</span>
@@ -280,7 +280,7 @@ export default function RefundPolicy() {
             >
               <img 
                 src="/projects/stamp.png" 
-                alt="Nexora Official Seal" 
+                alt="Nexoraa Official Seal" 
                 className="w-full h-full object-contain"
               />
             </m.div>
@@ -375,7 +375,7 @@ export default function RefundPolicy() {
                   </div>
                   <div className="space-y-4 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
                     <p>
-                      Nexora Studio creates custom digital products through focused development sprints. Significant planning, engineering time, and production resources are committed as soon as a project begins.
+                      Nexoraa Studio creates custom digital products through focused development sprints. Significant planning, engineering time, and production resources are committed as soon as a project begins.
                     </p>
                     <p>
                       Refund eligibility therefore depends primarily on whether work has started, how much has been completed, and whether final delivery has occurred.
@@ -511,10 +511,10 @@ export default function RefundPolicy() {
                 <div className="text-[10px] uppercase tracking-widest text-gray-400 font-mono">Authorized Signatures</div>
                 <div className="flex gap-8 items-center font-mono">
                   <div className="text-sm italic font-serif text-accent-blue dark:text-accent-blue/90 border-b border-black/20 dark:border-white/20 pb-1 pr-6 select-none">
-                    Nexora Compliance Officer
+                    Nexoraa Compliance Officer
                   </div>
                 </div>
-                <div className="text-[9px] text-gray-400 font-mono">Nexora Finance & Operations Directorate</div>
+                <div className="text-[9px] text-gray-400 font-mono">Nexoraa Finance & Operations Directorate</div>
               </div>
 
               {/* SHA Checksum Verification */}

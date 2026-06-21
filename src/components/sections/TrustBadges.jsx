@@ -8,7 +8,7 @@ const guarantees = [
   { icon: Code, title: "100% Code Ownership", text: "Signed certificate. No lock-in." },
   { icon: Eye, title: "Live Build Access", text: "Private preview URL from day 1." },
   { icon: MessageCircle, title: "WhatsApp Support", text: "2-hour response. 7 days a week." },
-  { icon: Target, title: "Free Nexora Audit", text: "Speed, SEO & mobile graded free." }
+  { icon: Target, title: "Free Nexoraa Audit", text: "Speed, SEO & mobile graded free." }
 ];
 
 export default function TrustBadges() {

@@ -50,11 +50,11 @@ function SidebarContent({ onClose, clientInfo, onSignOut }) {
         <div className="flex items-center gap-4">
           <div className="relative">
             <div className="absolute inset-0 bg-blue-500/30 blur-xl rounded-xl" />
-            <img src="/logo/favicon.png" alt="Nexora" className="relative w-11 h-11 rounded-xl border border-white/[0.1] object-cover shadow-2xl shadow-blue-500/20" />
+            <img src="/logo/favicon.png" alt="Nexoraa" className="relative w-11 h-11 rounded-xl border border-white/[0.1] object-cover shadow-2xl shadow-blue-500/20" />
           </div>
           <div>
             <span className="text-white font-black text-lg tracking-[0.15em] font-sans block leading-none mb-1">
-              NEXORA
+              NEXORAA
             </span>
             <span className="text-[9px] text-blue-400 font-bold tracking-[0.2em] uppercase">
               Client Portal

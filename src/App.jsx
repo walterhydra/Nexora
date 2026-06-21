@@ -81,9 +81,9 @@ function AppContent() {
     <LazyMotion features={domAnimation}>
       <ScrollToTop />
       <Helmet>
-        <title>Nexora Studio | 7-Day Web & App Development</title>
+        <title>Nexoraa Studio | 7-Day Web & App Development</title>
         <meta name="description" content="We build world-class websites, apps, automations, and digital products in 7 days. High-converting design meets top-tier engineering." />
-        <meta property="og:title" content="Nexora Studio | 7-Day Web & App Development" />
+        <meta property="og:title" content="Nexoraa Studio | 7-Day Web & App Development" />
         <meta property="og:description" content="We build world-class websites, apps, automations, and digital products in 7 days." />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />

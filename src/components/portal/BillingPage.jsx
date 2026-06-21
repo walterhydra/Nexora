@@ -244,7 +244,7 @@ const BillingPage = ({ invoices }) => {
              <Zap className="absolute -right-4 -bottom-4 w-24 h-24 text-indigo-500/20 group-hover:scale-110 transition-transform duration-500" />
              <div className="relative z-10">
                <div className="flex items-center gap-2 mb-3">
-                 <h3 className="text-lg font-black text-white">Nexora Enterprise</h3>
+                 <h3 className="text-lg font-black text-white">Nexoraa Enterprise</h3>
                  <span className="px-2 py-0.5 text-[9px] font-bold uppercase tracking-widest text-indigo-400 bg-indigo-500/10 rounded border border-indigo-500/20">Pro</span>
                </div>
                <p className="text-sm text-gray-400 mb-6 leading-relaxed">Upgrade to a retainer model to streamline billing, receive bulk discounts, and lock in priority development hours.</p>

@@ -83,11 +83,11 @@ export default function PrivacyPolicy() {
               <div className="space-y-3.5 font-mono text-[11px] mb-6">
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Node Directory:</span>
-                  <span className="text-black dark:text-white">Nexora_Privacy_v1.2</span>
+                  <span className="text-black dark:text-white">Nexoraa_Privacy_v1.2</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Audit Authority:</span>
-                  <span className="text-black dark:text-white">Nexora Legal Directorate</span>
+                  <span className="text-black dark:text-white">Nexoraa Legal Directorate</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-400">Integrity:</span>
@@ -197,7 +197,7 @@ export default function PrivacyPolicy() {
             >
               <img 
                 src="/projects/stamp.png" 
-                alt="Nexora Official Seal" 
+                alt="Nexoraa Official Seal" 
                 className="w-full h-full object-contain"
               />
             </m.div>
@@ -219,7 +219,7 @@ export default function PrivacyPolicy() {
               <h3 className="text-xl md:text-2xl font-display font-bold text-black dark:text-white mt-8 flex items-center gap-2">
                 <span className="text-accent-blue">§ 1.</span> Introduction
               </h3>
-              <p>Welcome to Nexora Studio ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us.</p>
+              <p>Welcome to Nexoraa Studio ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. If you have any questions or concerns about our policy, or our practices with regards to your personal information, please contact us.</p>
               <p>When you visit our website and use our services, you trust us with your personal information. We take your privacy very seriously. In this privacy policy, we seek to explain to you in the clearest way possible what information we collect, how we use it and what rights you have in relation to it.</p>
 
               {/* 2. Information We Collect */}
@@ -281,9 +281,9 @@ export default function PrivacyPolicy() {
               </h3>
               <p>If you have questions or comments about this policy, you may email us or by post to:</p>
               <p className="font-mono bg-black/5 dark:bg-white/5 p-4 rounded-xl border border-black/5 dark:border-white/5 inline-block text-sm">
-                Nexora Studio<br />
+                Nexoraa Studio<br />
                 Legal Department<br />
-                contact@nexora.studio
+                contact@nexoraa.studio
               </p>
             </div>
 
@@ -294,10 +294,10 @@ export default function PrivacyPolicy() {
                 <div className="text-[10px] uppercase tracking-widest text-gray-400">Authorized Signatures</div>
                 <div className="flex gap-8 items-center">
                   <div className="text-sm italic font-serif text-accent-blue dark:text-accent-blue/90 border-b border-black/20 dark:border-white/20 pb-1 pr-6 select-none">
-                    Nexora Compliance Officer
+                    Nexoraa Compliance Officer
                   </div>
                 </div>
-                <div className="text-[9px] text-gray-400 font-mono">Nexora Data Registry Directorate</div>
+                <div className="text-[9px] text-gray-400 font-mono">Nexoraa Data Registry Directorate</div>
               </div>
 
               {/* SHA Checksum Verification */}

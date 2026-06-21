@@ -5,7 +5,7 @@ import toast from 'react-hot-toast';
 export default function About() {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // Nexora Studio Logo SVG component for the card
+  // Nexoraa Studio Logo SVG component for the card
   const Logo = () => (
     <div className="w-full h-full bg-gradient-to-tr from-accent-blue to-accent-purple rounded-2xl flex items-center justify-center p-4">
       <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-gray-900 dark:text-white">
@@ -30,7 +30,7 @@ export default function About() {
         {/* Title */}
         <h2 className="text-5xl md:text-7xl font-display font-bold mb-16">
           <span className="text-gray-900 dark:text-white">About </span>
-          <span className="text-gradient">Nexora.</span>
+          <span className="text-gradient">Nexoraa.</span>
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

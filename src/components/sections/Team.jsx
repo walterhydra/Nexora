@@ -27,14 +27,14 @@ const memberNotes = {
 };
 
 const memberIntroductions = {
-  Milan: 'Milan leads Nexora with a builder-first mindset, combining product vision with hands-on engineering. He turns ambitious ideas into focused digital products that are clear, scalable, and ready to create meaningful business impact.',
+  Milan: 'Milan leads Nexoraa with a builder-first mindset, combining product vision with hands-on engineering. He turns ambitious ideas into focused digital products that are clear, scalable, and ready to create meaningful business impact.',
   'Gaurav Thakur': 'Gaurav brings technical leadership and systems thinking to every build. He transforms complex requirements into reliable mobile and backend architectures that remain fast, maintainable, and prepared for growth.',
   'Alis Patel': 'Alis connects the full product lifecycle, from application logic to infrastructure and deployment. His work keeps ambitious platforms stable, efficient, and production-ready from the first release onward.',
   'Abhishek Jha': 'Abhishek builds the dependable foundations behind digital products. His focus on backend architecture, clean systems, and thoughtful technical decisions helps products scale without losing clarity.',
   'Stany Gregor': 'Stany turns product ideas into polished web experiences. He combines clean implementation with an eye for usability, ensuring every interface feels responsive, intentional, and ready for real users.',
   Divyansh: 'Divyansh brings energy, precision, and practical problem solving to web development. He focuses on creating modern digital experiences that are fast, useful, and built around genuine user needs.',
   'Rajkumar Shah': 'Rajkumar engineers robust web systems with performance and future growth in mind. He brings disciplined execution to every sprint and builds solutions designed to evolve with the businesses they support.',
-  'Riya Sharma': 'Riya gives Nexora its digital voice. Through thoughtful content, brand storytelling, and audience insight, she turns technical work into meaningful communication that builds attention, trust, and connection.'
+  'Riya Sharma': 'Riya gives Nexoraa its digital voice. Through thoughtful content, brand storytelling, and audience insight, she turns technical work into meaningful communication that builds attention, trust, and connection.'
 };
 
 const panelColors = [
@@ -121,7 +121,7 @@ export default function Team() {
 
           <div>
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              Explore the Nexora crew. Each panel represents a specialist who shapes strategy, technology, delivery, or brand momentum.
+              Explore the Nexoraa crew. Each panel represents a specialist who shapes strategy, technology, delivery, or brand momentum.
             </p>
             <div className="mt-6 flex items-center gap-5 border-t border-black/10 pt-5 dark:border-white/10">
               <div>
@@ -308,7 +308,7 @@ export default function Team() {
                     </div>
 
                     <div>
-                      <div className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-red-300">Join Nexora Studio</div>
+                      <div className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-red-300">Join Nexoraa Studio</div>
                       <h3 className="max-w-2xl text-5xl font-display font-black leading-[0.9] md:text-7xl">
                         Add your spectrum to ours.
                       </h3>
@@ -386,7 +386,7 @@ export default function Team() {
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 border border-white/20 bg-black/60 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] backdrop-blur">
-                  Nexora core member / {String(selectedMember.id).padStart(2, '0')}
+                  Nexoraa core member / {String(selectedMember.id).padStart(2, '0')}
                 </div>
               </div>
 

@@ -4,7 +4,7 @@ import Hero from '../components/sections/Hero';
 import TrustBadges from '../components/sections/TrustBadges';
 import Services from '../components/sections/Services';
 import About from '../components/sections/About';
-import WhyNexora from '../components/sections/WhyNexora';
+import WhyNexoraa from '../components/sections/WhyNexoraa';
 import Team from '../components/sections/Team';
 import Contact from '../components/sections/Contact';
 import TechStack from '../components/sections/TechStack';

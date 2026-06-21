@@ -249,7 +249,7 @@ export default function Agreement() {
             body: JSON.stringify({
               access_key: web3Key,
               subject: `Client Agreement Request: ${formData.firstName} ${formData.lastName}`,
-              from_name: "Nexora Studio Portal",
+              from_name: "Nexoraa Studio Portal",
               name: `${formData.firstName} ${formData.lastName}`,
               email: formData.email,
               message: `Client Agreement Request:\n- Name: ${formData.firstName} ${formData.lastName}\n- Email: ${formData.email}\n- DOB: ${formData.dob}\n- Purpose: ${formData.purpose}`
@@ -536,7 +536,7 @@ export default function Agreement() {
     return (
       <>
         <Helmet>
-          <title>Agreement Signed | Nexora Studio</title>
+          <title>Agreement Signed | Nexoraa Studio</title>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
           <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
@@ -627,8 +627,8 @@ export default function Agreement() {
   return (
     <>
       <Helmet>
-        <title>Client Agreement | Nexora Studio</title>
-        <meta name="description" content="Request the Nexora Studio Client Agreement. Fill in your details and we'll send it to your email." />
+        <title>Client Agreement | Nexoraa Studio</title>
+        <meta name="description" content="Request the Nexoraa Studio Client Agreement. Fill in your details and we'll send it to your email." />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet" />
@@ -652,7 +652,7 @@ export default function Agreement() {
                 className="bg-[#1E293B] border border-slate-700 w-full h-[240px] rounded-2xl relative shadow-2xl overflow-hidden flex flex-col items-center justify-end pb-8"
               >
                 <div className="absolute top-0 inset-x-0 h-[100px] bg-[#334155] rounded-b-[40%_20%]" style={{ clipPath: 'polygon(0 0, 100% 0, 50% 100%)' }} />
-                <div className="text-[10px] text-slate-400 font-mono tracking-wider font-semibold">Nexora Vault Verification</div>
+                <div className="text-[10px] text-slate-400 font-mono tracking-wider font-semibold">Nexoraa Vault Verification</div>
                 <div className="font-mono text-[9px] text-slate-500 mt-1">{docHash}</div>
               </m.div>
 
@@ -856,7 +856,7 @@ export default function Agreement() {
                       {progress === 100 ? (
                         <>
                           <span className="block text-[6px] text-red-500 font-bold tracking-widest mb-0.5">APPROVED</span>
-                          <span>NEXORA</span>
+                          <span>NEXORAA</span>
                           <span className="block text-[5px] text-red-500 font-bold mt-0.5">SECURE</span>
                         </>
                       ) : (
@@ -875,7 +875,7 @@ export default function Agreement() {
                   {/* Letterhead */}
                   <div className="flex items-center gap-2 mb-8 border-b border-slate-200 pb-4">
                     <div className="w-5 h-5 rounded bg-slate-900 flex items-center justify-center text-[9px] font-black text-white">N</div>
-                    <span className="font-display font-bold text-[10px] tracking-wider text-slate-900">NEXORA STUDIO</span>
+                    <span className="font-display font-bold text-[10px] tracking-wider text-slate-900">NEXORAA STUDIO</span>
                     <span className="h-3 w-[1px] bg-slate-300 mx-2"></span>
                     <span className="font-mono text-[9px] text-slate-400 font-semibold">{docHash}</span>
                   </div>
@@ -890,7 +890,7 @@ export default function Agreement() {
 
                     {/* Clause 1: Parties */}
                     <p className={`transition-all duration-200 p-1.5 rounded ${currentStep === 1 ? 'bg-blue-50/70 border border-blue-100' : 'border border-transparent'}`}>
-                      This transaction is initiated on <strong className="text-slate-900">{currentDate || 'June 13, 2026'}</strong>, by and between <span className="font-semibold text-slate-900">Nexora Studio LLC</span> and Client&nbsp;
+                      This transaction is initiated on <strong className="text-slate-900">{currentDate || 'June 13, 2026'}</strong>, by and between <span className="font-semibold text-slate-900">Nexoraa Studio LLC</span> and Client&nbsp;
                       <span className={`inline-block px-1.5 py-0.5 rounded transition-all duration-200 font-medium ${currentStep === 1
                           ? 'bg-blue-100 text-blue-800 font-semibold shadow-sm scale-105'
                           : formData.firstName || formData.lastName
@@ -947,9 +947,9 @@ export default function Agreement() {
 
                 {/* Signatures Row */}
                 <div className="mt-8 pt-6 border-t border-slate-200 grid grid-cols-2 gap-6 relative z-10 font-sans">
-                  {/* Nexora Sign */}
+                  {/* Nexoraa Sign */}
                   <div>
-                    <div className="text-[9px] text-slate-400 uppercase tracking-wider mb-2 font-semibold">For Nexora Studio</div>
+                    <div className="text-[9px] text-slate-400 uppercase tracking-wider mb-2 font-semibold">For Nexoraa Studio</div>
                     <div className="h-10 flex items-center select-none">
                       <img
                         src="/team/Screenshot_2026-06-10_134835-Picsart-AiImageEnhancer-removebg-preview.png"

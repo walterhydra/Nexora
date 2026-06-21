@@ -70,7 +70,7 @@ export default function LoadingScreen({ isExiting }) {
             key={i}
             className={`whitespace-nowrap text-[12vh] md:text-[15vh] font-display font-black leading-[0.9] tracking-tighter ${i % 2 === 0 ? '-ml-[10%]' : '-ml-[30%]'}`}
           >
-            NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO • NEXORA STUDIO •
+            NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO • NEXORAA STUDIO •
           </div>
         ))}
       </div>
@@ -78,7 +78,7 @@ export default function LoadingScreen({ isExiting }) {
       {/* Top Bar Navigation Style */}
       <div className="absolute top-0 left-0 z-10 w-full flex justify-between p-6 md:p-10 text-[10px] md:text-xs font-mono uppercase tracking-[0.2em] text-white/50">
         <div className="animate-loader-fade-1">
-          NEXORA STUDIO
+          NEXORAA STUDIO
         </div>
         <div className="animate-loader-fade-2">
           LOADING SEQUENCE
@@ -104,7 +104,7 @@ export default function LoadingScreen({ isExiting }) {
             className="text-transparent whitespace-nowrap opacity-60"
             style={{ WebkitTextStroke: "1px rgba(255,255,255,0.3)" }}
           >
-            NEXORA STUDIO
+            NEXORAA STUDIO
           </div>
 
           {/* Solid Fill Overlay (Masked by Width, Hardware Accelerated) */}
@@ -122,7 +122,7 @@ export default function LoadingScreen({ isExiting }) {
                 transform: isExiting ? 'translate3d(0, 0, 0)' : undefined
               }}
             >
-              NEXORA STUDIO
+              NEXORAA STUDIO
             </div>
           </div>
         </div>
