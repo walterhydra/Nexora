@@ -198,18 +198,24 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-gray-900 dark:text-white"
           >
-            We Architect
+            We Build
           </m.div>
           <m.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-violet pb-4 min-h-[1.2em]"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-accent-primary to-accent-violet pb-4 min-h-[1.2em] whitespace-nowrap"
           >
             {showTypewriter ? (
               <Typewriter
                 options={{
-                  strings: ['Business Assets', 'High-ROI Web Apps', 'Mobile Assets', 'AI Workflows'],
+                  strings: [
+                    'Web Applications',
+                    'Mobile Applications',
+                    'AI Solutions',
+                    'SaaS Platforms',
+                    'Custom Software'
+                  ],
                   autoStart: true,
                   loop: true,
                   delay: 60,
@@ -218,7 +224,7 @@ export default function Hero() {
                 }}
               />
             ) : (
-              <span className="opacity-0">Business Assets</span>
+              <span className="opacity-0">Mobile Applications</span>
             )}
           </m.div>
         </h1>
