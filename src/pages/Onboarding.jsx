@@ -309,7 +309,7 @@ export default function Onboarding() {
                       )}
                     </div>
                     
-                    <div className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
+                    <div data-lenis-prevent="true" className="flex-1 overflow-y-auto pr-2 custom-scrollbar">
                       <AnimatePresence mode="wait">
                         {activePortalTab === 'kanban' && (
                           <m.div 

@@ -162,7 +162,7 @@ const MessagesPage = ({ projectId, messages = [], setMessages }) => {
              </div>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-6 lg:p-8 space-y-8 relative z-10">
+          <div data-lenis-prevent="true" className="flex-1 overflow-y-auto p-6 lg:p-8 space-y-8 relative z-10">
             <div className="text-center">
                <span className="text-[10px] uppercase tracking-widest text-gray-500 font-bold bg-white/[0.03] border border-white/[0.05] px-4 py-1.5 rounded-full">
                  Secure Channel Established

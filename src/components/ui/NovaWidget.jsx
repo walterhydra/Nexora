@@ -231,21 +231,6 @@ export default function NovaWidget() {
         'Integrating background processes and scheduling systems',
         'Reviewing API structures and backend error logs'
       ]
-    },
-    {
-      id: 'riya',
-      name: 'Riya Sharma',
-      role: 'Social Media & Branding Intern',
-      department: 'Marketing & Strategy',
-      stipend: '₹12,000 / month',
-      duration: '3 Months',
-      joiningDate: 'June 20, 2026',
-      outcomes: [
-        'Designing branding and visual asset collections',
-        'Coordinating outreach programs and email sequences',
-        'Managing brand voice across X and LinkedIn channels',
-        'Analyzing traffic campaigns and user onboarding'
-      ]
     }
   ];
 
@@ -498,7 +483,6 @@ Do you want to know about other things? \n\n[OPTIONS]`;
 • **Stany Gregor** — Software Engineer (Web Systems)
 • **Divyansh** — Software Engineer (Frontend Engineer)
 • **Rajkumar Shah** — Software Engineer (Web Systems)
-• **Riya Sharma** — Social Media Handler (Branding & Strategy)
 
 Do you want to know about other things? \n\n[OPTIONS]`;
 
@@ -698,7 +682,7 @@ Milan leads Nexoraa with a builder-first philosophy, bridging the gap between ad
 
 Would you like to learn more about **Meet the Team**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
       } else if (lowerText.includes('team')) {
-        fallbackResponse = "We have an exceptional, remote-first team of experts led by our Founder & CEO, **Milan**.\n\n**Core Team & Leadership:**\n• **Milan Pandavadara** — Founder & CEO (Full Stack Architect)\n• **Gaurav Thakur** — Technical Lead (Mobile & Backend Systems)\n• **Alis Patel** — Full-Stack Architect (Node.js & DevOps)\n• **Abhishek Jha** — Backend Developer (Java & Systems)\n• **Stany Gregor** — Software Engineer (Web Systems)\n• **Divyansh** — Software Engineer (Frontend Engineer)\n• **Rajkumar Shah** — Software Engineer (Web Systems)\n• **Riya Sharma** — Social Media Handler (Branding & Strategy)\n\nWhat would you like to explore? \n\n[OPTIONS]";
+        fallbackResponse = "We have an exceptional, remote-first team of experts led by our Founder & CEO, **Milan**.\n\n**Core Team & Leadership:**\n• **Milan Pandavadara** — Founder & CEO (Full Stack Architect)\n• **Gaurav Thakur** — Technical Lead (Mobile & Backend Systems)\n• **Alis Patel** — Full-Stack Architect (Node.js & DevOps)\n• **Abhishek Jha** — Backend Developer (Java & Systems)\n• **Stany Gregor** — Software Engineer (Web Systems)\n• **Divyansh** — Software Engineer (Frontend Engineer)\n• **Rajkumar Shah** — Software Engineer (Web Systems)\n\nWhat would you like to explore? \n\n[OPTIONS]";
       } else if (lowerText.includes('services')) {
         fallbackResponse = "Nexoraa Studio offers premium end-to-end digital solutions:\n\n• **Web & Mobile App Development**: React/Next.js/Vite and robust mobile apps.\n• **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX.\n• **Automation & AI Integration**: Custom AI pipelines and chatbot integrations.\n• **DevOps & Cloud Systems**: Secure, scalable setup on AWS, Vercel, and Supabase.\n• **SEO**: Advanced SEO audit and implementation for visibility.\n\nWhat are you looking to build? \n\n[OPTIONS]";
       } else if (lowerText.includes('contact')) {

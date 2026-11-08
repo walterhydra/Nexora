@@ -45,9 +45,9 @@ export default function LaptopMockup({ children, delay = 0, scrollProgress, onOp
         </div>
 
         {/* Screen Content - turns on when open */}
-        <div className="relative z-10 aspect-[16/10] bg-white dark:bg-black overflow-hidden">
+        <div className="relative z-10 w-full aspect-[16/10] bg-white dark:bg-black overflow-hidden">
           <m.div 
-            className="w-full h-full"
+            className="absolute inset-0 w-full h-full"
             initial={{ opacity: 0 }}
             animate={{ opacity: isOpen ? 1 : 0 }}
             transition={{ duration: 0.1 }}

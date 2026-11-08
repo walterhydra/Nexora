@@ -34,29 +34,8 @@ import { ArrowUpRight, Database, Code, Server, Zap, Compass, Factory, Sun, X, Ex
 
 const showcaseProjects = [
   {
-    id: 'ask-visa',
-    title: 'Ask Visa',
-    tagline: 'Visa made simple, approved fast',
-    desc: 'A high-conversion immigration and visa consulting platform. Features an intuitive application funnel, integrated document checklists, and automated eligibility tracking to streamline international travel and study workflows.',
-    tech: [
-      { name: 'React', icon: Code },
-      { name: 'Node.js', icon: Zap },
-      { name: 'Express', icon: Server },
-      { name: 'MongoDB', icon: Database }
-    ],
-    icon: Compass,
-    // Using encodeURI is safer, but exact literal string mapping works best for public assets in Vite
-    videoPath: '/Video/Ask Visa – Visa made simple, approved fast - Google Chrome 2026-05-21 15-34-27.mp4',
-    liveUrl: 'https://askvisa.in/',
-    color: 'text-accent-primary',
-    bg: 'bg-accent-primary/10',
-    border: 'border-accent-primary/30',
-    gradient: 'from-accent-primary/20',
-    buttonHover: 'hover:bg-accent-primary/20 hover:border-accent-primary/50 hover:text-accent-primary'
-  },
-  {
     id: 'rf-electrotech',
-    title: 'RF Electrotech',
+    title: 'RF Electrotech ERP',
     tagline: 'Industrial Automation & Control',
     desc: 'A robust B2B corporate portal engineered for an industrial automation leader. Showcasing advanced control panels, PLC programming services, and high-voltage engineering portfolios with lightning-fast load times.',
     tech: [
@@ -66,7 +45,7 @@ const showcaseProjects = [
       { name: 'Framer Motion', icon: Server }
     ],
     icon: Factory,
-    videoPath: '/Video/R F ELECTROTECH - Google Chrome 2026-05-21 15-33-47.mp4',
+    videoPath: '/Video/RF ELECTRO TECH ERP SYSTEM.mp4',
     liveUrl: 'https://rfelectrotech.com/',
     color: 'text-accent-violet',
     bg: 'bg-accent-violet/10',
@@ -97,26 +76,8 @@ const showcaseProjects = [
 ];
 
 const architectureDetails = {
-  'ask-visa': {
-    title: 'Ask Visa',
-    tagline: 'Visa made simple, approved fast',
-    specs: [
-      { label: 'System Pattern', value: 'Unified Serverless API & client-side micro-services' },
-      { label: 'Frontend Engine', value: 'React client with step-level onboarding state machine' },
-      { label: 'Backend Runtime', value: 'Node.js (Serverless Lambdas)' },
-      { label: 'Database Schema', value: 'MongoDB Atlas document database' },
-      { label: 'OCR API Provider', value: 'AWS Textract OCR / Google Vision API' }
-    ],
-    highlights: [
-      'Developed a robust client-side step flow caching system to preserve onboarding details across interruptions.',
-      'Implemented on-the-fly client image resizing using Canvas API in a Web Worker thread, minimizing file upload latency by up to 85%.',
-      'Configured secure document ingestion workflows with AWS S3 presigned upload URLs, maintaining compliance with strict private document safety regulations.'
-    ],
-    challenges: 'Processing sensitive passport data without keeping persistent storage on server hard drives.',
-    solution: 'Engineered an ephemeral pipeline that uploads direct to S3 with automated lifecycle rules to permanently shred document records after processing.'
-  },
   'rf-electrotech': {
-    title: 'RF Electrotech',
+    title: 'RF Electrotech ERP',
     tagline: 'Industrial Automation & Control',
     specs: [
       { label: 'System Pattern', value: 'Jamstack Static Site Generation with ISR' },

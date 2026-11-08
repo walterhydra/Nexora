@@ -5,14 +5,7 @@ import toast from 'react-hot-toast';
 export default function About() {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  // Nexoraa Studio Logo SVG component for the card
-  const Logo = () => (
-    <div className="w-full h-full bg-gradient-to-tr from-accent-blue to-accent-purple rounded-2xl flex items-center justify-center p-4">
-      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full text-gray-900 dark:text-white">
-        <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor" />
-      </svg>
-    </div>
-  );
+  // Removed unused Logo component
 
   return (
     <section id="about" className="py-24 bg-primary-dark relative overflow-hidden z-10 border-t border-white/5">

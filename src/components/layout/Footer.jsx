@@ -67,7 +67,233 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200 dark:border-white/10 text-sm text-gray-500 dark:text-gray-400 dark:text-gray-400">
+        {/* Sitemap / SEO Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200 dark:border-white/10 mb-12">
+          {/* SERVICES */}
+          <div>
+            <h4 className="font-bold mb-6 uppercase tracking-wider text-xs text-gray-900 dark:text-white select-none">Services</h4>
+            <ul className="space-y-3 text-xs">
+              <li>
+                <Link to="/contact?type=Website Design" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Website Design
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Custom CRM" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Custom CRM
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=App Development" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  App Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=SaaS Development" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  SaaS Development
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Ecommerce" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Ecommerce
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Landing Pages" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Landing Pages
+                </Link>
+              </li>
+              <li>
+                <Link to="/#pricing" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Pricing
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* INDUSTRIES */}
+          <div>
+            <h4 className="font-bold mb-6 uppercase tracking-wider text-xs text-gray-900 dark:text-white select-none">Industries</h4>
+            <ul className="space-y-3 text-xs">
+              <li>
+                <Link to="/contact?type=Cafe %26 Restaurant Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Cafe & Restaurant
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Coaching Institute Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Coaching Institute
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Gym %26 Fitness Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Gym & Fitness
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Salon %26 Spa Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Salon & Spa
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Clinic %26 Doctor Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Clinic & Doctor
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Real Estate Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Real Estate
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=School %26 College Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  School & College
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Hospital Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Hospital
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Travel %26 Hotel Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Travel & Hotel
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=NGO %26 Trust Website" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  NGO & Trust
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* UP & DELHI */}
+          <div>
+            <h4 className="font-bold mb-6 uppercase tracking-wider text-xs text-gray-900 dark:text-white select-none">UP & Delhi</h4>
+            <ul className="space-y-3 text-xs">
+              <li>
+                <Link to="/contact?type=Website Design in Lucknow" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Lucknow
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Kanpur" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Kanpur
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Agra" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Agra
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Varanasi" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Varanasi
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Prayagraj" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Prayagraj
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Gorakhpur" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Gorakhpur
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Noida" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Noida
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Meerut" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Meerut
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Delhi" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Delhi
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Gurgaon" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Gurgaon
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Ghaziabad" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Ghaziabad
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Faridabad" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Faridabad
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* MP & OTHERS */}
+          <div>
+            <h4 className="font-bold mb-6 uppercase tracking-wider text-xs text-gray-900 dark:text-white select-none">MP & Others</h4>
+            <ul className="space-y-3 text-xs">
+              <li>
+                <Link to="/contact?type=Website Design in Indore" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Indore
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Bhopal" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Bhopal
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Jabalpur" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Jabalpur
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Gwalior" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Gwalior
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Ujjain" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Ujjain
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Jaipur" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Jaipur
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Patna" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Patna
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Chandigarh" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Chandigarh
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Pune" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Pune
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact?type=Website Design in Ahmedabad" className="text-gray-500 hover:text-black dark:text-gray-400 dark:hover:text-white hover:translate-x-1 transition-all duration-200 inline-block">
+                  Ahmedabad
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-gray-200 dark:border-white/10 text-sm text-gray-500 dark:text-gray-400">
           <p>&copy; {currentYear} Nexoraa Studio. All rights reserved.</p>
           <div className="flex items-center gap-1 mt-4 md:mt-0">
             Crafted with <span className="text-red-500">&hearts;</span> by Nexoraa Studio

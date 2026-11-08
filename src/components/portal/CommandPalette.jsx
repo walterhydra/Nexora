@@ -99,8 +99,6 @@ export function CommandPalette() {
     }
   }
 
-  let itemIndex = 0
-
   return (
     <AnimatePresence>
       {commandOpen && (
@@ -159,7 +157,7 @@ export function CommandPalette() {
                   <p className="text-xs text-[#64748B] font-medium mb-1 uppercase tracking-wider">{group}</p>
                   {items.map((item) => {
                     const Icon = item.icon
-                    const idx = itemIndex++
+                    const idx = flatFiltered.findIndex(i => i.id === item.id)
                     return (
                       <button
                         key={item.id}

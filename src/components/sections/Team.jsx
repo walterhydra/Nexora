@@ -11,8 +11,7 @@ const posterMap = {
   'Abhishek Jha': '/team/intro-abhishek.png',
   'Stany Gregor': '/team/intro-stany.png',
   Divyansh: '/team/intro-divyansh.png',
-  'Rajkumar Shah': '/team/intro-rajkumar.png',
-  'Riya Sharma': '/team/intro-riya.png'
+  'Rajkumar Shah': '/team/intro-rajkumar.png'
 };
 
 const memberNotes = {
@@ -22,8 +21,7 @@ const memberNotes = {
   'Abhishek Jha': 'Scalable backend foundations and clean architecture.',
   'Stany Gregor': 'Responsive, polished, production-ready web builds.',
   Divyansh: 'Focused web engineering and practical problem solving.',
-  'Rajkumar Shah': 'Robust web systems built to perform and scale.',
-  'Riya Sharma': 'Content strategy, digital branding, and engagement.'
+  'Rajkumar Shah': 'Robust web systems built to perform and scale.'
 };
 
 const memberIntroductions = {
@@ -33,8 +31,7 @@ const memberIntroductions = {
   'Abhishek Jha': 'Abhishek builds the dependable foundations behind digital products. His focus on backend architecture, clean systems, and thoughtful technical decisions helps products scale without losing clarity.',
   'Stany Gregor': 'Stany turns product ideas into polished web experiences. He combines clean implementation with an eye for usability, ensuring every interface feels responsive, intentional, and ready for real users.',
   Divyansh: 'Divyansh brings energy, precision, and practical problem solving to web development. He focuses on creating modern digital experiences that are fast, useful, and built around genuine user needs.',
-  'Rajkumar Shah': 'Rajkumar engineers robust web systems with performance and future growth in mind. He brings disciplined execution to every sprint and builds solutions designed to evolve with the businesses they support.',
-  'Riya Sharma': 'Riya gives Nexoraa its digital voice. Through thoughtful content, brand storytelling, and audience insight, she turns technical work into meaningful communication that builds attention, trust, and connection.'
+  'Rajkumar Shah': 'Rajkumar engineers robust web systems with performance and future growth in mind. He brings disciplined execution to every sprint and builds solutions designed to evolve with the businesses they support.'
 };
 
 const panelColors = [
@@ -359,6 +356,7 @@ export default function Team() {
               role="dialog"
               aria-modal="true"
               aria-label={`${selectedMember.name} full introduction`}
+              data-lenis-prevent="true"
               className="relative grid max-h-[94vh] w-full max-w-6xl overflow-y-auto bg-[#090b10] text-white shadow-[0_30px_120px_rgba(0,0,0,0.65)] lg:grid-cols-[0.88fr_1.12fr]"
             >
               <button

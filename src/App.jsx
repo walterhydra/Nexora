@@ -77,7 +77,7 @@ function AppContent() {
   // Initialize Lenis Smooth Scroll
   useLenis();
   const location = useLocation();
-  const isPortal = location.pathname.startsWith('/portal') || location.pathname.startsWith('/invoice-system');
+  const isPortal = location.pathname.startsWith('/portal') || location.pathname.startsWith('/invoice-system') || location.pathname.startsWith('/system-boot');
 
   return (
     <LazyMotion features={domAnimation}>

@@ -1,16 +1,16 @@
-# Graph Report - Nexoraa  (2026-06-14)
+# Graph Report - Nexora  (2026-11-08)
 
 ## Corpus Check
-- 138 files · ~2,789,311 words
+- 190 files · ~3,806,271 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 646 nodes · 799 edges · 70 communities (56 shown, 14 thin omitted)
-- Extraction: 100% EXTRACTED · 0% INFERRED · 0% AMBIGUOUS · INFERRED: 1 edges (avg confidence: 0.8)
+- 1076 nodes · 1329 edges · 116 communities (92 shown, 24 thin omitted)
+- Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `fbe59bd0`
+- Built from commit: `b354f47f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -62,37 +62,77 @@
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 59|Community 59]]
+- [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
+- [[_COMMUNITY_Community 66|Community 66]]
+- [[_COMMUNITY_Community 67|Community 67]]
+- [[_COMMUNITY_Community 68|Community 68]]
+- [[_COMMUNITY_Community 69|Community 69]]
+- [[_COMMUNITY_Community 70|Community 70]]
+- [[_COMMUNITY_Community 71|Community 71]]
+- [[_COMMUNITY_Community 72|Community 72]]
+- [[_COMMUNITY_Community 73|Community 73]]
+- [[_COMMUNITY_Community 74|Community 74]]
+- [[_COMMUNITY_Community 75|Community 75]]
+- [[_COMMUNITY_Community 76|Community 76]]
+- [[_COMMUNITY_Community 77|Community 77]]
+- [[_COMMUNITY_Community 78|Community 78]]
+- [[_COMMUNITY_Community 79|Community 79]]
+- [[_COMMUNITY_Community 80|Community 80]]
+- [[_COMMUNITY_Community 81|Community 81]]
+- [[_COMMUNITY_Community 82|Community 82]]
+- [[_COMMUNITY_Community 83|Community 83]]
+- [[_COMMUNITY_Community 84|Community 84]]
+- [[_COMMUNITY_Community 85|Community 85]]
+- [[_COMMUNITY_Community 86|Community 86]]
+- [[_COMMUNITY_Community 87|Community 87]]
+- [[_COMMUNITY_Community 88|Community 88]]
+- [[_COMMUNITY_Community 89|Community 89]]
+- [[_COMMUNITY_Community 90|Community 90]]
+- [[_COMMUNITY_Community 91|Community 91]]
+- [[_COMMUNITY_Community 92|Community 92]]
+- [[_COMMUNITY_Community 94|Community 94]]
+- [[_COMMUNITY_Community 95|Community 95]]
+- [[_COMMUNITY_Community 96|Community 96]]
+- [[_COMMUNITY_Community 97|Community 97]]
+- [[_COMMUNITY_Community 98|Community 98]]
+- [[_COMMUNITY_Community 99|Community 99]]
+- [[_COMMUNITY_Community 106|Community 106]]
+- [[_COMMUNITY_Community 107|Community 107]]
+- [[_COMMUNITY_Community 108|Community 108]]
+- [[_COMMUNITY_Community 109|Community 109]]
+- [[_COMMUNITY_Community 110|Community 110]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `compilerOptions` - 16 edges
+1. `compilerOptions` - 17 edges
 2. `cn()` - 14 edges
 3. `cn()` - 10 edges
 4. `usePortal()` - 10 edges
-5. `usePortal()` - 8 edges
-6. `fadeUp` - 8 edges
-7. `staggerContainer` - 8 edges
-8. `getScroll()` - 7 edges
-9. `tailwind` - 6 edges
-10. `aliases` - 6 edges
+5. `Nexoraa WebView App - Setup Guide` - 9 edges
+6. `WindowClassRegistrar` - 8 edges
+7. `Create()` - 8 edges
+8. `Destroy()` - 8 edges
+9. `usePortal()` - 8 edges
+10. `fadeUp` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `InvoiceSystem()` --calls--> `fmt()`  [INFERRED]
   src/pages/InvoiceSystem.jsx → nexoraa-client-portal/components/pages/billing-page.tsx
-- `PageRouter()` --calls--> `usePortal()`  [EXTRACTED]
-  nexoraa-client-portal/app/page.tsx → nexoraa-client-portal/lib/portal-context.tsx
-- `Navbar()` --calls--> `cn()`  [EXTRACTED]
-  src/components/layout/Navbar.jsx → src/utils/cn.js
-- `OverviewPage()` --calls--> `usePortal()`  [EXTRACTED]
-  src/components/portal/OverviewPage.jsx → src/components/portal/PortalContext.jsx
-- `SidebarContent()` --calls--> `cn()`  [EXTRACTED]
-  src/components/portal/Sidebar.jsx → src/utils/cn.js
+- `my_application_activate()` --calls--> `fl_register_plugins()`  [INFERRED]
+  M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/linux/runner/my_application.cc → M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/linux/flutter/generated_plugin_registrant.cc
+- `main()` --calls--> `my_application_new()`  [INFERRED]
+  M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/linux/runner/main.cc → M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/linux/runner/my_application.cc
+- `OnCreate()` --calls--> `RegisterPlugins()`  [INFERRED]
+  M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/windows/runner/flutter_window.cpp → M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/windows/flutter/generated_plugin_registrant.cc
+- `OnCreate()` --calls--> `GetClientArea()`  [INFERRED]
+  M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/windows/runner/flutter_window.cpp → M:/PROJECT FILES/Business Website/Nexora/flutter_webview_app/windows/runner/win32_window.cpp
 
-## Communities (70 total, 14 thin omitted)
+## Communities (116 total, 24 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.12
+Cohesion: 0.10
 Nodes (3): useLenis(), AppContent(), MemoizedAppContent
 
 ### Community 1 - "Community 1"
@@ -104,43 +144,43 @@ Cohesion: 0.17
 Nodes (9): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, posts (+1 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.11
-Nodes (7): services, getServiceComparison(), iconMap, ServiceDetails(), destroyScroll(), getScroll(), initScroll()
+Cohesion: 0.08
+Nodes (11): services, getServiceComparison(), iconMap, ServiceDetails(), iconMap, getTerminalContent(), getTerminalTitle(), SystemBoot() (+3 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.13
 Nodes (3): steps, PulseCard, BentoCard
 
 ### Community 5 - "Community 5"
-Cohesion: 0.08
-Nodes (24): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+16 more)
+Cohesion: 0.13
+Nodes (15): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+7 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.08
-Nodes (20): docsData, useMagneticEffect(), useMousePosition(), Navbar(), faqs, steps, leftPageVariants, mobilePageVariants (+12 more)
+Cohesion: 0.09
+Nodes (13): docsData, useMagneticEffect(), faqs, steps, leftPageVariants, mobilePageVariants, pageVariants, PaymentPolicy() (+5 more)
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
 Nodes (5): supabase, DEFAULT_PROJECT_DATA, LOG_POOL, MOCK_DATA, portalNavItems
 
 ### Community 8 - "Community 8"
-Cohesion: 0.15
-Nodes (7): team, darkBgColors, hexColors, memberIntroductions, memberNotes, panelColors, posterMap
+Cohesion: 0.09
+Nodes (12): team, techStack, darkBgColors, hexColors, memberIntroductions, memberNotes, panelColors, posterMap (+4 more)
 
 ### Community 9 - "Community 9"
-Cohesion: 0.06
-Nodes (24): colorMap, iconMap, NotificationPanel(), OverviewPage(), PortalContext, PortalProvider(), usePortal(), assetFiles (+16 more)
+Cohesion: 0.16
+Nodes (6): NotificationPanel(), OverviewPage(), PortalContext, PortalProvider(), usePortal(), pageLabels
 
 ### Community 11 - "Community 11"
-Cohesion: 0.06
+Cohesion: 0.07
 Nodes (31): dependencies, @base-ui/react, class-variance-authority, clsx, framer-motion, lucide-react, next, react (+23 more)
 
 ### Community 12 - "Community 12"
-Cohesion: 0.33
-Nodes (4): content, __dirname, __filename, files
+Cohesion: 0.18
+Nodes (8): content, __dirname, __filename, files, content, __dirname, __filename, files
 
 ### Community 13 - "Community 13"
-Cohesion: 0.50
+Cohesion: 0.40
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + Vite
 
 ### Community 16 - "Community 16"
@@ -148,8 +188,8 @@ Cohesion: 0.24
 Nodes (3): projects, ProjectCard, FeaturedCard
 
 ### Community 29 - "Community 29"
-Cohesion: 0.22
-Nodes (7): __dirname, envContent, envPath, __filename, key, parts, val
+Cohesion: 0.12
+Nodes (14): __dirname, envContent, envPath, __filename, key, parts, val, __dirname (+6 more)
 
 ### Community 32 - "Community 32"
 Cohesion: 0.18
@@ -196,11 +236,11 @@ Cohesion: 0.16
 Nodes (13): PageRouter(), pageVariants, allItems, CommandPalette(), recentItems, priorities, RequestModal(), requestTypes (+5 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.25
-Nodes (5): techStack, allTech, row1, row2, row3
+Cohesion: 0.17
+Nodes (13): name, private, scripts, build, dev, lint, preview, type (+5 more)
 
 ### Community 45 - "Community 45"
-Cohesion: 0.11
+Cohesion: 0.14
 Nodes (17): aliases, components, hooks, lib, ui, utils, iconLibrary, rsc (+9 more)
 
 ### Community 47 - "Community 47"
@@ -219,6 +259,10 @@ Nodes (4): SettingsPage(), Tab, tabContent, tabs
 Cohesion: 0.24
 Nodes (7): containerVariants, itemVariants, navItems, Sidebar(), cn(), Button(), buttonVariants
 
+### Community 51 - "Community 51"
+Cohesion: 0.13
+Nodes (15): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+7 more)
+
 ### Community 52 - "Community 52"
 Cohesion: 0.29
 Nodes (6): colorMap, iconMap, NotificationPanel(), pageLabels, TopNavbar(), notifications
@@ -231,25 +275,141 @@ Nodes (4): inter, jetbrainsMono, metadata, sora
 Cohesion: 0.24
 Nodes (5): faqCategories, faqs, FAQ_KEYWORDS, iconMap, INITIAL_MESSAGES
 
+### Community 61 - "Community 61"
+Cohesion: 0.08
+Nodes (27): RegisterPlugins(), MessageHandler(), OnCreate(), OnDestroy(), Create(), Destroy(), EnableFullDpiSupportIfAvailable(), GetClientArea() (+19 more)
+
+### Community 64 - "Community 64"
+Cohesion: 0.05
+Nodes (39): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+31 more)
+
+### Community 65 - "Community 65"
+Cohesion: 0.11
+Nodes (29): dart:async, dart:io, error_screen.dart, ../core/constants/app_constants.dart, ../core/theme/colors.dart, package:flutter/material.dart, package:flutter_native_splash/flutter_native_splash.dart, ../core/constants/app_constants.dart (+21 more)
+
+### Community 66 - "Community 66"
+Cohesion: 0.08
+Nodes (24): 1. "Mixed Content" or Cleartext Traffic Issues, 1. Prerequisites, 2. External Links or Downloads Not Working, 2. Opening the Project in Android Studio, 3. Installing Dependencies, 3. Login Session Not Saving, 4. Blank White Screen on Launch, 4. Connecting a Device or Emulator (+16 more)
+
+### Community 67 - "Community 67"
+Cohesion: 0.12
+Nodes (14): fl_register_plugins(), main(), first_frame_cb(), my_application_activate(), my_application_class_init(), my_application_dispose(), my_application_init(), my_application_local_command_line() (+6 more)
+
+### Community 68 - "Community 68"
+Cohesion: 0.15
+Nodes (12): colorMap, iconMap, assetFiles, channels, folders, invoices, messages, milestones (+4 more)
+
+### Community 69 - "Community 69"
+Cohesion: 0.16
+Nodes (15): core/theme/app_theme.dart, core/constants/app_constants.dart, core/theme/colors.dart, package:flutter/material.dart, package:flutter_native_splash/flutter_native_splash.dart, build, main, MaterialApp (+7 more)
+
+### Community 70 - "Community 70"
+Cohesion: 0.30
+Nodes (10): background_color, description, display, icons, name, orientation, prefer_related_applications, short_name (+2 more)
+
+### Community 71 - "Community 71"
+Cohesion: 0.20
+Nodes (6): AppDelegate, AppDelegate, FlutterAppDelegate, FlutterImplicitEngineDelegate, AppDelegate, AppDelegate
+
+### Community 72 - "Community 72"
+Cohesion: 0.24
+Nodes (10): ../core/theme/colors.dart, package:flutter/material.dart, ../core/theme/colors.dart, package:flutter/material.dart, build, ErrorScreen, Icon, Scaffold (+2 more)
+
+### Community 73 - "Community 73"
+Cohesion: 0.24
+Nodes (10): ../core/theme/colors.dart, package:flutter/material.dart, ../core/theme/colors.dart, package:flutter/material.dart, build, Icon, NoInternetScreen, Scaffold (+2 more)
+
+### Community 74 - "Community 74"
+Cohesion: 0.26
+Nodes (5): Navbar(), allItems, recentItems, GlowCard, cn()
+
+### Community 75 - "Community 75"
+Cohesion: 0.15
+Nodes (5): RunnerTests, RunnerTests, RunnerTests, RunnerTests, XCTestCase
+
+### Community 76 - "Community 76"
+Cohesion: 0.25
+Nodes (6): code:block1 (You already have full access to my existing website project ), code:block2, Extra Tips, Iske baad aapko kya karna hai (short version), PROMPT (Antigravity ko ye exact text de dena), Prompt for Antigravity — Convert nexoraa.works (React/Next.js) into a Native Flutter App
+
+### Community 77 - "Community 77"
+Cohesion: 0.25
+Nodes (6): code:block1 (You already have full access to my existing website project ), code:block2, Important Notes, Iske baad aapko kya karna hai (short version), PROMPT (Antigravity ko ye exact text de dena), Prompt for Antigravity — Convert nexoraa.works into a WebView-based Flutter App
+
+### Community 78 - "Community 78"
+Cohesion: 0.33
+Nodes (5): handle_new_rx_page(), __lldb_init_module(), Intercept NOTIFY_DEBUGGER_ABOUT_RX_PAGES and touch the pages., SBDebugger, SBFrame
+
+### Community 79 - "Community 79"
+Cohesion: 0.25
+Nodes (3): RegisterGeneratedPlugins(), NSWindow, MainFlutterWindow
+
+### Community 80 - "Community 80"
+Cohesion: 0.38
+Nodes (5): colors.dart, package:flutter/material.dart, package:flutter/material.dart, AppTheme, ThemeData
+
+### Community 81 - "Community 81"
+Cohesion: 0.40
+Nodes (4): images, info, author, version
+
+### Community 82 - "Community 82"
+Cohesion: 0.40
+Nodes (4): images, info, author, version
+
+### Community 83 - "Community 83"
+Cohesion: 0.40
+Nodes (4): images, info, author, version
+
+### Community 84 - "Community 84"
+Cohesion: 0.40
+Nodes (4): images, info, author, version
+
+### Community 85 - "Community 85"
+Cohesion: 0.38
+Nodes (5): package:flutter/material.dart, package:flutter/material.dart, package:flutter_test/flutter_test.dart, package:flutter_webview_app/main.dart, main
+
+### Community 87 - "Community 87"
+Cohesion: 0.33
+Nodes (4): wWinMain(), CreateAndAttachConsole(), GetCommandLineArguments(), Utf8FromUtf16()
+
+### Community 91 - "Community 91"
+Cohesion: 0.40
+Nodes (3): package:flutter/material.dart, package:flutter/material.dart, AppColors
+
+### Community 106 - "Community 106"
+Cohesion: 0.33
+Nodes (4): containerVariants, itemVariants, navItems, SidebarContent()
+
+### Community 107 - "Community 107"
+Cohesion: 0.40
+Nodes (4): images, info, author, version
+
+### Community 108 - "Community 108"
+Cohesion: 0.40
+Nodes (4): images, info, author, version
+
+### Community 109 - "Community 109"
+Cohesion: 0.40
+Nodes (5): scripts, build, dev, lint, preview
+
 ## Knowledge Gaps
-- **265 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `name` (+260 more)
+- **396 isolated node(s):** `__filename`, `__dirname`, `files`, `content`, `dev` (+391 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **14 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **24 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `fmt()` connect `Community 36` to `Community 38`?**
-  _High betweenness centrality (0.157) - this node is a cross-community bridge._
-- **Why does `cn()` connect `Community 6` to `Community 9`?**
-  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+  _High betweenness centrality (0.073) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 74` to `Community 106`, `Community 68`, `Community 110`, `Community 6`?**
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **What connects `__filename`, `__dirname`, `files` to the rest of the system?**
-  _265 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _397 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.125 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
-  _Cohesion score 0.11333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07899159663865546 - nodes in this community are weakly interconnected._
 - **Should `Community 4` be split into smaller, more focused modules?**
   _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._

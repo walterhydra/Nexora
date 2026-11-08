@@ -146,18 +146,10 @@ export default function Hero() {
   const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || "917383303388";
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Hi Nexoraa Studio, I'd like to discuss a project")}`;
 
-  const [isWarping, setIsWarping] = useState(false);
-
   const handleStartProjectClick = (e) => {
     e.preventDefault();
-    setIsWarping(true);
-    
-    setTimeout(() => {
-      navigate('/system-boot');
-      setTimeout(() => setIsWarping(false), 200);
-    }, 1600); 
+    navigate('/system-boot');
   };
-
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
     if (el) {
@@ -172,7 +164,6 @@ export default function Hero() {
 
   return (
     <>
-      <FlashbackTransition isActive={isWarping} />
       <m.section
         ref={containerRef}
         id="home"
@@ -279,20 +270,12 @@ export default function Hero() {
 
           <button
             onClick={handleStartProjectClick}
-            disabled={isWarping}
             className="group px-8 py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 transition-all duration-300 relative overflow-hidden"
           >
-            {/* Click Ripple Effect */}
-            <m.div
-              initial={{ scale: 0, opacity: 0 }}
-              animate={isWarping ? { scale: 50, opacity: 1 } : { scale: 0, opacity: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="absolute top-1/2 left-1/2 w-4 h-4 bg-accent-primary rounded-full origin-center transform -translate-x-1/2 -translate-y-1/2 pointer-events-none"
-            />
             {/* Hover Sweep Effect */}
             <div className="absolute inset-0 bg-black/5 dark:bg-white/10 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out pointer-events-none" />
             
-            <span className={`flex items-center justify-center gap-2 relative z-10 pointer-events-none transition-colors duration-300 ${isWarping ? 'text-white' : ''}`}>
+            <span className={`flex items-center justify-center gap-2 relative z-10 pointer-events-none transition-colors duration-300`}>
               Start Project
             </span>
           </button>

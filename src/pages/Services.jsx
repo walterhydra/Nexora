@@ -1,43 +1,16 @@
 import React, { useEffect } from 'react';
 import { m } from 'framer-motion';
+import { services } from '../constants/services';
+import { Globe, Smartphone, Palette, Bot, Rocket, Briefcase, Link as LinkIcon, TrendingUp } from 'lucide-react';
+
+const iconMap = {
+  Globe, Smartphone, Palette, Bot, Rocket, Briefcase, Link: LinkIcon, TrendingUp
+};
 
 export default function Services() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
-  const services = [
-    {
-      title: "Web Development",
-      desc: "High-performance, interactive websites built with modern frameworks like React and Next.js. We focus on zero-lag experiences and stunning visual design.",
-      icon: "🌐"
-    },
-    {
-      title: "App Development",
-      desc: "Native-feeling mobile applications for iOS and Android. We build robust, scalable apps that keep users engaged and coming back.",
-      icon: "📱"
-    },
-    {
-      title: "Automation Solutions",
-      desc: "Streamline your business operations with custom AI and workflow automations. Save hundreds of hours and reduce human error.",
-      icon: "⚡"
-    },
-    {
-      title: "UI/UX Design",
-      desc: "Award-winning interface design that prioritizes user experience, conversion rates, and brand identity. We craft digital experiences that stand out.",
-      icon: "🎨"
-    },
-    {
-      title: "E-Commerce",
-      desc: "Scalable online stores optimized for conversion. From Shopify to custom headless builds, we engineer platforms designed to sell.",
-      icon: "🛍️"
-    },
-    {
-      title: "SEO & Performance",
-      desc: "Technical SEO and speed optimization. We ensure your site ranks high on Google and loads instantly across all devices.",
-      icon: "🚀"
-    }
-  ];
 
   return (
     <div className="pt-32 pb-20 min-h-screen bg-white dark:bg-black text-gray-900 dark:text-gray-100 relative">
@@ -56,21 +29,28 @@ export default function Services() {
         </m.div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-          {services.map((service, idx) => (
-            <m.div 
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: idx * 0.1 }}
-              className="glass p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-accent-blue/50 transition-colors group"
-            >
-              <div className="text-4xl mb-6">{service.icon}</div>
-              <h3 className="text-2xl font-bold mb-4 group-hover:text-accent-blue transition-colors">{service.title}</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                {service.desc}
-              </p>
-            </m.div>
-          ))}
+          {services.map((service, idx) => {
+            const Icon = iconMap[service.icon] || Globe;
+            return (
+              <m.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="glass p-8 rounded-3xl border border-gray-200 dark:border-white/10 hover:border-accent-blue/50 transition-colors group flex flex-col justify-between"
+              >
+                <div>
+                  <div className="w-12 h-12 rounded-2xl bg-accent-blue/10 flex items-center justify-center text-accent-blue mb-6 group-hover:scale-110 transition-transform">
+                    <Icon size={24} />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 group-hover:text-accent-blue transition-colors">{service.title}</h3>
+                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </m.div>
+            );
+          })}
         </div>
       </div>
     </div>

@@ -11,34 +11,51 @@ import {
 } from 'lucide-react';
 
 const BentoCard = React.memo(({ children, className, title, description, icon: Icon, color }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
+  const mouseX = useMotionValue(300);
+  const mouseY = useMotionValue(150);
   
   // 3D Tilt Values
   const rotateX = useSpring(useTransform(mouseY, [0, 300], [10, -10]), { stiffness: 100, damping: 30 });
   const rotateY = useSpring(useTransform(mouseX, [0, 600], [-10, 10]), { stiffness: 100, damping: 30 });
 
-  const rectRef = useRef(null);
+  const cardRef = useRef(null);
+  const isHovered = useRef(false);
+  const lastMousePos = useRef({ x: 0, y: 0 });
 
-  function onMouseEnter({ currentTarget }) {
-    rectRef.current = currentTarget.getBoundingClientRect();
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (isHovered.current && cardRef.current) {
+        const rect = cardRef.current.getBoundingClientRect();
+        mouseX.set(lastMousePos.current.x - rect.left);
+        mouseY.set(lastMousePos.current.y - rect.top);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [mouseX, mouseY]);
+
+  function onMouseEnter() {
+    isHovered.current = true;
   }
 
-  function onMouseMove({ currentTarget, clientX, clientY }) {
-    if (!rectRef.current) rectRef.current = currentTarget.getBoundingClientRect();
-    const { left, top } = rectRef.current;
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
+  function onMouseMove({ clientX, clientY }) {
+    lastMousePos.current = { x: clientX, y: clientY };
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      mouseX.set(clientX - rect.left);
+      mouseY.set(clientY - rect.top);
+    }
   }
 
   function onMouseLeave() {
-    rectRef.current = null;
+    isHovered.current = false;
     mouseX.set(300); // Reset to center-ish
     mouseY.set(150);
   }
 
   return (
     <m.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -84,7 +101,6 @@ const BentoCard = React.memo(({ children, className, title, description, icon: I
 });
 
 const WhyNexoraa = () => {
-  console.log("WhyNexoraa Component Loaded - v2");
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,

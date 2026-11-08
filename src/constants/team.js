@@ -12,17 +12,6 @@ export const team = [
     }
   },
   {
-    id: 8,
-    name: "Riya Sharma",
-    role: "Social Media Handler",
-    image: "/team/WhatsApp Image 2026-05-15 at 5.11.06 PM.jpeg",
-    specialty: "Digital Branding + Content Strategy",
-    links: { 
-      github: "#", 
-      linkedin: "#" 
-    }
-  },
-  {
     id: 2,
     name: "Gaurav Thakur",
     role: "Technical Lead",

@@ -472,7 +472,7 @@ export default function Agreement() {
               <h3 className="text-base font-bold text-white mb-1">Service Category</h3>
               <p className="text-slate-400 text-xs mb-3.5">Select the primary purpose of collaboration for contract specs.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[220px] overflow-y-auto pr-1">
+            <div data-lenis-prevent="true" className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[220px] overflow-y-auto pr-1">
               {purposeOptions.map(opt => (
                 <m.button
                   key={opt}

@@ -76,6 +76,7 @@ function SidebarContent({ onClose, clientInfo, onSignOut }) {
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        data-lenis-prevent="true"
         className="flex-1 px-4 py-8 space-y-2 overflow-y-auto client-portal-scrollbar"
       >
         {navItems.map((item) => {

@@ -599,6 +599,7 @@ export default function ClientPortal() {
 
       if (mockClient) {
         authenticatedClient = mockClient;
+        loginErr = null; // Clear any Supabase error since mock login succeeded
       }
     }
 

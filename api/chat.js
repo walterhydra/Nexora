@@ -23,7 +23,6 @@ Milan Pandavadara (Founder & CEO) - Full Stack Architect & Visionary. Milan lead
 LinkedIn: https://www.linkedin.com/in/milan-pandavdara/ | GitHub: https://github.com/walterhydra | Personal Portfolio: https://www.walterhydra.me
 
 TEAM:
-- Riya Sharma: Social Media Handler (Digital Branding + Content Strategy)
 - Gaurav Thakur: Technical Lead (Mobile + Backend Systems)
 - Alis Patel: Full-Stack Architect (Node.js + DevOps)
 - Abhishek Jha: Backend Developer (Java + Architecture)
