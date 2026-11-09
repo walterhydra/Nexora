@@ -142,7 +142,6 @@ export default function LayeredPaperWaves({
             ? {
                 x: [0, 18, -8, 0],
                 y: [0, -12, 8, 0],
-                scaleX: [1, 1.025, 0.99, 1],
               }
             : undefined
         }
@@ -184,7 +183,6 @@ export default function LayeredPaperWaves({
             ? {
                 x: [0, -14, 10, 0],
                 y: [0, 14, -10, 0],
-                scaleX: [1, 0.985, 1.02, 1],
               }
             : undefined
         }
@@ -226,7 +224,6 @@ export default function LayeredPaperWaves({
             ? {
                 x: [0, 12, -12, 0],
                 y: [0, -8, 12, 0],
-                scaleX: [1, 1.018, 0.99, 1],
               }
             : undefined
         }
@@ -268,7 +265,6 @@ export default function LayeredPaperWaves({
             ? {
                 x: [0, -8, 6, 0],
                 y: [0, 8, -6, 0],
-                scaleX: [1, 0.99, 1.015, 1],
               }
             : undefined
         }

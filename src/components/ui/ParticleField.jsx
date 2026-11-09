@@ -113,6 +113,8 @@ export default function ParticleField() {
 
       const dark = isDarkRef.current;
       const particles = particlesRef.current;
+      const baseColor = dark ? '255, 255, 255' : '0, 0, 0';
+      const darkMultiplier = dark ? 1 : 0.7;
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -128,13 +130,11 @@ export default function ParticleField() {
         if (p.y < -10) p.y = height + 10;
         if (p.y > height + 10) p.y = -10;
 
-        const opacity = p.baseOpacity + Math.sin(time * p.opacitySpeed + p.opacityPhase) * 0.08;
+        const opacity = Math.max(0.02, (p.baseOpacity + Math.sin(time * p.opacitySpeed + p.opacityPhase) * 0.08) * darkMultiplier);
 
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = dark
-          ? `rgba(255, 255, 255, ${Math.max(0.02, opacity)})`
-          : `rgba(0, 0, 0, ${Math.max(0.02, opacity * 0.7)})`;
+        ctx.fillStyle = `rgba(${baseColor}, ${opacity.toFixed(2)})`;
         ctx.fill();
       }
 

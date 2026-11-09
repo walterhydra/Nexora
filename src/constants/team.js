@@ -3,7 +3,7 @@ export const team = [
     id: 1,
     name: "Milan",
     role: "Founder & CEO",
-    image: "/team/milan.png",
+    image: "/team/intro-milan.jpg",
     specialty: "Full Stack Architect + Visionary",
     links: { 
       github: "https://github.com/walterhydra", 
@@ -15,7 +15,7 @@ export const team = [
     id: 2,
     name: "Gaurav Thakur",
     role: "Technical Lead",
-    image: "/team/gaurav.png",
+    image: "/team/intro-gaurav.jpg",
     specialty: "Mobile + Backend Systems",
     links: { 
       github: "https://github.com/gauravthakur1999", 
@@ -26,7 +26,7 @@ export const team = [
     id: 3,
     name: "Alis Patel",
     role: "Full-Stack Architect",
-    image: "/team/alis.png",
+    image: "/team/intro-alis.jpg",
     specialty: "Node.js + DevOps",
     links: { 
       github: "https://github.com/alispatel111", 
@@ -37,7 +37,7 @@ export const team = [
     id: 4,
     name: "Abhishek Jha",
     role: "Backend Developer",
-    image: "/team/abhishek.png",
+    image: "/team/intro-abhishek.jpg",
     imageClass: "scale-[1.05] object-[35%_60%]",
     specialty: "Java + Architecture",
     links: { 

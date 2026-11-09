@@ -3,6 +3,7 @@
 @theme {
   --font-display: "Inter", system-ui, sans-serif;
   --font-quicksand: "Quicksand", system-ui, sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", system-ui, sans-serif;
   --color-accent-primary: #00F5FF;
   --color-accent-secondary: #FF6B35;
   --color-accent-violet: #7B2FFF;
@@ -27,9 +28,12 @@
 
   body {
     @apply bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased relative;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Noise Overlay - Hardware accelerated layer */
+  /* Noise Overlay - Optimized static texture */
   body::before {
     content: '';
     position: fixed;
@@ -39,9 +43,8 @@
     height: 100vh;
     pointer-events: none;
     z-index: 50;
-    opacity: 0.04;
-    transform: translateZ(0);
-    will-change: transform;
+    opacity: 0.035;
+    contain: strict;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAP8AAAAAAAABAAAAAQAAAAAAAABZtZ11AAAACHRSTlMABA8PEB8fIXUvVAAAAI9JREFUOMu1zjEKwzAMRFE/aHQK+wKBO1eI8yT3v0ZJSKEkkHbx+Oig10sZY2RkZGRkZGRkZGT8R+O59/jOcfX1/d7jW8ex/x5/c1y+1/f3+Jjj9L2+v8fHHKfP9f09vnKcPt/r+/yV4/i5/h5fOU6f7/V9/srx/Vx/j68cp8/3+j5/5fh+rr/HV47T53t9X7wBDfA4P4LdMhgAAAAASUVORK5CYII=");
     background-repeat: repeat;
   }
@@ -166,6 +169,15 @@
 @keyframes shimmer {
   0% { background-position: 200% 0; }
   100% { background-position: -200% 0; }
+}
+
+@keyframes metallic-shimmer {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: -100% 50%;
+  }
 }
 
 /* Scrollbar styling */

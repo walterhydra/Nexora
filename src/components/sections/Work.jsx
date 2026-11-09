@@ -22,7 +22,7 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
       initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      className="p-5 sm:p-7 lg:p-8 rounded-[2rem] bg-[#070b14]/90 border border-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden group font-quicksand"
+      className="p-5 sm:p-7 lg:p-8 rounded-[2rem] bg-[#070b14]/90 border border-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden group font-display"
       style={{ transform: 'translateZ(0)' }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
@@ -69,7 +69,7 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
         <div className="lg:col-span-5 flex flex-col justify-center gap-4 sm:gap-5">
           {/* Category & Project Index */}
           <div className="flex items-center justify-between">
-            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-quicksand font-bold uppercase tracking-wider text-white">
+            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-display font-bold uppercase tracking-wider text-white">
               {project.category}
             </span>
             <span className="font-mono text-xs text-white/40 font-semibold tracking-wider">
@@ -78,12 +78,12 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
           </div>
 
           {/* Project Title */}
-          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-quicksand font-bold text-white tracking-tight leading-tight group-hover:text-accent-primary transition-colors">
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-white tracking-tight leading-tight group-hover:text-accent-primary transition-colors">
             {project.title}
           </h3>
 
           {/* Project Description & Impact */}
-          <p className="font-quicksand text-white/75 text-sm sm:text-base leading-relaxed font-medium">
+          <p className="font-display text-white/75 text-sm sm:text-base leading-relaxed font-medium">
             {project.description} — <span className="text-white font-semibold">{project.result}</span>
           </p>
 
@@ -122,7 +122,7 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-quicksand font-bold text-sm hover:bg-gray-200 transition-all shadow-lg hover:shadow-white/20 hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-display font-bold text-sm hover:bg-gray-200 transition-all shadow-lg hover:shadow-white/20 hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Live Demo</span>
                 <ExternalLink size={15} />
@@ -131,7 +131,7 @@ const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
 
             <Link
               to={`/projects/${project.id}`}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/15 text-white font-quicksand font-semibold text-sm hover:bg-white/20 hover:border-white/30 transition-all"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/15 text-white font-display font-semibold text-sm hover:bg-white/20 hover:border-white/30 transition-all"
             >
               <span>Case Study</span>
               <ArrowUpRight size={15} />
@@ -160,7 +160,7 @@ export default function Work() {
       <div className="work-ambient-glow work-ambient-glow--2" />
 
       {/* Section Header */}
-      <div className="work-header font-quicksand">
+      <div className="work-header font-display">
         <m.div
           initial={{ opacity: 0, y: 30 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
@@ -168,24 +168,15 @@ export default function Work() {
           className="work-header-label"
         >
           <span className="work-header-line" />
-          <span className="work-header-tag font-quicksand font-semibold">PORTFOLIO</span>
+          <span className="work-header-tag font-display font-semibold">PORTFOLIO</span>
           <span className="work-header-line" />
         </m.div>
-
-        <m.h2
-          initial={{ opacity: 0, y: 40 }}
-          animate={headerInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="work-header-title font-quicksand font-extrabold"
-        >
-          FEATURED <span className="work-header-title-accent block mt-1.5 font-quicksand">DEMO WORKS</span>
-        </m.h2>
 
         <m.p
           initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="work-header-subtitle font-quicksand font-medium text-white/70"
+          transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+          className="work-header-subtitle font-display font-medium text-white/70"
         >
           A curated selection of our most impactful digital experiences, crafted with precision and purpose.
         </m.p>
@@ -195,21 +186,21 @@ export default function Work() {
           initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="work-stats font-quicksand"
+          className="work-stats font-display"
         >
           <div className="work-stat">
-            <span className="work-stat-value font-quicksand font-bold">{totalProjects}+</span>
-            <span className="work-stat-label font-quicksand">Projects</span>
+            <span className="work-stat-value font-display font-bold">{totalProjects}+</span>
+            <span className="work-stat-label font-display">Projects</span>
           </div>
           <div className="work-stat-divider" />
           <div className="work-stat">
-            <span className="work-stat-value font-quicksand font-bold">100%</span>
-            <span className="work-stat-label font-quicksand">On-Time Delivery</span>
+            <span className="work-stat-value font-display font-bold">100%</span>
+            <span className="work-stat-label font-display">On-Time Delivery</span>
           </div>
           <div className="work-stat-divider" />
           <div className="work-stat">
-            <span className="work-stat-value font-quicksand font-bold">4★</span>
-            <span className="work-stat-label font-quicksand">Client Satisfaction</span>
+            <span className="work-stat-value font-display font-bold">4★</span>
+            <span className="work-stat-label font-display">Client Satisfaction</span>
           </div>
         </m.div>
       </div>

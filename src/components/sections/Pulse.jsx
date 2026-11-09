@@ -88,8 +88,8 @@ const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) 
   );
 });
 
-export default function Pulse() {
-  const [pulseTime, setPulseTime] = useState(new Date());
+const LiveSystemClock = React.memo(() => {
+  const [pulseTime, setPulseTime] = useState(() => new Date());
 
   useEffect(() => {
     const timer = setInterval(() => setPulseTime(new Date()), 1000);
@@ -104,6 +104,15 @@ export default function Pulse() {
   });
   const [timeVal, ampm] = timeString.split(' ');
 
+  return (
+    <div className="text-6xl font-black text-white tracking-tighter mb-2 flex items-baseline justify-center gap-2">
+      <span>{timeVal}</span>
+      <span className="text-xl font-bold text-accent-primary uppercase tracking-widest">{ampm}</span>
+    </div>
+  );
+});
+
+export default function Pulse() {
   return (
     <section className="py-32 relative overflow-hidden bg-black">
       {/* Cinematic Background */}
@@ -171,10 +180,7 @@ export default function Pulse() {
                 />
               ))}
               <div className="relative z-10 text-center">
-                <div className="text-6xl font-black text-white tracking-tighter mb-2 flex items-baseline justify-center gap-2">
-                  <span>{timeVal}</span>
-                  <span className="text-xl font-bold text-accent-primary uppercase tracking-widest">{ampm}</span>
-                </div>
+                <LiveSystemClock />
                 <div className="text-[10px] font-mono text-accent-primary uppercase tracking-[0.5em]">System Sync Active</div>
               </div>
             </div>

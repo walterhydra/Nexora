@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-export default function AnimatedCounter({ end, duration = 2, prefix = "", suffix = "", className = "" }) {
+export default function AnimatedCounter({ end, duration = 2, prefix = "", suffix = "", className = "", style = {} }) {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.5 });
   const [stage, setStage] = useState(0); // 0: "---", 1: counting, 2: done
   const [count, setCount] = useState(0);
@@ -41,7 +41,7 @@ export default function AnimatedCounter({ end, duration = 2, prefix = "", suffix
   }, [stage, end, duration]);
 
   return (
-    <div ref={ref} className={`flex items-center ${className}`}>
+    <div ref={ref} className={`flex items-center ${className}`} style={style}>
       {stage === 0 && <span>---</span>}
       {stage >= 1 && (
         <span>

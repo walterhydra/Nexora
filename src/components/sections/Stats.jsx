@@ -1,201 +1,310 @@
-import React, { useRef } from 'react';
-import { m, useMotionTemplate, useMotionValue, useScroll, useTransform } from 'framer-motion';
+import React from 'react';
+import { m } from 'framer-motion';
 import AnimatedCounter from '../ui/AnimatedCounter';
-import { Code2, Clock, Star, Users, ArrowUpRight } from 'lucide-react';
+import { Code2, Clock, Star, Users, ArrowRight } from 'lucide-react';
 
-const stats = [
+const statsData = [
   {
     id: "01",
-    label: "Projects Delivered",
+    title: "Projects Delivered",
     value: 16,
     suffix: "+",
-    icon: <Code2 size={40} className="text-accent-primary" />,
-    color: "from-accent-primary/20 to-transparent",
-    border: "border-accent-primary/30",
+    tagline: "Global web platforms and scalable cloud architectures.",
     desc: "We have successfully designed, built, and launched premium digital products for brands across the globe, focusing on scalable architecture and pixel-perfect design.",
-    top: "top-[10vh]"
+    pointsColumn1: [
+      "Scalable architecture",
+      "Pixel-perfect design",
+      "Multi-region deployment"
+    ],
+    pointsColumn2: [
+      "100/100 Core Web Vitals",
+      "Zero technical debt",
+      "Production reliability"
+    ],
+    icon: Code2,
+    ctaText: "Explore our work",
+    targetSection: "work"
   },
   {
     id: "02",
-    label: "Avg. Delivery Time",
+    title: "Avg. Delivery Time",
     value: 7,
     suffix: " Days",
-    icon: <Clock size={40} className="text-accent-secondary" />,
-    color: "from-accent-secondary/20 to-transparent",
-    border: "border-accent-secondary/30",
+    tagline: "Rapid sprint turnarounds engineered for modern ambitious teams.",
     desc: "By utilizing modern frameworks and an elite agile workflow, we drastically reduce time-to-market without ever compromising on quality.",
-    top: "top-[15vh]"
+    pointsColumn1: [
+      "Modern frameworks",
+      "Elite agile workflow",
+      "Rapid time-to-market"
+    ],
+    pointsColumn2: [
+      "Automated CI/CD",
+      "Weekly staging builds",
+      "Uncompromised quality"
+    ],
+    icon: Clock,
+    ctaText: "See our sprint work",
+    targetSection: "work"
   },
   {
     id: "03",
-    label: "Client Satisfaction",
+    title: "Client Satisfaction",
     value: 98,
     suffix: "%",
-    icon: <Star size={40} className="text-yellow-400" />,
-    color: "from-yellow-400/20 to-transparent",
-    border: "border-yellow-400/30",
+    tagline: "Enduring technical partnerships grounded in radical transparency.",
     desc: "Our commitment to communication, transparency, and post-launch support results in long-term partnerships rather than one-off projects.",
-    top: "top-[20vh]"
+    pointsColumn1: [
+      "Proactive communication",
+      "Radical transparency",
+      "Post-launch support"
+    ],
+    pointsColumn2: [
+      "Long-term partnerships",
+      "Weekly async demos",
+      "0% retainer churn"
+    ],
+    icon: Star,
+    ctaText: "Read client reviews",
+    targetSection: "testimonials"
   },
   {
     id: "04",
-    label: "Team Experts",
+    title: "Team Experts",
     value: 10,
     suffix: "",
-    icon: <Users size={40} className="text-green-400" />,
-    color: "from-green-400/20 to-transparent",
-    border: "border-green-400/30",
+    tagline: "Curated senior engineering force with zero junior handoffs.",
     desc: "We are a globally distributed, highly curated team of senior developers, award-winning designers, and product strategists.",
-    top: "top-[25vh]"
+    pointsColumn1: [
+      "Globally distributed",
+      "Senior full-stack leads",
+      "Product strategists"
+    ],
+    pointsColumn2: [
+      "Award-winning designers",
+      "Zero junior handoffs",
+      "100% in-house collective"
+    ],
+    icon: Users,
+    ctaText: "Meet the engineering team",
+    targetSection: "team"
   }
 ];
 
-const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-  const rectRef = useRef(null);
-
-  const scale = useTransform(progress, range, [1, targetScale]);
-  const dimOpacity = useTransform(progress, range, [0, 0.4]);
-
-  function handleMouseEnter({ currentTarget }) {
-    rectRef.current = currentTarget.getBoundingClientRect();
-  }
-
-  function handleMouseMove({ currentTarget, clientX, clientY }) {
-    if (!rectRef.current) rectRef.current = currentTarget.getBoundingClientRect();
-    const { left, top } = rectRef.current;
-    mouseX.set(clientX - left);
-    mouseY.set(clientY - top);
-  }
-
-  function handleMouseLeave() {
-    rectRef.current = null;
-  }
-
-  return (
-    <m.div
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} // smooth apple-like spring
-      onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      style={{ scale, transformOrigin: "top center", willChange: "transform", transform: "translate3d(0, 0, 0)" }}
-      className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0c0c0c] border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-center group`}
-    >
-      {/* Scroll Dimming Overlay */}
-      <m.div
-        className="absolute inset-0 bg-black pointer-events-none z-20"
-        style={{ opacity: dimOpacity }}
-      />
-
-      {/* High-Performance Cursor Spotlight Glow */}
-      <m.div
-        className="pointer-events-none absolute -inset-px z-0 opacity-0 transition duration-500 group-hover:opacity-100"
-        style={{
-          background: useMotionTemplate`
-            radial-gradient(
-              600px circle at ${mouseX}px ${mouseY}px,
-              rgba(255,255,255,0.06),
-              transparent 80%
-            )
-          `,
-        }}
-      />
-
-      {/* Internal Gradient Glow */}
-      <div className={`absolute top-0 left-0 w-full h-full bg-gradient-to-b ${stat.color} opacity-30 pointer-events-none z-0`} />
-
-      <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-10 lg:gap-16">
-
-        {/* Left Side: Number & Title */}
-        <div className="flex-1 w-full">
-          <div className="flex items-center gap-4 mb-6">
-            <span className="font-mono text-base text-gray-500 tracking-widest">{stat.id}</span>
-            <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-md">
-              {stat.icon}
-            </div>
-          </div>
-
-          <h3 className="text-2xl md:text-3xl font-display font-bold text-white mb-4">
-            {stat.label}
-          </h3>
-
-          <p className="text-base md:text-lg text-gray-400 leading-relaxed max-w-md">
-            {stat.desc}
-          </p>
-        </div>
-
-        {/* Right Side: Massive Animated Number */}
-        <div className="flex-1 flex justify-start lg:justify-end w-full">
-          <div className="relative group/num">
-            <AnimatedCounter
-              end={stat.value}
-              suffix={stat.suffix}
-              className="text-6xl md:text-7xl lg:text-[7rem] font-display font-black tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-white to-gray-500"
-            />
-            <div className="absolute -top-4 -right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center opacity-0 group-hover/num:opacity-100 group-hover/num:translate-x-2 group-hover/num:-translate-y-2 transition-all duration-300">
-              <ArrowUpRight className="text-white w-5 h-5" />
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </m.div>
-  );
-});
-
 export default function Stats() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"]
-  });
+  const scrollToTarget = (targetId) => {
+    const el = document.getElementById(targetId);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  // Reusable shining metallic shimmer style (Pure White)
+  const shiningWhiteStyle = {
+    fontFamily: '"Quicksand", system-ui, sans-serif',
+    backgroundImage: 'linear-gradient(115deg, #ffffff 0%, #a1a1aa 25%, #ffffff 50%, #71717a 75%, #ffffff 100%)',
+    backgroundSize: '200% 100%',
+    animation: 'metallic-shimmer 4s ease-in-out infinite',
+  };
 
   return (
-    <section ref={containerRef} className="py-32 relative bg-[#050505] z-10">
+    <section id="stats" className="py-20 md:py-28 bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300 font-quicksand overflow-hidden">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* ============================================================== */}
+        {/* SECTION HEADER (REFINED & LUXURY GRADE)                         */}
+        {/* ============================================================== */}
+        <div className="pb-12 md:pb-16 relative">
+          
+          {/* Subtle Ambient Glow behind header */}
+          <div 
+            className="absolute -top-12 left-0 w-[420px] h-[200px] pointer-events-none -z-10 blur-[100px] opacity-35"
+            style={{ background: 'radial-gradient(ellipse at center, rgba(0,245,255,0.18) 0%, rgba(255,255,255,0.04) 50%, transparent 75%)' }}
+          />
 
-      {/* Background ambient light */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-accent-primary/10 blur-[150px] pointer-events-none rounded-full" />
+          <div>
+            {/* Studio-Grade Micro Category Pill Badge */}
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)] mb-5 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400 shadow-[0_0_8px_rgba(0,245,255,0.8)]" />
+              </span>
+              <span 
+                className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/90"
+                style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+              >
+                The Impact // Performance
+              </span>
+            </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        {/* Section Header */}
-        <m.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-32 text-center"
-        >
-          <div className="flex items-center justify-center gap-4 mb-6">
-            <span className="w-12 h-[1px] bg-white/20" />
-            <span className="font-mono text-sm uppercase tracking-[0.3em] text-gray-400">The Impact</span>
-            <span className="w-12 h-[1px] bg-white/20" />
+            {/* Unified Glowing Title: Performance at Scale (Zero Background Bloom) */}
+            <div>
+              <h2 
+                className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight cursor-default select-none"
+                style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+              >
+                <span 
+                  className="text-transparent bg-clip-text inline-block"
+                  style={{
+                    fontFamily: '"Quicksand", system-ui, sans-serif',
+                    backgroundImage: 'linear-gradient(115deg, #ffffff 0%, #a1a1aa 25%, #ffffff 50%, #71717a 75%, #ffffff 100%)',
+                    backgroundSize: '200% 100%',
+                    animation: 'metallic-shimmer 4.5s ease-in-out infinite',
+                  }}
+                >
+                  Performance at Scale
+                </span>
+              </h2>
+            </div>
           </div>
-          <h2 className="text-4xl md:text-6xl font-display font-black text-white leading-tight">
-            Performance at <span className="text-gradient italic font-light">Scale</span>
-          </h2>
-        </m.div>
 
-        {/* Card Stacking Container */}
-        <div className="relative pb-[30vh]">
-          {stats.map((stat, idx) => {
-            const range = [idx * 0.22, 1];
-            const targetScale = 1 - ((stats.length - 1 - idx) * 0.04);
+        </div>
+
+        {/* ============================================================== */}
+        {/* TABLE ROW MATRIX                                               */}
+        {/* ============================================================== */}
+        <div className="w-full border-t border-neutral-200 dark:border-white/10">
+          {statsData.map((item, idx) => {
+            const Icon = item.icon;
             return (
-              <StatCard
-                key={idx}
-                stat={stat}
-                idx={idx}
-                progress={scrollYProgress}
-                range={range}
-                targetScale={targetScale}
-              />
+              <m.div
+                key={item.id}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.45, delay: idx * 0.05 }}
+                className="group border-b border-neutral-200 dark:border-white/10 transition-colors duration-200 hover:bg-neutral-500/[0.03] dark:hover:bg-white/[0.02]"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[160px]">
+                  
+                  {/* Column 1: Index Number + Icon */}
+                  <div className="lg:col-span-1 p-6 sm:p-8 flex items-center lg:flex-col lg:items-center justify-between lg:justify-start gap-4 lg:gap-6 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-white/10">
+                    <span 
+                      className="font-mono text-xs text-neutral-400 dark:text-neutral-500 tracking-wider"
+                      style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                    >
+                      {item.id}
+                    </span>
+                    <div className="w-10 h-10 rounded-lg border border-neutral-200 dark:border-white/10 bg-neutral-100 dark:bg-white/[0.03] flex items-center justify-center text-neutral-600 dark:text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white group-hover:border-neutral-400 dark:group-hover:border-white/30 transition-all">
+                      <Icon className="w-4 h-4" strokeWidth={1.5} />
+                    </div>
+                  </div>
+
+                  {/* Column 2: Title, Shining White Stat Number & Tagline */}
+                  <div className="lg:col-span-3 p-6 sm:p-8 flex flex-col justify-center border-b lg:border-b-0">
+                    
+                    {/* Animated Shining White Title */}
+                    <div className="mb-2">
+                      <h3 
+                        className="text-lg sm:text-xl font-bold tracking-tight text-transparent bg-clip-text inline-block"
+                        style={shiningWhiteStyle}
+                      >
+                        {item.title}
+                      </h3>
+                    </div>
+                    
+                    {/* Animated Shining White Stat Number (Pure White Shimmer) */}
+                    <div className="flex items-baseline gap-2 mb-3">
+                      <AnimatedCounter
+                        end={item.value}
+                        suffix={item.suffix}
+                        className="text-2xl sm:text-3xl font-bold tracking-tight text-transparent bg-clip-text inline-flex items-center"
+                        style={shiningWhiteStyle}
+                      />
+                      <span 
+                        className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-400 px-1.5 py-0.5 rounded border border-white/10 bg-white/[0.03]"
+                        style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                      >
+                        Verified
+                      </span>
+                    </div>
+
+                    {/* Tagline */}
+                    <p 
+                      className="text-xs sm:text-[13px] text-neutral-500 dark:text-neutral-400 leading-relaxed font-medium"
+                      style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                    >
+                      {item.tagline}
+                    </p>
+                  </div>
+
+                  {/* Column 3: In-Depth Paragraph Description */}
+                  <div className="lg:col-span-4 p-6 sm:p-8 flex items-center border-b lg:border-b-0">
+                    <p 
+                      className="text-xs sm:text-[13px] text-neutral-600 dark:text-neutral-300 leading-relaxed font-medium"
+                      style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                    >
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Column 4: 2 Sub-columns of Bullet Points + Action Link */}
+                  <div className="lg:col-span-4 p-6 sm:p-8 flex flex-col justify-between">
+                    <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
+                      <div className="space-y-2">
+                        {item.pointsColumn1.map((pt, pIdx) => (
+                          <div 
+                            key={pIdx} 
+                            className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-medium"
+                            style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                          >
+                            <span className="text-neutral-400 dark:text-neutral-600 select-none">•</span>
+                            <span className="leading-tight">{pt}</span>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="space-y-2">
+                        {item.pointsColumn2.map((pt, pIdx) => (
+                          <div 
+                            key={pIdx} 
+                            className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-medium"
+                            style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                          >
+                            <span className="text-neutral-400 dark:text-neutral-600 select-none">•</span>
+                            <span className="leading-tight">{pt}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="pt-2">
+                      <button
+                        onClick={() => scrollToTarget(item.targetSection)}
+                        className="inline-flex items-center gap-1.5 text-xs font-bold text-neutral-900 dark:text-white hover:text-cyan-400 transition-colors cursor-pointer"
+                        style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                      >
+                        <span>{item.ctaText}</span>
+                        <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-200" />
+                      </button>
+                    </div>
+                  </div>
+
+                </div>
+              </m.div>
             );
           })}
+        </div>
+
+        {/* ============================================================== */}
+        {/* BOTTOM METRICS TELEMETRY STRIP                                 */}
+        {/* ============================================================== */}
+        <div 
+          className="mt-8 pt-6 border-t border-neutral-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-neutral-500 dark:text-neutral-400 font-medium"
+          style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+        >
+          <div className="flex flex-wrap items-center gap-6">
+            <span><strong className="text-neutral-900 dark:text-white font-bold">16+</strong> Projects Delivered</span>
+            <span className="text-neutral-300 dark:text-white/20">•</span>
+            <span><strong className="text-neutral-900 dark:text-white font-bold">7 Days</strong> Avg. Delivery Time</span>
+            <span className="text-neutral-300 dark:text-white/20">•</span>
+            <span><strong className="text-neutral-900 dark:text-white font-bold">98%</strong> Client Satisfaction</span>
+            <span className="text-neutral-300 dark:text-white/20">•</span>
+            <span><strong className="text-neutral-900 dark:text-white font-bold">10</strong> Team Experts</span>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="font-semibold text-neutral-700 dark:text-neutral-300">Monitored Production SLA: 99.98%</span>
+          </div>
         </div>
 
       </div>

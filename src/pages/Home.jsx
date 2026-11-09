@@ -7,11 +7,9 @@ import About from '../components/sections/About';
 import Team from '../components/sections/Team';
 import Contact from '../components/sections/Contact';
 import Pricing from '../components/sections/Pricing';
-import HowWeWork from '../components/sections/HowWeWork';
 import RealtimeWork from '../components/sections/RealtimeWork';
-import Work from '../components/sections/Work';
+import Endorsements from '../components/sections/Endorsements';
 import Stats from '../components/sections/Stats';
-import Pulse from '../components/sections/Pulse';
 import Testimonials from '../components/sections/Testimonials';
 import KineticManifesto from '../components/sections/KineticManifesto';
 import FAQ from '../components/sections/FAQ';
@@ -49,12 +47,10 @@ export default function Home() {
       <div className="bg-[var(--bg-primary)]">
         <TrustBadges />
         <Services />
-        <Work />
-        <Pulse />
         <Stats />
         <About />
         <Team />
-        <HowWeWork />
+        <Endorsements />
         <RealtimeWork />
         <Pricing />
         <KineticManifesto />

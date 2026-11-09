@@ -1,16 +1,16 @@
 # Graph Report - Nexora  (2026-11-09)
 
 ## Corpus Check
-- 175 files · ~4,186,958 words
+- 176 files · ~3,388,325 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1001 nodes · 1153 edges · 104 communities (78 shown, 26 thin omitted)
+- 1014 nodes · 1166 edges · 105 communities (79 shown, 26 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `f062f222`
+- Built from commit: `06a736a7`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,6 +39,7 @@
 - [[_COMMUNITY_Community 21|Community 21]]
 - [[_COMMUNITY_Community 22|Community 22]]
 - [[_COMMUNITY_Community 23|Community 23]]
+- [[_COMMUNITY_Community 24|Community 24]]
 - [[_COMMUNITY_Community 25|Community 25]]
 - [[_COMMUNITY_Community 26|Community 26]]
 - [[_COMMUNITY_Community 29|Community 29]]
@@ -81,6 +82,7 @@
 - [[_COMMUNITY_Community 71|Community 71]]
 - [[_COMMUNITY_Community 72|Community 72]]
 - [[_COMMUNITY_Community 73|Community 73]]
+- [[_COMMUNITY_Community 74|Community 74]]
 - [[_COMMUNITY_Community 75|Community 75]]
 - [[_COMMUNITY_Community 76|Community 76]]
 - [[_COMMUNITY_Community 77|Community 77]]
@@ -97,6 +99,7 @@
 - [[_COMMUNITY_Community 90|Community 90]]
 - [[_COMMUNITY_Community 91|Community 91]]
 - [[_COMMUNITY_Community 92|Community 92]]
+- [[_COMMUNITY_Community 93|Community 93]]
 - [[_COMMUNITY_Community 94|Community 94]]
 - [[_COMMUNITY_Community 95|Community 95]]
 - [[_COMMUNITY_Community 97|Community 97]]
@@ -126,10 +129,10 @@
 - `OnCreate()` --calls--> `GetClientArea()`  [INFERRED]
   apps/mobile/windows/runner/flutter_window.cpp → apps/mobile/windows/runner/win32_window.cpp
 
-## Communities (104 total, 26 thin omitted)
+## Communities (105 total, 26 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
+Cohesion: 0.07
 Nodes (21): useLenis(), About, Agreement, AppContent(), CaseStudyDetail, ClientPortal, CompanyPortal, Contact (+13 more)
 
 ### Community 1 - "Community 1"
@@ -137,24 +140,24 @@ Cohesion: 0.05
 Nodes (39): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+31 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.14
-Nodes (10): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, bentoClasses (+2 more)
+Cohesion: 0.21
+Nodes (8): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, guarantees
 
 ### Community 3 - "Community 3"
 Cohesion: 0.09
 Nodes (12): ThemeContext, ThemeProvider(), useTheme(), getTerminalContent(), getTerminalTitle(), SystemBoot(), HERO_PHRASES, LaptopScreenContent (+4 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.13
-Nodes (3): steps, PulseCard, BentoCard
+Cohesion: 0.15
+Nodes (3): endorsementsData, steps, BentoCard
 
 ### Community 5 - "Community 5"
-Cohesion: 0.21
-Nodes (5): services, getServiceComparison(), iconMap, ServiceDetails(), iconMap
+Cohesion: 0.04
+Nodes (48): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+40 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.31
-Nodes (4): destroyScroll(), getScroll(), initScroll(), nativeScrollController
+Cohesion: 0.21
+Nodes (5): services, getServiceComparison(), iconMap, ServiceDetails(), iconMap
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
@@ -181,20 +184,20 @@ Cohesion: 0.40
 Nodes (3): Expanding the ESLint configuration, React Compiler, React + Vite
 
 ### Community 14 - "Community 14"
-Cohesion: 0.30
-Nodes (5): useMagneticEffect(), Navbar(), GlowCard, MagneticButton(), cn()
+Cohesion: 0.29
+Nodes (5): ABOUT_PARAGRAPH_SEGMENTS, containerVariants, itemVariants, STUDIO_FACTS, TOTAL_ABOUT_CHARS
 
 ### Community 16 - "Community 16"
 Cohesion: 0.08
 Nodes (24): 1. "Mixed Content" or Cleartext Traffic Issues, 1. Prerequisites, 2. External Links or Downloads Not Working, 2. Opening the Project in Android Studio, 3. Installing Dependencies, 3. Login Session Not Saving, 4. Blank White Screen on Launch, 4. Connecting a Device or Emulator (+16 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.31
-Nodes (8): leftPageVariants, mobilePageVariants, pageVariants, PaymentPolicy(), renderPageContent(), renderPageHeader(), renderSignatureBlock(), rightPageVariants
+Cohesion: 0.30
+Nodes (5): useMagneticEffect(), Navbar(), GlowCard, MagneticButton(), cn()
 
 ### Community 20 - "Community 20"
-Cohesion: 0.29
-Nodes (5): colorMap, iconMap, NotificationPanel(), notifications, pageLabels
+Cohesion: 0.20
+Nodes (9): assetFiles, channels, folders, invoices, messages, milestones, paymentTimeline, project (+1 more)
 
 ### Community 21 - "Community 21"
 Cohesion: 0.10
@@ -203,6 +206,10 @@ Nodes (19): compilerOptions, allowJs, esModuleInterop, incremental, isolatedModu
 ### Community 22 - "Community 22"
 Cohesion: 0.11
 Nodes (17): aliases, components, hooks, lib, ui, utils, iconLibrary, rsc (+9 more)
+
+### Community 24 - "Community 24"
+Cohesion: 0.31
+Nodes (4): destroyScroll(), getScroll(), initScroll(), nativeScrollController
 
 ### Community 25 - "Community 25"
 Cohesion: 0.40
@@ -221,8 +228,8 @@ Cohesion: 0.18
 Nodes (13): leftPageVariants, mobilePageVariants, navigation, nonRefundable, pageVariants, RefundPolicy(), renderPageContent(), renderPageHeader() (+5 more)
 
 ### Community 33 - "Community 33"
-Cohesion: 0.40
-Nodes (3): docsData, faqs, steps
+Cohesion: 0.29
+Nodes (5): colorMap, iconMap, NotificationPanel(), notifications, pageLabels
 
 ### Community 34 - "Community 34"
 Cohesion: 0.23
@@ -253,8 +260,8 @@ Cohesion: 0.15
 Nodes (14): PageRouter(), pageVariants, allItems, CommandPalette(), recentItems, priorities, RequestModal(), requestTypes (+6 more)
 
 ### Community 44 - "Community 44"
-Cohesion: 0.04
-Nodes (48): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+40 more)
+Cohesion: 0.40
+Nodes (3): docsData, faqs, steps
 
 ### Community 47 - "Community 47"
 Cohesion: 0.20
@@ -279,6 +286,10 @@ Nodes (6): colorMap, iconMap, NotificationPanel(), pageLabels, TopNavbar(), noti
 ### Community 53 - "Community 53"
 Cohesion: 0.33
 Nodes (4): inter, jetbrainsMono, metadata, sora
+
+### Community 55 - "Community 55"
+Cohesion: 0.25
+Nodes (3): services, StatCard, statsData
 
 ### Community 59 - "Community 59"
 Cohesion: 0.24
@@ -305,8 +316,8 @@ Cohesion: 0.11
 Nodes (7): fl_register_plugins(), main(), my_application_activate(), my_application_new(), _MyApplication, dart_entrypoint_arguments, parent_instance
 
 ### Community 68 - "Community 68"
-Cohesion: 0.20
-Nodes (9): assetFiles, channels, folders, invoices, messages, milestones, paymentTimeline, project (+1 more)
+Cohesion: 0.40
+Nodes (3): LiveClock, LiveSystemClock, PulseCard
 
 ### Community 69 - "Community 69"
 Cohesion: 0.17
@@ -327,6 +338,10 @@ Nodes (8): ../core/theme/colors.dart, package:flutter/material.dart, build, Erro
 ### Community 73 - "Community 73"
 Cohesion: 0.22
 Nodes (8): ../core/theme/colors.dart, package:flutter/material.dart, build, Icon, NoInternetScreen, Scaffold, SizedBox, Text
+
+### Community 74 - "Community 74"
+Cohesion: 0.31
+Nodes (8): leftPageVariants, mobilePageVariants, pageVariants, PaymentPolicy(), renderPageContent(), renderPageHeader(), renderSignatureBlock(), rightPageVariants
 
 ### Community 75 - "Community 75"
 Cohesion: 0.29
@@ -369,7 +384,7 @@ Cohesion: 0.25
 Nodes (5): techStack, allTech, row1, row2, row3
 
 ## Knowledge Gaps
-- **473 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+468 more)
+- **482 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+477 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **26 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -377,16 +392,16 @@ Nodes (5): techStack, allTech, row1, row2, row3
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `fmt()` connect `Community 36` to `Community 38`?**
-  _High betweenness centrality (0.061) - this node is a cross-community bridge._
-- **Why does `cn()` connect `Community 14` to `Community 9`, `Community 20`, `Community 23`?**
-  _High betweenness centrality (0.010) - this node is a cross-community bridge._
+  _High betweenness centrality (0.060) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 1` to `Community 5`?**
+  _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _474 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _483 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.07692307692307693 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
-- **Should `Community 2` be split into smaller, more focused modules?**
-  _Cohesion score 0.14035087719298245 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.08923076923076922 - nodes in this community are weakly interconnected._
+- **Should `Community 5` be split into smaller, more focused modules?**
+  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._

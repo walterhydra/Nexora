@@ -3,16 +3,17 @@ import { m, useInView, AnimatePresence } from 'framer-motion';
 
 const VideoPlayer = ({ src, className }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "200px" });
+  const isInView = useInView(ref, { once: false, margin: "100px" });
 
   useEffect(() => {
-    if (ref.current) {
-      ref.current.playbackRate = 2.0;
-      if (isInView) {
-        ref.current.play().catch(() => {});
-      } else {
-        ref.current.pause();
-      }
+    const video = ref.current;
+    if (!video) return;
+
+    video.playbackRate = 1.0;
+    if (isInView) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
     }
   }, [isInView]);
 
@@ -23,8 +24,13 @@ const VideoPlayer = ({ src, className }) => {
       loop 
       muted 
       playsInline
-      preload="none"
+      preload="metadata"
       className={className}
+      style={{
+        transform: 'translateZ(0)',
+        willChange: 'transform',
+        contain: 'paint'
+      }}
     />
   );
 };
@@ -316,18 +322,21 @@ export default function RealtimeWork() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
               className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
+              style={{ transform: 'translateZ(0)', willChange: 'opacity' }}
               onClick={() => setActiveArchProject(null)}
             >
               {/* Modal Container */}
               <m.div
                 data-lenis-prevent="true"
-                initial={{ scale: 0.95, y: 30, opacity: 0 }}
+                initial={{ scale: 0.98, y: 15, opacity: 0 }}
                 animate={{ scale: 1, y: 0, opacity: 1 }}
-                exit={{ scale: 0.95, y: 30, opacity: 0 }}
-                transition={{ type: "spring", damping: 28, stiffness: 280 }}
+                exit={{ scale: 0.98, y: 15, opacity: 0 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                 onClick={(e) => e.stopPropagation()}
                 className="relative w-full max-w-4xl bg-[#0a0a0c]/95 border border-white/10 rounded-[2rem] p-6 md:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] max-h-[90vh] overflow-y-auto z-10 text-left"
+                style={{ transform: 'translateZ(0)', willChange: 'transform, opacity' }}
               >
                 {/* Accent ambient glow */}
                 <div className={`absolute -top-12 -left-12 w-32 h-32 rounded-full ${project.bg} blur-3xl pointer-events-none`} />

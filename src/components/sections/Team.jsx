@@ -116,11 +116,8 @@ export default function Team() {
             </h2>
           </div>
 
-          <div>
-            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              Explore the Nexoraa crew. Each panel represents a specialist who shapes strategy, technology, delivery, or brand momentum.
-            </p>
-            <div className="mt-6 flex items-center gap-5 border-t border-black/10 pt-5 dark:border-white/10">
+          <div className="flex items-end lg:justify-end">
+            <div className="flex items-center gap-5">
               <div>
                 <div className="text-2xl font-black">{String(teamMembers.length).padStart(2, '0')}</div>
                 <div className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Core members</div>
@@ -148,9 +145,8 @@ export default function Team() {
             const poster = posterMap[member.name];
 
             return (
-              <m.article
+              <article
                 key={member.id}
-                layout
                 onMouseEnter={() => setActiveId(member.id)}
                 onFocus={() => setActiveId(member.id)}
                 onClick={() => {
@@ -161,9 +157,10 @@ export default function Team() {
                 role="button"
                 aria-label={`View ${member.name}`}
                 aria-expanded={isActive}
-                animate={{ flex: isActive ? 6 : 1 }}
-                transition={{ type: 'spring', stiffness: 220, damping: 28 }}
-                className="group relative min-h-[82px] cursor-pointer overflow-hidden border border-white/10 bg-[#111318] outline-none lg:min-w-[72px]"
+                className={`group relative min-h-[82px] cursor-pointer overflow-hidden border border-white/10 bg-[#111318] outline-none lg:min-w-[72px] transition-[flex-grow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[flex-grow] ${
+                  isActive ? 'flex-[6] lg:flex-[6]' : 'flex-[1] lg:flex-[1]'
+                }`}
+                style={{ transform: 'translateZ(0)', contain: 'layout paint' }}
               >
                 <img
                   src={poster || member.image}
@@ -172,31 +169,31 @@ export default function Team() {
                   decoding="async"
                   width="800"
                   height="1000"
-                  className={`absolute inset-0 h-full w-full transition-all duration-[600ms] ease-out ${
+                  className={`absolute inset-0 h-full w-full transition-[opacity,transform] duration-300 ease-out ${
                     poster ? 'object-contain bg-white' : `object-cover ${member.imageClass || 'object-top'}`
                   } ${isActive || poster ? 'grayscale-0' : 'grayscale'}`}
                   style={{
                     transform: `scale(${isActive ? 1 : poster ? 1.04 : 1.12})`,
-                    opacity: isActive ? 1 : 0
+                    opacity: isActive ? 1 : 0,
+                    willChange: 'transform, opacity'
                   }}
                 />
-                <m.div
-                  className="absolute inset-0"
-                  animate={{
+                <div
+                  className="absolute inset-0 transition-colors duration-300"
+                  style={{
                     backgroundColor: isActive ? 'rgba(0,0,0,0.24)' : panelColors[index]
                   }}
-                  transition={{ duration: 0.4 }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-black/20" />
 
-                <AnimatePresence mode="wait">
+                <AnimatePresence>
                   {isActive ? (
                     <m.div
                       key="active"
-                      initial={{ opacity: 0, y: 24 }}
+                      initial={{ opacity: 0, y: 12 }}
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0 }}
-                      transition={{ duration: 0.35, delay: 0.12 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
                       className="absolute inset-0 flex min-w-[280px] flex-col justify-between p-5 text-white md:p-7"
                     >
                       <div className="flex items-start justify-between gap-4">
@@ -254,46 +251,46 @@ export default function Team() {
                     </m.div>
                   )}
                 </AnimatePresence>
-              </m.article>
+              </article>
             );
           })}
 
           {hiringCard && (
-            <m.a
-              layout
+            <a
               href={hiringCard.links.apply}
               target="_blank"
               rel="noopener noreferrer"
               onMouseEnter={() => setActiveId('hiring')}
               onFocus={() => setActiveId('hiring')}
-              animate={{ flex: activeId === 'hiring' ? 6 : 1 }}
-              transition={{ type: 'spring', stiffness: 220, damping: 28 }}
-              className="group relative min-h-[82px] min-w-0 overflow-hidden border border-red-400/30 bg-[#dc2626] outline-none lg:min-w-[72px]"
+              className={`group relative min-h-[82px] min-w-0 overflow-hidden border border-red-400/30 bg-[#dc2626] outline-none lg:min-w-[72px] transition-[flex-grow] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[flex-grow] ${
+                activeId === 'hiring' ? 'flex-[6] lg:flex-[6]' : 'flex-[1] lg:flex-[1]'
+              }`}
+              style={{ transform: 'translateZ(0)', contain: 'layout paint' }}
             >
-              <m.img
+              <img
                 src={hiringCard.image}
                 alt=""
                 loading="lazy"
                 decoding="async"
                 width="800"
                 height="1000"
-                className="absolute inset-0 h-full w-full object-cover"
-                animate={{
+                className="absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-300 ease-out"
+                style={{
                   opacity: activeId === 'hiring' ? 0.4 : 0,
-                  scale: activeId === 'hiring' ? 1.05 : 1
+                  transform: `scale(${activeId === 'hiring' ? 1.05 : 1})`,
+                  willChange: 'transform, opacity'
                 }}
-                transition={{ duration: 0.5 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 {activeId === 'hiring' ? (
                   <m.div
                     key="hiring-active"
-                    initial={{ opacity: 0, y: 24 }}
+                    initial={{ opacity: 0, y: 12 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0 }}
-                    transition={{ duration: 0.35, delay: 0.12 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     className="absolute inset-0 flex min-w-[280px] flex-col justify-between p-5 text-white md:p-7"
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -333,7 +330,7 @@ export default function Team() {
                   </m.div>
                 )}
               </AnimatePresence>
-            </m.a>
+            </a>
           )}
         </m.div>
       </div>
@@ -344,20 +341,23 @@ export default function Team() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             onClick={() => setSelectedId(null)}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-3 backdrop-blur-md md:p-6"
+            style={{ transform: 'translateZ(0)', willChange: 'opacity' }}
           >
             <m.div
-              initial={{ opacity: 0, y: 40, scale: 0.97 }}
+              initial={{ opacity: 0, y: 20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: 24, scale: 0.98 }}
-              transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              exit={{ opacity: 0, y: 15, scale: 0.98 }}
+              transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
               onClick={(event) => event.stopPropagation()}
               role="dialog"
               aria-modal="true"
               aria-label={`${selectedMember.name} full introduction`}
               data-lenis-prevent="true"
               className="relative grid max-h-[94vh] w-full max-w-6xl overflow-y-auto bg-[#090b10] text-white shadow-[0_30px_120px_rgba(0,0,0,0.65)] lg:grid-cols-[0.88fr_1.12fr]"
+              style={{ transform: 'translateZ(0)', willChange: 'transform, opacity' }}
             >
               <button
                 type="button"

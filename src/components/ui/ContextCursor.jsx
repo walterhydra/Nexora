@@ -10,7 +10,7 @@ export default function ContextCursor() {
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  const springConfig = { damping: 45, stiffness: 1200, mass: 0.05 };
+  const springConfig = { damping: 32, stiffness: 600, mass: 0.08 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 

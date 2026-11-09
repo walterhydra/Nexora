@@ -165,8 +165,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\About.jsx": {
-    "mtime": 1794153297.4208295,
-    "ast_hash": "0eb0d0c2407241ae65e453b3c5bbebb9",
+    "mtime": 1794240300.0401807,
+    "ast_hash": "71e3ce0be3467c00c8611b5b64023548",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Contact.jsx": {
@@ -180,7 +180,7 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Hero.jsx": {
-    "mtime": 1794219564.438,
+    "mtime": 1794227055.7570508,
     "ast_hash": "537c50f4fa7ac7833832648ce055dba3",
     "semantic_hash": ""
   },
@@ -200,28 +200,28 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pulse.jsx": {
-    "mtime": 1794155035.5012467,
-    "ast_hash": "7854b7984aa5724f61a9530cca349d7d",
+    "mtime": 1794223530.6667473,
+    "ast_hash": "17081c47cce2adb5fb247ce88275adfc",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\RealtimeWork.jsx": {
-    "mtime": 1794155035.6924407,
-    "ast_hash": "625f9263f6e2120b1fc642075a9a4b6c",
+    "mtime": 1794227051.7824059,
+    "ast_hash": "e4de201192e5748a553a1eaf8bfffa10",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Services.jsx": {
-    "mtime": 1794213199.1610286,
-    "ast_hash": "4495258170d7396a6ad250fd6767a10c",
+    "mtime": 1794240371.9041007,
+    "ast_hash": "ad28532c88d9f68cd4aa19577a273e40",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Stats.jsx": {
-    "mtime": 1794157339.394388,
-    "ast_hash": "4bfe1d3d48dfa7a3680627d85f520fe8",
+    "mtime": 1794240356.0075488,
+    "ast_hash": "14d307b56f6dc8e21f087daa19880278",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Team.jsx": {
-    "mtime": 1794155035.8072605,
-    "ast_hash": "9891bf63d3df4f20948ece6dd171d9ef",
+    "mtime": 1794238395.2123444,
+    "ast_hash": "51333904cf3b01b8eaa24291ef980f28",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\TechStack.jsx": {
@@ -245,13 +245,13 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Work.jsx": {
-    "mtime": 1794202363.8311586,
-    "ast_hash": "eabfdc6067ba6662b4d74e7723a6adec",
+    "mtime": 1794226965.6164632,
+    "ast_hash": "7e5ca35a8934f226b99ccc257c18bb23",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\AnimatedCounter.jsx": {
-    "mtime": 1777920382.7163665,
-    "ast_hash": "b76409d1f4e441c08bbcc38e7caca755",
+    "mtime": 1794229720.9469597,
+    "ast_hash": "d2ac60ffe2b22d13e559dccbd1ebbe55",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\BackToTop.jsx": {
@@ -260,8 +260,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ContextCursor.jsx": {
-    "mtime": 1794157339.5003302,
-    "ast_hash": "acfb546a755a2f7856357d610c1d5213",
+    "mtime": 1794223531.4460046,
+    "ast_hash": "3657cc0c338a14a827bc372338da4e37",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\CookieBanner.jsx": {
@@ -290,7 +290,7 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\MorphingBlob.jsx": {
-    "mtime": 1794157339.826974,
+    "mtime": 1794221331.9023583,
     "ast_hash": "b536f674f34e8f2bf6eae5d576a268f8",
     "semantic_hash": ""
   },
@@ -300,8 +300,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ParticleField.jsx": {
-    "mtime": 1794157340.097965,
-    "ast_hash": "6a89728c6a2798d7ca1ee55ec556fd5d",
+    "mtime": 1794223531.7164364,
+    "ast_hash": "08ddf754d864a4747b9a4cbd238a1480",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ScrambleText.jsx": {
@@ -340,8 +340,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\team.js": {
-    "mtime": 1794153298.0525074,
-    "ast_hash": "b93ad202678408062122049de3b7dbe7",
+    "mtime": 1794223531.9316292,
+    "ast_hash": "3481cce3ddde23b1da23f4e05b8f9ccf",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\techStack.js": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Home.jsx": {
-    "mtime": 1794162736.6974912,
-    "ast_hash": "6389821411d786560ae18256d46dc36b",
+    "mtime": 1794239046.9705799,
+    "ast_hash": "f68eb286dca9d21a841d9b8d6cd4037f",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -485,8 +485,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\index.html": {
-    "mtime": 1794157641.777824,
-    "ast_hash": "fbed01674e2af111116a947cb954c3a8",
+    "mtime": 1794227437.2558482,
+    "ast_hash": "64b0880d6945fc559dccccb404e9ce63",
     "semantic_hash": ""
   },
   "C:\\Nexora\\README.md": {
@@ -1620,8 +1620,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\LayeredPaperWaves.jsx": {
-    "mtime": 1794218778.4901414,
-    "ast_hash": "bc1c55dd2bc9e162e1839ca1b3a3e636",
+    "mtime": 1794223531.6128407,
+    "ast_hash": "124766ab1cb92bc8fef71191b9dac224",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\images\\layered-waves-bg.png": {
@@ -1857,6 +1857,11 @@
   "C:\\Nexora\\public\\images\\hero-wave-bg.jpg": {
     "mtime": 1794211703.699491,
     "ast_hash": "d939d55967d90f925494149d8a2f7b32",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\Endorsements.jsx": {
+    "mtime": 1794240329.6852472,
+    "ast_hash": "37cbe14d396a1a965baabf238d4b1617",
     "semantic_hash": ""
   }
 }
