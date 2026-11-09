@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider, Helmet } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 import { CursorProvider } from './context/CursorContext';
 import { useLenis } from './hooks/useLenis';
 import { Toaster } from 'react-hot-toast';
+import { LazyMotion, domMax } from 'framer-motion';
 
 // Layout Components
 import Navbar from './components/layout/Navbar';
@@ -17,26 +18,29 @@ import ScrollProgress from './components/ui/ScrollProgress';
 import BackToTop from './components/ui/BackToTop';
 import CookieBanner from './components/ui/CookieBanner';
 import LoadingScreen from './components/layout/LoadingScreen';
-import NovaWidget from './components/ui/NovaWidget';
 
-// Pages
+// Lazy Loaded Heavy Widgets
+const NovaWidget = lazy(() => import('./components/ui/NovaWidget'));
+
+// Pages (Home is direct for instant initial render, others lazy-loaded)
 import Home from './pages/Home';
-import ServiceDetails from './pages/ServiceDetails';
-import NotFound from './pages/NotFound';
-import ClientPortal from './pages/ClientPortal';
-import InvoiceSystem from './pages/InvoiceSystem';
-import About from './pages/About';
-import Services from './pages/Services';
-import Contact from './pages/Contact';
-import PrivacyPolicy from './pages/PrivacyPolicy';
-import Terms from './pages/Terms';
-import RefundPolicy from './pages/RefundPolicy';
-import Onboarding from './pages/Onboarding';
-import PaymentPolicy from './pages/PaymentPolicy';
-import Projects from './pages/Projects';
-import CaseStudyDetail from './pages/CaseStudyDetail';
-import Agreement from './pages/Agreement';
-import SystemBoot from './pages/SystemBoot';
+const ServiceDetails = lazy(() => import('./pages/ServiceDetails'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const ClientPortal = lazy(() => import('./pages/ClientPortal'));
+const InvoiceSystem = lazy(() => import('./pages/InvoiceSystem'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
+const Contact = lazy(() => import('./pages/Contact'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const RefundPolicy = lazy(() => import('./pages/RefundPolicy'));
+const Onboarding = lazy(() => import('./pages/Onboarding'));
+const PaymentPolicy = lazy(() => import('./pages/PaymentPolicy'));
+const Projects = lazy(() => import('./pages/Projects'));
+const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail'));
+const Agreement = lazy(() => import('./pages/Agreement'));
+const SystemBoot = lazy(() => import('./pages/SystemBoot'));
+const CompanyPortal = lazy(() => import('./pages/CompanyPortal'));
 
 // Initial Loading Fallback
 const PageLoader = () => (
@@ -45,31 +49,32 @@ const PageLoader = () => (
   </div>
 );
 
-// Animated Routes Component to handle location
-import { useLocation } from 'react-router-dom';
-import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion';
-
 function AnimatedRoutes() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/service/:slug" element={<ServiceDetails />} />
-      <Route path="/portal" element={<ClientPortal />} />
-      <Route path="/invoice-system" element={<InvoiceSystem />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/projects" element={<Projects />} />
-      <Route path="/projects/:id" element={<CaseStudyDetail />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/refund-policy" element={<RefundPolicy />} />
-      <Route path="/onboarding" element={<Onboarding />} />
-      <Route path="/payment-policy" element={<PaymentPolicy />} />
-      <Route path="/agreement" element={<Agreement />} />
-      <Route path="/system-boot" element={<SystemBoot />} />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <Suspense fallback={<PageLoader />}>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/service/:slug" element={<ServiceDetails />} />
+        <Route path="/portal" element={<ClientPortal />} />
+        <Route path="/invoice-system" element={<InvoiceSystem />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/projects/:id" element={<CaseStudyDetail />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/onboarding" element={<Onboarding />} />
+        <Route path="/payment-policy" element={<PaymentPolicy />} />
+        <Route path="/agreement" element={<Agreement />} />
+        <Route path="/system-boot" element={<SystemBoot />} />
+        <Route path="/company-portal" element={<CompanyPortal />} />
+        <Route path="/team-portal" element={<CompanyPortal />} />
+        <Route path="/company-dashboard" element={<CompanyPortal />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Suspense>
   );
 }
 
@@ -77,10 +82,15 @@ function AppContent() {
   // Initialize Lenis Smooth Scroll
   useLenis();
   const location = useLocation();
-  const isPortal = location.pathname.startsWith('/portal') || location.pathname.startsWith('/invoice-system') || location.pathname.startsWith('/system-boot');
+  const isPortal = location.pathname.startsWith('/portal') ||
+                   location.pathname.startsWith('/invoice-system') ||
+                   location.pathname.startsWith('/system-boot') ||
+                   location.pathname.startsWith('/company-portal') ||
+                   location.pathname.startsWith('/team-portal') ||
+                   location.pathname.startsWith('/company-dashboard');
 
   return (
-    <LazyMotion features={domAnimation}>
+    <LazyMotion features={domMax}>
       <ScrollToTop />
       <Helmet>
         <title>Nexoraa Studio | 7-Day Web & App Development</title>
@@ -100,7 +110,11 @@ function AppContent() {
       {!isPortal && <Footer />}
       {!isPortal && <BackToTop />}
       {!isPortal && <CookieBanner />}
-      {!isPortal && <NovaWidget />}
+      {!isPortal && (
+        <Suspense fallback={null}>
+          <NovaWidget />
+        </Suspense>
+      )}
 
       <Toaster
         position="bottom-center"
@@ -126,7 +140,7 @@ function App() {
   useEffect(() => {
     window.isLoaderActive = true;
     
-    // Show loading screen on every page load/refresh
+    // Show loading screen on initial load
     const timer1 = setTimeout(() => {
       setLoading(false);
       setIsExiting(true);
@@ -135,10 +149,10 @@ function App() {
       const timer2 = setTimeout(() => {
         setShowLoader(false);
         window.isLoaderActive = false;
-      }, 1100); // matches the duration of the transition
+      }, 800);
       
       return () => clearTimeout(timer2);
-    }, 1500); // 1.5 seconds for initial narrative animation load
+    }, 1000);
     return () => clearTimeout(timer1);
   }, []);
 

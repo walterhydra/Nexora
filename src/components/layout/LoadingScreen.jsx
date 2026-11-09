@@ -5,7 +5,7 @@ export default function LoadingScreen({ isExiting }) {
     <div
       className="fixed inset-0 z-[10000] flex flex-col bg-[#050505] text-white overflow-hidden pointer-events-none"
       style={{
-        transition: 'transform 1.1s cubic-bezier(0.16, 1, 0.3, 1), opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1), visibility 1.1s',
+        transition: 'transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s',
         transform: isExiting ? 'translate3d(0, -100%, 0)' : 'translate3d(0, 0, 0)',
         opacity: isExiting ? 0 : 1,
         visibility: isExiting ? 'hidden' : 'visible',

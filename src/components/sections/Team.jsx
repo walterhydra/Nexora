@@ -5,13 +5,13 @@ import { FiGithub, FiLinkedin, FiGlobe } from 'react-icons/fi';
 import { team } from '../../constants/team';
 
 const posterMap = {
-  Milan: '/team/intro-milan.png',
-  'Gaurav Thakur': '/team/intro-gaurav.png',
-  'Alis Patel': '/team/intro-alis.png',
-  'Abhishek Jha': '/team/intro-abhishek.png',
-  'Stany Gregor': '/team/intro-stany.png',
-  Divyansh: '/team/intro-divyansh.png',
-  'Rajkumar Shah': '/team/intro-rajkumar.png'
+  Milan: '/team/intro-milan.jpg',
+  'Gaurav Thakur': '/team/intro-gaurav.jpg',
+  'Alis Patel': '/team/intro-alis.jpg',
+  'Abhishek Jha': '/team/intro-abhishek.jpg',
+  'Stany Gregor': '/team/intro-stany.jpg',
+  Divyansh: '/team/intro-divyansh.jpg',
+  'Rajkumar Shah': '/team/intro-rajkumar.jpg'
 };
 
 const memberNotes = {

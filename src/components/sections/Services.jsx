@@ -1,7 +1,19 @@
 import React, { useState } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Globe, Smartphone, Palette, Bot, Rocket, Briefcase, Link as LinkIcon, TrendingUp, ArrowRight } from 'lucide-react';
+import { 
+  Globe, 
+  Smartphone, 
+  Palette, 
+  Bot, 
+  Rocket, 
+  Briefcase, 
+  Link as LinkIcon, 
+  TrendingUp, 
+  CheckCircle2, 
+  Zap,
+  Clock 
+} from 'lucide-react';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import { services } from '../../constants/services';
 
@@ -10,13 +22,19 @@ const iconMap = {
 };
 
 export default function Services() {
-  const [active, setActive] = useState(null); // null means no item is actively hovered
+  const [active, setActive] = useState(null); // null means all cards are closed until hovered
 
   return (
-    <section id="services" className="py-24 md:py-32 relative bg-white dark:bg-[#050505] overflow-hidden">
-      {/* Background abstract elements (Optimized for performance) */}
-      <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(59,130,246,0.08) 0%, rgba(59,130,246,0) 70%)' }} />
-      <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.08) 0%, rgba(168,85,247,0) 70%)' }} />
+    <section id="services" className="py-24 md:py-32 relative bg-black overflow-hidden font-quicksand">
+      {/* Neutral Hardware-accelerated ambient lighting */}
+      <div 
+        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none" 
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)', transform: 'translateZ(0)' }} 
+      />
+      <div 
+        className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full pointer-events-none" 
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)', transform: 'translateZ(0)' }} 
+      />
 
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
         
@@ -26,126 +44,157 @@ export default function Services() {
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
-          className="mb-12 md:mb-16 flex flex-col items-center text-center"
+          className="mb-12 md:mb-16 flex flex-col items-center text-center font-quicksand"
         >
-          <m.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-display font-bold mb-6 leading-tight text-gray-900 dark:text-white">
-            Asset <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-950 via-purple-700 to-purple-500">Architecture</span>
+          <m.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-7xl font-quicksand font-bold mb-6 leading-tight text-white">
+            Asset Architecture
           </m.h2>
-          <m.p variants={fadeUp} className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl">
-            High-performance digital assets designed to optimize operations, capture demand, and compound enterprise equity. Tap a panel to explore.
+          <m.p variants={fadeUp} className="text-lg text-white/80 max-w-2xl font-quicksand font-medium">
+            High-performance digital assets designed to optimize operations, capture demand, and compound enterprise equity.
           </m.p>
         </m.div>
 
-        {/* Flex Accordion Container */}
-        <m.div 
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "400px" }} // Trigger earlier to prevent decode lag
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          onMouseLeave={() => setActive(null)} // Reset on mouse leave
-          className="flex flex-col lg:flex-row w-full h-[85vh] min-h-[700px] lg:h-[650px] gap-2 lg:gap-4 p-2 lg:p-3 bg-gray-100 dark:bg-[#111] rounded-[2rem] border border-gray-200 dark:border-white/10 shadow-2xl"
+        {/* 120 FPS Flex Accordion Container */}
+        <div 
+          onMouseLeave={() => setActive(null)}
+          className="flex flex-col lg:flex-row w-full h-[85vh] min-h-[720px] lg:h-[650px] gap-2 lg:gap-3 p-2 lg:p-3 bg-black rounded-[2rem] border-2 border-black shadow-2xl overflow-hidden font-quicksand"
+          style={{ transform: 'translateZ(0)' }}
         >
           {services.map((service, index) => {
             const isActive = active === index;
-            const isHoveringAny = active !== null;
             const Icon = iconMap[service.icon] || Globe;
 
             return (
               <div
                 key={service.id}
-                onClick={() => setActive(isActive ? null : index)} // Toggle on click for mobile
+                onClick={() => setActive(isActive ? null : index)}
                 onMouseEnter={() => setActive(index)}
-                className={`relative overflow-hidden h-full rounded-[1.5rem] cursor-pointer transition-all duration-[600ms] ease-[cubic-bezier(0.25,1,0.5,1)] ${isActive ? 'flex-[6] lg:flex-[5]' : 'flex-[1] lg:flex-[1]'}`}
+                className={`relative overflow-hidden h-full rounded-[1.5rem] cursor-pointer border border-black transition-[flex-grow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[flex-grow] ${
+                  isActive ? 'flex-[6] lg:flex-[6]' : 'flex-[1] lg:flex-[1]'
+                }`}
               >
-                {/* Background Image Container - Guarantees 100% height fill */}
+                {/* Background Image with hardware layer isolation */}
                 <div 
-                  className={`absolute inset-0 w-full h-full bg-cover bg-center origin-center transition-transform duration-[600ms] ease-out ${isActive ? 'scale-[1.05]' : 'scale-[1.15]'}`}
+                  className={`absolute inset-0 w-full h-full bg-cover bg-center origin-center transition-transform duration-700 ease-out ${
+                    isActive ? 'scale-105' : 'scale-115'
+                  }`}
                   style={{ 
-                    backgroundImage: `url(${service.image})` 
+                    backgroundImage: `url(${service.image})`,
+                    transform: 'translateZ(0)',
+                    willChange: 'transform'
                   }}
                 />
 
-                {/* Base Dark Overlay */}
+                {/* Dark Vignette Overlay */}
                 <div
-                  className={`absolute inset-0 bg-black pointer-events-none transition-opacity duration-[600ms] ease-out ${isActive ? 'opacity-30' : (isHoveringAny ? 'opacity-80' : 'opacity-60')}`}
-                  
+                  className={`absolute inset-0 transition-opacity duration-500 pointer-events-none ${
+                    isActive 
+                      ? 'bg-gradient-to-t from-black/95 via-black/80 to-black/50' 
+                      : 'bg-black/75 hover:bg-black/60'
+                  }`}
                 />
-                
-                {/* Soft Vignette/Inner Shadow (Shadow jaise effect) */}
-                <div className="absolute inset-0 shadow-[inset_0_0_200px_rgba(0,0,0,0.9)] pointer-events-none" />
-                
-                {/* Bottom gradient to ensure text is always readable, but extremely smooth */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/5 to-transparent pointer-events-none" />
 
-                {/* Content */}
-                <div className="relative z-10 w-full h-full flex flex-col justify-end p-4 md:p-6 lg:p-8">
-                  <AnimatePresence mode="wait">
-                    {isActive ? (
-                      <m.div 
-                        key="active"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 10 }}
-                        transition={{ duration: 0.3, delay: 0.1 }}
-                        className="flex flex-col gap-4 lg:gap-6 min-w-[250px] lg:min-w-[400px]"
-                      >
-                        <div className="flex items-center gap-3 lg:gap-4">
-                          <div className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl bg-accent-blue/95 flex items-center justify-center text-white shadow-lg border border-white/20">
-                            <Icon size={24} className="w-5 h-5 lg:w-6 lg:h-6" />
+                {/* Top Subtle Border Highlight for Active Card */}
+                {isActive && (
+                  <div className="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent z-20 pointer-events-none" />
+                )}
+
+                {/* Content Container */}
+                <div className="relative z-10 w-full h-full flex flex-col justify-end p-5 md:p-7 lg:p-8 font-quicksand">
+                  {isActive ? (
+                    <m.div 
+                      key={`active-${service.id}`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.25, ease: "easeOut" }}
+                      className="flex flex-col gap-3 md:gap-4 w-[520px] max-w-[calc(100vw-4rem)]"
+                    >
+                      {/* Top Header Row */}
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3.5">
+                          <div className="w-11 h-11 lg:w-13 lg:h-13 rounded-2xl bg-white/10 border border-black flex items-center justify-center text-white shadow-lg shrink-0">
+                            <Icon size={24} className="w-5 h-5 lg:w-6 lg:h-6 text-white" />
                           </div>
-                          <h3 className="text-2xl md:text-3xl lg:text-4xl font-display font-bold text-white">
-                            {service.title}
-                          </h3>
+                          <div>
+                            <h3 className="text-2xl md:text-3xl lg:text-4xl font-quicksand font-bold text-white tracking-tight">
+                              {service.title}
+                            </h3>
+                            <span className="text-xs uppercase tracking-[0.2em] font-quicksand font-semibold text-white/80">
+                              {service.description}
+                            </span>
+                          </div>
                         </div>
-                        
-                        <p className="text-gray-200 text-sm lg:text-base max-w-xl line-clamp-3 pr-4">
-                          {service.details}
-                        </p>
 
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-4 lg:gap-6 mt-2">
-                          <span className="text-lg font-bold text-white">{service.price}</span>
-                          <Link to={`/service/${service.slug}`} className="inline-flex items-center justify-center gap-2 text-sm font-bold bg-white text-black px-6 py-3 rounded-full hover:bg-gray-200 transition-colors w-fit shadow-xl pointer-events-auto">
-                            Explore <ArrowRight size={16} />
-                          </Link>
+                        {/* Delivery Sprint Badge */}
+                        <div className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/10 border border-black backdrop-blur-md shrink-0">
+                          <Zap size={13} className="text-white" />
+                          <span className="text-[11px] font-quicksand font-bold uppercase tracking-wider text-white">7-Day Sprint</span>
                         </div>
-                      </m.div>
-                    ) : (
-                      <m.div 
-                        key="inactive"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="h-full w-full flex lg:flex-col items-center justify-center lg:justify-end pb-0 lg:pb-8"
-                      >
-                        {/* Desktop: Vertical text reading bottom to top */}
-                        <div className="hidden lg:flex flex-col items-center justify-center h-full">
-                          <h3 
-                            className={`text-xl font-display font-bold uppercase tracking-widest whitespace-nowrap transition-colors duration-500 drop-shadow-md ${isHoveringAny ? 'text-white/70' : 'text-white'}`}
-                            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}
+                      </div>
+                      
+                      {/* Detailed Description */}
+                      <p className="font-quicksand text-white text-sm md:text-base leading-relaxed pr-2 max-w-2xl font-medium">
+                        {service.details}
+                      </p>
+
+                      {/* What's Included / Deliverables Checklist */}
+                      <div className="mt-1 pt-3.5 border-t border-black/50">
+                        <div className="flex items-center gap-2 mb-2.5">
+                          <Clock size={13} className="text-white" />
+                          <span className="text-xs uppercase tracking-[0.2em] font-quicksand font-bold text-white">
+                            What You Get:
+                          </span>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-xl">
+                          {service.deliverables.slice(0, 4).map((del, i) => (
+                            <div key={i} className="flex items-center gap-2 text-xs md:text-sm text-white font-quicksand font-medium">
+                              <CheckCircle2 size={15} className="text-white shrink-0" />
+                              <span className="truncate">{del}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Tech Stack Pills */}
+                      <div className="flex flex-wrap items-center gap-1.5 mt-2">
+                        {service.tags.map((tag, i) => (
+                          <span 
+                            key={i} 
+                            className="px-2.5 py-1 rounded-md bg-white/10 border border-black text-[11px] font-quicksand font-medium text-white backdrop-blur-sm"
                           >
-                            {service.title}
-                          </h3>
-                        </div>
-                        
-                        {/* Mobile: Horizontal text & icon */}
-                        <div className="flex lg:hidden items-center gap-3 w-full pl-2">
-                          <Icon size={20} className={`min-w-[20px] transition-colors duration-500 ${isHoveringAny ? 'text-white/70' : 'text-white'}`} />
-                          <h3 className={`text-sm md:text-base font-display font-bold uppercase tracking-wider truncate transition-colors duration-500 ${isHoveringAny ? 'text-white/70' : 'text-white'}`}>
-                            {service.title}
-                          </h3>
-                        </div>
-                      </m.div>
-                    )}
-                  </AnimatePresence>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    </m.div>
+                  ) : (
+                    <div className="h-full w-full flex lg:flex-col items-center justify-center lg:justify-end pb-0 lg:pb-8 font-quicksand">
+                      {/* Desktop Vertical Title */}
+                      <div className="hidden lg:flex flex-col items-center justify-center h-full">
+                        <Icon size={20} className="text-white mb-6 shrink-0" />
+                        <h3 
+                          className="text-lg xl:text-xl font-quicksand font-bold uppercase tracking-widest whitespace-nowrap text-white transition-colors duration-300 drop-shadow-md"
+                          style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+                        >
+                          {service.title}
+                        </h3>
+                      </div>
+                      
+                      {/* Mobile Horizontal Title */}
+                      <div className="flex lg:hidden items-center gap-3 w-full pl-2">
+                        <Icon size={20} className="text-white shrink-0" />
+                        <h3 className="text-sm md:text-base font-quicksand font-bold uppercase tracking-wider text-white truncate">
+                          {service.title}
+                        </h3>
+                      </div>
+                    </div>
+                  )}
                 </div>
-
-                {/* Invisible full-card link */}
-                <Link to={`/service/${service.slug}`} className="absolute inset-0 z-0" aria-label={`Explore ${service.title}`} />
               </div>
             );
           })}
-        </m.div>
+        </div>
 
       </div>
     </section>

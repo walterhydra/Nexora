@@ -55,7 +55,7 @@ export default function HowWeWork() {
 
   return (
     <section ref={containerRef} id="howwework" className="py-32 bg-[#030303] relative min-h-screen">
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(255,255,255,0.02),transparent_70%)] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col md:flex-row gap-16">
 

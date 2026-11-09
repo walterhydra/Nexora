@@ -74,18 +74,20 @@ export default function TechStack() {
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
           }
           @keyframes marquee-left {
-            0% { transform: translateX(0%); }
-            100% { transform: translateX(-50%); }
+            0% { transform: translate3d(0%, 0, 0); }
+            100% { transform: translate3d(-50%, 0, 0); }
           }
           @keyframes marquee-right {
-            0% { transform: translateX(-50%); }
-            100% { transform: translateX(0%); }
+            0% { transform: translate3d(-50%, 0, 0); }
+            100% { transform: translate3d(0%, 0, 0); }
           }
           .animate-marquee-left {
             animation: marquee-left linear infinite;
+            will-change: transform;
           }
           .animate-marquee-right {
             animation: marquee-right linear infinite;
+            will-change: transform;
           }
         `}} />
         

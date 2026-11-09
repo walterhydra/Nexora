@@ -548,7 +548,7 @@ export default function SystemBoot() {
                     className="absolute inset-0 z-10"
                   >
                     <img 
-                      src="/projects/image copy 2.png" 
+                      src="/projects/ai-bot-screen.png" 
                       alt="System Desktop" 
                       className={`w-full !h-full block object-fill`}
                       style={{ objectFit: 'fill', height: '100%' }}

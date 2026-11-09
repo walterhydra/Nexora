@@ -60,20 +60,26 @@ export default function Navbar() {
     }
   };
 
+  const isHiddenRef = useRef(false);
+  const isScrolledRef = useRef(false);
+
   useMotionValueEvent(scrollY, "change", (latest) => {
-    // Detect scroll direction to show/hide navbar
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 150) {
-      setIsHidden(true); // Scroll down - Hide
-    } else {
-      setIsHidden(false); // Scroll up - Show
+    const previous = scrollY.getPrevious() || 0;
+    const delta = latest - previous;
+
+    // Only evaluate hide/show when scroll delta exceeds threshold to prevent micro-jitter
+    if (Math.abs(delta) > 6) {
+      const shouldHide = latest > 150 && delta > 0;
+      if (shouldHide !== isHiddenRef.current) {
+        isHiddenRef.current = shouldHide;
+        setIsHidden(shouldHide);
+      }
     }
 
-    // Shrink padding if scrolled
-    if (latest > 50) {
-      setIsScrolled(true);
-    } else {
-      setIsScrolled(false);
+    const shouldScroll = latest > 50;
+    if (shouldScroll !== isScrolledRef.current) {
+      isScrolledRef.current = shouldScroll;
+      setIsScrolled(shouldScroll);
     }
   });
 
@@ -100,10 +106,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Services', id: 'services' },
     { name: 'Work', id: 'work' },
-    { name: 'Projects', id: 'realtimework' },
     { name: 'Pricing', id: 'pricing' },
-    { name: 'FAQ', id: 'faq' },
-    { name: 'Agreement', isRoute: true, path: '/agreement' }
+    { name: 'FAQ', id: 'faq' }
   ];
 
   return (
@@ -117,11 +121,10 @@ export default function Navbar() {
           }}
           animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          layout
           className={cn(
-            "pointer-events-auto flex items-center justify-between w-[95%] max-w-7xl rounded-full relative overflow-hidden transition-all duration-500",
+            "pointer-events-auto flex items-center justify-between w-[96%] max-w-7xl rounded-full relative transition-[padding] duration-300 will-change-transform",
             "bg-[#050505]/95 border border-white/10 shadow-[0_25px_50px_rgba(0,0,0,0.8)] backdrop-blur-md",
-            isScrolled ? "p-1.5 px-6" : "p-3 px-8"
+            isScrolled ? "p-1.5 px-4 sm:px-6" : "p-2.5 px-5 sm:px-7"
           )}
         >
           {/* Refractive Border Gloss Beam Sweep */}
@@ -137,12 +140,12 @@ export default function Navbar() {
           <div className="flex items-center gap-3 shrink-0">
             <Link 
               to="/" 
-              className="flex items-center gap-3 cursor-pointer group" 
+              className="flex items-center gap-2.5 cursor-pointer group" 
               onClick={(e) => location.pathname === '/' && handleNavClick(e, 'home')}
             >
-              <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full overflow-hidden flex items-center justify-center group-hover:rotate-45 transition-transform duration-500">
                 <img 
-                  src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" 
+                  src="/logo/nova-glow-icon.png" 
                   alt="Nexoraa Logo Icon" 
                   className="w-full h-full object-contain"
                   loading="eager"
@@ -151,16 +154,16 @@ export default function Navbar() {
                   height="40"
                 />
               </div>
-              <span className="font-display font-black text-lg md:text-xl tracking-[0.2em] text-white">
+              <span className="font-display font-black text-base sm:text-lg md:text-xl tracking-[0.2em] text-white">
                 NEXORAA
               </span>
             </Link>
           </div>
 
           {/* Stretched Inner Capsule (Desktop Center - Flex Grow / Stretch) */}
-          <div className="hidden md:flex flex-1 max-w-5xl mx-4 lg:mx-8">
+          <div className="hidden lg:flex flex-1 max-w-2xl xl:max-w-3xl mx-2 xl:mx-5">
             <div 
-              className="bg-white/5 border border-white/5 rounded-full p-1.5 flex items-center justify-between w-full relative"
+              className="bg-white/5 border border-white/5 rounded-full p-1 flex items-center justify-between w-full relative"
               onMouseLeave={() => setHoveredLink(null)}
             >
               {/* Spaced Links - Responsive text and padding */}
@@ -170,14 +173,8 @@ export default function Navbar() {
                     {link.isRoute ? (
                       <Link
                         to={link.path}
-                        onClick={(e) => {
-                          if (link.path === '/agreement') {
-                            e.preventDefault();
-                            setLockedModalOpen(true);
-                          }
-                        }}
                         onMouseEnter={() => setHoveredLink(link.name)}
-                        className="px-3 lg:px-4 xl:px-5 py-2 block text-sm lg:text-base font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
+                        className="px-3.5 lg:px-4 xl:px-6 py-2 block text-sm lg:text-[15px] xl:text-base font-semibold text-gray-200 hover:text-white transition-colors relative z-10 whitespace-nowrap"
                       >
                         {link.name}
                       </Link>
@@ -186,7 +183,7 @@ export default function Navbar() {
                         href={`#${link.id}`}
                         onClick={(e) => handleNavClick(e, link.id)}
                         onMouseEnter={() => setHoveredLink(link.name)}
-                        className="px-3 lg:px-4 xl:px-5 py-2 block text-sm lg:text-base font-semibold tracking-wide text-gray-300 hover:text-white transition-colors relative z-10 whitespace-nowrap"
+                        className="px-3.5 lg:px-4 xl:px-6 py-2 block text-sm lg:text-[15px] xl:text-base font-semibold text-gray-200 hover:text-white transition-colors relative z-10 whitespace-nowrap"
                       >
                         {link.name}
                       </a>
@@ -196,8 +193,8 @@ export default function Navbar() {
                     {hoveredLink === link.name && (
                       <m.div
                         layoutId="capsule-active"
-                        className="absolute inset-0 bg-white/10 rounded-full z-0"
-                        transition={{ type: "spring", stiffness: 350, damping: 22 }}
+                        className="absolute inset-0 bg-white/15 rounded-full z-0 pointer-events-none"
+                        transition={{ type: "spring", stiffness: 400, damping: 30, mass: 0.6 }}
                       />
                     )}
                   </div>
@@ -205,41 +202,55 @@ export default function Navbar() {
               </div>
 
               {/* Contact Us CTA inside capsule */}
-              <button onClick={() => setContactModalOpen(true)} className="shrink-0 ml-2">
-                <MagneticButton 
-                  className="bg-black hover:bg-neutral-900 border border-white/10 text-white px-5 py-2 lg:px-6 lg:py-2.5 text-xs lg:text-sm font-black rounded-full transition-colors flex items-center justify-center whitespace-nowrap group"
-                >
-                  <span className="flex items-center gap-2 whitespace-nowrap">
-                    Contact Us
-                    <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
-                  </span>
-                </MagneticButton>
+              <button 
+                onClick={() => setContactModalOpen(true)} 
+                className="shrink-0 ml-1.5 bg-black hover:bg-neutral-900 border border-white/10 text-white px-4 py-1.5 xl:px-5 xl:py-2 text-xs font-bold rounded-full transition-all duration-200 flex items-center justify-center whitespace-nowrap group hover:border-white/20 active:scale-95"
+              >
+                <span className="flex items-center gap-1.5 whitespace-nowrap">
+                  Contact Us
+                  <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
+                </span>
               </button>
             </div>
           </div>
 
-          {/* Actions Section (Right) - CLIENT PORTAL -> */}
-          <div className="hidden md:flex items-center gap-4 shrink-0">
+          {/* Actions Section (Right) - TEAM PORTAL & CLIENT PORTAL */}
+          <div className="hidden sm:flex items-center gap-2 shrink-0">
+            <Link
+              to="/company-portal"
+              className="group relative flex items-center gap-1.5 bg-blue-500/10 hover:bg-blue-600 border border-blue-500/30 hover:border-blue-500 px-3 py-1.5 xl:px-3.5 xl:py-2 rounded-full transition-all duration-300 text-xs font-semibold text-blue-300 hover:text-white whitespace-nowrap shadow-xs"
+              title="Team Overview & Operations Dashboard"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              <span className="font-mono text-2xs xl:text-xs uppercase tracking-wider flex items-center gap-1">
+                Team Portal
+                <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
+              </span>
+            </Link>
+
             <Link
               to="/portal"
-              className="group relative flex items-center gap-2 bg-white/5 hover:bg-white border border-white/10 hover:border-white px-4 py-2 lg:px-5 lg:py-2.5 rounded-full transition-all duration-300 text-xs lg:text-sm font-semibold text-gray-300 hover:text-black whitespace-nowrap"
+              className="group relative flex items-center gap-1.5 bg-white/5 hover:bg-white border border-white/10 hover:border-white px-3 py-1.5 xl:px-3.5 xl:py-2 rounded-full transition-all duration-300 text-xs font-semibold text-gray-300 hover:text-black whitespace-nowrap shadow-xs"
             >
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
-              <span className="font-mono text-2xs lg:text-xs uppercase tracking-widest flex items-center gap-2">
+              <span className="font-mono text-2xs xl:text-xs uppercase tracking-wider flex items-center gap-1">
                 Client Portal
-                <ArrowRight size={12} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
+                <ArrowRight size={11} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
               </span>
             </Link>
           </div>
 
-          {/* Mobile Actions */}
-          <div className="md:hidden flex items-center gap-2 pr-2 shrink-0">
+          {/* Mobile Actions (Visible on screens below lg where center capsule is hidden) */}
+          <div className="lg:hidden flex items-center gap-1.5 pr-1 shrink-0">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors text-white"
+              className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors text-white"
             >
               <Menu size={18} />
             </button>
@@ -262,7 +273,7 @@ export default function Navbar() {
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex items-center justify-center">
                   <img 
-                    src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" 
+                    src="/logo/nova-glow-icon.png" 
                     alt="Nexoraa Logo Icon" 
                     className="w-full h-full object-contain"
                     loading="lazy"
@@ -330,6 +341,14 @@ export default function Navbar() {
                     Contact Us <ArrowRight size={16} />
                   </MagneticButton>
                 </button>
+                <Link 
+                  to="/company-portal" 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="text-sm font-mono text-blue-400 hover:text-blue-300 uppercase tracking-widest flex items-center gap-2"
+                >
+                  <span className="w-2 h-2 rounded-full bg-blue-500 inline-block"></span>
+                  Team Portal (Overview)
+                </Link>
                 <Link 
                   to="/portal" 
                   onClick={() => setMobileMenuOpen(false)} 

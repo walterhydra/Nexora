@@ -1,31 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useCursor } from '../../context/CursorContext';
 import { m, useMotionValue, useSpring } from 'framer-motion';
 
 export default function ContextCursor() {
   const { cursorType } = useCursor();
   const [isVisible, setIsVisible] = useState(false);
+  const isTouchRef = useRef(false);
 
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
   
-  const springConfig = { damping: 25, stiffness: 300, mass: 0.5 };
+  const springConfig = { damping: 45, stiffness: 1200, mass: 0.05 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    let animationFrameId;
+    // Detect touch-only devices and skip attaching listeners completely
+    if (window.matchMedia('(pointer: coarse)').matches || 'ontouchstart' in window) {
+      isTouchRef.current = true;
+      return;
+    }
+
+    let hasShown = false;
+
     const moveCursor = (e) => {
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
-      animationFrameId = requestAnimationFrame(() => {
-        cursorX.set(e.clientX);
-        cursorY.set(e.clientY);
-        if (!isVisible) setIsVisible(true);
-      });
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
+      if (!hasShown) {
+        hasShown = true;
+        setIsVisible(true);
+      }
     };
 
-    const handleMouseLeave = () => setIsVisible(false);
-    const handleMouseEnter = () => setIsVisible(true);
+    const handleMouseLeave = () => {
+      hasShown = false;
+      setIsVisible(false);
+    };
+    const handleMouseEnter = () => {
+      hasShown = true;
+      setIsVisible(true);
+    };
 
     window.addEventListener('mousemove', moveCursor, { passive: true });
     document.body.addEventListener('mouseleave', handleMouseLeave);
@@ -35,11 +49,12 @@ export default function ContextCursor() {
       window.removeEventListener('mousemove', moveCursor);
       document.body.removeEventListener('mouseleave', handleMouseLeave);
       document.body.removeEventListener('mouseenter', handleMouseEnter);
-      if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
-  }, [cursorX, cursorY, isVisible]);
+  }, [cursorX, cursorY]);
 
-  if (!isVisible || window.innerWidth < 768) return null;
+  if (isTouchRef.current || !isVisible || (typeof window !== 'undefined' && window.innerWidth < 768)) {
+    return null;
+  }
 
   // Define variants based on context
   const variants = {
@@ -59,91 +74,57 @@ export default function ContextCursor() {
       borderRadius: '50%',
       scale: 1.2,
     },
-    image: {
+    card: {
       width: 80,
       height: 80,
+      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+      borderColor: 'rgba(255, 255, 255, 0.2)',
+      borderRadius: '24px',
+      scale: 1.1,
+    },
+    view: {
+      width: 90,
+      height: 90,
       backgroundColor: 'var(--color-accent-primary)',
       borderColor: 'transparent',
       borderRadius: '50%',
       scale: 1,
     },
-    link: {
-      width: 60,
-      height: 12,
-      backgroundColor: 'transparent',
-      borderColor: 'var(--color-accent-secondary)',
-      borderRadius: '20px',
-      scale: 1,
-    },
-    drag: {
-      width: 80,
-      height: 80,
-      backgroundColor: 'transparent',
-      borderColor: 'var(--color-accent-violet)',
-      borderRadius: '50%',
-      scale: 1.1,
-    },
-    video: {
-      width: 80,
-      height: 80,
-      backgroundColor: 'var(--color-accent-secondary)',
-      borderColor: 'transparent',
-      borderRadius: '50%',
-      scale: 1,
-    },
-    visit: {
-      width: 80,
-      height: 80,
-      backgroundColor: 'var(--color-accent-primary)',
-      borderColor: 'transparent',
-      borderRadius: '50%',
-      scale: 1.1,
+    hidden: {
+      opacity: 0,
+      scale: 0,
     }
   };
 
-  const getInnerText = () => {
-    switch (cursorType) {
-      case 'button': return <span className="text-[10px] font-bold text-accent-primary uppercase tracking-widest">Click</span>;
-      case 'image': return <span className="text-[12px] font-bold text-black uppercase tracking-widest">View</span>;
-      case 'drag': return <div className="flex justify-between w-full px-2"><span className="text-accent-violet font-bold text-xl">←</span><span className="text-accent-violet font-bold text-xl">→</span></div>;
-      case 'video': return <span className="text-gray-900 dark:text-white text-xl">▶</span>;
-      case 'visit': return <span className="text-[11px] font-black text-black uppercase tracking-widest">Visit</span>;
-      default: return null;
-    }
-  };
+  const currentVariant = variants[cursorType] || variants.default;
 
   return (
-    <>
-      {/* Outer Ring / Shape */}
-      <m.div
-        className="fixed top-0 left-0 pointer-events-none z-[9999] flex items-center justify-center border-2"
-        style={{
-          x: cursorXSpring,
-          y: cursorYSpring,
-          translateX: '-50%',
-          translateY: '-50%',
-          willChange: 'transform'
-        }}
-        variants={variants}
-        animate={cursorType}
-        transition={{ type: 'spring', damping: 20, stiffness: 300, mass: 0.5 }}
-      >
-        {getInnerText()}
-      </m.div>
-
-      {/* Inner Dot (only visible on default/link) */}
-      <m.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full pointer-events-none z-[9999] bg-accent-primary"
-        style={{
-          x: cursorX,
-          y: cursorY,
-          translateX: '-50%',
-          translateY: '-50%',
-          opacity: ['default', 'link'].includes(cursorType) ? 1 : 0,
-          willChange: 'transform, opacity'
-        }}
-        transition={{ duration: 0.15 }}
-      />
-    </>
+    <m.div
+      className="fixed pointer-events-none z-[9999] border flex items-center justify-center -translate-x-1/2 -translate-y-1/2"
+      style={{
+        x: cursorXSpring,
+        y: cursorYSpring,
+        top: 0,
+        left: 0,
+        width: currentVariant.width,
+        height: currentVariant.height,
+        backgroundColor: currentVariant.backgroundColor,
+        borderColor: currentVariant.borderColor,
+        borderRadius: currentVariant.borderRadius,
+        willChange: 'transform',
+        transform: 'translateZ(0)',
+      }}
+      animate={{
+        scale: currentVariant.scale,
+        opacity: cursorType === 'hidden' ? 0 : 1,
+      }}
+      transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+    >
+      {cursorType === 'view' && (
+        <span className="text-black text-xs font-bold uppercase tracking-wider">
+          View
+        </span>
+      )}
+    </m.div>
   );
 }

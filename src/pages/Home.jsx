@@ -4,10 +4,8 @@ import Hero from '../components/sections/Hero';
 import TrustBadges from '../components/sections/TrustBadges';
 import Services from '../components/sections/Services';
 import About from '../components/sections/About';
-import WhyNexoraa from '../components/sections/WhyNexoraa';
 import Team from '../components/sections/Team';
 import Contact from '../components/sections/Contact';
-import TechStack from '../components/sections/TechStack';
 import Pricing from '../components/sections/Pricing';
 import HowWeWork from '../components/sections/HowWeWork';
 import RealtimeWork from '../components/sections/RealtimeWork';
@@ -51,7 +49,6 @@ export default function Home() {
       <div className="bg-[var(--bg-primary)]">
         <TrustBadges />
         <Services />
-        <TechStack />
         <Work />
         <Pulse />
         <Stats />
@@ -66,7 +63,7 @@ export default function Home() {
       </div>
 
       {/* Background Ambience (Optimized for scroll performance) */}
-      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden">
+      <div className="fixed inset-0 z-[-1] pointer-events-none overflow-hidden" style={{ transform: 'translateZ(0)', willChange: 'transform' }}>
         <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 60%)' }} />
         <div className="absolute bottom-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full" style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0) 60%)' }} />
       </div>

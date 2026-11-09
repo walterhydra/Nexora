@@ -14,7 +14,7 @@ const guarantees = [
 export default function TrustBadges() {
   return (
     <section className="pt-24 pb-16 bg-white dark:bg-black border-y border-black/10 dark:border-white/10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-accent-purple/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-accent-violet/5 to-transparent pointer-events-none" />
       
       <m.div 
         variants={staggerContainer}
@@ -29,15 +29,21 @@ export default function TrustBadges() {
             <m.div 
               key={idx}
               variants={fadeUp}
-              className="glass rounded-xl p-4 flex flex-col items-center text-center group hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent-blue/10 transition-all duration-300 relative overflow-hidden cursor-pointer border border-gray-200 dark:border-white/10 hover:border-accent-blue/30"
+              className="relative p-5 rounded-2xl bg-[#0b0e17]/80 backdrop-blur-md border border-white/[0.08] hover:border-white/25 transition-all duration-300 flex flex-col items-center text-center group overflow-hidden cursor-pointer"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/0 to-accent-purple/0 group-hover:from-accent-blue/10 group-hover:to-accent-purple/10 transition-colors duration-500 pointer-events-none" />
+              {/* 1px Razor Top Border Beam on Hover */}
+              <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-accent-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              {/* Subtle Luxury Glass Sheen Sweep */}
+              <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" />
               
-              <div className="w-10 h-10 rounded-full bg-black/5 dark:bg-white/5 flex items-center justify-center mb-3 group-hover:bg-accent-blue/20 group-hover:text-accent-blue group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 text-gray-700 dark:text-gray-300 relative z-10">
-                <Icon size={20} />
+              {/* Icon Container - Steady & Stable */}
+              <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-accent-primary/40 group-hover:bg-accent-primary/[0.08] flex items-center justify-center mb-3.5 transition-colors duration-300 relative z-10">
+                <Icon size={20} className="text-gray-300 group-hover:text-accent-primary group-hover:scale-110 transition-all duration-300 ease-out" />
               </div>
-              <h4 className="font-bold text-gray-900 dark:text-white text-sm mb-1 relative z-10 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-accent-blue group-hover:to-accent-purple transition-all duration-300">{item.title}</h4>
-              <p className="text-gray-600 dark:text-gray-400 text-xs leading-relaxed relative z-10">{item.text}</p>
+
+              <h4 className="font-bold text-white text-sm mb-1 relative z-10 tracking-tight">{item.title}</h4>
+              <p className="text-gray-400 group-hover:text-gray-300 text-xs leading-relaxed relative z-10 transition-colors duration-300">{item.text}</p>
             </m.div>
           );
         })}

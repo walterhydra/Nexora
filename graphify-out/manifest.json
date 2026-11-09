@@ -1,17 +1,12 @@
 {
-  "C:\\Nexora\\clean.mjs": {
-    "mtime": 1780827853.5460763,
-    "ast_hash": "5206aba12d78112eb398da3a18a636c2",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\eslint.config.js": {
     "mtime": 1777396922.445771,
     "ast_hash": "3aa4b57d7f08181d86bde52a4dcb7f22",
     "semantic_hash": ""
   },
   "C:\\Nexora\\package.json": {
-    "mtime": 1782064484.0988624,
-    "ast_hash": "995c57caebba7316e1375c411c934769",
+    "mtime": 1794155035.320959,
+    "ast_hash": "e4a34918c59d23262642a8387ff4dbd3",
     "semantic_hash": ""
   },
   "C:\\Nexora\\supabase-setup.sql": {
@@ -30,12 +25,12 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\vite.config.js": {
-    "mtime": 1780926968.0458057,
-    "ast_hash": "a3d1a02e62dfabbac70ecade44a1e7f3",
+    "mtime": 1794154881.9216635,
+    "ast_hash": "16f599a332735269a0d7352077ac3f0b",
     "semantic_hash": ""
   },
   "C:\\Nexora\\api\\chat.js": {
-    "mtime": 1794124699.0154612,
+    "mtime": 1794124894.9727452,
     "ast_hash": "fc9a583f10b92556b8dbe59b17a5de8e",
     "semantic_hash": ""
   },
@@ -54,369 +49,14 @@
     "ast_hash": "6a6ba5df2598472cb0c6f4edb3fe65dd",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\flutter_webview_app\\android\\build.gradle.kts": {
-    "mtime": 1781435984.1642478,
-    "ast_hash": "803fe22651fbe96ed401eb0b66a492d1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\gradlew": {
-    "mtime": 1781435985.968346,
-    "ast_hash": "7f1cd7eb3f75a1dc85cd37753972a6e2",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\settings.gradle.kts": {
-    "mtime": 1781435984.3573303,
-    "ast_hash": "f276a44edd917afd836899357fdae60e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\build.gradle.kts": {
-    "mtime": 1781507688.8094027,
-    "ast_hash": "35830a62c10d72a06d4debe537ef4a46",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\java\\io\\flutter\\plugins\\GeneratedPluginRegistrant.java": {
-    "mtime": 1781436336.6175635,
-    "ast_hash": "6747e42eb3951b9e22b44a600746d3ce",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\kotlin\\com\\nexoraa\\app\\MainActivity.kt": {
-    "mtime": 1781444748.024197,
-    "ast_hash": "21be6e8f52d6da8216ae330f6898e69a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Flutter\\flutter_export_environment.sh": {
-    "mtime": 1781435988.5031755,
-    "ast_hash": "dd5f848b68d2e7556487051a27cc11bc",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Flutter\\ephemeral\\flutter_lldb_helper.py": {
-    "mtime": 1781435988.487425,
-    "ast_hash": "98fc75412162af387e2e3461e4e58094",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\AppDelegate.swift": {
-    "mtime": 1773902487.493039,
-    "ast_hash": "9e1de9c329a3fe4931876063de95132b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\GeneratedPluginRegistrant.h": {
-    "mtime": 1781435988.6649568,
-    "ast_hash": "decb9041b5e91a07e66f4664e5dac408",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\GeneratedPluginRegistrant.m": {
-    "mtime": 1781436336.635269,
-    "ast_hash": "e69b0080e4fa8fa94a0d4783ca1a38c4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Runner-Bridging-Header.h": {
-    "mtime": 1773902487.5025141,
-    "ast_hash": "7ad7b5cea096132de13ba526b2b9efbe",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\SceneDelegate.swift": {
-    "mtime": 1773902487.5058227,
-    "ast_hash": "0c3e86af131f6a9e547c80b5ed058914",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Contents.json": {
-    "mtime": 1781507808.3084986,
-    "ast_hash": "c870f277d0c83d1af12f8dc2d368879a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchBackground.imageset\\Contents.json": {
-    "mtime": 1781507037.0249987,
-    "ast_hash": "b5f36b5cc2eecbd74b7cfcb6a89fe6d1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\Contents.json": {
-    "mtime": 1781507036.1738577,
-    "ast_hash": "0827e8a9ba504cc1db6605cbd01fc656",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\RunnerTests\\RunnerTests.swift": {
-    "mtime": 1781435984.8269868,
-    "ast_hash": "24e5d095048eb86c30423f4e04b6e57b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\main.dart": {
-    "mtime": 1781436503.1155565,
-    "ast_hash": "f8bad66c9713fc26ff3fcad18f3c33eb",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\core\\constants\\app_constants.dart": {
-    "mtime": 1781436438.9136612,
-    "ast_hash": "23e7d4e9f55ccd6f41531ea5795caa0f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\core\\theme\\app_theme.dart": {
-    "mtime": 1781436431.3147216,
-    "ast_hash": "6f38f5f689e1884b4d3ddd151c722e15",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\core\\theme\\colors.dart": {
-    "mtime": 1781436423.1525538,
-    "ast_hash": "8211587257fb661eb2206bb9a226674f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\screens\\error_screen.dart": {
-    "mtime": 1781436467.451775,
-    "ast_hash": "5b72d1483ee6e03ed337ad6288c86e3f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\screens\\no_internet_screen.dart": {
-    "mtime": 1781436456.3053787,
-    "ast_hash": "2b417efb786f7c6cfdb9ac3b7a3bcf5f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\lib\\screens\\webview_screen.dart": {
-    "mtime": 1781506943.529991,
-    "ast_hash": "20466cebd4e4882b771a73e36dd2169a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\flutter\\generated_plugin_registrant.cc": {
-    "mtime": 1781436001.254526,
-    "ast_hash": "bd6e64368e100cca8e55173215ae1bdd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\flutter\\generated_plugin_registrant.h": {
-    "mtime": 1781435988.6510003,
-    "ast_hash": "d295462c9da9f7fef22dc86c34492318",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\runner\\main.cc": {
-    "mtime": 1773902487.870141,
-    "ast_hash": "539395bcd63dba20afed0838d136189f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\runner\\my_application.cc": {
-    "mtime": 1781435984.9951496,
-    "ast_hash": "f14f54020ccc0e49fb1420f8e562ff15",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\runner\\my_application.h": {
-    "mtime": 1773902487.8835838,
-    "ast_hash": "ffa1a7c0a2ad45a2c14a921596516ff8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Flutter\\GeneratedPluginRegistrant.swift": {
-    "mtime": 1781436336.6387959,
-    "ast_hash": "de03c884111013f51644a81fff5fa9c7",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Flutter\\ephemeral\\flutter_export_environment.sh": {
-    "mtime": 1781435988.5076768,
-    "ast_hash": "9a9a933bd85048c061a01964ecad6d37",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\AppDelegate.swift": {
-    "mtime": 1773902487.9227839,
-    "ast_hash": "4b52e0b89ebfef9baf45b04548c463d6",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\MainFlutterWindow.swift": {
-    "mtime": 1773902487.947958,
-    "ast_hash": "93c22dae2d93f3dc1402e121901f582b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Contents.json": {
-    "mtime": 1773902488.0159686,
-    "ast_hash": "1d48e925145d4b573a3b5d7960a1c585",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\RunnerTests\\RunnerTests.swift": {
-    "mtime": 1781435985.3601515,
-    "ast_hash": "8059f5d27a19c556eeafb49b3f9b7bdd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\test\\widget_test.dart": {
-    "mtime": 1781435985.857677,
-    "ast_hash": "a42dc03ff6e1ea5967c411feec22c188",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\manifest.json": {
-    "mtime": 1781435985.5427926,
-    "ast_hash": "1f22215ae1c034b1052ca056582ae6c8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\flutter\\generated_plugin_registrant.cc": {
-    "mtime": 1781436212.549114,
-    "ast_hash": "f55ba17016bcc5cd834c2f4d2513e555",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\flutter\\generated_plugin_registrant.h": {
-    "mtime": 1781435988.6579187,
-    "ast_hash": "0ea33875f9f8e118f9c2ded03e2e2835",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\flutter_window.cpp": {
-    "mtime": 1773902488.2879605,
-    "ast_hash": "2f463f9b7da67a2d692a012f9ea85e0c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\flutter_window.h": {
-    "mtime": 1773902488.2963662,
-    "ast_hash": "7defcc89d4a26d56e801241d624d48fb",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\main.cpp": {
-    "mtime": 1781435985.6759486,
-    "ast_hash": "d18a5a9e8da572f812a6b86e8e65d252",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\resource.h": {
-    "mtime": 1773902488.3146775,
-    "ast_hash": "1ade5dd15e613479a15e8832ed276f2b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\utils.cpp": {
-    "mtime": 1773902488.3438714,
-    "ast_hash": "432461b09d862a2f8dadf380ff0e34e5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\utils.h": {
-    "mtime": 1773902488.355631,
-    "ast_hash": "fd81e143f5614eb6fd75efe539002853",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\win32_window.cpp": {
-    "mtime": 1773902488.3678212,
-    "ast_hash": "571eb8234dbc2661be03aa5f2a4d2fca",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\win32_window.h": {
-    "mtime": 1773902488.375786,
-    "ast_hash": "7569387d58711ab975940f4df3b4bcda",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components.json": {
-    "mtime": 1781102262.4799583,
-    "ast_hash": "a1691b243ef8732e37a47e5eef18a7e4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\next.config.mjs": {
-    "mtime": 1781102262.6085632,
-    "ast_hash": "e36b6419c008f0a3d55bd789c4fabcf0",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\package.json": {
-    "mtime": 1781102262.6195643,
-    "ast_hash": "c6e4ab19c95c2614853830d91641579e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\postcss.config.mjs": {
-    "mtime": 1781102262.6375668,
-    "ast_hash": "f82d40129ab70e95110c0470895b366c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\tsconfig.json": {
-    "mtime": 1781102262.7120826,
-    "ast_hash": "4cc2cac899fc2a7d141bca0f8797b9de",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\app\\layout.tsx": {
-    "mtime": 1781102262.4569595,
-    "ast_hash": "8500f5242e12ba3c34f817aea6418ec0",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\app\\page.tsx": {
-    "mtime": 1781102262.469962,
-    "ast_hash": "02663f31a58bcbbf99ba9589983c043a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\animated-counter.tsx": {
-    "mtime": 1781102262.4930592,
-    "ast_hash": "a16038f653edc4253cda611d250fab8a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\command-palette.tsx": {
-    "mtime": 1781102262.4989557,
-    "ast_hash": "7763fba602aa0d302c2e7cd1316de93a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\notification-panel.tsx": {
-    "mtime": 1781102262.505956,
-    "ast_hash": "87242fc0da92482fbaca116cabe46b03",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\request-modal.tsx": {
-    "mtime": 1781102262.5119562,
-    "ast_hash": "b479ea84c4c096b5f2141484c02487d5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\sidebar.tsx": {
-    "mtime": 1781102262.5179567,
-    "ast_hash": "13166bbeca241f6640f719959b575f22",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\top-navbar.tsx": {
-    "mtime": 1781102262.523956,
-    "ast_hash": "3178cd8a86d782be1a6b7e61134b991e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\pages\\asset-vault-page.tsx": {
-    "mtime": 1781102262.5340037,
-    "ast_hash": "2718092272c805ce92da54bec22d48c8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\pages\\billing-page.tsx": {
-    "mtime": 1781102262.5400379,
-    "ast_hash": "2ab6fecfa2c751b1751d90b1c33e4e7e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\pages\\messages-page.tsx": {
-    "mtime": 1781102262.5465903,
-    "ast_hash": "6f76ec8fd1629199b8d3b46ef3ab40ad",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\pages\\overview-page.tsx": {
-    "mtime": 1781102262.5535727,
-    "ast_hash": "057c732317b721b6879bcd75c940d53a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\pages\\settings-page.tsx": {
-    "mtime": 1781102262.5595634,
-    "ast_hash": "fb8f499eb42eab23ac4035550bedf7e1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\components\\ui\\button.tsx": {
-    "mtime": 1781102262.5695624,
-    "ast_hash": "63cfaae37f8d5e0fa4451635ccc521b4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\lib\\data.ts": {
-    "mtime": 1781102262.5825639,
-    "ast_hash": "236230b2a295f68afe2f717fad44a746",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\lib\\portal-context.tsx": {
-    "mtime": 1781102262.5935738,
-    "ast_hash": "fe99b998a82afca798acec7323cb615d",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\lib\\utils.ts": {
-    "mtime": 1781102262.6005712,
-    "ast_hash": "9a4cc6f9f3155ffdc1fa7c2c097f6429",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\App.jsx": {
-    "mtime": 1782817524.643866,
-    "ast_hash": "9841643bc7c096c3ef9c52aabef7fc8c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\fix_css.py": {
-    "mtime": 1778583598.756295,
-    "ast_hash": "9438639c0cd0d94a7bf5eb20f05bd98b",
+    "mtime": 1794159873.7893434,
+    "ast_hash": "a45afb8e448a347e75d2ad7efb66a2b9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\main.jsx": {
     "mtime": 1780563937.7894523,
     "ast_hash": "adeaf3a8731fd16acb50ec2bfdce1fdc",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\animations\\gsapAnimations.js": {
-    "mtime": 1777884738.2565293,
-    "ast_hash": "696da0512be818398396aa2cff5496e2",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\animations\\variants.js": {
@@ -429,49 +69,29 @@
     "ast_hash": "560fb1c7d1b097ba7b90544dc17828c6",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\components\\layout\\BackToTop.jsx": {
-    "mtime": 1780827320.6870987,
-    "ast_hash": "6ed6d50225b531bf1e277d9c2c741a89",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\layout\\CookieBanner.jsx": {
-    "mtime": 1780827320.6894808,
-    "ast_hash": "22bd6edb4f6e20b366d8504e0156241e",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\components\\layout\\Footer.jsx": {
     "mtime": 1782979631.0369725,
     "ast_hash": "af55fdaafd5214beef593fd8e71133a7",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\LoadingScreen.jsx": {
-    "mtime": 1782064484.1086502,
-    "ast_hash": "b79c4ef286ccb1ae1ada0548143f4602",
+    "mtime": 1794155703.685246,
+    "ast_hash": "1558856bfbecb28104e97e74a401409e",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\MarqueeStrip.jsx": {
-    "mtime": 1780827320.693355,
-    "ast_hash": "a939813a16aa44c82e06a0ccd0431ad5",
+    "mtime": 1794152245.1245012,
+    "ast_hash": "6e6991361a399afe47162c79d0d8c50a",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\Navbar.jsx": {
-    "mtime": 1782991743.1692038,
-    "ast_hash": "fa38023d41cdb07a6a6f7c1e3a77ca08",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\layout\\ScrollProgress.jsx": {
-    "mtime": 1780827320.6999006,
-    "ast_hash": "0bddbaaa9be27af360303c0533801423",
+    "mtime": 1794160161.8303494,
+    "ast_hash": "d532526a7e25dcead69823d6b26c6b81",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\ScrollToTop.jsx": {
     "mtime": 1779276108.757227,
     "ast_hash": "186aae1c2b0fc80e71cb6c683cb7fb74",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\layout\\SectionDivider.jsx": {
-    "mtime": 1777884847.5146756,
-    "ast_hash": "192ed515626bfde090147fe29b06bfa5",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\portal\\AnimatedCounter.jsx": {
@@ -545,13 +165,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\About.jsx": {
-    "mtime": 1782815162.472751,
-    "ast_hash": "1f39fb83120d036eae2c016392228d3f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\sections\\BlogTeaser.jsx": {
-    "mtime": 1780827320.710144,
-    "ast_hash": "bab002bc6749f66f83d003e4b47cd403",
+    "mtime": 1794153297.4208295,
+    "ast_hash": "0eb0d0c2407241ae65e453b3c5bbebb9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Contact.jsx": {
@@ -560,33 +175,23 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\FAQ.jsx": {
-    "mtime": 1782064484.1218379,
-    "ast_hash": "3959a9f865cfd519142c0b8a82a8b08a",
+    "mtime": 1794155703.9092624,
+    "ast_hash": "14696fc6a5d82f9855ada07ace0dd03a",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Hero.jsx": {
-    "mtime": 1782805879.903176,
-    "ast_hash": "c39d5ff59cb0838c333dfab62a74f85d",
+    "mtime": 1794219564.438,
+    "ast_hash": "537c50f4fa7ac7833832648ce055dba3",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\HowWeWork.jsx": {
-    "mtime": 1780828013.0091655,
-    "ast_hash": "48d1e0d2b7419f30f0246e82ede24578",
+    "mtime": 1794155704.1290805,
+    "ast_hash": "d57231b6fca75515b84194f6a0be6024",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\KineticManifesto.jsx": {
-    "mtime": 1780827861.8116727,
-    "ast_hash": "154bfc1d9dae6852293e050f5e5da9cd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\sections\\Newsletter.jsx": {
-    "mtime": 1780827320.7229464,
-    "ast_hash": "8fc421b2ee17ef0380e1f878c9901f44",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\sections\\OnboardingTeaser.jsx": {
-    "mtime": 1782064484.1269908,
-    "ast_hash": "7a3e4454e47d64bbf672a998bcf43ab1",
+    "mtime": 1794156114.868788,
+    "ast_hash": "b32c23cc24b515f4d91475513cdcfa48",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pricing.jsx": {
@@ -595,33 +200,33 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pulse.jsx": {
-    "mtime": 1782064484.1295373,
-    "ast_hash": "979b2818cb8192c581a2601965711f84",
+    "mtime": 1794155035.5012467,
+    "ast_hash": "7854b7984aa5724f61a9530cca349d7d",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\RealtimeWork.jsx": {
-    "mtime": 1783580016.7412367,
-    "ast_hash": "d118ef33c00736cdc99a539d152aabb8",
+    "mtime": 1794155035.6924407,
+    "ast_hash": "625f9263f6e2120b1fc642075a9a4b6c",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Services.jsx": {
-    "mtime": 1781371538.57886,
-    "ast_hash": "0e141d63d28d085fa5a480e5b9539d68",
+    "mtime": 1794213199.1610286,
+    "ast_hash": "4495258170d7396a6ad250fd6767a10c",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Stats.jsx": {
-    "mtime": 1781345305.1050472,
-    "ast_hash": "8e256ea76c0a40025d32efafe1d6438f",
+    "mtime": 1794157339.394388,
+    "ast_hash": "4bfe1d3d48dfa7a3680627d85f520fe8",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Team.jsx": {
-    "mtime": 1794124654.0457177,
-    "ast_hash": "26e9d63136599604ae166bf24c3450ae",
+    "mtime": 1794155035.8072605,
+    "ast_hash": "9891bf63d3df4f20948ece6dd171d9ef",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\TechStack.jsx": {
-    "mtime": 1780827861.8249962,
-    "ast_hash": "3e60c039015f2832bd719269197e7b8f",
+    "mtime": 1794156114.9674056,
+    "ast_hash": "0b33da553a43a3a27e561b1a2c16bee5",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Testimonials.jsx": {
@@ -630,8 +235,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\TrustBadges.jsx": {
-    "mtime": 1782064484.131393,
-    "ast_hash": "7e236d3db4cf57563ca14f0a6b4c448f",
+    "mtime": 1794213199.1813564,
+    "ast_hash": "4488aa5d7b9b97bf7267a79493c715a9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\WhyNexoraa.jsx": {
@@ -640,8 +245,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Work.jsx": {
-    "mtime": 1781346139.7699966,
-    "ast_hash": "5e7c1eb50c549786496c30d8c6371ec6",
+    "mtime": 1794202363.8311586,
+    "ast_hash": "eabfdc6067ba6662b4d74e7723a6adec",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\AnimatedCounter.jsx": {
@@ -649,19 +254,14 @@
     "ast_hash": "b76409d1f4e441c08bbcc38e7caca755",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\components\\ui\\AnimatedGradientBorder.jsx": {
-    "mtime": 1777887319.848759,
-    "ast_hash": "b097ab3c0da2eedac6662bb0b31979fd",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\components\\ui\\BackToTop.jsx": {
-    "mtime": 1780827320.7439897,
-    "ast_hash": "66cd0203baf820d301f35ca8f56b9191",
+    "mtime": 1794157339.4390788,
+    "ast_hash": "e2aaf6ecfa41e934e88dae0622ded22e",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ContextCursor.jsx": {
-    "mtime": 1781347321.0610776,
-    "ast_hash": "dc2b0f2b1f408b4549416ca81268d7f9",
+    "mtime": 1794157339.5003302,
+    "ast_hash": "acfb546a755a2f7856357d610c1d5213",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\CookieBanner.jsx": {
@@ -669,19 +269,9 @@
     "ast_hash": "8812d9cb9303c0aab882511a66ffec24",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\components\\ui\\CustomCursor.jsx": {
-    "mtime": 1777884814.0332713,
-    "ast_hash": "93a5c7346e3f83e9dff02eb4490a8c7e",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\components\\ui\\FlashbackTransition.jsx": {
     "mtime": 1782070468.4906833,
     "ast_hash": "86ce38cbdabc70465d4003c3480c9199",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\ui\\GlitchText.jsx": {
-    "mtime": 1777887270.85278,
-    "ast_hash": "4cd699e9b6e62d8a900a7fe2f8841feb",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\GlowCard.jsx": {
@@ -690,8 +280,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\LaptopMockup.jsx": {
-    "mtime": 1782901369.3928185,
-    "ast_hash": "d4b287d0926c06be3ff3fe1a49c2135c",
+    "mtime": 1794219564.4425426,
+    "ast_hash": "0b4c030364797f2e3cbfa4d4adb4ef30",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\MagneticButton.jsx": {
@@ -700,23 +290,18 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\MorphingBlob.jsx": {
-    "mtime": 1780827997.9618685,
-    "ast_hash": "9f896a7361ce0854d5ba991879877a9d",
+    "mtime": 1794157339.826974,
+    "ast_hash": "b536f674f34e8f2bf6eae5d576a268f8",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
-    "mtime": 1794124688.3731644,
-    "ast_hash": "1837c7760ae3f11d3cb519bb9b5d7c6e",
+    "mtime": 1794158810.5120745,
+    "ast_hash": "708450afd590c08626fcf2535d02d70a",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ParticleField.jsx": {
-    "mtime": 1781349155.5498629,
-    "ast_hash": "cfcb4b399e97e271e9cc27c4ec1f0cfc",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\ui\\PhoneMockup.jsx": {
-    "mtime": 1780827320.7504482,
-    "ast_hash": "af3a5cd8394c7abaae1c4f307ff82d6b",
+    "mtime": 1794157340.097965,
+    "ast_hash": "6a89728c6a2798d7ca1ee55ec556fd5d",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ScrambleText.jsx": {
@@ -727,16 +312,6 @@
   "C:\\Nexora\\src\\components\\ui\\ScrollProgress.jsx": {
     "mtime": 1780827861.8377738,
     "ast_hash": "f4917ae371b56d1973e9601afda201a9",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\ui\\ScrollVelocityText.jsx": {
-    "mtime": 1780827861.839303,
-    "ast_hash": "99234207fe5af860c6acd3e33af4a470",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\components\\ui\\WhatsAppButton.jsx": {
-    "mtime": 1782064484.1457808,
-    "ast_hash": "d9a0f7a1ca8cff44be4d25bb70f61a95",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\docs.js": {
@@ -755,18 +330,18 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\projects.js": {
-    "mtime": 1780934132.4529655,
-    "ast_hash": "b2f2aabff24a51182a702d2be951352a",
+    "mtime": 1794155036.0985775,
+    "ast_hash": "0f36e8d32c8e336fec6cc40aa9922bc7",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\services.js": {
-    "mtime": 1780767590.9828203,
-    "ast_hash": "04e8b9ebd03102f3a67baee88dae0523",
+    "mtime": 1794156115.0233233,
+    "ast_hash": "678b03a39b3d5c66d3a88caf2647a468",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\team.js": {
-    "mtime": 1794124615.8607075,
-    "ast_hash": "eeb03735076d826d258d82e0136c401f",
+    "mtime": 1794153298.0525074,
+    "ast_hash": "b93ad202678408062122049de3b7dbe7",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\techStack.js": {
@@ -825,8 +400,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\ClientPortal.jsx": {
-    "mtime": 1782903564.0377252,
-    "ast_hash": "fadef9ec5ce18e8611fd57aee62ad20f",
+    "mtime": 1794153968.8208194,
+    "ast_hash": "2745842a58619adcca87186e51ae80f6",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Contact.jsx": {
@@ -835,8 +410,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Home.jsx": {
-    "mtime": 1782064484.158547,
-    "ast_hash": "f42771c0ca1e7549b03bc5f3d4fc2f2b",
+    "mtime": 1794162736.6974912,
+    "ast_hash": "6389821411d786560ae18256d46dc36b",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -885,8 +460,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\SystemBoot.jsx": {
-    "mtime": 1782903127.3150442,
-    "ast_hash": "d78cbeb2ab00db45633a08e829d74abc",
+    "mtime": 1794153298.6401954,
+    "ast_hash": "39be43c810194cc4e88f2919cc517ccd",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Terms.jsx": {
@@ -905,18 +480,13 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\utils\\scroll.js": {
-    "mtime": 1777884733.794448,
-    "ast_hash": "74300561e5d974bed7c2d8a6f86ad4b8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\build_output.txt": {
-    "mtime": 1778964740.9872599,
-    "ast_hash": "84b1ade52fd686efd57c24cf3fb4a08a",
+    "mtime": 1794156302.8023608,
+    "ast_hash": "57e6bb77f921fb90a83106d15a6f3d08",
     "semantic_hash": ""
   },
   "C:\\Nexora\\index.html": {
-    "mtime": 1782064484.082949,
-    "ast_hash": "4aaf6d688ef76b390c25970618397319",
+    "mtime": 1794157641.777824,
+    "ast_hash": "fbed01674e2af111116a947cb954c3a8",
     "semantic_hash": ""
   },
   "C:\\Nexora\\README.md": {
@@ -934,86 +504,6 @@
     "ast_hash": "84de69efd46ab0b8430393bd4188f8f2",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\flutter_webview_app\\analysis_options.yaml": {
-    "mtime": 1781435984.115698,
-    "ast_hash": "9e65f4b9beebb674c0dc252f70a5c177",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\pubspec.yaml": {
-    "mtime": 1781507707.0541804,
-    "ast_hash": "cd117503c21893efa0e73b48781a4517",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\README.md": {
-    "mtime": 1781435985.4046168,
-    "ast_hash": "e451eab18716695ea75182e5386e870b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\SETUP_GUIDE.md": {
-    "mtime": 1782064483.978266,
-    "ast_hash": "e3e5ae01c974bc792e78eb118f000e81",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\README.md": {
-    "mtime": 1773902487.670395,
-    "ast_hash": "f7ee1b402881509d197f34963e569927",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\CMakeLists.txt": {
-    "mtime": 1781435984.9191532,
-    "ast_hash": "0c7144ba61ef13a251fd86dbb8c81f06",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\flutter\\CMakeLists.txt": {
-    "mtime": 1773902487.855766,
-    "ast_hash": "2195470ce31675d31db5a37590d011f6",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\linux\\runner\\CMakeLists.txt": {
-    "mtime": 1773902487.870141,
-    "ast_hash": "30cc1614b16214b66c014af09ba699eb",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\index.html": {
-    "mtime": 1781507052.2652187,
-    "ast_hash": "82c098bba82085c6d5825353b9c0ea4d",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\CMakeLists.txt": {
-    "mtime": 1781435985.578887,
-    "ast_hash": "a806acf9d0056b27b34a49ceb0e8aa56",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\flutter\\CMakeLists.txt": {
-    "mtime": 1773902488.264649,
-    "ast_hash": "bbf66fed5180bd9ae8198b8d7c4a0001",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\windows\\runner\\CMakeLists.txt": {
-    "mtime": 1773902488.2823365,
-    "ast_hash": "028602ab9754bffe716659ada7590d29",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\antigravity-flutter-prompt.md": {
-    "mtime": 1781419911.2289786,
-    "ast_hash": "a882ee889fec58304e002dff1cf20a64",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\antigravity-webview-prompt.md": {
-    "mtime": 1781435910.6064444,
-    "ast_hash": "2fc7193094c60fac5e0e254d14c1213e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\crop.html": {
-    "mtime": 1782901515.1466918,
-    "ast_hash": "26d1f34d149dd43af1f7f8a470d877cf",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\nexoraa_invoice_system.html": {
-    "mtime": 1780915467.7075934,
-    "ast_hash": "70e5d92380e65369245cff241f140aa5",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\api\\Nexoraa_Client_Agreement.pdf": {
     "mtime": 1780916260.782629,
     "ast_hash": "0e783981e79024a3a9b03d86fcfedf81",
@@ -1024,547 +514,12 @@
     "ast_hash": "7a66915df96de603e8c8d39b05e42cea",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\Solar.pdf": {
-    "mtime": 1779265301.9706898,
-    "ast_hash": "0b0e0b44492a08686ea8c8707154bfd8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\Video\\Nexoraa_Client_Agreement.pdf": {
-    "mtime": 1780916260.782629,
-    "ast_hash": "0e783981e79024a3a9b03d86fcfedf81",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\Video\\Nexoraa_Studio_NDA.pdf": {
-    "mtime": 1781268282.2786086,
-    "ast_hash": "7a66915df96de603e8c8d39b05e42cea",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\Solar.pdf": {
-    "mtime": 1779265301.9706898,
-    "ast_hash": "0b0e0b44492a08686ea8c8707154bfd8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable\\background.png": {
-    "mtime": 1781507035.1907315,
-    "ast_hash": "a3048b4dd4803cde3febf29085a3b083",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-hdpi\\android12splash.png": {
-    "mtime": 1781507035.1532576,
-    "ast_hash": "c168223fdd5bf38ab0ad4b87a39243aa",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_foreground.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "d613f7a69d6a0fda1de31c0c5c2c7583",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-hdpi\\splash.png": {
-    "mtime": 1781507035.5455675,
-    "ast_hash": "b303375095c44061d03714222d20f053",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-mdpi\\android12splash.png": {
-    "mtime": 1781507035.1532576,
-    "ast_hash": "e47e0af7ad12938d6939df171a3ae434",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_foreground.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "7e44bff8378e9aef841a09d543289649",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-mdpi\\splash.png": {
-    "mtime": 1781507035.4261253,
-    "ast_hash": "6a018e8e495543acedc16e089486011a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-night-hdpi\\android12splash.png": {
-    "mtime": 1781507035.1931891,
-    "ast_hash": "c168223fdd5bf38ab0ad4b87a39243aa",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-night-mdpi\\android12splash.png": {
-    "mtime": 1781507035.1898885,
-    "ast_hash": "e47e0af7ad12938d6939df171a3ae434",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-night-xhdpi\\android12splash.png": {
-    "mtime": 1781507035.1971989,
-    "ast_hash": "657f816d6571b1d9c781c6064eb76fb5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-night-xxhdpi\\android12splash.png": {
-    "mtime": 1781507035.210235,
-    "ast_hash": "8698997372be8d55151a58d96cf87dfd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-night-xxxhdpi\\android12splash.png": {
-    "mtime": 1781507035.2117443,
-    "ast_hash": "ae2fcfaff83ff4a15595b10971b27ecb",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-v21\\background.png": {
-    "mtime": 1781507035.1931891,
-    "ast_hash": "a3048b4dd4803cde3febf29085a3b083",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xhdpi\\android12splash.png": {
-    "mtime": 1781507035.1542668,
-    "ast_hash": "657f816d6571b1d9c781c6064eb76fb5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher_foreground.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "55eaccf5ce15414c679e6d504d7bb366",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xhdpi\\splash.png": {
-    "mtime": 1781507035.6995182,
-    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xxhdpi\\android12splash.png": {
-    "mtime": 1781507035.188882,
-    "ast_hash": "8698997372be8d55151a58d96cf87dfd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_foreground.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "7319bbbbc84bcaf397ba75f8ea10a695",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xxhdpi\\splash.png": {
-    "mtime": 1781507036.116408,
-    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\android12splash.png": {
-    "mtime": 1781507035.1790047,
-    "ast_hash": "ae2fcfaff83ff4a15595b10971b27ecb",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher_foreground.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "04d2c6e556bfa04e658129c0826e554a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\splash.png": {
-    "mtime": 1781507036.5568266,
-    "ast_hash": "e4fc06954a5d5e86e15b9850d2af74c4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "f04556b0f2f1e5ebeb45c10985ac16fd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png": {
-    "mtime": 1781463613.1358204,
-    "ast_hash": "6c0d3725791e2396d20f9c04d1e81557",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "dbc48adc5ef1eed0225803b022a7ed16",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon.png": {
-    "mtime": 1781463613.1358204,
-    "ast_hash": "e73a64f327950724ac1ca5144709e03b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "757e3fa709fe0c671295c1175739d06f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png": {
-    "mtime": 1781463613.136845,
-    "ast_hash": "b728991edec075053210d9372ef41049",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "c12e3d5ff836db4224a3ce7fba234f46",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png": {
-    "mtime": 1781463613.136845,
-    "ast_hash": "410de2a421e4e318f9f95daef6368ae6",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png": {
-    "mtime": 1781507807.2675254,
-    "ast_hash": "a42c59f6a75cb1f996f04fd482ce2d0a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png": {
-    "mtime": 1781463613.1378384,
-    "ast_hash": "16272d25fd7e34b841934f8aa3eb3403",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\assets\\images\\AppLogo.png": {
-    "mtime": 1781259345.7614775,
-    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\assets\\images\\Logo.png": {
-    "mtime": 1781418860.972662,
-    "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\assets\\images\\Main.png": {
-    "mtime": 1781504752.1420076,
-    "ast_hash": "0ac0d2e092c17470333b09ef229e4c77",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\assets\\images\\nexoraa_logo_exact_center.png": {
-    "mtime": 1781501158.5104315,
-    "ast_hash": "b04c4dd2753ee32e09e75734ee8ba66a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-1024x1024@1x.png": {
-    "mtime": 1781507808.289325,
-    "ast_hash": "eb83685a813580e781ec19dbaa619e74",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "f9551703f8991d3adc131ee3f8403db8",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "20595009834ba538972e9e0f646022e2",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@3x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "90c0c5398e2a820c82e681eb28cf7b84",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "b521f0aa2441bdf72558da186c84a6a4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "9b7f654d112f98fadab6a5c519b39621",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@3x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "da3f5d882b3cede8bfd0ef460252e134",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "20595009834ba538972e9e0f646022e2",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "09d2d0ab3c2de8d89c9c4d35caa9cbf4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@3x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "9e96be634e924f7e7615cf34a5fb6798",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-50x50@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "7395979c1efb68ac01c259d6961be248",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-50x50@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "a625e7d4adeb7f20529c67e3de9cf2bc",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-57x57@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "0ac600e50af937784bec0814f8e8eaab",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-57x57@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "c1931b52da5d0d7ace73b2a262ee343c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-60x60@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "9e96be634e924f7e7615cf34a5fb6798",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-60x60@3x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "2f6535eab159277431ce908547163a14",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-72x72@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "f04556b0f2f1e5ebeb45c10985ac16fd",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-72x72@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "c12e3d5ff836db4224a3ce7fba234f46",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-76x76@1x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "321c644c58632aed2436e24c1f65df31",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-76x76@2x.png": {
-    "mtime": 1781507808.2878642,
-    "ast_hash": "002acdf4b3972524bb97cd1412ec2bb7",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-83.5x83.5@2x.png": {
-    "mtime": 1781507808.289325,
-    "ast_hash": "5a3d570c0a521b7c2e1675d9fa516bd1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchBackground.imageset\\background.png": {
-    "mtime": 1781507037.0249987,
-    "ast_hash": "a3048b4dd4803cde3febf29085a3b083",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage.png": {
-    "mtime": 1781507036.4390452,
-    "ast_hash": "6a018e8e495543acedc16e089486011a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage@2x.png": {
-    "mtime": 1781507036.7248938,
-    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage@3x.png": {
-    "mtime": 1781507037.154116,
-    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_1024.png": {
-    "mtime": 1773902814.7220716,
-    "ast_hash": "c9becc9105f8cabce934d20c7bfb6aac",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_128.png": {
-    "mtime": 1773902814.710034,
-    "ast_hash": "3ded30823804caaa5ccc944067c54a36",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_16.png": {
-    "mtime": 1773902814.71525,
-    "ast_hash": "8bf511604bc6ed0a6aeb380c5113fdcf",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_256.png": {
-    "mtime": 1773902814.7231367,
-    "ast_hash": "dfe2c93d1536ae02f085cc63faa3430e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_32.png": {
-    "mtime": 1773902814.71525,
-    "ast_hash": "8e0ae58e362a6636bdfccbc04da2c58c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_512.png": {
-    "mtime": 1773902814.7120602,
-    "ast_hash": "0ad44039155424738917502c69667699",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_64.png": {
-    "mtime": 1773902814.7063296,
-    "ast_hash": "04e7b6ef05346c70b663ca1d97de3ad5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\favicon.png": {
-    "mtime": 1773902488.1823816,
-    "ast_hash": "5dcef449791fa27946b3d35ad8803796",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\icons\\Icon-192.png": {
-    "mtime": 1773902488.2109265,
-    "ast_hash": "ac9a721a12bbc803b44f645561ecb1e1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\icons\\Icon-512.png": {
-    "mtime": 1773902488.2179701,
-    "ast_hash": "96e752610906ba2a93c65f8abe1645f1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\icons\\Icon-maskable-192.png": {
-    "mtime": 1773902814.9075742,
-    "ast_hash": "c457ef57daa1d16f64b27b786ec2ea3c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\icons\\Icon-maskable-512.png": {
-    "mtime": 1773902814.9060144,
-    "ast_hash": "301a7604d45b3e739efc881eb04896ea",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\dark-1x.png": {
-    "mtime": 1781507046.7690213,
-    "ast_hash": "6a018e8e495543acedc16e089486011a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\dark-2x.png": {
-    "mtime": 1781507047.8088872,
-    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\dark-3x.png": {
-    "mtime": 1781507049.7862654,
-    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\dark-4x.png": {
-    "mtime": 1781507052.1588378,
-    "ast_hash": "e4fc06954a5d5e86e15b9850d2af74c4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\light-1x.png": {
-    "mtime": 1781507039.1054718,
-    "ast_hash": "6a018e8e495543acedc16e089486011a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\light-2x.png": {
-    "mtime": 1781507040.1009462,
-    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\light-3x.png": {
-    "mtime": 1781507041.7925818,
-    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\flutter_webview_app\\web\\splash\\img\\light-4x.png": {
-    "mtime": 1781507044.2441573,
-    "ast_hash": "e4fc06954a5d5e86e15b9850d2af74c4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\apple-icon.png": {
-    "mtime": 1781102262.6490903,
-    "ast_hash": "734ce6c878789fcd5843e8a7963e0756",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\icon-dark-32x32.png": {
-    "mtime": 1781102262.6560948,
-    "ast_hash": "abd5ebe9e287ca0a89f4fd3da2b5cf9c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\icon-light-32x32.png": {
-    "mtime": 1781102262.663088,
-    "ast_hash": "53426c910bcab7d3e5213cc64aa1b2c5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\icon.svg": {
-    "mtime": 1781102262.669083,
-    "ast_hash": "6e5d88c5f7e97d26ac4ad47e703bf9de",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\placeholder-logo.png": {
-    "mtime": 1781102262.676079,
-    "ast_hash": "95d8d1a4a9bbcccc875e2c381e74064a",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\placeholder-logo.svg": {
-    "mtime": 1781102262.6840832,
-    "ast_hash": "1e16dc7df824652c5906a2ab44aef78c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\placeholder-user.jpg": {
-    "mtime": 1781102262.6900883,
-    "ast_hash": "7ee6562646feae6d6d77e2c72e204591",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\placeholder.jpg": {
-    "mtime": 1781102262.6970825,
-    "ast_hash": "1e533b7b4545d1d605144ce893afc601",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\nexoraa-client-portal\\public\\placeholder.svg": {
-    "mtime": 1781102262.7040944,
-    "ast_hash": "35707bd9960ba5281c72af927b79291f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\ChatGPT Image May 14, 2026, 01_58_07 PM.png": {
-    "mtime": 1778747287.8774526,
-    "ast_hash": "daf8e1a2333397e0197f5e8efa93f563",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\public\\favicon.png": {
-    "mtime": 1781259345.7614775,
-    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\favicon.svg": {
-    "mtime": 1777396922.859232,
-    "ast_hash": "7e840862161341271697daa99a40d76b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\icons.svg": {
-    "mtime": 1777396922.9367666,
-    "ast_hash": "3b4fcfcf393eca4d264dca4a4663bc37",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\image.png": {
-    "mtime": 1780833525.8748376,
-    "ast_hash": "2e83b2fcb7444f1db136d39db35c4b48",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\login_illustration.png": {
-    "mtime": 1779282752.0876231,
-    "ast_hash": "5d60315a01717fb6ca6be4cac47ea75d",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\assets\\bot.png": {
-    "mtime": 1780833776.832791,
-    "ast_hash": "97636bc41165a337277939646198429b",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\assets\\image copy.png": {
-    "mtime": 1780834865.1180606,
-    "ast_hash": "a947634cc000941b91c6214006049ead",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\assets\\image.png": {
-    "mtime": 1780833533.325752,
-    "ast_hash": "2e83b2fcb7444f1db136d39db35c4b48",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\assets\\work\\Company Card (2).jpeg": {
-    "mtime": 1780566946.323718,
-    "ast_hash": "3381879398880a6ba9bc23bff25419d3",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\assets\\work\\Company Card.jpeg": {
-    "mtime": 1780566808.5083172,
-    "ast_hash": "d53501c4378edc135e3700515bc06d89",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\logo\\ChatGPT Image Jun 9, 2026, 09_17_40 PM.png": {
-    "mtime": 1781020060.4365926,
-    "ast_hash": "791c5f373e56015d4625eeaf4593b633",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\logo\\ChatGPT Image May 11, 2026, 11_53_46 AM.png": {
-    "mtime": 1778480626.8111515,
-    "ast_hash": "017d2aea4558301e3558e9c64c58c4f4",
+    "mtime": 1794154959.121706,
+    "ast_hash": "4a538c7e4d841350fbde1d0e56147cf4",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\logo\\favicon.png": {
-    "mtime": 1781259345.7614775,
-    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\logo\\logo copy.png": {
     "mtime": 1781259345.7614775,
     "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
     "semantic_hash": ""
@@ -1579,129 +534,14 @@
     "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\logo\\WhatsApp Image 2026-05-11 at 12.12.56 PM.jpeg": {
-    "mtime": 1778481790.501168,
-    "ast_hash": "5fb223e37a8f50e47e0f101b2b78239a",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\public\\projects\\Ai boat inside photo.png": {
     "mtime": 1781259134.3347926,
     "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\projects\\ChatGPT Image Jun 3, 2026, 01_09_31 PM.png": {
-    "mtime": 1780472372.5946088,
-    "ast_hash": "e692eaf2f9c4fa22d0f551e969633096",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\gemini-bot.png": {
-    "mtime": 1781259134.3347926,
-    "ast_hash": "f13ef469a9c3aa46cbb125e2a11b49c6",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\image copy 2.png": {
-    "mtime": 1782901804.289745,
-    "ast_hash": "f6ae4dbaf7a3d00b53caec76bf52ba7f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\image copy.png": {
-    "mtime": 1782899880.6405292,
-    "ast_hash": "a883a259ee69b0281df3a552a73e43df",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\image.png": {
-    "mtime": 1781258166.6719985,
-    "ast_hash": "0a9003a277dc1fee3dcb2305e0ef14f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-1.jpg": {
-    "mtime": 1777919974.0210824,
-    "ast_hash": "7226f6c44af68650b0e009d6e32c4bea",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-10.jpg": {
-    "mtime": 1777920022.1239002,
-    "ast_hash": "f369cb0dca825721ae7bca1c5edb4289",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-11.jpg": {
-    "mtime": 1777920026.0777302,
-    "ast_hash": "278d3fc3307fa651196b4cef5fb483b1",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-12.jpg": {
-    "mtime": 1777920030.547527,
-    "ast_hash": "a97e2ced6cbc04aef02de22a97f20e27",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-13.jpg": {
-    "mtime": 1777920036.253625,
-    "ast_hash": "d6b3f5bed96ee7970e02df4367c00396",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-14.jpg": {
-    "mtime": 1777920041.5288804,
-    "ast_hash": "9a91fe17cebbb80737c8fa75d2af0d6f",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-15.jpg": {
-    "mtime": 1777920046.7968392,
-    "ast_hash": "37633dabce9e46fabc2e4666bf2b83f5",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-16.jpg": {
-    "mtime": 1777920052.9914217,
-    "ast_hash": "0e931064a8679097f526d30f95cf9ef9",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-2.jpg": {
-    "mtime": 1777919978.8920834,
-    "ast_hash": "68b13581663f8af7f83d58308cb3c174",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-3.jpg": {
-    "mtime": 1777919983.895183,
-    "ast_hash": "0ccbc4c47d9d81f424a5e409f039d69e",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-4.jpg": {
-    "mtime": 1777919987.6139193,
-    "ast_hash": "aa5d3119fd70ce52dae78006b3762275",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-5.jpg": {
-    "mtime": 1777919991.4601412,
-    "ast_hash": "31ef2e31dfc8ddadf44fe652f16d51e4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-6.jpg": {
-    "mtime": 1777919995.9767823,
-    "ast_hash": "39da87519c6c1c50e8b31b02b7381a47",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-7.jpg": {
-    "mtime": 1777920001.4130135,
-    "ast_hash": "02482b9cb53e25325dfa8a6a3a695508",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-8.jpg": {
-    "mtime": 1777920007.2568188,
-    "ast_hash": "d4cd049befaa4d60d885550344c37292",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\project-9.jpg": {
-    "mtime": 1777920014.574135,
-    "ast_hash": "bdae8ea80fb429284f98d8e84e0b7523",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\public\\projects\\stamp.png": {
     "mtime": 1781152588.2958295,
     "ast_hash": "2efb06cb573d32e30c77174712bca42c",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\projects\\stamp2.jpeg": {
-    "mtime": 1781371835.3852012,
-    "ast_hash": "95a2145fe63bdfc3f29c0cbb5d6abc43",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\team\\abhishek.png": {
@@ -1722,11 +562,6 @@
   "C:\\Nexora\\public\\team\\gaurav.png": {
     "mtime": 1778065132.2354457,
     "ast_hash": "fce1dee9933f23bf77d199bea64d8745",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\image.png": {
-    "mtime": 1778664302.6742258,
-    "ast_hash": "4c6fc4ff0c599900a687a6fbf25638c8",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\team\\intro-abhishek.png": {
@@ -1759,19 +594,9 @@
     "ast_hash": "000922d5e6efd76826317046dc065261",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\team\\intro-riya.png": {
-    "mtime": 1780429254.207349,
-    "ast_hash": "a64a0c2499d309668401e943b65fe72c",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\public\\team\\intro-stany.png": {
     "mtime": 1780427313.7179444,
     "ast_hash": "4e605f8a0c3eaa8032a40e00a7f72687",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\milan-avatar.png": {
-    "mtime": 1780918103.8769348,
-    "ast_hash": "b431d0c93098f9a61b9bf75266c43fd9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\team\\milan-chat.png": {
@@ -1784,19 +609,9 @@
     "ast_hash": "7c81ce47c5f3513871930c89173138ed",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\team\\Passport Size Photo .jpg.jpeg": {
-    "mtime": 1778664110.4451222,
-    "ast_hash": "c3f980e0196a263e1722b668042a7c97",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\public\\team\\rajkumar.jpg": {
     "mtime": 1778579325.601976,
     "ast_hash": "fce4b54d2e290725dfef2c7b8c19beaf",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\Screenshot_2026-06-10_134835-Picsart-AiImageEnhancer-removebg-preview.png": {
-    "mtime": 1781079679.6308403,
-    "ast_hash": "ae82578d786bed16cff1907d1041e3a9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\team\\stany.jpg": {
@@ -1804,54 +619,9 @@
     "ast_hash": "68399991e1f83b8f65f2c4ba62cf293c",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-12 at 3.18.39 PM.jpeg": {
-    "mtime": 1778579325.601976,
-    "ast_hash": "fce4b54d2e290725dfef2c7b8c19beaf",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-13 at 3.11.36 PM.jpeg": {
-    "mtime": 1778665545.651305,
-    "ast_hash": "3cb52b367f198ae71728c16260d3b0f2",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-13 at 3.25.56 PM.jpeg": {
-    "mtime": 1778666163.92469,
-    "ast_hash": "b608667ed0851e3256822b696ddecdd3",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-13 at 3.46.28 PM.jpeg": {
-    "mtime": 1778667399.7521467,
-    "ast_hash": "3aa7a49c27e4aa1135fdfaf694edb787",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-13 at 6.03.21 PM.jpeg": {
-    "mtime": 1778702479.497761,
-    "ast_hash": "231f76caa13c3e335a7d44b1cb39be50",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-15 at 5.06.54 PM.jpeg": {
-    "mtime": 1778845021.898414,
-    "ast_hash": "7f61935dcfeaa0480fa7db9aeba662de",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\team\\WhatsApp Image 2026-05-15 at 5.11.06 PM.jpeg": {
-    "mtime": 1778845272.6074219,
-    "ast_hash": "44ef026b605bde9ab0745d08792fbfc2",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\public\\Video\\image.png": {
-    "mtime": 1781114505.6518285,
-    "ast_hash": "dbfd0963ccbc37540a4412bd7bf7215c",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\assets\\expecto.png": {
     "mtime": 1780051806.6274083,
     "ast_hash": "fe73df6efab8d75763266684d708b815",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\hero.png": {
-    "mtime": 1777396922.754515,
-    "ast_hash": "aead493361b27e7510691c5d7072dfc1",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\assets\\image copy 2.png": {
@@ -1859,24 +629,9 @@
     "ast_hash": "a6584098da507388e53698314cdbad1a",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\assets\\image copy.png": {
-    "mtime": 1778065225.9445267,
-    "ast_hash": "5eaea6f4e0c81225e97842892a0fd013",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\assets\\image.png": {
     "mtime": 1778065132.2354457,
     "ast_hash": "fce1dee9933f23bf77d199bea64d8745",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\IMG_20260315_013618.png": {
-    "mtime": 1775470943.3207045,
-    "ast_hash": "7c81ce47c5f3513871930c89173138ed",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\IMG_20260520_144201.jpg.jpeg": {
-    "mtime": 1779269874.557401,
-    "ast_hash": "63a16047eb4bc6ca1cd005f0818299dd",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\assets\\jp-restaurant.png": {
@@ -1894,69 +649,9 @@
     "ast_hash": "74cbeeb2f346b614c632c6ab2dc25d29",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\assets\\portal_illustration.png": {
-    "mtime": 1779282443.6806643,
-    "ast_hash": "bf06c237f55bf90d230455d054abd351",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project10.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project11.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project12.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project13.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project14.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project15.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project16.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\assets\\project6.png": {
     "mtime": 1780051874.7299738,
     "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project7.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project8.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\project9.png": {
-    "mtime": 1780051874.7299738,
-    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
-    "semantic_hash": ""
-  },
-  "C:\\Nexora\\src\\assets\\react.svg": {
-    "mtime": 1777396923.0190108,
-    "ast_hash": "f0402b67b6ce880f65666bb49e841696",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\assets\\sangrilla.png": {
@@ -1969,39 +664,1199 @@
     "ast_hash": "be204ee72d40ca88feb479f40248917f",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\assets\\vite.svg": {
-    "mtime": 1777396923.0915122,
-    "ast_hash": "9960a24288958394ac50e57ff638b036",
+  "C:\\Nexora\\src\\pages\\CompanyPortal.jsx": {
+    "mtime": 1794153298.5223126,
+    "ast_hash": "ce3cd1bee3926a997c4664ca5f994042",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\src\\utils\\image.png": {
-    "mtime": 1780599843.6418686,
-    "ast_hash": "211a856ef9d0c8f93bd2362448b3329d",
+  "C:\\Nexora\\public\\logo\\nexoraa-full-logo.png": {
+    "mtime": 1794146061.495157,
+    "ast_hash": "1bc6a8752b2de9260e174f1257dea204",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\why-us.mp4": {
-    "mtime": 1778846146.8066342,
-    "ast_hash": "81429b91e92446093d1f2eb9ff90e2dc",
+  "C:\\Nexora\\public\\logo\\nexoraa-icon.png": {
+    "mtime": 1794143849.9101357,
+    "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\Video\\Ask Visa \u2013 Visa made simple, approved fast - Google Chrome 2026-05-21 15-34-27.mp4": {
-    "mtime": 1779358166.2607057,
-    "ast_hash": "d9e5381710fcd0865aa807da28a7771e",
+  "C:\\Nexora\\src\\assets\\nexoraa-full-logo.png": {
+    "mtime": 1794146061.4961653,
+    "ast_hash": "1bc6a8752b2de9260e174f1257dea204",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\Video\\R F ELECTROTECH - Google Chrome 2026-05-21 15-33-47.mp4": {
-    "mtime": 1779358169.8092153,
-    "ast_hash": "f3d2132e1d0802f8e2c99e184e48e8b9",
+  "C:\\Nexora\\src\\assets\\nexoraa-icon.png": {
+    "mtime": 1794143849.9101357,
+    "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\Video\\RF ELECTRO TECH ERP SYSTEM.mp4": {
+  "C:\\Nexora\\public\\logo\\nexoraa-full-logo-dark.png": {
+    "mtime": 1794145278.0095017,
+    "ast_hash": "2bdaaf488958c5479da1cf44a69ec712",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\logo\\nexoraa-full-logo-transparent.png": {
+    "mtime": 1794145278.1329894,
+    "ast_hash": "716fb5da084b0d84fff39e5c9affe083",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\nexoraa-full-logo-dark.png": {
+    "mtime": 1794145278.0694616,
+    "ast_hash": "2bdaaf488958c5479da1cf44a69ec712",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\ui\\NexoraaLogo.jsx": {
+    "mtime": 1794146324.9415748,
+    "ast_hash": "e89a6ac753c5dfcef33eb6792e86df8d",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\gemini_generated_video_c5d4dbfb.mp4": {
+    "mtime": 1794145857.9539595,
+    "ast_hash": "afbdf427a67b9c540d79411f0b60d9b1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\build.gradle.kts": {
+    "mtime": 1781435984.1642478,
+    "ast_hash": "803fe22651fbe96ed401eb0b66a492d1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\gradlew": {
+    "mtime": 1781435985.968346,
+    "ast_hash": "7f1cd7eb3f75a1dc85cd37753972a6e2",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\settings.gradle.kts": {
+    "mtime": 1781435984.3573303,
+    "ast_hash": "f276a44edd917afd836899357fdae60e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\build.gradle.kts": {
+    "mtime": 1781507688.8094027,
+    "ast_hash": "35830a62c10d72a06d4debe537ef4a46",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\java\\io\\flutter\\plugins\\GeneratedPluginRegistrant.java": {
+    "mtime": 1781436336.6175635,
+    "ast_hash": "6747e42eb3951b9e22b44a600746d3ce",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\kotlin\\com\\nexoraa\\app\\MainActivity.kt": {
+    "mtime": 1781444748.024197,
+    "ast_hash": "21be6e8f52d6da8216ae330f6898e69a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Flutter\\flutter_export_environment.sh": {
+    "mtime": 1781435988.5031755,
+    "ast_hash": "dd5f848b68d2e7556487051a27cc11bc",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Flutter\\ephemeral\\flutter_lldb_helper.py": {
+    "mtime": 1781435988.487425,
+    "ast_hash": "98fc75412162af387e2e3461e4e58094",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\AppDelegate.swift": {
+    "mtime": 1773902487.493039,
+    "ast_hash": "9e1de9c329a3fe4931876063de95132b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\GeneratedPluginRegistrant.h": {
+    "mtime": 1781435988.6649568,
+    "ast_hash": "decb9041b5e91a07e66f4664e5dac408",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\GeneratedPluginRegistrant.m": {
+    "mtime": 1781436336.635269,
+    "ast_hash": "e69b0080e4fa8fa94a0d4783ca1a38c4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Runner-Bridging-Header.h": {
+    "mtime": 1773902487.5025141,
+    "ast_hash": "7ad7b5cea096132de13ba526b2b9efbe",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\SceneDelegate.swift": {
+    "mtime": 1773902487.5058227,
+    "ast_hash": "0c3e86af131f6a9e547c80b5ed058914",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Contents.json": {
+    "mtime": 1781507808.3084986,
+    "ast_hash": "c870f277d0c83d1af12f8dc2d368879a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchBackground.imageset\\Contents.json": {
+    "mtime": 1781507037.0249987,
+    "ast_hash": "b5f36b5cc2eecbd74b7cfcb6a89fe6d1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\Contents.json": {
+    "mtime": 1781507036.1738577,
+    "ast_hash": "0827e8a9ba504cc1db6605cbd01fc656",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\RunnerTests\\RunnerTests.swift": {
+    "mtime": 1781435984.8269868,
+    "ast_hash": "24e5d095048eb86c30423f4e04b6e57b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\main.dart": {
+    "mtime": 1781436503.1155565,
+    "ast_hash": "f8bad66c9713fc26ff3fcad18f3c33eb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\core\\constants\\app_constants.dart": {
+    "mtime": 1781436438.9136612,
+    "ast_hash": "23e7d4e9f55ccd6f41531ea5795caa0f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\core\\theme\\app_theme.dart": {
+    "mtime": 1781436431.3147216,
+    "ast_hash": "6f38f5f689e1884b4d3ddd151c722e15",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\core\\theme\\colors.dart": {
+    "mtime": 1781436423.1525538,
+    "ast_hash": "8211587257fb661eb2206bb9a226674f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\screens\\error_screen.dart": {
+    "mtime": 1781436467.451775,
+    "ast_hash": "5b72d1483ee6e03ed337ad6288c86e3f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\screens\\no_internet_screen.dart": {
+    "mtime": 1781436456.3053787,
+    "ast_hash": "2b417efb786f7c6cfdb9ac3b7a3bcf5f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\lib\\screens\\webview_screen.dart": {
+    "mtime": 1781506943.529991,
+    "ast_hash": "20466cebd4e4882b771a73e36dd2169a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\flutter\\generated_plugin_registrant.cc": {
+    "mtime": 1781436001.254526,
+    "ast_hash": "bd6e64368e100cca8e55173215ae1bdd",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\flutter\\generated_plugin_registrant.h": {
+    "mtime": 1781435988.6510003,
+    "ast_hash": "d295462c9da9f7fef22dc86c34492318",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\runner\\main.cc": {
+    "mtime": 1773902487.870141,
+    "ast_hash": "539395bcd63dba20afed0838d136189f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\runner\\my_application.cc": {
+    "mtime": 1781435984.9951496,
+    "ast_hash": "f14f54020ccc0e49fb1420f8e562ff15",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\runner\\my_application.h": {
+    "mtime": 1773902487.8835838,
+    "ast_hash": "ffa1a7c0a2ad45a2c14a921596516ff8",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Flutter\\GeneratedPluginRegistrant.swift": {
+    "mtime": 1781436336.6387959,
+    "ast_hash": "de03c884111013f51644a81fff5fa9c7",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Flutter\\ephemeral\\flutter_export_environment.sh": {
+    "mtime": 1781435988.5076768,
+    "ast_hash": "9a9a933bd85048c061a01964ecad6d37",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\AppDelegate.swift": {
+    "mtime": 1773902487.9227839,
+    "ast_hash": "4b52e0b89ebfef9baf45b04548c463d6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\MainFlutterWindow.swift": {
+    "mtime": 1773902487.947958,
+    "ast_hash": "93c22dae2d93f3dc1402e121901f582b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Contents.json": {
+    "mtime": 1773902488.0159686,
+    "ast_hash": "1d48e925145d4b573a3b5d7960a1c585",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\RunnerTests\\RunnerTests.swift": {
+    "mtime": 1781435985.3601515,
+    "ast_hash": "8059f5d27a19c556eeafb49b3f9b7bdd",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\test\\widget_test.dart": {
+    "mtime": 1781435985.857677,
+    "ast_hash": "a42dc03ff6e1ea5967c411feec22c188",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\manifest.json": {
+    "mtime": 1781435985.5427926,
+    "ast_hash": "1f22215ae1c034b1052ca056582ae6c8",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\flutter\\generated_plugin_registrant.cc": {
+    "mtime": 1781436212.549114,
+    "ast_hash": "f55ba17016bcc5cd834c2f4d2513e555",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\flutter\\generated_plugin_registrant.h": {
+    "mtime": 1781435988.6579187,
+    "ast_hash": "0ea33875f9f8e118f9c2ded03e2e2835",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\flutter_window.cpp": {
+    "mtime": 1773902488.2879605,
+    "ast_hash": "2f463f9b7da67a2d692a012f9ea85e0c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\flutter_window.h": {
+    "mtime": 1773902488.2963662,
+    "ast_hash": "7defcc89d4a26d56e801241d624d48fb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\main.cpp": {
+    "mtime": 1781435985.6759486,
+    "ast_hash": "d18a5a9e8da572f812a6b86e8e65d252",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\resource.h": {
+    "mtime": 1773902488.3146775,
+    "ast_hash": "1ade5dd15e613479a15e8832ed276f2b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\utils.cpp": {
+    "mtime": 1773902488.3438714,
+    "ast_hash": "432461b09d862a2f8dadf380ff0e34e5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\utils.h": {
+    "mtime": 1773902488.355631,
+    "ast_hash": "fd81e143f5614eb6fd75efe539002853",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\win32_window.cpp": {
+    "mtime": 1773902488.3678212,
+    "ast_hash": "571eb8234dbc2661be03aa5f2a4d2fca",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\win32_window.h": {
+    "mtime": 1773902488.375786,
+    "ast_hash": "7569387d58711ab975940f4df3b4bcda",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components.json": {
+    "mtime": 1781102262.4799583,
+    "ast_hash": "a1691b243ef8732e37a47e5eef18a7e4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\next.config.mjs": {
+    "mtime": 1781102262.6085632,
+    "ast_hash": "e36b6419c008f0a3d55bd789c4fabcf0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\package.json": {
+    "mtime": 1781102262.6195643,
+    "ast_hash": "c6e4ab19c95c2614853830d91641579e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\postcss.config.mjs": {
+    "mtime": 1781102262.6375668,
+    "ast_hash": "f82d40129ab70e95110c0470895b366c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\tsconfig.json": {
+    "mtime": 1781102262.7120826,
+    "ast_hash": "4cc2cac899fc2a7d141bca0f8797b9de",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\app\\layout.tsx": {
+    "mtime": 1781102262.4569595,
+    "ast_hash": "8500f5242e12ba3c34f817aea6418ec0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\app\\page.tsx": {
+    "mtime": 1781102262.469962,
+    "ast_hash": "02663f31a58bcbbf99ba9589983c043a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\animated-counter.tsx": {
+    "mtime": 1781102262.4930592,
+    "ast_hash": "a16038f653edc4253cda611d250fab8a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\command-palette.tsx": {
+    "mtime": 1781102262.4989557,
+    "ast_hash": "7763fba602aa0d302c2e7cd1316de93a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\notification-panel.tsx": {
+    "mtime": 1781102262.505956,
+    "ast_hash": "87242fc0da92482fbaca116cabe46b03",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\request-modal.tsx": {
+    "mtime": 1781102262.5119562,
+    "ast_hash": "b479ea84c4c096b5f2141484c02487d5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\sidebar.tsx": {
+    "mtime": 1781102262.5179567,
+    "ast_hash": "13166bbeca241f6640f719959b575f22",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\top-navbar.tsx": {
+    "mtime": 1781102262.523956,
+    "ast_hash": "3178cd8a86d782be1a6b7e61134b991e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\pages\\asset-vault-page.tsx": {
+    "mtime": 1781102262.5340037,
+    "ast_hash": "2718092272c805ce92da54bec22d48c8",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\pages\\billing-page.tsx": {
+    "mtime": 1781102262.5400379,
+    "ast_hash": "2ab6fecfa2c751b1751d90b1c33e4e7e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\pages\\messages-page.tsx": {
+    "mtime": 1781102262.5465903,
+    "ast_hash": "6f76ec8fd1629199b8d3b46ef3ab40ad",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\pages\\overview-page.tsx": {
+    "mtime": 1781102262.5535727,
+    "ast_hash": "057c732317b721b6879bcd75c940d53a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\pages\\settings-page.tsx": {
+    "mtime": 1781102262.5595634,
+    "ast_hash": "fb8f499eb42eab23ac4035550bedf7e1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\components\\ui\\button.tsx": {
+    "mtime": 1781102262.5695624,
+    "ast_hash": "63cfaae37f8d5e0fa4451635ccc521b4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\lib\\data.ts": {
+    "mtime": 1781102262.5825639,
+    "ast_hash": "236230b2a295f68afe2f717fad44a746",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\lib\\portal-context.tsx": {
+    "mtime": 1781102262.5935738,
+    "ast_hash": "fe99b998a82afca798acec7323cb615d",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\lib\\utils.ts": {
+    "mtime": 1781102262.6005712,
+    "ast_hash": "9a4cc6f9f3155ffdc1fa7c2c097f6429",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\analysis_options.yaml": {
+    "mtime": 1781435984.115698,
+    "ast_hash": "9e65f4b9beebb674c0dc252f70a5c177",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\pubspec.yaml": {
+    "mtime": 1781507707.0541804,
+    "ast_hash": "cd117503c21893efa0e73b48781a4517",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\README.md": {
+    "mtime": 1781435985.4046168,
+    "ast_hash": "e451eab18716695ea75182e5386e870b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\SETUP_GUIDE.md": {
+    "mtime": 1782064483.978266,
+    "ast_hash": "e3e5ae01c974bc792e78eb118f000e81",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\README.md": {
+    "mtime": 1773902487.670395,
+    "ast_hash": "f7ee1b402881509d197f34963e569927",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\CMakeLists.txt": {
+    "mtime": 1781435984.9191532,
+    "ast_hash": "0c7144ba61ef13a251fd86dbb8c81f06",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\flutter\\CMakeLists.txt": {
+    "mtime": 1773902487.855766,
+    "ast_hash": "2195470ce31675d31db5a37590d011f6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\linux\\runner\\CMakeLists.txt": {
+    "mtime": 1773902487.870141,
+    "ast_hash": "30cc1614b16214b66c014af09ba699eb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\index.html": {
+    "mtime": 1781507052.2652187,
+    "ast_hash": "82c098bba82085c6d5825353b9c0ea4d",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\CMakeLists.txt": {
+    "mtime": 1781435985.578887,
+    "ast_hash": "a806acf9d0056b27b34a49ceb0e8aa56",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\flutter\\CMakeLists.txt": {
+    "mtime": 1773902488.264649,
+    "ast_hash": "bbf66fed5180bd9ae8198b8d7c4a0001",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\windows\\runner\\CMakeLists.txt": {
+    "mtime": 1773902488.2823365,
+    "ast_hash": "028602ab9754bffe716659ada7590d29",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\docs\\Nexoraa_Client_Agreement.pdf": {
+    "mtime": 1780916260.782629,
+    "ast_hash": "0e783981e79024a3a9b03d86fcfedf81",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\docs\\Nexoraa_Studio_NDA.pdf": {
+    "mtime": 1781268282.2786086,
+    "ast_hash": "7a66915df96de603e8c8d39b05e42cea",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable\\background.png": {
+    "mtime": 1781507035.1907315,
+    "ast_hash": "a3048b4dd4803cde3febf29085a3b083",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-hdpi\\android12splash.png": {
+    "mtime": 1781507035.1532576,
+    "ast_hash": "c168223fdd5bf38ab0ad4b87a39243aa",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-hdpi\\ic_launcher_foreground.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "d613f7a69d6a0fda1de31c0c5c2c7583",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-hdpi\\splash.png": {
+    "mtime": 1781507035.5455675,
+    "ast_hash": "b303375095c44061d03714222d20f053",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-mdpi\\android12splash.png": {
+    "mtime": 1781507035.1532576,
+    "ast_hash": "e47e0af7ad12938d6939df171a3ae434",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher_foreground.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "7e44bff8378e9aef841a09d543289649",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-mdpi\\splash.png": {
+    "mtime": 1781507035.4261253,
+    "ast_hash": "6a018e8e495543acedc16e089486011a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-night-hdpi\\android12splash.png": {
+    "mtime": 1781507035.1931891,
+    "ast_hash": "c168223fdd5bf38ab0ad4b87a39243aa",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-night-mdpi\\android12splash.png": {
+    "mtime": 1781507035.1898885,
+    "ast_hash": "e47e0af7ad12938d6939df171a3ae434",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-night-xhdpi\\android12splash.png": {
+    "mtime": 1781507035.1971989,
+    "ast_hash": "657f816d6571b1d9c781c6064eb76fb5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-night-xxhdpi\\android12splash.png": {
+    "mtime": 1781507035.210235,
+    "ast_hash": "8698997372be8d55151a58d96cf87dfd",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-night-xxxhdpi\\android12splash.png": {
+    "mtime": 1781507035.2117443,
+    "ast_hash": "ae2fcfaff83ff4a15595b10971b27ecb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-v21\\background.png": {
+    "mtime": 1781507035.1931891,
+    "ast_hash": "a3048b4dd4803cde3febf29085a3b083",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xhdpi\\android12splash.png": {
+    "mtime": 1781507035.1542668,
+    "ast_hash": "657f816d6571b1d9c781c6064eb76fb5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xhdpi\\ic_launcher_foreground.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "55eaccf5ce15414c679e6d504d7bb366",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xhdpi\\splash.png": {
+    "mtime": 1781507035.6995182,
+    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xxhdpi\\android12splash.png": {
+    "mtime": 1781507035.188882,
+    "ast_hash": "8698997372be8d55151a58d96cf87dfd",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xxhdpi\\ic_launcher_foreground.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "7319bbbbc84bcaf397ba75f8ea10a695",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xxhdpi\\splash.png": {
+    "mtime": 1781507036.116408,
+    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\android12splash.png": {
+    "mtime": 1781507035.1790047,
+    "ast_hash": "ae2fcfaff83ff4a15595b10971b27ecb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\ic_launcher_foreground.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "04d2c6e556bfa04e658129c0826e554a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\drawable-xxxhdpi\\splash.png": {
+    "mtime": 1781507036.5568266,
+    "ast_hash": "e4fc06954a5d5e86e15b9850d2af74c4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "f04556b0f2f1e5ebeb45c10985ac16fd",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-hdpi\\launcher_icon.png": {
+    "mtime": 1781463613.1358204,
+    "ast_hash": "6c0d3725791e2396d20f9c04d1e81557",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "dbc48adc5ef1eed0225803b022a7ed16",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-mdpi\\launcher_icon.png": {
+    "mtime": 1781463613.1358204,
+    "ast_hash": "e73a64f327950724ac1ca5144709e03b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "757e3fa709fe0c671295c1175739d06f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-xhdpi\\launcher_icon.png": {
+    "mtime": 1781463613.136845,
+    "ast_hash": "b728991edec075053210d9372ef41049",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "c12e3d5ff836db4224a3ce7fba234f46",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-xxhdpi\\launcher_icon.png": {
+    "mtime": 1781463613.136845,
+    "ast_hash": "410de2a421e4e318f9f95daef6368ae6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png": {
+    "mtime": 1781507807.2675254,
+    "ast_hash": "a42c59f6a75cb1f996f04fd482ce2d0a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\launcher_icon.png": {
+    "mtime": 1781463613.1378384,
+    "ast_hash": "16272d25fd7e34b841934f8aa3eb3403",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\assets\\images\\AppLogo.png": {
+    "mtime": 1781259345.7614775,
+    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\assets\\images\\Logo.png": {
+    "mtime": 1781418860.972662,
+    "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\assets\\images\\Main.png": {
+    "mtime": 1781504752.1420076,
+    "ast_hash": "0ac0d2e092c17470333b09ef229e4c77",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\assets\\images\\nexoraa_logo_exact_center.png": {
+    "mtime": 1781501158.5104315,
+    "ast_hash": "b04c4dd2753ee32e09e75734ee8ba66a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-1024x1024@1x.png": {
+    "mtime": 1781507808.289325,
+    "ast_hash": "eb83685a813580e781ec19dbaa619e74",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "f9551703f8991d3adc131ee3f8403db8",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "20595009834ba538972e9e0f646022e2",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-20x20@3x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "90c0c5398e2a820c82e681eb28cf7b84",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "b521f0aa2441bdf72558da186c84a6a4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "9b7f654d112f98fadab6a5c519b39621",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-29x29@3x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "da3f5d882b3cede8bfd0ef460252e134",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "20595009834ba538972e9e0f646022e2",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "09d2d0ab3c2de8d89c9c4d35caa9cbf4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-40x40@3x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "9e96be634e924f7e7615cf34a5fb6798",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-50x50@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "7395979c1efb68ac01c259d6961be248",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-50x50@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "a625e7d4adeb7f20529c67e3de9cf2bc",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-57x57@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "0ac600e50af937784bec0814f8e8eaab",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-57x57@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "c1931b52da5d0d7ace73b2a262ee343c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-60x60@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "9e96be634e924f7e7615cf34a5fb6798",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-60x60@3x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "2f6535eab159277431ce908547163a14",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-72x72@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "f04556b0f2f1e5ebeb45c10985ac16fd",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-72x72@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "c12e3d5ff836db4224a3ce7fba234f46",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-76x76@1x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "321c644c58632aed2436e24c1f65df31",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-76x76@2x.png": {
+    "mtime": 1781507808.2878642,
+    "ast_hash": "002acdf4b3972524bb97cd1412ec2bb7",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\AppIcon.appiconset\\Icon-App-83.5x83.5@2x.png": {
+    "mtime": 1781507808.289325,
+    "ast_hash": "5a3d570c0a521b7c2e1675d9fa516bd1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchBackground.imageset\\background.png": {
+    "mtime": 1781507037.0249987,
+    "ast_hash": "a3048b4dd4803cde3febf29085a3b083",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage.png": {
+    "mtime": 1781507036.4390452,
+    "ast_hash": "6a018e8e495543acedc16e089486011a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage@2x.png": {
+    "mtime": 1781507036.7248938,
+    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\ios\\Runner\\Assets.xcassets\\LaunchImage.imageset\\LaunchImage@3x.png": {
+    "mtime": 1781507037.154116,
+    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_1024.png": {
+    "mtime": 1773902814.7220716,
+    "ast_hash": "c9becc9105f8cabce934d20c7bfb6aac",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_128.png": {
+    "mtime": 1773902814.710034,
+    "ast_hash": "3ded30823804caaa5ccc944067c54a36",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_16.png": {
+    "mtime": 1773902814.71525,
+    "ast_hash": "8bf511604bc6ed0a6aeb380c5113fdcf",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_256.png": {
+    "mtime": 1773902814.7231367,
+    "ast_hash": "dfe2c93d1536ae02f085cc63faa3430e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_32.png": {
+    "mtime": 1773902814.71525,
+    "ast_hash": "8e0ae58e362a6636bdfccbc04da2c58c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_512.png": {
+    "mtime": 1773902814.7120602,
+    "ast_hash": "0ad44039155424738917502c69667699",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\macos\\Runner\\Assets.xcassets\\AppIcon.appiconset\\app_icon_64.png": {
+    "mtime": 1773902814.7063296,
+    "ast_hash": "04e7b6ef05346c70b663ca1d97de3ad5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\favicon.png": {
+    "mtime": 1773902488.1823816,
+    "ast_hash": "5dcef449791fa27946b3d35ad8803796",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\icons\\Icon-192.png": {
+    "mtime": 1773902488.2109265,
+    "ast_hash": "ac9a721a12bbc803b44f645561ecb1e1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\icons\\Icon-512.png": {
+    "mtime": 1773902488.2179701,
+    "ast_hash": "96e752610906ba2a93c65f8abe1645f1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\icons\\Icon-maskable-192.png": {
+    "mtime": 1773902814.9075742,
+    "ast_hash": "c457ef57daa1d16f64b27b786ec2ea3c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\icons\\Icon-maskable-512.png": {
+    "mtime": 1773902814.9060144,
+    "ast_hash": "301a7604d45b3e739efc881eb04896ea",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\dark-1x.png": {
+    "mtime": 1781507046.7690213,
+    "ast_hash": "6a018e8e495543acedc16e089486011a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\dark-2x.png": {
+    "mtime": 1781507047.8088872,
+    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\dark-3x.png": {
+    "mtime": 1781507049.7862654,
+    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\dark-4x.png": {
+    "mtime": 1781507052.1588378,
+    "ast_hash": "e4fc06954a5d5e86e15b9850d2af74c4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\light-1x.png": {
+    "mtime": 1781507039.1054718,
+    "ast_hash": "6a018e8e495543acedc16e089486011a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\light-2x.png": {
+    "mtime": 1781507040.1009462,
+    "ast_hash": "0c24474e9a20a4a100df5a58d91b62f0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\light-3x.png": {
+    "mtime": 1781507041.7925818,
+    "ast_hash": "aa063804f2ec84eb95ebad4577a08e9e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\mobile\\web\\splash\\img\\light-4x.png": {
+    "mtime": 1781507044.2441573,
+    "ast_hash": "e4fc06954a5d5e86e15b9850d2af74c4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\apple-icon.png": {
+    "mtime": 1781102262.6490903,
+    "ast_hash": "734ce6c878789fcd5843e8a7963e0756",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\icon-dark-32x32.png": {
+    "mtime": 1781102262.6560948,
+    "ast_hash": "abd5ebe9e287ca0a89f4fd3da2b5cf9c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\icon-light-32x32.png": {
+    "mtime": 1781102262.663088,
+    "ast_hash": "53426c910bcab7d3e5213cc64aa1b2c5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\icon.svg": {
+    "mtime": 1781102262.669083,
+    "ast_hash": "6e5d88c5f7e97d26ac4ad47e703bf9de",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\placeholder-logo.png": {
+    "mtime": 1781102262.676079,
+    "ast_hash": "95d8d1a4a9bbcccc875e2c381e74064a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\placeholder-logo.svg": {
+    "mtime": 1781102262.6840832,
+    "ast_hash": "1e16dc7df824652c5906a2ab44aef78c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\placeholder-user.jpg": {
+    "mtime": 1781102262.6900883,
+    "ast_hash": "7ee6562646feae6d6d77e2c72e204591",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\placeholder.jpg": {
+    "mtime": 1781102262.6970825,
+    "ast_hash": "1e533b7b4545d1d605144ce893afc601",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\apps\\portal-prototype\\public\\placeholder.svg": {
+    "mtime": 1781102262.7040944,
+    "ast_hash": "35707bd9960ba5281c72af927b79291f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\avatars\\client-avatar.png": {
+    "mtime": 1781114505.6518285,
+    "ast_hash": "dbfd0963ccbc37540a4412bd7bf7215c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\cards\\company-card-1.jpeg": {
+    "mtime": 1780566808.5083172,
+    "ast_hash": "d53501c4378edc135e3700515bc06d89",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\cards\\company-card-2.jpeg": {
+    "mtime": 1780566946.323718,
+    "ast_hash": "3381879398880a6ba9bc23bff25419d3",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\logo\\nexoraa-brand-logo.png": {
+    "mtime": 1781020060.4365926,
+    "ast_hash": "791c5f373e56015d4625eeaf4593b633",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\logo\\nova-glow-icon.png": {
+    "mtime": 1778480626.8111515,
+    "ast_hash": "017d2aea4558301e3558e9c64c58c4f4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\projects\\ai-bot-screen.png": {
+    "mtime": 1782901804.289745,
+    "ast_hash": "f6ae4dbaf7a3d00b53caec76bf52ba7f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\rf-electrotech-erp.mp4": {
     "mtime": 1783168120.0501947,
     "ast_hash": "e5a1a940170cd37d5d968997263a616a",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\Video\\Solarkits ERP - Google Chrome 2026-05-21 15-35-02.mp4": {
+  "C:\\Nexora\\public\\videos\\solarkits-erp.mp4": {
     "mtime": 1779358177.0336664,
     "ast_hash": "c9adacef65f5b29f9abbb6464e5f7ad6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\ui\\LayeredPaperWaves.jsx": {
+    "mtime": 1794218778.4901414,
+    "ast_hash": "bc1c55dd2bc9e162e1839ca1b3a3e636",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\layered-waves-bg.png": {
+    "mtime": 1794153407.4874842,
+    "ast_hash": "f7f1921bee8a0764177dbdcef3e13fe1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-abhishek.jpg": {
+    "mtime": 1794154946.2583387,
+    "ast_hash": "75a1a7ca7fea8eb79c3c1c38725232bc",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-alis.jpg": {
+    "mtime": 1794154946.2049553,
+    "ast_hash": "f82c4c9cd1bc375230193d09215f231b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-divyansh.jpg": {
+    "mtime": 1794154946.3771224,
+    "ast_hash": "9e88d10b48d4c46f13e8c40a36cc80c7",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-gaurav.jpg": {
+    "mtime": 1794154946.133256,
+    "ast_hash": "d79510801b7cd83b3e37be44623e3bb3",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-milan.jpg": {
+    "mtime": 1794154946.0367217,
+    "ast_hash": "044028c408c828d1052610443208ca5e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-rajkumar.jpg": {
+    "mtime": 1794154946.4247408,
+    "ast_hash": "a898e136e4c390016edaa8c9eaa89235",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\team\\intro-stany.jpg": {
+    "mtime": 1794154946.323906,
+    "ast_hash": "5ef8f4845904ebc911abb916106cd01c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\expecto.jpg": {
+    "mtime": 1794154929.8889835,
+    "ast_hash": "c8a3a6b1bb069d7c68e8c6eb3c8b96bb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\jp-restaurant.jpg": {
+    "mtime": 1794154929.700579,
+    "ast_hash": "71d721a351a643bb19f568bb9ec95db4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\naitik.jpg": {
+    "mtime": 1794154929.7804933,
+    "ast_hash": "38903cddd6201a62ffca8ae3760eadf8",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\project6.jpg": {
+    "mtime": 1794154929.833787,
+    "ast_hash": "56034947ed2cc2f4770bf7e8a862c96c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\sangrilla.jpg": {
+    "mtime": 1794154929.438258,
+    "ast_hash": "dc36a2638f586508fa6a200a00b05e7d",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\social.jpg": {
+    "mtime": 1794154929.9361176,
+    "ast_hash": "f98e2ab715e2cfa119c01ca1d0bad289",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\favicon.png": {
+    "mtime": 1781259345.7614775,
+    "ast_hash": "ee7643bc2052af4c50edf10f64217d94",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\expecto.png": {
+    "mtime": 1780051806.6274083,
+    "ast_hash": "fe73df6efab8d75763266684d708b815",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\image copy 2.png": {
+    "mtime": 1778065682.9595063,
+    "ast_hash": "a6584098da507388e53698314cdbad1a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\image.png": {
+    "mtime": 1778065132.2354457,
+    "ast_hash": "fce1dee9933f23bf77d199bea64d8745",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\jp-restaurant.png": {
+    "mtime": 1780051829.4951358,
+    "ast_hash": "ea2df8bac7762ccf909e4c7b45935f39",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\naitik.png": {
+    "mtime": 1780819272.7352107,
+    "ast_hash": "9c60892cb1b2533559e605da56d291e6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\nexoraa-full-logo-dark.png": {
+    "mtime": 1794145278.0694616,
+    "ast_hash": "2bdaaf488958c5479da1cf44a69ec712",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\nexoraa-full-logo.png": {
+    "mtime": 1794146061.4961653,
+    "ast_hash": "1bc6a8752b2de9260e174f1257dea204",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\nexoraa-icon.png": {
+    "mtime": 1794143849.9101357,
+    "ast_hash": "3e12c029a4fa3e5615829fa769a97874",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\nexoraa-logo.png": {
+    "mtime": 1780054434.9008782,
+    "ast_hash": "74cbeeb2f346b614c632c6ab2dc25d29",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\project6.png": {
+    "mtime": 1780051874.7299738,
+    "ast_hash": "5d1e9c88964707e8bc00e065b32455f4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\sangrilla.png": {
+    "mtime": 1780051783.3299093,
+    "ast_hash": "c6994535ac25e1c8b0ff2f8d6fc8e1bb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\assets\\social.png": {
+    "mtime": 1780051848.1267936,
+    "ast_hash": "be204ee72d40ca88feb479f40248917f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-abhishek.png": {
+    "mtime": 1780426582.86841,
+    "ast_hash": "a636cf5e0b9c0a93215b66bf71a61009",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-alis.png": {
+    "mtime": 1780480421.4881787,
+    "ast_hash": "4e004d9ad46bfd33a8d9bfee02f9f375",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-divyansh.png": {
+    "mtime": 1780476412.1708064,
+    "ast_hash": "c91bdf381f65c978d325a7cbac908f5f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-gaurav.png": {
+    "mtime": 1780427214.111252,
+    "ast_hash": "1c03c0d14d5866772e5729940d1cc970",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-milan.png": {
+    "mtime": 1780428481.0567532,
+    "ast_hash": "54fe4699f6d3943559bee5fea543da3e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-rajkumar.png": {
+    "mtime": 1780426307.2825792,
+    "ast_hash": "000922d5e6efd76826317046dc065261",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\_asset_backups\\team\\intro-stany.png": {
+    "mtime": 1780427313.7179444,
+    "ast_hash": "4e605f8a0c3eaa8032a40e00a7f72687",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\waves.mp4": {
+    "mtime": 1794160978.4635935,
+    "ast_hash": "7dd9f5d91c91ab5eb8aaf032753320a6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\blue-wave-layers.png": {
+    "mtime": 1794160417.452328,
+    "ast_hash": "36f754286a2b7c19aec4273578d7723c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\Blue Wave Layers on Dark Navy (1).png": {
+    "mtime": 1794160417.452328,
+    "ast_hash": "36f754286a2b7c19aec4273578d7723c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\blue-wave-layers-opt.jpg": {
+    "mtime": 1794200007.0883157,
+    "ast_hash": "e8543909df3c33cb8e331b61829a72f7",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\gemini_generated_video_d2527857.mp4": {
+    "mtime": 1794202463.7320197,
+    "ast_hash": "5b8f307a257ff2946223bda67b7971e6",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\gemini_generated_video_d2527857_gwr_video_mvp.mp4": {
+    "mtime": 1794202911.48453,
+    "ast_hash": "6083167509a474e3cce77a1e3007c71d",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\waves_1080p_crisp.mp4": {
+    "mtime": 1794208746.4342744,
+    "ast_hash": "f37f76737c7324ebeeff9568d3c054a1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\waves_seamless_loop.mp4": {
+    "mtime": 1794209004.0771294,
+    "ast_hash": "28a5656b510cf4990cb70f8a597a219c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\waves_ultra_clear.mp4": {
+    "mtime": 1794210478.576301,
+    "ast_hash": "15e06597e08558e87e03700001cf868e",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\waves_pristine_clean.mp4": {
+    "mtime": 1794210684.998064,
+    "ast_hash": "66433f71c7bef92a27c07d398b093f09",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\waves_peak_loop.mp4": {
+    "mtime": 1794211284.0592587,
+    "ast_hash": "67ea9be812895c7d619ae122f7dd8883",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\hero-wave-bg-hd.jpg": {
+    "mtime": 1794211755.9333687,
+    "ast_hash": "5baba9100d03679eb2d075dc046a3635",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\hero-wave-bg.jpg": {
+    "mtime": 1794211703.699491,
+    "ast_hash": "d939d55967d90f925494149d8a2f7b32",
     "semantic_hash": ""
   }
 }

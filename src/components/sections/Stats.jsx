@@ -82,7 +82,7 @@ const StatCard = React.memo(({ stat, idx, progress, range, targetScale }) => {
       onMouseEnter={handleMouseEnter}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ scale, transformOrigin: "top center" }}
+      style={{ scale, transformOrigin: "top center", willChange: "transform", transform: "translate3d(0, 0, 0)" }}
       className={`sticky ${stat.top} w-full min-h-[40vh] md:min-h-[35vh] bg-[#0c0c0c] border ${stat.border} rounded-[2.5rem] p-8 md:p-12 mb-16 shadow-[0_-20px_40px_rgba(0,0,0,0.6)] overflow-hidden flex flex-col justify-center group`}
     >
       {/* Scroll Dimming Overlay */}

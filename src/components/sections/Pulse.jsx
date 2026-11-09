@@ -1,34 +1,49 @@
-import React, { useState, useEffect } from 'react';
-import { m, useAnimation, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useRef } from 'react';
+import { m, useInView } from 'framer-motion';
 import { Activity, Globe, Cpu, Zap, Shield, BarChart3 } from 'lucide-react';
 
 const PulseCard = React.memo(({ icon: Icon, title, value, unit, color, delay }) => {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, margin: "100px" });
   const [displayValue, setDisplayValue] = useState(0);
 
   useEffect(() => {
+    if (!isInView) return;
+
     let start = 0;
     const end = parseFloat(value);
-    const duration = 2000;
-    const increment = end / (duration / 16);
-    
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= end) {
-        setDisplayValue(end);
-        clearInterval(timer);
-      } else {
-        setDisplayValue(Math.floor(start));
-      }
-    }, 16);
+    const duration = 1800;
+    const startTime = performance.now();
+    let animId;
 
-    return () => clearInterval(timer);
-  }, [value]);
+    const updateCounter = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out cubic
+      const easedProgress = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(easedProgress * end);
+
+      setDisplayValue(current);
+
+      if (progress < 1) {
+        animId = requestAnimationFrame(updateCounter);
+      } else {
+        setDisplayValue(end);
+      }
+    };
+
+    animId = requestAnimationFrame(updateCounter);
+
+    return () => {
+      if (animId) cancelAnimationFrame(animId);
+    };
+  }, [isInView, value]);
 
   return (
     <m.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
       className="relative group p-6 rounded-2xl border border-white/5 bg-white/[0.02] backdrop-blur-md hover:bg-white/[0.04] transition-all duration-500 overflow-hidden"
     >

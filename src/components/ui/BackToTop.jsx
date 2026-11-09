@@ -1,30 +1,54 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { getScroll } from '../../utils/scroll';
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const isVisibleRef = useRef(false);
+  const lastProgressRef = useRef(0);
+  const rAFRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progress = (scrollY / docHeight) * 100;
-      
-      setScrollProgress(progress);
-      setIsVisible(scrollY > 500);
+      if (rAFRef.current) return;
+
+      rAFRef.current = requestAnimationFrame(() => {
+        rAFRef.current = null;
+        const scrollY = window.scrollY;
+        const shouldShow = scrollY > 500;
+
+        if (shouldShow !== isVisibleRef.current) {
+          isVisibleRef.current = shouldShow;
+          setIsVisible(shouldShow);
+        }
+
+        if (shouldShow) {
+          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+          const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
+          if (Math.abs(progress - lastProgressRef.current) > 1.5) {
+            lastProgressRef.current = progress;
+            setScrollProgress(progress);
+          }
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
+    };
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    const lenis = getScroll();
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.0 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const radius = 20;
@@ -43,29 +67,30 @@ export default function BackToTop() {
           aria-label="Back to top"
         >
           {/* Progress Ring */}
-          <svg className="absolute inset-0 w-full h-full -rotate-90">
+          <svg className="absolute inset-0 w-full h-full -rotate-90 pointer-events-none">
             <circle
               cx="24"
               cy="24"
               r={radius}
-              stroke="currentColor"
+              className="stroke-gray-300 dark:stroke-white/10"
               strokeWidth="2"
               fill="transparent"
-              className="text-gray-800 dark:text-gray-200 dark:text-white/10"
             />
             <circle
               cx="24"
               cy="24"
               r={radius}
-              stroke="currentColor"
+              className="stroke-accent-blue transition-all duration-150"
               strokeWidth="2"
               fill="transparent"
               strokeDasharray={circumference}
               strokeDashoffset={offset}
-              className="text-accent-blue transition-all duration-100 ease-out"
+              strokeLinecap="round"
             />
           </svg>
-          <ArrowUp size={20} className="text-gray-600 dark:text-gray-300 group-hover:-translate-y-1 transition-transform" />
+
+          {/* Icon */}
+          <ArrowUp className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-accent-blue group-hover:-translate-y-0.5 transition-all relative z-10" />
         </m.button>
       )}
     </AnimatePresence>

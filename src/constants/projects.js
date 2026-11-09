@@ -1,9 +1,9 @@
-import naitikImg from "../assets/naitik.png";
-import sangrillaImg from "../assets/sangrilla.png";
-import expectoImg from "../assets/expecto.png";
-import jpRestaurantImg from "../assets/jp-restaurant.png";
-import socialImg from "../assets/social.png";
-import project6Img from "../assets/project6.png";
+import naitikImg from "../assets/naitik.jpg";
+import sangrillaImg from "../assets/sangrilla.jpg";
+import expectoImg from "../assets/expecto.jpg";
+import jpRestaurantImg from "../assets/jp-restaurant.jpg";
+import socialImg from "../assets/social.jpg";
+import project6Img from "../assets/project6.jpg";
 
 export const projects = [
   {

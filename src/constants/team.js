@@ -15,7 +15,7 @@ export const team = [
     id: 2,
     name: "Gaurav Thakur",
     role: "Technical Lead",
-    image: "/team/WhatsApp Image 2026-05-13 at 3.46.28 PM.jpeg",
+    image: "/team/gaurav.png",
     specialty: "Mobile + Backend Systems",
     links: { 
       github: "https://github.com/gauravthakur1999", 
@@ -26,7 +26,7 @@ export const team = [
     id: 3,
     name: "Alis Patel",
     role: "Full-Stack Architect",
-    image: "/team/Passport Size Photo .jpg.jpeg",
+    image: "/team/alis.png",
     specialty: "Node.js + DevOps",
     links: { 
       github: "https://github.com/alispatel111", 
@@ -37,7 +37,7 @@ export const team = [
     id: 4,
     name: "Abhishek Jha",
     role: "Backend Developer",
-    image: "/team/WhatsApp Image 2026-05-13 at 3.25.56 PM.jpeg",
+    image: "/team/abhishek.png",
     imageClass: "scale-[1.05] object-[35%_60%]",
     specialty: "Java + Architecture",
     links: { 
@@ -49,7 +49,7 @@ export const team = [
     id: 5,
     name: "Stany Gregor",
     role: "Software Engineer",
-    image: "/team/WhatsApp Image 2026-05-13 at 6.03.21 PM.jpeg",
+    image: "/team/stany.jpg",
     specialty: "Web Development",
     links: { 
       github: "https://github.com/Stany87", 
@@ -60,7 +60,7 @@ export const team = [
     id: 6,
     name: "Divyansh",
     role: "Software Engineer",
-    image: "/team/image.png",
+    image: "/team/divyansh.jpg",
     specialty: "Web Development",
     links: { 
       github: "https://github.com/trazify", 

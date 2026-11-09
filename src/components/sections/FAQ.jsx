@@ -89,7 +89,7 @@ export default function FAQ() {
                 className="bg-white dark:bg-[#070709]/40 border border-gray-200/50 dark:border-white/5 shadow-2xl rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[420px] relative overflow-hidden"
               >
                 {/* Decorative background grid vector */}
-                <div className="absolute inset-0 pointer-events-none opacity-5 dark:opacity-10 mix-blend-overlay">
+                <div className="absolute inset-0 pointer-events-none opacity-5 dark:opacity-10">
                   <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[size:24px_24px]" />
                 </div>
 

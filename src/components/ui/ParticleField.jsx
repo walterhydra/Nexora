@@ -3,13 +3,16 @@ import { useTheme } from '../../context/ThemeContext';
 
 /**
  * Custom canvas-based particle system.
- * Uses requestAnimationFrame with sine-wave drift for buttery-smooth floating.
- * Completely scroll-independent — no position recalculation on scroll/resize.
+ * Performance Optimizations:
+ * - Automatically pauses RAF loop when scrolled offscreen via IntersectionObserver.
+ * - Caps DPR to 1.5 to prevent massive GPU fill-rate degradation on 3x retina/mobile displays.
+ * - Debounced resize listener.
  */
 export default function ParticleField() {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const animFrameRef = useRef(null);
+  const isVisibleRef = useRef(true);
   const { isDark } = useTheme();
   const isDarkRef = useRef(isDark);
 
@@ -19,23 +22,20 @@ export default function ParticleField() {
   }, [isDark]);
 
   const initParticles = useCallback((width, height) => {
-    const count = width < 768 ? 35 : 80;
+    const count = width < 768 ? 25 : 55; // Slightly reduced count for high frame stability
     const particles = [];
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        // Base velocity — very slow linear drift
         vx: (Math.random() - 0.5) * 0.15,
         vy: (Math.random() - 0.5) * 0.15,
-        // Sine-wave parameters for organic floating
         amplitudeX: Math.random() * 0.4 + 0.1,
         amplitudeY: Math.random() * 0.4 + 0.1,
         frequencyX: Math.random() * 0.008 + 0.002,
         frequencyY: Math.random() * 0.008 + 0.002,
         phaseX: Math.random() * Math.PI * 2,
         phaseY: Math.random() * Math.PI * 2,
-        // Visual
         radius: Math.random() * 1.5 + 0.5,
         baseOpacity: Math.random() * 0.2 + 0.08,
         opacitySpeed: Math.random() * 0.003 + 0.001,
@@ -53,11 +53,12 @@ export default function ParticleField() {
     let width = window.innerWidth;
     let height = window.innerHeight;
 
-    // Set canvas to exact viewport size — only once + on real resize
+    // Set canvas size, capped at DPR 1.5 for optimal mobile & desktop performance
     const setCanvasSize = () => {
-      const dpr = window.devicePixelRatio || 1;
-      width = window.innerWidth;
-      height = window.innerHeight;
+      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      const parent = canvas.parentElement;
+      width = parent ? parent.clientWidth : window.innerWidth;
+      height = parent ? parent.clientHeight : window.innerHeight;
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       canvas.style.width = width + 'px';
@@ -68,15 +69,14 @@ export default function ParticleField() {
     setCanvasSize();
     particlesRef.current = initParticles(width, height);
 
-    // Debounced resize — only on actual window resize, not scroll
+    // Debounced resize
     let resizeTimer;
     const handleResize = () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        const oldW = width;
-        const oldH = height;
+        const oldW = width || 1;
+        const oldH = height || 1;
         setCanvasSize();
-        // Scale existing particle positions proportionally — no jumps
         particlesRef.current.forEach(p => {
           p.x = (p.x / oldW) * width;
           p.y = (p.y / oldH) * height;
@@ -85,9 +85,25 @@ export default function ParticleField() {
     };
     window.addEventListener('resize', handleResize, { passive: true });
 
-    // Animation loop — pure requestAnimationFrame, zero scroll dependency
+    // IntersectionObserver to pause RAF when canvas is off-screen
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+        if (entry.isIntersecting && !animFrameRef.current) {
+          animFrameRef.current = requestAnimationFrame(animate);
+        }
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(canvas);
+
+    // Animation loop
     let time = 0;
     const animate = () => {
+      if (!isVisibleRef.current) {
+        animFrameRef.current = null;
+        return;
+      }
       if (window.isLoaderActive) {
         animFrameRef.current = requestAnimationFrame(animate);
         return;
@@ -101,20 +117,17 @@ export default function ParticleField() {
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // Sine-wave floating on top of linear drift
         const sineX = Math.sin(time * p.frequencyX + p.phaseX) * p.amplitudeX;
         const sineY = Math.cos(time * p.frequencyY + p.phaseY) * p.amplitudeY;
 
         p.x += p.vx + sineX;
         p.y += p.vy + sineY;
 
-        // Soft wrapping — particle drifts off one edge, appears on the other
         if (p.x < -10) p.x = width + 10;
         if (p.x > width + 10) p.x = -10;
         if (p.y < -10) p.y = height + 10;
         if (p.y > height + 10) p.y = -10;
 
-        // Gentle opacity pulsing
         const opacity = p.baseOpacity + Math.sin(time * p.opacitySpeed + p.opacityPhase) * 0.08;
 
         ctx.beginPath();
@@ -131,23 +144,20 @@ export default function ParticleField() {
     animFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
-      cancelAnimationFrame(animFrameRef.current);
       window.removeEventListener('resize', handleResize);
-      clearTimeout(resizeTimer);
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+      }
+      observer.disconnect();
     };
   }, [initParticles]);
 
   return (
     <canvas
       ref={canvasRef}
-      className="pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none z-0"
       style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: 0,
+        willChange: 'transform',
       }}
     />
   );

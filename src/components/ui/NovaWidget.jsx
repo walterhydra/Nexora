@@ -815,7 +815,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
 
             <div className="flex-1 min-h-0 relative rounded-2xl border border-white/10 overflow-hidden bg-black/40 shadow-[inset_0_2px_20px_rgba(0,0,0,0.6)] flex flex-col mb-4">
               <iframe
-                src="/Video/Nexoraa_Client_Agreement.pdf#toolbar=0&navpanes=0"
+                src="/docs/Nexoraa_Client_Agreement.pdf#toolbar=0&navpanes=0"
                 className="w-full h-full flex-1 border-0 rounded-2xl"
                 title="Client Agreement PDF"
               />
@@ -832,7 +832,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                 <Undo2 className="w-3.5 h-3.5" /> Back to Chat
               </button>
               <a
-                href="/Video/Nexoraa_Client_Agreement.pdf"
+                href="/docs/Nexoraa_Client_Agreement.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => playClickSound(800, 0.04)}
@@ -1181,7 +1181,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
 
             <div className="flex-1 min-h-0 relative rounded-2xl border border-white/10 overflow-hidden bg-black/40 shadow-[inset_0_2px_20px_rgba(0,0,0,0.6)] flex flex-col mb-4">
               <iframe
-                src="/Video/Nexoraa_Studio_NDA.pdf#toolbar=0&navpanes=0"
+                src="/docs/Nexoraa_Studio_NDA.pdf#toolbar=0&navpanes=0"
                 className="w-full h-full flex-1 border-0 rounded-2xl"
                 title="Mutual NDA PDF"
               />
@@ -1198,7 +1198,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                 <Undo2 className="w-3.5 h-3.5" /> Back to Chat
               </button>
               <a
-                href="/Video/Nexoraa_Studio_NDA.pdf"
+                href="/docs/Nexoraa_Studio_NDA.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => playClickSound(800, 0.04)}
@@ -1379,7 +1379,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                     {/* Brand */}
                     <div className="flex items-center gap-3">
                       <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(91,164,230,0.3)]">
-                        <img src="/logo/ChatGPT Image Jun 9, 2026, 09_17_40 PM.png" alt="Nexoraa Logo" className="w-full h-full object-contain" />
+                        <img src="/logo/nexoraa-brand-logo.png" alt="Nexoraa Logo" className="w-full h-full object-contain" />
                       </div>
                       <div>
                         <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexoraa Studio</h2>
@@ -1820,29 +1820,6 @@ What package matches your requirements? \n\n[OPTIONS]`;
           whileTap={{ scale: 0.95 }}
           className="w-16 h-16 bg-[#1A2533] rounded-full shadow-[0_0_20px_rgba(91,164,230,0.3)] flex items-center justify-center border border-white/10 overflow-visible relative group"
         >
-          {/* AI Radar Ripple Effects */}
-          {!isOpen && (
-            <>
-              {[0, 1, 2].map((i) => (
-                <m.div
-                  key={i}
-                  animate={{
-                    scale: [0.8, 1, 2.2],
-                    opacity: [0, 0.5, 0]
-                  }}
-                  transition={{
-                    duration: 3,
-                    times: [0, 0.1, 1],
-                    repeat: Infinity,
-                    ease: "linear",
-                    delay: i * 1
-                  }}
-                  className="absolute inset-0 rounded-full bg-accent-blue/20 border border-accent-blue/40 pointer-events-none z-[-1]"
-                ></m.div>
-              ))}
-            </>
-          )}
-
           {/* AI Energy Orb Backdrop */}
           {!isOpen && (
             <m.div
@@ -1882,7 +1859,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
                   transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                   className="w-[85%] h-[85%] absolute group-hover:scale-110 transition-transform duration-300 flex items-center justify-center"
                 >
-                  <img src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png" alt="Nova Chat" className="w-full h-full rounded-full object-cover object-[50%_30%] scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
+                  <img src="/logo/nova-glow-icon.png" alt="Nova Chat" className="w-full h-full rounded-full object-cover object-[50%_30%] scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
                 </m.div>
               </m.div>
             )}

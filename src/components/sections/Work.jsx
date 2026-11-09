@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from "react";
+import React, { useRef } from "react";
 import { ArrowUpRight, ArrowRight, ExternalLink } from "lucide-react";
 import { projects } from "../../constants/projects";
 import { m, useInView } from 'framer-motion';
@@ -6,123 +6,136 @@ import { Link } from "react-router-dom";
 import "./Work.css";
 
 /* ------------------------------------------------------------------ */
-/*  Featured Project Card – large immersive hero card                  */
+/*  Featured Project Card – Modern Professional Split Layout          */
 /* ------------------------------------------------------------------ */
 const FeaturedCard = React.memo(function FeaturedCard({ project, index }) {
   const cardRef = useRef(null);
-  const imageRef = useRef(null);
   const isInView = useInView(cardRef, { once: true, margin: "-80px" });
-  const [isHovered, setIsHovered] = useState(false);
-  const rAFRef = useRef(null);
 
-  const handleMouseMove = useCallback((e) => {
-    if (!cardRef.current || !imageRef.current) return;
-
-    if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
-
-    rAFRef.current = requestAnimationFrame(() => {
-      const rect = cardRef.current.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
-      const y = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
-      imageRef.current.style.transform = `scale(1.08) translate(${x * -8}px, ${y * -8}px)`;
-    });
-  }, []);
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
-    if (imageRef.current) {
-      imageRef.current.style.transform = `scale(1)`;
-    }
-  };
-
-  // Alternate layout: even index = image left, odd = image right
-  const isReversed = index % 2 !== 0;
+  const projectUrlDomain = project.link 
+    ? project.link.replace(/^https?:\/\//, '').replace(/\/$/, '')
+    : `${project.title.toLowerCase().replace(/[^a-z0-9]/g, '')}.com`;
 
   return (
     <m.div
       ref={cardRef}
-      initial={{ opacity: 0, y: 80 }}
+      initial={{ opacity: 0, y: 60 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.9, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-      onMouseMove={handleMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      className="work-featured-card group"
-      style={{ "--card-index": index }}
+      transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+      className="p-5 sm:p-7 lg:p-8 rounded-[2rem] bg-[#070b14]/90 border border-white/10 hover:border-white/20 transition-all duration-500 shadow-2xl relative overflow-hidden group font-quicksand"
+      style={{ transform: 'translateZ(0)' }}
     >
-      <div className={`work-featured-inner ${isReversed ? "work-featured-reversed" : ""}`}>
-        {/* Image Panel */}
-        <Link
-          to={`/projects/${project.id}`}
-          className="work-featured-image-wrap"
-        >
-          <div className="work-featured-image-container">
-            <img
-              ref={imageRef}
-              src={project.image}
-              alt={project.title}
-              loading="lazy"
-              decoding="async"
-              width="1920"
-              height="1080"
-              className="work-featured-image"
-              style={{ transition: "transform 0.1s ease-out" }}
-            />
-            {/* Gradient overlay */}
-            <div className="work-featured-overlay" />
-
-            {/* Floating "View" circle on hover */}
-            <div className="work-featured-view-circle">
-              <ArrowUpRight className="w-6 h-6" />
-              <span>Case Study</span>
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        {/* Left Side: Project Showcase Preview */}
+        <div className="lg:col-span-7">
+          <Link
+            to={`/projects/${project.id}`}
+            className="block rounded-2xl overflow-hidden border border-white/10 bg-black/60 shadow-xl group/preview relative"
+          >
+            {/* Top Browser Window Header */}
+            <div className="flex items-center justify-between px-4 py-2.5 bg-white/[0.04] border-b border-white/10 backdrop-blur-md">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+                <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/70" />
+              </div>
+              <div className="px-3 py-0.5 rounded-md bg-white/5 border border-white/10 text-[11px] font-mono text-white/50 truncate max-w-[200px] sm:max-w-[280px]">
+                {projectUrlDomain}
+              </div>
+              <div className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider font-semibold">Live</span>
+              </div>
             </div>
+
+            {/* Project Screenshot / Image */}
+            <div className="relative aspect-[16/10] overflow-hidden bg-black/40">
+              <img
+                src={project.image}
+                alt={project.title}
+                loading="lazy"
+                decoding="async"
+                width="1920"
+                height="1200"
+                className="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover/preview:scale-105"
+                style={{ transform: 'translateZ(0)' }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+            </div>
+          </Link>
+        </div>
+
+        {/* Right Side: Project Name, Details & Demo Button */}
+        <div className="lg:col-span-5 flex flex-col justify-center gap-4 sm:gap-5">
+          {/* Category & Project Index */}
+          <div className="flex items-center justify-between">
+            <span className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-quicksand font-bold uppercase tracking-wider text-white">
+              {project.category}
+            </span>
+            <span className="font-mono text-xs text-white/40 font-semibold tracking-wider">
+              {String(index + 1).padStart(2, "0")} / {String(projects.length).padStart(2, "0")}
+            </span>
           </div>
 
-          {/* Number badge */}
-          <div className="work-featured-number">
-            {String(index + 1).padStart(2, "0")}
-          </div>
-        </Link>
+          {/* Project Title */}
+          <h3 className="text-2xl sm:text-3xl lg:text-4xl font-quicksand font-bold text-white tracking-tight leading-tight group-hover:text-accent-primary transition-colors">
+            {project.title}
+          </h3>
 
-        {/* Content Panel */}
-        <div className="work-featured-content">
-          <div className="work-featured-meta">
-            <span className="work-featured-category">{project.category}</span>
-            <span className="work-featured-divider" />
-            <span className="work-featured-year">2024</span>
-          </div>
-
-          <h3 className="work-featured-title">{project.title}</h3>
-
-          <p className="work-featured-description">
-            {project.description} — {project.result}
+          {/* Project Description & Impact */}
+          <p className="font-quicksand text-white/75 text-sm sm:text-base leading-relaxed font-medium">
+            {project.description} — <span className="text-white font-semibold">{project.result}</span>
           </p>
 
-          <div className="work-featured-tags">
+          {/* Metrics Highlight (if available) */}
+          {project.results?.metrics && (
+            <div className="grid grid-cols-3 gap-2 py-3 border-y border-white/10">
+              {project.results.metrics.slice(0, 3).map((metric, i) => (
+                <div key={i} className="flex flex-col">
+                  <span className="text-base sm:text-lg font-bold text-white tracking-tight">
+                    {metric.value}
+                  </span>
+                  <span className="text-[10px] uppercase tracking-wider text-white/50 font-semibold truncate">
+                    {metric.label}
+                  </span>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Tech Stack Tags */}
+          <div className="flex flex-wrap items-center gap-1.5">
             {project.tags.map((tag, i) => (
-              <span key={i} className="work-featured-tag">{tag}</span>
+              <span
+                key={i}
+                className="px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-xs font-mono text-white/70"
+              >
+                {tag}
+              </span>
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 mt-2">
+          {/* Action Buttons: Live Demo & Case Study */}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-quicksand font-bold text-sm hover:bg-gray-200 transition-all shadow-lg hover:shadow-white/20 hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>Live Demo</span>
+                <ExternalLink size={15} />
+              </a>
+            )}
+
             <Link
               to={`/projects/${project.id}`}
-              className="work-featured-link"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-white/10 border border-white/15 text-white font-quicksand font-semibold text-sm hover:bg-white/20 hover:border-white/30 transition-all"
             >
-              <span>View Case Study</span>
-              <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
+              <span>Case Study</span>
+              <ArrowUpRight size={15} />
             </Link>
-
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noreferrer"
-              className="text-xs font-black uppercase tracking-wider text-gray-500 hover:text-white transition-colors flex items-center gap-1.5 ml-2"
-            >
-              <span>Live Site</span>
-              <ExternalLink className="w-3.5 h-3.5" />
-            </a>
           </div>
         </div>
       </div>
@@ -147,32 +160,32 @@ export default function Work() {
       <div className="work-ambient-glow work-ambient-glow--2" />
 
       {/* Section Header */}
-      <div className="work-header">
+      <div className="work-header font-quicksand">
         <m.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="work-header-label"
         >
           <span className="work-header-line" />
-          <span className="work-header-tag">Portfolio</span>
+          <span className="work-header-tag font-quicksand font-semibold">PORTFOLIO</span>
           <span className="work-header-line" />
         </m.div>
 
         <m.h2
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="work-header-title"
+          className="work-header-title font-quicksand font-extrabold"
         >
-          Featured <span className="work-header-title-accent">Demo Works</span>
+          FEATURED <span className="work-header-title-accent block mt-1.5 font-quicksand">DEMO WORKS</span>
         </m.h2>
 
         <m.p
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="work-header-subtitle"
+          className="work-header-subtitle font-quicksand font-medium text-white/70"
         >
           A curated selection of our most impactful digital experiences, crafted with precision and purpose.
         </m.p>
@@ -182,21 +195,21 @@ export default function Work() {
           initial={{ opacity: 0, y: 20 }}
           animate={headerInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="work-stats"
+          className="work-stats font-quicksand"
         >
           <div className="work-stat">
-            <span className="work-stat-value">{totalProjects}+</span>
-            <span className="work-stat-label">Projects</span>
+            <span className="work-stat-value font-quicksand font-bold">{totalProjects}+</span>
+            <span className="work-stat-label font-quicksand">Projects</span>
           </div>
           <div className="work-stat-divider" />
           <div className="work-stat">
-            <span className="work-stat-value">100%</span>
-            <span className="work-stat-label">On-Time Delivery</span>
+            <span className="work-stat-value font-quicksand font-bold">100%</span>
+            <span className="work-stat-label font-quicksand">On-Time Delivery</span>
           </div>
           <div className="work-stat-divider" />
           <div className="work-stat">
-            <span className="work-stat-value">4★</span>
-            <span className="work-stat-label">Client Satisfaction</span>
+            <span className="work-stat-value font-quicksand font-bold">4★</span>
+            <span className="work-stat-label font-quicksand">Client Satisfaction</span>
           </div>
         </m.div>
       </div>

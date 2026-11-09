@@ -80,7 +80,7 @@ export default function About() {
               {/* Front of Card — Real Business Card Image */}
               <div className="absolute inset-0 backface-hidden rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                 <img 
-                  src="/assets/work/Company Card.jpeg" 
+                  src="/cards/company-card-1.jpeg" 
                   alt="Nexoraa Studio Business Card - Front" 
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
@@ -98,7 +98,7 @@ export default function About() {
               {/* Back of Card — Real Business Card Image */}
               <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-2xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] group">
                 <img 
-                  src="/assets/work/Company Card (2).jpeg" 
+                  src="/cards/company-card-2.jpeg" 
                   alt="Nexoraa Studio Business Card - Back" 
                   className="w-full h-full object-cover object-center"
                   loading="lazy"

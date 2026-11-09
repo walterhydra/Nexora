@@ -31,3 +31,13 @@ flutter_app/build/
 flutter_app/.dart_tool/
 flutter_webview_app/build/
 flutter_webview_app/.dart_tool/
+apps/mobile/build/
+apps/mobile/.dart_tool/
+apps/portal-prototype/node_modules/
+apps/portal-prototype/.next/
+
+# Backups & binaries
+_asset_backups/
+*.apk
+build_output.txt
+

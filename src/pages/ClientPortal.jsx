@@ -16,6 +16,7 @@ import { supabase } from '../lib/supabase';
 
 import { PortalProvider } from '../components/portal/PortalContext';
 import PortalDashboardContent from '../components/portal/PortalDashboardContent';
+import LayeredPaperWaves from '../components/ui/LayeredPaperWaves';
 
 const MOCK_DATA = {
   clients: [
@@ -25,7 +26,7 @@ const MOCK_DATA = {
       password_hash: 'Ashish@2026',
       client_name: 'Ashish Kumar',
       company_name: 'Nexoraa',
-      avatar_url: '/Video/image.png'
+      avatar_url: '/avatars/client-avatar.png'
     },
     {
       id: 'b2c3d4e5-f6a7-8901-bcde-f12345678901',
@@ -40,7 +41,7 @@ const MOCK_DATA = {
       password_hash: 'NexoraaClient2026',
       client_name: 'Ashish Kumar',
       company_name: 'Nexoraa',
-      avatar_url: '/Video/image.png'
+      avatar_url: '/avatars/client-avatar.png'
     }
   ],
   projects: [
@@ -735,33 +736,20 @@ export default function ClientPortal() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen relative overflow-hidden flex items-center justify-center font-sans">
-        {/* Nexoraa Premium Dark Background */}
-        <div className="absolute inset-0 bg-[#030407]">
-          {/* Huge Blurred Logo Watermarks */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1000px] opacity-15 pointer-events-none">
+        {/* Paper-Cut Layered Wave Background */}
+        <LayeredPaperWaves glowColor="rgba(79, 142, 247, 0.12)" />
+
+        {/* Ambient Logo Watermark & Subtle Depth */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1000px] opacity-10 pointer-events-none">
             <img
               src="/logo/portal.png"
               alt=""
-              className="w-full h-full object-contain blur-[8px] animate-pulse"
+              className="w-full h-full object-contain blur-[10px] animate-pulse"
               style={{ animationDuration: '8s' }}
             />
           </div>
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-[1000px] opacity-25 pointer-events-none">
-            <img
-              src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png"
-              alt=""
-              className="w-full h-full object-contain blur-[40px] animate-pulse"
-              style={{ animationDuration: '10s' }}
-            />
-          </div>
-
-          {/* Dynamic Light Orbs */}
-          <div className="absolute -top-[10%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-[#004dff] blur-[140px] opacity-20 animate-pulse" style={{ animationDuration: '7s' }} />
-          <div className="absolute bottom-[0%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-[#00f0ff] blur-[140px] opacity-15 animate-pulse" style={{ animationDuration: '10s' }} />
-          <div className="absolute top-[40%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-[#7000ff] blur-[130px] opacity-15" />
-
-          {/* Subtle Grid Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_10%,transparent_100%)]" />
+          <div className="absolute bottom-[0%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-[#00f0ff] blur-[150px] opacity-10 animate-pulse" style={{ animationDuration: '10s' }} />
         </div>
 
         <div className="relative z-10 w-full max-w-[420px] flex flex-col items-center pl-6 pr-12">
@@ -773,7 +761,7 @@ export default function ClientPortal() {
             className="w-20 h-20 mb-6 shadow-[0_8px_32px_rgba(59,130,246,0.2)] hover:shadow-[0_8px_40px_rgba(59,130,246,0.35)] hover:scale-105 transition-all duration-300 ml-8 pointer-events-auto rounded-2xl overflow-hidden border border-white/10"
           >
             <img
-              src="/logo/ChatGPT Image May 11, 2026, 11_53_46 AM.png"
+              src="/logo/nova-glow-icon.png"
               alt="Nexoraa Logo"
               className="w-full h-full object-cover"
             />

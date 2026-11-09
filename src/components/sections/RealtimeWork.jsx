@@ -7,9 +7,9 @@ const VideoPlayer = ({ src, className }) => {
 
   useEffect(() => {
     if (ref.current) {
-      ref.current.playbackRate = 2.0; // Increased playback speed
+      ref.current.playbackRate = 2.0;
       if (isInView) {
-        ref.current.play().catch(e => console.log('Autoplay blocked:', e));
+        ref.current.play().catch(() => {});
       } else {
         ref.current.pause();
       }
@@ -20,13 +20,11 @@ const VideoPlayer = ({ src, className }) => {
     <video 
       ref={ref}
       src={src}
-      autoPlay
       loop 
       muted 
       playsInline
       preload="none"
       className={className}
-      
     />
   );
 };
@@ -45,7 +43,7 @@ const showcaseProjects = [
       { name: 'Framer Motion', icon: Server }
     ],
     icon: Factory,
-    videoPath: '/Video/RF ELECTRO TECH ERP SYSTEM.mp4',
+    videoPath: '/videos/rf-electrotech-erp.mp4',
     liveUrl: 'https://rfelectrotech.com/',
     color: 'text-accent-violet',
     bg: 'bg-accent-violet/10',
@@ -65,7 +63,7 @@ const showcaseProjects = [
       { name: 'Node.js', icon: Zap }
     ],
     icon: Sun,
-    videoPath: '/Video/Solarkits ERP - Google Chrome 2026-05-21 15-35-02.mp4',
+    videoPath: '/videos/solarkits-erp.mp4',
     liveUrl: 'https://solarkits.in/',
     color: 'text-[#00FF94]',
     bg: 'bg-[#00FF94]/10',
