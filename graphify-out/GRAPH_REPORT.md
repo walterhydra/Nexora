@@ -1,16 +1,16 @@
-# Graph Report - Nexora  (2026-11-09)
+# Graph Report - Nexora  (2026-11-10)
 
 ## Corpus Check
-- 176 files · ~3,388,325 words
+- 177 files · ~3,395,749 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1014 nodes · 1166 edges · 105 communities (79 shown, 26 thin omitted)
+- 1020 nodes · 1173 edges · 103 communities (78 shown, 25 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 9 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `06a736a7`
+- Built from commit: `7713fee8`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -66,7 +66,6 @@
 - [[_COMMUNITY_Community 52|Community 52]]
 - [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
-- [[_COMMUNITY_Community 55|Community 55]]
 - [[_COMMUNITY_Community 56|Community 56]]
 - [[_COMMUNITY_Community 57|Community 57]]
 - [[_COMMUNITY_Community 59|Community 59]]
@@ -76,7 +75,6 @@
 - [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
-- [[_COMMUNITY_Community 68|Community 68]]
 - [[_COMMUNITY_Community 69|Community 69]]
 - [[_COMMUNITY_Community 70|Community 70]]
 - [[_COMMUNITY_Community 71|Community 71]]
@@ -129,7 +127,7 @@
 - `OnCreate()` --calls--> `GetClientArea()`  [INFERRED]
   apps/mobile/windows/runner/flutter_window.cpp → apps/mobile/windows/runner/win32_window.cpp
 
-## Communities (105 total, 26 thin omitted)
+## Communities (103 total, 25 thin omitted)
 
 ### Community 0 - "Community 0"
 Cohesion: 0.07
@@ -140,16 +138,16 @@ Cohesion: 0.05
 Nodes (39): dependencies, animejs, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react (+31 more)
 
 ### Community 2 - "Community 2"
-Cohesion: 0.21
-Nodes (8): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, guarantees
+Cohesion: 0.14
+Nodes (10): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, bentoClasses (+2 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.09
 Nodes (12): ThemeContext, ThemeProvider(), useTheme(), getTerminalContent(), getTerminalTitle(), SystemBoot(), HERO_PHRASES, LaptopScreenContent (+4 more)
 
 ### Community 4 - "Community 4"
-Cohesion: 0.15
-Nodes (3): endorsementsData, steps, BentoCard
+Cohesion: 0.11
+Nodes (6): steps, Industries, LiveClock, LiveSystemClock, PulseCard, BentoCard
 
 ### Community 5 - "Community 5"
 Cohesion: 0.04
@@ -232,8 +230,8 @@ Cohesion: 0.29
 Nodes (5): colorMap, iconMap, NotificationPanel(), notifications, pageLabels
 
 ### Community 34 - "Community 34"
-Cohesion: 0.23
-Nodes (7): CursorContext, CursorProvider(), useCursor(), architectureDetails, RealtimeWork(), showcaseProjects, ContextCursor()
+Cohesion: 0.21
+Nodes (8): CursorContext, CursorProvider(), useCursor(), architectureDetails, RealtimeWork(), selectedWorkProjects, showcaseProjects, ContextCursor()
 
 ### Community 36 - "Community 36"
 Cohesion: 0.29
@@ -287,9 +285,9 @@ Nodes (6): colorMap, iconMap, NotificationPanel(), pageLabels, TopNavbar(), noti
 Cohesion: 0.33
 Nodes (4): inter, jetbrainsMono, metadata, sora
 
-### Community 55 - "Community 55"
-Cohesion: 0.25
-Nodes (3): services, StatCard, statsData
+### Community 54 - "Community 54"
+Cohesion: 0.38
+Nodes (3): pricing, pricingTiers, tiers
 
 ### Community 59 - "Community 59"
 Cohesion: 0.24
@@ -314,10 +312,6 @@ Nodes (24): 1. "Mixed Content" or Cleartext Traffic Issues, 1. Prerequisites, 2.
 ### Community 67 - "Community 67"
 Cohesion: 0.11
 Nodes (7): fl_register_plugins(), main(), my_application_activate(), my_application_new(), _MyApplication, dart_entrypoint_arguments, parent_instance
-
-### Community 68 - "Community 68"
-Cohesion: 0.40
-Nodes (3): LiveClock, LiveSystemClock, PulseCard
 
 ### Community 69 - "Community 69"
 Cohesion: 0.17
@@ -380,28 +374,28 @@ Cohesion: 0.40
 Nodes (4): package:flutter/material.dart, package:flutter_test/flutter_test.dart, package:flutter_webview_app/main.dart, main
 
 ### Community 87 - "Community 87"
-Cohesion: 0.25
-Nodes (5): techStack, allTech, row1, row2, row3
+Cohesion: 0.12
+Nodes (8): techStack, services, StatCard, statsData, allTech, row1, row2, row3
 
 ## Knowledge Gaps
-- **482 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+477 more)
+- **485 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+480 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **26 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **25 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `fmt()` connect `Community 36` to `Community 38`?**
-  _High betweenness centrality (0.060) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Community 1` to `Community 5`?**
+  _High betweenness centrality (0.061) - this node is a cross-community bridge._
+- **Why does `cn()` connect `Community 17` to `Community 88`, `Community 9`, `Community 33`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _483 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _486 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.06666666666666667 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
+- **Should `Community 2` be split into smaller, more focused modules?**
+  _Cohesion score 0.14035087719298245 - nodes in this community are weakly interconnected._
 - **Should `Community 3` be split into smaller, more focused modules?**
   _Cohesion score 0.08923076923076922 - nodes in this community are weakly interconnected._
-- **Should `Community 5` be split into smaller, more focused modules?**
-  _Cohesion score 0.04081632653061224 - nodes in this community are weakly interconnected._

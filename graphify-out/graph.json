@@ -4633,7 +4633,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L1",
       "id": "src_components_layout_loadingscreen_jsx",
-      "community": 0,
+      "community": 102,
       "norm_label": "loadingscreen.jsx"
     },
     {
@@ -4642,7 +4642,7 @@
       "source_file": "src/components/layout/LoadingScreen.jsx",
       "source_location": "L3",
       "id": "layout_loadingscreen_loadingscreen",
-      "community": 0,
+      "community": 102,
       "norm_label": "loadingscreen()"
     },
     {
@@ -5207,7 +5207,7 @@
       "label": "Contact()",
       "file_type": "code",
       "source_file": "src/components/sections/Contact.jsx",
-      "source_location": "L9",
+      "source_location": "L7",
       "id": "sections_contact_contact",
       "community": 2,
       "norm_label": "contact()"
@@ -5218,7 +5218,7 @@
       "source_file": "src/components/sections/Endorsements.jsx",
       "source_location": "L1",
       "id": "src_components_sections_endorsements_jsx",
-      "community": 4,
+      "community": 23,
       "norm_label": "endorsements.jsx"
     },
     {
@@ -5227,7 +5227,7 @@
       "source_file": "src/components/sections/Endorsements.jsx",
       "source_location": "L4",
       "id": "sections_endorsements_endorsementsdata",
-      "community": 4,
+      "community": 23,
       "norm_label": "endorsementsdata"
     },
     {
@@ -5236,7 +5236,7 @@
       "source_file": "src/components/sections/Endorsements.jsx",
       "source_location": "L34",
       "id": "sections_endorsements_endorsements",
-      "community": 4,
+      "community": 23,
       "norm_label": "endorsements()"
     },
     {
@@ -5252,7 +5252,7 @@
       "label": "FAQ()",
       "file_type": "code",
       "source_file": "src/components/sections/FAQ.jsx",
-      "source_location": "L9",
+      "source_location": "L6",
       "id": "sections_faq_faq",
       "community": 59,
       "norm_label": "faq()"
@@ -5330,6 +5330,33 @@
       "norm_label": "howwework()"
     },
     {
+      "label": "Industries.jsx",
+      "file_type": "code",
+      "source_file": "src/components/sections/Industries.jsx",
+      "source_location": "L1",
+      "id": "src_components_sections_industries_jsx",
+      "community": 4,
+      "norm_label": "industries.jsx"
+    },
+    {
+      "label": "Industries",
+      "file_type": "code",
+      "source_file": "src/components/sections/Industries.jsx",
+      "source_location": "L172",
+      "id": "sections_industries_industries",
+      "community": 4,
+      "norm_label": "industries"
+    },
+    {
+      "label": "IndustryCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Industries.jsx",
+      "source_location": "L74",
+      "id": "sections_industries_industrycard",
+      "community": 4,
+      "norm_label": "industrycard()"
+    },
+    {
       "label": "KineticManifesto.jsx",
       "file_type": "code",
       "source_file": "src/components/sections/KineticManifesto.jsx",
@@ -5357,10 +5384,28 @@
       "norm_label": "pricing.jsx"
     },
     {
+      "label": "tiers",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L6",
+      "id": "sections_pricing_tiers",
+      "community": 54,
+      "norm_label": "tiers"
+    },
+    {
+      "label": "PricingCard()",
+      "file_type": "code",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L13",
+      "id": "sections_pricing_pricingcard",
+      "community": 54,
+      "norm_label": "pricingcard()"
+    },
+    {
       "label": "Pricing()",
       "file_type": "code",
       "source_file": "src/components/sections/Pricing.jsx",
-      "source_location": "L9",
+      "source_location": "L130",
       "id": "sections_pricing_pricing",
       "community": 54,
       "norm_label": "pricing()"
@@ -5371,7 +5416,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L1",
       "id": "src_components_sections_pulse_jsx",
-      "community": 68,
+      "community": 4,
       "norm_label": "pulse.jsx"
     },
     {
@@ -5380,7 +5425,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L5",
       "id": "sections_pulse_pulsecard",
-      "community": 68,
+      "community": 4,
       "norm_label": "pulsecard"
     },
     {
@@ -5389,7 +5434,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L91",
       "id": "sections_pulse_livesystemclock",
-      "community": 68,
+      "community": 4,
       "norm_label": "livesystemclock"
     },
     {
@@ -5398,7 +5443,7 @@
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L115",
       "id": "sections_pulse_pulse",
-      "community": 68,
+      "community": 4,
       "norm_label": "pulse()"
     },
     {
@@ -5411,46 +5456,19 @@
       "norm_label": "realtimework.jsx"
     },
     {
-      "label": "VideoPlayer()",
+      "label": "selectedWorkProjects",
       "file_type": "code",
       "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L4",
-      "id": "sections_realtimework_videoplayer",
+      "source_location": "L6",
+      "id": "sections_realtimework_selectedworkprojects",
       "community": 34,
-      "norm_label": "videoplayer()"
-    },
-    {
-      "label": "showcaseProjects",
-      "file_type": "code",
-      "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L39",
-      "id": "sections_realtimework_showcaseprojects",
-      "community": 34,
-      "norm_label": "showcaseprojects"
-    },
-    {
-      "label": "architectureDetails",
-      "file_type": "code",
-      "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L82",
-      "id": "sections_realtimework_architecturedetails",
-      "community": 34,
-      "norm_label": "architecturedetails"
-    },
-    {
-      "label": "ArchitectureFlow()",
-      "file_type": "code",
-      "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L121",
-      "id": "sections_realtimework_architectureflow",
-      "community": 34,
-      "norm_label": "architectureflow()"
+      "norm_label": "selectedworkprojects"
     },
     {
       "label": "RealtimeWork()",
       "file_type": "code",
       "source_file": "src/components/sections/RealtimeWork.jsx",
-      "source_location": "L177",
+      "source_location": "L42",
       "id": "sections_realtimework_realtimework",
       "community": 34,
       "norm_label": "realtimework()"
@@ -5461,7 +5479,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L1",
       "id": "src_components_sections_services_jsx",
-      "community": 23,
+      "community": 2,
       "norm_label": "services.jsx"
     },
     {
@@ -5470,7 +5488,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
       "id": "sections_services_iconmap",
-      "community": 23,
+      "community": 2,
       "norm_label": "iconmap"
     },
     {
@@ -5479,7 +5497,7 @@
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L23",
       "id": "sections_services_services",
-      "community": 23,
+      "community": 2,
       "norm_label": "services()"
     },
     {
@@ -5488,7 +5506,7 @@
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L1",
       "id": "src_components_sections_stats_jsx",
-      "community": 55,
+      "community": 87,
       "norm_label": "stats.jsx"
     },
     {
@@ -5497,7 +5515,7 @@
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L6",
       "id": "sections_stats_statsdata",
-      "community": 55,
+      "community": 87,
       "norm_label": "statsdata"
     },
     {
@@ -5506,7 +5524,7 @@
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L93",
       "id": "sections_stats_stats",
-      "community": 55,
+      "community": 87,
       "norm_label": "stats()"
     },
     {
@@ -5767,7 +5785,7 @@
       "source_file": "src/components/ui/AnimatedCounter.jsx",
       "source_location": "L1",
       "id": "src_components_ui_animatedcounter_jsx",
-      "community": 55,
+      "community": 87,
       "norm_label": "animatedcounter.jsx"
     },
     {
@@ -5776,7 +5794,7 @@
       "source_file": "src/components/ui/AnimatedCounter.jsx",
       "source_location": "L4",
       "id": "ui_animatedcounter_animatedcounter",
-      "community": 55,
+      "community": 87,
       "norm_label": "animatedcounter()"
     },
     {
@@ -5821,7 +5839,7 @@
       "source_file": "src/components/ui/CookieBanner.jsx",
       "source_location": "L1",
       "id": "src_components_ui_cookiebanner_jsx",
-      "community": 0,
+      "community": 51,
       "norm_label": "cookiebanner.jsx"
     },
     {
@@ -5830,7 +5848,7 @@
       "source_file": "src/components/ui/CookieBanner.jsx",
       "source_location": "L5",
       "id": "ui_cookiebanner_cookiebanner",
-      "community": 0,
+      "community": 51,
       "norm_label": "cookiebanner()"
     },
     {
@@ -6077,19 +6095,10 @@
       "norm_label": "faq.js"
     },
     {
-      "label": "faqCategories",
-      "file_type": "code",
-      "source_file": "src/constants/faq.js",
-      "source_location": "L1",
-      "id": "constants_faq_faqcategories",
-      "community": 59,
-      "norm_label": "faqcategories"
-    },
-    {
       "label": "faqs",
       "file_type": "code",
       "source_file": "src/constants/faq.js",
-      "source_location": "L8",
+      "source_location": "L1",
       "id": "constants_faq_faqs",
       "community": 59,
       "norm_label": "faqs"
@@ -6104,13 +6113,13 @@
       "norm_label": "pricing.js"
     },
     {
-      "label": "pricing",
+      "label": "pricingTiers",
       "file_type": "code",
       "source_file": "src/constants/pricing.js",
       "source_location": "L1",
-      "id": "constants_pricing_pricing",
+      "id": "constants_pricing_pricingtiers",
       "community": 54,
-      "norm_label": "pricing"
+      "norm_label": "pricingtiers"
     },
     {
       "label": "projects.js",
@@ -6343,7 +6352,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 102,
+      "community": 0,
       "norm_label": "about.jsx"
     },
     {
@@ -6352,7 +6361,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L5",
       "id": "pages_about_about",
-      "community": 102,
+      "community": 0,
       "norm_label": "about()"
     },
     {
@@ -6503,7 +6512,7 @@
       "label": "Home()",
       "file_type": "code",
       "source_file": "src/pages/Home.jsx",
-      "source_location": "L19",
+      "source_location": "L20",
       "id": "pages_home_home",
       "community": 4,
       "norm_label": "home()"
@@ -7292,6 +7301,60 @@
       "norm_label": "supabase"
     },
     {
+      "label": "faqCategories",
+      "file_type": "code",
+      "source_file": "src/constants/faq.js",
+      "source_location": "L1",
+      "community": 59,
+      "norm_label": "faqcategories",
+      "id": "constants_faq_faqcategories"
+    },
+    {
+      "label": "pricing",
+      "file_type": "code",
+      "source_file": "src/constants/pricing.js",
+      "source_location": "L1",
+      "community": 54,
+      "norm_label": "pricing",
+      "id": "constants_pricing_pricing"
+    },
+    {
+      "label": "VideoPlayer()",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L5",
+      "community": 34,
+      "norm_label": "videoplayer()",
+      "id": "sections_realtimework_videoplayer"
+    },
+    {
+      "label": "showcaseProjects",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L76",
+      "community": 34,
+      "norm_label": "showcaseprojects",
+      "id": "sections_realtimework_showcaseprojects"
+    },
+    {
+      "label": "architectureDetails",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L119",
+      "community": 34,
+      "norm_label": "architecturedetails",
+      "id": "sections_realtimework_architecturedetails"
+    },
+    {
+      "label": "ArchitectureFlow()",
+      "file_type": "code",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L176",
+      "community": 34,
+      "norm_label": "architectureflow()",
+      "id": "sections_realtimework_architectureflow"
+    },
+    {
       "label": "ABOUT_PARAGRAPH_SEGMENTS",
       "file_type": "code",
       "source_file": "src/components/sections/About.jsx",
@@ -7332,7 +7395,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L6",
-      "community": 55,
+      "community": 87,
       "norm_label": "services",
       "id": "sections_stats_services"
     },
@@ -7341,7 +7404,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L25",
-      "community": 55,
+      "community": 87,
       "norm_label": "spotlightcard()",
       "id": "sections_stats_spotlightcard"
     },
@@ -7350,7 +7413,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Stats.jsx",
       "source_location": "L53",
-      "community": 55,
+      "community": 87,
       "norm_label": "statcard",
       "id": "sections_stats_statcard"
     },
@@ -7359,7 +7422,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Pulse.jsx",
       "source_location": "L91",
-      "community": 68,
+      "community": 4,
       "norm_label": "liveclock",
       "id": "sections_pulse_liveclock"
     },
@@ -8948,15 +9011,6 @@
       "id": "pages_clientportal_portalsidebar"
     },
     {
-      "label": "PricingCard()",
-      "file_type": "code",
-      "source_file": "src/components/sections/Pricing.jsx",
-      "source_location": "L10",
-      "community": 54,
-      "norm_label": "pricingcard()",
-      "id": "sections_pricing_pricingcard"
-    },
-    {
       "label": "LinkedinIcon()",
       "file_type": "code",
       "source_file": "src/components/sections/Team.jsx",
@@ -9006,7 +9060,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 23,
+      "community": 2,
       "norm_label": "servicecard()",
       "id": "sections_services_servicecard"
     },
@@ -9015,7 +9069,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L19",
-      "community": 23,
+      "community": 2,
       "norm_label": "bentoclasses",
       "id": "sections_services_bentoclasses"
     },
@@ -9024,7 +9078,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Services.jsx",
       "source_location": "L10",
-      "community": 23,
+      "community": 2,
       "norm_label": "servicerow()",
       "id": "sections_services_servicerow"
     },
@@ -16563,9 +16617,9 @@
       "source_file": "src/components/sections/Endorsements.jsx",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_endorsements_jsx",
-      "target": "sections_endorsements_endorsements",
-      "confidence_score": 1.0
+      "target": "sections_endorsements_endorsements"
     },
     {
       "relation": "contains",
@@ -16573,9 +16627,9 @@
       "source_file": "src/components/sections/Endorsements.jsx",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_components_sections_endorsements_jsx",
-      "target": "sections_endorsements_endorsementsdata",
-      "confidence_score": 1.0
+      "target": "sections_endorsements_endorsementsdata"
     },
     {
       "relation": "imports_from",
@@ -16584,9 +16638,9 @@
       "source_file": "src/pages/Home.jsx",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "src_pages_home_jsx",
-      "target": "src_components_sections_endorsements_jsx",
-      "confidence_score": 1.0
+      "target": "src_components_sections_endorsements_jsx"
     },
     {
       "relation": "imports",
@@ -16907,6 +16961,37 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Industries.jsx",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_industries_jsx",
+      "target": "sections_industries_industries"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Industries.jsx",
+      "source_location": "L74",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_industries_jsx",
+      "target": "sections_industries_industrycard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/pages/Home.jsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_pages_home_jsx",
+      "target": "src_components_sections_industries_jsx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "src/components/sections/KineticManifesto.jsx",
       "source_location": "L4",
       "weight": 1.0,
@@ -16937,6 +17022,17 @@
       "target": "constants_pricing_pricing"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "constants_pricing_pricingtiers"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src/components/sections/Pricing.jsx",
@@ -16955,6 +17051,16 @@
       "confidence_score": 1.0,
       "source": "src_components_sections_pricing_jsx",
       "target": "sections_pricing_pricingcard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/Pricing.jsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_pricing_jsx",
+      "target": "sections_pricing_tiers"
     },
     {
       "relation": "imports_from",
@@ -17091,6 +17197,16 @@
       "confidence_score": 1.0,
       "source": "src_components_sections_realtimework_jsx",
       "target": "sections_realtimework_realtimework"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/components/sections/RealtimeWork.jsx",
+      "source_location": "L40",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_components_sections_realtimework_jsx",
+      "target": "sections_realtimework_selectedworkprojects"
     },
     {
       "relation": "contains",
@@ -18262,6 +18378,16 @@
       "confidence_score": 1.0,
       "source": "src_constants_pricing_js",
       "target": "constants_pricing_pricing"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "src/constants/pricing.js",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_constants_pricing_js",
+      "target": "constants_pricing_pricingtiers"
     },
     {
       "relation": "contains",
@@ -21146,5 +21272,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "06a736a7a25080b523d7b0ce92a6670e0c603c7c"
+  "built_at_commit": "7713fee850c2587d049d02156c0acbc8c6d57570"
 }

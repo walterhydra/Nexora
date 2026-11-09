@@ -1,439 +1,222 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { m, useInView, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { m } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 
-const VideoPlayer = ({ src, className }) => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, margin: "100px" });
-
-  useEffect(() => {
-    const video = ref.current;
-    if (!video) return;
-
-    video.playbackRate = 1.0;
-    if (isInView) {
-      video.play().catch(() => {});
-    } else {
-      video.pause();
-    }
-  }, [isInView]);
-
-  return (
-    <video 
-      ref={ref}
-      src={src}
-      loop 
-      muted 
-      playsInline
-      preload="metadata"
-      className={className}
-      style={{
-        transform: 'translateZ(0)',
-        willChange: 'transform',
-        contain: 'paint'
-      }}
-    />
-  );
-};
-import { ArrowUpRight, Database, Code, Server, Zap, Compass, Factory, Sun, X, ExternalLink, Globe } from 'lucide-react';
-
-const showcaseProjects = [
+// 3 Verified Sprints matching user reference image
+const selectedWorkProjects = [
   {
-    id: 'rf-electrotech',
-    title: 'RF Electrotech ERP',
-    tagline: 'Industrial Automation & Control',
-    desc: 'A robust B2B corporate portal engineered for an industrial automation leader. Showcasing advanced control panels, PLC programming services, and high-voltage engineering portfolios with lightning-fast load times.',
-    tech: [
-      { name: 'Next.js', icon: Code },
-      { name: 'Tailwind CSS', icon: Zap },
-      { name: 'Sanity CMS', icon: Database },
-      { name: 'Framer Motion', icon: Server }
-    ],
-    icon: Factory,
-    videoPath: '/videos/rf-electrotech-erp.mp4',
-    liveUrl: 'https://rfelectrotech.com/',
-    color: 'text-accent-violet',
-    bg: 'bg-accent-violet/10',
-    border: 'border-accent-violet/30',
-    gradient: 'from-accent-violet/20',
-    buttonHover: 'hover:bg-accent-violet/20 hover:border-accent-violet/50 hover:text-accent-violet'
+    id: 'rf-electro',
+    title: 'RF Electro ERP',
+    category: 'Industrial / IoT Systems',
+    statVal: '100%',
+    statLabel: 'BATCH TRACEABILITY',
+    desc: 'Production-traceability-first PCB manufacturing ERP engineered with automated BOM management, multi-stage batch tracking, and real-time shop-floor telemetry.',
+    tags: ['PCB MANUFACTURING', 'SHOP-FLOOR ERP', 'TRACEABILITY'],
+    liveUrl: 'https://www.rfgenix.com/',
+    logoType: 'rf-electro'
   },
   {
     id: 'solarkits',
     title: 'Solarkits ERP',
-    tagline: 'Enterprise Resource Planning',
-    desc: 'A highly scalable, multi-tier enterprise resource planning platform built for the renewable energy sector. It orchestrates lead management, geo-spatial inventory logistics, and milestone-based financial distributions.',
-    tech: [
-      { name: 'MongoDB', icon: Database },
-      { name: 'Express.js', icon: Server },
-      { name: 'React 19', icon: Code },
-      { name: 'Node.js', icon: Zap }
-    ],
-    icon: Sun,
-    videoPath: '/videos/solarkits-erp.mp4',
+    category: 'CleanTech / Renewable Energy',
+    statVal: '50K+',
+    statLabel: 'INVENTORY MANAGED',
+    desc: 'High-scale renewable energy ERP integrating interactive Google Maps GIS panel sizing, multi-warehouse inventory locking, and automated billing ledgers.',
+    tags: ['SOLAR ERP', 'GIS ENGINE', 'INVENTORY'],
     liveUrl: 'https://solarkits.in/',
-    color: 'text-[#00FF94]',
-    bg: 'bg-[#00FF94]/10',
-    border: 'border-[#00FF94]/30',
-    gradient: 'from-[#00FF94]/20',
-    buttonHover: 'hover:bg-[#00FF94]/20 hover:border-[#00FF94]/50 hover:text-[#00FF94]'
+    logoType: 'solarkits'
+  },
+  {
+    id: 'flyanytrip',
+    title: 'FlyAnyTrip',
+    category: 'TravelTech / Global Flights',
+    statVal: '500+',
+    statLabel: 'GLOBAL AIRLINES',
+    desc: 'High-performance flight booking & travel aggregator platform featuring live multi-city routing, real-time fare comparison, automated PNR issuance, and instant passenger checkout.',
+    tags: ['FLIGHT AGGREGATOR', 'FARE ENGINE', 'MULTI-CITY ROUTING'],
+    liveUrl: 'https://flyanytrip-new.vercel.app/',
+    logoType: 'flyanytrip'
   }
 ];
 
-const architectureDetails = {
-  'rf-electrotech': {
-    title: 'RF Electrotech ERP',
-    tagline: 'Industrial Automation & Control',
-    specs: [
-      { label: 'System Pattern', value: 'Jamstack Static Site Generation with ISR' },
-      { label: 'Frontend Engine', value: 'Next.js 14 App Router + Framer Motion' },
-      { label: 'Content System', value: 'Sanity.io Headless CMS with custom schemas' },
-      { label: 'Global Network', value: 'Vercel Edge CDN nodes' },
-      { label: 'Optimization', value: 'Static asset compression & lazy prefetching' }
-    ],
-    highlights: [
-      'Designed dynamic page generation via Next.js ISR (Incremental Static Regeneration), updating the static catalog in 60s without full site rebuilds.',
-      'Constructed modular timeline controllers and vector animations with Framer Motion that render at a smooth 60fps on mobile displays.',
-      'Achieved a perfect 100/100 Lighthouse performance rating by eliminating non-essential runtime Javascript and prioritizing critical paint assets.'
-    ],
-    challenges: 'Displaying complex high-voltage circuit schematic portfolios without causing browser stutter or layout shifts.',
-    solution: 'Optimized drawings as lightweight SVG sprites and deferred complex layout rendering until the element entered the client viewport.'
-  },
-  'solarkits': {
-    title: 'Solarkits ERP',
-    tagline: 'Enterprise Resource Planning',
-    specs: [
-      { label: 'System Pattern', value: 'Event-driven multi-tier ERP & ledger systems' },
-      { label: 'Frontend Engine', value: 'React 19 dashboard with interactive map overlays' },
-      { label: 'Backend Runtime', value: 'Node.js & Express.js REST API' },
-      { label: 'Database Schema', value: 'MongoDB ACID transactions & Redis cache tables' },
-      { label: 'Queue Engine', value: 'BullMQ queue + Redis key-value store' }
-    ],
-    highlights: [
-      'Built a custom SVG drawing layer on Google Maps API to measure available solar roof coordinates and calculate power outputs instantly.',
-      'Created an ACID-compliant double-entry ledger inside MongoDB to record customer milestones, material allocations, and invoicing history.',
-      'Offloaded heavy invoice PDF creation and automated emails to separate worker processes managed by BullMQ queues, saving database compute capacity.'
-    ],
-    challenges: 'Updating live pricing valuations for channel partners across dozens of regional warehouses concurrently.',
-    solution: 'Designed an optimistic state replication model with Redis cache tables, decreasing database read load by over 70%.'
-  }
-};
-
-const ArchitectureFlow = ({ projectId, projectColor }) => {
-  const flows = {
-    'ask-visa': [
-      { title: "React SPA Client", desc: "Visa onboarding state machine & local storage caching", step: "01", icon: Code },
-      { title: "Web Worker", desc: "Client-side image compression & format optimization", step: "02", icon: Zap },
-      { title: "Serverless API", desc: "Express routing, file uploading, & JWT verification", step: "03", icon: Server },
-      { title: "DB & Services", desc: "MongoDB Atlas storage + AWS Textract passport parsing", step: "04", icon: Database }
-    ],
-    'rf-electrotech': [
-      { title: "Sanity CMS", desc: "Decoupled catalog data & asset management console", step: "01", icon: Database },
-      { title: "Build Trigger", desc: "Automated build triggers via Sanity CMS webhooks", step: "02", icon: Zap },
-      { title: "Next.js ISR", desc: "Static HTML page generation with 60s background revalidation", step: "03", icon: Code },
-      { title: "Global CDN", desc: "Edge-cached delivery for lightning-fast loads (<0.2s)", step: "04", icon: Server }
-    ],
-    'solarkits': [
-      { title: "Google Maps GIS", desc: "Interactive canvas layer for panel layout calculations", step: "01", icon: Compass },
-      { title: "React 19 App", desc: "Real-time state tracking & geospatial layout configuration", step: "02", icon: Code },
-      { title: "BullMQ & Express", desc: "Background ledger processing & PDF document builder", step: "03", icon: Server },
-      { title: "Data Storage", desc: "MongoDB Double-entry ledger + Redis database caching", step: "04", icon: Database }
-    ]
+export default function RealtimeWork() {
+  const renderLogo = (type) => {
+    switch (type) {
+      case 'rf-electro':
+        return (
+          <div className="w-11 h-11 rounded-none border border-black/15 dark:border-white/15 bg-white p-1 flex items-center justify-center shadow-xs shrink-0 overflow-hidden">
+            <img 
+              src="/images/rf-electro-icon.png" 
+              alt="RF Electro Logo" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+        );
+      case 'solarkits':
+        return (
+          <div className="w-11 h-11 rounded-none border border-black/15 dark:border-white/15 bg-white p-1 flex items-center justify-center shadow-xs shrink-0 overflow-hidden">
+            <img 
+              src="/images/solarkits-icon.png" 
+              alt="SolarKits ERP Logo" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+        );
+      case 'flyanytrip':
+        return (
+          <div className="w-11 h-11 rounded-none border border-black/15 dark:border-white/15 bg-white p-1 flex items-center justify-center shadow-xs shrink-0 overflow-hidden">
+            <img 
+              src="/images/favicon.svg" 
+              alt="FlyAnyTrip Logo" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+        );
+      default:
+        return null;
+    }
   };
 
-  const steps = flows[projectId] || [];
-
   return (
-    <div data-lenis-prevent="true" className="flex flex-row items-stretch gap-4 py-6 overflow-x-auto pb-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
-      {steps.map((step, idx) => (
-        <React.Fragment key={idx}>
-          <div className="w-[200px] sm:w-[220px] shrink-0 bg-white/[0.02] border border-white/5 rounded-2xl p-5 hover:border-white/20 transition-all duration-300 relative group flex flex-col justify-between">
-            {/* Step badge */}
-            <span className={`absolute -top-2 -left-2 text-[9px] font-mono px-2 py-0.5 rounded-md bg-black border border-white/10 ${projectColor}`}>
-              {step.step}
-            </span>
-            <div>
-              <div className="flex items-center gap-3 mb-3">
-                <div className="p-2 rounded-lg bg-white/5 text-white">
-                  <step.icon size={18} />
-                </div>
-                <h5 className="text-sm font-bold text-white leading-tight">{step.title}</h5>
-              </div>
-              <p className="text-xs text-white/50 leading-relaxed font-light">{step.desc}</p>
-            </div>
-          </div>
-          {idx < steps.length - 1 && (
-            <div className="flex items-center justify-center shrink-0">
-              <svg className="w-5 h-5 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </div>
-          )}
-        </React.Fragment>
-      ))}
-    </div>
-  );
-};
-
-export default function RealtimeWork() {
-  const [activeArchProject, setActiveArchProject] = useState(null);
-
-  return (
-    <section id="realtimework" className="py-32 px-6 bg-[#030303] relative min-h-screen overflow-hidden">
+    <section id="work" className="py-24 md:py-32 px-6 bg-[#040406] dark:bg-[#040406] relative overflow-hidden font-quicksand">
       {/* Background Ambience */}
-      <div className="absolute top-0 left-1/4 w-[800px] h-[800px] bg-accent-primary/5 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[800px] h-[800px] bg-accent-violet/5 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-accent-primary/5 rounded-full blur-[220px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-accent-violet/5 rounded-full blur-[220px] pointer-events-none" />
       
-      {/* Cyber Grid */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(3,3,3,1)_100%),_linear-gradient(rgba(255,255,255,0.01)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.01)_1px,_transparent_1px)] bg-[size:50px_50px] pointer-events-none opacity-50" />
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(4,4,6,1)_100%),_linear-gradient(rgba(255,255,255,0.015)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.015)_1px,_transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-40" />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         
-        {/* Massive Headline */}
-        <div className="text-center mb-32">
+        {/* Main Section Header */}
+        <div className="text-center mb-14 md:mb-18">
           <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col items-center"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 mb-6">
-              <span className="w-2 h-2 rounded-full bg-accent-primary animate-pulse" />
-              <span className="text-xs font-black uppercase tracking-[0.2em] text-white">Live Demonstrations</span>
+            {/* Category Pill */}
+            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)] mb-6 backdrop-blur-md">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
+              </span>
+              <span className="text-xs font-mono font-semibold uppercase tracking-[0.22em] text-white/80">
+                Live Demonstrations
+              </span>
             </div>
-            <h2 className="text-5xl md:text-8xl font-black tracking-tighter leading-none text-white mb-6">
-              Real Time <span className="text-gradient font-light italic block mt-2">Client Projects</span>
+
+            {/* Main Title with Forward-Only Liquid Metallic Shimmer */}
+            <h2 
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-quicksand font-bold tracking-tight text-white mb-6 leading-tight cursor-default select-none text-center"
+              style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+            >
+              <span 
+                className="text-transparent bg-clip-text inline-block"
+                style={{
+                  fontFamily: '"Quicksand", system-ui, sans-serif',
+                  backgroundImage: 'linear-gradient(115deg, #ffffff 0%, #a1a1aa 25%, #ffffff 50%, #71717a 75%, #ffffff 100%)',
+                  backgroundSize: '200% 100%',
+                  animation: 'metallic-shimmer 4.5s ease-in-out infinite',
+                }}
+              >
+                Real Time Client Projects
+              </span>
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto text-lg">
-              Experience the scale, performance, and visual excellence of our recently deployed enterprise and commercial platforms.
+
+            <p 
+              className="text-white/60 max-w-2xl mx-auto text-base sm:text-lg font-quicksand font-normal leading-relaxed"
+              style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+            >
+              Experience the turnaround speed, verified performance, and live production architecture delivered for businesses across India.
             </p>
           </m.div>
         </div>
 
-        {/* Project Showcase List */}
-        <div className="flex flex-col gap-32 md:gap-48">
-          {showcaseProjects.map((project, idx) => {
-            const isEven = idx % 2 === 0;
+        {/* Selected Work Sub-Header Bar (Matching reference image) */}
+        <div className="flex items-center justify-between gap-4 mb-8 text-xs font-mono uppercase tracking-[0.2em] text-gray-400 dark:text-white/50">
+          <span className="font-bold shrink-0 text-white/70">SELECTED WORK</span>
+          <div className="flex-1 h-[1px] bg-white/10" />
+          <span className="font-bold tracking-widest shrink-0 text-white/70">3 PROJECTS · VERIFIED</span>
+        </div>
 
-            return (
-              <m.div 
-                key={project.id}
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`flex flex-col lg:flex-row items-center gap-12 lg:gap-20 ${isEven ? '' : 'lg:flex-row-reverse'}`}
-              >
-                
-                {/* VIDEO BOX CONTAINER */}
-                <div className="w-full lg:w-3/5 relative group">
-                  {/* Decorative Glow */}
-                  <div className={`absolute -inset-1 bg-gradient-to-tr ${project.gradient} to-transparent rounded-[32px] blur-xl opacity-30 group-hover:opacity-60 transition-opacity duration-700`} />
-                  
-                  {/* Glassmorphic Video Wrapper */}
+        {/* 3 Projects Cards Grid (Exact UI from reference image) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+          {selectedWorkProjects.map((project, idx) => (
+            <m.div
+              key={project.id}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="relative flex flex-col justify-between p-6 sm:p-7 rounded-none bg-white dark:bg-[#0c0c11] border-2 border-black/90 dark:border-white/20 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,0.15)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] dark:hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.35)] dark:hover:border-white/40 hover:-translate-x-0.5 hover:-translate-y-0.5 transition-all duration-300 group overflow-hidden"
+            >
+              <div className="relative z-10 flex flex-col h-full justify-between">
+                <div>
+                  {/* Top: Logo & Big Stat Metric */}
+                  <div className="flex items-start justify-between gap-4 mb-5">
+                    {renderLogo(project.logoType)}
+
+                    <div className="flex flex-col items-end text-right">
+                      <span className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-gray-950 dark:text-white leading-none">
+                        {project.statVal}
+                      </span>
+                      <span className="text-[9px] font-mono font-bold tracking-widest uppercase text-gray-500 dark:text-white/45 mt-1.5">
+                        {project.statLabel}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Hairline Divider */}
+                  <div className="w-full h-[1px] bg-black/10 dark:bg-white/10 my-4" />
+
+                  {/* Title & Location / Category */}
+                  <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-950 dark:text-white tracking-tight group-hover:text-black dark:group-hover:text-white transition-colors">
+                      {project.title}
+                    </h3>
+                    <span className="text-xs font-mono text-gray-500 dark:text-white/50 tracking-wider shrink-0">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-gray-700 dark:text-white/75 text-sm sm:text-[15px] leading-relaxed mb-6 font-normal">
+                    {project.desc}
+                  </p>
+                </div>
+
+                {/* Bottom: Tags & Arrow Link */}
+                <div className="pt-4 border-t border-black/10 dark:border-white/10 flex items-center justify-between gap-3 mt-auto">
+                  <div className="flex flex-wrap items-center gap-1.5">
+                    {project.tags.map((tag, tIdx) => (
+                      <span 
+                        key={tIdx}
+                        className="px-2 py-1 text-[9px] sm:text-[10px] font-mono font-bold uppercase tracking-wider border border-black/25 dark:border-white/20 rounded-none bg-black/[0.03] dark:bg-white/[0.04] text-gray-900 dark:text-white/85"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                   <a 
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`relative block p-2 rounded-[32px] bg-white/5 border ${project.border} backdrop-blur-sm overflow-hidden cursor-pointer`}
+                    aria-label={`Visit ${project.title}`}
+                    className="w-8 h-8 rounded-none border border-black/20 dark:border-white/20 bg-black/[0.02] dark:bg-white/[0.04] flex items-center justify-center text-gray-800 dark:text-white/80 group-hover:text-black dark:group-hover:text-white group-hover:bg-black/10 dark:group-hover:bg-white/10 group-hover:border-black/50 dark:group-hover:border-white/50 group-hover:scale-110 transition-all ml-2 shrink-0"
                   >
-                    <div className="relative rounded-[24px] overflow-hidden bg-black aspect-[16/10] border border-white/10">
-                      
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none z-10" />
-                      
-                      <VideoPlayer 
-                        src={project.videoPath}
-                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000"
-                      />
-
-                      {/* Stable, Transparent Hover Circle */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 rounded-full bg-black/60 border border-white/15 flex flex-col items-center justify-center gap-1 z-20 opacity-0 scale-75 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 pointer-events-none text-white">
-                        <ArrowUpRight className="w-6 h-6" />
-                        <span className="text-[9px] font-black uppercase tracking-widest">Visit Site</span>
-                      </div>
-                      
-                      {/* Internal Floating Badge */}
-                      <div className="absolute bottom-6 left-6 z-20 flex items-center gap-3">
-                        <div className={`w-10 h-10 rounded-xl ${project.bg} border ${project.border} flex items-center justify-center backdrop-blur-md`}>
-                          <project.icon size={20} className={project.color} />
-                        </div>
-                        <div className="px-4 py-2 rounded-xl bg-black/60 border border-white/10 backdrop-blur-md hover:bg-black/80 transition-colors">
-                          <span className="text-xs font-mono text-white/80 uppercase tracking-widest">Live Deployment</span>
-                        </div>
-                      </div>
-
-                    </div>
+                    <ArrowUpRight size={16} />
                   </a>
                 </div>
-
-                {/* TEXT CONTENT CONTAINER */}
-                <div className="w-full lg:w-2/5 flex flex-col items-start text-left">
-                  <div className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${project.border} ${project.bg} mb-6`}>
-                    <span className={`text-[10px] font-black uppercase tracking-[0.2em] ${project.color}`}>
-                      0{idx + 1} // {project.tagline}
-                    </span>
-                  </div>
-                  
-                  <h3 className="text-4xl md:text-5xl font-black text-white mb-6 tracking-tight">
-                    {project.title}
-                  </h3>
-                  
-                  <p className="text-white/50 text-base md:text-lg leading-relaxed mb-8">
-                    {project.desc}
-                  </p>
-
-                  {/* Tech Stack Grid */}
-                  <div className="w-full mb-10">
-                    <h4 className="text-xs font-bold text-white/30 uppercase tracking-widest mb-4">Core Technology Stack</h4>
-                    <div className="grid grid-cols-2 gap-3">
-                      {project.tech.map((t, i) => (
-                        <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5">
-                          <t.icon size={16} className={project.color} />
-                          <span className="text-sm font-bold text-white/80">{t.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Interactive Button */}
-                  <button 
-                    onClick={() => setActiveArchProject(project.id)}
-                    className={`px-8 py-4 rounded-xl border border-white/10 bg-white/5 text-white font-bold text-sm tracking-widest uppercase transition-all duration-300 flex items-center gap-3 ${project.buttonHover}`}
-                  >
-                    Explore Architecture <ArrowUpRight size={18} />
-                  </button>
-                </div>
-
-              </m.div>
-            );
-          })}
+              </div>
+            </m.div>
+          ))}
         </div>
 
       </div>
-
-      {/* Immersive Architecture Modal */}
-      <AnimatePresence>
-        {activeArchProject && (() => {
-          const detail = architectureDetails[activeArchProject];
-          const project = showcaseProjects.find(p => p.id === activeArchProject);
-          if (!detail || !project) return null;
-
-          return (
-            <m.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.2 }}
-              className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/80 backdrop-blur-md"
-              style={{ transform: 'translateZ(0)', willChange: 'opacity' }}
-              onClick={() => setActiveArchProject(null)}
-            >
-              {/* Modal Container */}
-              <m.div
-                data-lenis-prevent="true"
-                initial={{ scale: 0.98, y: 15, opacity: 0 }}
-                animate={{ scale: 1, y: 0, opacity: 1 }}
-                exit={{ scale: 0.98, y: 15, opacity: 0 }}
-                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-4xl bg-[#0a0a0c]/95 border border-white/10 rounded-[2rem] p-6 md:p-8 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.9)] max-h-[90vh] overflow-y-auto z-10 text-left"
-                style={{ transform: 'translateZ(0)', willChange: 'transform, opacity' }}
-              >
-                {/* Accent ambient glow */}
-                <div className={`absolute -top-12 -left-12 w-32 h-32 rounded-full ${project.bg} blur-3xl pointer-events-none`} />
-                <div className="absolute -bottom-12 -right-12 w-32 h-32 rounded-full bg-accent-violet/10 blur-3xl pointer-events-none" />
-
-                {/* Close button */}
-                <button
-                  onClick={() => setActiveArchProject(null)}
-                  className="absolute top-6 right-6 text-gray-500 hover:text-white transition-colors bg-transparent border-0 cursor-pointer p-1.5 rounded-full hover:bg-white/5"
-                  aria-label="Close modal"
-                >
-                  <X size={20} />
-                </button>
-
-                {/* Header */}
-                <div className="mb-8 border-b border-white/5 pb-6">
-                  <div className="flex items-center gap-3 mb-2">
-                    <span className={`text-[10px] uppercase tracking-[0.25em] font-mono font-bold ${project.color}`}>
-                      System Architecture
-                    </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                    <span className="text-[10px] uppercase tracking-[0.25em] font-mono font-bold text-white/40">
-                      Case Study
-                    </span>
-                  </div>
-                  <h3 className="text-3xl font-black text-white leading-tight">
-                    {detail.title}
-                  </h3>
-                  <p className="text-sm text-white/55 mt-1 leading-relaxed font-light">
-                    {detail.tagline} — Design blueprint and technical infrastructure.
-                  </p>
-                </div>
-
-                {/* Content */}
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                  {/* Left columns - Diagrams & Flow */}
-                  <div className="lg:col-span-2 space-y-6">
-                    {/* Visual Architecture Flow */}
-                    <div>
-                      <h4 className="text-xs font-black uppercase tracking-wider text-white/30 mb-4">Component Processing Pipeline</h4>
-                      <ArchitectureFlow projectId={activeArchProject} projectColor={project.color} />
-                    </div>
-
-                    {/* Challenges & Solution */}
-                    <div className="bg-white/[0.01] border border-white/5 rounded-2xl p-5">
-                      <h4 className="text-xs font-bold text-white mb-2 uppercase tracking-wider">Engineering Challenges</h4>
-                      <p className="text-xs text-white/50 leading-relaxed font-light mb-4">{detail.challenges}</p>
-                      <h4 className="text-xs font-bold text-white mb-2 uppercase tracking-wider">Solution Implementation</h4>
-                      <p className="text-xs text-white/50 leading-relaxed font-light">{detail.solution}</p>
-                    </div>
-                  </div>
-
-                  {/* Right column - Tech Specs */}
-                  <div className="space-y-6">
-                    <div>
-                      <h4 className="text-xs font-black uppercase tracking-wider text-white/30 mb-4">Technical Details</h4>
-                      <div className="space-y-3 bg-white/[0.01] border border-white/5 rounded-2xl p-5">
-                        {detail.specs.map((spec, i) => (
-                          <div key={i} className="border-b border-white/5 pb-2.5 last:border-0 last:pb-0">
-                            <span className="text-[10px] font-mono text-white/30 uppercase block mb-0.5">{spec.label}</span>
-                            <span className="text-xs font-bold text-white/90 leading-tight">{spec.value}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Highlights list */}
-                    <div>
-                      <h4 className="text-xs font-black uppercase tracking-wider text-white/30 mb-3">Key Highlights</h4>
-                      <ul className="space-y-2">
-                        {detail.highlights.map((highlight, i) => (
-                          <li key={i} className="text-[11px] text-white/50 leading-relaxed flex items-start gap-2">
-                            <span className={`w-1.5 h-1.5 rounded-full ${project.bg} border ${project.border} shrink-0 mt-1.5`} />
-                            <span>{highlight}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    {/* View Live Button */}
-                    <a
-                      href={project.liveUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className={`w-full py-4 px-5 rounded-xl border border-white/10 bg-white/5 text-white text-xs font-bold hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 hover:bg-white/10`}
-                    >
-                      <Globe size={14} />
-                      <span>Visit Live Website</span>
-                      <ExternalLink size={12} className="opacity-60" />
-                    </a>
-                  </div>
-                </div>
-              </m.div>
-            </m.div>
-          );
-        })()}
-      </AnimatePresence>
     </section>
   );
 }

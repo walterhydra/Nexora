@@ -1,183 +1,163 @@
 import React, { useState } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 import { faqs } from '../../constants/faq';
-import { fadeUp, staggerContainer } from '../../animations/variants';
-import { HelpCircle, ArrowRight, Plus } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import MagneticButton from '../ui/MagneticButton';
+import { Plus, Minus } from 'lucide-react';
 
 export default function FAQ() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [openAccordionId, setOpenAccordionId] = useState(1);
+  // First item open by default matching reference screenshot
+  const [openId, setOpenId] = useState(1);
 
-  const activeFaq = faqs[activeIndex];
+  const toggleAccordion = (id) => {
+    setOpenId(openId === id ? null : id);
+  };
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-primary-light dark:bg-primary-dark relative overflow-hidden z-10 border-t border-black/5 dark:border-white/5">
-      {/* Background subtle ambient glows */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[10%] left-[-10%] w-[45vw] h-[45vw] rounded-full blur-[130px] opacity-25 dark:opacity-10" style={{ background: 'radial-gradient(circle, rgba(0,245,255,0.08) 0%, transparent 65%)' }} />
-        <div className="absolute bottom-[10%] right-[-10%] w-[45vw] h-[45vw] rounded-full blur-[130px] opacity-25 dark:opacity-10" style={{ background: 'radial-gradient(circle, rgba(155,89,255,0.08) 0%, transparent 65%)' }} />
-      </div>
+    <section 
+      id="faq" 
+      className="py-20 md:py-28 px-6 bg-[#040406] dark:bg-[#040406] relative overflow-hidden font-quicksand"
+      style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+    >
+      {/* Background Ambience */}
+      <div className="absolute top-1/3 left-[-10%] w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[200px] pointer-events-none" />
+      <div className="absolute bottom-10 right-[-10%] w-[500px] h-[500px] bg-accent-violet/5 rounded-full blur-[200px] pointer-events-none" />
+      
+      {/* Subtle grid background */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(4,4,6,1)_100%),_linear-gradient(rgba(255,255,255,0.015)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.015)_1px,_transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-30" />
 
-      <div className="max-w-7xl mx-auto px-6 relative z-20">
-        
-        {/* Header Block */}
-        <m.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-          variants={staggerContainer}
-          className="mb-16 text-center lg:text-left border-b border-gray-200/50 dark:border-white/5 pb-10"
-        >
-          <m.div variants={fadeUp} className="text-accent-primary font-mono text-xs tracking-[0.3em] uppercase mb-4 flex items-center justify-center lg:justify-start gap-2">
-            <span className="w-5 h-[1px] bg-accent-primary/40" /> Help Desk
-          </m.div>
-          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
-            <m.h2 variants={fadeUp} className="text-4xl md:text-5xl lg:text-6xl font-display font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
-              Frequently Asked <span className="text-gradient">Questions</span>
-            </m.h2>
-            <m.p variants={fadeUp} className="text-base text-gray-500 dark:text-gray-400 max-w-md leading-relaxed">
-              Tap any question to preview the answer. Direct developer communication, transparent agreements, and instant responses.
-            </m.p>
-          </div>
-        </m.div>
-
-        {/* Desktop Layout: Split Interactive Panel */}
-        <div className="hidden lg:grid grid-cols-12 gap-12 items-start">
-          {/* Left Menu Selection list */}
-          <div className="col-span-5 space-y-2">
-            {faqs.map((faq, idx) => {
-              const isActive = idx === activeIndex;
-              return (
-                <button
-                  key={faq.id}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`w-full p-4.5 rounded-2xl text-left transition-all duration-300 flex items-start gap-4 cursor-pointer group border-0 bg-transparent ${
-                    isActive 
-                      ? 'bg-white dark:bg-white/[0.03] border-l-4 border-accent-blue dark:border-accent-primary shadow-sm' 
-                      : 'hover:bg-gray-55/50 dark:hover:bg-white/[0.01] border-l-4 border-transparent'
-                  }`}
+      <div className="max-w-7xl mx-auto w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+          
+          {/* Left Column: Heading, Subtitle & WhatsApp CTA Card */}
+          <div className="lg:col-span-5 flex flex-col justify-between">
+            <div>
+              {/* Category Tag */}
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-4 h-4 rounded-full border border-black/20 dark:border-white/30 flex items-center justify-center text-[10px] font-bold text-gray-500 dark:text-white/60">
+                  ?
+                </div>
+                <span 
+                  className="text-[10.5px] font-bold uppercase tracking-[0.24em] text-gray-400 dark:text-white/50"
+                  style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                 >
-                  {/* Question Serial */}
-                  <span className={`font-mono text-sm font-bold tracking-tight shrink-0 mt-0.5 ${
-                    isActive ? 'text-accent-blue dark:text-accent-primary' : 'text-gray-400 group-hover:text-gray-600 dark:text-gray-500 dark:group-hover:text-gray-300'
-                  }`}>
-                    {String(idx + 1).padStart(2, '0')}
-                  </span>
+                  COMMON QUERIES
+                </span>
+              </div>
 
-                  {/* Question text */}
-                  <span className={`text-base font-semibold transition-colors duration-300 leading-snug ${
-                    isActive ? 'text-gray-900 dark:text-white' : 'text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white'
-                  }`}>
-                    {faq.question}
-                  </span>
-                </button>
+              {/* Stacked Headline */}
+              <h2 
+                className="text-4xl sm:text-5xl lg:text-[54px] font-bold tracking-tight text-white leading-[1.08] mb-4"
+                style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+              >
+                Frequently <br />
+                Asked <br />
+                Questions.
+              </h2>
+
+              {/* Subtitle */}
+              <p 
+                className="text-sm sm:text-base text-gray-400 dark:text-white/60 leading-relaxed font-normal mb-8 max-w-sm"
+                style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+              >
+                Essential insights for Indian business owners scaling their digital presence.
+              </p>
+            </div>
+
+            {/* Still have questions? WhatsApp Box */}
+            <div 
+              className="p-5 sm:p-6 rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0c0c12] max-w-xs shadow-xs"
+              style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+            >
+              <h4 className="text-base font-bold text-gray-950 dark:text-white mb-3">
+                Still have questions?
+              </h4>
+              <a
+                href="https://wa.me/917567097891?text=Hi%20Milan!%20I%20have%20a%20question%20about%20your%20services."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 rounded-md bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-sm transition-all duration-200 shadow-[0_4px_14px_rgba(37,211,102,0.25)] hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.489-1.761-1.663-2.06-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span>WhatsApp Us →</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Right Column: Clean Accordion Stack */}
+          <div className="lg:col-span-7 space-y-3.5">
+            {faqs.map((faq) => {
+              const isOpen = openId === faq.id;
+              return (
+                <div
+                  key={faq.id}
+                  className={`rounded-none transition-all duration-300 bg-white dark:bg-[#09090d] ${
+                    isOpen
+                      ? 'border-2 border-black dark:border-white shadow-sm'
+                      : 'border border-black/10 dark:border-white/10 hover:border-black/30 dark:hover:border-white/25'
+                  }`}
+                  style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                >
+                  {/* Clickable Header Row */}
+                  <button
+                    onClick={() => toggleAccordion(faq.id)}
+                    className="w-full p-5 sm:p-6 flex items-center justify-between gap-4 text-left cursor-pointer bg-transparent border-0"
+                    style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                  >
+                    <span 
+                      className={`text-[15px] sm:text-[17px] font-bold leading-snug transition-colors ${
+                        isOpen 
+                          ? 'text-gray-950 dark:text-white' 
+                          : 'text-gray-900 dark:text-white/85 hover:text-black dark:hover:text-white'
+                      }`}
+                    >
+                      {faq.question}
+                    </span>
+
+                    {/* Square Icon Box (+ / -) */}
+                    <div 
+                      className={`w-6 h-6 sm:w-7 sm:h-7 rounded-sm flex items-center justify-center shrink-0 transition-all ${
+                        isOpen
+                          ? 'bg-black dark:bg-white text-white dark:text-black'
+                          : 'bg-black/[0.04] dark:bg-white/[0.06] text-gray-700 dark:text-white/70'
+                      }`}
+                    >
+                      {isOpen ? (
+                        <Minus size={14} strokeWidth={2.4} />
+                      ) : (
+                        <Plus size={14} strokeWidth={2.4} />
+                      )}
+                    </div>
+                  </button>
+
+                  {/* Expandable Answer */}
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <m.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 sm:px-6 pb-5 sm:pb-6 pt-1">
+                          <div className="w-full h-px bg-black/[0.06] dark:bg-white/[0.08] mb-3.5" />
+                          <p 
+                            className="text-[13.5px] sm:text-[14.5px] text-gray-600 dark:text-white/70 leading-relaxed font-normal"
+                            style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
+                          >
+                            {faq.answer}
+                          </p>
+                        </div>
+                      </m.div>
+                    )}
+                  </AnimatePresence>
+                </div>
               );
             })}
           </div>
 
-          {/* Right Preview Card Box */}
-          <div className="col-span-7 h-full">
-            <AnimatePresence mode="wait">
-              <m.div
-                key={activeFaq.id}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-white dark:bg-[#070709]/40 border border-gray-200/50 dark:border-white/5 shadow-2xl rounded-3xl p-8 md:p-10 flex flex-col justify-between min-h-[420px] relative overflow-hidden"
-              >
-                {/* Decorative background grid vector */}
-                <div className="absolute inset-0 pointer-events-none opacity-5 dark:opacity-10">
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(0,0,0,0.1)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.1)_1px,transparent_1px)] bg-[size:24px_24px]" />
-                </div>
-
-                <div>
-                  {/* Category Indicator */}
-                  <div className="flex items-center justify-between mb-6 border-b border-gray-100 dark:border-white/5 pb-4 relative z-10">
-                    <span className="bg-accent-blue/10 dark:bg-white/5 text-accent-blue dark:text-accent-primary font-mono text-[9px] uppercase tracking-widest px-2.5 py-1 rounded-full font-bold">
-                      {activeFaq.category === 'process' ? 'Process & Speed' : activeFaq.category === 'quality' ? 'Code & Quality' : 'Payment & Trust'}
-                    </span>
-                    <HelpCircle size={18} className="text-gray-300 dark:text-white/10" />
-                  </div>
-
-                  {/* Active Question */}
-                  <h3 className="text-2xl md:text-3xl font-display font-bold text-gray-900 dark:text-white leading-tight mb-4 pr-6 relative z-10">
-                    {activeFaq.question}
-                  </h3>
-
-                  {/* Visual Divider */}
-                  <div className="w-12 h-[2px] bg-gradient-to-r from-accent-blue to-accent-purple my-6 relative z-10" />
-
-                  {/* Answer */}
-                  <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 leading-relaxed font-normal pr-4 relative z-10">
-                    {activeFaq.answer}
-                  </p>
-                </div>
-
-                {/* Card footer redirect */}
-                <div className="mt-8 pt-6 border-t border-gray-100 dark:border-white/5 flex items-center justify-between relative z-10">
-                  <span className="text-xs text-gray-400 dark:text-gray-500 font-mono">Nexoraa Studio Handbook v1.0</span>
-                  <Link to="/contact" className="flex items-center gap-1.5 text-xs font-bold text-accent-blue hover:text-accent-blue/80 dark:text-accent-primary dark:hover:text-accent-primary/80 transition-colors group/link cursor-pointer">
-                    Ask Milan directly
-                    <ArrowRight size={14} className="group-hover/link:translate-x-0.5 transition-transform" />
-                  </Link>
-                </div>
-              </m.div>
-            </AnimatePresence>
-          </div>
         </div>
-
-        {/* Mobile Layout: Responsive Accordion List */}
-        <div className="lg:hidden space-y-3">
-          {faqs.map((faq, idx) => {
-            const isOpen = faq.id === openAccordionId;
-            return (
-              <div
-                key={faq.id}
-                className={`border border-gray-200/60 dark:border-white/5 rounded-2xl overflow-hidden transition-all duration-300 ${
-                  isOpen 
-                    ? 'bg-gray-55/50 dark:bg-white/[0.02] border-accent-blue/20 dark:border-accent-blue/10 shadow-sm' 
-                    : 'bg-white dark:bg-transparent hover:bg-gray-55/35 dark:hover:bg-white/[0.01]'
-                }`}
-              >
-                <button
-                  onClick={() => setOpenAccordionId(isOpen ? -1 : faq.id)}
-                  className="w-full px-5 py-4 flex items-center justify-between text-left cursor-pointer focus:outline-none border-0 bg-transparent"
-                >
-                  <span className={`text-base font-semibold pr-6 transition-colors duration-300 ${
-                    isOpen ? 'text-accent-blue dark:text-white' : 'text-gray-800 dark:text-gray-300'
-                  }`}>
-                    {faq.question}
-                  </span>
-                  <div className={`shrink-0 w-7 h-7 rounded-full border border-gray-200 dark:border-white/10 flex items-center justify-center transition-all duration-300 ${
-                    isOpen 
-                      ? 'bg-accent-blue text-white rotate-45 border-accent-blue' 
-                      : 'bg-transparent text-gray-400'
-                  }`}>
-                    <Plus size={14} />
-                  </div>
-                </button>
-                <AnimatePresence initial={false}>
-                  {isOpen && (
-                    <m.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.25, ease: "easeInOut" }}
-                    >
-                      <div className="px-5 pb-5 text-sm text-gray-655 dark:text-gray-400 border-t border-gray-100 dark:border-white/5 pt-3 leading-relaxed font-normal">
-                        {faq.answer}
-                      </div>
-                    </m.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
-        </div>
-
       </div>
     </section>
   );

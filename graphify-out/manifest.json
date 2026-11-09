@@ -165,18 +165,18 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\About.jsx": {
-    "mtime": 1794240300.0401807,
+    "mtime": 1794240507.2124698,
     "ast_hash": "71e3ce0be3467c00c8611b5b64023548",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Contact.jsx": {
-    "mtime": 1782064484.1199214,
-    "ast_hash": "92e0b1f4097f111b905ab1129dce6673",
+    "mtime": 1794251455.2062564,
+    "ast_hash": "5fd8674b4e01e79e8d4b239fc3ff9aa2",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\FAQ.jsx": {
-    "mtime": 1794155703.9092624,
-    "ast_hash": "14696fc6a5d82f9855ada07ace0dd03a",
+    "mtime": 1794251346.828568,
+    "ast_hash": "17d45e27c144176031491d888f5769c0",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Hero.jsx": {
@@ -195,8 +195,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pricing.jsx": {
-    "mtime": 1782064484.1285522,
-    "ast_hash": "afe98bf78d51b2d7ee0daff523f95064",
+    "mtime": 1794251093.1772697,
+    "ast_hash": "7a46397ab941994f4e0fc148eeb13a68",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pulse.jsx": {
@@ -205,17 +205,17 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\RealtimeWork.jsx": {
-    "mtime": 1794227051.7824059,
-    "ast_hash": "e4de201192e5748a553a1eaf8bfffa10",
+    "mtime": 1794247937.9522536,
+    "ast_hash": "20e06723cdcf88e96005c2b6b64763e5",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Services.jsx": {
-    "mtime": 1794240371.9041007,
+    "mtime": 1794240507.4427862,
     "ast_hash": "ad28532c88d9f68cd4aa19577a273e40",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Stats.jsx": {
-    "mtime": 1794240356.0075488,
+    "mtime": 1794240507.5603056,
     "ast_hash": "14d307b56f6dc8e21f087daa19880278",
     "semantic_hash": ""
   },
@@ -320,13 +320,13 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\faq.js": {
-    "mtime": 1781330933.3985035,
-    "ast_hash": "d3f0f0b5dec04a1ea8b649434e19ab53",
+    "mtime": 1794251346.9502397,
+    "ast_hash": "d372a91d149872d5da032d0a8594a50d",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\pricing.js": {
-    "mtime": 1779007873.0308454,
-    "ast_hash": "7fce82af5df64a915409ab21c6a0ab62",
+    "mtime": 1794250891.2648313,
+    "ast_hash": "3ca85a513bccc58fd501fc52a6bccace",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\constants\\projects.js": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Home.jsx": {
-    "mtime": 1794239046.9705799,
-    "ast_hash": "f68eb286dca9d21a841d9b8d6cd4037f",
+    "mtime": 1794247938.0195792,
+    "ast_hash": "0edca58d812caf9507a60c6250deeb36",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -485,8 +485,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\index.html": {
-    "mtime": 1794227437.2558482,
-    "ast_hash": "64b0880d6945fc559dccccb404e9ce63",
+    "mtime": 1794249091.6333306,
+    "ast_hash": "07a72cb10542da85a46a1f2f891fecb9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\README.md": {
@@ -1860,8 +1860,48 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Endorsements.jsx": {
-    "mtime": 1794240329.6852472,
+    "mtime": 1794240507.310543,
     "ast_hash": "37cbe14d396a1a965baabf238d4b1617",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\rf-electro-icon.png": {
+    "mtime": 1794242223.2509925,
+    "ast_hash": "8a2650aed3d44bc311a4b824a589782b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\rf-electro-logo.png": {
+    "mtime": 1794242212.2762105,
+    "ast_hash": "3ac57dc39e33ee66cbe8201d49664844",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\solarkits-logo-header.png": {
+    "mtime": 1794242904.541073,
+    "ast_hash": "2b6c46646c3d60b9f12d3d3dbe1bcd7b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\solarkits-logo.png": {
+    "mtime": 1794242858.6436446,
+    "ast_hash": "21543b2e81fb329fa9346a1fb9ee85e9",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\solarkits-icon.png": {
+    "mtime": 1794243649.2780752,
+    "ast_hash": "4a845571a10955f459aabb7ddda4676b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\favicon.svg": {
+    "mtime": 1794245311.9414058,
+    "ast_hash": "49fd83f9e299ddbd13602f515e69bae1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\flyanytrip-icon.svg": {
+    "mtime": 1794245311.9414058,
+    "ast_hash": "49fd83f9e299ddbd13602f515e69bae1",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\Industries.jsx": {
+    "mtime": 1794249244.326662,
+    "ast_hash": "cb5c9473ed6c35fce82fd61abb1c8f41",
     "semantic_hash": ""
   }
 }

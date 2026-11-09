@@ -8,6 +8,7 @@ import Team from '../components/sections/Team';
 import Contact from '../components/sections/Contact';
 import Pricing from '../components/sections/Pricing';
 import RealtimeWork from '../components/sections/RealtimeWork';
+import Industries from '../components/sections/Industries';
 import Endorsements from '../components/sections/Endorsements';
 import Stats from '../components/sections/Stats';
 import Testimonials from '../components/sections/Testimonials';
@@ -52,6 +53,7 @@ export default function Home() {
         <Team />
         <Endorsements />
         <RealtimeWork />
+        <Industries />
         <Pricing />
         <KineticManifesto />
         <FAQ />
