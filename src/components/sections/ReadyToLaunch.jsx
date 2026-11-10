@@ -23,7 +23,7 @@ export default function ReadyToLaunch() {
               Ready to get your website live in 7 days?
             </h2>
             <p className="text-neutral-400 font-medium text-base sm:text-lg mt-4 font-quicksand">
-              100+ Indian businesses served. Aapki baari ab hai.
+              Itni tez delivery ki Swiggy bhi soch me pad jaye — 7 din me website live, seedha business shuru!
             </p>
 
             <div className="mt-8">
