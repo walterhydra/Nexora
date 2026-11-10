@@ -5,7 +5,7 @@ import TrustBadges from '../components/sections/TrustBadges';
 import Services from '../components/sections/Services';
 import About from '../components/sections/About';
 import Team from '../components/sections/Team';
-import Contact from '../components/sections/Contact';
+import ReadyToLaunch from '../components/sections/ReadyToLaunch';
 import Pricing from '../components/sections/Pricing';
 import RealtimeWork from '../components/sections/RealtimeWork';
 import Industries from '../components/sections/Industries';
@@ -57,7 +57,7 @@ export default function Home() {
         <Pricing />
         <KineticManifesto />
         <FAQ />
-        <Contact />
+        <ReadyToLaunch />
       </div>
 
       {/* Background Ambience (Optimized for scroll performance) */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { m } from 'framer-motion';
+import { Star } from 'lucide-react';
 
 const endorsementsData = [
   {
@@ -7,27 +8,27 @@ const endorsementsData = [
     badgeVal: "+40%",
     badgeLabel: "BOOKINGS UP",
     quote: "Nexoraa ne hamare cafe ki digital presence completely transform kar di. Pehle mahine mein hi table bookings 40% badh gayi. 7-din mein website ready thi — exactly jaise promise kiya tha.",
-    author: "Arjun Sharma",
-    role: "Owner, Pause Cafe — Gorakhpur",
-    initial: "A"
+    author: "Kavit Patel",
+    role: "Co-Founder, Curators Coffee — Vadodara",
+    initial: "K"
   },
   {
     id: 2,
     badgeVal: "7 Days",
     badgeLabel: "LIVE WEBSITE",
-    quote: "Appointment system seamless hai. Clients naye look se bohot khush hain aur manage karna bhi aasaan ho gaya. Code ownership certificate milna — isse real trust build hua.",
-    author: "Priya Srivastava",
-    role: "Founder, GlowUp Salon — Lucknow",
-    initial: "P"
+    quote: "Digital menu aur curated space ka web showcase bohot seamless hai. Guests hamare naye web experience se bohot impress hue. 100% code ownership certificate milna sabse bada trust factor raha.",
+    author: "Riddhi Shah",
+    role: "Founder, The Project Cafe — Ahmedabad",
+    initial: "R"
   },
   {
     id: 3,
     badgeVal: "3x",
     badgeLabel: "MORE ENQUIRIES",
-    quote: "7-din ki delivery real thi. Gym ke liye best investment raha. Enquiries 3 guna ho gayi pehle 2 mahine mein. Highly recommend karta hoon.",
-    author: "Rohit Verma",
-    role: "Director, FitZone Gym — Varanasi",
-    initial: "R"
+    quote: "7-din ki delivery commitment bilkul real nikla. Specialty coffee aur weekend event queries 3 guna ho gayi pehle 2 mahine mein. Top-tier design aur lightning-fast speed.",
+    author: "Devang Mehta",
+    role: "Co-Owner, Meraki The Coffee House — Surat",
+    initial: "D"
   }
 ];
 
@@ -56,19 +57,27 @@ export default function Endorsements() {
                   animation: 'metallic-shimmer 4.5s ease-in-out infinite',
                 }}
               >
-                Real Results. Real Businesses. Across India.
+                Real Results. Real Businesses. Across Gujarat.
               </span>
             </h2>
           </div>
 
-          {/* 5.0 Rating Pill Badge */}
+          {/* 4.8 Rating Pill Badge */}
           <div className="flex items-center gap-3.5 p-3 px-5 rounded-2xl border border-black/10 dark:border-white/10 bg-black/[0.02] dark:bg-white/[0.03] backdrop-blur-sm self-start md:self-auto shrink-0 shadow-xs">
-            <div className="flex text-amber-400 text-sm tracking-widest">
-              ★★★★★
+            <div className="flex items-center gap-1 text-amber-400" aria-label="4.8 out of 5 stars">
+              {[1, 2, 3, 4].map((i) => (
+                <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+              ))}
+              <div className="relative w-3.5 h-3.5">
+                <Star className="w-3.5 h-3.5 text-amber-400/30 dark:text-white/20" />
+                <div className="absolute inset-y-0 left-0 overflow-hidden w-[75%]">
+                  <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400 max-w-none" />
+                </div>
+              </div>
             </div>
             <div className="flex flex-col">
               <span className="text-sm font-bold text-gray-950 dark:text-white leading-none">
-                5.0 / 5.0
+                4.8 / 5.0
               </span>
               <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-gray-400 dark:text-white/40 mt-1">
                 CLIENT RATING

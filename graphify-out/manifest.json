@@ -5,8 +5,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\package.json": {
-    "mtime": 1794155035.320959,
-    "ast_hash": "e4a34918c59d23262642a8387ff4dbd3",
+    "mtime": 1794305064.9261413,
+    "ast_hash": "6faa49f2f97aa84120a7d80cc2ac8190",
     "semantic_hash": ""
   },
   "C:\\Nexora\\supabase-setup.sql": {
@@ -15,8 +15,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\tailwind.config.js": {
-    "mtime": 1780835398.0525072,
-    "ast_hash": "0ec6c78dc76a46a3296e3f7880226d9c",
+    "mtime": 1794292976.6047242,
+    "ast_hash": "67db53d30e3792ab9d1482aa1957c62a",
     "semantic_hash": ""
   },
   "C:\\Nexora\\vercel.json": {
@@ -50,8 +50,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\App.jsx": {
-    "mtime": 1794159873.7893434,
-    "ast_hash": "a45afb8e448a347e75d2ad7efb66a2b9",
+    "mtime": 1794293347.3274174,
+    "ast_hash": "22611e9d09fa0eedefb4c55c5ca03313",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\main.jsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\Footer.jsx": {
-    "mtime": 1782979631.0369725,
-    "ast_hash": "af55fdaafd5214beef593fd8e71133a7",
+    "mtime": 1794303848.7297058,
+    "ast_hash": "cda3d826e02046dfebbbddd4e25f0bb7",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\LoadingScreen.jsx": {
@@ -170,7 +170,7 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Contact.jsx": {
-    "mtime": 1794251455.2062564,
+    "mtime": 1794251537.1848924,
     "ast_hash": "5fd8674b4e01e79e8d4b239fc3ff9aa2",
     "semantic_hash": ""
   },
@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Hero.jsx": {
-    "mtime": 1794227055.7570508,
-    "ast_hash": "537c50f4fa7ac7833832648ce055dba3",
+    "mtime": 1794306366.079032,
+    "ast_hash": "76ed26dcf5b282b5d8d02e51a9fa55e0",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\HowWeWork.jsx": {
@@ -195,7 +195,7 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pricing.jsx": {
-    "mtime": 1794251093.1772697,
+    "mtime": 1794306366.0318053,
     "ast_hash": "7a46397ab941994f4e0fc148eeb13a68",
     "semantic_hash": ""
   },
@@ -210,7 +210,7 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Services.jsx": {
-    "mtime": 1794240507.4427862,
+    "mtime": 1794306365.9912562,
     "ast_hash": "ad28532c88d9f68cd4aa19577a273e40",
     "semantic_hash": ""
   },
@@ -280,8 +280,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\LaptopMockup.jsx": {
-    "mtime": 1794219564.4425426,
-    "ast_hash": "0b4c030364797f2e3cbfa4d4adb4ef30",
+    "mtime": 1794281534.3228912,
+    "ast_hash": "c870ba57b2707dbf1016e80417ad8dfc",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\MagneticButton.jsx": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Home.jsx": {
-    "mtime": 1794247938.0195792,
-    "ast_hash": "0edca58d812caf9507a60c6250deeb36",
+    "mtime": 1794299238.7576423,
+    "ast_hash": "7f595f12c396a23cd64760ec27e03473",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
@@ -460,8 +460,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\SystemBoot.jsx": {
-    "mtime": 1794153298.6401954,
-    "ast_hash": "39be43c810194cc4e88f2919cc517ccd",
+    "mtime": 1794291554.4778526,
+    "ast_hash": "577e314e6e24c3599bf897150d7bbfaf",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Terms.jsx": {
@@ -1860,8 +1860,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Endorsements.jsx": {
-    "mtime": 1794240507.310543,
-    "ast_hash": "37cbe14d396a1a965baabf238d4b1617",
+    "mtime": 1794295801.5770597,
+    "ast_hash": "682b432dc964767aeaba8a6dec62f1db",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\images\\rf-electro-icon.png": {
@@ -1902,6 +1902,136 @@
   "C:\\Nexora\\src\\components\\sections\\Industries.jsx": {
     "mtime": 1794249244.326662,
     "ast_hash": "cb5c9473ed6c35fce82fd61abb1c8f41",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\gemini_generated_video_47eaae46.mp4": {
+    "mtime": 1794282451.944573,
+    "ast_hash": "0c2b8aae856d736484a213ba64edebc7",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\gemini_generated_video_47eaae46_gwr_video_mvp.mp4": {
+    "mtime": 1794286007.1465003,
+    "ast_hash": "124ced7c695f7283ada33b7a61ff6cf5",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\GoogleSearchSimulation.jsx": {
+    "mtime": 1794296148.348771,
+    "ast_hash": "4344a23be9ee56b234988fb3c7bfafe4",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\nexora-avatar.png": {
+    "mtime": 1794288396.1983163,
+    "ast_hash": "8cc94f3d3740d6093550ec0334792f5c",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\gemini_generated_video_9977a77a.mp4": {
+    "mtime": 1794287621.8027186,
+    "ast_hash": "eb3c1b3a7c89b9de479958a739967630",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\ProjectSpecs.jsx": {
+    "mtime": 1794294349.434527,
+    "ast_hash": "f559e3d7351264747cebb14748fdb349",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\hand_outer_path.txt": {
+    "mtime": 1794296448.9934807,
+    "ast_hash": "7e19019f03990ecb270d5e18a2a2bf6d",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\hand_path.txt": {
+    "mtime": 1794296346.3061798,
+    "ast_hash": "f6daaad94f6768de0d3f6fc7e4a51879",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\sections\\ReadyToLaunch.jsx": {
+    "mtime": 1794304136.5244286,
+    "ast_hash": "ee62954dd3700aedc41a9c236442f09b",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\footer-bg.jpg": {
+    "mtime": 1794297636.952872,
+    "ast_hash": "537321d11862837c6a797e7fa550a105",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\multi-layers-blue-color-texture-3d-papercut-layers-in-gradient-banner-abstract-paper-cut-art-background-design-for-website-template-topography-map-concept-or-smooth-origami-paper-cut-vector (1).jpg": {
+    "mtime": 1794297469.520682,
+    "ast_hash": "e2cf821ab023896b120c2459fefddeb0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\assets\\footer-bg.jpg": {
+    "mtime": 1794297636.952872,
+    "ast_hash": "537321d11862837c6a797e7fa550a105",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\ui\\FooterPaperWaves.jsx": {
+    "mtime": 1794303848.7357073,
+    "ast_hash": "572e80155b627b0ebf4e0a2fb985c256",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\badges\\iso.jpg": {
+    "mtime": 1794302375.5025373,
+    "ast_hash": "be7b3e4aa27aa132e9183fcc2aeba3ab",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\badges\\mca.jpg": {
+    "mtime": 1794302375.5046487,
+    "ast_hash": "ba03dcf78b2dab24835164600cb9ee05",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\badges\\msme.jpg": {
+    "mtime": 1794302375.5036032,
+    "ast_hash": "c6de3de4934ec517cf3114b3972e83fb",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\src\\components\\ui\\LaunchSticker.jsx": {
+    "mtime": 1794311045.464574,
+    "ast_hash": "9bd98b10f63fd03e975653d8b0af524a",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\Spiderman_coding_sticker-removebg-preview.png": {
+    "mtime": 1794309886.1966639,
+    "ast_hash": "71ae2ab28e101ef36a2640628e675c92",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\stickers\\coffee-code-3d.png": {
+    "mtime": 1794305436.163,
+    "ast_hash": "5f0cb9252a7deb80a762d4f28b5e0147",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\stickers\\rocket-3d.png": {
+    "mtime": 1794305435.731,
+    "ast_hash": "3af9b09a3937e3adddf5264fa44c9637",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\stickers\\verified-badge-3d.png": {
+    "mtime": 1794305435.977,
+    "ast_hash": "ae1524d0ebfe14f80e238a12d04d6816",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\stickers\\verified-badge-test.png": {
+    "mtime": 1794305367.777,
+    "ast_hash": "6ad4d6ba0959317d5cbbc6de7ea3d1a0",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\Spiderman_coding_sticker_hd.png": {
+    "mtime": 1794309887.2461514,
+    "ast_hash": "71ae2ab28e101ef36a2640628e675c92",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\Spiderman_coding_sticker_hd.webp": {
+    "mtime": 1794309893.0605786,
+    "ast_hash": "942958e154d8dbb65713b1c9e58922e7",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\Spiderman_coding_sticker_original_backup.png": {
+    "mtime": 1794308385.4081314,
+    "ast_hash": "4407878ab0f83a905e0911ae43277d46",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\images\\stickers\\Spiderman_coding_sticker_hd.png": {
+    "mtime": 1794309026.7399087,
+    "ast_hash": "bada509bd5036713599759db43568464",
     "semantic_hash": ""
   }
 }

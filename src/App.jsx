@@ -69,6 +69,7 @@ function AnimatedRoutes() {
         <Route path="/payment-policy" element={<PaymentPolicy />} />
         <Route path="/agreement" element={<Agreement />} />
         <Route path="/system-boot" element={<SystemBoot />} />
+        <Route path="/start-project" element={<SystemBoot />} />
         <Route path="/company-portal" element={<CompanyPortal />} />
         <Route path="/team-portal" element={<CompanyPortal />} />
         <Route path="/company-dashboard" element={<CompanyPortal />} />
@@ -85,6 +86,7 @@ function AppContent() {
   const isPortal = location.pathname.startsWith('/portal') ||
                    location.pathname.startsWith('/invoice-system') ||
                    location.pathname.startsWith('/system-boot') ||
+                   location.pathname.startsWith('/start-project') ||
                    location.pathname.startsWith('/company-portal') ||
                    location.pathname.startsWith('/team-portal') ||
                    location.pathname.startsWith('/company-dashboard');
