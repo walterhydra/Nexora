@@ -23,7 +23,7 @@ export default function ReadyToLaunch() {
               Ready to get your website live in 7 days?
             </h2>
             <p className="text-neutral-400 font-medium text-base sm:text-lg mt-4 font-quicksand">
-              Developer 'kal pakka deta hu' bolke gayab ho gaya? Tension mat lo, Spidey 7 din me website live karega! 🕷️⚡
+              Aapka competitor abhi bhi 'developer dhoond raha hai'. Aap 7 din me live ho jao, unhe dhoondne do! 🕷️✨
             </p>
 
             <div className="mt-8">
