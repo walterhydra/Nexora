@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
-import { X, Cookie, ShieldCheck, BarChart2 } from 'lucide-react';
+import { X, ShieldCheck, BarChart2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function CookieBanner() {
   const [isVisible, setIsVisible] = useState(false);
@@ -9,7 +10,7 @@ export default function CookieBanner() {
   useEffect(() => {
     const consent = localStorage.getItem('cookieConsent');
     if (!consent) {
-      const timer = setTimeout(() => setIsVisible(true), 1800);
+      const timer = setTimeout(() => setIsVisible(true), 1200);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -28,99 +29,104 @@ export default function CookieBanner() {
     <AnimatePresence>
       {isVisible && (
         <m.div
-          initial={{ y: 80, opacity: 0, scale: 0.98 }}
-          animate={{ y: 0, opacity: 1, scale: 1 }}
-          exit={{ y: 80, opacity: 0, scale: 0.98 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 26 }}
-          className="fixed bottom-5 sm:bottom-6 left-1/2 -translate-x-1/2 z-[9999] w-[calc(100%-2rem)] max-w-lg"
+          initial={{ y: '100%', opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: '100%', opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 280, damping: 30 }}
+          className="fixed bottom-0 inset-x-0 w-full z-[9999] bg-[#090a10]/98 backdrop-blur-2xl border-t border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.85)] text-white"
         >
-          {/* Subtle Ambient Studio Glow */}
-          <div className="absolute inset-0 rounded-2xl bg-cyan-500/5 blur-2xl pointer-events-none" />
+          {/* Subtle Top Accent Hairline */}
+          <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent" />
 
-          {/* Main Card */}
-          <div className="relative bg-[#090a10]/95 border border-white/10 rounded-2xl shadow-[0_24px_64px_rgba(0,0,0,0.85)] backdrop-blur-2xl overflow-hidden">
-            
-            {/* Elegant Hairline Accent */}
-            <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-cyan-400/50 to-transparent" />
+          {/* Full-width Inner Container */}
+          <div className="max-w-7xl mx-auto px-5 sm:px-8 py-5 sm:py-6">
+            <div className="flex items-start justify-between gap-4">
+              <div className="flex-1 max-w-4xl">
+                <h3 className="text-white font-bold text-base sm:text-lg tracking-tight font-sans">
+                  Accept the use of cookies.
+                </h3>
 
-            <div className="p-4 sm:p-5">
-              {/* Header row */}
-              <div className="flex items-start gap-3.5">
-                {/* Minimal Cookie Icon Badge */}
-                <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center shrink-0 mt-0.5 shadow-inner">
-                  <Cookie className="w-5 h-5 text-cyan-400" />
-                </div>
+                <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mt-2 font-sans">
+                  We use cookies to improve your browsing experience, serve personalized content, and analyze our traffic. By clicking Accept all Cookies, you agree to the storing of cookies on your device.
+                </p>
 
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center justify-between gap-2">
-                    <h3 className="text-white font-semibold text-sm tracking-tight font-sans">
-                      We value your privacy
-                    </h3>
-                    <button
-                      onClick={decline}
-                      className="text-neutral-500 hover:text-white p-1 rounded-lg hover:bg-white/5 transition-colors shrink-0 cursor-pointer"
-                      aria-label="Close"
-                    >
-                      <X className="w-4 h-4" />
-                    </button>
-                  </div>
-                  <p className="text-neutral-400 text-xs leading-relaxed mt-1 font-sans">
-                    We use cookies to enhance your experience, analyze performance, and serve relevant content.{' '}
-                    <button
-                      onClick={() => setExpanded(v => !v)}
-                      className="text-cyan-400 hover:text-cyan-300 font-medium hover:underline focus:outline-none transition-colors"
-                    >
-                      {expanded ? 'Show less' : 'Learn more'}
-                    </button>
-                  </p>
-                </div>
-              </div>
-
-              {/* Expandable details */}
-              <AnimatePresence>
-                {expanded && (
-                  <m.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.22 }}
-                    className="overflow-hidden"
+                <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed mt-1 font-sans">
+                  You can customize your settings by clicking Manage Preferences. For more details, see our{' '}
+                  <Link
+                    to="/privacy-policy"
+                    className="text-white underline hover:text-cyan-400 transition-colors font-medium"
                   >
-                    <div className="mt-3.5 pt-3.5 border-t border-white/5 grid grid-cols-2 gap-2">
-                      <div className="flex items-center gap-2.5 bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2.5">
-                        <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
-                        <div>
-                          <div className="text-white text-[11px] font-semibold">Essential</div>
-                          <div className="text-neutral-500 text-[10px]">Always active</div>
-                        </div>
-                      </div>
-                      <div className="flex items-center gap-2.5 bg-white/[0.03] border border-white/5 rounded-xl px-3 py-2.5">
-                        <BarChart2 className="w-4 h-4 text-cyan-400 shrink-0" />
-                        <div>
-                          <div className="text-white text-[11px] font-semibold">Analytics</div>
-                          <div className="text-neutral-500 text-[10px]">Performance data</div>
-                        </div>
-                      </div>
-                    </div>
-                  </m.div>
-                )}
-              </AnimatePresence>
-
-              {/* Action buttons */}
-              <div className="flex items-center gap-2.5 mt-4 pt-1">
-                <button
-                  onClick={decline}
-                  className="flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold text-neutral-300 bg-white/[0.04] hover:bg-white/[0.08] border border-white/10 hover:border-white/20 transition-all cursor-pointer active:scale-[0.98]"
-                >
-                  Decline
-                </button>
-                <button
-                  onClick={accept}
-                  className="flex-1 py-2.5 px-4 rounded-xl text-xs font-semibold bg-white hover:bg-neutral-200 text-black shadow-lg shadow-white/5 transition-all cursor-pointer active:scale-[0.98]"
-                >
-                  Accept All
-                </button>
+                    Cookie Policy.
+                  </Link>
+                </p>
               </div>
+
+              {/* Close Button */}
+              <button
+                onClick={decline}
+                className="p-1.5 sm:p-2 rounded-lg text-neutral-400 hover:text-white hover:bg-white/10 transition-colors shrink-0 cursor-pointer"
+                aria-label="Close"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Expandable Preferences Drawer */}
+            <AnimatePresence>
+              {expanded && (
+                <m.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-4 pt-4 border-t border-white/10 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-3xl">
+                    <div className="flex items-center justify-between bg-white/[0.03] border border-white/10 rounded-xl p-3.5">
+                      <div className="flex items-center gap-3">
+                        <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0" />
+                        <div>
+                          <div className="text-white text-xs sm:text-sm font-semibold">Strictly Essential Cookies</div>
+                          <div className="text-neutral-500 text-xs">Required for core website security & functionality</div>
+                        </div>
+                      </div>
+                      <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-full border border-emerald-500/20">
+                        Always On
+                      </span>
+                    </div>
+
+                    <div className="flex items-center justify-between bg-white/[0.03] border border-white/10 rounded-xl p-3.5">
+                      <div className="flex items-center gap-3">
+                        <BarChart2 className="w-5 h-5 text-cyan-400 shrink-0" />
+                        <div>
+                          <div className="text-white text-xs sm:text-sm font-semibold">Performance & Analytics</div>
+                          <div className="text-neutral-500 text-xs">Helps us optimize site speed and usage metrics</div>
+                        </div>
+                      </div>
+                      <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-cyan-400 bg-cyan-500/10 px-2.5 py-1 rounded-full border border-cyan-500/20">
+                        Optional
+                      </span>
+                    </div>
+                  </div>
+                </m.div>
+              )}
+            </AnimatePresence>
+
+            {/* Action Buttons Row */}
+            <div className="flex flex-wrap items-center gap-3 mt-4 sm:mt-5">
+              <button
+                onClick={accept}
+                className="px-6 py-2.5 rounded-lg text-xs sm:text-sm font-semibold bg-white hover:bg-neutral-200 text-black transition-all shadow-md active:scale-95 cursor-pointer"
+              >
+                Accept all Cookies
+              </button>
+
+              <button
+                onClick={() => setExpanded(v => !v)}
+                className="px-6 py-2.5 rounded-lg text-xs sm:text-sm font-medium text-neutral-300 hover:text-white bg-white/[0.04] hover:bg-white/[0.08] border border-white/15 transition-all active:scale-95 cursor-pointer"
+              >
+                {expanded ? 'Hide Preferences' : 'Manage Preferences'}
+              </button>
             </div>
           </div>
         </m.div>

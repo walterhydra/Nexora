@@ -6098,7 +6098,7 @@
       "label": "CookieBanner()",
       "file_type": "code",
       "source_file": "src/components/ui/CookieBanner.jsx",
-      "source_location": "L5",
+      "source_location": "L6",
       "id": "ui_cookiebanner_cookiebanner",
       "community": 0,
       "norm_label": "cookiebanner()"
@@ -22002,5 +22002,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "afd1c9509b0a84fb4afd1bca75092141362865a3"
+  "built_at_commit": "be60ed82d8f09cad9b136065a89ac7ae4121a79b"
 }

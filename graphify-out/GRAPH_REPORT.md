@@ -1,7 +1,7 @@
 # Graph Report - Nexora  (2026-11-10)
 
 ## Corpus Check
-- 182 files · ~4,030,340 words
+- 182 files · ~4,030,182 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `afd1c950`
+- Built from commit: `be60ed82`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
