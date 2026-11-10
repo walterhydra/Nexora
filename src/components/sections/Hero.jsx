@@ -231,7 +231,7 @@ const LaptopScreenContent = React.memo(function LaptopScreenContent({ isOpen }) 
               ref={(el) => {
                 if (el) el.playbackRate = 1.5;
               }}
-              src="/videos/gemini_generated_video_47eaae46_gwr_video_mvp.mp4"
+              src="/videos/video_no_watermark.mp4"
               autoPlay
               muted
               playsInline

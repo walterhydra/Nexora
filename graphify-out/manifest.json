@@ -180,8 +180,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Hero.jsx": {
-    "mtime": 1794306366.079032,
-    "ast_hash": "76ed26dcf5b282b5d8d02e51a9fa55e0",
+    "mtime": 1794316469.3443046,
+    "ast_hash": "a2a9f3c9787a1e16de0d06b81989a1da",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\HowWeWork.jsx": {
@@ -1909,11 +1909,6 @@
     "ast_hash": "0c2b8aae856d736484a213ba64edebc7",
     "semantic_hash": ""
   },
-  "C:\\Nexora\\public\\videos\\gemini_generated_video_47eaae46_gwr_video_mvp.mp4": {
-    "mtime": 1794286007.1465003,
-    "ast_hash": "124ced7c695f7283ada33b7a61ff6cf5",
-    "semantic_hash": ""
-  },
   "C:\\Nexora\\src\\components\\sections\\GoogleSearchSimulation.jsx": {
     "mtime": 1794296148.348771,
     "ast_hash": "4344a23be9ee56b234988fb3c7bfafe4",
@@ -1945,8 +1940,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\ReadyToLaunch.jsx": {
-    "mtime": 1794315610.5570414,
-    "ast_hash": "7979404decd920b1c1e4b896677b4608",
+    "mtime": 1794315877.6174288,
+    "ast_hash": "6f032fce6335a77e62f1375421a6608c",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\images\\footer-bg.jpg": {
@@ -2032,6 +2027,11 @@
   "C:\\Nexora\\public\\images\\stickers\\Spiderman_coding_sticker_hd.png": {
     "mtime": 1794309026.7399087,
     "ast_hash": "bada509bd5036713599759db43568464",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\videos\\video_no_watermark.mp4": {
+    "mtime": 1794316338.9335034,
+    "ast_hash": "cb2acf1fff1e3616bfa368d1514877b6",
     "semantic_hash": ""
   }
 }
