@@ -9,21 +9,21 @@ export default function ReadyToLaunch() {
   return (
     <section className="w-full bg-[#050507] text-white pt-20 pb-20 sm:pb-24 relative overflow-hidden font-quicksand border-t border-white/[0.08]">
       {/* Subtle radial ambient mesh */}
-      <div 
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(56,189,248,0.08),transparent_65%)]" 
-        aria-hidden="true" 
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(56,189,248,0.08),transparent_65%)]"
+        aria-hidden="true"
       />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-12 lg:gap-10">
-          
+
           {/* Left Column: Main Pitch & Action */}
           <div className="max-w-2xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-white leading-[1.15] tracking-tight font-quicksand">
               Ready to get your website live in 7 days?
             </h2>
             <p className="text-neutral-400 font-medium text-base sm:text-lg mt-4 font-quicksand">
-              Aapka competitor abhi bhi 'developer dhoond raha hai'. Aap 7 din me live ho jao, unhe dhoondne do! 🕷️✨
+              Arre jaldi button pe click karo na! Yahan Spidey ready baitha hai code karne ke liye — 7 din me website live! 🕷️⚡
             </p>
 
             <div className="mt-8">
