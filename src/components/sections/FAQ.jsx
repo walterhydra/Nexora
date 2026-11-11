@@ -17,9 +17,15 @@ export default function FAQ() {
       className="py-20 md:py-28 px-6 bg-[#040406] dark:bg-[#040406] relative overflow-hidden font-quicksand"
       style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
     >
-      {/* Background Ambience */}
-      <div className="absolute top-1/3 left-[-10%] w-[500px] h-[500px] bg-accent-primary/5 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute bottom-10 right-[-10%] w-[500px] h-[500px] bg-accent-violet/5 rounded-full blur-[200px] pointer-events-none" />
+      {/* Background Ambience - Hardware GPU Accelerated Radial Glow */}
+      <div 
+        className="absolute top-1/3 left-[-10%] w-[500px] h-[500px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(0, 245, 255, 0.05) 0%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute bottom-10 right-[-10%] w-[500px] h-[500px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(123, 47, 255, 0.05) 0%, transparent 70%)' }}
+      />
       
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(4,4,6,1)_100%),_linear-gradient(rgba(255,255,255,0.015)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.015)_1px,_transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-30" />

@@ -48,14 +48,15 @@ export default function FooterPaperWaves({
 
       {/* 2. Base Artwork Layer with Gentle Ken-Burns Ambient Float */}
       <m.div
-        className="absolute inset-0 pointer-events-none opacity-75 mix-blend-screen"
+        className="absolute inset-0 pointer-events-none opacity-75 mix-blend-screen transform-gpu"
+        style={{ transform: 'translateZ(0)', willChange: 'transform' }}
         animate={
           shouldAnimate
             ? {
-                scale: [1, 1.05, 1],
-                x: [0, -12, 0],
-                y: [0, 8, 0],
-              }
+              scale: [1, 1.05, 1],
+              x: [0, -12, 0],
+              y: [0, 8, 0],
+            }
             : undefined
         }
         transition={{
@@ -67,7 +68,7 @@ export default function FooterPaperWaves({
         <img
           src="/images/footer-bg.jpg"
           alt=""
-          className="w-full h-full object-cover object-center filter saturate-110 contrast-105"
+          className="w-full h-full object-cover object-center"
         />
       </m.div>
 
@@ -82,9 +83,9 @@ export default function FooterPaperWaves({
         animate={
           shouldAnimate
             ? {
-                scale: [1, 1.2, 1],
-                opacity: [0.7, 1, 0.7],
-              }
+              scale: [1, 1.2, 1],
+              opacity: [0.7, 1, 0.7],
+            }
             : undefined
         }
         transition={{
@@ -127,16 +128,16 @@ export default function FooterPaperWaves({
       <m.div
         className="absolute inset-0 pointer-events-none opacity-60"
         style={{
-          filter: 'drop-shadow(-14px 10px 24px rgba(1, 4, 10, 0.9))',
+          filter: 'drop-shadow(-10px 8px 12px rgba(1, 4, 10, 0.9))',
           willChange: 'transform',
           transform: 'translateZ(0)',
         }}
         animate={
           shouldAnimate
             ? {
-                x: [0, 16, -10, 0],
-                y: [0, -10, 8, 0],
-              }
+              x: [0, 16, -10, 0],
+              y: [0, -10, 8, 0],
+            }
             : undefined
         }
         transition={{
@@ -167,16 +168,16 @@ export default function FooterPaperWaves({
       <m.div
         className="absolute inset-0 pointer-events-none opacity-70"
         style={{
-          filter: 'drop-shadow(-12px 8px 20px rgba(2, 6, 18, 0.85))',
+          filter: 'drop-shadow(-8px 6px 10px rgba(2, 6, 18, 0.85))',
           willChange: 'transform',
           transform: 'translateZ(0)',
         }}
         animate={
           shouldAnimate
             ? {
-                x: [0, -14, 12, 0],
-                y: [0, 12, -8, 0],
-              }
+              x: [0, -14, 12, 0],
+              y: [0, 12, -8, 0],
+            }
             : undefined
         }
         transition={{
@@ -207,16 +208,16 @@ export default function FooterPaperWaves({
       <m.div
         className="absolute inset-0 pointer-events-none opacity-80"
         style={{
-          filter: 'drop-shadow(-10px 6px 16px rgba(2, 6, 18, 0.8))',
+          filter: 'drop-shadow(-6px 4px 8px rgba(2, 6, 18, 0.8))',
           willChange: 'transform',
           transform: 'translateZ(0)',
         }}
         animate={
           shouldAnimate
             ? {
-                x: [0, 10, -12, 0],
-                y: [0, -8, 10, 0],
-              }
+              x: [0, 10, -12, 0],
+              y: [0, -8, 10, 0],
+            }
             : undefined
         }
         transition={{
@@ -247,16 +248,16 @@ export default function FooterPaperWaves({
       <m.div
         className="absolute inset-0 pointer-events-none opacity-90"
         style={{
-          filter: 'drop-shadow(-8px 5px 14px rgba(2, 6, 20, 0.75))',
+          filter: 'drop-shadow(-5px 3px 6px rgba(2, 6, 20, 0.75))',
           willChange: 'transform',
           transform: 'translateZ(0)',
         }}
         animate={
           shouldAnimate
             ? {
-                x: [0, -8, 6, 0],
-                y: [0, 6, -6, 0],
-              }
+              x: [0, -8, 6, 0],
+              y: [0, 6, -6, 0],
+            }
             : undefined
         }
         transition={{
@@ -284,9 +285,9 @@ export default function FooterPaperWaves({
       </m.div>
 
       {/* 8. Micro-Grain & Subtle Vignette Overlay for Crisp Readability */}
-      <div 
-        className="absolute inset-0 bg-gradient-to-t from-[#02050f]/90 via-[#030816]/75 to-[#02050f]/80 pointer-events-none" 
-        aria-hidden="true" 
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-[#02050f]/90 via-[#030816]/75 to-[#02050f]/80 pointer-events-none"
+        aria-hidden="true"
       />
     </div>
   );

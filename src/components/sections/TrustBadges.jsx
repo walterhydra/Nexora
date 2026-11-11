@@ -15,8 +15,8 @@ export default function TrustBadges() {
   return (
     <section className="pt-24 pb-16 bg-white dark:bg-black border-y border-black/10 dark:border-white/10 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-accent-violet/5 to-transparent pointer-events-none" />
-      
-      <m.div 
+
+      <m.div
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
@@ -26,17 +26,17 @@ export default function TrustBadges() {
         {guarantees.map((item, idx) => {
           const Icon = item.icon;
           return (
-            <m.div 
+            <m.div
               key={idx}
               variants={fadeUp}
-              className="relative p-5 rounded-2xl bg-[#0b0e17]/80 backdrop-blur-md border border-white/[0.08] hover:border-white/25 transition-all duration-300 flex flex-col items-center text-center group overflow-hidden cursor-pointer"
+              className="relative p-5 rounded-2xl bg-[#0b0e17] border border-white/[0.08] hover:border-white/25 transition-all duration-300 flex flex-col items-center text-center group overflow-hidden cursor-pointer transform-gpu"
             >
               {/* 1px Razor Top Border Beam on Hover */}
               <div className="absolute top-0 inset-x-0 h-[1.5px] bg-gradient-to-r from-transparent via-accent-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               {/* Subtle Luxury Glass Sheen Sweep */}
               <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none" />
-              
+
               {/* Icon Container - Steady & Stable */}
               <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 group-hover:border-accent-primary/40 group-hover:bg-accent-primary/[0.08] flex items-center justify-center mb-3.5 transition-colors duration-300 relative z-10">
                 <Icon size={20} className="text-gray-300 group-hover:text-accent-primary group-hover:scale-110 transition-all duration-300 ease-out" />

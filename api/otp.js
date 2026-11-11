@@ -1,5 +1,6 @@
 import crypto from 'crypto';
-import nodemailer from 'nodemailer';
+import path from 'path';
+import fs from 'fs';
 
 const SECRET_KEY = process.env.OTP_SECRET || 'nexoraa-otp-secret-key-2026';
 
@@ -24,8 +25,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Email is required' });
     }
 
-    // Generate 6-digit random numeric OTP
-    const generatedOtp = Math.floor(100000 + Math.random() * 900000).toString();
+    // Generate 5-digit random numeric OTP (matching the standard 5-digit format from the reference)
+    const generatedOtp = Math.floor(10000 + Math.random() * 90000).toString();
 
     // Expire in 5 minutes (300,000 ms)
     const newExpiry = Date.now() + 5 * 60 * 1000;
@@ -42,49 +43,196 @@ export default async function handler(req, res) {
     const smtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
     const smtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
 
+    // Subject format matches IRCTC / standard transactional OTP so Gmail renders the "Code Requested [Copy code]" chip
+    const emailSubject = `One Time Password (OTP) ${generatedOtp} for verification of Email ID`;
+
+    const rawName = email.split('@')[0] || 'User';
+    let recipientName = rawName
+      .replace(/[._-]/g, ' ')
+      .split(' ')
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ') || 'User';
+
+    // If recipient name is device-like or number-heavy (e.g. Realme11119412), make it clean
+    if (/\d{4,}/.test(recipientName) || recipientName.toLowerCase().startsWith('realme')) {
+      recipientName = 'Nexoraa User';
+    }
+
+    const digits = generatedOtp.split('');
+    const digitBoxesHtml = digits.map(d => `
+      <td style="padding-right: 8px;">
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="background-color: #ffffff; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.06);">
+          <tr>
+            <td align="center" valign="middle" style="width: 26px; height: 42px; font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 22px; font-weight: 400; color: #202124; text-align: center; border: 0; user-select: all; -webkit-user-select: all;">
+              ${d}
+            </td>
+          </tr>
+        </table>
+      </td>
+    `).join('');
+
+    const emailText = `Code Requested
+${digits.join(' ')}
+
+This is a system generated mail. Please do not reply to this email ID. If you have a query or need any clarification you may:
+(1) Call our 24-hour Customer Care or Email: nexoraa.works@gmail.com
+(2)For Nexoraa related queries use - https://nexoraa.works
+____________________________________________________________________________________________________
+
+Dear ${recipientName},
+
+Your request for Email ID verification at Nexoraa Studio has been received.
+
+Please submit Email verification OTP: ${generatedOtp} to process this request.
+
+This one-time passcode (OTP) is valid for 5 minutes. Use this code to securely authenticate your session with Spidey AI Assistant.
+
+Warm regards,
+Team Nexoraa Studio
+Design Engineering • Web & Mobile Architecture • AI Systems
+https://nexoraa.works`;
+
+    const emailHtml = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Time Password (OTP) ${generatedOtp} for verification of Email ID</title>
+</head>
+<body style="margin: 0; padding: 20px 16px; font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000000; line-height: 1.6; background-color: #ffffff;">
+
+<!-- Exact Photo 1 Full-Width "Code Requested" Card -->
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="width: 100%; background-color: #f1f4f8; border-radius: 8px; margin-bottom: 24px;">
+  <tr>
+    <td style="padding: 16px 20px 20px 20px;">
+      <div style="font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 13px; font-weight: normal; color: #444746; margin-bottom: 10px;">
+        Code Requested
+      </div>
+
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-bottom: 16px;">
+        <tr>
+          ${digitBoxesHtml}
+        </tr>
+      </table>
+
+      <div>
+        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+          <tr>
+            <td align="center" style="background-color: #296197; border-radius: 20px;">
+              <span style="display: inline-block; padding: 8px 22px; font-family: 'Google Sans', Roboto, -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; font-weight: 500; color: #ffffff; text-decoration: none; user-select: none;">
+                Copy code
+              </span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </td>
+  </tr>
+</table>
+
+<p style="margin: 0 0 4px 0; font-weight: bold; color: #000000; font-size: 13px; font-family: Arial, Helvetica, sans-serif;">
+This is a system generated mail. Please do not reply to this email ID. If you have a query or need any clarification you may:
+</p>
+<p style="margin: 0 0 4px 0; font-size: 13px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+(1) Call our 24-hour Customer Care or Email: <a href="mailto:nexoraa.works@gmail.com" style="color: #0066cc; text-decoration: underline;">nexoraa.works@gmail.com</a>
+</p>
+<p style="margin: 0 0 16px 0; font-size: 13px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+(2)For Nexoraa related queries use - <a href="https://nexoraa.works" style="color: #0066cc; text-decoration: underline;">https://nexoraa.works</a>
+</p>
+
+<hr style="border: 0; border-top: 1px solid #777777; margin: 16px 0 20px 0;" />
+
+<p style="margin: 0 0 16px 0; font-size: 13px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+Dear <strong>${recipientName}</strong>,
+</p>
+
+<p style="margin: 0 0 16px 0; font-size: 13px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+Your request for Email ID verification at Nexoraa Studio has been received.
+</p>
+
+<p style="margin: 0 0 16px 0; font-size: 13px; color: #000000; font-family: Arial, Helvetica, sans-serif;">
+Please submit Email verification OTP: <strong>${generatedOtp}</strong> to process this request.
+</p>
+
+<p style="margin: 0 0 20px 0; font-size: 13px; color: #334155; font-family: Arial, Helvetica, sans-serif; line-height: 1.6;">
+This code is valid for <strong>5 minutes</strong>. Use it to securely authenticate your session with our Spidey AI Assistant.
+</p>
+
+<!-- Professional Sign-off -->
+<p style="margin: 22px 0 4px 0; font-size: 13px; color: #1f2937; font-family: Arial, Helvetica, sans-serif;">
+  Warm regards,
+</p>
+<p style="margin: 0 0 2px 0; font-size: 14px; font-weight: bold; color: #0f172a; font-family: Arial, Helvetica, sans-serif;">
+  Team Nexoraa Studio
+</p>
+<p style="margin: 0 0 20px 0; font-size: 12px; color: #64748b; font-family: Arial, Helvetica, sans-serif;">
+  Design Engineering &bull; Web & Mobile Architecture &bull; AI Systems
+</p>
+
+<!-- Corporate Footer -->
+<hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 28px 0 20px 0;" />
+
+<div style="margin-bottom: 16px;">
+  <img src="cid:nexoraabrandlogo" alt="Nexoraa Studio" width="240" style="display: block; border: 0; width: 240px; max-width: 100%; height: auto;">
+</div>
+
+<p style="margin: 0; font-size: 11px; color: #94a3b8; font-family: Arial, Helvetica, sans-serif; line-height: 1.6;">
+  This is an automated security notification from Nexoraa Studio.<br />
+  &copy; ${new Date().getFullYear()} Nexoraa Studio. All rights reserved.<br />
+  Support: <a href="mailto:nexoraa.works@gmail.com" style="color: #296197; text-decoration: none;">nexoraa.works@gmail.com</a> &bull; Website: <a href="https://nexoraa.works" style="color: #296197; text-decoration: none;">nexoraa.works</a>
+</p>
+
+</body>
+</html>`;
+
+    // Official Logo attachment for embedded display
+    const logoPath = path.join(process.cwd(), 'public', 'logo', 'nexoraa-brand-logo.png');
+    const attachments = [];
+    let logoBase64 = '';
+    if (fs.existsSync(logoPath)) {
+      attachments.push({
+        filename: 'nexoraa-brand-logo.png',
+        path: logoPath,
+        cid: 'nexoraabrandlogo'
+      });
+      try {
+        logoBase64 = fs.readFileSync(logoPath).toString('base64');
+      } catch (e) {
+        // ignore
+      }
+    }
+
     try {
-      const emailHtml = `
-        <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 500px; margin: 0 auto; background: #0B1120; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-          <div style="background: linear-gradient(135deg, #1a1a2e 0%, #0B1120 100%); padding: 30px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-            <h1 style="margin: 0; font-size: 22px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexoraa Studio</h1>
-            <p style="margin: 6px 0 0; color: #6b7280; font-size: 12px;">Verification Code</p>
-          </div>
-          <div style="padding: 30px; text-align: center;">
-            <p style="color: #d1d5db; font-size: 15px; margin: 0 0 24px;">
-              Your one-time passcode (OTP) for Nexoraa Assistant is:
-            </p>
-            <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 16px; display: inline-block; font-size: 32px; font-weight: 800; letter-spacing: 6px; color: #00F5FF; margin-bottom: 24px;">
-              ${generatedOtp}
-            </div>
-            <p style="color: #9ca3af; font-size: 12px; margin: 0;">
-              This code will expire in 5 minutes.
-            </p>
-          </div>
-          <div style="background: rgba(255,255,255,0.02); padding: 16px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
-            <p style="margin: 0; color: #4b5563; font-size: 11px;">
-              © ${new Date().getFullYear()} Nexoraa Studio. All rights reserved.
-            </p>
-          </div>
-        </div>
-      `;
+      let emailSent = false;
 
       if (smtpPassword) {
         // Send directly via Gmail SMTP (100% Inbox Delivery & bypasses Brevo/DMARC blocks)
-        const transporter = nodemailer.createTransport({
-          service: 'gmail',
-          auth: {
-            user: smtpEmail || 'nexoraa.works@gmail.com',
-            pass: smtpPassword
-          }
-        });
+        try {
+          const nodemailerModule = await import('nodemailer');
+          const nodemailer = nodemailerModule.default || nodemailerModule;
+          const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: smtpEmail || 'nexoraa.works@gmail.com',
+              pass: smtpPassword
+            }
+          });
 
-        await transporter.sendMail({
-          from: `"Nexoraa Studio" <${smtpEmail || 'nexoraa.works@gmail.com'}>`,
-          to: email,
-          subject: `🔑 ${generatedOtp} is your Nexoraa Verification Code`,
-          html: emailHtml
-        });
-      } else if (brevoApiKey) {
+          await transporter.sendMail({
+            from: `"Nexoraa Studio" <${smtpEmail || 'nexoraa.works@gmail.com'}>`,
+            to: email,
+            subject: emailSubject,
+            text: emailText,
+            html: emailHtml,
+            attachments: attachments
+          });
+          emailSent = true;
+        } catch (smtpErr) {
+          console.warn('[API OTP] SMTP sending failed, falling back to Brevo:', smtpErr.message);
+        }
+      }
+
+      if (!emailSent && brevoApiKey) {
         // Fetch verified senders list from Brevo dynamically to ensure delivery
         let senderEmail = 'realme11119412@gmail.com'; // Verified sender fallback
         try {
@@ -108,6 +256,21 @@ export default async function handler(req, res) {
         }
 
         // Fallback to Brevo API
+        const brevoPayload = {
+          sender: { name: 'Nexoraa Studio', email: senderEmail },
+          to: [{ email: email }],
+          subject: emailSubject,
+          htmlContent: emailHtml
+        };
+        if (logoBase64) {
+          brevoPayload.attachment = [
+            {
+              name: 'nexoraa-brand-logo.png',
+              content: logoBase64
+            }
+          ];
+        }
+
         const response = await fetch('https://api.brevo.com/v3/smtp/email', {
           method: 'POST',
           headers: {
@@ -115,19 +278,17 @@ export default async function handler(req, res) {
             'api-key': brevoApiKey,
             'content-type': 'application/json'
           },
-          body: JSON.stringify({
-            sender: { name: 'Nexoraa Studio', email: senderEmail },
-            to: [{ email: email }],
-            subject: `🔑 ${generatedOtp} is your Nexoraa Verification Code`,
-            htmlContent: emailHtml
-          })
+          body: JSON.stringify(brevoPayload)
         });
 
         if (!response.ok) {
           const errData = await response.json();
           throw new Error(errData.message || 'Brevo API error');
         }
-      } else {
+        emailSent = true;
+      }
+
+      if (!emailSent) {
         console.log(`\n========================================\n[LOCAL DEV OTP] Sent OTP to ${email}: ${generatedOtp}\n========================================\n`);
         return res.status(200).json({
           success: true,
@@ -161,8 +322,8 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Email, OTP, and verification token are required' });
     }
 
-    // Dev master code bypass for testing
-    if (otp === '123456') {
+    // Dev master code bypass for testing (supports both 5 and 6 digit dev codes)
+    if (otp === '12345' || otp === '123456') {
       return res.status(200).json({ success: true, message: 'OTP verified successfully (Dev Bypass)' });
     }
 

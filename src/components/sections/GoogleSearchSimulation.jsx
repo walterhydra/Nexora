@@ -181,18 +181,10 @@ export default function GoogleSearchSimulation({ onComplete }) {
   useEffect(() => {
     const timers = [];
 
-    // 1. Move cursor smoothly inside the Google Search bar (at ~250ms)
+    // 1. Move cursor smoothly inside the Google Search bar (at ~250ms) - Direct coordinates without layout thrashing
     timers.push(
       setTimeout(() => {
-        if (searchInputRef.current && viewportRef.current) {
-          const inputRect = searchInputRef.current.getBoundingClientRect();
-          const vpRect = viewportRef.current.getBoundingClientRect();
-          const x = ((inputRect.left + 60 - vpRect.left) / vpRect.width) * 100;
-          const y = ((inputRect.top + (inputRect.height / 2) - vpRect.top) / vpRect.height) * 100;
-          setCursorPos({ x, y });
-        } else {
-          setCursorPos({ x: 34, y: 50.5 });
-        }
+        setCursorPos({ x: 34, y: 50.5 });
       }, 250)
     );
 
@@ -220,19 +212,10 @@ export default function GoogleSearchSimulation({ onComplete }) {
               setTimeout(() => {
                 setViewState('results');
 
-                // Allow DOM to paint results, then move cursor directly over "Nexoraa Studio" title link
+                // Move cursor directly over "Nexoraa Studio" title link without layout reflow
                 timers.push(
                   setTimeout(() => {
-                    if (titleLinkRef.current && viewportRef.current) {
-                      const titleRect = titleLinkRef.current.getBoundingClientRect();
-                      const vpRect = viewportRef.current.getBoundingClientRect();
-                      const x = ((titleRect.left + 45 - vpRect.left) / vpRect.width) * 100;
-                      const y = ((titleRect.top + (titleRect.height / 2) - vpRect.top) / vpRect.height) * 100;
-                      setCursorPos({ x, y });
-                    } else {
-                      // Precise fallback directly over the blue title text
-                      setCursorPos({ x: 14, y: 39 });
-                    }
+                    setCursorPos({ x: 14, y: 39 });
                     setIsHoveringLink(true);
 
                     // 5. Click the link (subtle mouse press, no artificial touch ring)

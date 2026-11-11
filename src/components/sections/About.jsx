@@ -97,8 +97,11 @@ export default function About() {
 
   return (
     <section id="about" className="py-24 bg-primary-dark relative overflow-hidden z-10 border-t border-white/5 font-quicksand" style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}>
-      {/* Background gradients */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-accent-blue/5 rounded-full blur-[100px] pointer-events-none" />
+      {/* Background gradients - GPU Accelerated Radial Glow */}
+      <div 
+        className="absolute top-0 right-1/4 w-96 h-96 rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(0, 245, 255, 0.05) 0%, transparent 70%)' }}
+      />
 
       {/* Container */}
       <div className="max-w-7xl mx-auto px-6 relative z-20">

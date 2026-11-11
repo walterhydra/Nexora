@@ -61,7 +61,7 @@ function AnimatedRoutes() {
         <Route path="/services" element={<Services />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/projects/:id" element={<CaseStudyDetail />} />
-        <Route path="/contact" element={<Contact />} />
+        <Route path="/contact" element={<SystemBoot />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />

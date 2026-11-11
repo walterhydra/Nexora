@@ -116,8 +116,36 @@ const MobilePreview = React.memo(({ step }) => {
 
 const LaptopScreenContent = React.memo(function LaptopScreenContent({ isOpen }) {
   const navigate = useNavigate();
-  const [bootStep, setBootStep] = useState('loading'); // 'loading', 'windows-11', 'code-studio', 'video-showcase'
+  const [bootStep, setBootStep] = useState('loading'); // 'loading', 'windows-11', 'google-search', 'video-showcase'
   const [step, setStep] = useState(0);
+  const videoRef = useRef(null);
+
+  // Pre-decode desktop image so transition to windows-11 has zero frame hitch
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/projects/ai-bot-screen.png';
+  }, []);
+
+  // Auto-pause video when scrolled off-screen to preserve 100% GPU video decoding pipeline
+  useEffect(() => {
+    if (bootStep !== 'video-showcase') return;
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          vid.play().catch(() => {});
+        } else {
+          vid.pause();
+        }
+      },
+      { threshold: 0.08 }
+    );
+
+    observer.observe(vid);
+    return () => observer.disconnect();
+  }, [bootStep]);
 
   useEffect(() => {
     if (!isOpen) {
@@ -145,6 +173,11 @@ const LaptopScreenContent = React.memo(function LaptopScreenContent({ isOpen }) 
       clearTimeout(t2);
     };
   }, [isOpen]);
+
+  // While lid is closed/rotating, keep screen unburdened so 3D rotation runs at maximum 120 FPS
+  if (!isOpen) {
+    return <div className="absolute inset-0 bg-black pointer-events-none" />;
+  }
 
   return (
     <div className="absolute inset-0 bg-[#0c0d12] overflow-hidden flex items-center justify-center select-none font-sans">
@@ -229,6 +262,7 @@ const LaptopScreenContent = React.memo(function LaptopScreenContent({ isOpen }) 
           >
             <video
               ref={(el) => {
+                videoRef.current = el;
                 if (el) el.playbackRate = 1.5;
               }}
               src="/videos/video_no_watermark.mp4"
@@ -370,11 +404,11 @@ export default function Hero() {
               <AnimatePresence mode="popLayout">
                 <m.div
                   key={HERO_PHRASES[phraseIndex]}
-                  initial={{ y: "115%", opacity: 0, filter: "blur(5px)" }}
-                  animate={{ y: "0%", opacity: 1, filter: "blur(0px)" }}
-                  exit={{ y: "-115%", opacity: 0, filter: "blur(5px)" }}
+                  initial={{ y: "115%", opacity: 0 }}
+                  animate={{ y: "0%", opacity: 1 }}
+                  exit={{ y: "-115%", opacity: 0 }}
                   transition={{
-                    duration: 0.65,
+                    duration: 0.55,
                     ease: [0.16, 1, 0.3, 1]
                   }}
                   className="text-white whitespace-nowrap inline-block will-change-transform pr-4"
@@ -429,21 +463,22 @@ export default function Hero() {
 
           <button
             onClick={handleStartProjectClick}
-            className="group px-7 py-3.5 md:px-8 md:py-4 bg-transparent text-gray-900 dark:text-white font-bold uppercase tracking-wider text-sm border border-black/20 dark:border-white/20 transition-all duration-300 relative overflow-hidden"
+            className="group relative px-7 py-3.5 md:px-8 md:py-4 bg-white text-black font-bold uppercase tracking-wider text-sm rounded-none overflow-hidden transition-all duration-300 active:scale-95 cursor-pointer shadow-xl shadow-white/5"
           >
-            {/* Hover Sweep Effect */}
-            <div className="absolute inset-0 bg-black/5 dark:bg-white/10 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500 ease-out pointer-events-none" />
-            
-            <span className={`flex items-center justify-center gap-2 relative z-10 pointer-events-none transition-colors duration-300`}>
+            <div className="absolute inset-0 w-full h-full bg-accent-primary origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-out" />
+            <span className="relative z-10 flex items-center justify-center gap-2">
               Start Project
+              <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </span>
           </button>
         </m.div>
       </m.div>
 
-      {/* Sticky container that contains ONLY the laptop centerpiece */}
+      {/* Sticky container that contains ONLY the laptop centerpiece - Hardware GPU promoted */}
       <div 
-        className="sticky top-[20vh] h-[80vh] w-full flex flex-col items-center justify-center overflow-hidden z-20 pointer-events-none mt-[460px]"
+        className="sticky top-[20vh] h-[80vh] w-full flex flex-col items-center justify-center z-20 pointer-events-none mt-[460px] transform-gpu will-change-transform"
       >
         <div className="pointer-events-auto max-w-4xl w-full px-4 flex justify-center">
           <LaptopMockup scrollProgress={laptopProgress}>

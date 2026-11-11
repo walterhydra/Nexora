@@ -1,63 +1,317 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { m, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail, Zap, Coins, FileText, CreditCard, Lock, Award, Compass, Eye, EyeOff, Copy, Check, CheckCircle2, FolderLock, Undo2, ArrowRight } from 'lucide-react';
+import { MessageCircle, X, Send, Bot, Sparkles, User, ChevronDown, Building2, Users, Mail, Zap, Coins, FileText, CreditCard, Lock, Award, Compass, Eye, EyeOff, Copy, Check, CheckCircle2, FolderLock, Undo2, ArrowRight, RotateCcw } from 'lucide-react';
 
-// Simple Markdown Bold Parser
+// Singleton audio context for smooth performance
+let sharedAudioCtx = null;
+
+// Pure markdown parse cache for 0ms re-rendering
+const markdownCache = new Map();
+
+// Professional Rich Text & Markdown Parser (Bold, Links, Lists, Code)
 const parseMarkdown = (text) => {
   if (!text) return '';
-  const boldRegex = /\*\*(.*?)\*\*/g;
-  const parts = text.split(boldRegex);
-  return parts.map((part, i) => {
-    if (i % 2 === 1) {
-      return <strong key={i} className="font-semibold text-white">{part}</strong>;
+  if (markdownCache.has(text)) return markdownCache.get(text);
+
+  const lines = text.split('\n');
+  const result = lines.map((line, lineIdx) => {
+    const trimmed = line.trim();
+    const isBullet = trimmed.startsWith('•') || trimmed.startsWith('- ') || trimmed.startsWith('* ');
+    const displayLine = isBullet ? trimmed.replace(/^[•\-\*]\s*/, '') : line;
+
+    // Tokenize for bold, links, inline code, and bare URLs
+    const tokens = [];
+    const pattern = /\[([^\]]+)\]\(([^)]+)\)|(https?:\/\/[^\s)]+)|`([^`]+)`|\*\*([^*]+)\*\*/g;
+    let lastIndex = 0;
+    let match;
+
+    while ((match = pattern.exec(displayLine)) !== null) {
+      if (match.index > lastIndex) {
+        tokens.push(displayLine.substring(lastIndex, match.index));
+      }
+      if (match[1] && match[2]) {
+        // [label](url)
+        tokens.push(
+          <a
+            key={`l-${lineIdx}-${match.index}`}
+            href={match[2]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors font-medium cursor-pointer"
+          >
+            {match[1]}
+          </a>
+        );
+      } else if (match[3]) {
+        // bare URL
+        tokens.push(
+          <a
+            key={`u-${lineIdx}-${match.index}`}
+            href={match[3]}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-400 hover:text-red-300 underline underline-offset-2 transition-colors font-medium cursor-pointer"
+          >
+            {match[3]}
+          </a>
+        );
+      } else if (match[4]) {
+        // inline code
+        tokens.push(
+          <code
+            key={`c-${lineIdx}-${match.index}`}
+            className="px-1.5 py-0.5 rounded bg-white/10 font-mono text-[12px] text-red-300 border border-white/5"
+          >
+            {match[4]}
+          </code>
+        );
+      } else if (match[5]) {
+        // bold text
+        tokens.push(
+          <strong key={`b-${lineIdx}-${match.index}`} className="font-semibold text-white">
+            {match[5]}
+          </strong>
+        );
+      }
+      lastIndex = pattern.lastIndex;
     }
-    return part;
+
+    if (lastIndex < displayLine.length) {
+      tokens.push(displayLine.substring(lastIndex));
+    }
+
+    if (isBullet) {
+      return (
+        <div key={lineIdx} className="flex items-start gap-2 my-1">
+          <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 shrink-0 opacity-80" />
+          <span className="flex-1 leading-relaxed">{tokens}</span>
+        </div>
+      );
+    }
+
+    if (trimmed === '') {
+      return <div key={lineIdx} className="h-1.5" />;
+    }
+
+    return (
+      <div key={lineIdx} className="leading-relaxed my-0.5">
+        {tokens}
+      </div>
+    );
   });
+
+  markdownCache.set(text, result);
+  return result;
 };
 
-// Word-by-word Typewriter streaming animation component
+// High-performance streaming typewriter without main-thread jank
 const TypewriterText = ({ text, onComplete, onWordTyped }) => {
   const [displayedText, setDisplayedText] = useState('');
+  const onCompleteRef = useRef(onComplete);
+  onCompleteRef.current = onComplete;
+  const onWordTypedRef = useRef(onWordTyped);
+  onWordTypedRef.current = onWordTyped;
 
   useEffect(() => {
     let index = 0;
     const words = text.split(' ');
     setDisplayedText('');
 
+    // Smooth streaming chunk: 3-4 words every 32ms (butter smooth 60fps, 0% CPU jank)
     const interval = setInterval(() => {
       if (index < words.length) {
-        setDisplayedText((prev) => (prev ? prev + ' ' + words[index] : words[index]));
-        index++;
-        if (onWordTyped) onWordTyped();
+        const step = Math.min(words.length - index, words.length > 25 ? 4 : 3);
+        const nextChunk = words.slice(index, index + step).join(' ');
+        setDisplayedText((prev) => (prev ? prev + ' ' + nextChunk : nextChunk));
+        index += step;
+        if (onWordTypedRef.current) onWordTypedRef.current();
       } else {
         clearInterval(interval);
-        if (onComplete) {
-          setTimeout(onComplete, 100);
+        if (onCompleteRef.current) {
+          setTimeout(onCompleteRef.current, 20);
         }
       }
-    }, 40); // 40ms per word is highly natural
+    }, 32);
 
     return () => clearInterval(interval);
-  }, [text, onComplete, onWordTyped]);
+  }, [text]);
 
   return (
-    <span>
+    <div>
       {parseMarkdown(displayedText)}
       {displayedText.length < text.length && (
-        <span className="inline-block w-1.5 h-3.5 ml-1 bg-accent-blue/80 animate-pulse rounded-sm align-middle" />
+        <span className="inline-block w-1.5 h-3.5 ml-1 bg-red-500 animate-pulse rounded-sm align-middle" />
       )}
-    </span>
+    </div>
   );
 };
 
+// Static Quick Replies definition (declared outside to avoid recreation per render)
+const quickRepliesData = [
+  {
+    title: 'About Nexoraa',
+    desc: 'Our vision & agency details',
+    icon: <Building2 className="w-3.5 h-3.5 text-red-400" />,
+    text: '🏢 About Nexoraa'
+  },
+  {
+    title: 'Meet the Team',
+    desc: 'Our experts & engineers',
+    icon: <Users className="w-3.5 h-3.5 text-sky-400" />,
+    text: '👥 Meet the Team'
+  },
+  {
+    title: 'Our Services',
+    desc: 'Premium design & dev solutions',
+    icon: <Sparkles className="w-3.5 h-3.5 text-red-400" />,
+    text: '🚀 Our Services'
+  },
+  {
+    title: 'Our Process',
+    desc: '7-day elite build sprints',
+    icon: <Zap className="w-3.5 h-3.5 text-amber-400" />,
+    text: '⚡ Our Process'
+  },
+  {
+    title: 'Pricing & Packages',
+    desc: 'Flexible investment tiers',
+    icon: <Coins className="w-3.5 h-3.5 text-sky-400" />,
+    text: '💰 Pricing & Packages'
+  },
+  {
+    title: 'Contact Us',
+    desc: "Let's collaborate on a project",
+    icon: <Mail className="w-3.5 h-3.5 text-red-400" />,
+    text: '📩 Contact Us'
+  }
+];
+
+// Memoized single chat message item - eliminates typing lag completely
+const ChatMessageItem = React.memo(({ msg, idx, onComplete, onWordTyped, onReplyClick }) => {
+  const hasOptions = msg.content.includes('[OPTIONS]');
+  const cleanContent = msg.content.replace('[OPTIONS]', '').trim();
+
+  if (msg.role === 'user') {
+    return (
+      <div className="flex justify-end w-full">
+        <div className="flex flex-col items-end max-w-[85%] sm:max-w-[75%]">
+          <div className="px-4 py-2.5 rounded-2xl rounded-tr-xs bg-[#161f33] border border-white/10 text-white shadow-sm font-normal text-[13.5px] leading-relaxed break-words">
+            {msg.content}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="flex justify-start w-full">
+      <div className="flex gap-2.5 max-w-[92%] sm:max-w-[85%] items-start">
+        <div className="w-7 h-7 shrink-0 rounded-full overflow-hidden border border-red-500/30 mt-0.5 shadow-sm bg-black/40">
+          <img
+            src="/images/spider-man-aesthetic-738pim4mwbf8349v.webp"
+            alt="Spidey"
+            className="w-full h-full object-cover object-[50%_10%]"
+            loading="lazy"
+          />
+        </div>
+        <div className="flex flex-col items-start min-w-0 flex-1">
+          <span className="text-[11px] font-semibold text-gray-300 mb-1 px-1 flex items-center gap-1.5">
+            Spidey
+          </span>
+          <div className="px-4 py-3 rounded-2xl rounded-tl-xs bg-[#0C101A] border border-white/10 text-gray-200 shadow-sm text-[13.5px] leading-relaxed break-words w-full">
+            {msg.isNew ? (
+              <TypewriterText
+                text={cleanContent}
+                onComplete={() => onComplete(idx)}
+                onWordTyped={onWordTyped}
+              />
+            ) : (
+              <div className="space-y-2.5">
+                <div>{parseMarkdown(cleanContent)}</div>
+                {hasOptions && (
+                  <div className="flex flex-wrap gap-1.5 pt-2.5 border-t border-white/10 mt-2.5">
+                    {quickRepliesData.map((reply, i) => (
+                      <button
+                        key={i}
+                        onClick={() => onReplyClick(reply.text)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/[0.04] hover:bg-white/[0.09] border border-white/10 hover:border-red-500/50 text-gray-300 hover:text-white text-xs font-medium transition-all duration-150 cursor-pointer active:scale-95 group shadow-sm"
+                      >
+                        <span className="opacity-80 group-hover:opacity-100 transition-opacity">{reply.icon}</span>
+                        <span>{reply.title}</span>
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+});
+
 export default function NovaWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(() => {
+    if (typeof window !== 'undefined') {
+      try {
+        const saved = localStorage.getItem('nova_chat_history');
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {
+        console.warn('Failed to parse saved chat history', e);
+      }
+    }
+    return [];
+  });
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [lockedModalOpen, setLockedModalOpen] = useState(false);
   const messagesEndRef = useRef(null);
+
+  // Close tablet on Escape key press
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+        setActiveDocument(null);
+        setShowDocsMenu(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
+  useEffect(() => {
+    if (typeof window !== 'undefined' && messages.length > 0) {
+      try {
+        const toSave = messages.map(m => ({
+          role: m.role,
+          content: m.content
+        }));
+        localStorage.setItem('nova_chat_history', JSON.stringify(toSave));
+      } catch (e) {
+        console.warn('Failed to save chat history', e);
+      }
+    }
+  }, [messages]);
+
+  const handleClearChat = () => {
+    playClickSound(600, 0.05);
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('nova_chat_history');
+    }
+    setMessages([
+      {
+        role: 'assistant',
+        content: "Hey! 👋 Fresh chat session started. I'm Spidey, ready to help you with anything. What's on your mind? \n\n[OPTIONS]",
+        isNew: true
+      }
+    ]);
+  };
 
   const [flowState, setFlowState] = useState(() => {
     if (typeof window !== 'undefined') {
@@ -95,23 +349,29 @@ export default function NovaWidget() {
 
 
 
-  // Synthesize soft click sounds using Web Audio API
+  // Synthesize soft click sounds using singleton Web Audio API
   const playClickSound = (freq = 800, dur = 0.04) => {
     try {
       if (typeof window === 'undefined') return;
+      if (volume === 0) return;
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
-      if (!AudioCtx || volume === 0) return;
-      const ctx = new AudioCtx();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
+      if (!AudioCtx) return;
+      if (!sharedAudioCtx || sharedAudioCtx.state === 'closed') {
+        sharedAudioCtx = new AudioCtx();
+      }
+      if (sharedAudioCtx.state === 'suspended') {
+        sharedAudioCtx.resume().catch(() => { });
+      }
+      const osc = sharedAudioCtx.createOscillator();
+      const gain = sharedAudioCtx.createGain();
       osc.connect(gain);
-      gain.connect(ctx.destination);
+      gain.connect(sharedAudioCtx.destination);
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(freq, ctx.currentTime);
-      gain.gain.setValueAtTime((volume / 100) * 0.025, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.00001, ctx.currentTime + dur);
-      osc.start(ctx.currentTime);
-      osc.stop(ctx.currentTime + dur);
+      osc.frequency.setValueAtTime(freq, sharedAudioCtx.currentTime);
+      gain.gain.setValueAtTime((volume / 100) * 0.025, sharedAudioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.00001, sharedAudioCtx.currentTime + dur);
+      osc.start(sharedAudioCtx.currentTime);
+      osc.stop(sharedAudioCtx.currentTime + dur);
     } catch (e) {
       // AudioContext could be blocked initially
     }
@@ -131,45 +391,6 @@ export default function NovaWidget() {
       setShowVolumeHud(false);
     }, 1500);
   };
-
-  const quickRepliesData = [
-    {
-      title: 'About Nexoraa',
-      desc: 'Our vision & agency details',
-      icon: <Building2 className="w-3.5 h-3.5 text-accent-blue" />,
-      text: '🏢 About Nexoraa'
-    },
-    {
-      title: 'Meet the Team',
-      desc: 'Our experts & engineers',
-      icon: <Users className="w-3.5 h-3.5 text-accent-purple" />,
-      text: '👥 Meet the Team'
-    },
-    {
-      title: 'Our Services',
-      desc: 'Premium design & dev solutions',
-      icon: <Sparkles className="w-3.5 h-3.5 text-accent-blue" />,
-      text: '🚀 Our Services'
-    },
-    {
-      title: 'Our Process',
-      desc: '7-day elite build sprints',
-      icon: <Zap className="w-3.5 h-3.5 text-accent-blue" />,
-      text: '⚡ Our Process'
-    },
-    {
-      title: 'Pricing & Packages',
-      desc: 'Flexible investment tiers',
-      icon: <Coins className="w-3.5 h-3.5 text-accent-purple" />,
-      text: '💰 Pricing & Packages'
-    },
-    {
-      title: 'Contact Us',
-      desc: "Let's collaborate on a project",
-      icon: <Mail className="w-3.5 h-3.5 text-accent-purple" />,
-      text: '📩 Contact Us'
-    }
-  ];
 
   const internsData = [
     {
@@ -235,20 +456,24 @@ export default function NovaWidget() {
   ];
 
   const messagesContainerRef = useRef(null);
-  const scrollToBottom = () => {
-    const container = messagesContainerRef.current;
-    if (container) {
-      container.scrollTop = container.scrollHeight;
-    }
-  };
+  const scrollRafRef = useRef(null);
+  const scrollToBottom = useCallback(() => {
+    if (scrollRafRef.current) return;
+    scrollRafRef.current = requestAnimationFrame(() => {
+      const container = messagesContainerRef.current;
+      if (container) {
+        container.scrollTop = container.scrollHeight;
+      }
+      scrollRafRef.current = null;
+    });
+  }, []);
 
-
-  const markMessageTyped = (index) => {
+  const markMessageTyped = useCallback((index) => {
     setMessages((prev) =>
       prev.map((msg, i) => (i === index ? { ...msg, isNew: false } : msg))
     );
 
-    // If greeting finished typing, trigger email request!
+    // If initial greeting finished typing and user is not verified yet, ask for email
     if (index === 0 && flowState === 'init') {
       setIsLoading(true);
       setTimeout(() => {
@@ -264,7 +489,14 @@ export default function NovaWidget() {
         setIsLoading(false);
       }, 500);
     }
-  };
+  }, [flowState]);
+
+  const handleSendRef = useRef();
+  const onReplyClick = useCallback((text) => {
+    if (handleSendRef.current) {
+      handleSendRef.current(text);
+    }
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
@@ -278,12 +510,12 @@ export default function NovaWidget() {
           {
             role: 'assistant',
             content: flowState === 'completed'
-              ? "Hey! 👋 I'm Nova, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
-              : "Hey! 👋 I'm Nova, your guide to Nexoraa Studio. Great to have you here! What would you like to explore?",
+              ? "Hey! 👋 I'm Spidey, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
+              : "Hey! 👋 I'm Spidey, your guide to Nexoraa Studio. Great to have you here!",
             isNew: true
           }
         ]);
-      }, 500);
+      }, 350);
     }
   }, [isOpen]);
 
@@ -365,9 +597,13 @@ export default function NovaWidget() {
         setOtpToken(data.token);
         setFlowState('awaiting_otp');
 
+        const fallbackCode = data.message?.includes('OTP') ? data.message.split(': ')[1]?.trim() : null;
+
         setMessages([...nextMsgs, {
           role: 'assistant',
-          content: `I've sent a 6-digit verification code to **${text}**. Please enter it below (be sure to check your spam folder as well):`,
+          content: fallbackCode
+            ? `I've generated your verification code. In dev/testing mode, your code is **${fallbackCode}** (or test code **123456**). Please enter it below:`
+            : `I've sent a 6-digit verification code to **${text}**. Please enter it below (be sure to check your spam folder as well):`,
           isNew: true
         }]);
       } catch (err) {
@@ -425,17 +661,8 @@ export default function NovaWidget() {
       return;
     }
 
-    // Intercept quick replies for instant premium responses
-    const lowerText = text.toLowerCase();
-    if (
-      lowerText.includes('about nexoraa') ||
-      lowerText.includes('about founder') ||
-      lowerText.includes('about company') ||
-      lowerText.includes('about section') ||
-      lowerText.includes('who is the founder') ||
-      lowerText.includes('milan') ||
-      text === '🏢 About Nexoraa'
-    ) {
+    // Instant responses for specific quick-reply buttons (free-form queries go to the AI model)
+    if (text === '🏢 About Nexoraa') {
       const aboutResponse = `🏢 **About Nexoraa Studio**
 Nexoraa Studio is a **Premium Digital Agency & Technology Innovator** specializing in engineering high-fidelity, high-performance web applications, custom software, and bespoke UI/UX designs. We operate as a remote-first, global team of elite architects and developers dedicated to turning ambitious product concepts into scalable, production-ready solutions.
 
@@ -468,11 +695,11 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 800);
+      }, 200);
       return;
     }
 
-    if (lowerText.includes('meet the team') || text === '👥 Meet the Team') {
+    if (text === '👥 Meet the Team') {
       const teamResponse = `We have an exceptional, remote-first team of experts led by our Founder & CEO, **Milan**.
 
 **Core Team & Leadership:**
@@ -497,11 +724,11 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 800);
+      }, 200);
       return;
     }
 
-    if (lowerText.includes('our services') || text === '🚀 Our Services') {
+    if (text === '🚀 Our Services') {
       const servicesResponse = `Nexoraa Studio offers premium end-to-end digital solutions tailored to elevate your business:
 
 • **Web & Mobile App Development**: High-performance, responsive React/Next.js/Vite applications and robust mobile apps.
@@ -524,11 +751,11 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 800);
+      }, 200);
       return;
     }
 
-    if (lowerText.includes('process') || text === '⚡ Our Process') {
+    if (text === '⚡ Our Process') {
       const processResponse = `⚡ **Our Elite Development Sprint Process**
 We build and deploy premium digital products in structured, high-intensity sprints designed for speed and absolute quality:
 
@@ -551,11 +778,11 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 800);
+      }, 200);
       return;
     }
 
-    if (lowerText.includes('pricing') || lowerText.includes('package') || text === '💰 Pricing & Packages') {
+    if (text === '💰 Pricing & Packages') {
       const pricingResponse = `💰 **Nexoraa Pricing & Packages**
 We offer transparent, package-based pricing tailored to your project goals and scale:
 
@@ -581,11 +808,11 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 800);
+      }, 200);
       return;
     }
 
-    if (lowerText.includes('contact') || text === '📩 Contact Us') {
+    if (text === '📩 Contact Us') {
       const contactResponse = `We'd love to collaborate on your next premium project! You can connect with us directly:
 
 • 📩 **Email**: [nexoraa.works@gmail.com](mailto:nexoraa.works@gmail.com)
@@ -607,7 +834,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 800);
+      }, 200);
       return;
     }
 
@@ -635,10 +862,11 @@ Do you want to know about other things? \n\n[OPTIONS]`;
       }
 
       const data = await response.json();
+      const aiReply = data.reply || data.content?.[0]?.text || data.message || "I'm here to help! What's on your mind?";
 
       setMessages([...newMessages, {
         role: 'assistant',
-        content: data.content[0].text,
+        content: aiReply,
         isNew: true
       }]);
     } catch (error) {
@@ -655,7 +883,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
         lowerText === 'hello' ||
         lowerText === 'hey'
       ) {
-        fallbackResponse = "Hey! 👋 I'm Nova, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]";
+        fallbackResponse = "Hey! 👋 I'm Spidey, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]";
       } else if (lowerText.match(/^(how are you|hows it going|how do you do|are you okay|doing)/i)) {
         fallbackResponse = "I'm doing fantastic, thank you! 🚀 Ready to help you build premium web apps or explore Nexoraa. What's on your mind? \n\n[OPTIONS]";
       } else if (lowerText.match(/^(thank you|thanks|ty|awesome|great|perfect|ok|okay|nice)/i)) {
@@ -707,88 +935,13 @@ What package matches your requirements? \n\n[OPTIONS]`;
 
     setIsLoading(false);
   };
+  handleSendRef.current = handleSend;
 
   const handleKeyPress = (e) => {
     if (e.key === 'Enter') {
       playClickSound(850, 0.03);
       handleSend();
     }
-  };
-
-  const renderMessageContent = (msg, idx) => {
-    const hasOptions = msg.content.includes('[OPTIONS]');
-    const cleanContent = msg.content.replace('[OPTIONS]', '').trim();
- 
-    if (msg.role === 'assistant' && msg.isNew) {
-      return (
-        <div className="space-y-4">
-          <p className="whitespace-pre-wrap leading-relaxed">
-            <TypewriterText
-              text={cleanContent}
-              onComplete={() => markMessageTyped(idx)}
-              onWordTyped={() => {
-                scrollToBottom();
-                playClickSound(950, 0.015);
-              }}
-            />
-          </p>
-        </div>
-      );
-    }
- 
-    const showOptionsGrid = hasOptions && expandedOptions[idx];
- 
-    return (
-      <div className="space-y-4 animate-fade-in">
-        <p className="whitespace-pre-wrap leading-relaxed">{parseMarkdown(cleanContent)}</p>
-        {hasOptions && !expandedOptions[idx] && (
-          <button
-            onClick={() => {
-              playClickSound(800, 0.05);
-              setExpandedOptions(prev => ({ ...prev, [idx]: true }));
-            }}
-            className="flex items-center gap-2 px-4 py-2 rounded-xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-blue/30 text-gray-400 hover:text-white transition-all duration-300 text-[11px] font-semibold cursor-pointer group mt-2"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-accent-blue group-hover:scale-110 transition-transform" />
-            Explore Menu Options
-          </button>
-        )}
-        {showOptionsGrid && (
-          <m.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
-            className="grid grid-cols-2 gap-2 mt-4"
-          >
-            {quickRepliesData.map((reply, i) => (
-              <button
-                key={i}
-                onClick={() => {
-                  playClickSound(800, 0.03);
-                  handleSend(reply.text);
-                }}
-                className="flex flex-col items-start p-3 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-white/[0.06] hover:border-accent-blue/30 shadow-sm hover:shadow-[0_4px_20px_rgba(91,164,230,0.1)] transition-all duration-300 group relative overflow-hidden text-left"
-              >
-                {/* Sweep light effect on hover */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.04] to-transparent pointer-events-none" />
- 
-                <div className="flex items-center gap-2 mb-1">
-                  <div className="p-1 rounded-lg bg-white/[0.03] border border-white/5 group-hover:bg-accent-blue/15 group-hover:border-accent-blue/30 transition-all duration-300">
-                    {reply.icon}
-                  </div>
-                  <span className="text-[11px] font-semibold text-white group-hover:text-accent-blue transition-colors duration-300">
-                    {reply.title}
-                  </span>
-                </div>
-                <p className="text-[9px] leading-snug text-gray-400 font-light group-hover:text-gray-300 transition-colors">
-                  {reply.desc}
-                </p>
-              </button>
-            ))}
-          </m.div>
-        )}
-      </div>
-    );
   };
 
   const vaultDocuments = [
@@ -881,11 +1034,10 @@ What package matches your requirements? \n\n[OPTIONS]`;
                         }
                       }}
                       placeholder="Enter Access Code"
-                      className={`w-full px-4 py-3 rounded-xl bg-black/40 border text-center text-white placeholder-gray-600 focus:outline-none transition-all duration-300 font-mono text-xs tracking-wider ${
-                        internIdError
-                          ? 'border-red-500/50 focus:border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.1)]'
-                          : 'border-white/10 focus:border-accent-blue/50 focus:shadow-[0_0_15px_rgba(91,164,230,0.15)]'
-                      }`}
+                      className={`w-full px-4 py-3 rounded-xl bg-black/40 border text-center text-white placeholder-gray-600 focus:outline-none transition-all duration-300 font-mono text-xs tracking-wider ${internIdError
+                        ? 'border-red-500/50 focus:border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.1)]'
+                        : 'border-white/10 focus:border-accent-blue/50 focus:shadow-[0_0_15px_rgba(91,164,230,0.15)]'
+                        }`}
                     />
                     {internIdError && (
                       <p className="text-red-500 font-semibold text-[10px] uppercase tracking-wider animate-pulse">
@@ -1300,31 +1452,31 @@ What package matches your requirements? \n\n[OPTIONS]`;
       <AnimatePresence>
         {isOpen && (
           <m.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
+            initial={{ opacity: 0, y: 15, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+            exit={{ opacity: 0, y: 15, scale: 0.98 }}
+            transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             data-lenis-prevent="true"
-            className="fixed bottom-24 right-4 md:right-8 w-[calc(100vw-32px)] md:w-[860px] h-[590px] max-h-[calc(100vh-120px)] z-[100] flex items-center justify-center overflow-visible select-none"
+            className="fixed bottom-4 md:bottom-6 right-3 md:right-6 w-[calc(100vw-24px)] md:w-[720px] max-w-[720px] h-[540px] max-h-[calc(100vh-110px)] z-[100] flex items-center justify-center overflow-visible select-none transform-gpu will-change-transform"
           >
             {/* Physical Tablet Frame */}
-            <div className="relative w-full h-full bg-[#080d19] border border-white/15 rounded-[38px] shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95)] p-4 flex flex-col md:flex-row overflow-visible">
+            <div className="relative w-full h-full bg-[#080d19] border border-white/15 rounded-[36px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] p-2.5 sm:p-3.5 flex flex-col overflow-visible">
 
-              {/* Front Camera Dot */}
-              <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#111] border border-white/5 flex items-center justify-center z-50">
-                <div className="w-0.5 h-0.5 rounded-full bg-blue-900/60" />
+              {/* Front Camera Dot with Optical sensor */}
+              <div className="absolute top-1.5 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-[#111] border border-white/10 flex items-center justify-center z-50">
+                <div className="w-1 h-1 rounded-full bg-red-500" />
               </div>
 
               {/* Physical Volume Buttons on Left Edge */}
               <button
                 onClick={() => handleVolumeChange(10)}
                 aria-label="Volume Up"
-                className="absolute left-[-5px] top-28 w-[5px] h-10 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0"
+                className="absolute left-[-5px] top-24 w-[5px] h-9 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0"
               />
               <button
                 onClick={() => handleVolumeChange(-10)}
                 aria-label="Volume Down"
-                className="absolute left-[-5px] top-[152px] w-[5px] h-10 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0"
+                className="absolute left-[-5px] top-[140px] w-[5px] h-9 bg-[#1e293b] hover:bg-[#334155] active:translate-x-[2px] transition-all border border-white/10 border-r-0 rounded-l-[5px] cursor-pointer shadow-lg z-0"
               />
 
               {/* Physical Power / Switch Button on Top Edge */}
@@ -1333,38 +1485,35 @@ What package matches your requirements? \n\n[OPTIONS]`;
                   playClickSound(500, 0.08);
                   setIsOpen(false);
                 }}
+                title="Power Off / Close (Esc)"
                 aria-label="Power Switch"
                 className="absolute right-14 top-[-5px] w-12 h-[5px] bg-[#1e293b] hover:bg-[#334155] active:translate-y-[2px] transition-all border border-white/10 border-b-0 rounded-t-[5px] cursor-pointer shadow-lg z-0"
               />
 
               {/* Speaker Grille Detail */}
               <div className="absolute left-14 top-1.5 flex gap-1 z-50">
-                <div className="w-1.5 h-0.5 bg-white/10 rounded-full" />
-                <div className="w-1.5 h-0.5 bg-white/10 rounded-full" />
-                <div className="w-1.5 h-0.5 bg-white/10 rounded-full" />
-                <div className="w-1.5 h-0.5 bg-white/10 rounded-full" />
+                <div className="w-1.5 h-0.5 bg-white/20 rounded-full" />
+                <div className="w-1.5 h-0.5 bg-white/20 rounded-full" />
+                <div className="w-1.5 h-0.5 bg-white/20 rounded-full" />
+                <div className="w-1.5 h-0.5 bg-white/20 rounded-full" />
               </div>
 
-              {/* Ambient background glows */}
-              <div className="absolute top-[20%] left-[-15%] w-[220px] h-[220px] rounded-full bg-accent-blue/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '4s' }} />
-              <div className="absolute bottom-[20%] right-[-15%] w-[220px] h-[220px] rounded-full bg-accent-purple/10 blur-[80px] pointer-events-none -z-10 animate-pulse" style={{ animationDuration: '6s' }} />
-
               {/* Screen Area Container */}
-              <div className="flex-1 flex flex-col md:flex-row bg-[#0B1220]/95 backdrop-blur-3xl rounded-[24px] overflow-hidden border border-white/5 relative h-full w-full">
+              <div className="flex-1 flex flex-col bg-[#080B13] rounded-[24px] overflow-hidden border border-white/10 relative h-full w-full">
 
-                {/* Volume HUD (iPadOS style) */}
+                {/* Volume HUD */}
                 <AnimatePresence>
                   {showVolumeHud && (
                     <m.div
                       initial={{ opacity: 0, x: -15, scale: 0.95 }}
                       animate={{ opacity: 1, x: 0, scale: 1 }}
                       exit={{ opacity: 0, x: -15, scale: 0.95 }}
-                      className="absolute left-4 top-36 z-50 bg-[#0F172A]/95 border border-white/10 rounded-2xl p-3 flex flex-col items-center gap-2 shadow-2xl backdrop-blur-md w-10"
+                      className="absolute left-4 top-32 z-50 bg-[#0F172A]/95 border border-red-500/30 rounded-2xl p-2.5 flex flex-col items-center gap-1.5 shadow-2xl backdrop-blur-md w-9"
                     >
-                      <span className="text-[8px] font-black text-gray-400 tracking-wider">VOL</span>
-                      <div className="w-1.5 h-20 bg-white/10 rounded-full overflow-hidden relative">
+                      <span className="text-[8px] font-black text-red-400 tracking-wider font-mono">VOL</span>
+                      <div className="w-1.5 h-16 bg-white/10 rounded-full overflow-hidden relative">
                         <div
-                          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-accent-blue to-accent-purple rounded-full transition-all duration-150"
+                          className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-red-600 via-rose-500 to-sky-400 rounded-full transition-all duration-150"
                           style={{ height: `${volume}%` }}
                         />
                       </div>
@@ -1373,195 +1522,67 @@ What package matches your requirements? \n\n[OPTIONS]`;
                   )}
                 </AnimatePresence>
 
-                {/* Left Sidebar (Tablet-like Info Panel) */}
-                <div className="hidden md:flex flex-col w-[280px] border-r border-white/10 bg-white/[0.01] p-6 justify-between select-none relative z-10">
-                  <div className="space-y-6">
-                    {/* Brand */}
-                    <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple flex items-center justify-center p-1.5 shadow-[0_0_15px_rgba(91,164,230,0.3)]">
-                        <img src="/logo/nexoraa-brand-logo.png" alt="Nexoraa Logo" className="w-full h-full object-contain" />
-                      </div>
-                      <div>
-                        <h2 className="text-white font-semibold text-xs tracking-wider uppercase">Nexoraa Studio</h2>
-                        <p className="text-[9px] text-accent-blue font-mono">DIGITAL INNOVATOR</p>
-                      </div>
-                    </div>
+                {/* Main Chat Console */}
+                <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10 min-w-0">
 
-                    <div className="h-[1px] bg-white/[0.08] w-full" />
-
-                    {/* Founder Card */}
-                    <div className="rounded-2xl border border-white/[0.06] bg-white/[0.02] p-4 space-y-3 relative overflow-hidden group">
-                      <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.02] to-transparent pointer-events-none" />
-                      <div className="flex items-center gap-3">
-                        <div className="relative">
-                          <div className="w-12 h-12 rounded-full overflow-hidden border border-white/10 shadow-md">
-                            <img
-                              src="/team/milan-chat.png"
-                              alt="Milan"
-                              className="w-full h-full object-cover object-top scale-125"
-                            />
-                          </div>
-                          <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-500 border-2 border-[#0B1220] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]" />
-                        </div>
-                        <div>
-                          <h4 className="text-white font-semibold text-xs">Milan</h4>
-                          <p className="text-[9px] text-gray-400">Founder & CEO</p>
-                        </div>
-                      </div>
-                      <p className="text-[10px] leading-relaxed text-gray-400 font-light">
-                        Full Stack Architect leading Nexoraa Studio with a builder-first vision.
-                      </p>
-                    </div>
-
-                    {/* Secure Vault */}
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Secure Vault</span>
-                        {flowState !== 'completed' && (
-                          <span className="text-[8px] font-mono text-accent-purple flex items-center gap-1">
-                            <Lock className="w-2.5 h-2.5" /> LOCKED
-                          </span>
-                        )}
-                      </div>
-                      <div className="flex flex-col gap-1.5">
-                        {vaultDocuments.map((doc) => {
-                          const isLocked = flowState !== 'completed' || doc.id === 'client_agreement' || doc.id === 'nda';
-                          const IconComponent = isLocked ? Lock : doc.icon;
-                          const isActive = activeDocument === doc.id;
-                          return (
-                            <button
-                              key={doc.id}
-                              onClick={() => {
-                                playClickSound(750, 0.05);
-                                if (doc.id === 'client_agreement' || doc.id === 'nda') {
-                                  setLockedModalOpen(true);
-                                } else if (isLocked) {
-                                  setLockedModalOpen(true);
-                                } else {
-                                  setActiveDocument(isActive ? null : doc.id);
-                                }
-                              }}
-                              className={`flex items-center gap-2.5 w-full py-1.5 px-3 rounded-xl border transition-all duration-300 text-left ${
-                                isLocked
-                                  ? 'bg-white/[0.01] border-white/5 text-gray-500 hover:bg-white/[0.04] hover:text-white cursor-pointer'
-                                  : isActive
-                                    ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_15px_rgba(91,164,230,0.1)] cursor-pointer'
-                                    : 'bg-white/[0.01] border-white/5 text-gray-400 hover:bg-white/[0.04] hover:text-white cursor-pointer'
-                              }`}
-                              title={isLocked ? "Access Restricted" : `View ${doc.label}`}
-                            >
-                              <IconComponent className={`w-3.5 h-3.5 ${isLocked ? 'text-gray-600' : isActive ? 'text-accent-blue' : 'text-gray-500'}`} />
-                              <span className="text-[10px] font-medium tracking-wide">{doc.label}</span>
-                              {isActive && (
-                                <Check className="w-3 h-3 text-emerald-400 ml-auto shrink-0" />
-                              )}
-                              {isLocked && (
-                                <Lock className="w-2.5 h-2.5 text-gray-600 ml-auto shrink-0" />
-                              )}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-
-                     {/* Shortcuts */}
-                    <div className="space-y-2">
-                      <span className="text-[9px] uppercase tracking-wider font-semibold text-gray-500 block">Quick Connect</span>
-                      <div className="flex flex-col gap-2">
-                        <div className="grid grid-cols-2 gap-2">
-                          <a
-                            href="https://www.linkedin.com/in/milan-pandavdara/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
-                          >
-                            LinkedIn
-                          </a>
-                          <a
-                            href="https://github.com/walterhydra"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
-                          >
-                            GitHub
-                          </a>
-                        </div>
-                        <a
-                          href="https://www.walterhydra.me"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center py-2 px-3 rounded-xl border border-white/5 bg-white/[0.01] hover:bg-white/[0.06] text-[10px] text-gray-300 hover:text-white transition-all duration-300 font-medium"
-                        >
-                          Portfolio
-                        </a>
-                      </div>
-                    </div>
+                  {/* Subtle Spider Silhouette Watermark - Ultra-clean, zero glow */}
+                  <div className="absolute inset-0 pointer-events-none select-none contain-strict flex items-center justify-center overflow-hidden z-0">
+                    <svg
+                      viewBox="0 0 96 96"
+                      fill="currentColor"
+                      className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] text-red-500 opacity-[0.045]"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M50.4431 44.6386L50.703 44.1559C53.3391 45.6906 59.4431 49.3762 62.7698 51.8416C62.745 53.9208 62.5247 59.401 61.8416 64.6881C61.5322 67.3243 60.2599 73.8589 57.646 78.9084C59.1435 76.9158 62.4876 71.3713 63.8836 65.1337C64.3663 63.3639 65.4653 58.0495 66 50.9505C63.1534 49.3045 56.1683 45.5223 51 43.5619L51.3713 42.7822C55.1955 43.8342 64.1287 46.5025 69.2673 48.7599C69.1559 51.4332 68.495 58.4505 66.7426 65.1337C65.8371 68.5866 63.3416 77.4752 56.2723 86C56.3697 85.8994 56.4882 85.78 56.6273 85.6398C58.1308 84.1248 62.0302 80.1956 67.5223 71.6312C70.2698 66.5446 72.0891 60.6782 74.3911 46.7178C68.9703 44.9728 61.5817 43.0421 51.594 42.0025L51.8911 41.4084C55.6039 41.2104 64.2772 41.0743 69.2673 42.1139C69.8366 38.3144 69.6312 29.4975 65.146 24.6262C66.1361 27.3366 67.9827 34.0569 66.5569 39.255C62.9307 39.2302 54.9431 39.3812 52.0025 40.1832L51.5198 39.552C53.698 38.2525 58.6708 35.5421 61.1361 35.0965C61.1442 35.0372 61.1523 34.9774 61.1605 34.9172C61.8684 29.7099 62.9799 21.5342 55.4554 11C57.2747 14.75 60.2153 23.802 58.3143 33.2772L50.9257 38.6609L50.3688 37.8812L52.6336 35.5421C52.2252 34.8738 51.0074 33.3812 49.4035 32.7574C50.1708 33.6733 51.2079 35.698 49.2178 36.4703H46.2846C45.4307 36.2475 44.198 35.1931 46.099 32.7574C45.3193 33.1163 43.604 34.1757 42.9802 35.5421L44.6881 37.5842L44.3168 38.3267L37.1881 33.3144C36.3465 29.6881 35.6584 20.1559 39.6386 11.0371C39.3184 11.6268 39.0101 12.189 38.7142 12.7287C34.6868 20.0738 32.9356 23.2677 34.1807 35.0965C35.5792 35.3936 39.3639 36.6856 43.3144 39.4777L43.0916 39.9604C39.7005 39.6386 32.0941 39.0619 28.797 39.3292C28.2277 36.6807 27.7054 30.0322 30.1708 24.6262C26.2723 30.1213 25.4926 34.1312 26.1609 42.2252C28.9703 41.6807 36.2896 40.755 43.0916 41.4084L43.3144 42.0025C38.3144 42.6337 26.8515 44.4604 21 46.7178C21.1638 47.5953 21.3229 48.4557 21.4788 49.2991C22.9129 57.0566 24.0818 63.3797 26.2723 68.3639C29.9854 75.5044 33.156 79.1728 37.0129 83.6354C37.6683 84.3937 38.3435 85.1749 39.0446 86C33.0668 77.7203 26.8738 67.3243 26.1609 48.7599C30.0965 47.1881 39.1931 43.7921 44.0941 42.7822L44.4282 43.5619C40.4183 45.2574 31.7673 49.0941 29.5396 50.8762C29.5642 51.2066 29.5884 51.5383 29.6127 51.8715C30.1759 59.5913 30.7984 68.1239 37.5965 78.9084C35.4802 74.2673 33.0891 68.9802 32.5842 51.8416C35.5173 49.8738 42.0446 45.5817 44.6881 44.1559L44.9851 44.6386C43.6485 45.4926 40.5446 47.6386 38.8218 49.3911C38.7104 50.1089 38.5545 52.7847 38.8218 57.745C40.0965 60.0594 43.6559 65.0668 47.6955 66.5817C49.7624 65.7401 54.4084 62.7946 56.4579 57.745C56.6188 56.5569 56.9035 53.2376 56.7549 49.4653C55.5173 48.3391 52.5223 45.797 50.4431 44.6386ZM40.5 49.5L43.5 47L41.5 50C41.5 55.5 43.3217 59.0567 47.8 60.8C53.0938 57.745 54 55 54 50L52 47L55.2 49.8C55.2951 52.3648 55.4229 53.7895 54.7 56.5C53.5 59.5 51.5 61.5 47.7 63.8C44 61.5 43 60 40.7 56.5C40.3164 53.5132 40.1274 51.9879 40.5 49.5Z"
+                      />
+                    </svg>
                   </div>
 
-                  {/* Status */}
-                  <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-[10px] text-gray-400 font-medium">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                      <span>System Status: 100% Online</span>
-                    </div>
-                    <p className="text-[9px] text-gray-600 font-mono">v1.2.0 (Tablet UI)</p>
-                  </div>
-                </div>
-
-                {/* Right Chat Console Panel */}
-                <div className="flex-1 flex flex-col h-full overflow-hidden relative z-10">
-                  {/* Header */}
-                  <div className="bg-white/[0.01] border-b border-white/[0.08] p-5 flex items-center justify-between backdrop-blur-md z-10 shrink-0">
-                    <div className="flex items-center gap-3">
+                  {/* Header - Compact & sleek for maximum screen real estate */}
+                  <div className="bg-[#080C16] border-b border-white/10 px-4 sm:px-5 py-2.5 flex items-center justify-between z-10 shrink-0 shadow-sm">
+                    <div className="flex items-center gap-2.5 sm:gap-3">
                       <div className="relative">
-                        <div className="w-11 h-11 rounded-full bg-white/10 flex items-center justify-center overflow-hidden border border-white/5 shadow-inner">
-                          <img src="/projects/Ai boat inside photo.png" alt="Nova AI" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4]" />
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/5 p-0.5 border border-white/15 overflow-hidden">
+                          <img src="/images/spider-man-aesthetic-738pim4mwbf8349v.webp" alt="Spidey" className="w-full h-full rounded-full object-cover object-[50%_10%]" />
                         </div>
-                        <div className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-green-500 border-[2.5px] border-[#0B1120] rounded-full shadow-[0_0_8px_rgba(34,197,94,0.6)]">
-                          <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-70"></div>
+                        <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-[#080C16] rounded-full">
+                          <div className="absolute inset-0 bg-emerald-400 rounded-full animate-ping opacity-60"></div>
                         </div>
                       </div>
                       <div>
-                        <h3 className="text-white font-semibold text-lg flex items-center gap-2">
-                          Nova
-                        </h3>
-                        <p className="text-gray-400 text-xs font-medium">Usually replies instantly</p>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-white font-bold text-sm sm:text-[15px] tracking-tight leading-tight">
+                            Spidey
+                          </h3>
+                        </div>
+                        <p className="text-gray-400 text-[10px] sm:text-[11px] flex items-center gap-1.5 font-light leading-tight mt-0.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block" />
+                          Nexoraa Studio · Always Online
+                        </p>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5">
                       <button
-                        onClick={() => {
-                          if (flowState !== 'completed') return;
-                          playClickSound(750, 0.04);
-                          setShowDocsMenu(!showDocsMenu);
-                        }}
-                        disabled={flowState !== 'completed'}
-                        className={`w-9 h-9 flex items-center justify-center rounded-xl transition-all duration-300 relative border ${
-                          flowState !== 'completed'
-                            ? 'bg-white/[0.01]/30 border-white/5 text-gray-600 cursor-not-allowed opacity-50'
-                            : showDocsMenu || activeDocument
-                              ? 'bg-accent-blue/10 border-accent-blue/40 text-accent-blue cursor-pointer'
-                              : 'bg-white/[0.02] border-white/5 text-gray-400 hover:text-white hover:bg-white/[0.08] cursor-pointer'
-                          }`}
-                        title={flowState !== 'completed' ? "Verify your email to access" : "Secure Document Vault"}
+                        onClick={handleClearChat}
+                        className="w-8 h-8 flex items-center justify-center rounded-xl bg-white/[0.04] border border-white/10 hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-200 cursor-pointer shadow-sm"
+                        title="New Chat / Reset Conversation"
                       >
-                        <FolderLock className="w-4 h-4" />
-                        {/* Pulsing indicator if uncompleted documents exist and verified */}
-                        {flowState === 'completed' && (!isSigned || !offerAccepted || !ndaExecuted || !proposalApproved) && (
-                          <span className="absolute top-1 right-1 w-1.5 h-1.5 rounded-full bg-accent-blue animate-ping" />
-                        )}
+                        <RotateCcw className="w-3.5 h-3.5" />
                       </button>
-
                       <button
                         onClick={() => {
                           playClickSound(500, 0.08);
                           setIsOpen(false);
                           setActiveDocument(null);
-                          setShowDocsMenu(false);
                         }}
-                        className="w-9 h-9 flex items-center justify-center rounded-xl bg-white/[0.02] border border-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-all duration-300"
+                        className="w-8 h-8 flex items-center justify-center rounded-xl bg-white/[0.04] hover:bg-white/10 border border-white/10 hover:border-white/20 text-gray-400 hover:text-white transition-all duration-200 cursor-pointer shadow-sm group"
+                        title="Close / Minimize (Esc)"
+                        aria-label="Close Tablet"
                       >
-                        <ChevronDown className="w-5 h-5" />
+                        <ChevronDown className="w-5 h-5 group-hover:translate-y-0.5 transition-transform" />
                       </button>
                     </div>
                   </div>
@@ -1576,9 +1597,8 @@ What package matches your requirements? \n\n[OPTIONS]`;
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 15 }}
                           transition={{ duration: 0.25 }}
-                          className={`flex-1 flex flex-col overflow-hidden bg-[#070b14]/98 relative z-10 min-h-0 h-full ${
-                            activeDocument ? 'p-3 pb-2' : 'p-6'
-                          }`}
+                          className={`flex-1 flex flex-col overflow-hidden bg-[#070b14]/98 relative z-10 min-h-0 h-full ${activeDocument ? 'p-3 pb-2' : 'p-6'
+                            }`}
                         >
                           {renderActiveDocument()}
                         </m.div>
@@ -1594,169 +1614,78 @@ What package matches your requirements? \n\n[OPTIONS]`;
                           <div
                             ref={messagesContainerRef}
                             data-lenis-prevent="true"
-                            className="flex-1 overflow-y-auto overscroll-contain p-5 space-y-6 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0 text-left min-h-0"
+                            className="flex-1 overflow-y-auto overscroll-contain will-change-scroll p-3.5 sm:p-5 space-y-4 scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent relative z-0 text-left min-h-0"
                           >
-                            {messages.map((msg, idx) => (
-                              <div
-                                key={idx}
-                                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} max-w-full`}
-                              >
-                                <div className={`flex gap-3 max-w-[88%] ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'} items-end`}>
-                                  <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                                    {msg.role === 'user' ? <User className="w-4 h-4 text-gray-300" /> : <img src="/projects/Ai boat inside photo.png" alt="Nova AI" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4]" />}
-                                  </div>
+                            <div className="max-w-3xl mx-auto w-full space-y-4">
+                              {messages.map((msg, idx) => (
+                                <ChatMessageItem
+                                  key={idx}
+                                  msg={msg}
+                                  idx={idx}
+                                  onComplete={markMessageTyped}
+                                  onWordTyped={scrollToBottom}
+                                  onReplyClick={onReplyClick}
+                                />
+                              ))}
 
-                                  <div
-                                    className={`relative text-sm ${msg.role === 'user'
-                                      ? 'p-4 rounded-2xl shadow-[0_4px_16px_rgba(91,164,230,0.2)] bg-gradient-to-br from-accent-blue via-[#4f46e5] to-accent-purple border border-white/10 text-white rounded-br-sm'
-                                      : 'py-4 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]'
-                                      }`}
-                                  >
-                                    {msg.role !== 'user' && (
-                                      <>
-                                        <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
-                                        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[6px] opacity-80"></div>
-                                      </>
-                                    )}
-                                    <div className="relative z-10 text-gray-200 leading-relaxed font-light tracking-wide">
-                                      {renderMessageContent(msg, idx)}
+                              {/* Loading Indicator */}
+                              {isLoading && (
+                                <div className="flex justify-start w-full animate-fade-in">
+                                  <div className="flex gap-2.5 max-w-[85%] items-start">
+                                    <div className="w-7 h-7 shrink-0 rounded-full overflow-hidden border border-red-500/30 mt-0.5 shadow-sm bg-black/40">
+                                      <img
+                                        src="/images/spider-man-aesthetic-738pim4mwbf8349v.webp"
+                                        alt="Spidey"
+                                        className="w-full h-full object-cover object-[50%_10%]"
+                                      />
+                                    </div>
+                                    <div className="flex flex-col items-start">
+                                      <span className="text-[11px] font-semibold text-gray-300 mb-1 px-1">Spidey</span>
+                                      <div className="px-4 py-2.5 rounded-2xl rounded-tl-xs bg-[#0C101A] border border-white/10 flex items-center gap-1.5 shadow-sm">
+                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '0ms' }} />
+                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '200ms' }} />
+                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '400ms' }} />
+                                        <span className="text-xs text-gray-400 ml-1.5 font-normal">typing...</span>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                            ))}
+                              )}
 
-                            {isLoading && (
-                              <div className="flex justify-start">
-                                <div className="flex gap-3 max-w-[88%] items-end">
-                                  <div className="w-8 h-8 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10 overflow-hidden shadow-sm">
-                                    <img src="/projects/Ai boat inside photo.png" alt="Nova AI" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4]" />
-                                  </div>
-                                  <div className="py-3 px-5 rounded-2xl rounded-bl-[4px] bg-[#0E1726]/40 backdrop-blur-xl border border-white/[0.08] flex items-center gap-2 h-[44px] relative overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]">
-                                    <div className="absolute inset-0 opacity-[0.08] pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.8) 1px, transparent 0)', backgroundSize: '10px 10px' }}></div>
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-[1px] bg-gradient-to-r from-transparent via-accent-blue to-transparent"></div>
-                                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[40%] h-[2px] bg-accent-blue blur-[4px] opacity-80"></div>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '0ms' }}></div>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-accent-purple animate-bounce relative z-10" style={{ animationDelay: '150ms' }}></div>
-                                    <div className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-bounce relative z-10" style={{ animationDelay: '300ms' }}></div>
-                                  </div>
-                                </div>
-                              </div>
-                            )}
-                            <div ref={messagesEndRef} className="shrink-0 h-px" />
+                              <div ref={messagesEndRef} className="shrink-0 h-px" />
+                            </div>
                           </div>
 
-                          {/* Input Area */}
-                          <div className="p-4 bg-transparent border-t border-white/[0.06] backdrop-blur-md z-10 shrink-0">
-                            <div className="relative flex items-center bg-[#070b15]/90 border border-white/10 rounded-2xl p-1.5 shadow-inner focus-within:border-accent-blue/50 focus-within:ring-2 focus-within:ring-accent-blue/15 transition-all duration-300">
-                              <input
-                                type="text"
-                                value={inputValue}
-                                onChange={(e) => setInputValue(e.target.value)}
-                                onKeyPress={handleKeyPress}
-                                placeholder={
-                                  flowState === 'awaiting_email'
-                                    ? "Enter your email address..."
-                                    : flowState === 'awaiting_otp'
-                                      ? "Enter 6-digit verification code..."
-                                      : "Ask Nova anything..."
-                                }
-                                className="w-full bg-transparent py-2.5 pl-4 pr-14 text-sm text-white placeholder-gray-500 focus:outline-none"
-                              />
-                              <button
-                                onClick={() => {
-                                  playClickSound(850, 0.03);
-                                  handleSend();
-                                }}
-                                disabled={!inputValue.trim() || isLoading}
-                                className="absolute right-1.5 w-9 h-9 flex items-center justify-center rounded-xl bg-gradient-to-br from-accent-blue to-accent-purple text-white shadow-[0_0_12px_rgba(91,164,230,0.3)] disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all cursor-pointer border-0"
-                              >
-                                <Send className="w-4 h-4 ml-0.5" />
-                              </button>
-                            </div>
-                            <div className="text-center mt-3 mb-1 font-sans">
-                              <p className="text-[9px] text-gray-500 uppercase tracking-wider font-semibold">Powered by Nexoraa AI</p>
+                          {/* Input Area - Compact & Professional */}
+                          <div className="px-3.5 py-2.5 sm:px-5 sm:py-3 bg-[#080C16] border-t border-white/10 z-10 shrink-0">
+                            <div className="max-w-3xl mx-auto w-full">
+                              <div className="relative flex items-center bg-[#04060C] border border-white/15 rounded-xl px-2 py-0.5 shadow-inner focus-within:border-red-500/60 focus-within:ring-1 focus-within:ring-red-500/20 transition-all duration-200">
+                                <input
+                                  type="text"
+                                  value={inputValue}
+                                  onChange={(e) => setInputValue(e.target.value)}
+                                  onKeyPress={handleKeyPress}
+                                  placeholder="Ask Spidey anything (services, pricing, timeline, tech stack)..."
+                                  className="w-full bg-transparent py-2 pl-2 pr-10 text-[13.5px] text-white placeholder-gray-500 focus:outline-none font-normal"
+                                />
+                                <button
+                                  onClick={() => {
+                                    playClickSound(850, 0.03);
+                                    handleSend();
+                                  }}
+                                  disabled={!inputValue.trim() || isLoading}
+                                  aria-label="Send message"
+                                  className="absolute right-1.5 w-7 h-7 flex items-center justify-center rounded-lg bg-red-600 hover:bg-red-500 text-white shadow-sm disabled:opacity-25 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                                >
+                                  <Send className="w-3.5 h-3.5" />
+                                </button>
+                              </div>
                             </div>
                           </div>
                         </m.div>
                       )}
                     </AnimatePresence>
                   </div>
-
-                  {/* Mobile/Global Documents Dropdown Drawer */}
-                  <AnimatePresence>
-                    {showDocsMenu && (
-                      <m.div
-                        initial={{ opacity: 0, y: '100%' }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: '100%' }}
-                        transition={{ type: 'spring', damping: 25, stiffness: 250 }}
-                        className="absolute inset-x-0 bottom-0 bg-[#0c1222]/98 backdrop-blur-2xl border-t border-white/10 rounded-t-3xl z-40 p-6 shadow-[0_-15px_30px_rgba(0,0,0,0.8)] max-h-[85%] overflow-y-auto"
-                      >
-                        <div className="flex items-center justify-between mb-5">
-                          <div className="flex items-center gap-2">
-                            <FolderLock className="w-5 h-5 text-accent-blue" />
-                            <h4 className="text-white font-bold text-xs uppercase tracking-wider">Secure Document Vault</h4>
-                          </div>
-                          <button
-                            onClick={() => {
-                              playClickSound(500, 0.05);
-                              setShowDocsMenu(false);
-                            }}
-                            className="w-7 h-7 flex items-center justify-center rounded-full bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white transition-colors cursor-pointer border-0"
-                          >
-                            <X className="w-4 h-4" />
-                          </button>
-                        </div>
-
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                          {vaultDocuments.map((doc) => {
-                            const isLocked = flowState !== 'completed' || doc.id === 'client_agreement' || doc.id === 'nda';
-                            const IconComponent = isLocked ? Lock : doc.icon;
-                            const isActive = activeDocument === doc.id;
-                            return (
-                              <button
-                                key={doc.id}
-                                onClick={() => {
-                                  playClickSound(750, 0.05);
-                                  if (doc.id === 'client_agreement' || doc.id === 'nda') {
-                                    setLockedModalOpen(true);
-                                  } else {
-                                    setActiveDocument(isActive ? null : doc.id);
-                                  }
-                                  setShowDocsMenu(false);
-                                }}
-                                className={`flex items-center gap-3.5 w-full p-4 rounded-2xl border transition-all duration-300 text-left relative overflow-hidden group cursor-pointer ${isActive
-                                  ? 'bg-gradient-to-r from-accent-blue/15 to-accent-purple/15 border-accent-blue/40 text-white shadow-[0_0_20px_rgba(91,164,230,0.15)]'
-                                  : 'bg-white/[0.02] border-white/5 text-gray-300 hover:bg-white/[0.05] hover:border-white/10'
-                                  }`}
-                              >
-                                <div className={`p-2.5 rounded-xl border ${isActive ? 'bg-accent-blue/10 border-accent-blue/20' : 'bg-white/5 border-white/5 group-hover:bg-white/10'} transition-all`}>
-                                  <IconComponent className={`w-4 h-4 ${isActive ? 'text-accent-blue' : 'text-gray-400 group-hover:text-white'}`} />
-                                </div>
-                                <div className="flex flex-col text-left">
-                                  <span className="text-[12px] font-semibold tracking-wide text-white">{doc.label}</span>
-                                  <span className="text-[9px] text-gray-500 font-light mt-0.5">
-                                    {doc.id === 'client_agreement' && (isSigned ? 'Signed & Executed' : 'Digital Contract Signature')}
-                                    {doc.id === 'internship_offer' && (offerAccepted ? 'Offer Accepted' : 'Full Stack Dev Intern Offer')}
-                                    {doc.id === 'card_details' && (cardCopied ? 'Card Copied' : 'Interactive Billing Card')}
-                                    {doc.id === 'nda' && (ndaExecuted ? 'Executed NDA' : 'Mutual Confidentiality Agreement')}
-                                    {doc.id === 'project_proposal' && (proposalApproved ? 'Proposal Approved' : '7-Day Sprint Roadmap')}
-                                  </span>
-                                </div>
-                                {isActive && (
-                                  <div className="ml-auto w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
-                                    <Check className="w-3.5 h-3.5 text-emerald-400" />
-                                  </div>
-                                )}
-                              </button>
-                            );
-                          })}
-                        </div>
-                      </m.div>
-                    )}
-                  </AnimatePresence>
                 </div> {/* Close Right Chat Console Panel */}
 
               </div> {/* Close Screen Area Container */}
@@ -1766,6 +1695,7 @@ What package matches your requirements? \n\n[OPTIONS]`;
       </AnimatePresence>
 
       {/* Toggle Area */}
+      {!isOpen && (
       <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex flex-col items-end gap-3">
         {/* Floating Speech Bubble */}
         <AnimatePresence>
@@ -1778,99 +1708,82 @@ What package matches your requirements? \n\n[OPTIONS]`;
               className="relative cursor-pointer group z-20"
               onClick={() => setIsOpen(true)}
             >
-              {/* Animated gradient border wrapper */}
-              <div className="absolute -inset-[1px] rounded-2xl bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue bg-[length:200%_100%] opacity-0 group-hover:opacity-100 transition-opacity duration-700" style={{ animation: 'shimmer 3s linear infinite' }}></div>
+              {/* Main card - Clean professional, no red border on hover */}
+              <div className="relative flex items-center gap-3 px-4.5 py-3 rounded-2xl bg-[#090C15] border border-white/10 group-hover:border-white/20 shadow-2xl transition-all duration-300 overflow-hidden">
 
-              {/* Main card */}
-              <div className="relative flex items-center gap-3.5 px-5 py-3.5 rounded-2xl bg-[#0D1117] border border-white/[0.08] group-hover:border-transparent shadow-[0_4px_24px_rgba(0,0,0,0.5)] transition-all duration-500 overflow-hidden">
+                  {/* Sweep highlight */}
+                  <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.04] to-transparent pointer-events-none"></div>
 
-                {/* Sweep highlight */}
-                <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out bg-gradient-to-r from-transparent via-white/[0.06] to-transparent pointer-events-none"></div>
-
-                {/* Avatar */}
-                <div className="relative flex-shrink-0 w-10 h-10 z-10">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-accent-blue/20 to-accent-purple/20 flex items-center justify-center border border-white/[0.08] overflow-hidden">
-                    <img src="/projects/Ai boat inside photo.png" alt="Milan" className="w-full h-full object-cover object-[50%_0%] origin-top scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" />
+                  {/* Avatar */}
+                  <div className="relative flex-shrink-0 w-9 h-9 z-10">
+                    <div className="w-full h-full rounded-full bg-[#121622] flex items-center justify-center border border-white/15 overflow-hidden">
+                      <img src="/images/spider-man-aesthetic-738pim4mwbf8349v.webp" alt="Spidey" className="w-full h-full object-cover object-[50%_10%] group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                    {/* Online dot */}
+                    <div className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-400 border-2 border-[#090C15] rounded-full z-20"></div>
                   </div>
-                  {/* Online dot */}
-                  <div className="absolute bottom-0 right-0 w-3 h-3 bg-emerald-400 border-2 border-[#0D1117] rounded-full z-20">
-                    <div className="absolute inset-0 bg-emerald-400 rounded-full animate-ping opacity-60"></div>
+
+                  {/* Text - Professional simple text with Quicksand font */}
+                  <div className="text-left relative z-10 mr-1">
+                    <span className="text-[14px] text-gray-200 group-hover:text-white transition-colors duration-200 font-quicksand font-semibold whitespace-nowrap tracking-wide">
+                      How can I help you today?
+                    </span>
+                  </div>
+
+                  {/* Arrow */}
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/[0.05] group-hover:bg-white/10 flex items-center justify-center ml-auto transition-all duration-200 z-10">
+                    <svg className="w-3 h-3 text-gray-400 group-hover:text-white transition-colors duration-200 -rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
                   </div>
                 </div>
-
-                {/* Text */}
-                <div className="flex flex-col text-left relative z-10 mr-1">
-                  <span className="text-[11px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-accent-blue to-accent-purple tracking-wide">Nova AI</span>
-                  <span className="text-[13px] text-gray-300 group-hover:text-white transition-colors duration-300 font-normal mt-0.5">How can I help you today?</span>
-                </div>
-
-                {/* Arrow */}
-                <div className="flex-shrink-0 w-6 h-6 rounded-full bg-white/[0.05] group-hover:bg-accent-blue/20 flex items-center justify-center ml-auto transition-all duration-300 z-10">
-                  <svg className="w-3 h-3 text-gray-500 group-hover:text-accent-blue transition-colors duration-300 -rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
-                </div>
-              </div>
-            </m.div>
-          )}
-        </AnimatePresence>
-
-        {/* The Bot Button */}
-        <m.button
-          onClick={() => setIsOpen(!isOpen)}
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="w-16 h-16 bg-[#1A2533] rounded-full shadow-[0_0_20px_rgba(91,164,230,0.3)] flex items-center justify-center border border-white/10 overflow-visible relative group"
-        >
-          {/* AI Energy Orb Backdrop */}
-          {!isOpen && (
-            <m.div
-              animate={{
-                scale: [1, 1.2, 1],
-                rotate: [0, 90, 180, 270, 360],
-              }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-[-4px] rounded-full bg-gradient-to-tr from-accent-blue/50 to-transparent blur-[8px] opacity-60 mix-blend-screen pointer-events-none"
-            ></m.div>
-          )}
-
-          <AnimatePresence mode="wait">
-            {isOpen ? (
-              <m.div
-                key="close"
-                initial={{ rotate: -90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: 90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="w-full h-full flex items-center justify-center bg-accent-blue rounded-full z-10 relative"
-              >
-                <X className="w-6 h-6 text-primary-dark" />
-              </m.div>
-            ) : (
-              <m.div
-                key="chat"
-                initial={{ rotate: 90, opacity: 0 }}
-                animate={{ rotate: 0, opacity: 1 }}
-                exit={{ rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.2 }}
-                className="relative w-full h-full flex items-center justify-center mt-1.5 z-10"
-              >
-                {/* Interactive Logo with float animation */}
-                <m.div
-                  animate={{ y: [-2, 2, -2] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="w-[85%] h-[85%] absolute group-hover:scale-110 transition-transform duration-300 flex items-center justify-center"
-                >
-                  <img src="/logo/nova-glow-icon.png" alt="Nova Chat" className="w-full h-full rounded-full object-cover object-[50%_30%] scale-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.4)]" />
-                </m.div>
               </m.div>
             )}
           </AnimatePresence>
 
-          {/* Unread indicator dot */}
-          {!isOpen && messages.length === 0 && (
-            <span className="absolute top-0 right-0 w-4 h-4 bg-red-500 border-2 border-[#1A2533] rounded-full"></span>
-          )}
-        </m.button>
-      </div>
+          {/* The Bot Button - Clean crisp edges, NO blurry aura/glow */}
+          <m.button
+            onClick={() => setIsOpen(!isOpen)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-16 h-16 bg-[#090C15] rounded-full shadow-2xl flex items-center justify-center border-2 border-white/15 hover:border-white/30 overflow-visible relative group cursor-pointer transition-colors duration-300"
+          >
+            <AnimatePresence mode="wait">
+              {isOpen ? (
+                <m.div
+                  key="close"
+                  initial={{ rotate: -90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: 90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-full h-full flex items-center justify-center bg-red-600 rounded-full z-10 relative"
+                >
+                  <X className="w-6 h-6 text-white" />
+                </m.div>
+              ) : (
+                <m.div
+                  key="chat"
+                  initial={{ rotate: 90, opacity: 0 }}
+                  animate={{ rotate: 0, opacity: 1 }}
+                  exit={{ rotate: -90, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="relative w-full h-full flex items-center justify-center z-10 p-1"
+                >
+                  {/* Spidey Avatar */}
+                  <m.div
+                    className="w-full h-full rounded-full overflow-hidden border border-white/15 flex items-center justify-center group-hover:scale-105 transition-transform duration-300"
+                  >
+                    <img src="/images/spider-man-aesthetic-738pim4mwbf8349v.webp" alt="Spidey Chat" className="w-full h-full object-cover object-[50%_10%]" />
+                  </m.div>
+                </m.div>
+              )}
+            </AnimatePresence>
+
+            {/* Unread indicator dot */}
+            {!isOpen && messages.length === 0 && (
+              <span className="absolute top-0 right-0 w-3.5 h-3.5 bg-red-500 border-2 border-[#090C15] rounded-full"></span>
+            )}
+          </m.button>
+        </div>
+      )}
 
       {/* Fullscreen Locked Strip */}
       <AnimatePresence>
@@ -1890,14 +1803,14 @@ What package matches your requirements? \n\n[OPTIONS]`;
               className="w-full bg-[#050505]/95 border-y border-white/10 py-8 md:py-10 px-6 flex items-center justify-center shadow-[0_0_100px_rgba(0,0,0,0.8)] backdrop-blur-2xl relative origin-center overflow-hidden"
             >
               {/* Glossy Reflection overlay */}
-              <m.div 
+              <m.div
                 animate={{ x: ['-200%', '200%'] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "linear", repeatDelay: 1 }}
                 className="absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12 pointer-events-none"
               />
-              
+
               <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
-                
+
                 {/* Left side: Icon + Text */}
                 <div className="flex flex-col md:flex-row items-center md:items-start gap-5 md:gap-8 text-center md:text-left">
                   <div className="w-14 h-14 md:w-20 md:h-20 bg-white/5 border border-white/10 rounded-full flex items-center justify-center shrink-0 shadow-[0_0_30px_rgba(255,255,255,0.05)]">
@@ -1912,10 +1825,10 @@ What package matches your requirements? \n\n[OPTIONS]`;
                     </p>
                   </div>
                 </div>
-                
+
                 {/* Right side: Buttons */}
                 <div className="flex flex-row items-center gap-3 w-full md:w-auto mt-2 md:mt-0">
-                  <button 
+                  <button
                     onClick={() => setLockedModalOpen(false)}
                     className="flex-1 md:flex-none px-6 py-3.5 rounded-full bg-transparent hover:bg-white/5 text-gray-400 hover:text-white font-bold transition-colors border border-transparent hover:border-white/10 text-sm md:text-base whitespace-nowrap"
                   >

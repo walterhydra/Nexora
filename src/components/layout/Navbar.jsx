@@ -122,18 +122,14 @@ export default function Navbar() {
           animate={isHidden ? "hidden" : "visible"}
           transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
           className={cn(
-            "pointer-events-auto flex items-center justify-between w-[96%] max-w-7xl rounded-full relative transition-[padding] duration-300 will-change-transform",
-            "bg-[#050505]/95 border border-white/10 shadow-[0_25px_50px_rgba(0,0,0,0.8)] backdrop-blur-md",
+            "pointer-events-auto flex items-center justify-between w-[96%] max-w-7xl rounded-full relative transition-[padding] duration-300 will-change-transform transform-gpu",
+            "bg-[#050505]/95 border border-white/10 shadow-[0_25px_50px_rgba(0,0,0,0.8)] backdrop-blur-sm",
             isScrolled ? "p-1.5 px-4 sm:px-6" : "p-2.5 px-5 sm:px-7"
           )}
         >
-          {/* Refractive Border Gloss Beam Sweep */}
+          {/* Refractive Border Gloss Beam Sweep - Hardware GPU CSS Keyframe */}
           <div className="absolute inset-0 rounded-full overflow-hidden pointer-events-none">
-            <m.div 
-              animate={{ x: ['-200%', '200%'] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear", repeatDelay: 3 }}
-              className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent skew-x-12"
-            />
+            <div className="absolute inset-y-0 w-1/3 bg-gradient-to-r from-transparent via-white/5 to-transparent pointer-events-none transform-gpu will-change-transform animate-[navbar-sweep_7s_linear_infinite]" />
           </div>
 
           {/* Logo Section (Left) - Zoomed brand text to text-xl */}
@@ -202,15 +198,15 @@ export default function Navbar() {
               </div>
 
               {/* Contact Us CTA inside capsule */}
-              <button 
-                onClick={() => setContactModalOpen(true)} 
+              <Link 
+                to="/start-project" 
                 className="shrink-0 ml-1.5 bg-black hover:bg-neutral-900 border border-white/10 text-white px-4 py-1.5 xl:px-5 xl:py-2 text-xs font-bold rounded-full transition-all duration-200 flex items-center justify-center whitespace-nowrap group hover:border-white/20 active:scale-95"
               >
                 <span className="flex items-center gap-1.5 whitespace-nowrap">
                   Contact Us
                   <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform shrink-0" />
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -334,13 +330,17 @@ export default function Navbar() {
                 transition={{ delay: 0.3 }}
                 className="mt-8 flex flex-col items-center gap-6 w-full max-w-xs"
               >
-                <button onClick={() => { setMobileMenuOpen(false); setContactModalOpen(true); }} className="w-full">
+                <Link 
+                  to="/start-project" 
+                  onClick={() => setMobileMenuOpen(false)} 
+                  className="w-full"
+                >
                   <MagneticButton 
                     className="bg-white text-black w-full py-4 font-bold text-sm rounded-full transition-colors hover:bg-gray-200 flex items-center justify-center gap-2"
                   >
                     Contact Us <ArrowRight size={16} />
                   </MagneticButton>
-                </button>
+                </Link>
                 <Link 
                   to="/company-portal" 
                   onClick={() => setMobileMenuOpen(false)} 

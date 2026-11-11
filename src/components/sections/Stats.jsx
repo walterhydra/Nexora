@@ -109,26 +109,26 @@ export default function Stats() {
   return (
     <section id="stats" className="py-20 md:py-28 bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-300 font-quicksand overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* ============================================================== */}
         {/* SECTION HEADER (REFINED & LUXURY GRADE)                         */}
         {/* ============================================================== */}
         <div className="pb-12 md:pb-16 relative">
-          
-          {/* Subtle Ambient Glow behind header */}
+
+          {/* Subtle Ambient Glow behind header - Hardware GPU Accelerated */}
           <div 
-            className="absolute -top-12 left-0 w-[420px] h-[200px] pointer-events-none -z-10 blur-[100px] opacity-35"
+            className="absolute -top-12 left-0 w-[420px] h-[200px] pointer-events-none -z-10 opacity-40 transform-gpu"
             style={{ background: 'radial-gradient(ellipse at center, rgba(0,245,255,0.18) 0%, rgba(255,255,255,0.04) 50%, transparent 75%)' }}
           />
 
           <div>
             {/* Studio-Grade Micro Category Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)] mb-5 backdrop-blur-md">
+            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)] mb-5">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-400 shadow-[0_0_8px_rgba(0,245,255,0.8)]" />
               </span>
-              <span 
+              <span
                 className="text-[11px] font-bold uppercase tracking-[0.22em] text-white/90"
                 style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
               >
@@ -138,11 +138,11 @@ export default function Stats() {
 
             {/* Unified Glowing Title: Performance at Scale (Zero Background Bloom) */}
             <div>
-              <h2 
+              <h2
                 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white leading-tight cursor-default select-none"
                 style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
               >
-                <span 
+                <span
                   className="text-transparent bg-clip-text inline-block"
                   style={{
                     fontFamily: '"Quicksand", system-ui, sans-serif',
@@ -175,10 +175,10 @@ export default function Stats() {
                 className="group border-b border-neutral-200 dark:border-white/10 transition-colors duration-200 hover:bg-neutral-500/[0.03] dark:hover:bg-white/[0.02]"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 items-stretch min-h-[160px]">
-                  
+
                   {/* Column 1: Index Number + Icon */}
                   <div className="lg:col-span-1 p-6 sm:p-8 flex items-center lg:flex-col lg:items-center justify-between lg:justify-start gap-4 lg:gap-6 border-b lg:border-b-0 lg:border-r border-neutral-200 dark:border-white/10">
-                    <span 
+                    <span
                       className="font-mono text-xs text-neutral-400 dark:text-neutral-500 tracking-wider"
                       style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                     >
@@ -191,17 +191,17 @@ export default function Stats() {
 
                   {/* Column 2: Title, Shining White Stat Number & Tagline */}
                   <div className="lg:col-span-3 p-6 sm:p-8 flex flex-col justify-center border-b lg:border-b-0">
-                    
+
                     {/* Animated Shining White Title */}
                     <div className="mb-2">
-                      <h3 
+                      <h3
                         className="text-lg sm:text-xl font-bold tracking-tight text-transparent bg-clip-text inline-block"
                         style={shiningWhiteStyle}
                       >
                         {item.title}
                       </h3>
                     </div>
-                    
+
                     {/* Animated Shining White Stat Number (Pure White Shimmer) */}
                     <div className="flex items-baseline gap-2 mb-3">
                       <AnimatedCounter
@@ -210,7 +210,7 @@ export default function Stats() {
                         className="text-2xl sm:text-3xl font-bold tracking-tight text-transparent bg-clip-text inline-flex items-center"
                         style={shiningWhiteStyle}
                       />
-                      <span 
+                      <span
                         className="text-[10px] font-bold uppercase tracking-wider text-neutral-400 dark:text-neutral-400 px-1.5 py-0.5 rounded border border-white/10 bg-white/[0.03]"
                         style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                       >
@@ -219,7 +219,7 @@ export default function Stats() {
                     </div>
 
                     {/* Tagline */}
-                    <p 
+                    <p
                       className="text-xs sm:text-[13px] text-neutral-500 dark:text-neutral-400 leading-relaxed font-medium"
                       style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                     >
@@ -229,7 +229,7 @@ export default function Stats() {
 
                   {/* Column 3: In-Depth Paragraph Description */}
                   <div className="lg:col-span-4 p-6 sm:p-8 flex items-center border-b lg:border-b-0">
-                    <p 
+                    <p
                       className="text-xs sm:text-[13px] text-neutral-600 dark:text-neutral-300 leading-relaxed font-medium"
                       style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                     >
@@ -242,8 +242,8 @@ export default function Stats() {
                     <div className="grid grid-cols-2 gap-x-4 gap-y-2 mb-6">
                       <div className="space-y-2">
                         {item.pointsColumn1.map((pt, pIdx) => (
-                          <div 
-                            key={pIdx} 
+                          <div
+                            key={pIdx}
                             className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-medium"
                             style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                           >
@@ -254,8 +254,8 @@ export default function Stats() {
                       </div>
                       <div className="space-y-2">
                         {item.pointsColumn2.map((pt, pIdx) => (
-                          <div 
-                            key={pIdx} 
+                          <div
+                            key={pIdx}
                             className="flex items-start gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-medium"
                             style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
                           >
@@ -287,7 +287,7 @@ export default function Stats() {
         {/* ============================================================== */}
         {/* BOTTOM METRICS TELEMETRY STRIP                                 */}
         {/* ============================================================== */}
-        <div 
+        <div
           className="mt-8 pt-6 border-t border-neutral-200 dark:border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-neutral-500 dark:text-neutral-400 font-medium"
           style={{ fontFamily: '"Quicksand", system-ui, sans-serif' }}
         >

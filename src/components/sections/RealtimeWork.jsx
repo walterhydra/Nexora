@@ -79,9 +79,15 @@ export default function RealtimeWork() {
 
   return (
     <section id="work" className="py-24 md:py-32 px-6 bg-[#040406] dark:bg-[#040406] relative overflow-hidden font-quicksand">
-      {/* Background Ambience */}
-      <div className="absolute top-0 left-1/4 w-[700px] h-[700px] bg-accent-primary/5 rounded-full blur-[220px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[700px] h-[700px] bg-accent-violet/5 rounded-full blur-[220px] pointer-events-none" />
+      {/* Background Ambience - Hardware GPU Accelerated Radial Glow */}
+      <div 
+        className="absolute top-0 left-1/4 w-[700px] h-[700px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(0, 245, 255, 0.05) 0%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute bottom-0 right-1/4 w-[700px] h-[700px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(123, 47, 255, 0.05) 0%, transparent 70%)' }}
+      />
       
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(4,4,6,1)_100%),_linear-gradient(rgba(255,255,255,0.015)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.015)_1px,_transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-40" />

@@ -1,18 +1,15 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useCursor } from '../../context/CursorContext';
-import { m, useMotionValue, useSpring } from 'framer-motion';
+import { m, useMotionValue } from 'framer-motion';
 
 export default function ContextCursor() {
   const { cursorType } = useCursor();
   const [isVisible, setIsVisible] = useState(false);
   const isTouchRef = useRef(false);
 
+  // Direct GPU hardware motion coordinates - 0ms latency, zero spring delay
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
-  
-  const springConfig = { damping: 32, stiffness: 600, mass: 0.08 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
     // Detect touch-only devices and skip attaching listeners completely
@@ -100,10 +97,12 @@ export default function ContextCursor() {
 
   return (
     <m.div
-      className="fixed pointer-events-none z-[9999] border flex items-center justify-center -translate-x-1/2 -translate-y-1/2"
+      className="fixed pointer-events-none z-[9999] border flex items-center justify-center"
       style={{
-        x: cursorXSpring,
-        y: cursorYSpring,
+        x: cursorX,
+        y: cursorY,
+        translateX: '-50%',
+        translateY: '-50%',
         top: 0,
         left: 0,
         width: currentVariant.width,
@@ -112,7 +111,6 @@ export default function ContextCursor() {
         borderColor: currentVariant.borderColor,
         borderRadius: currentVariant.borderRadius,
         willChange: 'transform',
-        transform: 'translateZ(0)',
       }}
       animate={{
         scale: currentVariant.scale,

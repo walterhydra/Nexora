@@ -1,17 +1,17 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { m } from 'framer-motion';
-import { 
-  Globe, 
-  Smartphone, 
-  Palette, 
-  Bot, 
-  Rocket, 
-  Briefcase, 
-  Link as LinkIcon, 
-  TrendingUp, 
-  CheckCircle2, 
-  Zap, 
-  Clock 
+import {
+  Globe,
+  Smartphone,
+  Palette,
+  Bot,
+  Rocket,
+  Briefcase,
+  Link as LinkIcon,
+  TrendingUp,
+  CheckCircle2,
+  Zap,
+  Clock
 } from 'lucide-react';
 import { fadeUp, staggerContainer } from '../../animations/variants';
 import { services } from '../../constants/services';
@@ -33,10 +33,10 @@ export default function Services() {
 
   const handleMouseEnter = (index) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
-    // 35ms micro-debounce prevents layout thrashing when mouse sweeps rapidly across cards
+    // Instant micro-buffer (15ms) prevents jitter on high-speed sweep while feeling instant
     hoverTimeoutRef.current = setTimeout(() => {
       setActive(index);
-    }, 35);
+    }, 15);
   };
 
   const handleMouseLeaveContainer = () => {
@@ -52,17 +52,17 @@ export default function Services() {
   return (
     <section id="services" className="py-24 md:py-32 relative bg-black overflow-hidden font-display">
       {/* Neutral Hardware-accelerated ambient lighting */}
-      <div 
-        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none" 
-        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)', transform: 'translateZ(0)' }} 
+      <div
+        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%)', transform: 'translateZ(0)' }}
       />
-      <div 
-        className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full pointer-events-none" 
-        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)', transform: 'translateZ(0)' }} 
+      <div
+        className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.02) 0%, transparent 70%)', transform: 'translateZ(0)' }}
       />
 
       <div className="max-w-[1400px] mx-auto px-4 md:px-6 relative z-10">
-        
+
         {/* Header - Elite Studio Grade Monochrome White & Shade Typography */}
         <m.div
           initial="hidden"
@@ -71,14 +71,14 @@ export default function Services() {
           variants={staggerContainer}
           className="mb-14 md:mb-20 flex flex-col items-center text-center relative"
         >
-          {/* Neutral Monochrome Studio Glow behind Header */}
+          {/* Neutral Monochrome Studio Glow behind Header - Hardware GPU Accelerated */}
           <div 
-            className="absolute -top-16 left-1/2 -translate-x-1/2 w-[600px] h-[280px] pointer-events-none -z-10 blur-[110px] opacity-60"
+            className="absolute -top-16 left-1/2 -translate-x-1/2 w-[600px] h-[280px] pointer-events-none -z-10 opacity-70 transform-gpu"
             style={{ background: 'radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 50%, transparent 75%)' }}
           />
 
           {/* Micro Category Pill Badge (Clean Monochrome) */}
-          <m.div 
+          <m.div
             variants={fadeUp}
             className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/[0.04] border border-white/10 shadow-[0_0_20px_rgba(0,0,0,0.5),inset_0_1px_1px_rgba(255,255,255,0.08)] mb-6"
           >
@@ -89,12 +89,12 @@ export default function Services() {
           </m.div>
 
           {/* Main Title - Pure White & Animated Shaded Metallic Shimmer */}
-          <m.h2 
-            variants={fadeUp} 
+          <m.h2
+            variants={fadeUp}
             className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-jakarta font-bold tracking-[-0.02em] mb-6 leading-[1.08] text-white drop-shadow-[0_12px_24px_rgba(0,0,0,0.85)] cursor-default select-none"
             style={{ fontFamily: '"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
           >
-            <span 
+            <span
               className="text-transparent bg-clip-text inline-block"
               style={{
                 backgroundImage: 'linear-gradient(115deg, #ffffff 0%, #a1a1aa 25%, #ffffff 50%, #71717a 75%, #ffffff 100%)',
@@ -107,8 +107,8 @@ export default function Services() {
           </m.h2>
 
           {/* Subtitle */}
-          <m.p 
-            variants={fadeUp} 
+          <m.p
+            variants={fadeUp}
             className="text-base sm:text-lg text-white/65 max-w-2xl font-display font-normal leading-relaxed"
           >
             Modern websites, mobile apps, and AI automations — everything you need to grow and scale your business.
@@ -116,7 +116,7 @@ export default function Services() {
         </m.div>
 
         {/* 120 FPS Flex Accordion Container */}
-        <div 
+        <div
           onMouseLeave={handleMouseLeaveContainer}
           className="flex flex-col lg:flex-row w-full h-[85vh] min-h-[720px] lg:h-[650px] gap-2 lg:gap-3 p-3 pb-6 lg:p-3.5 lg:pb-7 bg-[#111116] rounded-[2rem] border border-white/10 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.95)] overflow-hidden relative"
           style={{ transform: 'translateZ(0)' }}
@@ -130,56 +130,46 @@ export default function Services() {
                 key={service.id}
                 onClick={() => handleClick(index)}
                 onMouseEnter={() => handleMouseEnter(index)}
-                className={`relative overflow-hidden h-full rounded-[1.5rem] cursor-pointer min-w-0 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[flex-grow] group ${
-                  isActive 
-                    ? 'flex-[6] lg:flex-[6] border border-white/20' 
-                    : 'flex-[1] lg:flex-[1] border border-white/[0.08] hover:border-white/25'
-                }`}
-                style={{ 
-                  transform: 'translateZ(0)', 
-                  contain: 'layout paint',
-                  boxShadow: isActive 
-                    ? '0 25px 45px -5px rgba(0, 0, 0, 0.98), 0 12px 20px -3px rgba(0, 0, 0, 0.9)' 
-                    : '0 16px 30px -4px rgba(0, 0, 0, 0.95), 0 8px 16px -2px rgba(0, 0, 0, 0.85)'
+                className={`relative overflow-hidden h-full rounded-[1.5rem] cursor-pointer min-w-0 transition-[flex-grow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[flex-grow] group shadow-[0_20px_40px_rgba(0,0,0,0.85)] ${isActive
+                  ? 'flex-[6] lg:flex-[6] border border-white/20'
+                  : 'flex-[1] lg:flex-[1] border border-white/[0.08] hover:border-white/25'
+                  }`}
+                style={{
+                  transform: 'translateZ(0)',
+                  contain: 'layout paint'
                 }}
               >
                 {/* Background Image - Fits 100% of the box, clean all the way to bottom */}
-                <div 
-                  className={`absolute inset-0 w-full h-full bg-cover bg-center origin-center transition-transform duration-700 ease-out pointer-events-none select-none ${
+                <div
+                  className={`absolute inset-0 w-full h-full bg-cover bg-center origin-center transition-transform duration-500 ease-out pointer-events-none select-none ${
                     isActive ? 'scale-105' : 'scale-100 group-hover:scale-105'
                   }`}
-                  style={{ 
+                  style={{
                     backgroundImage: `url(${service.image})`,
                     transform: 'translateZ(0)'
                   }}
                 />
 
-                {/* Subtle Inset Vignette Frame - Soft edge shade on active & closed */}
-                <div 
-                  className={`absolute inset-0 pointer-events-none z-[4] transition-all duration-500 rounded-[1.5rem] ${
-                    isActive 
-                      ? 'shadow-[inset_0_0_25px_rgba(0,0,0,0.7)]' 
-                      : 'shadow-[inset_0_0_15px_rgba(0,0,0,0.4)]'
-                  }`} 
+                {/* Subtle Inset Vignette Frame - Static shadow with zero reflow */}
+                <div
+                  className="absolute inset-0 pointer-events-none z-[4] rounded-[1.5rem] shadow-[inset_0_0_20px_rgba(0,0,0,0.6)]"
                 />
 
                 {/* CLOSED STATE SHADING: Clean photo top-to-bottom, no inside bottom black mask */}
                 <div
-                  className={`absolute inset-0 pointer-events-none z-[2] transition-opacity duration-500 ease-out ${
-                    isActive ? 'opacity-0' : 'opacity-100'
-                  }`}
+                  className={`absolute inset-0 pointer-events-none z-[2] transition-opacity duration-300 ease-out ${isActive ? 'opacity-0' : 'opacity-100'
+                    }`}
                 >
                   {/* Subtle dark tint over full photo */}
-                  <div className="absolute inset-0 bg-black/35 group-hover:bg-black/20 transition-colors duration-300" />
+                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/25 transition-colors duration-200" />
                   {/* Gentle top shade for icon */}
                   <div className="absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-black/50 to-transparent" />
                 </div>
 
                 {/* OPEN STATE SHADING: Full photo visible with smooth bottom shade for text */}
                 <div
-                  className={`absolute inset-0 pointer-events-none z-[2] transition-opacity duration-500 ease-out ${
-                    isActive ? 'opacity-100' : 'opacity-0'
-                  }`}
+                  className={`absolute inset-0 pointer-events-none z-[2] transition-opacity duration-300 ease-out ${isActive ? 'opacity-100' : 'opacity-0'
+                    }`}
                 >
                   {/* Bottom text shade (only covers lower text area, photo shines on top) */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 via-45% to-transparent" />
@@ -188,22 +178,20 @@ export default function Services() {
                 </div>
 
                 {/* Top Subtle Border Highlight for Active Card */}
-                <div 
-                  className={`absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent z-[5] pointer-events-none transition-opacity duration-500 ${
-                    isActive ? 'opacity-100' : 'opacity-0'
-                  }`} 
+                <div
+                  className={`absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-white/40 to-transparent z-[5] pointer-events-none transition-opacity duration-300 ${isActive ? 'opacity-100' : 'opacity-0'
+                    }`}
                 />
 
                 {/* Content Container - Zero DOM mount/unmount lag */}
                 <div className="relative z-10 w-full h-full font-display pointer-events-none">
-                  
-                  {/* ACTIVE EXPANDED CONTENT */}
-                  <div 
-                    className={`absolute inset-0 p-5 md:p-7 lg:p-8 flex flex-col justify-end transition-all duration-300 ease-out ${
-                      isActive 
-                        ? 'opacity-100 translate-y-0 pointer-events-auto delay-100' 
-                        : 'opacity-0 translate-y-3 pointer-events-none'
-                    }`}
+
+                  {/* ACTIVE EXPANDED CONTENT - Instant reveal without artificial delays */}
+                  <div
+                    className={`absolute inset-0 p-5 md:p-7 lg:p-8 flex flex-col justify-end transition-[opacity,transform] duration-250 ease-out ${isActive
+                      ? 'opacity-100 translate-y-0 pointer-events-auto'
+                      : 'opacity-0 translate-y-2 pointer-events-none'
+                      }`}
                   >
                     <div className="flex flex-col gap-3 md:gap-4 w-[520px] max-w-[calc(100vw-4rem)]">
                       {/* Top Header Row */}
@@ -228,7 +216,7 @@ export default function Services() {
                           <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-white">7-Day Sprint</span>
                         </div>
                       </div>
-                      
+
                       {/* Detailed Description */}
                       <p className="font-display text-white/90 text-sm md:text-base leading-relaxed pr-2 max-w-2xl font-normal">
                         {service.details}
@@ -256,8 +244,8 @@ export default function Services() {
                       {/* Tech Stack Pills */}
                       <div className="flex flex-wrap items-center gap-1.5 mt-2">
                         {service.tags.map((tag, i) => (
-                          <span 
-                            key={i} 
+                          <span
+                            key={i}
                             className="px-2.5 py-1 rounded-md bg-white/10 border border-white/15 text-[11px] font-mono font-medium text-white"
                           >
                             {tag}
@@ -267,29 +255,28 @@ export default function Services() {
                     </div>
                   </div>
 
-                  {/* INACTIVE COLLAPSED CONTENT */}
-                  <div 
-                    className={`absolute inset-0 p-5 md:p-7 lg:p-8 flex lg:flex-col items-center justify-center lg:justify-end pb-0 lg:pb-8 transition-opacity duration-300 ease-out ${
-                      !isActive 
-                        ? 'opacity-100 pointer-events-auto delay-75' 
-                        : 'opacity-0 pointer-events-none'
-                    }`}
+                  {/* INACTIVE COLLAPSED CONTENT - Instant clean crossfade */}
+                  <div
+                    className={`absolute inset-0 p-5 md:p-7 lg:p-8 flex lg:flex-col items-center justify-center lg:justify-end pb-0 lg:pb-8 transition-opacity duration-200 ease-out ${!isActive
+                      ? 'opacity-100 pointer-events-auto'
+                      : 'opacity-0 pointer-events-none'
+                      }`}
                   >
                     {/* Desktop Vertical Title */}
                     <div className="hidden lg:flex flex-col items-center justify-center h-full">
-                      <Icon size={20} className="text-white mb-6 shrink-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" />
-                      <h3 
-                        className="text-lg xl:text-xl font-display font-black uppercase tracking-[0.2em] whitespace-nowrap text-white transition-colors duration-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.9)]"
+                      <Icon size={20} className="text-white mb-6 shrink-0" />
+                      <h3
+                        className="text-lg xl:text-xl font-display font-black uppercase tracking-[0.2em] whitespace-nowrap text-white transition-colors duration-200 [text-shadow:0_2px_8px_rgba(0,0,0,0.9)]"
                         style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
                       >
                         {service.title}
                       </h3>
                     </div>
-                    
+
                     {/* Mobile Horizontal Title */}
                     <div className="flex lg:hidden items-center gap-3 w-full pl-2">
-                      <Icon size={20} className="text-white shrink-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]" />
-                      <h3 className="text-sm md:text-base font-display font-bold uppercase tracking-wider text-white truncate drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+                      <Icon size={20} className="text-white shrink-0" />
+                      <h3 className="text-sm md:text-base font-display font-bold uppercase tracking-wider text-white truncate [text-shadow:0_2px_8px_rgba(0,0,0,0.9)]">
                         {service.title}
                       </h3>
                     </div>

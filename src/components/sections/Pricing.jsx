@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { m, AnimatePresence } from 'framer-motion';
 import { pricingTiers } from '../../constants/pricing';
 import { Check, ArrowRight, X } from 'lucide-react';
@@ -10,20 +10,20 @@ const tiers = [
   { key: 'enterprise', label: 'Enterprise' },
 ];
 
-const PricingCard = ({ plan, isPopular, onGetStarted }) => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+const PricingCard = React.memo(({ plan, isPopular, onGetStarted }) => {
+  const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    cardRef.current.style.setProperty('--card-mx', `${e.clientX - rect.left}px`);
+    cardRef.current.style.setProperty('--card-my', `${e.clientY - rect.top}px`);
   };
 
   return (
     <m.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -15 }}
@@ -57,7 +57,7 @@ const PricingCard = ({ plan, isPopular, onGetStarted }) => {
             <div
               className="absolute -inset-px"
               style={{
-                background: `radial-gradient(320px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.08), transparent 65%)`,
+                background: `radial-gradient(320px circle at var(--card-mx, 50%) var(--card-my, 50%), rgba(255, 255, 255, 0.08), transparent 65%)`,
               }}
             />
             <div 
@@ -125,7 +125,7 @@ const PricingCard = ({ plan, isPopular, onGetStarted }) => {
       </div>
     </m.div>
   );
-};
+});
 
 export default function Pricing() {
   const [activeTier, setActiveTier] = useState('starter');
@@ -151,9 +151,15 @@ export default function Pricing() {
       className="py-20 md:py-28 px-5 sm:px-6 bg-[#040406] dark:bg-[#040406] relative overflow-hidden"
       style={{ fontFamily: '"Plus Jakarta Sans", "Inter", system-ui, sans-serif' }}
     >
-      {/* Background Ambience */}
-      <div className="absolute top-1/4 right-1/4 w-[450px] h-[450px] bg-accent-primary/5 rounded-full blur-[200px] pointer-events-none" />
-      <div className="absolute bottom-10 left-1/4 w-[450px] h-[450px] bg-accent-violet/5 rounded-full blur-[200px] pointer-events-none" />
+      {/* Background Ambience - Hardware GPU Accelerated Radial Glow */}
+      <div 
+        className="absolute top-1/4 right-1/4 w-[450px] h-[450px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(0, 245, 255, 0.05) 0%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute bottom-10 left-1/4 w-[450px] h-[450px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(123, 47, 255, 0.05) 0%, transparent 70%)' }}
+      />
       
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(4,4,6,1)_100%),_linear-gradient(rgba(255,255,255,0.015)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.015)_1px,_transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-35" />

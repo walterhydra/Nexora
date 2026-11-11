@@ -12,11 +12,11 @@ export default function LaptopMockup({ children, delay = 0, scrollProgress, onOp
 
   const activeProgress = scrollProgress || internalScrollProgress;
 
-  // Ultra-fluid spring interpolation: butter-smooth glide on both open and close
+  // Responsive spring interpolation: snappy tracking with zero scroll heaviness
   const smoothProgress = useSpring(activeProgress, {
-    stiffness: 130,
-    damping: 20,
-    mass: 0.08,
+    stiffness: 380,
+    damping: 30,
+    mass: 0.01,
     restDelta: 0.0005
   });
 

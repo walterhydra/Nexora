@@ -5,12 +5,22 @@ import { getScroll } from '../../utils/scroll';
 
 export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const isVisibleRef = useRef(false);
-  const lastProgressRef = useRef(0);
+  const circleRef = useRef(null);
   const rAFRef = useRef(null);
+  const docHeightRef = useRef(1);
+  const lastOffsetRef = useRef(-1);
+
+  const radius = 20;
+  const circumference = 2 * Math.PI * radius;
 
   useEffect(() => {
+    const updateDocHeight = () => {
+      docHeightRef.current = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    };
+    updateDocHeight();
+    window.addEventListener('resize', updateDocHeight, { passive: true });
+
     const handleScroll = () => {
       if (rAFRef.current) return;
 
@@ -24,12 +34,12 @@ export default function BackToTop() {
           setIsVisible(shouldShow);
         }
 
-        if (shouldShow) {
-          const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-          const progress = docHeight > 0 ? (scrollY / docHeight) * 100 : 0;
-          if (Math.abs(progress - lastProgressRef.current) > 1.5) {
-            lastProgressRef.current = progress;
-            setScrollProgress(progress);
+        if (shouldShow && circleRef.current) {
+          const progress = Math.min(100, Math.max(0, (scrollY / docHeightRef.current) * 100));
+          const offset = Math.round((circumference - (progress / 100) * circumference) * 10) / 10;
+          if (Math.abs(offset - lastOffsetRef.current) >= 0.5) {
+            lastOffsetRef.current = offset;
+            circleRef.current.style.strokeDashoffset = `${offset}px`;
           }
         }
       });
@@ -38,9 +48,10 @@ export default function BackToTop() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', updateDocHeight);
       if (rAFRef.current) cancelAnimationFrame(rAFRef.current);
     };
-  }, []);
+  }, [circumference]);
 
   const scrollToTop = () => {
     const lenis = getScroll();
@@ -51,10 +62,6 @@ export default function BackToTop() {
     }
   };
 
-  const radius = 20;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (scrollProgress / 100) * circumference;
-
   return (
     <AnimatePresence>
       {isVisible && (
@@ -63,7 +70,7 @@ export default function BackToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.5, y: 20 }}
           onClick={scrollToTop}
-          className="fixed bottom-6 left-6 z-40 w-12 h-12 flex items-center justify-center rounded-full glass hover:bg-gray-100 dark:hover:bg-white/10 transition-colors group border border-gray-200 dark:border-white/10"
+          className="fixed bottom-6 left-6 z-40 w-12 h-12 flex items-center justify-center rounded-full bg-[#0b0e17] hover:bg-[#151926] transition-colors group border border-white/10 shadow-xl cursor-pointer"
           aria-label="Back to top"
         >
           {/* Progress Ring */}
@@ -72,25 +79,26 @@ export default function BackToTop() {
               cx="24"
               cy="24"
               r={radius}
-              className="stroke-gray-300 dark:stroke-white/10"
+              className="stroke-white/10"
               strokeWidth="2"
               fill="transparent"
             />
             <circle
+              ref={circleRef}
               cx="24"
               cy="24"
               r={radius}
-              className="stroke-accent-blue transition-all duration-150"
+              className="stroke-accent-blue"
               strokeWidth="2"
               fill="transparent"
               strokeDasharray={circumference}
-              strokeDashoffset={offset}
+              strokeDashoffset={circumference}
               strokeLinecap="round"
             />
           </svg>
 
           {/* Icon */}
-          <ArrowUp className="w-5 h-5 text-gray-700 dark:text-gray-300 group-hover:text-accent-blue group-hover:-translate-y-0.5 transition-all relative z-10" />
+          <ArrowUp className="w-5 h-5 text-gray-300 group-hover:text-accent-blue group-hover:-translate-y-0.5 transition-all relative z-10" />
         </m.button>
       )}
     </AnimatePresence>

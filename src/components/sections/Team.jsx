@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { AnimatePresence, m } from 'framer-motion';
 import { ArrowUpRight, Code2, Radio, Sparkles, Target, X, Zap } from 'lucide-react';
 import { FiGithub, FiLinkedin, FiGlobe } from 'react-icons/fi';
@@ -56,7 +56,7 @@ function SocialLink({ href, label, children }) {
       aria-label={label}
       title={label}
       onClick={(event) => event.stopPropagation()}
-      className="inline-flex h-11 w-11 items-center justify-center border border-white/20 bg-black/25 text-white backdrop-blur transition-colors hover:bg-white hover:text-black"
+      className="inline-flex h-11 w-11 items-center justify-center border border-white/20 bg-black/60 text-white transition-colors hover:bg-white hover:text-black"
     >
       {children}
     </a>
@@ -68,7 +68,27 @@ export default function Team() {
   const hiringCard = team.find((member) => member.isCTA);
   const [activeId, setActiveId] = useState(null);
   const [selectedId, setSelectedId] = useState(null);
+  const hoverTimeoutRef = useRef(null);
   const selectedMember = teamMembers.find((member) => member.id === selectedId);
+
+  // Micro-debounce hover to prevent rapid layout thrashing when mouse sweeps cards
+  const handleMouseEnter = (id) => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    hoverTimeoutRef.current = setTimeout(() => {
+      setActiveId(id);
+    }, 30);
+  };
+
+  const handleMouseLeaveContainer = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    setActiveId(null);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     if (!selectedMember) return undefined;
@@ -136,7 +156,7 @@ export default function Team() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.7 }}
-          onMouseLeave={() => setActiveId(null)}
+          onMouseLeave={handleMouseLeaveContainer}
           className="flex min-h-[760px] flex-col gap-2 overflow-hidden bg-black p-2 shadow-[0_24px_80px_rgba(15,23,42,0.22)] lg:min-h-[650px] lg:flex-row"
         >
           {teamMembers.map((member, index) => {
@@ -147,9 +167,10 @@ export default function Team() {
             return (
               <article
                 key={member.id}
-                onMouseEnter={() => setActiveId(member.id)}
-                onFocus={() => setActiveId(member.id)}
+                onMouseEnter={() => handleMouseEnter(member.id)}
+                onFocus={() => handleMouseEnter(member.id)}
                 onClick={() => {
+                  if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
                   setActiveId(member.id);
                   setSelectedId(member.id);
                 }}
@@ -197,7 +218,7 @@ export default function Team() {
                       className="absolute inset-0 flex min-w-[280px] flex-col justify-between p-5 text-white md:p-7"
                     >
                       <div className="flex items-start justify-between gap-4">
-                        <div className="inline-flex items-center gap-2 border border-white/20 bg-black/25 px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] backdrop-blur">
+                        <div className="inline-flex items-center gap-2 border border-white/20 bg-black/60 px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em]">
                           <Code2 size={13} />
                           Active profile
                         </div>
@@ -212,7 +233,7 @@ export default function Team() {
                         </p>
                         <div className="mt-6 flex flex-wrap gap-2">
                           {member.specialty.split('+').map((skill) => (
-                            <span key={skill} className="border border-white/20 bg-black/25 px-3 py-2 text-xs font-bold uppercase tracking-wider backdrop-blur">
+                            <span key={skill} className="border border-white/20 bg-black/60 px-3 py-2 text-xs font-bold uppercase tracking-wider">
                               {skill.trim()}
                             </span>
                           ))}
@@ -294,7 +315,7 @@ export default function Team() {
                     className="absolute inset-0 flex min-w-[280px] flex-col justify-between p-5 text-white md:p-7"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <div className="inline-flex items-center gap-2 border border-white/20 bg-black/25 px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em] backdrop-blur">
+                      <div className="inline-flex items-center gap-2 border border-white/20 bg-black/60 px-3 py-2 text-[10px] font-black uppercase tracking-[0.2em]">
                         <Sparkles size={13} />
                         Open seat
                       </div>
@@ -343,7 +364,7 @@ export default function Team() {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setSelectedId(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/85 p-3 backdrop-blur-md md:p-6"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/92 p-3 md:p-6"
             style={{ transform: 'translateZ(0)', willChange: 'opacity' }}
           >
             <m.div
@@ -363,7 +384,7 @@ export default function Team() {
                 type="button"
                 onClick={() => setSelectedId(null)}
                 aria-label="Close introduction"
-                className="absolute right-3 top-3 z-30 inline-flex h-11 w-11 items-center justify-center border border-white/20 bg-black/60 text-white backdrop-blur transition-colors hover:bg-white hover:text-black"
+                className="absolute right-3 top-3 z-30 inline-flex h-11 w-11 items-center justify-center border border-white/20 bg-black/80 text-white transition-colors hover:bg-white hover:text-black"
               >
                 <X size={20} />
               </button>
@@ -383,7 +404,7 @@ export default function Team() {
                   }`}
                 />
                 <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 border border-white/20 bg-black/60 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em] backdrop-blur">
+                <div className="absolute bottom-4 left-4 border border-white/20 bg-black/80 px-3 py-2 text-[10px] font-black uppercase tracking-[0.22em]">
                   Nexoraa core member / {String(selectedMember.id).padStart(2, '0')}
                 </div>
               </div>

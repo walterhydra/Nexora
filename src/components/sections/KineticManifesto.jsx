@@ -26,7 +26,7 @@ export default function KineticManifesto() {
               <h2 className="text-7xl md:text-9xl font-black text-transparent stroke-text tracking-tighter uppercase italic">
                 We Don't Build Websites
               </h2>
-              <div className="w-8 h-8 rounded-full bg-accent-primary animate-pulse" />
+              <div className="w-8 h-8 rounded-full bg-accent-primary shadow-[0_0_15px_var(--color-accent-primary)]" />
             </div>
           ))}
         </m.div>
@@ -41,7 +41,7 @@ export default function KineticManifesto() {
               <h2 className="text-7xl md:text-9xl font-black text-white tracking-tighter uppercase italic">
                 We Engineer Empires
               </h2>
-              <div className="w-8 h-8 rounded-full bg-accent-secondary animate-pulse" />
+              <div className="w-8 h-8 rounded-full bg-accent-secondary shadow-[0_0_15px_var(--color-accent-secondary)]" />
             </div>
           ))}
         </m.div>

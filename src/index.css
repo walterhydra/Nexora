@@ -33,7 +33,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Noise Overlay - Optimized static texture */
+  /* Noise Overlay - Optimized static texture with hardware layer promotion */
   body::before {
     content: '';
     position: fixed;
@@ -45,6 +45,8 @@
     z-index: 50;
     opacity: 0.035;
     contain: strict;
+    transform: translateZ(0);
+    will-change: transform;
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAP8AAAAAAAABAAAAAQAAAAAAAABZtZ11AAAACHRSTlMABA8PEB8fIXUvVAAAAI9JREFUOMu1zjEKwzAMRFE/aHQK+wKBO1eI8yT3v0ZJSKEkkHbx+Oig10sZY2RkZGRkZGRkZGT8R+O59/jOcfX1/d7jW8ex/x5/c1y+1/f3+Jjj9L2+v8fHHKfP9f09vnKcPt/r+/yV4/i5/h5fOU6f7/V9/srx/Vx/j68cp8/3+j5/5fh+rr/HV47T53t9X7wBDfA4P4LdMhgAAAAASUVORK5CYII=");
     background-repeat: repeat;
   }
@@ -228,6 +230,15 @@
   100% {
     transform: translateX(350%) skewX(-15deg);
     opacity: 0;
+  }
+}
+
+@keyframes navbar-sweep {
+  0% {
+    transform: translateX(-200%) skewX(-12deg);
+  }
+  50%, 100% {
+    transform: translateX(450%) skewX(-12deg);
   }
 }
 

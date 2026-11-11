@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { m } from 'framer-motion';
 import {
   GraduationCap,
@@ -71,20 +71,20 @@ const industries = [
   }
 ];
 
-const IndustryCard = ({ ind, idx }) => {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+const IndustryCard = React.memo(({ ind, idx }) => {
+  const cardRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-    });
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    cardRef.current.style.setProperty('--ind-mx', `${e.clientX - rect.left}px`);
+    cardRef.current.style.setProperty('--ind-my', `${e.clientY - rect.top}px`);
   };
 
   return (
     <m.div
+      ref={cardRef}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-30px" }}
@@ -102,7 +102,7 @@ const IndustryCard = ({ ind, idx }) => {
           <div
             className="pointer-events-none absolute -inset-px z-0"
             style={{
-              background: `radial-gradient(300px circle at ${mousePos.x}px ${mousePos.y}px, rgba(255, 255, 255, 0.08), transparent 65%)`,
+              background: `radial-gradient(300px circle at var(--ind-mx, 50%) var(--ind-my, 50%), rgba(255, 255, 255, 0.08), transparent 65%)`,
             }}
           />
 
@@ -167,7 +167,7 @@ const IndustryCard = ({ ind, idx }) => {
       </div>
     </m.div>
   );
-};
+});
 
 export default function Industries() {
   return (
@@ -176,9 +176,15 @@ export default function Industries() {
       className="py-24 md:py-32 px-6 bg-[#040406] dark:bg-[#040406] relative overflow-hidden"
       style={{ fontFamily: '"Plus Jakarta Sans", "Inter", system-ui, sans-serif' }}
     >
-      {/* Background Ambience */}
-      <div className="absolute top-1/3 left-1/3 w-[600px] h-[600px] bg-accent-primary/5 rounded-full blur-[220px] pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-accent-violet/5 rounded-full blur-[200px] pointer-events-none" />
+      {/* Background Ambience - Hardware GPU Accelerated Radial Glow */}
+      <div 
+        className="absolute top-1/3 left-1/3 w-[600px] h-[600px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(0, 245, 255, 0.05) 0%, transparent 70%)' }}
+      />
+      <div 
+        className="absolute bottom-10 right-1/4 w-[500px] h-[500px] rounded-full pointer-events-none transform-gpu"
+        style={{ background: 'radial-gradient(circle, rgba(123, 47, 255, 0.05) 0%, transparent 70%)' }}
+      />
       
       {/* Subtle grid background */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_transparent_40%,_rgba(4,4,6,1)_100%),_linear-gradient(rgba(255,255,255,0.015)_1px,_transparent_1px),_linear-gradient(90deg,_rgba(255,255,255,0.015)_1px,_transparent_1px)] bg-[size:48px_48px] pointer-events-none opacity-40" />

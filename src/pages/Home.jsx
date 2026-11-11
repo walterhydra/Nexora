@@ -40,9 +40,6 @@ export default function Home() {
       transition={{ duration: 0.12, ease: "easeOut" }}
       className="relative"
     >
-      {/* Cinematic Noise Layer */}
-      <div className="noise-overlay" />
-
       {/* Main Flow */}
       <Hero />
       <div className="bg-[var(--bg-primary)]">

@@ -16,7 +16,7 @@ export default function LaunchSticker() {
         <img
           src="/images/Spiderman_coding_sticker-removebg-preview.png"
           alt="Spiderman Coding - Rapid Website Launch"
-          className="w-full h-full object-contain filter drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)] drop-shadow-[0_8px_16px_rgba(0,0,0,0.7)] drop-shadow-[0_16px_32px_rgba(0,0,0,0.5)]"
+          className="w-full h-full object-contain filter drop-shadow-[0_12px_24px_rgba(0,0,0,0.65)] transform-gpu"
           draggable="false"
         />
       </motion.div>

@@ -80,6 +80,7 @@ export default defineConfig({
                 
                 const mockReq = {
                   method: req.method,
+                  url: req.url,
                   body,
                   headers: req.headers,
                 };
@@ -106,7 +107,7 @@ export default defineConfig({
                   }
                 };
 
-                const fileUrl = pathToFileURL(filePath).href;
+                const fileUrl = pathToFileURL(filePath).href + '?t=' + Date.now();
                 const module = await import(fileUrl);
                 await module.default(mockReq, mockRes);
                 return;

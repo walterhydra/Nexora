@@ -187,34 +187,35 @@ ${formData.message}`;
       </div>
 
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start lg:items-stretch">
           
           {/* LEFT COLUMN: Open, Unboxed Project Specs Form */}
-          <div className="lg:col-span-7 flex flex-col justify-start">
+          <div className="lg:col-span-7 flex flex-col justify-between">
             {/* Elegant Header with Animated Metallic Shining Title */}
-            <div>
-              <h1 className="text-3xl sm:text-4xl md:text-[44px] font-bold tracking-tight leading-tight mb-2 select-none">
+            <div className="mb-4">
+              <h1
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-[38px] font-bold tracking-tight leading-[1.14] select-none !font-quicksand"
+                style={{ fontFamily: "'Quicksand', system-ui, -apple-system, sans-serif" }}
+              >
                 <span
-                  className="text-transparent bg-clip-text inline-block"
+                  className="text-transparent bg-clip-text inline-block !font-quicksand"
                   style={{
+                    fontFamily: "'Quicksand', system-ui, -apple-system, sans-serif",
                     backgroundImage: 'linear-gradient(115deg, #ffffff 0%, #a1a1aa 25%, #ffffff 50%, #71717a 75%, #ffffff 100%)',
                     backgroundSize: '200% 100%',
                     animation: 'metallic-shimmer 3.5s ease-in-out infinite',
                   }}
                 >
-                  Project Specs
+                  Let's Build Something Legendary.
                 </span>
               </h1>
-              <p className="text-zinc-400 text-sm sm:text-base mb-8 font-medium leading-relaxed max-w-xl">
-                Fill out the form and we'll send a custom proposal within 2 hours.
-              </p>
             </div>
 
-            <form onSubmit={handleWhatsAppSubmit} className="space-y-6">
+            <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
               {/* Row 1: Full Name & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-quicksand">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 font-quicksand">
                     Full Name <span className="text-zinc-500">*</span>
                   </label>
                   <input
@@ -224,12 +225,12 @@ ${formData.message}`;
                     onChange={handleChange}
                     placeholder="Your Full Name"
                     required
-                    className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none px-4 py-3.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all font-quicksand"
+                    className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all font-quicksand"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-quicksand">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 font-quicksand">
                     Email <span className="text-zinc-500">*</span>
                   </label>
                   <div className="relative">
@@ -240,19 +241,19 @@ ${formData.message}`;
                       onChange={handleChange}
                       placeholder="email@example.com"
                       required
-                      className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none pl-4 pr-11 py-3.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all font-quicksand"
+                      className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none pl-4 pr-10 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all font-quicksand"
                     />
-                    <div className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">
-                      <Mail size={16} />
+                    <div className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none">
+                      <Mail size={15} />
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Row 2: Phone & Service */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-quicksand">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 font-quicksand">
                     Phone
                   </label>
                   <input
@@ -261,12 +262,12 @@ ${formData.message}`;
                     value={formData.phone}
                     onChange={handleChange}
                     placeholder="+91 00000 00000"
-                    className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none px-4 py-3.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all font-mono"
+                    className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none px-4 py-2.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all font-mono"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-quicksand">
+                  <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 font-quicksand">
                     Service
                   </label>
                   <div className="relative">
@@ -274,7 +275,7 @@ ${formData.message}`;
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none pl-4 pr-11 py-3.5 text-sm text-white outline-none transition-all appearance-none cursor-pointer font-quicksand"
+                      className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none pl-4 pr-10 py-2.5 text-sm text-white outline-none transition-all appearance-none cursor-pointer font-quicksand"
                     >
                       <option value="" className="bg-[#0d0d14] text-zinc-400">Select a Service</option>
                       <option value="Web Development" className="bg-[#0d0d14] text-white">Web Development</option>
@@ -286,14 +287,14 @@ ${formData.message}`;
                       <option value="API Integrations" className="bg-[#0d0d14] text-white">API Integrations</option>
                       <option value="SEO & Performance" className="bg-[#0d0d14] text-white">SEO &amp; Performance</option>
                     </select>
-                    <ChevronDown size={16} className="absolute right-4 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" />
+                    <ChevronDown size={15} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-zinc-400 pointer-events-none" />
                   </div>
                 </div>
               </div>
 
               {/* Row 3: Message */}
               <div>
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2 font-quicksand">
+                <label className="block text-[11px] font-bold uppercase tracking-wider text-zinc-400 mb-1.5 font-quicksand">
                   Message <span className="text-zinc-500">*</span>
                 </label>
                 <textarea
@@ -301,20 +302,20 @@ ${formData.message}`;
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Describe your vision and requirements..."
-                  rows={5}
+                  rows={3}
                   required
-                  className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none p-4 text-sm text-white placeholder:text-zinc-500 outline-none transition-all resize-y min-h-[140px] font-quicksand leading-relaxed"
+                  className="w-full bg-[#0d0d14] border border-white/10 hover:border-white/20 focus:border-white/40 focus:bg-[#12121c] focus:ring-1 focus:ring-white/20 rounded-none p-3.5 text-sm text-white placeholder:text-zinc-500 outline-none transition-all resize-y min-h-[96px] font-quicksand leading-relaxed"
                 />
               </div>
 
               {/* Submission Options: WhatsApp & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-1">
                 {/* 1. Send via WhatsApp */}
                 <button
                   type="button"
                   onClick={handleWhatsAppSubmit}
                   disabled={Boolean(submittingMode)}
-                  className="w-full bg-white hover:bg-zinc-100 active:scale-[0.99] text-black font-bold text-sm py-4 px-5 rounded-none flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_4px_25px_rgba(255,255,255,0.12)] group disabled:opacity-70 font-quicksand"
+                  className="w-full bg-white hover:bg-zinc-100 active:scale-[0.99] text-black font-bold text-sm py-3.5 px-5 rounded-none flex items-center justify-center gap-2 transition-all cursor-pointer shadow-[0_4px_25px_rgba(255,255,255,0.12)] group disabled:opacity-70 font-quicksand"
                 >
                   <span>{submittingMode === 'whatsapp' ? 'Opening WhatsApp...' : 'Send via WhatsApp'}</span>
                   <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
@@ -325,7 +326,7 @@ ${formData.message}`;
                   type="button"
                   onClick={handleEmailSubmit}
                   disabled={Boolean(submittingMode)}
-                  className="w-full bg-[#12121a] hover:bg-[#181824] active:scale-[0.99] text-white border border-white/15 hover:border-white/30 font-bold text-sm py-4 px-5 rounded-none flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm group disabled:opacity-70 font-quicksand"
+                  className="w-full bg-[#12121a] hover:bg-[#181824] active:scale-[0.99] text-white border border-white/15 hover:border-white/30 font-bold text-sm py-3.5 px-5 rounded-none flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm group disabled:opacity-70 font-quicksand"
                 >
                   <Mail size={16} className="text-zinc-400 group-hover:text-white transition-colors" />
                   <span>{submittingMode === 'email' ? 'Sending Email...' : 'Send via Email'}</span>
@@ -335,10 +336,10 @@ ${formData.message}`;
           </div>
 
           {/* RIGHT COLUMN: Turnaround & Direct Channels Cards */}
-          <div className="lg:col-span-5 flex flex-col gap-6 lg:pt-1">
+          <div className="lg:col-span-5 flex flex-col justify-between gap-5">
             
             {/* Top Card: Estimated 2 Hour Turnaround */}
-            <div className="bg-[#0d0d14] border border-white/10 hover:border-white/15 transition-all rounded-none p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+            <div className="bg-[#0d0d14] border border-white/10 hover:border-white/15 transition-all rounded-none p-6 sm:p-7 flex flex-col justify-between shadow-xl flex-1">
               <div>
                 <div className="flex items-center gap-2.5 text-[10.5px] font-mono tracking-[0.2em] text-zinc-400 font-semibold uppercase">
                   <div className="w-6 h-6 rounded-none border border-zinc-700 bg-white/[0.03] flex items-center justify-center">
@@ -347,13 +348,16 @@ ${formData.message}`;
                   <span>RESPONSE TIME</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-5 mb-7 font-quicksand leading-snug">
+                <h3 className="text-xl sm:text-2xl md:text-[26px] font-bold tracking-tight text-white mt-4 mb-2.5 font-quicksand leading-snug">
                   Estimated 2 Hour Turnaround.
                 </h3>
+                <p className="text-xs sm:text-[13px] text-zinc-400 font-medium leading-relaxed font-quicksand mb-5">
+                  Direct developer consultation &amp; custom engineering roadmap delivered within 2 hours.
+                </p>
               </div>
 
               {/* Badges */}
-              <div className="flex flex-wrap gap-2 pt-2">
+              <div className="flex flex-wrap gap-2 pt-1">
                 <span className="px-3 py-1.5 rounded-none border border-white/10 bg-white/[0.02] text-[10px] font-mono text-zinc-300 uppercase tracking-wider font-medium">
                   24/7 OPERATIONS
                 </span>
@@ -368,7 +372,7 @@ ${formData.message}`;
 
             {/* Bottom Card: Direct Channels */}
             <div className="bg-[#0d0d14] border border-white/10 hover:border-white/15 transition-all rounded-none p-6 sm:p-7 shadow-xl">
-              <div className="text-[10.5px] font-mono font-bold tracking-[0.2em] text-zinc-400 uppercase mb-4">
+              <div className="text-[10.5px] font-mono font-bold tracking-[0.2em] text-zinc-400 uppercase mb-3">
                 DIRECT CHANNELS
               </div>
 
@@ -376,7 +380,7 @@ ${formData.message}`;
                 {/* 1. Phone */}
                 <a
                   href="tel:+917383303388"
-                  className="flex items-center justify-between group py-3.5 hover:opacity-85 transition-all cursor-pointer"
+                  className="flex items-center justify-between group py-3 hover:opacity-85 transition-all cursor-pointer"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-none bg-white/[0.04] border border-white/10 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-white/20 transition-all">
@@ -402,7 +406,7 @@ ${formData.message}`;
                   href="https://wa.me/917383303388"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center justify-between group py-3.5 hover:opacity-85 transition-all cursor-pointer"
+                  className="flex items-center justify-between group py-3 hover:opacity-85 transition-all cursor-pointer"
                 >
                   <div className="flex items-center gap-3.5">
                     <div className="w-10 h-10 rounded-none bg-[#25D366]/10 border border-[#25D366]/20 flex items-center justify-center text-[#25D366] group-hover:bg-[#25D366]/20 transition-all">
@@ -421,29 +425,6 @@ ${formData.message}`;
                   />
                 </a>
 
-                {/* 3. Email */}
-                <a
-                  href="mailto:nexoraa.works@gmail.com"
-                  className="flex items-center justify-between group py-3.5 hover:opacity-85 transition-all cursor-pointer"
-                >
-                  <div className="flex items-center gap-3.5">
-                    <div className="w-10 h-10 rounded-none bg-white/[0.04] border border-white/10 flex items-center justify-center text-zinc-300 group-hover:text-white group-hover:border-white/20 transition-all">
-                      <Mail size={17} />
-                    </div>
-                    <div>
-                      <span className="text-[10px] uppercase tracking-wider text-zinc-500 font-semibold block font-mono">
-                        Direct Email
-                      </span>
-                      <span className="text-sm font-semibold text-white tracking-wide font-mono">
-                        nexoraa.works@gmail.com
-                      </span>
-                    </div>
-                  </div>
-                  <ArrowRight
-                    size={16}
-                    className="text-zinc-500 group-hover:text-white group-hover:translate-x-1 transition-all"
-                  />
-                </a>
 
                 {/* 4. Location */}
                 <div className="flex items-center gap-3.5 py-3.5">
