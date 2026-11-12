@@ -184,11 +184,11 @@ export default function PaymentPolicy() {
                   </div>
                   <h2 className="text-2xl font-display font-bold">Billing queries?</h2>
                   <p className="mt-2 text-xs leading-relaxed text-gray-400 max-w-xl">
-                    Reach out to our finance department at contact@nexoraa.studio for copies of invoices or custom bank payment arrangements.
+                    Reach out to our finance department at contact@nexoraa.works for copies of invoices or custom bank payment arrangements.
                   </p>
                 </div>
                 <a
-                  href="mailto:contact@nexoraa.studio?subject=Payment%20Inquiry"
+                  href="mailto:contact@nexoraa.works?subject=Payment%20Inquiry"
                   className="inline-flex items-center gap-2 rounded-xl bg-white hover:bg-[#00F5FF] px-5 py-3 text-xs font-mono font-bold text-black transition-colors"
                 >
                   Contact Billing <ArrowRight size={14} />

@@ -164,14 +164,14 @@ export default function About() {
                 <div className="text-xs text-white/50 mb-1 font-mono uppercase tracking-wider">Email</div>
                 <div className="text-white font-semibold">
                   <a 
-                    href="mailto:nexoraa.works@gmail.com" 
+                    href="mailto:contact@nexoraa.works" 
                     onClick={() => {
-                      navigator.clipboard.writeText("nexoraa.works@gmail.com");
+                      navigator.clipboard.writeText("contact@nexoraa.works");
                       toast.success("Email copied to clipboard! Opening mail client...");
                     }}
                     className="hover:text-accent-primary transition-colors"
                   >
-                    nexoraa.works@gmail.com
+                    contact@nexoraa.works
                   </a>
                 </div>
               </div>

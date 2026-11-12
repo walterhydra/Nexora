@@ -134,7 +134,7 @@ export default function Contact() {
             from_email: email,
             message: message,
             reply_to: email,
-            to_email: 'nexoraa.works@gmail.com'
+            to_email: 'contact@nexoraa.works'
           },
           publicKey
         );
@@ -159,7 +159,7 @@ export default function Contact() {
         _subject: `Elite Contact Page Inquiry: ${name}`
       };
 
-      const response = await fetch("https://formsubmit.co/ajax/nexoraa.works@gmail.com", {
+      const response = await fetch("https://formsubmit.co/ajax/contact@nexoraa.works", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -183,8 +183,8 @@ export default function Contact() {
       setIsSubmitting(false);
       
       // Copy email to clipboard as clean fallback
-      navigator.clipboard.writeText("nexoraa.works@gmail.com");
-      toast.error("Submit service is currently offline. We have copied nexoraa.works@gmail.com to your clipboard!", {
+      navigator.clipboard.writeText("contact@nexoraa.works");
+      toast.error("Submit service is currently offline. We have copied contact@nexoraa.works to your clipboard!", {
         duration: 6000,
         style: {
           background: '#ff4b4b',
@@ -225,12 +225,12 @@ export default function Contact() {
             
             <div className="space-y-6">
               <a 
-                href="mailto:nexoraa.works@gmail.com"
+                href="mailto:contact@nexoraa.works"
                 onClick={(e) => {
                   e.preventDefault();
-                  navigator.clipboard.writeText("nexoraa.works@gmail.com");
+                  navigator.clipboard.writeText("contact@nexoraa.works");
                   toast.success("Email copied to clipboard! Opening mail client...");
-                  window.location.href = "mailto:nexoraa.works@gmail.com";
+                  window.location.href = "mailto:contact@nexoraa.works";
                 }}
                 className="flex items-center gap-4 hover:text-accent-blue transition-colors group"
               >
@@ -239,7 +239,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-sm text-gray-500 font-bold uppercase tracking-wider">Email</p>
-                  <p className="text-lg font-medium">nexoraa.works@gmail.com</p>
+                  <p className="text-lg font-medium">contact@nexoraa.works</p>
                 </div>
               </a>
               

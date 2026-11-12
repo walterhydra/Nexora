@@ -158,7 +158,7 @@ Service: ${formData.service || 'Custom Solution'}
 Message:
 ${formData.message}`;
 
-      const mailtoUrl = `mailto:nexoraa.works@gmail.com?subject=${encodeURIComponent(`Project Specs: ${formData.fullName}`)}&body=${encodeURIComponent(formattedBody)}`;
+      const mailtoUrl = `mailto:contact@nexoraa.works?subject=${encodeURIComponent(`Project Specs: ${formData.fullName}`)}&body=${encodeURIComponent(formattedBody)}`;
       window.location.href = mailtoUrl;
       toast.success('Opening your email client with project specs!');
       setSubmittingMode(null);

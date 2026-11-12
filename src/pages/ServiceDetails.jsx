@@ -396,7 +396,7 @@ export default function ServiceDetails() {
     const subject = `Elite Collaboration: ${service.title} - ${rec.name} Node`;
     const body = `Hey Nexoraa Team! 🚀\n\nI am looking to deploy and scale a premium ${service.title} project using the ${rec.name} architecture!\n\n📋 Selected Package Specifications:\n- Service: ${service.title}\n- Architecture Node: ${rec.name} Node\n- Estimated Investment: ${selectedPrice}\n- Timeline: ${selectedTimeline}\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`;
     
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    return `https://mail.google.com/mail/?view=cm&fs=1&to=contact@nexoraa.works&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
 
@@ -567,7 +567,7 @@ export default function ServiceDetails() {
                           </span>
                         </a>
                         <a
-                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(`Elite Collaboration: ${service.title} Project`)}&body=${encodeURIComponent(`Hey Nexoraa Team! 🚀\n\nI am looking to build and scale a premium digital solution and would love to collaborate on your elite ${service.title} services.\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`)}`}
+                          href={`https://mail.google.com/mail/?view=cm&fs=1&to=contact@nexoraa.works&su=${encodeURIComponent(`Elite Collaboration: ${service.title} Project`)}&body=${encodeURIComponent(`Hey Nexoraa Team! 🚀\n\nI am looking to build and scale a premium digital solution and would love to collaborate on your elite ${service.title} services.\n\nLet's connect and discuss the roadmap to build something epic together!\n\nBest regards,\n[Your Name]`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="relative w-full py-4 bg-transparent overflow-hidden rounded-xl border border-white/10 text-white font-semibold flex items-center justify-center hover:border-white/30 transition-all text-center cursor-pointer"
@@ -868,7 +868,7 @@ export default function ServiceDetails() {
                               {/* Enterprise CTA */}
                               <td className={`p-3 text-center transition-all duration-300 ${currentRec.tier === "enterprise" ? "bg-white/[0.01]" : "opacity-30"}`}>
                                 <a
-                                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=nexoraa.works@gmail.com&su=${encodeURIComponent(`Enterprise Custom Consultation: ${service.title}`)}&body=${encodeURIComponent(`Hey Nexoraa Team! 🚀\n\nI am looking for a customized Enterprise plan for our ${service.title} project. Let's setup a consultation.\n\nBest regards,\n[Your Name]`)}`}
+                                  href={`https://mail.google.com/mail/?view=cm&fs=1&to=contact@nexoraa.works&su=${encodeURIComponent(`Enterprise Custom Consultation: ${service.title}`)}&body=${encodeURIComponent(`Hey Nexoraa Team! 🚀\n\nI am looking for a customized Enterprise plan for our ${service.title} project. Let's setup a consultation.\n\nBest regards,\n[Your Name]`)}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="inline-block py-1.5 px-3 rounded-lg text-[9px] font-bold bg-[#FF007A] text-white hover:scale-[1.03] active:scale-[0.98] transition-all uppercase tracking-wider text-center shadow-[0_0_15px_rgba(255,0,122,0.3)]"

@@ -118,10 +118,10 @@ const TypewriterText = ({ text, onComplete, onWordTyped }) => {
     const words = text.split(' ');
     setDisplayedText('');
 
-    // Smooth streaming chunk: 3-4 words every 32ms (butter smooth 60fps, 0% CPU jank)
+    // Natural smooth typing speed (1 word at a time, comfortable to read)
+    const step = words.length > 60 ? 2 : 1;
     const interval = setInterval(() => {
       if (index < words.length) {
-        const step = Math.min(words.length - index, words.length > 25 ? 4 : 3);
         const nextChunk = words.slice(index, index + step).join(' ');
         setDisplayedText((prev) => (prev ? prev + ' ' + nextChunk : nextChunk));
         index += step;
@@ -132,7 +132,7 @@ const TypewriterText = ({ text, onComplete, onWordTyped }) => {
           setTimeout(onCompleteRef.current, 20);
         }
       }
-    }, 32);
+    }, 45);
 
     return () => clearInterval(interval);
   }, [text]);
@@ -196,7 +196,7 @@ const ChatMessageItem = React.memo(({ msg, idx, onComplete, onWordTyped, onReply
     return (
       <div className="flex justify-end w-full">
         <div className="flex flex-col items-end max-w-[85%] sm:max-w-[75%]">
-          <div className="px-4 py-2.5 rounded-2xl rounded-tr-xs bg-[#161f33] border border-white/10 text-white shadow-sm font-normal text-[13.5px] leading-relaxed break-words">
+          <div className="px-4 py-2.5 rounded-none bg-[#161f33] border border-white/10 text-white shadow-sm font-normal text-[13.5px] leading-relaxed break-words">
             {msg.content}
           </div>
         </div>
@@ -219,7 +219,7 @@ const ChatMessageItem = React.memo(({ msg, idx, onComplete, onWordTyped, onReply
           <span className="text-[11px] font-semibold text-gray-300 mb-1 px-1 flex items-center gap-1.5">
             Spidey
           </span>
-          <div className="px-4 py-3 rounded-2xl rounded-tl-xs bg-[#0C101A] border border-white/10 text-gray-200 shadow-sm text-[13.5px] leading-relaxed break-words w-full">
+          <div className="px-4 py-3 rounded-none bg-[#0C101A] border border-white/10 text-gray-200 shadow-sm text-[13.5px] leading-relaxed break-words w-full">
             {msg.isNew ? (
               <TypewriterText
                 text={cleanContent}
@@ -254,20 +254,7 @@ const ChatMessageItem = React.memo(({ msg, idx, onComplete, onWordTyped, onReply
 
 export default function NovaWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        const saved = localStorage.getItem('nova_chat_history');
-        if (saved) {
-          const parsed = JSON.parse(saved);
-          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
-        }
-      } catch (e) {
-        console.warn('Failed to parse saved chat history', e);
-      }
-    }
-    return [];
-  });
+  const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [lockedModalOpen, setLockedModalOpen] = useState(false);
@@ -285,40 +272,73 @@ export default function NovaWidget() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen]);
+
+  // Clean any old stored chat/verification on refresh/mount so every refresh starts brand new
   useEffect(() => {
-    if (typeof window !== 'undefined' && messages.length > 0) {
+    if (typeof window !== 'undefined') {
       try {
-        const toSave = messages.map(m => ({
-          role: m.role,
-          content: m.content
-        }));
-        localStorage.setItem('nova_chat_history', JSON.stringify(toSave));
+        localStorage.removeItem('nova_chat_history');
+        sessionStorage.removeItem('nova_chat_verified');
       } catch (e) {
-        console.warn('Failed to save chat history', e);
+        // ignore storage errors
       }
     }
-  }, [messages]);
+  }, []);
+
+  // Handle 1-click email verification link (?verify_email=...&verify_otp=...&verify_token=...)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      const vEmail = urlParams.get('verify_email');
+      const vOtp = urlParams.get('verify_otp');
+      const vToken = urlParams.get('verify_token');
+
+      if (vEmail && vOtp && vToken) {
+        setUserEmail(vEmail);
+        setOtpToken(vToken);
+        setFlowState('completed');
+        setIsOpen(true);
+        setMessages([
+          { role: 'user', content: vEmail },
+          { role: 'user', content: vOtp },
+          {
+            role: 'assistant',
+            content: `Email verified successfully! 🎉 Welcome to Nexoraa Studio. What would you like to explore? \n\n[OPTIONS]`,
+            isNew: true
+          }
+        ]);
+        // Clean URL params without page reload
+        const newUrl = window.location.pathname;
+        window.history.replaceState({}, document.title, newUrl);
+      }
+    } catch (e) {
+      console.warn('URL auto-verify error', e);
+    }
+  }, []);
 
   const handleClearChat = () => {
     playClickSound(600, 0.05);
     if (typeof window !== 'undefined') {
-      localStorage.removeItem('nova_chat_history');
+      try {
+        localStorage.removeItem('nova_chat_history');
+        sessionStorage.removeItem('nova_chat_verified');
+      } catch (e) {}
     }
+    setUserEmail('');
+    setOtpToken('');
+    setFlowState('awaiting_email');
     setMessages([
       {
         role: 'assistant',
-        content: "Hey! 👋 Fresh chat session started. I'm Spidey, ready to help you with anything. What's on your mind? \n\n[OPTIONS]",
+        content: "Hey! 👋 Fresh chat session started.\n\nTo begin our chat, please enter your email address below to verify:",
         isNew: true
       }
     ]);
   };
 
-  const [flowState, setFlowState] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return sessionStorage.getItem('nova_chat_verified') === 'true' ? 'completed' : 'init';
-    }
-    return 'init';
-  });
+  // Chat flow state starts at awaiting_email on fresh page load/refresh
+  const [flowState, setFlowState] = useState('awaiting_email');
   const [userEmail, setUserEmail] = useState('');
   const [otpToken, setOtpToken] = useState('');
 
@@ -472,24 +492,7 @@ export default function NovaWidget() {
     setMessages((prev) =>
       prev.map((msg, i) => (i === index ? { ...msg, isNew: false } : msg))
     );
-
-    // If initial greeting finished typing and user is not verified yet, ask for email
-    if (index === 0 && flowState === 'init') {
-      setIsLoading(true);
-      setTimeout(() => {
-        setMessages((prev) => [
-          ...prev,
-          {
-            role: 'assistant',
-            content: "To begin our chat, please enter your email address below:",
-            isNew: true
-          }
-        ]);
-        setFlowState('awaiting_email');
-        setIsLoading(false);
-      }, 500);
-    }
-  }, [flowState]);
+  }, []);
 
   const handleSendRef = useRef();
   const onReplyClick = useCallback((text) => {
@@ -511,13 +514,13 @@ export default function NovaWidget() {
             role: 'assistant',
             content: flowState === 'completed'
               ? "Hey! 👋 I'm Spidey, your guide to Nexoraa Studio. Great to have you here! What would you like to explore? \n\n[OPTIONS]"
-              : "Hey! 👋 I'm Spidey, your guide to Nexoraa Studio. Great to have you here!",
+              : "Hey! 👋 I'm Spidey, your guide to Nexoraa Studio. Great to have you here!\n\nTo start our conversation, please enter your email address below to verify:",
             isNew: true
           }
         ]);
       }, 350);
     }
-  }, [isOpen]);
+  }, [isOpen, flowState]);
 
   // Reset active document if user is not verified
   useEffect(() => {
@@ -550,14 +553,16 @@ export default function NovaWidget() {
   };
 
 
+  const THINKING_DELAY_MS = 3200; // 3.2s minimum thinking time to showcase floating wave animation
+
   const handleSend = async (textOverride) => {
     const text = textOverride || inputValue.trim();
     if (!text) return;
 
-    if (flowState === 'awaiting_email') {
+    if (flowState === 'awaiting_email' || flowState === 'init') {
       // Validate email format
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(text)) {
+      if (!emailRegex.test(text.trim())) {
         // Append user message and error prompt
         const nextMsgs = [...messages, { role: 'user', content: text }];
         setMessages(nextMsgs);
@@ -566,26 +571,27 @@ export default function NovaWidget() {
         setTimeout(() => {
           setMessages([...nextMsgs, {
             role: 'assistant',
-            content: "That doesn't look like a valid email address. Please check and try again:",
+            content: "That doesn't look like a valid email address. Please enter a valid email address to verify and start chatting:",
             isNew: true
           }]);
           setIsLoading(false);
-        }, 500);
+        }, THINKING_DELAY_MS);
         return;
       }
 
       // Valid email - send OTP
-      const nextMsgs = [...messages, { role: 'user', content: text }];
+      const nextMsgs = [...messages, { role: 'user', content: text.trim() }];
       setMessages(nextMsgs);
       setInputValue('');
       setIsLoading(true);
-      setUserEmail(text);
+      setUserEmail(text.trim());
 
+      const startTime = Date.now();
       try {
         const res = await fetch('/api/otp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ action: 'send', email: text })
+          body: JSON.stringify({ action: 'send', email: text.trim() })
         });
 
         if (!res.ok) {
@@ -599,15 +605,26 @@ export default function NovaWidget() {
 
         const fallbackCode = data.message?.includes('OTP') ? data.message.split(': ')[1]?.trim() : null;
 
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+        if (remaining > 0) {
+          await new Promise((resolve) => setTimeout(resolve, remaining));
+        }
+
         setMessages([...nextMsgs, {
           role: 'assistant',
           content: fallbackCode
             ? `I've generated your verification code. In dev/testing mode, your code is **${fallbackCode}** (or test code **123456**). Please enter it below:`
-            : `I've sent a 6-digit verification code to **${text}**. Please enter it below (be sure to check your spam folder as well):`,
+            : `I've sent a verification code to **${text.trim()}**. Please enter the code below to start our chat (check your spam folder as well):`,
           isNew: true
         }]);
       } catch (err) {
         console.error(err);
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+        if (remaining > 0) {
+          await new Promise((resolve) => setTimeout(resolve, remaining));
+        }
         setMessages([...nextMsgs, {
           role: 'assistant',
           content: `We had trouble sending a verification code (${err.message}). Please check your email address and try again:`,
@@ -620,11 +637,71 @@ export default function NovaWidget() {
     }
 
     if (flowState === 'awaiting_otp') {
-      const nextMsgs = [...messages, { role: 'user', content: text }];
+      const trimmedText = text.trim();
+      // If user provided a different email, update and send fresh OTP
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (emailRegex.test(trimmedText)) {
+        const nextMsgs = [...messages, { role: 'user', content: trimmedText }];
+        setMessages(nextMsgs);
+        setInputValue('');
+        setIsLoading(true);
+        setUserEmail(trimmedText);
+
+        const startTime = Date.now();
+        try {
+          const res = await fetch('/api/otp', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ action: 'send', email: trimmedText })
+          });
+
+          if (!res.ok) {
+            const errData = await res.json().catch(() => ({}));
+            throw new Error(errData.details || errData.error || 'Failed to send OTP');
+          }
+
+          const data = await res.json();
+          setOtpToken(data.token);
+
+          const fallbackCode = data.message?.includes('OTP') ? data.message.split(': ')[1]?.trim() : null;
+
+          const elapsed = Date.now() - startTime;
+          const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+          if (remaining > 0) {
+            await new Promise((resolve) => setTimeout(resolve, remaining));
+          }
+
+          setMessages([...nextMsgs, {
+            role: 'assistant',
+            content: fallbackCode
+              ? `Updated email to **${trimmedText}**. In dev mode, your code is **${fallbackCode}** (or test code **123456**). Please enter it below:`
+              : `Updated email to **${trimmedText}**. Verification code sent! Please enter it below:`,
+            isNew: true
+          }]);
+        } catch (err) {
+          console.error(err);
+          const elapsed = Date.now() - startTime;
+          const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+          if (remaining > 0) {
+            await new Promise((resolve) => setTimeout(resolve, remaining));
+          }
+          setMessages([...nextMsgs, {
+            role: 'assistant',
+            content: `Failed to send code to ${trimmedText} (${err.message}). Please check and try again:`,
+            isNew: true
+          }]);
+        } finally {
+          setIsLoading(false);
+        }
+        return;
+      }
+
+      const nextMsgs = [...messages, { role: 'user', content: trimmedText }];
       setMessages(nextMsgs);
       setInputValue('');
       setIsLoading(true);
 
+      const startTime = Date.now();
       try {
         const res = await fetch('/api/otp', {
           method: 'POST',
@@ -632,7 +709,7 @@ export default function NovaWidget() {
           body: JSON.stringify({
             action: 'verify',
             email: userEmail,
-            otp: text,
+            otp: trimmedText,
             token: otpToken
           })
         });
@@ -641,23 +718,39 @@ export default function NovaWidget() {
           throw new Error('Invalid OTP');
         }
 
-        sessionStorage.setItem('nova_chat_verified', 'true');
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+        if (remaining > 0) {
+          await new Promise((resolve) => setTimeout(resolve, remaining));
+        }
+
+        // Verified in RAM for this session; not saved to sessionStorage so refresh resets as requested
         setFlowState('completed');
         setMessages([...nextMsgs, {
           role: 'assistant',
-          content: "Email verified successfully! Welcome to Nexoraa Studio. What would you like to explore? \n\n[OPTIONS]",
+          content: "Email verified successfully! 🎉 Welcome to Nexoraa Studio. What would you like to explore? \n\n[OPTIONS]",
           isNew: true
         }]);
       } catch (err) {
         console.error(err);
+        const elapsed = Date.now() - startTime;
+        const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+        if (remaining > 0) {
+          await new Promise((resolve) => setTimeout(resolve, remaining));
+        }
         setMessages([...nextMsgs, {
           role: 'assistant',
-          content: "The verification code you entered is incorrect or expired. Please try again:",
+          content: "The verification code you entered is incorrect or expired. Please check and try again:",
           isNew: true
         }]);
       } finally {
         setIsLoading(false);
       }
+      return;
+    }
+
+    // STRICT GUARD: If not completed, do not allow regular chat
+    if (flowState !== 'completed') {
       return;
     }
 
@@ -679,7 +772,7 @@ Milan leads Nexoraa with a builder-first philosophy, bridging the gap between ad
 • **Innovative Design**: We build custom layouts with smooth animations and curated color palettes, refusing generic templates.
 
 📞 **Contact Nexoraa**
-• **Email**: nexoraa.works@gmail.com
+• **Email**: contact@nexoraa.works
 • **Phone**: +91 7383303388
 
 Do you want to know about other things? \n\n[OPTIONS]`;
@@ -695,7 +788,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 200);
+      }, THINKING_DELAY_MS);
       return;
     }
 
@@ -724,7 +817,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 200);
+      }, THINKING_DELAY_MS);
       return;
     }
 
@@ -751,7 +844,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 200);
+      }, THINKING_DELAY_MS);
       return;
     }
 
@@ -778,7 +871,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 200);
+      }, THINKING_DELAY_MS);
       return;
     }
 
@@ -808,14 +901,14 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 200);
+      }, THINKING_DELAY_MS);
       return;
     }
 
     if (text === '📩 Contact Us') {
       const contactResponse = `We'd love to collaborate on your next premium project! You can connect with us directly:
 
-• 📩 **Email**: [nexoraa.works@gmail.com](mailto:nexoraa.works@gmail.com)
+• 📩 **Email**: [contact@nexoraa.works](mailto:contact@nexoraa.works)
 • 📞 **Phone**: [+91 7383303388](tel:+917383303388)
 • 💼 **LinkedIn**: [Nexoraa Studio](https://www.linkedin.com/in/milan-pandavdara/)
 • 💻 **GitHub**: [walterhydra](https://github.com/walterhydra)
@@ -834,7 +927,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
           isNew: true
         }]);
         setIsLoading(false);
-      }, 200);
+      }, THINKING_DELAY_MS);
       return;
     }
 
@@ -844,6 +937,7 @@ Do you want to know about other things? \n\n[OPTIONS]`;
     setInputValue('');
     setIsLoading(true);
 
+    const startTime = Date.now();
     try {
       // Send to Vercel Serverless Function
       const response = await fetch('/api/chat', {
@@ -863,6 +957,12 @@ Do you want to know about other things? \n\n[OPTIONS]`;
 
       const data = await response.json();
       const aiReply = data.reply || data.content?.[0]?.text || data.message || "I'm here to help! What's on your mind?";
+
+      const elapsed = Date.now() - startTime;
+      const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
+      if (remaining > 0) {
+        await new Promise((resolve) => setTimeout(resolve, remaining));
+      }
 
       setMessages([...newMessages, {
         role: 'assistant',
@@ -905,7 +1005,7 @@ Milan leads Nexoraa with a builder-first philosophy, bridging the gap between ad
 • **Innovative Design**: We build custom layouts with smooth animations and curated color palettes, refusing generic templates.
 
 📞 **Contact Nexoraa**
-• **Email**: nexoraa.works@gmail.com
+• **Email**: contact@nexoraa.works
 • **Phone**: +91 7383303388
 
 Would you like to learn more about **Meet the Team**, **Our Services**, or **Contact Us**? \n\n[OPTIONS]`;
@@ -914,7 +1014,7 @@ Would you like to learn more about **Meet the Team**, **Our Services**, or **Con
       } else if (lowerText.includes('services')) {
         fallbackResponse = "Nexoraa Studio offers premium end-to-end digital solutions:\n\n• **Web & Mobile App Development**: React/Next.js/Vite and robust mobile apps.\n• **Brand & Design**: Stunning, cohesive brand identities and conversion-optimized UI/UX.\n• **Automation & AI Integration**: Custom AI pipelines and chatbot integrations.\n• **DevOps & Cloud Systems**: Secure, scalable setup on AWS, Vercel, and Supabase.\n• **SEO**: Advanced SEO audit and implementation for visibility.\n\nWhat are you looking to build? \n\n[OPTIONS]";
       } else if (lowerText.includes('contact')) {
-        fallbackResponse = "We'd love to collaborate on your next premium project!\n\n• 📩 **Email**: nexoraa.works@gmail.com\n• 📞 **Phone**: +91 7383303388\n• 💼 **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/\n• 🌐 **Portfolio**: https://www.walterhydra.me\n\nLet us know how we can help! \n\n[OPTIONS]";
+        fallbackResponse = "We'd love to collaborate on your next premium project!\n\n• 📩 **Email**: contact@nexoraa.works\n• 📞 **Phone**: +91 7383303388\n• 💼 **LinkedIn**: https://www.linkedin.com/in/milan-pandavdara/\n• 🌐 **Portfolio**: https://www.walterhydra.me\n\nLet us know how we can help! \n\n[OPTIONS]";
       } else if (lowerText.includes('pricing') || lowerText.includes('package')) {
         fallbackResponse = `💰 **Nexoraa Pricing & Packages**
 We offer transparent, package-based pricing:
@@ -926,10 +1026,12 @@ We offer transparent, package-based pricing:
 What package matches your requirements? \n\n[OPTIONS]`;
       }
 
+      const elapsed = Date.now() - startTime;
+      const remaining = Math.max(0, THINKING_DELAY_MS - elapsed);
       setTimeout(() => {
         setMessages([...newMessages, { role: 'assistant', content: fallbackResponse, isNew: true }]);
         setIsLoading(false);
-      }, 1000);
+      }, remaining);
       return;
     }
 
@@ -1640,12 +1742,42 @@ What package matches your requirements? \n\n[OPTIONS]`;
                                       />
                                     </div>
                                     <div className="flex flex-col items-start">
-                                      <span className="text-[11px] font-semibold text-gray-300 mb-1 px-1">Spidey</span>
-                                      <div className="px-4 py-2.5 rounded-2xl rounded-tl-xs bg-[#0C101A] border border-white/10 flex items-center gap-1.5 shadow-sm">
-                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '0ms' }} />
-                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '200ms' }} />
-                                        <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" style={{ animationDelay: '400ms' }} />
-                                        <span className="text-xs text-gray-400 ml-1.5 font-normal">typing...</span>
+                                      <span className="text-[11px] font-semibold text-gray-300 mb-1 px-1 flex items-center gap-1.5">Spidey</span>
+                                      <div className="px-4 py-3 rounded-none bg-[#0C101A] border border-white/10 flex items-center gap-3 shadow-sm">
+                                        {/* Floating wave animated 3 dots */}
+                                        <div className="flex items-center gap-1.5 h-4 px-0.5">
+                                          <m.span
+                                            animate={{ y: [0, -5, 0] }}
+                                            transition={{
+                                              duration: 0.9,
+                                              repeat: Infinity,
+                                              ease: "easeInOut",
+                                              delay: 0
+                                            }}
+                                            className="w-2 h-2 rounded-full bg-red-500 inline-block"
+                                          />
+                                          <m.span
+                                            animate={{ y: [0, -5, 0] }}
+                                            transition={{
+                                              duration: 0.9,
+                                              repeat: Infinity,
+                                              ease: "easeInOut",
+                                              delay: 0.18
+                                            }}
+                                            className="w-2 h-2 rounded-full bg-red-500 inline-block"
+                                          />
+                                          <m.span
+                                            animate={{ y: [0, -5, 0] }}
+                                            transition={{
+                                              duration: 0.9,
+                                              repeat: Infinity,
+                                              ease: "easeInOut",
+                                              delay: 0.36
+                                            }}
+                                            className="w-2 h-2 rounded-full bg-red-500 inline-block"
+                                          />
+                                        </div>
+                                        <span className="text-[12px] text-gray-400 font-medium tracking-wide">Thinking...</span>
                                       </div>
                                     </div>
                                   </div>
@@ -1659,14 +1791,20 @@ What package matches your requirements? \n\n[OPTIONS]`;
                           {/* Input Area - Compact & Professional */}
                           <div className="px-3.5 py-2.5 sm:px-5 sm:py-3 bg-[#080C16] border-t border-white/10 z-10 shrink-0">
                             <div className="max-w-3xl mx-auto w-full">
-                              <div className="relative flex items-center bg-[#04060C] border border-white/15 rounded-xl px-2 py-0.5 shadow-inner focus-within:border-red-500/60 focus-within:ring-1 focus-within:ring-red-500/20 transition-all duration-200">
+                              <div className="flex items-center gap-2 bg-[#0C101A] border border-white/15 focus-within:border-red-500/70 rounded-none px-3 py-1.5 transition-colors">
                                 <input
-                                  type="text"
+                                  type={flowState === 'awaiting_email' ? 'email' : 'text'}
                                   value={inputValue}
                                   onChange={(e) => setInputValue(e.target.value)}
                                   onKeyPress={handleKeyPress}
-                                  placeholder="Ask Spidey anything (services, pricing, timeline, tech stack)..."
-                                  className="w-full bg-transparent py-2 pl-2 pr-10 text-[13.5px] text-white placeholder-gray-500 focus:outline-none font-normal"
+                                  placeholder={
+                                    flowState === 'awaiting_email' || flowState === 'init'
+                                      ? "Enter your email address to continue..."
+                                      : flowState === 'awaiting_otp'
+                                      ? "Enter verification code (e.g. 123456)..."
+                                      : "Ask Spidey anything (services, pricing, timeline, tech stack)..."
+                                  }
+                                  className="flex-1 bg-transparent py-1 text-[13.5px] text-white placeholder-gray-500 focus:outline-none font-normal"
                                 />
                                 <button
                                   onClick={() => {
@@ -1674,8 +1812,14 @@ What package matches your requirements? \n\n[OPTIONS]`;
                                     handleSend();
                                   }}
                                   disabled={!inputValue.trim() || isLoading}
-                                  aria-label="Send message"
-                                  className="absolute right-1.5 w-7 h-7 flex items-center justify-center rounded-lg bg-red-600 hover:bg-red-500 text-white shadow-sm disabled:opacity-25 disabled:cursor-not-allowed hover:scale-105 active:scale-95 transition-all cursor-pointer"
+                                  aria-label={
+                                    flowState === 'awaiting_email' || flowState === 'init'
+                                      ? "Submit email address"
+                                      : flowState === 'awaiting_otp'
+                                      ? "Verify OTP code"
+                                      : "Send message"
+                                  }
+                                  className="shrink-0 w-7 h-7 flex items-center justify-center rounded-none bg-red-600 hover:bg-red-500 text-white disabled:opacity-25 disabled:cursor-not-allowed transition-colors cursor-pointer"
                                 >
                                   <Send className="w-3.5 h-3.5" />
                                 </button>

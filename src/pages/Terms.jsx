@@ -112,7 +112,7 @@ export default function Terms() {
             <div className="bg-gray-100 dark:bg-white/[0.02] border border-gray-200 dark:border-white/5 p-6 rounded-2xl inline-block text-sm text-gray-800 dark:text-gray-300">
               <strong className="block text-gray-950 dark:text-white mb-1">Nexoraa Studio</strong>
               Legal Department<br />
-              contact@nexoraa.studio
+              contact@nexoraa.works
             </div>
           </section>
         </m.article>

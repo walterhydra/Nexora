@@ -26,7 +26,7 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'All fields are required' });
   }
 
-  const resolvedSmtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
+  const resolvedSmtpEmail = process.env.SMTP_EMAIL || 'contact@nexoraa.works';
   const resolvedSmtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
 
   console.log('[API Send-Agreement] Environment keys check:', {
@@ -71,7 +71,7 @@ export default async function handler(req, res) {
               </a>
             </div>
             <p style="color: #6b7280; font-size: 13px; line-height: 1.6; margin: 24px 0 0; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 20px;">
-              If you have any questions, feel free to reply to this email or contact us at <a href="mailto:Nexoraa.works@gmail.com" style="color: #5BA4E6; text-decoration: none;">Nexoraa.works@gmail.com</a>
+              If you have any questions, feel free to reply to this email or contact us at <a href="mailto:contact@nexoraa.works" style="color: #5BA4E6; text-decoration: none;">contact@nexoraa.works</a>
             </p>
           </div>
           <div style="background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
@@ -174,7 +174,7 @@ export default async function handler(req, res) {
       }
 
       // Notification email to admin
-      const adminEmail = process.env.ADMIN_EMAIL || 'nexoraa.works@gmail.com';
+      const adminEmail = process.env.ADMIN_EMAIL || 'contact@nexoraa.works';
       await fetch('https://api.brevo.com/v3/smtp/email', {
         method: 'POST',
         headers: {
@@ -239,7 +239,7 @@ export default async function handler(req, res) {
         },
         body: JSON.stringify({
           from: payload.from,
-          to: 'nexoraa.works@gmail.com',
+          to: 'contact@nexoraa.works',
           subject: `📋 New Agreement Request — ${fullName}`,
           html: adminHtml
         })
@@ -248,18 +248,30 @@ export default async function handler(req, res) {
       return res.status(200).json({ success: true, message: 'Agreement sent successfully via Resend' });
     }
 
-    const smtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
+    const smtpEmail = process.env.SMTP_EMAIL || 'contact@nexoraa.works';
     const smtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
 
     // 3. SMTP PROVIDER (Gmail/Outlook fallback)
     if (smtpEmail && smtpPassword) {
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: smtpEmail,
-          pass: smtpPassword,
-        },
-      });
+      const smtpConfig = process.env.SMTP_HOST
+        ? {
+            host: process.env.SMTP_HOST,
+            port: parseInt(process.env.SMTP_PORT || '465'),
+            secure: (process.env.SMTP_PORT || '465') === '465',
+            auth: {
+              user: smtpEmail,
+              pass: smtpPassword
+            }
+          }
+        : {
+            service: 'gmail',
+            auth: {
+              user: smtpEmail,
+              pass: smtpPassword
+            }
+          };
+
+      const transporter = nodemailer.createTransport(smtpConfig);
 
       const clientMailOptions = {
         from: `"Nexoraa Studio" <${smtpEmail}>`,

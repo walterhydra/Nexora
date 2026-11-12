@@ -162,10 +162,10 @@ export default function Footer() {
             <ul className="space-y-3 md:space-y-3.5 text-sm text-neutral-300 font-medium font-quicksand">
               <li>
                 <a 
-                  href="mailto:nexoraa.works@gmail.com" 
+                  href="mailto:contact@nexoraa.works" 
                   className="hover:text-white transition-colors duration-200 break-all"
                 >
-                  nexoraa.works@gmail.com
+                  contact@nexoraa.works
                 </a>
               </li>
               <li>

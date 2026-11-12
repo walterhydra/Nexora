@@ -53,17 +53,17 @@ export default function CookieBanner() {
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: '100%', opacity: 0 }}
           transition={{ type: 'spring', stiffness: 280, damping: 30 }}
-          className="fixed bottom-0 inset-x-0 w-full z-[9999] bg-[#090a10]/98 backdrop-blur-2xl border-t border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.85)] text-white font-quicksand"
+          className="fixed bottom-0 inset-x-0 w-full z-[9999] bg-[#090a10] border-t border-white/10 shadow-[0_-20px_50px_rgba(0,0,0,0.85)] text-white font-quicksand transform-gpu"
         >
           {/* Subtle Top Accent Hairline - Pure Monochrome */}
           <div className="h-[1px] w-full bg-white/10" />
 
           {/* Compact Full-width Container */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-3.5">
-            
+
             {/* Main Slim Row */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2.5 sm:gap-4">
-              
+
               {/* Left Column: Simple Text */}
               <div className="flex-1 pr-6 md:pr-4">
                 <h3 className="text-white font-bold text-sm sm:text-base tracking-tight">
@@ -121,10 +121,10 @@ export default function CookieBanner() {
                 >
                   <div className="mt-3 pt-3 border-t border-white/10">
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                      
+
                       {/* Simple Inline / Wrap Checkboxes with White Text */}
                       <div className="flex flex-wrap items-center gap-5 sm:gap-6 py-1">
-                        
+
                         {/* 1. Essential (Always on / locked) */}
                         <div className="flex items-center gap-2.5 select-none cursor-not-allowed">
                           <div className="w-4.5 h-4.5 rounded border border-white/30 bg-white/20 flex items-center justify-center text-white">
@@ -141,11 +141,10 @@ export default function CookieBanner() {
                           className="flex items-center gap-2.5 select-none cursor-pointer group"
                         >
                           <div
-                            className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-colors ${
-                              preferences.analytics
-                                ? 'bg-white border-white text-black'
-                                : 'border-white/40 bg-white/[0.04] group-hover:border-white'
-                            }`}
+                            className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-colors ${preferences.analytics
+                              ? 'bg-white border-white text-black'
+                              : 'border-white/40 bg-white/[0.04] group-hover:border-white'
+                              }`}
                           >
                             {preferences.analytics && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                           </div>
@@ -160,11 +159,10 @@ export default function CookieBanner() {
                           className="flex items-center gap-2.5 select-none cursor-pointer group"
                         >
                           <div
-                            className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-colors ${
-                              preferences.functional
-                                ? 'bg-white border-white text-black'
-                                : 'border-white/40 bg-white/[0.04] group-hover:border-white'
-                            }`}
+                            className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-colors ${preferences.functional
+                              ? 'bg-white border-white text-black'
+                              : 'border-white/40 bg-white/[0.04] group-hover:border-white'
+                              }`}
                           >
                             {preferences.functional && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                           </div>
@@ -179,11 +177,10 @@ export default function CookieBanner() {
                           className="flex items-center gap-2.5 select-none cursor-pointer group"
                         >
                           <div
-                            className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-colors ${
-                              preferences.marketing
-                                ? 'bg-white border-white text-black'
-                                : 'border-white/40 bg-white/[0.04] group-hover:border-white'
-                            }`}
+                            className={`w-4.5 h-4.5 rounded border flex items-center justify-center transition-colors ${preferences.marketing
+                              ? 'bg-white border-white text-black'
+                              : 'border-white/40 bg-white/[0.04] group-hover:border-white'
+                              }`}
                           >
                             {preferences.marketing && <Check className="w-3.5 h-3.5 stroke-[3]" />}
                           </div>

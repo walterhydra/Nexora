@@ -243,11 +243,11 @@ export default function RefundPolicy() {
                   </div>
                   <h2 className="text-2xl font-display font-bold">Have an eligibility question?</h2>
                   <p className="mt-2 text-xs leading-relaxed text-gray-400 max-w-xl">
-                    Reach out to our billing team directly at contact@nexoraa.studio with your active project details.
+                    Reach out to our billing team directly at contact@nexoraa.works with your active project details.
                   </p>
                 </div>
                 <a
-                  href="mailto:contact@nexoraa.studio?subject=Refund%20Eligibility%20Review"
+                  href="mailto:contact@nexoraa.works?subject=Refund%20Eligibility%20Review"
                   className="inline-flex items-center gap-2 rounded-xl bg-white hover:bg-[#00F5FF] px-5 py-3 text-xs font-mono font-bold text-black transition-colors"
                 >
                   Contact Billing <ArrowRight size={14} />

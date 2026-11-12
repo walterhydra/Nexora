@@ -27,7 +27,7 @@ export default function Navbar() {
   };
 
   const copyEmail = () => {
-    navigator.clipboard.writeText('contact@nexoraa.studio');
+    navigator.clipboard.writeText('contact@nexoraa.works');
     toast.success('Email copied to clipboard!');
   };
 
@@ -54,7 +54,7 @@ export default function Navbar() {
         throw new Error('Failed');
       }
     } catch {
-      toast.error('Could not send message. Email us at contact@nexoraa.studio');
+      toast.error('Could not send message. Email us at contact@nexoraa.works');
     } finally {
       setContactSending(false);
     }
@@ -421,7 +421,7 @@ export default function Navbar() {
                         </div>
                         <div className="text-left">
                           <div className="text-[9px] font-mono text-gray-500 uppercase tracking-wider">Email Protocol</div>
-                          <div className="text-xs font-semibold text-gray-300">contact@nexoraa.studio</div>
+                          <div className="text-xs font-semibold text-gray-300">contact@nexoraa.works</div>
                         </div>
                       </div>
                       <span className="text-[10px] font-mono text-gray-500 group-hover:text-white transition-colors bg-white/5 px-2 py-1 rounded-md border border-white/5">

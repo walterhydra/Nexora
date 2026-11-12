@@ -20,7 +20,7 @@ const DEFAULT_SETTINGS = {
   owner: 'Milan Pandavadara',
   desig: 'Founder & CEO',
   phone: '+91 7383303388',
-  email: 'nexoraa.works@gmail.com',
+  email: 'contact@nexoraa.works',
   website: 'nexoraa.works',
   gst: '',
   address: 'India | Serving Clients Worldwide',

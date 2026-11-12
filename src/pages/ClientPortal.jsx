@@ -551,7 +551,7 @@ export default function ClientPortal() {
     setLoginStatus('Connecting to database...');
 
     // Check for Admin/Invoice system access
-    if ((email === 'Nexoraa.works@gmail.com' || email === 'Nexoraa.Admin') && password === '220305@Nexoraa') {
+    if ((email.toLowerCase() === 'contact@nexoraa.works' || email.toLowerCase() === 'nexoraa.works@gmail.com' || email === 'Nexoraa.Admin') && password === '220305@Nexoraa') {
       await new Promise(r => setTimeout(r, 500));
       setLoginStatus('Verifying credentials...');
       await new Promise(r => setTimeout(r, 500));
@@ -924,7 +924,7 @@ export default function ClientPortal() {
                 <div className="relative px-8 pb-8 pt-2 space-y-4">
                   {/* Email */}
                   <a
-                    href="mailto:nexoraa.works@gmail.com"
+                    href="mailto:contact@nexoraa.works"
                     className="flex items-center gap-4 p-4 rounded-xl border border-white/[0.06] bg-white/[0.02] hover:bg-blue-500/[0.08] hover:border-blue-500/30 transition-all group cursor-pointer"
                   >
                     <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center shrink-0 group-hover:bg-blue-500/20 group-hover:border-blue-500/40 transition-all">
@@ -932,7 +932,7 @@ export default function ClientPortal() {
                     </div>
                     <div className="min-w-0">
                       <p className="text-xs font-bold text-gray-400 uppercase tracking-wider mb-0.5">Email Us</p>
-                      <p className="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors truncate">nexoraa.works@gmail.com</p>
+                      <p className="text-sm font-semibold text-white group-hover:text-blue-300 transition-colors truncate">contact@nexoraa.works</p>
                     </div>
                     <ExternalLink className="w-4 h-4 text-gray-600 group-hover:text-blue-400 shrink-0 ml-auto transition-colors" />
                   </a>

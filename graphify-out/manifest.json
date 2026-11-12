@@ -30,23 +30,23 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\api\\chat.js": {
-    "mtime": 1794388706.2280695,
-    "ast_hash": "559553572d0a1a9a897babaea6832b48",
+    "mtime": 1794419420.5397618,
+    "ast_hash": "b43baa620769ebc6a85920cf83317cf4",
     "semantic_hash": ""
   },
   "C:\\Nexora\\api\\contact.js": {
-    "mtime": 1782064483.399614,
-    "ast_hash": "beba704f6a36af43f5e99d9dcc15f248",
+    "mtime": 1794472541.0958805,
+    "ast_hash": "1c3cd87de2e918c9401102e86636f26b",
     "semantic_hash": ""
   },
   "C:\\Nexora\\api\\otp.js": {
-    "mtime": 1794381131.278288,
-    "ast_hash": "a1c2b6ef3426a513a523a0dfdeece0df",
+    "mtime": 1794476664.7087379,
+    "ast_hash": "749acc031be043ad569d0e92d1587dd5",
     "semantic_hash": ""
   },
   "C:\\Nexora\\api\\send-agreement.js": {
-    "mtime": 1782064483.4031584,
-    "ast_hash": "6a6ba5df2598472cb0c6f4edb3fe65dd",
+    "mtime": 1794472541.2162194,
+    "ast_hash": "faa06e18d2113ae6b143cda2d8d1dde9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\App.jsx": {
@@ -70,8 +70,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\Footer.jsx": {
-    "mtime": 1794303848.7297058,
-    "ast_hash": "cda3d826e02046dfebbbddd4e25f0bb7",
+    "mtime": 1794419421.650099,
+    "ast_hash": "5555f83d2634358c251997ed8e22c5f2",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\LoadingScreen.jsx": {
@@ -85,8 +85,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\Navbar.jsx": {
-    "mtime": 1794401518.2858348,
-    "ast_hash": "36d5436d48ed28331d6596a1a03f04e2",
+    "mtime": 1794419421.8814197,
+    "ast_hash": "89ffd27567e1b505f39c6fa1ddae2554",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\layout\\ScrollToTop.jsx": {
@@ -150,8 +150,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\About.jsx": {
-    "mtime": 1794400832.0827968,
-    "ast_hash": "3af8b8f88718f6fe943d53c21f5ec5aa",
+    "mtime": 1794419422.0154893,
+    "ast_hash": "cecc04283e4e0c8faacab47fa68afe8d",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\FAQ.jsx": {
@@ -160,8 +160,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Hero.jsx": {
-    "mtime": 1794405238.833011,
-    "ast_hash": "dad66e1bdb0c1fb7e511d796c8d4c581",
+    "mtime": 1794405891.3635244,
+    "ast_hash": "dc212716cc7b1d8a237aa9feb629dcea",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\KineticManifesto.jsx": {
@@ -170,8 +170,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\Pricing.jsx": {
-    "mtime": 1794399581.5529823,
-    "ast_hash": "1b2240ecc3abd3806378cbd58a715d11",
+    "mtime": 1794419422.1702702,
+    "ast_hash": "0c78b5e5f3443c30fb1db528d4d4b8b9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\RealtimeWork.jsx": {
@@ -220,8 +220,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\CookieBanner.jsx": {
-    "mtime": 1794400831.9999385,
-    "ast_hash": "672112cc41c1185d0ad294d559e52c05",
+    "mtime": 1794418550.4989927,
+    "ast_hash": "06bfdd2b65b82e495cf8cbde4bbcb23e",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\FlashbackTransition.jsx": {
@@ -235,8 +235,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\LaptopMockup.jsx": {
-    "mtime": 1794404551.7560031,
-    "ast_hash": "7e868cd318696ff83f0c0e8925f06ee6",
+    "mtime": 1794405889.9940257,
+    "ast_hash": "dd315f912015c14eb7d87441a8564d27",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\MagneticButton.jsx": {
@@ -250,8 +250,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\NovaWidget.jsx": {
-    "mtime": 1794403811.1032999,
-    "ast_hash": "0b661ab60668462453388892d0d67e16",
+    "mtime": 1794474861.549547,
+    "ast_hash": "97236e29d820db59b1f319a9b2cb54da",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\ui\\ParticleField.jsx": {
@@ -345,13 +345,13 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\ClientPortal.jsx": {
-    "mtime": 1794328496.5225787,
-    "ast_hash": "2745842a58619adcca87186e51ae80f6",
+    "mtime": 1794419422.6033812,
+    "ast_hash": "e046a5137a338678eda054ac5ca9a458",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Contact.jsx": {
-    "mtime": 1782981621.2327776,
-    "ast_hash": "6d82f34ba60a353e4e9c18b51e667dd2",
+    "mtime": 1794419422.7595813,
+    "ast_hash": "5a2e6eb171cc2bb96081b96d987f8fcf",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Home.jsx": {
@@ -360,8 +360,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\InvoiceSystem.jsx": {
-    "mtime": 1780912794.2127883,
-    "ast_hash": "5db2bf2aa4fa3d0ea70ef481f565513f",
+    "mtime": 1794419422.952098,
+    "ast_hash": "504fb028ae38ee662017e6388f0b6775",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\NotFound.jsx": {
@@ -375,13 +375,13 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\PaymentPolicy.jsx": {
-    "mtime": 1782980341.5939314,
-    "ast_hash": "215922fed69add449a58a046797cd4f9",
+    "mtime": 1794419423.044709,
+    "ast_hash": "500d56d3b50fb6cd65f7da74cc616cd9",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\PrivacyPolicy.jsx": {
-    "mtime": 1782980316.2434018,
-    "ast_hash": "a91ebfab6baf35c62314baf6f0b0c58e",
+    "mtime": 1794419423.1236503,
+    "ast_hash": "9f22efab070723fb47af99b3c8285308",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Projects.jsx": {
@@ -390,13 +390,13 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\RefundPolicy.jsx": {
-    "mtime": 1782980333.3589158,
-    "ast_hash": "de34a1097271b5a8fbcba9044aa31c02",
+    "mtime": 1794419423.1953278,
+    "ast_hash": "cc104bdac6698b4be5ff8a5eed110211",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\ServiceDetails.jsx": {
-    "mtime": 1782889062.4246037,
-    "ast_hash": "110239f59bafad7f2b6dacb3d4b6b541",
+    "mtime": 1794419423.313874,
+    "ast_hash": "fff355051d55dcea89d9855d05071125",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Services.jsx": {
@@ -410,8 +410,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\pages\\Terms.jsx": {
-    "mtime": 1782980323.7788186,
-    "ast_hash": "facd3e54d693f112bd7c386edb3a99b3",
+    "mtime": 1794419423.3869307,
+    "ast_hash": "c3e9c549bf85db45d8b9419472bfbdcc",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\utils\\cn.js": {
@@ -1380,8 +1380,8 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\ProjectSpecs.jsx": {
-    "mtime": 1794328492.625657,
-    "ast_hash": "0041b703061f3b145e646ab4c67fcba6",
+    "mtime": 1794419422.3011594,
+    "ast_hash": "6d833f3f0a5889aaca80583d7004ea7d",
     "semantic_hash": ""
   },
   "C:\\Nexora\\src\\components\\sections\\ReadyToLaunch.jsx": {
@@ -1445,13 +1445,53 @@
     "semantic_hash": ""
   },
   "C:\\Nexora\\api\\copy.js": {
-    "mtime": 1794376401.7807777,
+    "mtime": 1794422805.7870502,
     "ast_hash": "07a9595f86bdfa8bc541b61986b3baf3",
     "semantic_hash": ""
   },
   "C:\\Nexora\\public\\logo\\nexoraa-brand-logo.jpg": {
     "mtime": 1794379697.254138,
     "ast_hash": "614d77e695a334487bcec69397aa99ef",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\outreach.js": {
+    "mtime": 1794503114.0946136,
+    "ast_hash": "c1f8a0fd43544e589bd0988c25678ddc",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\templates.js": {
+    "mtime": 1794497833.163548,
+    "ast_hash": "eb179f7324c10d18460ebaf9309fef35",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\README.md": {
+    "mtime": 1794477033.3265517,
+    "ast_hash": "eaa5aa090df794579b518be108b93a46",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\whatsapp_generator.js": {
+    "mtime": 1794502565.7940755,
+    "ast_hash": "92c66f0a3466edccdcf1a3058c27379f",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\whatsapp_templates.js": {
+    "mtime": 1794501518.2054305,
+    "ast_hash": "a6f7b0e8ab78d8f11ba55eb249ad7766",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\whatsapp_dashboard.html": {
+    "mtime": 1794502473.800311,
+    "ast_hash": "fcee9ba74ad8fb7121dffa0bf986f688",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\public\\logo\\nexoraa-official-logo.jpg": {
+    "mtime": 1794499766.6638284,
+    "ast_hash": "afdc9ab00a1ef4fadbc2306b90c2f849",
+    "semantic_hash": ""
+  },
+  "C:\\Nexora\\outreach\\nova-glow-icon.png": {
+    "mtime": 1778480626.8111515,
+    "ast_hash": "017d2aea4558301e3558e9c64c58c4f4",
     "semantic_hash": ""
   }
 }

@@ -20,8 +20,8 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Name, email, and message are required fields' });
   }
 
-  const adminEmail = process.env.ADMIN_EMAIL || 'nexoraa.works@gmail.com';
-  const resolvedSmtpEmail = process.env.SMTP_EMAIL || 'nexoraa.works@gmail.com';
+  const adminEmail = process.env.ADMIN_EMAIL || 'contact@nexoraa.works';
+  const resolvedSmtpEmail = process.env.SMTP_EMAIL || 'contact@nexoraa.works';
   const resolvedSmtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
   const brevoApiKey = process.env.BREVO_API_KEY;
   const resendApiKey = process.env.RESEND_API_KEY;
@@ -166,13 +166,25 @@ export default async function handler(req, res) {
     // 3. SMTP PROVIDER (Gmail/Outlook fallback)
     if (resolvedSmtpEmail && resolvedSmtpPassword) {
       console.log('[API Contact] Sending via SMTP direct transport to:', adminEmail);
-      const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: resolvedSmtpEmail,
-          pass: resolvedSmtpPassword
-        }
-      });
+      const smtpConfig = process.env.SMTP_HOST
+        ? {
+            host: process.env.SMTP_HOST,
+            port: parseInt(process.env.SMTP_PORT || '465'),
+            secure: (process.env.SMTP_PORT || '465') === '465',
+            auth: {
+              user: resolvedSmtpEmail,
+              pass: resolvedSmtpPassword
+            }
+          }
+        : {
+            service: 'gmail',
+            auth: {
+              user: resolvedSmtpEmail,
+              pass: resolvedSmtpPassword
+            }
+          };
+
+      const transporter = nodemailer.createTransport(smtpConfig);
 
       await transporter.sendMail({
         from: `"${name} via Nexoraa Portal" <${resolvedSmtpEmail}>`,
