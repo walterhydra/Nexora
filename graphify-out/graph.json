@@ -18,7 +18,7 @@
       "source_file": "package.json",
       "source_location": "L1",
       "id": "package_json",
-      "community": 17,
+      "community": 43,
       "norm_label": "package.json"
     },
     {
@@ -27,7 +27,7 @@
       "source_file": "package.json",
       "source_location": "L2",
       "id": "nexora_package_name",
-      "community": 17,
+      "community": 43,
       "norm_label": "name"
     },
     {
@@ -36,7 +36,7 @@
       "source_file": "package.json",
       "source_location": "L3",
       "id": "nexora_package_private",
-      "community": 17,
+      "community": 43,
       "norm_label": "private"
     },
     {
@@ -45,7 +45,7 @@
       "source_file": "package.json",
       "source_location": "L4",
       "id": "nexora_package_version",
-      "community": 17,
+      "community": 43,
       "norm_label": "version"
     },
     {
@@ -54,7 +54,7 @@
       "source_file": "package.json",
       "source_location": "L5",
       "id": "nexora_package_type",
-      "community": 17,
+      "community": 43,
       "norm_label": "type"
     },
     {
@@ -63,7 +63,7 @@
       "source_file": "package.json",
       "source_location": "L6",
       "id": "nexora_package_scripts",
-      "community": 17,
+      "community": 47,
       "norm_label": "scripts"
     },
     {
@@ -72,7 +72,7 @@
       "source_file": "package.json",
       "source_location": "L7",
       "id": "nexora_package_scripts_dev",
-      "community": 17,
+      "community": 47,
       "norm_label": "dev"
     },
     {
@@ -81,7 +81,7 @@
       "source_file": "package.json",
       "source_location": "L8",
       "id": "nexora_package_scripts_build",
-      "community": 17,
+      "community": 47,
       "norm_label": "build"
     },
     {
@@ -90,7 +90,7 @@
       "source_file": "package.json",
       "source_location": "L9",
       "id": "nexora_package_scripts_lint",
-      "community": 17,
+      "community": 47,
       "norm_label": "lint"
     },
     {
@@ -99,7 +99,7 @@
       "source_file": "package.json",
       "source_location": "L10",
       "id": "nexora_package_scripts_preview",
-      "community": 17,
+      "community": 47,
       "norm_label": "preview"
     },
     {
@@ -274,10 +274,19 @@
       "norm_label": "nodemailer"
     },
     {
-      "label": "react",
+      "label": "puppeteer",
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L31",
+      "id": "nexora_package_dependencies_puppeteer",
+      "community": 64,
+      "norm_label": "puppeteer"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "package.json",
+      "source_location": "L32",
       "id": "nexora_package_dependencies_react",
       "community": 64,
       "norm_label": "react"
@@ -286,7 +295,7 @@
       "label": "react-countup",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L32",
+      "source_location": "L33",
       "id": "nexora_package_dependencies_react_countup",
       "community": 64,
       "norm_label": "react-countup"
@@ -295,7 +304,7 @@
       "label": "react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L33",
+      "source_location": "L34",
       "id": "nexora_package_dependencies_react_dom",
       "community": 64,
       "norm_label": "react-dom"
@@ -304,7 +313,7 @@
       "label": "react-helmet-async",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L34",
+      "source_location": "L35",
       "id": "nexora_package_dependencies_react_helmet_async",
       "community": 64,
       "norm_label": "react-helmet-async"
@@ -313,7 +322,7 @@
       "label": "react-hot-toast",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L35",
+      "source_location": "L36",
       "id": "nexora_package_dependencies_react_hot_toast",
       "community": 64,
       "norm_label": "react-hot-toast"
@@ -322,7 +331,7 @@
       "label": "react-icons",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L36",
+      "source_location": "L37",
       "id": "nexora_package_dependencies_react_icons",
       "community": 64,
       "norm_label": "react-icons"
@@ -331,7 +340,7 @@
       "label": "react-intersection-observer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L37",
+      "source_location": "L38",
       "id": "nexora_package_dependencies_react_intersection_observer",
       "community": 64,
       "norm_label": "react-intersection-observer"
@@ -340,7 +349,7 @@
       "label": "react-router-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L38",
+      "source_location": "L39",
       "id": "nexora_package_dependencies_react_router_dom",
       "community": 64,
       "norm_label": "react-router-dom"
@@ -349,7 +358,7 @@
       "label": "swiper",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L39",
+      "source_location": "L40",
       "id": "nexora_package_dependencies_swiper",
       "community": 64,
       "norm_label": "swiper"
@@ -358,7 +367,7 @@
       "label": "tailwind-merge",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L40",
+      "source_location": "L41",
       "id": "nexora_package_dependencies_tailwind_merge",
       "community": 64,
       "norm_label": "tailwind-merge"
@@ -367,7 +376,7 @@
       "label": "three",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L41",
+      "source_location": "L42",
       "id": "nexora_package_dependencies_three",
       "community": 64,
       "norm_label": "three"
@@ -376,7 +385,7 @@
       "label": "typewriter-effect",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L42",
+      "source_location": "L43",
       "id": "nexora_package_dependencies_typewriter_effect",
       "community": 64,
       "norm_label": "typewriter-effect"
@@ -385,7 +394,7 @@
       "label": "devDependencies",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L44",
+      "source_location": "L45",
       "id": "nexora_package_devdependencies",
       "community": 17,
       "norm_label": "devdependencies"
@@ -394,7 +403,7 @@
       "label": "@eslint/js",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L45",
+      "source_location": "L46",
       "id": "nexora_package_devdependencies_eslint_js",
       "community": 17,
       "norm_label": "@eslint/js"
@@ -403,7 +412,7 @@
       "label": "@tailwindcss/forms",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L46",
+      "source_location": "L47",
       "id": "nexora_package_devdependencies_tailwindcss_forms",
       "community": 17,
       "norm_label": "@tailwindcss/forms"
@@ -412,7 +421,7 @@
       "label": "@tailwindcss/typography",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L47",
+      "source_location": "L48",
       "id": "nexora_package_devdependencies_tailwindcss_typography",
       "community": 17,
       "norm_label": "@tailwindcss/typography"
@@ -421,7 +430,7 @@
       "label": "@types/react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L48",
+      "source_location": "L49",
       "id": "nexora_package_devdependencies_types_react",
       "community": 17,
       "norm_label": "@types/react"
@@ -430,7 +439,7 @@
       "label": "@types/react-dom",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L49",
+      "source_location": "L50",
       "id": "nexora_package_devdependencies_types_react_dom",
       "community": 17,
       "norm_label": "@types/react-dom"
@@ -439,7 +448,7 @@
       "label": "@vitejs/plugin-react",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L50",
+      "source_location": "L51",
       "id": "nexora_package_devdependencies_vitejs_plugin_react",
       "community": 17,
       "norm_label": "@vitejs/plugin-react"
@@ -448,7 +457,7 @@
       "label": "autoprefixer",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L51",
+      "source_location": "L52",
       "id": "nexora_package_devdependencies_autoprefixer",
       "community": 17,
       "norm_label": "autoprefixer"
@@ -457,7 +466,7 @@
       "label": "eslint",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L52",
+      "source_location": "L53",
       "id": "nexora_package_devdependencies_eslint",
       "community": 17,
       "norm_label": "eslint"
@@ -466,7 +475,7 @@
       "label": "eslint-plugin-react-hooks",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L53",
+      "source_location": "L54",
       "id": "nexora_package_devdependencies_eslint_plugin_react_hooks",
       "community": 17,
       "norm_label": "eslint-plugin-react-hooks"
@@ -475,7 +484,7 @@
       "label": "eslint-plugin-react-refresh",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L54",
+      "source_location": "L55",
       "id": "nexora_package_devdependencies_eslint_plugin_react_refresh",
       "community": 17,
       "norm_label": "eslint-plugin-react-refresh"
@@ -484,7 +493,7 @@
       "label": "globals",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L55",
+      "source_location": "L56",
       "id": "nexora_package_devdependencies_globals",
       "community": 17,
       "norm_label": "globals"
@@ -493,7 +502,7 @@
       "label": "postcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L56",
+      "source_location": "L57",
       "id": "nexora_package_devdependencies_postcss",
       "community": 17,
       "norm_label": "postcss"
@@ -502,7 +511,7 @@
       "label": "sharp",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L57",
+      "source_location": "L58",
       "id": "nexora_package_devdependencies_sharp",
       "community": 17,
       "norm_label": "sharp"
@@ -511,7 +520,7 @@
       "label": "tailwindcss",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L58",
+      "source_location": "L59",
       "id": "nexora_package_devdependencies_tailwindcss",
       "community": 17,
       "norm_label": "tailwindcss"
@@ -520,7 +529,7 @@
       "label": "vite",
       "file_type": "code",
       "source_file": "package.json",
-      "source_location": "L59",
+      "source_location": "L60",
       "id": "nexora_package_devdependencies_vite",
       "community": 17,
       "norm_label": "vite"
@@ -2864,6 +2873,123 @@
       "norm_label": "templates"
     },
     {
+      "label": "whatsapp_auto.js",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L1",
+      "id": "outreach_whatsapp_auto_js",
+      "community": 23,
+      "norm_label": "whatsapp_auto.js"
+    },
+    {
+      "label": "__filename",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L7",
+      "id": "outreach_whatsapp_auto_filename",
+      "community": 23,
+      "norm_label": "__filename"
+    },
+    {
+      "label": "__dirname",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L8",
+      "id": "outreach_whatsapp_auto_dirname",
+      "community": 23,
+      "norm_label": "__dirname"
+    },
+    {
+      "label": "SENT_TRACKER_FILE",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L12",
+      "id": "outreach_whatsapp_auto_sent_tracker_file",
+      "community": 23,
+      "norm_label": "sent_tracker_file"
+    },
+    {
+      "label": "USER_DATA_DIR",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L13",
+      "id": "outreach_whatsapp_auto_user_data_dir",
+      "community": 23,
+      "norm_label": "user_data_dir"
+    },
+    {
+      "label": "getSentTracker()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L16",
+      "id": "outreach_whatsapp_auto_getsenttracker",
+      "community": 23,
+      "norm_label": "getsenttracker()"
+    },
+    {
+      "label": "saveSentTracker()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L27",
+      "id": "outreach_whatsapp_auto_savesenttracker",
+      "community": 23,
+      "norm_label": "savesenttracker()"
+    },
+    {
+      "label": "parseCSV()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L32",
+      "id": "outreach_whatsapp_auto_parsecsv",
+      "community": 23,
+      "norm_label": "parsecsv()"
+    },
+    {
+      "label": "extractMobile()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L76",
+      "id": "outreach_whatsapp_auto_extractmobile",
+      "community": 23,
+      "norm_label": "extractmobile()"
+    },
+    {
+      "label": "sectorConfigs",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L87",
+      "id": "outreach_whatsapp_auto_sectorconfigs",
+      "community": 23,
+      "norm_label": "sectorconfigs"
+    },
+    {
+      "label": "loadLeads()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L100",
+      "id": "outreach_whatsapp_auto_loadleads",
+      "community": 23,
+      "norm_label": "loadleads()"
+    },
+    {
+      "label": "sleep()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L138",
+      "id": "outreach_whatsapp_auto_sleep",
+      "community": 23,
+      "norm_label": "sleep()"
+    },
+    {
+      "label": "runAutoSender()",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L140",
+      "id": "outreach_whatsapp_auto_runautosender",
+      "community": 23,
+      "norm_label": "runautosender()"
+    },
+    {
       "label": "whatsapp_generator.js",
       "file_type": "code",
       "source_file": "outreach/whatsapp_generator.js",
@@ -3044,6 +3170,177 @@
       "norm_label": "hinfu"
     },
     {
+      "label": "whatsapp_sent.json",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L1",
+      "id": "outreach_whatsapp_sent_json",
+      "community": 44,
+      "norm_label": "whatsapp_sent.json"
+    },
+    {
+      "label": "917383303388",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L2",
+      "id": "outreach_whatsapp_sent_917383303388",
+      "community": 44,
+      "norm_label": "917383303388"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L3",
+      "id": "outreach_whatsapp_sent_917383303388_status",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L4",
+      "id": "outreach_whatsapp_sent_917383303388_date",
+      "community": 44,
+      "norm_label": "date"
+    },
+    {
+      "label": "916353090534",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L6",
+      "id": "outreach_whatsapp_sent_916353090534",
+      "community": 44,
+      "norm_label": "916353090534"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L7",
+      "id": "outreach_whatsapp_sent_916353090534_status",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L8",
+      "id": "outreach_whatsapp_sent_916353090534_date",
+      "community": 44,
+      "norm_label": "date"
+    },
+    {
+      "label": "919909819835",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L10",
+      "id": "outreach_whatsapp_sent_919909819835",
+      "community": 44,
+      "norm_label": "919909819835"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L11",
+      "id": "outreach_whatsapp_sent_919909819835_status",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L12",
+      "id": "outreach_whatsapp_sent_919909819835_date",
+      "community": 44,
+      "norm_label": "date"
+    },
+    {
+      "label": "917405499143",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L14",
+      "id": "outreach_whatsapp_sent_917405499143",
+      "community": 44,
+      "norm_label": "917405499143"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L15",
+      "id": "outreach_whatsapp_sent_917405499143_status",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L16",
+      "id": "outreach_whatsapp_sent_917405499143_date",
+      "community": 44,
+      "norm_label": "date"
+    },
+    {
+      "label": "918141974181",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L18",
+      "id": "outreach_whatsapp_sent_918141974181",
+      "community": 44,
+      "norm_label": "918141974181"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L19",
+      "id": "outreach_whatsapp_sent_918141974181_status",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L20",
+      "id": "outreach_whatsapp_sent_918141974181_date",
+      "community": 44,
+      "norm_label": "date"
+    },
+    {
+      "label": "919727795050",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L22",
+      "id": "outreach_whatsapp_sent_919727795050",
+      "community": 44,
+      "norm_label": "919727795050"
+    },
+    {
+      "label": "status",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L23",
+      "id": "outreach_whatsapp_sent_919727795050_status",
+      "community": 44,
+      "norm_label": "status"
+    },
+    {
+      "label": "date",
+      "file_type": "code",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L24",
+      "id": "outreach_whatsapp_sent_919727795050_date",
+      "community": 44,
+      "norm_label": "date"
+    },
+    {
       "label": "whatsapp_templates.js",
       "file_type": "code",
       "source_file": "outreach/whatsapp_templates.js",
@@ -3060,6 +3357,42 @@
       "id": "outreach_whatsapp_templates_whatsapptemplates",
       "community": 23,
       "norm_label": "whatsapptemplates"
+    },
+    {
+      "label": "metadata.json",
+      "file_type": "code",
+      "source_file": "outreach/.wadata/component_crx_cache/metadata.json",
+      "source_location": "L1",
+      "id": "outreach_wadata_component_crx_cache_metadata_json",
+      "community": 52,
+      "norm_label": "metadata.json"
+    },
+    {
+      "label": "hashes",
+      "file_type": "code",
+      "source_file": "outreach/.wadata/component_crx_cache/metadata.json",
+      "source_location": "L1",
+      "id": "component_crx_cache_metadata_hashes",
+      "community": 52,
+      "norm_label": "hashes"
+    },
+    {
+      "label": "metadata.json",
+      "file_type": "code",
+      "source_file": "outreach/.wadata/extensions_crx_cache/metadata.json",
+      "source_location": "L1",
+      "id": "outreach_wadata_extensions_crx_cache_metadata_json",
+      "community": 53,
+      "norm_label": "metadata.json"
+    },
+    {
+      "label": "hashes",
+      "file_type": "code",
+      "source_file": "outreach/.wadata/extensions_crx_cache/metadata.json",
+      "source_location": "L1",
+      "id": "extensions_crx_cache_metadata_hashes",
+      "community": 53,
+      "norm_label": "hashes"
     },
     {
       "label": "App.jsx",
@@ -3254,7 +3587,7 @@
       "label": "AppContent()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L82",
+      "source_location": "L85",
       "id": "src_app_appcontent",
       "community": 0,
       "norm_label": "appcontent()"
@@ -3263,7 +3596,7 @@
       "label": "MemoizedAppContent",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L135",
+      "source_location": "L138",
       "id": "src_app_memoizedappcontent",
       "community": 0,
       "norm_label": "memoizedappcontent"
@@ -3272,7 +3605,7 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "src/App.jsx",
-      "source_location": "L137",
+      "source_location": "L140",
       "id": "src_app_app",
       "community": 0,
       "norm_label": "app()"
@@ -3472,7 +3805,7 @@
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L1",
       "id": "src_components_layout_navbar_jsx",
-      "community": 100,
+      "community": 9,
       "norm_label": "navbar.jsx"
     },
     {
@@ -3481,7 +3814,7 @@
       "source_file": "src/components/layout/Navbar.jsx",
       "source_location": "L10",
       "id": "layout_navbar_navbar",
-      "community": 100,
+      "community": 9,
       "norm_label": "navbar()"
     },
     {
@@ -3490,7 +3823,7 @@
       "source_file": "src/components/layout/ScrollToTop.jsx",
       "source_location": "L1",
       "id": "src_components_layout_scrolltotop_jsx",
-      "community": 24,
+      "community": 49,
       "norm_label": "scrolltotop.jsx"
     },
     {
@@ -3499,7 +3832,7 @@
       "source_file": "src/components/layout/ScrollToTop.jsx",
       "source_location": "L5",
       "id": "layout_scrolltotop_scrolltotop",
-      "community": 24,
+      "community": 49,
       "norm_label": "scrolltotop()"
     },
     {
@@ -3652,7 +3985,7 @@
       "source_file": "src/components/portal/PortalContext.jsx",
       "source_location": "L5",
       "id": "portal_portalcontext_portalprovider",
-      "community": 7,
+      "community": 9,
       "norm_label": "portalprovider()"
     },
     {
@@ -4147,7 +4480,7 @@
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L1",
       "id": "src_components_sections_hero_jsx",
-      "community": 24,
+      "community": 3,
       "norm_label": "hero.jsx"
     },
     {
@@ -4156,7 +4489,7 @@
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L16",
       "id": "sections_hero_mobilepreview",
-      "community": 24,
+      "community": 3,
       "norm_label": "mobilepreview"
     },
     {
@@ -4165,7 +4498,7 @@
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L117",
       "id": "sections_hero_laptopscreencontent",
-      "community": 24,
+      "community": 3,
       "norm_label": "laptopscreencontent"
     },
     {
@@ -4174,7 +4507,7 @@
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L290",
       "id": "sections_hero_hero_phrases",
-      "community": 24,
+      "community": 3,
       "norm_label": "hero_phrases"
     },
     {
@@ -4183,7 +4516,7 @@
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L298",
       "id": "sections_hero_hero",
-      "community": 24,
+      "community": 3,
       "norm_label": "hero()"
     },
     {
@@ -4543,7 +4876,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L1",
       "id": "src_components_ui_backtotop_jsx",
-      "community": 24,
+      "community": 49,
       "norm_label": "backtotop.jsx"
     },
     {
@@ -4552,7 +4885,7 @@
       "source_file": "src/components/ui/BackToTop.jsx",
       "source_location": "L6",
       "id": "ui_backtotop_backtotop",
-      "community": 24,
+      "community": 49,
       "norm_label": "backtotop()"
     },
     {
@@ -4597,7 +4930,7 @@
       "source_file": "src/components/ui/FlashbackTransition.jsx",
       "source_location": "L1",
       "id": "src_components_ui_flashbacktransition_jsx",
-      "community": 24,
+      "community": 3,
       "norm_label": "flashbacktransition.jsx"
     },
     {
@@ -4606,7 +4939,7 @@
       "source_file": "src/components/ui/FlashbackTransition.jsx",
       "source_location": "L4",
       "id": "ui_flashbacktransition_flashbacktransition",
-      "community": 24,
+      "community": 3,
       "norm_label": "flashbacktransition()"
     },
     {
@@ -4633,7 +4966,7 @@
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L1",
       "id": "src_components_ui_glowcard_jsx",
-      "community": 100,
+      "community": 9,
       "norm_label": "glowcard.jsx"
     },
     {
@@ -4642,7 +4975,7 @@
       "source_file": "src/components/ui/GlowCard.jsx",
       "source_location": "L4",
       "id": "ui_glowcard_glowcard",
-      "community": 100,
+      "community": 9,
       "norm_label": "glowcard"
     },
     {
@@ -4687,7 +5020,7 @@
       "source_file": "src/components/ui/LayeredPaperWaves.jsx",
       "source_location": "L1",
       "id": "src_components_ui_layeredpaperwaves_jsx",
-      "community": 7,
+      "community": 3,
       "norm_label": "layeredpaperwaves.jsx"
     },
     {
@@ -4696,7 +5029,7 @@
       "source_file": "src/components/ui/LayeredPaperWaves.jsx",
       "source_location": "L13",
       "id": "ui_layeredpaperwaves_layeredpaperwaves",
-      "community": 7,
+      "community": 3,
       "norm_label": "layeredpaperwaves()"
     },
     {
@@ -4705,7 +5038,7 @@
       "source_file": "src/components/ui/MagneticButton.jsx",
       "source_location": "L1",
       "id": "src_components_ui_magneticbutton_jsx",
-      "community": 100,
+      "community": 9,
       "norm_label": "magneticbutton.jsx"
     },
     {
@@ -4714,7 +5047,7 @@
       "source_file": "src/components/ui/MagneticButton.jsx",
       "source_location": "L5",
       "id": "ui_magneticbutton_magneticbutton",
-      "community": 100,
+      "community": 9,
       "norm_label": "magneticbutton()"
     },
     {
@@ -4723,7 +5056,7 @@
       "source_file": "src/components/ui/MorphingBlob.jsx",
       "source_location": "L1",
       "id": "src_components_ui_morphingblob_jsx",
-      "community": 24,
+      "community": 3,
       "norm_label": "morphingblob.jsx"
     },
     {
@@ -4732,7 +5065,7 @@
       "source_file": "src/components/ui/MorphingBlob.jsx",
       "source_location": "L3",
       "id": "ui_morphingblob_morphingblob",
-      "community": 24,
+      "community": 3,
       "norm_label": "morphingblob()"
     },
     {
@@ -4876,7 +5209,7 @@
       "source_file": "src/constants/docs.js",
       "source_location": "L1",
       "id": "src_constants_docs_js",
-      "community": 100,
+      "community": 50,
       "norm_label": "docs.js"
     },
     {
@@ -4885,7 +5218,7 @@
       "source_file": "src/constants/docs.js",
       "source_location": "L1",
       "id": "constants_docs_docsdata",
-      "community": 100,
+      "community": 50,
       "norm_label": "docsdata"
     },
     {
@@ -5074,7 +5407,7 @@
       "source_file": "src/hooks/useLenis.js",
       "source_location": "L1",
       "id": "src_hooks_uselenis_js",
-      "community": 24,
+      "community": 49,
       "norm_label": "uselenis.js"
     },
     {
@@ -5092,7 +5425,7 @@
       "source_file": "src/hooks/useMagneticEffect.js",
       "source_location": "L1",
       "id": "src_hooks_usemagneticeffect_js",
-      "community": 100,
+      "community": 9,
       "norm_label": "usemagneticeffect.js"
     },
     {
@@ -5101,7 +5434,7 @@
       "source_file": "src/hooks/useMagneticEffect.js",
       "source_location": "L4",
       "id": "hooks_usemagneticeffect_usemagneticeffect",
-      "community": 100,
+      "community": 9,
       "norm_label": "usemagneticeffect()"
     },
     {
@@ -5119,7 +5452,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L1",
       "id": "src_pages_about_jsx",
-      "community": 44,
+      "community": 0,
       "norm_label": "about.jsx"
     },
     {
@@ -5128,7 +5461,7 @@
       "source_file": "src/pages/About.jsx",
       "source_location": "L5",
       "id": "pages_about_about",
-      "community": 44,
+      "community": 0,
       "norm_label": "about()"
     },
     {
@@ -5234,7 +5567,7 @@
       "label": "INITIAL_BUSINESSES",
       "file_type": "code",
       "source_file": "src/pages/CompanyPortal.jsx",
-      "source_location": "L16",
+      "source_location": "L17",
       "id": "pages_companyportal_initial_businesses",
       "community": 120,
       "norm_label": "initial_businesses"
@@ -5243,7 +5576,7 @@
       "label": "CompanyPortal()",
       "file_type": "code",
       "source_file": "src/pages/CompanyPortal.jsx",
-      "source_location": "L189",
+      "source_location": "L190",
       "id": "pages_companyportal_companyportal",
       "community": 120,
       "norm_label": "companyportal()"
@@ -5254,7 +5587,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L1",
       "id": "src_pages_contact_jsx",
-      "community": 100,
+      "community": 0,
       "norm_label": "contact.jsx"
     },
     {
@@ -5263,7 +5596,7 @@
       "source_file": "src/pages/Contact.jsx",
       "source_location": "L8",
       "id": "pages_contact_contact",
-      "community": 100,
+      "community": 0,
       "norm_label": "contact()"
     },
     {
@@ -5344,7 +5677,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L1",
       "id": "src_pages_notfound_jsx",
-      "community": 100,
+      "community": 51,
       "norm_label": "notfound.jsx"
     },
     {
@@ -5353,7 +5686,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L9",
       "id": "pages_notfound_particlefield",
-      "community": 100,
+      "community": 51,
       "norm_label": "particlefield()"
     },
     {
@@ -5362,7 +5695,7 @@
       "source_file": "src/pages/NotFound.jsx",
       "source_location": "L33",
       "id": "pages_notfound_notfound",
-      "community": 100,
+      "community": 51,
       "norm_label": "notfound()"
     },
     {
@@ -5371,7 +5704,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L1",
       "id": "src_pages_onboarding_jsx",
-      "community": 100,
+      "community": 50,
       "norm_label": "onboarding.jsx"
     },
     {
@@ -5380,7 +5713,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L13",
       "id": "pages_onboarding_steps",
-      "community": 100,
+      "community": 50,
       "norm_label": "steps"
     },
     {
@@ -5389,7 +5722,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L72",
       "id": "pages_onboarding_faqs",
-      "community": 100,
+      "community": 50,
       "norm_label": "faqs"
     },
     {
@@ -5398,7 +5731,7 @@
       "source_file": "src/pages/Onboarding.jsx",
       "source_location": "L91",
       "id": "pages_onboarding_onboarding",
-      "community": 100,
+      "community": 50,
       "norm_label": "onboarding()"
     },
     {
@@ -5623,7 +5956,7 @@
       "source_file": "src/utils/cn.js",
       "source_location": "L1",
       "id": "src_utils_cn_js",
-      "community": 100,
+      "community": 9,
       "norm_label": "cn.js"
     },
     {
@@ -5632,7 +5965,7 @@
       "source_file": "src/utils/cn.js",
       "source_location": "L4",
       "id": "utils_cn_cn",
-      "community": 100,
+      "community": 9,
       "norm_label": "cn()"
     },
     {
@@ -5641,7 +5974,7 @@
       "source_file": "src/utils/scroll.js",
       "source_location": "L1",
       "id": "src_utils_scroll_js",
-      "community": 24,
+      "community": 49,
       "norm_label": "scroll.js"
     },
     {
@@ -5650,34 +5983,34 @@
       "source_file": "src/utils/scroll.js",
       "source_location": "L12",
       "id": "utils_scroll_nativescrollcontroller",
-      "community": 24,
+      "community": 49,
       "norm_label": "nativescrollcontroller"
     },
     {
       "label": "initScroll()",
       "file_type": "code",
       "source_file": "src/utils/scroll.js",
-      "source_location": "L34",
+      "source_location": "L36",
       "id": "utils_scroll_initscroll",
-      "community": 24,
+      "community": 49,
       "norm_label": "initscroll()"
     },
     {
       "label": "getScroll()",
       "file_type": "code",
       "source_file": "src/utils/scroll.js",
-      "source_location": "L40",
+      "source_location": "L42",
       "id": "utils_scroll_getscroll",
-      "community": 24,
+      "community": 49,
       "norm_label": "getscroll()"
     },
     {
       "label": "destroyScroll()",
       "file_type": "code",
       "source_file": "src/utils/scroll.js",
-      "source_location": "L42",
+      "source_location": "L44",
       "id": "utils_scroll_destroyscroll",
-      "community": 24,
+      "community": 49,
       "norm_label": "destroyscroll()"
     },
     {
@@ -6459,7 +6792,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L124",
-      "community": 24,
+      "community": 3,
       "norm_label": "matrixdecoder",
       "id": "sections_hero_matrixdecoder"
     },
@@ -6468,7 +6801,7 @@
       "file_type": "code",
       "source_file": "src/components/sections/Hero.jsx",
       "source_location": "L116",
-      "community": 24,
+      "community": 3,
       "norm_label": "rotating_words",
       "id": "sections_hero_rotating_words"
     },
@@ -6945,7 +7278,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L2",
-      "community": 17,
+      "community": 43,
       "norm_label": "name",
       "id": "nexoraa_package_name"
     },
@@ -6954,7 +7287,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L3",
-      "community": 17,
+      "community": 43,
       "norm_label": "private",
       "id": "nexoraa_package_private"
     },
@@ -6963,7 +7296,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L4",
-      "community": 17,
+      "community": 43,
       "norm_label": "version",
       "id": "nexoraa_package_version"
     },
@@ -6972,7 +7305,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L5",
-      "community": 17,
+      "community": 43,
       "norm_label": "type",
       "id": "nexoraa_package_type"
     },
@@ -6981,7 +7314,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L6",
-      "community": 17,
+      "community": 48,
       "norm_label": "scripts",
       "id": "nexoraa_package_scripts"
     },
@@ -6990,7 +7323,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L7",
-      "community": 17,
+      "community": 48,
       "norm_label": "dev",
       "id": "nexoraa_package_scripts_dev"
     },
@@ -6999,7 +7332,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L8",
-      "community": 17,
+      "community": 48,
       "norm_label": "build",
       "id": "nexoraa_package_scripts_build"
     },
@@ -7008,7 +7341,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L9",
-      "community": 17,
+      "community": 48,
       "norm_label": "lint",
       "id": "nexoraa_package_scripts_lint"
     },
@@ -7017,7 +7350,7 @@
       "file_type": "code",
       "source_file": "package.json",
       "source_location": "L10",
-      "community": 17,
+      "community": 48,
       "norm_label": "preview",
       "id": "nexoraa_package_scripts_preview"
     },
@@ -8529,6 +8862,16 @@
       "confidence_score": 1.0,
       "source": "nexora_package_dependencies",
       "target": "nexora_package_dependencies_nodemailer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "package.json",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "nexora_package_dependencies",
+      "target": "nexora_package_dependencies_puppeteer"
     },
     {
       "relation": "contains",
@@ -11530,6 +11873,214 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_dirname"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L76",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_extractmobile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_filename"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_getsenttracker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L100",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_loadleads"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_parsecsv"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_runautosender"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L27",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_savesenttracker"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L87",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_sectorconfigs"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_sent_tracker_file"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L138",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_sleep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_auto_user_data_dir"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_templates_js"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_js",
+      "target": "outreach_whatsapp_templates_whatsapptemplates"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L177",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_runautosender",
+      "target": "outreach_whatsapp_auto_getsenttracker"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L252",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_runautosender",
+      "target": "outreach_whatsapp_auto_savesenttracker"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L113",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_loadleads",
+      "target": "outreach_whatsapp_auto_parsecsv"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L116",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_loadleads",
+      "target": "outreach_whatsapp_auto_extractmobile"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L175",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_runautosender",
+      "target": "outreach_whatsapp_auto_loadleads"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_auto.js",
+      "source_location": "L258",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_auto_runautosender",
+      "target": "outreach_whatsapp_auto_sleep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "outreach/whatsapp_generator.js",
       "source_location": "L92",
       "weight": 1.0,
@@ -11742,12 +12293,212 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_json",
+      "target": "outreach_whatsapp_sent_916353090534"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_json",
+      "target": "outreach_whatsapp_sent_917383303388"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_json",
+      "target": "outreach_whatsapp_sent_917405499143"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_json",
+      "target": "outreach_whatsapp_sent_918141974181"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_json",
+      "target": "outreach_whatsapp_sent_919727795050"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_json",
+      "target": "outreach_whatsapp_sent_919909819835"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_917383303388",
+      "target": "outreach_whatsapp_sent_917383303388_date"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_917383303388",
+      "target": "outreach_whatsapp_sent_917383303388_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_916353090534",
+      "target": "outreach_whatsapp_sent_916353090534_date"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_916353090534",
+      "target": "outreach_whatsapp_sent_916353090534_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_919909819835",
+      "target": "outreach_whatsapp_sent_919909819835_date"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_919909819835",
+      "target": "outreach_whatsapp_sent_919909819835_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_917405499143",
+      "target": "outreach_whatsapp_sent_917405499143_date"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_917405499143",
+      "target": "outreach_whatsapp_sent_917405499143_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_918141974181",
+      "target": "outreach_whatsapp_sent_918141974181_date"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_918141974181",
+      "target": "outreach_whatsapp_sent_918141974181_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_919727795050",
+      "target": "outreach_whatsapp_sent_919727795050_date"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/whatsapp_sent.json",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_whatsapp_sent_919727795050",
+      "target": "outreach_whatsapp_sent_919727795050_status"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "outreach/whatsapp_templates.js",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "outreach_whatsapp_templates_js",
       "target": "outreach_whatsapp_templates_whatsapptemplates"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/.wadata/component_crx_cache/metadata.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_wadata_component_crx_cache_metadata_json",
+      "target": "component_crx_cache_metadata_hashes"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "outreach/.wadata/extensions_crx_cache/metadata.json",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "outreach_wadata_extensions_crx_cache_metadata_json",
+      "target": "extensions_crx_cache_metadata_hashes"
     },
     {
       "relation": "imports",
@@ -18606,5 +19357,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "173664a16de7be5ddf8f0bb02585a1763476061e"
+  "built_at_commit": "2ed225e4adaf14c9e4d17c2fc6e6458133fc3b1b"
 }

@@ -43,3 +43,7 @@ _asset_backups/
 *.apk
 build_output.txt
 
+# WhatsApp session cache & sent tracker
+outreach/.wadata/
+outreach/whatsapp_sent.json
+

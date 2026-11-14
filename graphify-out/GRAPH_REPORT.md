@@ -1,16 +1,16 @@
-# Graph Report - Nexora  (2026-11-12)
+# Graph Report - Nexora  (2026-11-14)
 
 ## Corpus Check
-- 154 files · ~1,780,470 words
+- 158 files · ~1,787,987 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 911 nodes · 1012 edges · 87 communities (66 shown, 21 thin omitted)
+- 948 nodes · 1053 edges · 95 communities (72 shown, 23 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 8 edges (avg confidence: 0.8)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `173664a1`
+- Built from commit: `2ed225e4`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -53,8 +53,16 @@
 - [[_COMMUNITY_Community 40|Community 40]]
 - [[_COMMUNITY_Community 41|Community 41]]
 - [[_COMMUNITY_Community 42|Community 42]]
+- [[_COMMUNITY_Community 43|Community 43]]
+- [[_COMMUNITY_Community 44|Community 44]]
 - [[_COMMUNITY_Community 45|Community 45]]
 - [[_COMMUNITY_Community 46|Community 46]]
+- [[_COMMUNITY_Community 47|Community 47]]
+- [[_COMMUNITY_Community 48|Community 48]]
+- [[_COMMUNITY_Community 49|Community 49]]
+- [[_COMMUNITY_Community 50|Community 50]]
+- [[_COMMUNITY_Community 52|Community 52]]
+- [[_COMMUNITY_Community 53|Community 53]]
 - [[_COMMUNITY_Community 54|Community 54]]
 - [[_COMMUNITY_Community 59|Community 59]]
 - [[_COMMUNITY_Community 61|Community 61]]
@@ -113,10 +121,10 @@
 - `OnCreate()` --calls--> `SetChildContent()`  [INFERRED]
   apps/mobile/windows/runner/flutter_window.cpp → apps/mobile/windows/runner/win32_window.cpp
 
-## Communities (87 total, 21 thin omitted)
+## Communities (95 total, 23 thin omitted)
 
 ### Community 0 - "Community 0"
-Cohesion: 0.08
+Cohesion: 0.07
 Nodes (21): useLenis(), About, Agreement, AppContent(), CaseStudyDetail, ClientPortal, CompanyPortal, Contact (+13 more)
 
 ### Community 1 - "Community 1"
@@ -128,8 +136,8 @@ Cohesion: 0.15
 Nodes (10): fadeDown, fadeLeft, fadeRight, fadeUp, pageTransition, scaleIn, staggerContainer, bentoClasses (+2 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.06
-Nodes (19): getTerminalContent(), getTerminalTitle(), LaptopServiceScreen, SERVICE_CONFIGS, SystemBoot(), [cursorPos, setCursorPos], inputRect, [isClicked, setIsClicked] (+11 more)
+Cohesion: 0.04
+Nodes (24): getTerminalContent(), getTerminalTitle(), LaptopServiceScreen, SERVICE_CONFIGS, SystemBoot(), [cursorPos, setCursorPos], inputRect, [isClicked, setIsClicked] (+16 more)
 
 ### Community 4 - "Community 4"
 Cohesion: 0.20
@@ -145,15 +153,15 @@ Nodes (4): ThemeContext, ThemeProvider(), useTheme(), ParticleField()
 
 ### Community 7 - "Community 7"
 Cohesion: 0.06
-Nodes (6): supabase, DEFAULT_PROJECT_DATA, LOG_POOL, MOCK_DATA, portalNavItems, PortalProvider()
+Nodes (5): supabase, DEFAULT_PROJECT_DATA, LOG_POOL, MOCK_DATA, portalNavItems
 
 ### Community 8 - "Community 8"
 Cohesion: 0.15
 Nodes (7): team, darkBgColors, hexColors, memberIntroductions, memberNotes, panelColors, posterMap
 
 ### Community 9 - "Community 9"
-Cohesion: 0.07
-Nodes (24): colorMap, iconMap, NotificationPanel(), OverviewPage(), PortalContext, usePortal(), PortalDashboardContent(), assetFiles (+16 more)
+Cohesion: 0.06
+Nodes (30): useMagneticEffect(), Navbar(), colorMap, iconMap, NotificationPanel(), OverviewPage(), PortalContext, PortalProvider() (+22 more)
 
 ### Community 11 - "Community 11"
 Cohesion: 0.18
@@ -176,20 +184,20 @@ Cohesion: 0.08
 Nodes (24): 1. "Mixed Content" or Cleartext Traffic Issues, 1. Prerequisites, 2. External Links or Downloads Not Working, 2. Opening the Project in Android Studio, 3. Installing Dependencies, 3. Login Session Not Saving, 4. Blank White Screen on Launch, 4. Connecting a Device or Emulator (+16 more)
 
 ### Community 17 - "Community 17"
-Cohesion: 0.06
-Nodes (34): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+26 more)
+Cohesion: 0.12
+Nodes (16): devDependencies, autoprefixer, eslint, @eslint/js, eslint-plugin-react-hooks, eslint-plugin-react-refresh, globals, postcss (+8 more)
 
 ### Community 20 - "Community 20"
 Cohesion: 0.18
 Nodes (10): code:bash (node outreach/outreach.js --preview), code:bash (node outreach/outreach.js --test yourpersonalemail@gmail.com), code:bash (node outreach/outreach.js --send), Files, How To Use, Nexoraa Studio - Cold Outreach Automation, Step 1: Check / Preview Leads, Step 2: Test on Yourself First (+2 more)
 
 ### Community 23 - "Community 23"
-Cohesion: 0.10
-Nodes (17): allLeads, buf, content, __dirname, __filename, files, gujFu, gujMsg (+9 more)
+Cohesion: 0.07
+Nodes (29): __dirname, extractMobile(), __filename, getSentTracker(), loadLeads(), parseCSV(), runAutoSender(), saveSentTracker() (+21 more)
 
 ### Community 24 - "Community 24"
-Cohesion: 0.08
-Nodes (14): services, getServiceComparison(), iconMap, ServiceDetails(), iconMap, HERO_PHRASES, LaptopScreenContent, MatrixDecoder (+6 more)
+Cohesion: 0.21
+Nodes (5): services, getServiceComparison(), iconMap, ServiceDetails(), iconMap
 
 ### Community 25 - "Community 25"
 Cohesion: 0.40
@@ -231,6 +239,30 @@ Nodes (8): leftPageVariants, mobilePageVariants, pageVariants, PrivacyPolicy(), 
 Cohesion: 0.31
 Nodes (8): leftPageVariants, mobilePageVariants, pageVariants, renderPageContent(), renderPageHeader(), renderSignatureBlock(), rightPageVariants, Terms()
 
+### Community 43 - "Community 43"
+Cohesion: 0.22
+Nodes (8): name, private, type, version, name, private, type, version
+
+### Community 44 - "Community 44"
+Cohesion: 0.11
+Nodes (18): 916353090534, date, status, 917383303388, date, status, 917405499143, date (+10 more)
+
+### Community 47 - "Community 47"
+Cohesion: 0.40
+Nodes (5): scripts, build, dev, lint, preview
+
+### Community 48 - "Community 48"
+Cohesion: 0.40
+Nodes (5): scripts, build, dev, lint, preview
+
+### Community 49 - "Community 49"
+Cohesion: 0.31
+Nodes (4): destroyScroll(), getScroll(), initScroll(), nativeScrollController
+
+### Community 50 - "Community 50"
+Cohesion: 0.40
+Nodes (3): docsData, faqs, steps
+
 ### Community 54 - "Community 54"
 Cohesion: 0.38
 Nodes (4): pricing, pricingTiers, PricingCard, tiers
@@ -249,7 +281,7 @@ Nodes (15): ChatMessageItem, [displayedText, setDisplayedText], FREE_EMAIL_DOMAI
 
 ### Community 64 - "Community 64"
 Cohesion: 0.06
-Nodes (31): dependencies, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react, jspdf (+23 more)
+Nodes (32): dependencies, canvas-confetti, clsx, @emailjs/browser, framer-motion, gsap, @gsap/react, jspdf (+24 more)
 
 ### Community 65 - "Community 65"
 Cohesion: 0.08
@@ -320,28 +352,28 @@ Cohesion: 0.40
 Nodes (4): package:flutter/material.dart, package:flutter_test/flutter_test.dart, package:flutter_webview_app/main.dart, main
 
 ### Community 100 - "Community 100"
-Cohesion: 0.10
-Nodes (16): docsData, useMagneticEffect(), Navbar(), faqs, steps, leftPageVariants, mobilePageVariants, pageVariants (+8 more)
+Cohesion: 0.31
+Nodes (8): leftPageVariants, mobilePageVariants, pageVariants, PaymentPolicy(), renderPageContent(), renderPageHeader(), renderSignatureBlock(), rightPageVariants
 
 ## Knowledge Gaps
-- **437 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+432 more)
+- **457 isolated node(s):** `name`, `private`, `version`, `type`, `dev` (+452 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **21 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **23 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `cn()` connect `Community 100` to `Community 9`?**
+- **Why does `dependencies` connect `Community 1` to `Community 43`?**
   _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Community 1` to `Community 17`?**
-  _High betweenness centrality (0.009) - this node is a cross-community bridge._
-- **Why does `dependencies` connect `Community 64` to `Community 17`?**
-  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **Why does `dependencies` connect `Community 64` to `Community 43`?**
+  _High betweenness centrality (0.007) - this node is a cross-community bridge._
 - **What connects `name`, `private`, `version` to the rest of the system?**
-  _438 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _458 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Community 0` be split into smaller, more focused modules?**
-  _Cohesion score 0.08333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.07142857142857142 - nodes in this community are weakly interconnected._
 - **Should `Community 1` be split into smaller, more focused modules?**
   _Cohesion score 0.05128205128205128 - nodes in this community are weakly interconnected._
 - **Should `Community 2` be split into smaller, more focused modules?**
   _Cohesion score 0.14705882352941177 - nodes in this community are weakly interconnected._
+- **Should `Community 3` be split into smaller, more focused modules?**
+  _Cohesion score 0.04336734693877551 - nodes in this community are weakly interconnected._

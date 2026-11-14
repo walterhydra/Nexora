@@ -63,7 +63,10 @@ function AnimatedRoutes() {
         <Route path="/projects/:id" element={<CaseStudyDetail />} />
         <Route path="/contact" element={<SystemBoot />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<Terms />} />
+        <Route path="/terms-and-conditions" element={<Terms />} />
+        <Route path="/terms-of-service" element={<Terms />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/payment-policy" element={<PaymentPolicy />} />

@@ -109,197 +109,196 @@ export default async function handler(req, res) {
       }
     }
 
-    const brevoApiKey = process.env.BREVO_API_KEY;
-
-    // 1. BREVO PROVIDER (API-based, no App Password needed)
-    if (brevoApiKey) {
-      // Fetch verified senders list from Brevo dynamically to ensure delivery
-      let senderEmail = 'realme11119412@gmail.com'; // Verified sender fallback
-      try {
-        const sendersRes = await fetch('https://api.brevo.com/v3/senders', {
-          method: 'GET',
-          headers: {
-            'accept': 'application/json',
-            'api-key': brevoApiKey
-          }
-        });
-        if (sendersRes.ok) {
-          const sendersData = await sendersRes.json();
-          const activeSender = sendersData.senders?.find(s => s.active);
-          if (activeSender) {
-            senderEmail = activeSender.email;
-            console.log('[API Send-Agreement] Resolved active verified Brevo sender:', senderEmail);
-          }
-        }
-      } catch (senderErr) {
-        console.warn('[API Send-Agreement] Failed to fetch verified senders from Brevo, using default:', senderErr.message);
-      }
-
-      const payload = {
-        sender: { name: 'Nexoraa Studio', email: senderEmail },
-        to: [{ email: email, name: fullName }],
-        subject: '📄 Nexoraa Client Agreement',
-        htmlContent: clientHtml,
-      };
-
-      if (pdfBuffer) {
-        payload.attachment = [
-          {
-            content: pdfBuffer.toString('base64'),
-            name: 'Nexoraa_Client_Agreement.pdf'
-          }
-        ];
-      } else {
-        payload.attachment = [
-          {
-            url: `${siteUrl}/Video/Nexoraa_Client_Agreement.pdf`,
-            name: 'Nexoraa_Client_Agreement.pdf'
-          }
-        ];
-      }
-
-      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'api-key': brevoApiKey,
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.message || 'Brevo API error');
-      }
-
-      // Notification email to admin
-      const adminEmail = process.env.ADMIN_EMAIL || 'contact@nexoraa.works';
-      await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'api-key': brevoApiKey,
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          sender: { name: 'Agreement Portal', email: senderEmail },
-          to: [{ email: adminEmail, name: 'Nexoraa Admin' }],
-          subject: `📋 New Agreement Request — ${fullName}`,
-          htmlContent: adminHtml
-        })
-      });
-
-      return res.status(200).json({ success: true, message: 'Agreement sent successfully via Brevo' });
-    }
-
-    // 2. RESEND PROVIDER (API-based, no App Password needed)
-    if (process.env.RESEND_API_KEY) {
-      const payload = {
-        from: 'Nexoraa Studio <onboarding@resend.dev>', // Default Resend test domain sender
-        to: email,
-        subject: '📄 Nexoraa Client Agreement',
-        html: clientHtml,
-      };
-
-      // Add verified custom domain if set in environment
-      if (process.env.RESEND_SENDER) {
-        payload.from = process.env.RESEND_SENDER;
-      }
-
-      if (pdfBuffer) {
-        payload.attachments = [
-          {
-            filename: 'Nexoraa_Client_Agreement.pdf',
-            content: pdfBuffer.toString('base64')
-          }
-        ];
-      }
-
-      const response = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(payload)
-      });
-
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.message || 'Resend API error');
-      }
-
-      // Send admin notification
-      await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          from: payload.from,
-          to: 'contact@nexoraa.works',
-          subject: `📋 New Agreement Request — ${fullName}`,
-          html: adminHtml
-        })
-      });
-
-      return res.status(200).json({ success: true, message: 'Agreement sent successfully via Resend' });
-    }
+    let sent = false;
+    let lastError = null;
 
     const smtpEmail = process.env.SMTP_EMAIL || 'contact@nexoraa.works';
     const smtpPassword = process.env.SMTP_PASSWORD || process.env.GMAIL_APP_PASSWORD || process.env.EMAIL_PASSWORD;
 
-    // 3. SMTP PROVIDER (Gmail/Outlook fallback)
+    // 1. PRIMARY PROVIDER: Direct Hostinger / Custom SMTP (Verified and Active)
     if (smtpEmail && smtpPassword) {
-      const smtpConfig = process.env.SMTP_HOST
-        ? {
-            host: process.env.SMTP_HOST,
-            port: parseInt(process.env.SMTP_PORT || '465'),
-            secure: (process.env.SMTP_PORT || '465') === '465',
-            auth: {
-              user: smtpEmail,
-              pass: smtpPassword
+      try {
+        console.log('[API Send-Agreement] Attempting dispatch via SMTP transport to:', email);
+        const smtpConfig = process.env.SMTP_HOST
+          ? {
+              host: process.env.SMTP_HOST,
+              port: parseInt(process.env.SMTP_PORT || '465'),
+              secure: (process.env.SMTP_PORT || '465') === '465',
+              auth: {
+                user: smtpEmail,
+                pass: smtpPassword
+              }
             }
-          }
-        : {
-            service: 'gmail',
-            auth: {
-              user: smtpEmail,
-              pass: smtpPassword
+          : {
+              service: 'gmail',
+              auth: {
+                user: smtpEmail,
+                pass: smtpPassword
+              }
+            };
+
+        const transporter = nodemailer.createTransport(smtpConfig);
+
+        const clientMailOptions = {
+          from: `"Nexoraa Studio" <${smtpEmail}>`,
+          to: email,
+          subject: '📄 Nexoraa Client Agreement',
+          html: clientHtml,
+          attachments: [
+            {
+              filename: 'Nexoraa_Client_Agreement.pdf',
+              content: pdfBuffer || `${siteUrl}/Video/Nexoraa_Client_Agreement.pdf`
             }
-          };
+          ]
+        };
 
-      const transporter = nodemailer.createTransport(smtpConfig);
+        const adminMailOptions = {
+          from: `"Agreement Portal" <${smtpEmail}>`,
+          to: smtpEmail,
+          subject: `📋 New Agreement Request — ${fullName}`,
+          html: adminHtml
+        };
 
-      const clientMailOptions = {
-        from: `"Nexoraa Studio" <${smtpEmail}>`,
-        to: email,
-        subject: '📄 Nexoraa Client Agreement',
-        html: clientHtml,
-        attachments: [
-          {
-            filename: 'Nexoraa_Client_Agreement.pdf',
-            content: pdfBuffer || `${siteUrl}/Video/Nexoraa_Client_Agreement.pdf`
-          }
-        ]
-      };
+        await transporter.sendMail(clientMailOptions);
+        await transporter.sendMail(adminMailOptions);
 
-      const adminMailOptions = {
-        from: `"Agreement Portal" <${smtpEmail}>`,
-        to: smtpEmail,
-        subject: `📋 New Agreement Request — ${fullName}`,
-        html: adminHtml
-      };
-
-      await transporter.sendMail(clientMailOptions);
-      await transporter.sendMail(adminMailOptions);
-
-      return res.status(200).json({ success: true, message: 'Agreement sent successfully via SMTP' });
+        console.log('[API Send-Agreement] Sent successfully via SMTP');
+        return res.status(200).json({ success: true, message: 'Agreement sent successfully via SMTP' });
+      } catch (smtpErr) {
+        console.warn('[API Send-Agreement] SMTP transport failed, trying next provider:', smtpErr.message);
+        lastError = smtpErr;
+      }
     }
 
-    throw new Error('No email provider API keys or SMTP credentials found in environment variables.');
+    const brevoApiKey = process.env.BREVO_API_KEY;
+
+    // 2. FALLBACK PROVIDER: Brevo API
+    if (brevoApiKey) {
+      try {
+        console.log('[API Send-Agreement] Attempting dispatch via Brevo API to:', email);
+        let senderEmail = process.env.BREVO_SENDER || 'contact@nexoraa.works';
+
+        const payload = {
+          sender: { name: 'Nexoraa Studio', email: senderEmail },
+          to: [{ email: email, name: fullName }],
+          subject: '📄 Nexoraa Client Agreement',
+          htmlContent: clientHtml,
+        };
+
+        if (pdfBuffer) {
+          payload.attachment = [
+            {
+              content: pdfBuffer.toString('base64'),
+              name: 'Nexoraa_Client_Agreement.pdf'
+            }
+          ];
+        } else {
+          payload.attachment = [
+            {
+              url: `${siteUrl}/Video/Nexoraa_Client_Agreement.pdf`,
+              name: 'Nexoraa_Client_Agreement.pdf'
+            }
+          ];
+        }
+
+        const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'api-key': brevoApiKey,
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.message || `Brevo API HTTP ${response.status}`);
+        }
+
+        // Notification email to admin
+        const adminEmail = process.env.ADMIN_EMAIL || 'contact@nexoraa.works';
+        await fetch('https://api.brevo.com/v3/smtp/email', {
+          method: 'POST',
+          headers: {
+            'accept': 'application/json',
+            'api-key': brevoApiKey,
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify({
+            sender: { name: 'Agreement Portal', email: senderEmail },
+            to: [{ email: adminEmail, name: 'Nexoraa Admin' }],
+            subject: `📋 New Agreement Request — ${fullName}`,
+            htmlContent: adminHtml
+          })
+        });
+
+        console.log('[API Send-Agreement] Sent successfully via Brevo');
+        return res.status(200).json({ success: true, message: 'Agreement sent successfully via Brevo' });
+      } catch (brevoErr) {
+        console.warn('[API Send-Agreement] Brevo API failed, trying next provider:', brevoErr.message);
+        lastError = brevoErr;
+      }
+    }
+
+    // 3. FALLBACK PROVIDER: Resend API
+    if (process.env.RESEND_API_KEY) {
+      try {
+        console.log('[API Send-Agreement] Attempting dispatch via Resend API to:', email);
+        const payload = {
+          from: process.env.RESEND_SENDER || 'Nexoraa Studio <onboarding@resend.dev>',
+          to: email,
+          subject: '📄 Nexoraa Client Agreement',
+          html: clientHtml,
+        };
+
+        if (pdfBuffer) {
+          payload.attachments = [
+            {
+              filename: 'Nexoraa_Client_Agreement.pdf',
+              content: pdfBuffer.toString('base64')
+            }
+          ];
+        }
+
+        const response = await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!response.ok) {
+          const errData = await response.json().catch(() => ({}));
+          throw new Error(errData.message || `Resend API HTTP ${response.status}`);
+        }
+
+        // Send admin notification
+        await fetch('https://api.resend.com/emails', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${process.env.RESEND_API_KEY}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            from: payload.from,
+            to: 'contact@nexoraa.works',
+            subject: `📋 New Agreement Request — ${fullName}`,
+            html: adminHtml
+          })
+        });
+
+        console.log('[API Send-Agreement] Sent successfully via Resend');
+        return res.status(200).json({ success: true, message: 'Agreement sent successfully via Resend' });
+      } catch (resendErr) {
+        console.warn('[API Send-Agreement] Resend API failed:', resendErr.message);
+        lastError = resendErr;
+      }
+    }
+
+    throw new Error(lastError ? lastError.message : 'No email provider credentials configured.');
 
   } catch (error) {
     console.error('Email send error:', error);

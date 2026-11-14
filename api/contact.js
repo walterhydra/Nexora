@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  const { name, email, message, budget } = req.body;
+  const { name, email, phone, service, message, budget, source } = req.body || {};
 
   if (!name || !email || !message) {
     return res.status(400).json({ error: 'Name, email, and message are required fields' });
@@ -26,146 +26,169 @@ export default async function handler(req, res) {
   const brevoApiKey = process.env.BREVO_API_KEY;
   const resendApiKey = process.env.RESEND_API_KEY;
 
-  console.log('[API Contact] Inquiry details received:', { name, email, budget, hasMessage: !!message });
+  console.log('[API Contact] Inquiry details received:', { name, email, phone, service, budget, source });
 
-  // High-fidelity dark themed contact submission email template
+  const submissionTime = new Date().toLocaleString('en-IN', {
+    timeZone: 'Asia/Kolkata',
+    dateStyle: 'medium',
+    timeStyle: 'short'
+  });
+
+  // Sleek, Executive Studio-Grade Email Template (Clean, modern & ultra-professional)
   const emailHtml = `
-    <div style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #0B1120; color: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1);">
-      <div style="background: linear-gradient(135deg, #1a1a2e 0%, #0B1120 100%); padding: 40px 30px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05);">
-        <h1 style="margin: 0; font-size: 24px; font-weight: 800; letter-spacing: -0.5px; color: #ffffff;">Nexoraa Studio</h1>
-        <p style="margin: 8px 0 0; color: #00F5FF; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px;">New Project Inquiry</p>
-      </div>
-      <div style="padding: 30px;">
-        <p style="color: #d1d5db; font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
-          Hello Nexoraa Team,
-        </p>
-        <p style="color: #d1d5db; font-size: 15px; line-height: 1.7; margin: 0 0 20px;">
-          You have received a new project inquiry from the website contact form. Here are the client's details:
-        </p>
-        
-        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; padding: 20px; margin: 24px 0;">
-          <p style="margin: 0 0 12px; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 8px;">Inquiry Metadata</p>
-          <table style="width: 100%; border-collapse: collapse;">
-            <tr>
-              <td style="color: #9ca3af; padding: 8px 0; font-size: 14px; font-weight: 500;">Client Name</td>
-              <td style="color: #ffffff; padding: 8px 0; font-size: 14px; text-align: right; font-weight: 600;">${name}</td>
-            </tr>
-            <tr>
-              <td style="color: #9ca3af; padding: 8px 0; font-size: 14px; font-weight: 500;">Email Address</td>
-              <td style="color: #00F5FF; padding: 8px 0; font-size: 14px; text-align: right; font-weight: 600;"><a href="mailto:${email}" style="color: #00F5FF; text-decoration: none;">${email}</a></td>
-            </tr>
-            ${budget ? `
-            <tr>
-              <td style="color: #9ca3af; padding: 8px 0; font-size: 14px; font-weight: 500;">Project Budget</td>
-              <td style="color: #ffffff; padding: 8px 0; font-size: 14px; text-align: right; font-weight: 600; color: #34D399;">${budget}</td>
-            </tr>
-            ` : ''}
-            <tr>
-              <td style="color: #9ca3af; padding: 8px 0; font-size: 14px; font-weight: 500;">Submitted At</td>
-              <td style="color: #ffffff; padding: 8px 0; font-size: 14px; text-align: right; font-weight: 500;">${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })} (IST)</td>
-            </tr>
-          </table>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Project Inquiry</title>
+</head>
+<body style="margin: 0; padding: 24px 12px; background-color: #f8fafc; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #0f172a; -webkit-font-smoothing: antialiased;">
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td align="center">
+        <!-- Main Card -->
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);">
+          
+          <!-- Header -->
+          <tr>
+            <td style="background-color: #090d16; padding: 28px 32px; border-bottom: 2px solid #00F5FF;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td>
+                    <div style="font-size: 20px; font-weight: 800; color: #ffffff; letter-spacing: -0.3px; margin-bottom: 4px;">
+                      NEXORAA STUDIO
+                    </div>
+                    <div style="font-size: 13px; color: #94a3b8; font-weight: 500;">
+                      New Project Inquiry Notification
+                    </div>
+                  </td>
+                  <td align="right" valign="middle">
+                    <span style="display: inline-block; padding: 5px 12px; background-color: rgba(0, 245, 255, 0.1); border: 1px solid rgba(0, 245, 255, 0.3); border-radius: 20px; font-size: 11px; font-weight: 700; color: #00F5FF; letter-spacing: 0.8px; text-transform: uppercase;">
+                      New Lead
+                    </span>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-        <p style="margin: 0 0 8px; font-size: 12px; color: #6b7280; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Message Detail</p>
-        <div style="background: rgba(255,255,255,0.02); border-left: 3px solid #8B5CF6; border-radius: 4px; padding: 16px; margin: 12px 0 24px; color: #e5e7eb; font-size: 14px; line-height: 1.6; white-space: pre-wrap;">${message}</div>
+          <!-- Client Overview Table -->
+          <tr>
+            <td style="padding: 28px 32px 16px;">
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #64748b; margin-bottom: 12px;">
+                Client Specification
+              </div>
 
-        <div style="text-align: center; margin: 24px 0 10px;">
-          <a href="mailto:${email}?subject=Re: Your Project Inquiry with Nexoraa Studio" style="display: inline-block; background: linear-gradient(135deg, #00F5FF, #8B5CF6); color: #000000; padding: 14px 32px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 14px; letter-spacing: 0.5px; box-shadow: 0 4px 15px rgba(0, 245, 255, 0.3);">
-            ✉️ Reply to Client
-          </a>
-        </div>
-      </div>
-      <div style="background: rgba(255,255,255,0.02); padding: 20px 30px; text-align: center; border-top: 1px solid rgba(255,255,255,0.05);">
-        <p style="margin: 0; color: #4b5563; font-size: 12px;">
-          © ${new Date().getFullYear()} Nexoraa Studio. All rights reserved.
-        </p>
-      </div>
-    </div>
-  `;
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="border: 1px solid #f1f5f9; border-radius: 8px; overflow: hidden; background-color: #f8fafc;">
+                <tr>
+                  <td width="35%" style="padding: 12px 18px; font-size: 13px; color: #64748b; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    Full Name
+                  </td>
+                  <td style="padding: 12px 18px; font-size: 14px; color: #0f172a; font-weight: 700; border-bottom: 1px solid #edf2f7;">
+                    ${name}
+                  </td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px 18px; font-size: 13px; color: #64748b; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    Email Address
+                  </td>
+                  <td style="padding: 12px 18px; font-size: 14px; border-bottom: 1px solid #edf2f7;">
+                    <a href="mailto:${email}" style="color: #0284c7; text-decoration: none; font-weight: 600;">${email}</a>
+                  </td>
+                </tr>
+                ${phone ? `
+                <tr>
+                  <td style="padding: 12px 18px; font-size: 13px; color: #64748b; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    Phone Number
+                  </td>
+                  <td style="padding: 12px 18px; font-size: 14px; color: #0f172a; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    <a href="tel:${phone}" style="color: #0f172a; text-decoration: none;">${phone}</a>
+                  </td>
+                </tr>
+                ` : ''}
+                ${service ? `
+                <tr>
+                  <td style="padding: 12px 18px; font-size: 13px; color: #64748b; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    Selected Service
+                  </td>
+                  <td style="padding: 12px 18px; font-size: 14px; color: #0284c7; font-weight: 700; border-bottom: 1px solid #edf2f7;">
+                    ${service}
+                  </td>
+                </tr>
+                ` : ''}
+                ${budget ? `
+                <tr>
+                  <td style="padding: 12px 18px; font-size: 13px; color: #64748b; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    Budget / Scope
+                  </td>
+                  <td style="padding: 12px 18px; font-size: 14px; color: #0f172a; font-weight: 600; border-bottom: 1px solid #edf2f7;">
+                    ${budget}
+                  </td>
+                </tr>
+                ` : ''}
+                <tr>
+                  <td style="padding: 12px 18px; font-size: 13px; color: #64748b; font-weight: 600;">
+                    Received At
+                  </td>
+                  <td style="padding: 12px 18px; font-size: 13px; color: #334155; font-weight: 500;">
+                    ${submissionTime} (IST)
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
 
-  try {
-    // 1. BREVO SMTP PROVIDER (API-based, doesn't require SMTP username/password setup)
-    if (brevoApiKey) {
-      // Fetch verified senders list from Brevo dynamically to ensure delivery
-      let senderEmail = 'realme11119412@gmail.com'; // Verified sender fallback
-      try {
-        const sendersRes = await fetch('https://api.brevo.com/v3/senders', {
-          method: 'GET',
-          headers: {
-            'accept': 'application/json',
-            'api-key': brevoApiKey
-          }
-        });
-        if (sendersRes.ok) {
-          const sendersData = await sendersRes.json();
-          const activeSender = sendersData.senders?.find(s => s.active);
-          if (activeSender) {
-            senderEmail = activeSender.email;
-            console.log('[API Contact] Resolved active verified Brevo sender:', senderEmail);
-          }
-        }
-      } catch (senderErr) {
-        console.warn('[API Contact] Failed to fetch verified senders from Brevo, using default:', senderErr.message);
-      }
+          <!-- Message Section -->
+          <tr>
+            <td style="padding: 12px 32px 32px;">
+              <div style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; color: #64748b; margin-bottom: 10px;">
+                Project Details & Requirements
+              </div>
+              <div style="background-color: #f8fafc; border-left: 3px solid #00F5FF; border-radius: 4px; padding: 18px 20px; font-size: 14px; line-height: 1.7; color: #1e293b; white-space: pre-wrap; word-break: break-word;">${message}</div>
+            </td>
+          </tr>
 
-      console.log('[API Contact] Sending via Brevo API key to:', adminEmail);
+          <!-- Clean Professional Footer -->
+          <tr>
+            <td style="background-color: #f1f5f9; padding: 18px 32px; border-top: 1px solid #e2e8f0; text-align: center;">
+              <p style="margin: 0; font-size: 12px; color: #64748b;">
+                Nexoraa Studio · Lead Notification System · <a href="https://nexoraa.works" style="color: #0284c7; text-decoration: none; font-weight: 500;">nexoraa.works</a>
+              </p>
+            </td>
+          </tr>
 
-      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
-        method: 'POST',
-        headers: {
-          'accept': 'application/json',
-          'api-key': brevoApiKey,
-          'content-type': 'application/json'
-        },
-        body: JSON.stringify({
-          sender: { name: `Nexoraa Inquiry Portal`, email: senderEmail },
-          to: [{ email: adminEmail, name: 'Nexoraa Admin' }],
-          replyTo: { email: email, name: name },
-          subject: `🚀 Nexoraa Inquiry: ${name} (${budget || 'Contact Page'})`,
-          htmlContent: emailHtml
-        })
-      });
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
+  `.trim();
 
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.message || 'Brevo API error');
-      }
+  // Clean Plain Text Fallback
+  const emailText = `
+NEXORAA STUDIO — NEW PROJECT INQUIRY
+====================================
+Client Name:    ${name}
+Email Address:  ${email}
+${phone ? `Phone Number:   ${phone}\n` : ''}${service ? `Service:        ${service}\n` : ''}${budget ? `Budget / Scope: ${budget}\n` : ''}Date & Time:    ${submissionTime} (IST)
 
-      return res.status(200).json({ success: true, message: 'Inquiry sent successfully via Brevo' });
-    }
+PROJECT REQUIREMENTS:
+------------------------------------
+${message}
+------------------------------------
 
-    // 2. RESEND PROVIDER
-    if (resendApiKey) {
-      console.log('[API Contact] Sending via Resend API to:', adminEmail);
-      const senderEmail = process.env.RESEND_SENDER || 'inquiry@resend.dev';
+Nexoraa Studio · Lead Notification System
+  `.trim();
 
-      const response = await fetch('https://api.resend.com/emails', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${resendApiKey}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          from: `Nexoraa Portal <${senderEmail}>`,
-          to: adminEmail,
-          reply_to: email,
-          subject: `🚀 Nexoraa Inquiry: ${name} (${budget || 'Contact Page'})`,
-          html: emailHtml
-        })
-      });
+  const subject = `🚀 New Project Inquiry: ${name} — ${service || 'Nexoraa'}`;
+  let lastError = null;
 
-      if (!response.ok) {
-        const errData = await response.json();
-        throw new Error(errData.message || 'Resend API error');
-      }
-
-      return res.status(200).json({ success: true, message: 'Inquiry sent successfully via Resend' });
-    }
-
-    // 3. SMTP PROVIDER (Gmail/Outlook fallback)
-    if (resolvedSmtpEmail && resolvedSmtpPassword) {
-      console.log('[API Contact] Sending via SMTP direct transport to:', adminEmail);
+  // 1. PRIMARY PROVIDER: Direct Hostinger / Custom SMTP
+  if (resolvedSmtpEmail && resolvedSmtpPassword) {
+    try {
+      console.log('[API Contact] Sending professional email via SMTP to:', adminEmail);
       const smtpConfig = process.env.SMTP_HOST
         ? {
             host: process.env.SMTP_HOST,
@@ -186,24 +209,97 @@ export default async function handler(req, res) {
 
       const transporter = nodemailer.createTransport(smtpConfig);
 
+      // replyTo ensures Hostinger's native "Reply" button sends directly to the client
       await transporter.sendMail({
-        from: `"${name} via Nexoraa Portal" <${resolvedSmtpEmail}>`,
+        from: `"Nexoraa Studio" <${resolvedSmtpEmail}>`,
         to: adminEmail,
-        replyTo: email,
-        subject: `🚀 Nexoraa Inquiry: ${name} (${budget || 'Contact Page'})`,
+        replyTo: `"${name}" <${email}>`,
+        subject: subject,
+        text: emailText,
         html: emailHtml
       });
 
+      console.log('[API Contact] Professional inquiry sent successfully via SMTP to:', adminEmail);
       return res.status(200).json({ success: true, message: 'Inquiry sent successfully via SMTP' });
+    } catch (smtpErr) {
+      console.warn('[API Contact] SMTP transport failed, trying next provider:', smtpErr.message);
+      lastError = smtpErr;
     }
-
-    throw new Error('No email provider API keys (Brevo/Resend) or SMTP credentials configured in .env');
-
-  } catch (error) {
-    console.error('[API Contact Error]:', error);
-    return res.status(500).json({
-      error: 'Failed to dispatch contact inquiry email',
-      details: error.message
-    });
   }
+
+  // 2. FALLBACK PROVIDER: Brevo API
+  if (brevoApiKey) {
+    try {
+      console.log('[API Contact] Sending via Brevo API to:', adminEmail);
+      let senderEmail = process.env.BREVO_SENDER || 'contact@nexoraa.works';
+      
+      const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'api-key': brevoApiKey,
+          'content-type': 'application/json'
+        },
+        body: JSON.stringify({
+          sender: { name: 'Nexoraa Studio', email: senderEmail },
+          to: [{ email: adminEmail, name: 'Nexoraa Admin' }],
+          replyTo: { email: email, name: name },
+          subject: subject,
+          textContent: emailText,
+          htmlContent: emailHtml
+        })
+      });
+
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.message || `Brevo API HTTP ${response.status}`);
+      }
+
+      console.log('[API Contact] Inquiry sent successfully via Brevo');
+      return res.status(200).json({ success: true, message: 'Inquiry sent successfully via Brevo' });
+    } catch (brevoErr) {
+      console.warn('[API Contact] Brevo API failed, trying next provider:', brevoErr.message);
+      lastError = brevoErr;
+    }
+  }
+
+  // 3. FALLBACK PROVIDER: Resend API
+  if (resendApiKey) {
+    try {
+      console.log('[API Contact] Sending via Resend API to:', adminEmail);
+      const senderEmail = process.env.RESEND_SENDER || 'onboarding@resend.dev';
+
+      const response = await fetch('https://api.resend.com/emails', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${resendApiKey}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          from: `Nexoraa <${senderEmail}>`,
+          to: adminEmail,
+          reply_to: email,
+          subject: subject,
+          text: emailText,
+          html: emailHtml
+        })
+      });
+
+      if (!response.ok) {
+        const errData = await response.json().catch(() => ({}));
+        throw new Error(errData.message || `Resend API HTTP ${response.status}`);
+      }
+
+      console.log('[API Contact] Inquiry sent successfully via Resend');
+      return res.status(200).json({ success: true, message: 'Inquiry sent successfully via Resend' });
+    } catch (resendErr) {
+      console.warn('[API Contact] Resend API failed:', resendErr.message);
+      lastError = resendErr;
+    }
+  }
+
+  return res.status(500).json({
+    error: 'Failed to dispatch contact inquiry email',
+    details: lastError ? lastError.message : 'No email credentials configured'
+  });
 }

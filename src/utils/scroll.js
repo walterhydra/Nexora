@@ -12,17 +12,19 @@ gsap.registerPlugin(ScrollTrigger);
 const nativeScrollController = {
   scrollTo: (target, options = {}) => {
     const offset = options.offset || 0;
+    const isImmediate = options.immediate === true;
+    const behavior = isImmediate ? 'instant' : 'smooth';
     if (typeof target === 'number') {
-      window.scrollTo({ top: target, behavior: 'smooth' });
+      window.scrollTo({ top: target, left: 0, behavior });
     } else if (typeof target === 'string') {
       const el = document.querySelector(target);
       if (el) {
         const top = el.getBoundingClientRect().top + window.scrollY + offset;
-        window.scrollTo({ top, behavior: 'smooth' });
+        window.scrollTo({ top, left: 0, behavior });
       }
     } else if (target && target.getBoundingClientRect) {
       const top = target.getBoundingClientRect().top + window.scrollY + offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      window.scrollTo({ top, left: 0, behavior });
     }
   },
   destroy: () => {},

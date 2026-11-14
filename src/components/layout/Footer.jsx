@@ -251,7 +251,7 @@ export default function Footer() {
         <div className="border-t border-white/[0.08]" />
 
         {/* --- Row 2: Bottom Copyright on Left | Square Socials + Legal Links on Right (Matching Image 1 Row 2) --- */}
-        <div className="pt-6 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400">
+        <div className="pt-6 pb-2 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-400 relative z-20 md:pr-24 lg:pr-28">
           {/* Left: Brand Icon + Copyright */}
           <div className="flex items-center gap-3">
             <img 
@@ -265,7 +265,7 @@ export default function Footer() {
           </div>
 
           {/* Right: Square Social Buttons + Separator + Legal Links */}
-          <div className="flex items-center gap-3 sm:gap-5">
+          <div className="flex items-center gap-3 sm:gap-5 relative z-20">
             {/* Square Outlined Social Buttons */}
             <div className="flex items-center gap-1.5 sm:gap-2">
               {/* Instagram */}
@@ -273,7 +273,7 @@ export default function Footer() {
                 href="https://www.instagram.com/nexoraa.works?igsh=dnM3bjNjNnd5dnU1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 sm:w-8 sm:h-8 border border-white/10 hover:border-white/30 rounded-xs flex items-center justify-center text-neutral-400 hover:text-white transition-all bg-white/[0.02]"
+                className="w-7 h-7 sm:w-8 sm:h-8 border border-white/10 hover:border-white/30 rounded-xs flex items-center justify-center text-neutral-400 hover:text-white transition-all bg-white/[0.02] cursor-pointer"
                 aria-label="Instagram"
               >
                 <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
@@ -284,7 +284,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/milan-pandavdara/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 sm:w-8 sm:h-8 border border-white/10 hover:border-white/30 rounded-xs flex items-center justify-center text-neutral-400 hover:text-white transition-all bg-white/[0.02]"
+                className="w-7 h-7 sm:w-8 sm:h-8 border border-white/10 hover:border-white/30 rounded-xs flex items-center justify-center text-neutral-400 hover:text-white transition-all bg-white/[0.02] cursor-pointer"
                 aria-label="LinkedIn"
               >
                 <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
@@ -295,7 +295,7 @@ export default function Footer() {
                 href="https://www.facebook.com/share/192NuHy2vn/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-7 h-7 sm:w-8 sm:h-8 border border-white/10 hover:border-white/30 rounded-xs flex items-center justify-center text-neutral-400 hover:text-white transition-all bg-white/[0.02]"
+                className="w-7 h-7 sm:w-8 sm:h-8 border border-white/10 hover:border-white/30 rounded-xs flex items-center justify-center text-neutral-400 hover:text-white transition-all bg-white/[0.02] cursor-pointer"
                 aria-label="Facebook"
               >
                 <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
@@ -307,10 +307,18 @@ export default function Footer() {
 
             {/* Legal Links */}
             <div className="flex items-center gap-3 sm:gap-4 text-[11px] font-semibold tracking-wider uppercase text-neutral-400">
-              <Link to="/privacy-policy" className="hover:text-white transition-colors">
+              <Link 
+                to="/privacy-policy" 
+                onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}
+                className="hover:text-white transition-colors cursor-pointer py-1"
+              >
                 PRIVACY
               </Link>
-              <Link to="/terms" className="hover:text-white transition-colors">
+              <Link 
+                to="/terms" 
+                onClick={() => window.scrollTo({ top: 0, left: 0, behavior: 'instant' })}
+                className="hover:text-white transition-colors cursor-pointer py-1"
+              >
                 TERMS
               </Link>
             </div>

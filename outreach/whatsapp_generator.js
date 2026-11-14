@@ -89,14 +89,14 @@ function getFollowups(b, lang) {
   if (lang === 'gujarati') {
     return {
       fu1: `Namaste ${b.contact_person || 'Sir'} ${PRAY}
-Hu Milan Pandavadra (Nexoraa Studio, Porbandar).
+Hu Milan Pandavadra (Founder, Nexoraa Studio — Porbandar).
 
 Parso aapne amari web design & local lead generation services babate ek short message moklyo hato. Just follow-up leva mate message karyo ke aapne amaro portfolio jovano time malyo?
 
 ${WEB} https://nexoraa.works
 Jo free ho to 2 minute chat kari shakiye? Aabhar ${PRAY}`,
       fu2: `Namaste ${b.contact_person || 'Sir'} ${PRAY}
-Milan Pandavadra here.
+Milan Pandavadra, Founder - Nexoraa Studio.
 
 Aap busy hasho etle call nathi karyo. Jo hal ma ${b.business_name} mate website ke branding ni requirement na hoi to no problem sir. Future ma jarur pade to maro aa number save rakhi sakho cho.
 
@@ -105,14 +105,14 @@ Have a great week ahead! ${PRAY}`
   } else {
     return {
       fu1: `Namaste ${b.contact_person || 'Sir'} ${PRAY}
-Main Milan Pandavadra (Nexoraa Studio, Porbandar).
+Main Milan Pandavadra (Founder, Nexoraa Studio — Porbandar).
 
 Maine 2 din pehle aapke saath humara web design & lead funnel ka intro share kiya tha. Just follow-up lene ke liye message kiya ki kya aapko portfolio dekhne ka time mila?
 
 ${WEB} https://nexoraa.works
 Jab bhi convenient ho batayein. Regards ${PRAY}`,
       fu2: `Namaste ${b.contact_person || 'Sir'} ${PRAY}
-Milan Pandavadra here.
+Milan Pandavadra, Founder - Nexoraa Studio.
 
 Aap busy honge isliye call nahi kiya. Agar abhi ${b.business_name} ke liye website ki requirement nahi hai to koi baat nahi sir. Future me jab bhi digital presence scale karni ho, aap mera ye number save rakh sakte hain.
 
@@ -982,8 +982,8 @@ const dashboardHTML = `<!DOCTYPE html>
         <div class="msg-box" id="drawerMsgText">Message text...</div>
 
         <div class="drawer-actions">
-          <a href="#" target="_blank" class="btn-primary-wa" id="drawerWaBtn">
-            <span>💬 Send via WhatsApp</span>
+          <a href="#" class="btn-primary-wa" id="drawerWaBtn">
+            <span>💬 Send via WhatsApp App</span>
           </a>
           <button class="btn-icon-subtle" style="padding: 12px 18px;" onclick="copyDrawerMsg()">
             📋 Copy Message
@@ -1009,10 +1009,14 @@ const dashboardHTML = `<!DOCTYPE html>
     let activeDrawerTab = 'pitch';
 
     function getWhatsAppUrl(mobileNumber, text) {
-      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       const cleanPhone = String(mobileNumber).replace(/\D/g, '');
-      const base = isMobile ? 'https://api.whatsapp.com/send/' : 'https://web.whatsapp.com/send/';
-      return base + '?phone=' + cleanPhone + '&text=' + encodeURIComponent(text);
+      return 'whatsapp://send?phone=' + cleanPhone + '&text=' + encodeURIComponent(text);
+    }
+
+    function launchWhatsAppChat(url, uid) {
+      if (uid) markAutoContacted(uid);
+      window.location.href = url;
+      return false;
     }
 
     function updateStats() {
@@ -1144,8 +1148,8 @@ const dashboardHTML = `<!DOCTYPE html>
             <td>
               <div class="action-group">
                 \${lead.hasMobile ? \`
-                  <a href="\${waLink}" target="_blank" class="btn-send-wa" onclick="markAutoContacted('\${lead.uid}')">
-                    <span>💬 Open WA</span>
+                  <a href="\${waLink}" class="btn-send-wa" onclick="return launchWhatsAppChat(this.href, '\${lead.uid}')">
+                    <span>💬 Open WA App</span>
                   </a>
                 \` : \`
                   <span class="btn-send-wa disabled">No WA</span>
@@ -1219,7 +1223,10 @@ const dashboardHTML = `<!DOCTYPE html>
       if (activeDrawerLead.hasMobile) {
         waBtn.style.display = 'flex';
         waBtn.href = getWhatsAppUrl(activeDrawerLead.mobileNumber, text);
-        waBtn.onclick = () => markAutoContacted(activeDrawerLead.uid);
+        waBtn.onclick = (e) => {
+          e.preventDefault();
+          launchWhatsAppChat(waBtn.href, activeDrawerLead.uid);
+        };
       } else {
         waBtn.style.display = 'none';
       }

@@ -3,11 +3,11 @@ import { m } from 'framer-motion';
 
 export default function Terms() {
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-[#f8fafc] dark:bg-[#0A0A0B] text-gray-800 dark:text-gray-300 transition-colors duration-300 font-sans relative overflow-hidden">
+    <div className="pt-32 pb-24 min-h-screen bg-white dark:bg-[#070709] text-gray-800 dark:text-gray-200 transition-colors duration-300 font-quicksand relative">
       {/* Background grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] dark:bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none -z-10" />
       
